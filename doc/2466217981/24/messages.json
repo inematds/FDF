@@ -1,0 +1,42 @@
+[
+  {
+    "id": 28,
+    "author": "INEMA",
+    "date": "2024-12-25T02:06:17+00:00",
+    "text": "5",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 27,
+    "author": "INEMA",
+    "date": "2024-12-25T02:06:15+00:00",
+    "text": "4",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 26,
+    "author": "INEMA",
+    "date": "2024-12-25T02:06:12+00:00",
+    "text": "2",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 25,
+    "author": "INEMA",
+    "date": "2024-12-25T02:06:11+00:00",
+    "text": "1",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 24,
+    "author": "INEMA",
+    "date": "2024-12-25T02:06:06+00:00",
+    "text": "",
+    "has_media": false,
+    "media_type": null
+  }
+]

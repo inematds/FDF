@@ -1,0 +1,545 @@
+[
+  {
+    "id": 1382,
+    "author": "Fabio",
+    "date": "2025-05-16T21:40:47+00:00",
+    "text": "Quero tirar os preenchimentos dessa imagem e deixar só as linhas",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1381,
+    "author": "Fabio",
+    "date": "2025-05-16T21:40:30+00:00",
+    "text": "",
+    "has_media": true,
+    "media_type": "MessageMediaPhoto",
+    "media_file": "photo_1381_002.jpg"
+  },
+  {
+    "id": 1380,
+    "author": "Fabio",
+    "date": "2025-05-16T21:39:35+00:00",
+    "text": "Pessoal qual ferramenta posso usar pra editar uma imagem para deixar só as linhas livres para pintura",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1373,
+    "author": "Everton",
+    "date": "2025-05-15T16:58:55+00:00",
+    "text": "Bom dia, Nei pode me ajudar, estou tentando montar uma aplicação onde envio a foto de uma SemiJoia e gostaria de gerar uma foto profissional desta Joia em Uma Modelo, para Divulgação Nas Redes, porém no Momento da geração da nova Imagem com minha Peça, a joias perde muita sua característica, como formato, cor de pedras, estilo do colar quando e o caso, ou um anel com pedras coloridas, as cores ficam erradas, então não ah uma exatidão da imagem Base, já tentes vários prompts ajustando estes pontos mas sempre sem sucesso, será que existe alguma modelo de IA ideal para este propósito?",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 752,
+    "author": "INEMA",
+    "date": "2025-02-25T01:32:42+00:00",
+    "text": "show",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 591,
+    "author": "Tcharles Studio",
+    "date": "2025-01-31T03:36:51+00:00",
+    "text": "",
+    "has_media": true,
+    "media_type": "MessageMediaPhoto",
+    "media_file": "photo_591_006.jpg"
+  },
+  {
+    "id": 590,
+    "author": "Tcharles Studio",
+    "date": "2025-01-31T03:36:51+00:00",
+    "text": "",
+    "has_media": true,
+    "media_type": "MessageMediaPhoto",
+    "media_file": "photo_590_007.jpg"
+  },
+  {
+    "id": 589,
+    "author": "Tcharles Studio",
+    "date": "2025-01-31T03:36:50+00:00",
+    "text": "",
+    "has_media": true,
+    "media_type": "MessageMediaPhoto",
+    "media_file": "photo_589_008.jpg"
+  },
+  {
+    "id": 588,
+    "author": "Tcharles Studio",
+    "date": "2025-01-31T03:36:50+00:00",
+    "text": "Tem Milhares de estilos, funcoes, ... é como se programasses Imagens no N8N, VoiceFlow ou FLowise...\nVem é Nós....",
+    "has_media": true,
+    "media_type": "MessageMediaPhoto",
+    "media_file": "photo_588_009.jpg"
+  },
+  {
+    "id": 587,
+    "author": "Tcharles Studio",
+    "date": "2025-01-31T03:26:29+00:00",
+    "text": "Na Comunidade do Comfy Vc aprende tudo de Imagem...\nMovimentos, cores, gestos, padroes, tudo...\nDeixa ver algumas coisas que tenho aqui...",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 564,
+    "author": "INEMA",
+    "date": "2025-01-29T05:11:43+00:00",
+    "text": "Sim, a qualidade e as dimensões da foto influenciam muito no resultado do **FaceFusion**. Aqui estão alguns fatores e macetes que podem melhorar a semelhança no **FaceSwap**:\n\n### **1. Qualidade da Imagem**\n   - Fotos de **alta resolução** resultam em trocas mais precisas.\n   - Evite imagens muito pixeladas ou com pouca definição.\n\n### **2. Iluminação e Contraste**\n   - Se o rosto original e o rosto-alvo tiverem iluminações muito diferentes, o resultado pode parecer artificial.\n   - Tente usar fotos com **iluminação semelhante** para um resultado mais realista.\n\n### **3. Posição e Ângulo do Rosto**\n   - O **FaceFusion** funciona melhor quando os rostos estão em posições similares.\n   - Se um rosto está virado e o outro está de frente, a fusão pode ficar estranha.\n\n### **4. Expressão Facial**\n   - Expressões neutras geralmente dão melhores resultados do que rostos muito expressivos.\n   - Se o rosto original está sorrindo e o outro sério, pode haver distorções.\n\n### **5. Fundo e Elementos Visuais**\n   - Se houver muitos elementos no fundo ou acessórios no rosto (óculos, chapéu, cabelo cobrindo o rosto), isso pode atrapalhar a fusão.\n\n### **6. Configurações do Software**\n   - Alguns programas permitem ajustar parâmetros como **intensidade da fusão, suavização e blend de cor**.\n   - Experimente aumentar ou diminuir esses valores para obter um resultado mais natural.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 554,
+    "author": "Marcos",
+    "date": "2025-01-28T12:28:22+00:00",
+    "text": "A dimensão é qualidade da foto influencia muito?",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 553,
+    "author": "Marcos",
+    "date": "2025-01-28T12:28:05+00:00",
+    "text": "Tem algum macete?",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 552,
+    "author": "Marcos",
+    "date": "2025-01-28T12:27:49+00:00",
+    "text": "Algumas fotos consigo fazer o faceswap e fica idêntico, já em outras não fica parecido.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 551,
+    "author": "Marcos",
+    "date": "2025-01-28T12:27:03+00:00",
+    "text": "Bom dia!\nEstou com uma dúvida no facefusion",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 539,
+    "author": "Rodarte",
+    "date": "2025-01-27T11:56:05+00:00",
+    "text": "Bom dia pessoal! Alguém tem gerado imagens pra LinkedIn? Quais modelos tem utilizado?",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 316,
+    "author": "Emerson",
+    "date": "2025-01-16T02:56:33+00:00",
+    "text": "eu uso diversas... o segredo não é a ferramenta, mas como solicitar, o prompt,  ferramenta, pouco importa, claro que com suas limitações e peculiaridades",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 315,
+    "author": "INEMA",
+    "date": "2025-01-16T02:55:31+00:00",
+    "text": "por isso se fala, q vmaos usar sempre varias",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 314,
+    "author": "Emerson",
+    "date": "2025-01-16T02:55:03+00:00",
+    "text": "verdade...",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 313,
+    "author": "INEMA",
+    "date": "2025-01-16T02:54:30+00:00",
+    "text": "cada ferraneta vai ter suas caracteristicas nem sempre vamos replicar o estilo",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 312,
+    "author": "Emerson",
+    "date": "2025-01-16T02:54:27+00:00",
+    "text": "No canva sai show, mas tem um limite muito pequenos de tokens, fica difícil mante a consistência com poucos tokens",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 311,
+    "author": "INEMA",
+    "date": "2025-01-16T02:53:20+00:00",
+    "text": "outra coisa tem ver os moldelos, qual estilo, quals origem do algoritimo qual temperatura.... pois no canva  tem ver q modelo usou",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 310,
+    "author": "Emerson",
+    "date": "2025-01-16T02:52:41+00:00",
+    "text": "Já fiz isso... se aproxima",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 309,
+    "author": "INEMA",
+    "date": "2025-01-16T02:52:11+00:00",
+    "text": "pegue uma imagem semelhante e manda o chat descrever",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 308,
+    "author": "Emerson",
+    "date": "2025-01-16T02:41:24+00:00",
+    "text": "Sr. Nei, como  gerar imagens no estilo lúdico, iguais aos do Canva? passei as informações no prompt, mas não deu... tentei o leonardo, mas, não foi. O ideogram até que vai, mas a qualidade deixa a deisejar, e não extamente",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 307,
+    "author": "INEMA",
+    "date": "2025-01-16T02:39:25+00:00",
+    "text": "Ferramenta de IMAGENS  - (No VIP é sempre atualizada)\n\nhttps://fal.ai/\nhttps://fal.ai/models\nhttps://fal.ai/models/fal-ai/flux-pro/v1/fill\nhttps://replicate.com/collections/flux\nhttps://replicate.com\nhttps://huggingface.co/black-forest-labs\nhttps://huggingface.co/spaces/jbilcke-hf/FacePoke\nhttps://blackforestlabs.ai/\nhttps://www.blinkshot.io/  realtime\nhttps://opendemo.ai/ai-tools/flux-fill\nhttps://flux-ai.io/pt/video-generator/\nhttps://fluxpro.ai/pt\nhttps://flux.api.airforce/\nhttps://freepik.com/\nhttps://arxiv.org/abs/2411.04928  3D e4D\nhttps://civitai.com/  Sem Censura +- Adulto\nhttps://www.seaart.ai/pt/ai-tools  +- Adulto\nhttps://kaiber.ai/   videos e imagens - superstudio\nhttps://glif.app/ Texto em Imagem\nhttps://www.aiease.ai/ \nhttps://www.recraft.ai/\nhttps://kovenyu.com/ Opensource",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 85,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://www.blinkshot.io/\nrealtime",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 84,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://blackforestlabs.ai/",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 83,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://opendemo.ai/ai-tools/flux-fill",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 82,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://flux-ai.io/pt/video-generator/",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 81,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://fal.ai/models",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 80,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://fal.ai/models/fal-ai/flux-pro/v1/fill",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 79,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "freepik.com",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 78,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://replicate.com/collections/flux",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 77,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://github.com/wenqsun/DimensionX",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 76,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://arxiv.org/abs/2411.04928",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 75,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://civitai.com/",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 74,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://kaiber.ai/\nvideos e imagens - superstudio",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 72,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://www.seaart.ai/pt/ai-tools",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 71,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "",
+    "has_media": true,
+    "media_type": "MessageMediaPhoto",
+    "media_file": "photo_71_040.jpg"
+  },
+  {
+    "id": 70,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "",
+    "has_media": true,
+    "media_type": "MessageMediaPhoto",
+    "media_file": "photo_70_041.jpg"
+  },
+  {
+    "id": 69,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "tudo em um",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 68,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://glif.app/",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 67,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://www.aiease.ai",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 66,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://www.recraft.ai",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 65,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "**1) Genmo:** Anima fotos com base em instruções de texto;\n\n**2) Animated Drawings:** Cria animações a partir de desenhos, identificando partes do corpo;\n\n**3) D-ID:** Gera avatares animados a partir de comandos, incluindo fala em português;\n\n**4) LeiaPix:** Adiciona movimento de profundidade a fotos estáticas;\n\n**5) Photo Animer:** Transforma retratos e desenhos em vídeos animados;\n\n**6) Animaker:** Plataforma para criar vídeos animados com personagens e narração.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 64,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "freepik.com",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 63,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://www.fluxpro.ai/pt",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 62,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://flux.api.airforce/",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 61,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://kovenyu.com/",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 60,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "alguns modelos de **text2image** que existem e mais conhecidos:\nFlux 1.1\nFlux 1\nIdeogram v2 turbo\nMidjourney v6.1\nFlux 1 Dev\nMidjourney v6.0\nIdeogram v1\nFlux 1[schnell]\nPlayground v3\nDalle 3 HD\nSD3 Medium\nSDXL\nLumina-Next\nPixArt-Sigma",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 59,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://huggingface.co/spaces/jbilcke-hf/FacePoke",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 58,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://blackforestlabs.ai/announcing-black-forest-labs/",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 57,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://huggingface.co/black-forest-labs",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 56,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://fal.ai/",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 55,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "https://replicate.com/collections/flux",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 54,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "Aqui estão alguns links úteis para você explorar mais sobre o ComfyUI:\n\n1. **Site Oficial do ComfyUI**: A página oficial contém informações detalhadas sobre o projeto, incluindo como instalar e começar a usar o ComfyUI. Acesse [aqui](https://comfyui.ca/).\n\n2. **Repositório no GitHub**: Se você quiser explorar o código-fonte, contribuir ou apenas entender melhor o funcionamento do ComfyUI, o repositório GitHub é o lugar ideal. Acesse [aqui](https://github.com/comfyanonymous/ComfyUI).\n\n3. **Documentação e Guia de Início**: Para aprender como instalar e usar o ComfyUI, incluindo tutoriais passo a passo, você pode visitar [esta página de documentação](https://docs.comfy.org/get_started/gettingstarted).\n\n4. **Guia de Instalação em Windows e Linux**: Um guia simplificado sobre como instalar o ComfyUI, tanto para usuários de Windows quanto de Linux, pode ser encontrado [aqui](https://easywithai.com/how-to-install-comfyui).\n\nEsses links devem fornecer todas as informações necessárias para você começar a utilizar o ComfyUI de forma eficaz.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 53,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "ComfyUI é uma interface gráfica de usuário (GUI) projetada para facilitar o uso de modelos de difusão e outras técnicas de geração de imagens baseadas em inteligência artificial, especialmente aquelas relacionadas ao estilo do Stable Diffusion. O ComfyUI simplifica o processo de ajuste fino, configuração e execução desses modelos, tornando-os mais acessíveis para usuários que preferem uma interface visual em vez de linhas de comando ou programação complexa.\n\n### Características principais do ComfyUI:\n\n1. **Interface Intuitiva**: Fornece uma interface gráfica amigável que permite aos usuários configurar parâmetros e ver os resultados em tempo real, sem a necessidade de conhecimento profundo em programação.\n\n2. **Fluxo de Trabalho Simplificado**: Facilita o processo de experimentação com diferentes modelos e configurações, permitindo ajustes rápidos e visualização imediata dos resultados.\n\n3. **Customização**: Oferece a possibilidade de personalizar a interface e os fluxos de trabalho para atender às necessidades específicas do usuário, seja na criação de arte digital, design gráfico ou outras aplicações.\n\n4. **Integração com Modelos de Difusão**: ComfyUI é compatível com modelos baseados em difusão, como o Stable Diffusion, que são populares para a geração de imagens de alta qualidade a partir de descrições textuais.\n\n5. **Comunidade Ativa**: Conta com uma comunidade ativa que contribui com tutoriais, extensões e melhorias contínuas para a plataforma.\n\nComfyUI é uma excelente opção para artistas digitais, designers e qualquer pessoa interessada em explorar a criação de imagens utilizando inteligência artificial, proporcionando uma experiência visual e interativa.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 44,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "Resumo das Ferramentas por Categoria\nArtigos e Recursos\n\nDataconomy\nHuggingface\nUXDesign\nReddit\nXataka\nMultiDiffusion\nUpdateOrDie\nFastCompany\nThe Decoder\nAnalytics Vidhya\nRedShark News\nHuggingface (Text-to-Video)\nGuias e Manuais\n\nStable Diffusion Art Illustrated Guide\nStable Diffusion Art Prompt Guide\nCursos e Educação\n\nDesignCode (GPT-4 Apps)\nZDNet (Stable Diffusion Tutorial)\nFerramentas de IA e Plataformas\n\nMultiDiffusion\nStable Diffusion Art Guide\nTome AI\nPetapixel\nStable Diffusion Art Deforum\nCivitai\nDragGAN\nReplicate\nClipDrop\nRemodeled AI\nLlava\nStable Diffusion Art Inpainting\nTikTok AI Accounts\nUnstability AI\nTinyWow Essay Writer\nFreepik - Pikaso\nLogoDiffusion\nTencentARC PhotoMaker\nReplicate Super-Resolution Collection\nInstantID\nSVG Converter\nLuma Labs\nInstories\nKartiv\nKittl\nReplicate Interior Design\nTailorBrands Logo Maker\nFiverr Logo Maker\nAdobe Express\nAdobe Firefly\nTengr AI\nWatermark Remover\nCGDream AI\nToonMe\nOdyssey App\nAI Room Planner\nHuggingface AuraFlow\nHuggingface Facepoke\nHuggingface Portrait",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 43,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "7",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 42,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "6",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 41,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "5",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 40,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "4",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 39,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "3",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 38,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "2",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 37,
+    "author": "INEMA",
+    "date": "2024-12-25T03:38:54+00:00",
+    "text": "1",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 36,
+    "author": "INEMA",
+    "date": "2024-12-25T03:37:21+00:00",
+    "text": "",
+    "has_media": false,
+    "media_type": null
+  }
+]

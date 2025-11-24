@@ -1,0 +1,131 @@
+TOPICO 1685
+==================================================
+
+Titulo: Sem titulo
+Criado em: 2025-07-05 01:02:43+00:00
+
+Total de mensagens: 9
+Midias baixadas: 0
+
+--------------------------------------------------
+
+MENSAGEM 1
+Autor: INEMA
+Data: 2025-07-05T01:03:10+00:00
+Texto:
+**estilos de iluminação, efeitos visuais e atmosferas** em fotografia, cinema ou renderização 3D. 
+1. **Back (Backlighting)**
+
+   * Luz vindo por trás do objeto, criando um contorno brilhante (halo).
+   * Exemplo: Um retrato com o sol se pondo atrás do modelo, destacando os cabelos.
+
+2. **Candle**
+
+   * Iluminação suave e quente como a luz de uma vela.
+   * Exemplo: Cena intimista com luz âmbar tremeluzente sobre o rosto.
+
+3. **Volumetric**
+
+   * Efeito de “raios de luz” visíveis no ar, geralmente com partículas (poeira, névoa).
+   * Exemplo: Feixe de luz entrando pela janela com poeira flutuando.
+
+4. **Soft**
+
+   * Luz difusa, sombras suaves e transições delicadas.
+   * Exemplo: Retrato ao ar livre em dia nublado.
+
+5. **Hard**
+
+   * Luz direta, sombras fortes e bem definidas.
+   * Exemplo: Sol do meio-dia criando sombras nítidas no chão.
+
+6. **Golden**
+
+   * Tom dourado, típico da “golden hour” (hora dourada, pôr ou nascer do sol).
+   * Exemplo: Paisagem com luz quente e tons alaranjados.
+
+7. **Dramatic**
+
+   * Contraste alto, sombras profundas, sensação de tensão ou intensidade.
+   * Exemplo: Foto de um boxeador na penumbra com suor brilhando.
+
+8. **Low-key**
+
+   * Predominância de áreas escuras, pouca iluminação, foco no jogo de sombras.
+   * Exemplo: Filme noir com apenas partes do rosto iluminadas.
+
+9. **Film haze**
+
+   * Efeito de leve neblina ou granulação, dando aspecto de filme antigo.
+   * Exemplo: Cena de floresta com luz difusa e leve “névoa cinematográfica”.
+
+10. **Foggy**
+
+    * Presença de neblina mais densa no cenário.
+    * Exemplo: Estrada na madrugada envolta em névoa espessa.
+
+------------------------------
+
+MENSAGEM 2
+Autor: INEMA
+Data: 2025-07-05T01:02:49+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 3
+Autor: INEMA
+Data: 2025-07-05T01:02:49+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 4
+Autor: INEMA
+Data: 2025-07-05T01:02:48+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 5
+Autor: INEMA
+Data: 2025-07-05T01:02:48+00:00
+Texto:
+..
+
+------------------------------
+
+MENSAGEM 6
+Autor: INEMA
+Data: 2025-07-05T01:02:48+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 7
+Autor: INEMA
+Data: 2025-07-05T01:02:47+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 8
+Autor: INEMA
+Data: 2025-07-05T01:02:47+00:00
+Texto:
+1
+
+------------------------------
+
+MENSAGEM 9
+Autor: INEMA
+Data: 2025-07-05T01:02:43+00:00
+Texto: [Sem texto]
+
+------------------------------
+

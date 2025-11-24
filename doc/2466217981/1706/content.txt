@@ -1,0 +1,188 @@
+TOPICO 1706
+==================================================
+
+Titulo: Sem titulo
+Criado em: 2025-07-06 03:34:20+00:00
+
+Total de mensagens: 10
+Midias baixadas: 1
+
+--------------------------------------------------
+
+MENSAGEM 1
+Autor: INEMA
+Data: 2025-07-06T03:34:58+00:00
+Texto:
+### 📖 1. **AI Image Style Guide for Beginners**
+
+Um guia visual que mostra como palavras-chave transformam gerações de imagem com IA. Todos os exemplos usam um gatinho branco de olhos azuis vestindo moletom amarelo para facilitar comparações. O guia é dividido em categorias:
+
+---
+
+### 🎨 **Estilos Artísticos**
+
+Exemplos de técnicas e movimentos artísticos aplicados à imagem:
+
+* Marble Sculpture (Escultura em mármore)
+* Gold Sculpture (Escultura em ouro)
+* Origami
+* Crayon Drawing (Desenho com giz de cera)
+* Charcoal Drawing (Desenho a carvão)
+* Watercolor Painting (Aquarela)
+* Oil Painting (Pintura a óleo)
+* Pastel Drawing (Desenho a pastel)
+* Pencil Sketch (Esboço a lápis)
+* Digital Art (Arte digital)
+* Clay Sculpture (Escultura de argila)
+* Glass Sculpture (Escultura de vidro)
+* Renaissance Painting (Pintura renascentista)
+* Baroque Painting (Pintura barroca)
+* Rococo Painting (Pintura rococó)
+* Neoclassical Painting (Pintura neoclássica)
+* Romanticism Painting (Romantismo)
+* Impressionist Painting (Impressionismo)
+* Post-Impressionist Painting (Pós-impressionismo)
+* Roman Mosaic (Mosaico romano)
+* Byzantine Mosaic (Mosaico bizantino)
+* Gothic Stained Glass (Vitral gótico)
+* Ukiyo-e Woodblock Print (Gravura japonesa)
+* Art Nouveau Illustration (Art nouveau)
+
+---
+
+### 📷 **Photo Styles & Effects**
+
+Efeitos fotográficos e técnicas visuais:
+
+* Tilt-Shift (Efeito miniatura)
+* Cross Processing (Processamento cruzado)
+* Infrared Photography (Fotografia infravermelha)
+* Black and White (Preto e branco)
+* Sepia Tone (Sépia)
+* HDR (Alta faixa dinâmica)
+* Bokeh (Fundo desfocado com luzes)
+* Fisheye Lens (Lente olho de peixe)
+* Macro Photography (Fotografia macro)
+
+---
+
+### 📸 **Camera Types**
+
+Diferentes câmeras que influenciam o estilo visual:
+
+* Canon EOS R5
+* iPhone 15
+* GoPro
+* DSLR
+* Mirrorless Camera (Câmera mirrorless)
+* Film Camera (Câmera de filme)
+* Disposable Camera (Câmera descartável)
+* Polaroid Camera
+* Action Camera (Câmera de ação)
+
+---
+
+### 🎥 **Shot Types**
+
+Ângulos e tipos de enquadramento:
+
+* Wide Angle (Grande angular)
+* High Angle (Ângulo alto)
+* Low Angle (Ângulo baixo)
+* Close Up (Close-up)
+* Medium Shot (Plano médio)
+* Long Shot (Plano longo)
+* Eye-Level Shot (Altura dos olhos)
+* Over-the-Shoulder (Sobre o ombro)
+* POV Shot (Ponto de vista)
+
+---
+
+### 📚 **Recursos Extras**
+
+Para aprimorar habilidades de geração de imagens:
+
+1. **Bestseller AI Image Generation Course** – Curso completo para aprender engenharia de prompts e criação de imagens/vídeos com IA.
+2. **Free AI Image Styles Ebook (4ª edição)** – Ebook gratuito com estilos e técnicas de prompts.
+3. **Master AI Videos - Video Prompt Ebook** – Ebook pago (\$9,90) para dominar geração de vídeos com IA.
+
+---
+
+### 💡 Destaque
+
+Este guia mostra como a escolha de **estilos artísticos**, **efeitos fotográficos**, **tipos de câmera** e **enquadramentos** pode mudar radicalmente o resultado de uma imagem gerada por IA. Ele serve como referência para construir prompts mais ricos e visuais.
+
+------------------------------
+
+MENSAGEM 2
+Autor: INEMA
+Data: 2025-07-06T03:34:28+00:00
+Texto:
+AI Image Style Guide for Beginners
+
+------------------------------
+
+MENSAGEM 3
+Autor: INEMA
+Data: 2025-07-06T03:34:27+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 4
+Autor: INEMA
+Data: 2025-07-06T03:34:26+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 5
+Autor: INEMA
+Data: 2025-07-06T03:34:26+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 6
+Autor: INEMA
+Data: 2025-07-06T03:34:26+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 7
+Autor: INEMA
+Data: 2025-07-06T03:34:26+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 8
+Autor: INEMA
+Data: 2025-07-06T03:34:26+00:00
+Texto:
+https://chatgpt.com/c/6869ec01-7e3c-8009-9618-7cec580c9f15
+Midia: MessageMediaWebPage
+
+------------------------------
+
+MENSAGEM 9
+Autor: INEMA
+Data: 2025-07-06T03:34:25+00:00
+Texto:
+1
+
+------------------------------
+
+MENSAGEM 10
+Autor: INEMA
+Data: 2025-07-06T03:34:20+00:00
+Texto: [Sem texto]
+
+------------------------------
+

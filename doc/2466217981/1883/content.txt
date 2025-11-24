@@ -1,0 +1,695 @@
+TOPICO 1883
+==================================================
+
+Titulo: Sem titulo
+Criado em: 2025-08-29 15:20:59+00:00
+
+Total de mensagens: 25
+Midias baixadas: 4
+
+--------------------------------------------------
+
+MENSAGEM 1
+Autor: INEMA
+Data: 2025-08-29T16:05:49+00:00
+Texto:
+**dicas e hacks práticos** para usar melhor o **Nano Banana (Gemini 2.5 Flash)** no dia a dia. Aqui estão os principais:
+
+---
+
+### 1. Para thumbnails e marketing
+
+* Use prompts diretos como:
+
+  * “Transforme esta foto em um thumbnail para YouTube com fundo espacial e título em contraste.”
+* Hack: sempre especifique **contraste de texto e posição centralizada** para evitar cortes estranhos.
+
+---
+
+### 2. Alterando roupas e estilos
+
+* Dá para mudar camisa, traje ou até todo um visual.
+* Hack: descreva o **estilo completo** (ex.: “traje indiano de casamento com joias e pulseiras”) em vez de só “roupa indiana”, pois o modelo adiciona detalhes extras.
+
+---
+
+### 3. Editando outdoors e produtos
+
+* É possível trocar ingredientes ou mensagens em anúncios.
+* Hack: combine **remoção + substituição** no mesmo prompt.
+
+  * Exemplo: “Remova os tomates do hambúrguer, mantenha tudo igual, troque o texto de Open Now para Closed Now.”
+
+---
+
+### 4. Fundos complexos
+
+* Nano Banana remove fundos difíceis mantendo cabelos e detalhes.
+* Hack: especifique “mantenha o cabelo natural e os detalhes do rosto” → isso melhora o resultado em comparação com só “remove background”.
+
+---
+
+### 5. Troca de cenário e composição
+
+* Você pode juntar elementos de diferentes imagens (ex.: pessoa + carro + estrada).
+* Hack: sempre peça **“mesma iluminação e sombras”** → o modelo tenta manter consistência no novo cenário.
+
+---
+
+### 6. Mudança de objetos
+
+* Exemplo: hambúrguer → pizza, carro azul → carro vermelho.
+* Hack: diga **“mantenha os mesmos toppings/detalhes”** ou “same background unchanged” para preservar contexto.
+
+---
+
+### 7. Arquitetura e interiores
+
+* Funciona bem para remodelagem rápida de ambientes.
+* Hack: faça prompts incrementais → primeiro mude piso, depois iluminação, depois teto. Isso mantém consistência.
+
+---
+
+### 8. Estilo artístico / cartoon
+
+* Hack: em vez de pedir “Pixar style” (bloqueado), peça **“animated cartoon style”** ou “2D hand-drawn style”.
+
+---
+
+### 9. Restauração de fotos antigas
+
+* Hack: combine “restore and colorize” no prompt → ele traz cor e corrige danos.
+* Dá para pedir também “place photo in elegant frame” para resultado final já pronto para exibir.
+
+---
+
+### 10. Evitar erros comuns
+
+* O modelo às vezes adiciona membros extras (ex.: 4 braços).
+* Hack: se acontecer, refine pedindo “correct anatomy with two arms only” ou “fix proportions naturally”.
+
+---
+
+### 11. Produção de Action Figures / Mockups
+
+* Hack: descreva em detalhes a embalagem (“blister pack, premium collectible toy, logo no canto, pose relaxada”). Quanto mais detalhado, mais fiel fica.
+
+---
+
+### 12. Truque para propaganda em outdoors
+
+* Hack: em vez de pedir “Times Square billboard”, peça **“display ad on a tall building in New York at night with neon lights”**. O modelo responde melhor a descrições mais visuais do que a lugares muito específicos.
+
+---
+
+------------------------------
+
+MENSAGEM 2
+Autor: INEMA
+Data: 2025-08-29T15:58:59+00:00
+Texto:
+o video é dublado
+
+------------------------------
+
+MENSAGEM 3
+Autor: INEMA
+Data: 2025-08-29T15:35:31+00:00
+Texto: [Sem texto]
+Midia: MessageMediaPhoto -> photo_1905_003.jpg
+
+------------------------------
+
+MENSAGEM 4
+Autor: INEMA
+Data: 2025-08-29T15:33:28+00:00
+Texto: [Sem texto]
+Midia: MessageMediaPhoto -> photo_1904_004.jpg
+
+------------------------------
+
+MENSAGEM 5
+Autor: INEMA
+Data: 2025-08-29T15:26:37+00:00
+Texto:
+com um casaco de inverno vermelho, depois faça ela segurá-lo na frente do corpo em outra variação."
+  (EN: "Dress this woman with a red winter coat, then make her hold it in front of her body in another variation.")
+
+------------------------------
+
+MENSAGEM 6
+Autor: INEMA
+Data: 2025-08-29T15:26:37+00:00
+Texto:
+Vou montar um **cheat sheet de prompts completos** (em português e inglês quando necessário) para você usar direto no **Nano Banana (Gemini 2.5 Flash)**. Todos foram extraídos ou adaptados dos hacks mostrados no vídeo:
+
+---
+
+### 1. Consistência de personagens
+
+* Prompt:
+  "Transforme esta foto, mantendo o mesmo rosto, mas mude a expressão para sorridente e adicione neve caindo no cenário."
+  (EN: "Keep the same face, but change the expression to smiling and add snowy weather in the background.")
+
+---
+
+### 2. Alteração de ambiente
+
+* Prompt:
+  "Coloque o personagem sentado em posição de meditação em um parque durante o outono, folhas laranjas ao fundo."
+  (EN: "Place the character in a meditation pose in a park during autumn, with orange leaves in the background.")
+
+---
+
+### 3. Troca de câmera e ângulo
+
+* Prompt:
+  "Mostre a mesma cena do mesmo personagem, mas vista de trás, como se a câmera estivesse atrás dele."
+  (EN: "Show the same scene of the same character, but from behind, as if the camera is behind him.")
+
+* Prompt alternativo:
+  "Vista aérea estilo drone mostrando o personagem caminhando em uma rua movimentada."
+  (EN: "Drone shot of the character walking on a busy street.")
+
+---
+
+### 4. Evitar censura
+
+* Prompt substituto para armas:
+  "Troque a lanterna que ela segura por uma pistola de água colorida."
+  (EN: "Replace the lantern she is holding with a colorful water gun.")
+
+* Prompt substituto para roupas:
+  "Vista a personagem com um maiô de banana em uma praia tropical."
+  (EN: "Dress the character in a banana swimsuit on a tropical beach.")
+
+---
+
+### 5. Produtos e marketing
+
+* Prompt:
+  "Mostre esta mulher segurando um frasco de creme anti-idade Rejuvena em close-up, com a marca visível e olhando diretamente para a câmera."
+  (EN: "Show this woman holding a Rejuvena anti-aging cream jar in a close-up, with the brand visible, looking directly at the camera.")
+
+* Prompt alternativo:
+  "Crie um pôster publicitário do meu café usando esta foto de bebida como destaque, em estilo art déco, com muito dourado e verde escuro."
+  (EN: "Create an ad poster for my cafe using this drink photo as the highlight, in art deco style, with lots of gold and dark green.")
+
+---
+
+### 6. Estilo artístico seletivo
+
+* Prompt:
+  "Mantenha o celeiro realista, mas transforme apenas a lanterna e o rosto da personagem em estilo 2D Ghibli."
+  (EN: "Keep the barn realistic, but turn only the lantern and the character's face into a 2D Ghibli style.")
+
+---
+
+### 7. Criação de universos cinematográficos
+
+* Prompt:
+  "Mostre o mesmo personagem correndo em direção à torre ao fundo, na mesma cidade da imagem original, mantendo roupas e estilo consistentes."
+  (EN: "Show the same character running towards the tower in the background, in the same city as the original image, keeping clothes and style consistent.")
+
+* Prompt alternativo:
+  "Crie quatro imagens sequenciais estilo B-roll do mesmo personagem em diferentes ângulos: close-up, de costas, meio corpo e plano aberto."
+  (EN: "Create four sequential B-roll style images of the same character from different angles: close-up, back view, mid-shot and wide shot.")
+
+---
+
+### 8. Redecoração e interiores
+
+* Prompt:
+  "Redecore esta sala em estilo art déco com atmosfera nostálgica, incluindo móveis clássicos e iluminação quente."
+  (EN: "Redecorate this room in art deco style with a nostalgic atmosphere, including classic furniture and warm lighting.")
+
+* Prompt alternativo:
+  "Transforme este apartamento em um estúdio gamer futurista com telas holográficas e iluminação de neon."
+  (EN: "Turn this apartment into a futuristic gamer studio with holographic screens and neon lighting.")
+
+---
+
+### 9. Estilo narrativo (storytelling visual)
+
+* Prompt:
+  "Mostre a mesma personagem lendo um livro antigo sob uma árvore em uma floresta, mantendo rosto e roupas consistentes com a imagem anterior."
+  (EN: "Show the same character reading an ancient book under a tree in a forest, keeping face and clothes consistent with the previous image.")
+
+---
+
+### 10. Teste de produtos em moda
+
+* Prompt:
+  "Vista esta mulher
+
+------------------------------
+
+MENSAGEM 7
+Autor: INEMA
+Data: 2025-08-29T15:25:54+00:00
+Texto:
+==============
+
+------------------------------
+
+MENSAGEM 8
+Autor: INEMA
+Data: 2025-08-29T15:25:51+00:00
+Texto:
+Aqui estão os principais **hacks e truques** mostrados e descobertos no vídeo do **Nano Banana do Google**:
+
+---
+
+### 1. Consistência de personagens
+
+* Use **sua própria foto** como base para testar consistência (rosto, roupas, detalhes).
+* Replique cenas mudando apenas **expressão ou ambiente** para obter universos cinematográficos.
+* Exemplo:
+
+  * “Make him laughing” → apenas muda expressão.
+  * “Same man, sad face, snowy weather” → consistência + cenário diferente.
+
+---
+
+### 2. Troca de câmera e ângulo
+
+* Para mudar o ponto de vista, use palavras como:
+
+  * **“from behind the subject”**
+  * **“over-the-shoulder”**
+  * **“drone shot”** (melhor que “top-down view”).
+* Isso cria variedade de ângulos sem perder o personagem.
+
+---
+
+### 3. Evitar censura
+
+* Palavras bloqueadas: “gun”, “shotgun”, “axe”, “bikini”, rostos de celebridades.
+* Hacks:
+
+  * Use **“water gun”** em vez de “shotgun”.
+  * Use **“swimsuit”** em vez de “bikini”.
+  * Permite figuras públicas genéricas (Trump, Messi), mas não rostos de famosos enviados por foto.
+
+---
+
+### 4. Texto em imagens
+
+* O modelo ainda falha em gerar texto legível.
+* Hack: crie a imagem no Nano Banana → depois edite o texto manualmente em outro software.
+* Exemplo: pôster de óculos → usou “Live in Light” e slogan inventado, mas misturou letras.
+
+---
+
+### 5. Melhorar produtos e marcas
+
+* **Close-up shots** funcionam melhor para exibir logomarcas em embalagens.
+* Hack: peça “extreme close-up of hand holding \[produto]”.
+* Isso aumenta a nitidez do produto e preserva a marca.
+
+---
+
+### 6. Criação de universos cinematográficos
+
+* Ao invés de repromptar do zero, continue editando a mesma cena.
+* Hack: use prompts incrementais como “change weather”, “make him running”, “show scene from behind”.
+* Isso economiza tempo e garante estética consistente.
+
+---
+
+### 7. Estilo e ambientação
+
+* Para aplicar um estilo sem perder realismo, especifique **elementos locais**.
+* Exemplo:
+
+  * “Make only lantern and her face look like 2D Ghibli illustration” → mistura estilos seletivos.
+
+---
+
+### 8. Produtos e moda
+
+* Hack: combine **imagem de produto + modelo** → peça para modelo usar, segurar ou aplicar.
+* Exemplo:
+
+  * “Replace bottle in his hand with Nano Banano energy drink”.
+  * “Woman wearing sunglasses product”.
+* Isso gera fotos de catálogo em segundos.
+
+---
+
+### 9. Redecoração e arquitetura
+
+* Hack: peça para transformar o mesmo ambiente em diferentes estilos.
+* Exemplo:
+
+  * “Redecorate apartment in art deco style with nostalgic vibe”.
+  * “Turn into futuristic gamer studio with holograms”.
+
+---
+
+### 10. Estilo narrativo / Storytelling
+
+* Hack: sempre **peça B-roll ou variação de câmera** → útil para quem cria vídeos e filmes.
+* Exemplo:
+
+  * “Provide a four panel image of B-roll footage of the subject in his environment”.
+
+---
+
+------------------------------
+
+MENSAGEM 9
+Autor: INEMA
+Data: 2025-08-29T15:24:26+00:00
+Texto:
+===============
+
+------------------------------
+
+MENSAGEM 10
+Autor: INEMA
+Data: 2025-08-29T15:24:22+00:00
+Texto:
+Aqui está o resumo do vídeo sobre o **Nano Banana do Google**:
+
+### Principais pontos
+
+* O **Nano Banana** é um novo modelo de IA gratuito do Google, da família **Gemini 2.5 Flash**, com foco em edição e geração de imagens.
+* Permite **edições avançadas em nível de Photoshop** apenas com texto, preservando alta consistência de personagens (90–95%), algo superior a MidJourney e GPT.
+* Funciona no **Gemini app** (selecionando Flash) e também no **Google AI Studio** (modo image preview).
+* Destaque para a capacidade de **manter personagens consistentes** em diferentes ângulos, poses e expressões, útil para criar universos cinematográficos com continuidade.
+
+### Testes práticos mostrados
+
+* Alterações em fotos pessoais: mudar expressão, adicionar objetos (banana, cachorro, chapéu), trocar cabelo, cenário e clima.
+* Criação de cenas completas: selfies, mudanças de cenário (cidade, floresta, neve), poses de meditação, etc.
+* Testes de ângulos de câmera: vista aérea, de trás, sobre o ombro, diferentes distâncias.
+* Geração de **sequências cinematográficas** com o mesmo personagem em várias cenas.
+* Edição de múltiplos personagens juntos com boa consistência.
+* Aplicações em **fotografia de produtos**: segurar objetos, mudar roupas, criar pôsteres publicitários automáticos.
+* Estilo e ambientação: transformar ambientes (apartamento em art déco, estúdio gamer futurista, selva, etc.), transferir estilos artísticos (Ghibli, 2D, etc.).
+
+### Limitações observadas
+
+* Problemas com **mãos e textos** em algumas situações.
+* Dificuldades em cenas complexas (relógios, copos cheios, rostos muito distantes).
+* **Censura/restrições**: bloqueia uso de rostos famosos, armas, violência, trajes sensuais (ex. “bikini” não aceita, mas “swimsuit” sim).
+* Em alguns casos, estética cai para estilo mais “3D game asset” ao invés de fotorrealismo.
+* Restrições no **formato**: modelo tende a manter o aspecto original, não gera bem formatos verticais para stories.
+
+### Potenciais aplicações
+
+* Criação rápida de anúncios, pôsteres e materiais de marketing.
+* Produção de curtas ou filmes em estilo cinematográfico com consistência entre cenas.
+* Visualização de interiores e arquitetura (redecoração de ambientes).
+* Moda e publicidade (mudança de roupas, acessórios, produtos).
+* Geração de moodboards e referências de estilo.
+
+---
+
+------------------------------
+
+MENSAGEM 11
+Autor: INEMA
+Data: 2025-08-29T15:23:58+00:00
+Texto:
+==============
+
+------------------------------
+
+MENSAGEM 12
+Autor: INEMA
+Data: 2025-08-29T15:23:55+00:00
+Texto:
+mas adicionou objetos novos.
+    * Qian → estilo mais “pintura”, perdeu realismo.
+  * Cena de noite: GPT se saiu melhor que Nano Banana.
+
+---
+
+### 13. Encerramento
+
+* Conclusões do criador:
+
+  * Nano Banana = melhor para **consistência de personagens** e **narrativas visuais contínuas**.
+  * GPT = melhor em **mudança de clima/luz**.
+  * Qian = mais limitado, perde realismo.
+  * Limitações: censura, erros em texto/mãos, dificuldade em objetos específicos.
+  * Potencial enorme em **publicidade, cinema, design e marketing digital**.
+
+---
+
+------------------------------
+
+MENSAGEM 13
+Autor: INEMA
+Data: 2025-08-29T15:23:55+00:00
+Texto:
+Vou detalhar cada sessão do vídeo do **Nano Banana** com exemplos de prompts usados, como se fosse um guia prático:
+
+---
+
+### 1. Introdução e apresentação do modelo
+
+* Modelo: **Gemini 2.5 Flash (Nano Banana)**
+* Foco: **edições em nível de Photoshop só com texto**, mantendo consistência.
+* Exemplo:
+
+  * Prompt: “Make him laughing” → mudou expressão facial mantendo o rosto original.
+
+---
+
+### 2. Testes com foto pessoal
+
+* Alterações rápidas em uma mesma imagem.
+* Exemplos:
+
+  * “Make him bald” → removeu chapéu e cabelo, mantendo rosto.
+  * “Make him eating a banana” → adicionou banana realista meio comida.
+  * “Give him a mohon hair and selfie with a dog” → trocou cabelo e adicionou cachorro de forma natural.
+
+---
+
+### 3. Alterações de cenário
+
+* Troca completa de ambiente mantendo personagem.
+* Exemplos:
+
+  * “Change to outdoor scene high up in a building” → personagem e cachorro no topo de prédio.
+  * “Make the weather snowy and face sad” → ambiente nevado + expressão de tristeza.
+  * “Meditation pose in autumn” → pose de meditação, folhas alaranjadas ao fundo.
+  * “Replace buildings with tall tree houses” → prédios substituídos por casas na árvore.
+
+---
+
+### 4. Testes de ângulos de câmera
+
+* Diferentes perspectivas da mesma cena.
+* Exemplos:
+
+  * “Show me same scene from behind the subject” → personagem visto de costas.
+  * “Over-the-shoulder view of orc archer” → ângulo de ombro de um orc mirando no exército élfico.
+  * “Drone shot” → vista aérea mais natural que “top-down view”.
+
+---
+
+### 5. Criação de universos cinematográficos
+
+* Sequência de imagens que parecem frames de um filme.
+* Exemplos:
+
+  * “Army marching towards a massive castle wall” → continuidade na narrativa.
+  * “Create B-roll footage” → gerou 4 ângulos diferentes do mesmo personagem (frente, costas, close-up, café na mão).
+
+---
+
+### 6. Edição com múltiplos personagens
+
+* Manutenção da consistência em grupo.
+* Exemplos:
+
+  * “Two women in an arcade → sitting on billiard table” → mantidas roupas, rostos e estilo.
+  * “Same women playing billiard” → poses ajustadas conforme pedido.
+  * “Selfie with cyber ape, jungle lady and me” → grupo consistente com roupas e logos preservados.
+
+---
+
+### 7. Fotografia de produtos
+
+* Aplicações práticas para marketing e anúncios.
+* Exemplos:
+
+  * “Replace bottle with Nano Banano energy drink” → trocou produto mantendo cena.
+  * “Close-up man holding energy drink” → foco no produto + rosto visível.
+  * “Woman wearing sunglasses product” → adicionou óculos preservando detalhes.
+  * “Create an ad poster” → gerou cartaz automaticamente.
+
+---
+
+### 8. Estilo e ambientação
+
+* Transformação de interiores e cenários.
+* Exemplos:
+
+  * “Redecorate apartment in art deco style” → móveis clássicos, vibe nostálgica.
+  * “Turn into futuristic gamer studio” → telas flutuantes, hologramas.
+  * “Jungle style studio” → ambiente cheio de plantas tropicais.
+
+---
+
+### 9. Transferência de estilo artístico
+
+* Aplicação de estilos visuais em partes da imagem.
+* Exemplos:
+
+  * “Make lantern and face look like 2D Ghibli” → só alguns elementos ganharam estilo anime.
+  * “Create four-panel epic sporting moments in same style” → manteve cores e estética do exemplo dado.
+
+---
+
+### 10. Limitações e problemas
+
+* Casos em que o modelo falhou ou foi bloqueado.
+* Exemplos:
+
+  * “Clock showing 3pm” → relógio gerado incorreto.
+  * “Full glass of wine” → nunca ficou correto.
+  * “Replace lantern with shotgun” → bloqueado por censura.
+  * “Bikini” → censurado, mas “swimsuit” funcionou.
+
+---
+
+### 11. Aplicações práticas e comerciais
+
+* Uso em publicidade, moda, arquitetura.
+* Exemplos:
+
+  * “Cafe drink → create ad poster” → pôster para café/bar com bebida autoral.
+  * “Anti-aging cream in beach vibe” → modelo aplicando creme com logomarca visível.
+  * “Mood board anti-aging cream” → geração de painel visual com diferentes cenas.
+
+---
+
+### 12. Comparação com outros modelos (GPT e Qian)
+
+* Testes de qualidade com a mesma imagem.
+* Exemplos:
+
+  * Cena de cidade → transformar em inverno:
+
+    * Nano Banana → bom, mas esqueceu árvores.
+    * GPT → neve realista,
+
+------------------------------
+
+MENSAGEM 14
+Autor: INEMA
+Data: 2025-08-29T15:22:19+00:00
+Texto:
+aistudio.google.com
+
+------------------------------
+
+MENSAGEM 15
+Autor: INEMA
+Data: 2025-08-29T15:21:20+00:00
+Texto:
+Segue a lista das sessões principais mostradas no vídeo do **Nano Banana do Google**:
+
+1. Introdução e apresentação do modelo (Gemini 2.5 Flash, foco em consistência)
+2. Testes com foto pessoal (expressões faciais, chapéu, cachorro, objetos, clima)
+3. Alterações de cenário (cidade, neve, outono, floresta, telhados, prédios → casas na árvore)
+4. Testes de ângulos de câmera (frente, lado, trás, aérea, drone, sobre o ombro)
+5. Criação de universos cinematográficos (sequências de cenas com mesmo personagem)
+6. Edição com múltiplos personagens (selfies em grupo, combinações com outros avatares)
+7. Fotografia de produtos (inserir objetos, segurar embalagens, anúncios publicitários automáticos)
+8. Estilo e ambientação (transformar interiores em art déco, gamer futurista, selva, etc.)
+9. Transferência de estilo artístico (2D Ghibli, ilustração parcial, moodboards)
+10. Limitações e problemas (mãos, textos, rostos distantes, restrições de censura)
+11. Aplicações práticas e comerciais (moda, publicidade, arquitetura, criação de conteúdos para redes sociais)
+12. Testes de consistência em comparação com outros modelos (GPT, Qian)
+13. Encerramento com observações sobre uso real e restrições.
+
+------------------------------
+
+MENSAGEM 16
+Autor: INEMA
+Data: 2025-08-29T15:21:13+00:00
+Texto:
+https://www.youtube.com/watch?v=-CEAj3Q_yd8
+Midia: MessageMediaWebPage
+
+------------------------------
+
+MENSAGEM 17
+Autor: INEMA
+Data: 2025-08-29T15:21:07+00:00
+Texto:
+Curso Nano Banana Google
+
+------------------------------
+
+MENSAGEM 18
+Autor: INEMA
+Data: 2025-08-29T15:21:07+00:00
+Texto:
+..
+
+------------------------------
+
+MENSAGEM 19
+Autor: INEMA
+Data: 2025-08-29T15:21:06+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 20
+Autor: INEMA
+Data: 2025-08-29T15:21:06+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 21
+Autor: INEMA
+Data: 2025-08-29T15:21:06+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 22
+Autor: INEMA
+Data: 2025-08-29T15:21:05+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 23
+Autor: INEMA
+Data: 2025-08-29T15:21:05+00:00
+Texto:
+https://chatgpt.com/c/68b1c39b-38f4-832f-a921-8dd456522447
+Midia: MessageMediaWebPage
+
+------------------------------
+
+MENSAGEM 24
+Autor: INEMA
+Data: 2025-08-29T15:21:04+00:00
+Texto:
+1
+
+------------------------------
+
+MENSAGEM 25
+Autor: INEMA
+Data: 2025-08-29T15:20:59+00:00
+Texto: [Sem texto]
+
+------------------------------
+

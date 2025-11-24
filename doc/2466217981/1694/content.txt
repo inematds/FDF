@@ -1,0 +1,132 @@
+TOPICO 1694
+==================================================
+
+Titulo: Sem titulo
+Criado em: 2025-07-05 01:16:10+00:00
+
+Total de mensagens: 9
+Midias baixadas: 0
+
+--------------------------------------------------
+
+MENSAGEM 1
+Autor: INEMA
+Data: 2025-07-05T01:16:26+00:00
+Texto:
+Aqui estão 10 tipos de lentes (ou efeitos de lentes) muito usados em fotografia, cinema e renderização 3D, com exemplos:
+
+1. **Grande Angular (Wide Angle)**
+
+   * Capta uma área ampla, ideal para paisagens ou interiores.
+   * Exemplo: 24mm em uma câmera DSLR.
+
+2. **Teleobjetiva (Telephoto)**
+
+   * Aproxima objetos distantes e comprime a profundidade.
+   * Exemplo: 200mm para fotografia de fauna.
+
+3. **Olho de Peixe (Fisheye)**
+
+   * Cria distorção circular com campo de visão extremo (até 180°).
+   * Exemplo: Fotos de skate com bordas curvas.
+
+4. **Macro**
+
+   * Para close-ups extremos com muitos detalhes.
+   * Exemplo: Fotografia de insetos ou flores.
+
+5. **Tilt-Shift**
+
+   * Inclina o plano focal, criando efeitos de miniatura ou foco seletivo.
+   * Exemplo: Paisagem urbana parecendo uma maquete.
+
+6. **Prime (Fixa)**
+
+   * Lente com distância focal fixa (ex.: 50mm), muito nítida e com grande abertura.
+   * Exemplo: Retratos com fundo desfocado (bokeh).
+
+7. **Zoom**
+
+   * Permite variar a distância focal (ex.: 24-70mm).
+   * Exemplo: Versátil para viagens e eventos.
+
+8. **Soft Focus**
+
+   * Produz imagens com bordas suaves e aparência etérea.
+   * Exemplo: Retratos românticos com luz difusa.
+
+9. **Anamórfica (Anamorphic)**
+
+   * Cria proporção cinematográfica widescreen e flares horizontais.
+   * Exemplo: Usada em filmes como “Blade Runner”.
+
+10. **Lensbaby (Criativa)**
+
+    * Lente artística que distorce seletivamente o foco.
+    * Exemplo: Retratos com áreas de nitidez isoladas e fundos “derretidos”.
+
+------------------------------
+
+MENSAGEM 2
+Autor: INEMA
+Data: 2025-07-05T01:16:18+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 3
+Autor: INEMA
+Data: 2025-07-05T01:16:18+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 4
+Autor: INEMA
+Data: 2025-07-05T01:16:17+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 5
+Autor: INEMA
+Data: 2025-07-05T01:16:17+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 6
+Autor: INEMA
+Data: 2025-07-05T01:16:17+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 7
+Autor: INEMA
+Data: 2025-07-05T01:16:16+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 8
+Autor: INEMA
+Data: 2025-07-05T01:16:16+00:00
+Texto:
+1
+
+------------------------------
+
+MENSAGEM 9
+Autor: INEMA
+Data: 2025-07-05T01:16:10+00:00
+Texto: [Sem texto]
+
+------------------------------
+

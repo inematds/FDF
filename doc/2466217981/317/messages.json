@@ -1,0 +1,210 @@
+[
+  {
+    "id": 1325,
+    "author": "Paulo",
+    "date": "2025-05-07T22:27:42+00:00",
+    "text": "Kkkk",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1155,
+    "author": "Bruno Neves",
+    "date": "2025-04-15T22:11:51+00:00",
+    "text": "Agora se vc quiser simplesmente gerar imagens, qualquer LLM vai te entregar isso. Imagen 3 no Gemini, DALL-E no ChatGPT…",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1154,
+    "author": "Bruno Neves",
+    "date": "2025-04-15T22:10:35+00:00",
+    "text": "Não é fácil nem simples.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1153,
+    "author": "Bruno Neves",
+    "date": "2025-04-15T22:10:20+00:00",
+    "text": "Isso na verdade é uma função de design generativo. Vc só consegue obter resultados utilizando a metodologia BIM. Vc precisa ter sua fachada modelada, com correta classificação da informação, e montar uma rotina no Dynamo (se usar Revit, por exemplo) para gerar possibilidades de fachadas.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1147,
+    "author": "P",
+    "date": "2025-04-15T15:49:53+00:00",
+    "text": "Boa tarde amigos! Estou procurando uma IA capaz de fazer projeções de reforma da construção civil, exemplo uma reforma de fachada. Alguém conhece?",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 911,
+    "author": "INEMA",
+    "date": "2025-03-18T04:30:09+00:00",
+    "text": "A melhor e o ideogram",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 882,
+    "author": "Ash",
+    "date": "2025-03-15T16:52:21+00:00",
+    "text": "Já tem ia que gera imagens com textos perfeitamente?",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 877,
+    "author": "Aquino",
+    "date": "2025-03-14T18:25:41+00:00",
+    "text": "nao esta mais disponivel?",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 872,
+    "author": "INEMA",
+    "date": "2025-03-14T03:52:45+00:00",
+    "text": "ou la no vip ou em cada grupo no duvidas",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 863,
+    "author": "Leo",
+    "date": "2025-03-14T01:25:37+00:00",
+    "text": "Boa noite pessoal... alguém me tira duas duvidas, onde vejo os debates dos membros em cada tema?\nE principalmente, tenho um mascote gerado por ia, que é o mascote da minha empresa, quero alterar as emoçoes e feições dele, sem perder a fidelidade... alguém sabe uma ferramenta?\n\nPeço desculpa se escrevi no lugar errado, não estou achando um local especifico pra isso.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 332,
+    "author": "INEMA",
+    "date": "2025-01-16T03:23:01+00:00",
+    "text": "Aqui está uma classificação geral de todos os modelos e ferramentas, agrupando-os por características e usos: \n \n--- \n \n### **1. Modelos de IA para Geração de Imagens**   \n- **Propósito**: Gerar imagens a partir de texto ou modificar imagens existentes. \n \n#### **Modelos Gerais e Realistas** \n- **Flux 1, 1.1, Dev, Schnell**: Geração de imagens realistas, com variantes para velocidade e detalhes. \n- **DALL·E 3, DALL·E 3 HD**: Geração de imagens detalhadas, com integração de texto. \n- **SDXL, SD3 Medium**: Evoluções do Stable Diffusion, com mais controle e qualidade. \n- **ComfyUI + Stable Diffusion (SDXL)**: Interface para utilização avançada do SDXL. \n- **Lumina-Next**: Geração de imagens estilizadas com realismo. \n \n#### **Modelos Artísticos e Criativos** \n- **MidJourney v6.0, v6.1**: Foco em estilos artísticos e criatividade visual. \n- **PixArt-Sigma**: Geração artística com estilos variados. \n \n#### **Modelos Multimodais** \n- **Ideogram v1, v2 Turbo**: Geração de imagens e gráficos com textos integrados. \n- **Playground v3**: Criação interativa e multimodal. \n- **Amazon Nova**: Geração de imagens, vídeos e gráficos integrados. \n \n--- \n \n### **2. Ferramentas e Plataformas para IA**   \n- **Propósito**: Hospedar, integrar ou facilitar o uso de modelos. \n \n#### **Plataformas de Hospedagem** \n- **replicate.com**, **fal.ai**: Hospedagem de modelos como Flux e outros. \n- **api.together.ai**: Integração de modelos em serviços personalizados. \n- **flux.api.airforce/**: API dedicada para o modelo Flux. \n \n#### **Ferramentas Criativas** \n- **adobefirefly**: Ferramenta da Adobe para criação gráfica com IA. \n- **Glif.app**: Plataforma simplificada para design visual. \n \n--- \n \n### **3. Modelos Específicos para Tarefas Detalhadas**   \n- **Propósito**: Atender a demandas específicas, como edição de imagens ou geração 3D. \n \n#### **Modelos de Edição** \n- **Modelos de Inpainting e Substituição de Elementos**: Modificações precisas em imagens, como trocar fundos ou detalhes. \n \n#### **Modelos 3D** \n- **Modelos de Geração 3D (NeRF, 3DGS)**: Criação de objetos e personagens tridimensionais detalhados. \n \n--- \n \n### **Resumo por Grupos** \n1. **Realismo**: Flux, DALL·E, SDXL, Lumina-Next. \n2. **Criatividade e Arte**: MidJourney, PixArt-Sigma, Playground, Ideogram. \n3. **Multimodalidade**: Amazon Nova, Ideogram. \n4. **Edição e Personalização**: Modelos de Inpainting, ferramentas específicas. \n5. **3D e Avançados**: Modelos de Geração 3D. \n6. **Plataformas de Suporte**: replicate.com, fal.ai, API Together, Adobe Firefly.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 331,
+    "author": "INEMA",
+    "date": "2025-01-16T03:22:47+00:00",
+    "text": "=============================",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 330,
+    "author": "INEMA",
+    "date": "2025-01-16T03:21:46+00:00",
+    "text": "Aqui está a lista que eu ainda não tinha citado: \n \n1. **Ideogram v1 e v2 Turbo**: Foco em geração de texto e gráficos em imagens. \n2. **MidJourney v6.0 e v6.1**: Atualizações da MidJourney com melhorias em estilos artísticos e realismo. \n3. **Playground v3**: Ferramenta avançada para criação interativa de imagens. \n4. **Dalle 3 HD**: Variante com resolução aprimorada do DALL·E 3. \n5. **SD3 Medium**: Versão otimizada de Stable Diffusion para qualidade média. \n6. **SDXL**: Evolução do Stable Diffusion com maior detalhamento e controle. \n7. **Lumina-Next**: Plataforma para geração de imagens estilizadas e multimídia. \n8. **PixArt-Sigma**: Modelo para criação artística com foco em desenhos estilizados. \n9. **Flux 1.1, Flux 1, Flux 1 Dev, Flux 1[schnell]**: Variantes de Flux com foco em realismo e velocidade de geração. \n10. **flux.api.airforce/**: API especializada para integração de modelos Flux. \n11. **replicate.com/black-forest-labs/flux-1.1-pro**: Versão Pro do Flux 1.1 disponível na plataforma Replicate. \n12. **fal.ai/models/fal-ai/flux-pro/v1.1/playground**: Variante do Flux para uso profissional. \n13. **api.together.ai/playground/image/black-forest-labs/FLUX.1-schnell**: Focado em geração rápida de imagens. \n14. **api.together.ai**: Ferramenta integrada para criação multimodal. \n15. **fal.ai**: Plataforma de IA para geração de imagens e textos. \n16. **replicate.com**: Plataforma para execução de modelos de IA. \n17. **ComfyUI + Stable Diffusion (SDXL)**: Interface avançada para uso de SDXL. \n18. **adobefirefly**: Ferramenta da Adobe para geração de imagens e gráficos. \n19. **Glif.app**: Plataforma amigável para criação de conteúdo visual.",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 329,
+    "author": "INEMA",
+    "date": "2025-01-16T03:20:53+00:00",
+    "text": "A razão pela qual não mencionei essas ferramentas ou modelos inicialmente é que muitas delas são variações ou integrações de modelos já amplamente conhecidos, como Stable Diffusion, Flux ou DALL·E, e não estavam diretamente destacadas nas fontes pesquisadas. Além disso: \n \n1. **Atualizações Incrementais**: Modelos como **MidJourney v6.0/v6.1**, **SDXL**, e **DALL·E 3 HD** são versões evoluídas de modelos já mencionados, mas suas diferenças específicas não foram destacadas inicialmente. \n    \n2. **Plataformas e APIs**: Muitas das listadas, como **replicate.com**, **fal.ai**, e **api.together.ai**, não são modelos propriamente ditos, mas plataformas ou APIs que hospedam ou integram modelos como Flux ou Stable Diffusion. Por isso, não foram classificadas como modelos únicos. \n \n3. **Especificidade Técnica**: Modelos como **Flux 1.1**, **Flux Dev**, e **Flux 1[schnell]** são variantes focadas em uso específico, como velocidade ou precisão, mas sem introduções amplas ou disruptivas. \n \n4. **Ferramentas Proprietárias**: Ferramentas como **adobefirefly** ou **Glif.app** são aplicações proprietárias que utilizam modelos de IA, mas não desenvolvem novas arquiteturas significativas.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 328,
+    "author": "INEMA",
+    "date": "2025-01-16T03:18:45+00:00",
+    "text": "Aqui está uma lista simples e direta dos principais modelos de IA existentes atualmente para geração de imagens: \n \n1. **DeepDream**: Pioneiro em imagens psicodélicas, visualiza padrões aprendidos por redes neurais. \n2. **GANs (ex.: StyleGAN, CycleGAN)**: Especialistas em realismo, criam rostos humanos e transformações de estilo. \n3. **DALL·E (1, 2, 3)**: Gera imagens detalhadas a partir de texto, com evolução no realismo e capacidade de edição. \n4. **CLIP**: Entende texto e imagem juntos, usado em modelos como DALL·E e Stable Diffusion. \n5. **Stable Diffusion**: Modelo aberto, gera imagens realistas e personalizáveis. \n6. **MidJourney**: Foco em imagens artísticas e estilizadas. \n7. **Imagen**: Google, gera imagens de alta qualidade a partir de texto. \n8. **DreamBooth**: Personalização de imagens com base em dados específicos. \n9. **Runway Gen-2**: Geração de imagens e vídeos com estilo cinematográfico. \n10. **Leonardo.ai**: Design de jogos e arte conceitual, focado em qualidade. \n11. **ControlNet**: Controle preciso de poses e estilos. \n12. **DeepFloyd IF**: Detalhes textuais e realismo fotográfico. \n13. **Flux.1**: Geração de imagens ultrarrealistas. \n14. **Amazon Nova**: Ferramentas para imagens, vídeos e multimodalidade. \n15. **Gemini 2.0**: Multimodal (texto, imagem e áudio), integração com tarefas automáticas. \n16. **Modelos de Geração 3D**: Criação de objetos e personagens tridimensionais. \n17. **Recraft V3**: Design visual simplificado com IA.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 327,
+    "author": "INEMA",
+    "date": "2025-01-16T03:17:54+00:00",
+    "text": "Aqui está a lista dos modelos lançados após 2023, com descrições simples: \n \n1. **DALL·E 3 (2024)**: Gera imagens detalhadas e realistas a partir de texto, com integração precisa de elementos como texto nas imagens. \n \n2. **Flux.1 (2024)**: Modelo aberto para geração de imagens ultrarrealistas, focado em detalhes humanos e objetos sem falhas. \n \n3. **Amazon Nova (2024)**: Plataforma multimodal com ferramentas para geração de imagens (Nova Canva) e vídeos (Nova Reel), integrada à nuvem. \n \n4. **Gemini 2.0 (2024)**: Modelo multimodal do Google que combina texto, imagem e áudio, com agentes autônomos para realizar tarefas. \n \n5. **Runway Gen-2 (2024)**: Evolução para criação de imagens e vídeos com estilo cinematográfico e transições suaves. \n \n6. **Recraft V3 (2024)**: Plataforma de design visual que facilita a criação e edição de imagens para designers. \n \n7. **Modelos de Geração 3D (2024)**: Criam objetos tridimensionais detalhados a partir de texto ou imagens 2D, usando NeRF e 3DGS. \n \n8. **DeepFloyd IF (2024)**: Modelo de difusão avançado com foco em realismo fotográfico e precisão textual. \n \n9. **Modelos de Inpainting e Substituição de Elementos (2024)**: Permitem editar partes específicas de imagens, como fundos ou roupas, mantendo a coerência visual.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 326,
+    "author": "INEMA",
+    "date": "2025-01-16T03:16:12+00:00",
+    "text": "https://gamma.app/docs/rnqmw4kx1mhq1yy",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 325,
+    "author": "INEMA",
+    "date": "2025-01-16T03:15:43+00:00",
+    "text": "de texto. \n \n--- \n \n### 13. **LLaVA (2023)** \n   - **Criado por**: Equipe de pesquisadores de IA. \n   - **Características**: \n     - Combinação de linguagem visual e texto para criar explicações detalhadas em imagens. \n     - Focado em interatividade e multimodalidade. \n \n--- \n \n### Comparação Resumida \n- **GANs**: Realismo e faces. \n- **DALL·E**: Texto para imagem, aberto e versátil. \n- **Stable Diffusion**: Customizável, eficiente e de código aberto. \n- **MidJourney**: Arte estilizada. \n- **Imagen**: Precisão e qualidade extrema. \n- **DreamBooth**: Personalização específica. \n- **ControlNet**: Controle detalhado.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 324,
+    "author": "INEMA",
+    "date": "2025-01-16T03:15:43+00:00",
+    "text": "Aqui está uma lista dos principais modelos de IA para geração de imagens, junto com suas características principais e contribuições para a evolução dessa tecnologia: \n \n### 1. **DeepDream (2015)** \n   - **Criado por**: Google. \n   - **Características**: \n     - Primeiro modelo popular para gerar imagens psicodélicas a partir de redes neurais. \n     - Baseado em CNNs (Redes Neurais Convolucionais) pré-treinadas para visão computacional. \n     - Usa visualização dos padrões aprendidos pelas redes para transformar imagens. \n \n--- \n \n### 2. **GANs (****2014-2018****)** \n   - **Criado por**: Ian Goodfellow. \n   - **Características**: \n     - Rede adversarial generativa com dois componentes: gerador e discriminador. \n     - Pioneira na criação de imagens realistas. \n     - Variantes notáveis: \n       - **StyleGAN (2018)**: Especialista em criar rostos humanos realistas. \n       - **Pix2Pix**: Transforma rascunhos em imagens completas. \n       - **CycleGAN**: Realiza transformações de estilo entre domínios, como foto para pintura. \n \n--- \n \n### 3. **DALL·E (****2021-2022****)** \n   - **Criado por**: OpenAI. \n   - **Características**: \n     - Gera imagens a partir de descrições em linguagem natural. \n     - Baseado no modelo Transformer. \n     - Evolução: \n       - **DALL·E 1**: Primeira versão com limitações em resolução e criatividade. \n       - **DALL·E 2**: Melhorou significativamente a qualidade e o realismo, permitindo edições em imagens geradas (inpainting). \n \n--- \n \n### 4. **CLIP (2021)** \n   - **Criado por**: OpenAI. \n   - **Características**: \n     - Modelo complementar que alinha imagens e texto em um mesmo espaço vetorial. \n     - Usado como backbone em sistemas como DALL·E e Stable Diffusion para entender descrições textuais. \n \n--- \n \n### 5. **Stable Diffusion (2022)** \n   - **Criado por**: Stability AI. \n   - **Características**: \n     - Modelo de difusão que gera imagens a partir de texto. \n     - Menos exigente em termos de hardware comparado a outros modelos de IA. \n     - Código aberto, permitindo ampla personalização e desenvolvimento comunitário. \n \n--- \n \n### 6. **MidJourney (2022)** \n   - **Criado por**: Equipe independente. \n   - **Características**: \n     - Gera imagens estilizadas com alto apelo artístico. \n     - Reconhecido por sua facilidade de uso via Discord e pela ênfase em criatividade. \n     - Focado em ajustes rápidos e resultados otimizados para designs visuais. \n \n--- \n \n### 7. **Imagen (2022)** \n   - **Criado por**: Google Research. \n   - **Características**: \n     - Utiliza o modelo Transformer para criar imagens altamente detalhadas. \n     - Foco em qualidade e precisão no alinhamento entre texto e imagem. \n     - Resultados superam muitos concorrentes em benchmarks. \n \n--- \n \n### 8. **DreamBooth (2022)** \n   - **Criado por**: Google Research e Universidade de Tel Aviv. \n   - **Características**: \n     - Permite personalizar a geração de imagens treinando o modelo com imagens específicas. \n     - Ideal para criar variações de objetos ou pessoas específicas. \n \n--- \n \n### 9. **Runway Gen-2 (2023)** \n   - **Criado por**: Runway ML. \n   - **Características**: \n     - Geração de imagens e vídeos a partir de texto. \n     - Especialista em estilos cinematográficos e transições suaves para multimídia. \n \n--- \n \n### 10. **Leonardo.ai**** (2023)** \n   - **Criado por**: Equipe Leonardo. \n   - **Características**: \n     - Interface amigável para artistas e criadores. \n     - Ajustes rápidos com presets de estilo. \n     - Focado em qualidade para design de jogos e arte conceitual. \n \n--- \n \n### 11. **ControlNet (2023)** \n   - **Criado por**: Universidade da Califórnia, Berkeley. \n   - **Características**: \n     - Complementa Stable Diffusion com controle preciso de poses, estilos e formatos. \n     - Ideal para modificar detalhes e criar variações específicas. \n \n--- \n \n### 12. **DeepFloyd IF (2023)** \n   - **Criado por**: DeepFloyd. \n   - **Características**: \n     - Modelo que combina difusão com foco em detalhes textuais complexos. \n     - Produz imagens com qualidade fotográfica, mantendo precisão na interpretação",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 323,
+    "author": "INEMA",
+    "date": "2025-01-16T03:15:24+00:00",
+    "text": "9",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 322,
+    "author": "INEMA",
+    "date": "2025-01-16T03:15:23+00:00",
+    "text": "7",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 321,
+    "author": "INEMA",
+    "date": "2025-01-16T03:15:22+00:00",
+    "text": "5",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 320,
+    "author": "INEMA",
+    "date": "2025-01-16T03:15:22+00:00",
+    "text": "4",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 319,
+    "author": "INEMA",
+    "date": "2025-01-16T03:15:21+00:00",
+    "text": "2",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 318,
+    "author": "INEMA",
+    "date": "2025-01-16T03:15:21+00:00",
+    "text": "https://chatgpt.com/c/678878ea-7ec0-8009-b88c-d792d28cb785",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 317,
+    "author": "INEMA",
+    "date": "2025-01-16T03:15:12+00:00",
+    "text": "",
+    "has_media": false,
+    "media_type": null
+  }
+]

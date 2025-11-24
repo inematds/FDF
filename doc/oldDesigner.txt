@@ -1,0 +1,95 @@
+
+
+# 🎨 **10 Pilares Fundamentais para Criar Imagens Impactantes**
+
+## **1. Fundamentos de Design (Design Basics)**
+
+Entender princípios como **equilíbrio, contraste, alinhamento, proporção, hierarquia e espaçamento**.
+Esses fundamentos tornam qualquer imagem automaticamente mais profissional.
+
+---
+
+## **2. Teoria das Cores**
+
+Saber usar cores que combinam, transmitam emoção e direcionem o olhar.
+Inclui: **harmonias de cor, psicologia das cores, saturação, brilho e contraste.**
+
+---
+
+## **3. Tipografia**
+
+Escolher e combinar fontes de forma estratégica.
+Dominar: **hierarquia tipográfica, peso das fontes, espaçamento, legibilidade e combinações seguras.**
+
+---
+
+## **4. Composição e Layout**
+
+Saber organizar elementos no espaço visual.
+Inclui: **Regra dos terços, linhas de força, grid, fluxo visual e áreas de respiro.**
+
+---
+
+## **5. Softwares e Ferramentas**
+
+Dominar pelo menos uma ferramenta principal:
+
+* **Photoshop**
+* **Illustrator**
+* **Canva** (para iniciantes)
+* **Figma**
+  E ter noção de ferramentas de **IA para imagem**, como Midjourney, DALL·E, Recraft, etc.
+
+---
+
+## **6. Direção de Arte**
+
+Saber criar um **conceito visual** coerente: estilo, tom, composição, atmosfera.
+É a “alma” de imagens verdadeiramente impactantes.
+
+---
+
+## **7. Fotografia e Iluminação (mesmo para imagens de IA)**
+
+Mesmo criando imagens com IA, é essencial entender:
+
+* **Ângulos**
+* **Distância focal**
+* **Tipos de luz**
+* **Sombras**
+* **Profundidade de campo**
+  Isso melhora MUITO prompts e edições.
+
+---
+
+## **8. Edição e Pós-Produção**
+
+Ajustar imagem é uma habilidade-chave:
+
+* **Color grading**
+* **Correção de cor**
+* **Texturas**
+* **Nitidez**
+* **Efeitos visuais sutis**
+
+---
+
+## **9. Storytelling Visual**
+
+Toda imagem impactante conta uma história ou transmite uma mensagem clara.
+Designer bom sempre se pergunta:
+👉 *“O que quero que a pessoa sinta ao ver isso?”*
+
+---
+
+## **10. Tendências e Referências**
+
+Estar sempre atualizado com:
+
+* Moodboards
+* Portfólios de designers
+* Sites como Behance, Dribbble e Pinterest
+* Tendências visuais e estilos novos
+  Sem referência, não existe criatividade consistente.
+
+---

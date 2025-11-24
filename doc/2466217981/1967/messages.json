@@ -1,0 +1,219 @@
+[
+  {
+    "id": 2017,
+    "author": "INEMA",
+    "date": "2025-09-13T00:52:23+00:00",
+    "text": "este link é so referencia minha das fontes",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2012,
+    "author": "Murilo",
+    "date": "2025-09-12T18:33:18+00:00",
+    "text": "Alguém tem exemplos desse uso, pra compartilhar?",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2011,
+    "author": "Léo Pit Bull",
+    "date": "2025-09-12T17:52:03+00:00",
+    "text": "Esse link tá dando erro",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2003,
+    "author": "INEMA",
+    "date": "2025-09-12T05:07:47+00:00",
+    "text": "",
+    "has_media": true,
+    "media_type": "MessageMediaPhoto",
+    "media_file": "photo_2003_004.jpg"
+  },
+  {
+    "id": 2002,
+    "author": "INEMA",
+    "date": "2025-09-12T05:07:36+00:00",
+    "text": "No vídeo ele deixa escapar vários **hacks e truques de workflow** que são a base do método dele. Aqui está a lista organizada:\n\n---\n\n### Hacks citados no vídeo Nano Banana\n\n1. **Não misture imagens direto no Gemini**\n\n   * Ele mostra que quando você envia duas imagens e pede para “mesclar”, o resultado quase sempre sai ruim.\n   * Hack: em vez disso, **use o ChatGPT para analisar uma imagem de referência e escrever o prompt descritivo** → depois só envia a imagem principal + prompt no Gemini.\n\n2. **Use ChatGPT como engenheiro de prompts**\n\n   * Hack: peça ao ChatGPT para criar prompts descritivos que façam o Gemini “pensar” e analisar a imagem.\n   * Resultado: mais consistência, menos tentativas frustradas.\n\n3. **Estilo Transfer (style transfer)**\n\n   * Preserve o rosto ou objeto original e apenas aplique **o estilo/cenário desejado**.\n   * Funciona melhor do que pedir para recriar a pessoa em outra cena (que muitas vezes gera rostos errados).\n\n4. **Prompt único e reaproveitável**\n\n   * Hack: crie **um prompt bem estruturado** que funcione para qualquer imagem.\n   * Exemplo: mesmo prompt usado para diferentes coaches → gera fotos de coaching consistentes sem precisar refazer instruções.\n\n5. **Branded prompts (prompts da marca)**\n\n   * Criar prompts que sempre retornem o estilo visual da marca (ex.: cores, cenários, estética).\n   * Assim você gera imagens infinitas no mesmo padrão de branding sem contratar fotógrafo/designer.\n\n6. **Use variáveis no prompt**\n\n   * Adicionar parâmetros como iluminação, ângulo ou fundo.\n   * Hack: um mesmo prompt pode gerar **múltiplas versões automáticas** (ex.: luz lateral, luz difusa, frontal).\n\n7. **Aproveitar fotos antigas**\n\n   * Hack: usar Nano Banana para pegar fotos velhas e transformá-las em novas fotos com estilo padronizado da marca.\n   * Cria um “ensaio fotográfico virtual” sem custo extra.\n\n8. **Use AI Studio se o Gemini bloquear**\n\n   * Se o Gemini mostrar limitações de segurança (copyright, filtros), vá para o **Google AI Studio**, que usa o mesmo modelo Nano Banana mas tem menos bloqueios.\n\n9. **Não edite dentro do Gemini**\n\n   * Hack: se o resultado não ficou bom, não perca tempo refinando dentro do Gemini.\n   * Volte para o ChatGPT, explique o que precisa ajustar → receba um prompt melhorado → rode de novo no Gemini.\n\n10. **Crie thumbnails automáticas**\n\n* Hack: use prompts que incluam o **título do vídeo ou tema** → o Nano Banana gera thumbnails de YouTube prontas em um clique.\n* Exemplo: “Vídeo sobre copywriting” → o AI adiciona elementos de dinheiro e vendas automaticamente.\n\n11. **Gerar variações a partir de vídeo**\n\n* Hack: tire vários frames de um vídeo seu (com expressões diferentes) e use esses frames como base para gerar múltiplos resultados.\n* Assim você tem mais variedade de expressões sem precisar fazer fotos novas.\n\n---",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2001,
+    "author": "INEMA",
+    "date": "2025-09-12T05:04:58+00:00",
+    "text": "==================",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2000,
+    "author": "INEMA",
+    "date": "2025-09-12T05:04:55+00:00",
+    "text": "Vou preparar os 7 prompts no **formato certo para usar no ChatGPT antes de enviar ao Gemini (Nano Banana)**.\n\nA lógica é: você pede para o ChatGPT **reescrever e detalhar** os prompts, deixando-os inteligentes, descritivos e prontos para rodar no Gemini.\n\n---\n\n## 1. Transformação de Cliente (antes/depois estilo super-herói)\n\n**Prompt para ChatGPT**\n\"Reescreva um prompt para o Gemini que, a partir de uma foto de um cliente, mostre uma transformação 'antes e depois'.\nNo 'depois', coloque o cliente em um palco iluminado, em pose de super-herói, mantendo o rosto original.\nInclua iluminação dramática, cores vibrantes e atmosfera de evolução pessoal.\"\n\n---\n\n## 2. Cena de Coaching Online\n\n**Prompt para ChatGPT**\n\"Escreva um prompt para o Gemini que insira a pessoa da foto em uma cena realista de coaching online.\nDescreva fundo profissional, ambiente moderno, iluminação de escritório e elementos de chamada de vídeo.\nO rosto deve permanecer fiel à foto, transmitindo autoridade e proximidade.\"\n\n---\n\n## 3. Transferência de Estilo (Podcast Profissional)\n\n**Prompt para ChatGPT**\n\"Reescreva um prompt para o Gemini que aplique estilo de podcast profissional a uma foto.\nInclua fundo escuro, iluminação de estúdio, microfone em primeiro plano e acabamento cinematográfico.\nO rosto original deve ser preservado sem alterações expressivas.\"\n\n---\n\n## 4. Mockup Automático de Site ou App\n\n**Prompt para ChatGPT**\n\"Escreva um prompt para o Gemini que transforme um screenshot fornecido em um mockup polido.\nMostre a interface em uma tela realista (laptop ou smartphone), sobre fundo clean e minimalista,\ncom reflexos sutis e acabamento de apresentação profissional.\"\n\n---\n\n## 5. Cena Cinematográfica (O Poderoso Chefão)\n\n**Prompt para ChatGPT**\n\"Reescreva um prompt para o Gemini que crie uma cena cinematográfica inspirada em filmes de máfia como 'O Poderoso Chefão'.\nA pessoa da foto deve aparecer com feições preservadas, usando terno preto elegante, com iluminação lateral dramática\ne fundo esfumaçado em clima de suspense.\"\n\n---\n\n## 6. Thumbnail Automática para YouTube\n\n**Prompt para ChatGPT**\n\"Escreva um prompt para o Gemini que gere uma thumbnail de YouTube chamativa.\nInclua rosto visível da pessoa da foto, texto grande em destaque com o título 'Nano Banana Image Editing – Build Your Brand Faster',\ncores contrastantes (amarelo, vermelho, branco) e elementos visuais de setas e ícones populares em thumbnails.\"\n\n---\n\n## 7. Variações Automáticas (Branding Consistente)\n\n**Prompt para ChatGPT**\n\"Reescreva um prompt para o Gemini que gere 3 variações da mesma foto em estilo corporativo para LinkedIn.\nAltere apenas iluminação (luz lateral, superior, difusa) e ângulos (frontal, ¾ perfil, close-up),\nmantendo fundo e identidade visual iguais para consistência de marca.\"\n\n---\n\n### Como usar:\n\n1. Copie um dos prompts acima e cole no ChatGPT.\n2. Ele vai devolver um **prompt refinado e detalhado**.\n3. Esse novo prompt você joga no Gemini (Nano Banana) junto com a imagem.\n\n---",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1999,
+    "author": "INEMA",
+    "date": "2025-09-12T05:03:41+00:00",
+    "text": "=======================",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1998,
+    "author": "INEMA",
+    "date": "2025-09-12T05:03:38+00:00",
+    "text": "Vou te explicar a diferença prática entre usar os prompts **direto no Gemini (Nano Banana)** e passar **antes pelo ChatGPT**.\n\n---\n\n### 1. Prompt “Cru” (direto no Gemini/Nano Banana)\n\n* Você cola exatamente como está no Gemini.\n* O modelo vai tentar interpretar sozinho.\n* Funciona bem para casos simples (ex.: “coloque meu cachorro como super-herói”).\n* Problema: resultados podem variar muito, porque o Gemini pode não entender todos os detalhes que você imaginou.\n\n**Exemplo**\n\n```Crie uma thumbnail para YouTube com o texto: \"Nano Banana Image Editing – Build Your Brand Faster\".  \nMostre meu rosto claramente, use cores chamativas e estilo de thumbnail popular.  ```\n\n→ Você joga direto no Gemini com uma imagem e torce para ele entender.\n\n---\n\n### 2. Prompt “Preparado no ChatGPT” (workflow recomendado no vídeo)\n\n* Você pede para o ChatGPT r**eescrever o prompt de forma estruturada e inteligente.**\n* O ChatGPT “descarrega” o trabalho mental: ele descreve cenários, luz, ângulo, estilo, detalhes visuais de forma que o Gemini compreenda melhor.\n* Resultado: muito mais consistente, porque o Gemini recebe instruções mais claras e completas.\n* Vantagem: você pode refinar o prompt com ChatGPT (ex.: “ficou muito escuro, coloque mais luz suave no rosto”) e gerar uma nova versão.\n\nE**xemplo (ChatGPT preparando o prompt)\n**Você diz:\n“ChatGPT, analise este screenshot e escreva um prompt para o Gemini que crie um mockup moderno e realista.”\n\nO ChatGPT devolve algo como:\n\nA```nalise a captura de tela fornecida e insira-a em um mockup de laptop moderno sobre uma mesa de madeira clara,  \ncom fundo minimalista e iluminação natural suave.  \nInclua reflexos sutis na tela e bordas realistas do dispositivo para transmitir profissionalismo.  \nO estilo deve ser clean, semelhante a apresentações de design de grandes agências.\n```\n→ Esse prompt, quando jogado no Gemini, tende a acertar de primeira.\n\n---\n\n### Diferença em resumo\n\n* Di**reto no Gemini =** rápido, simples, mas pode sair inconsistente.\n* Pa**ssando pelo ChatGPT antes =** mais tempo no início, mas gera prompts inteligentes → resultados mais consistentes, estilo reaproveitável e pronto para escalar.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1997,
+    "author": "INEMA",
+    "date": "2025-09-12T05:02:58+00:00",
+    "text": "=================",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1996,
+    "author": "INEMA",
+    "date": "2025-09-12T05:02:54+00:00",
+    "text": "Vou criar um **kit de prompts prontos**, baseados exatamente nos exemplos e usos que o autor cita no vídeo do Nano Banana. Eles estão estruturados para funcionar no Gemini (Nano Banana), mas sempre podem ser refinados via ChatGPT antes de enviar.\n\n---\n\n### 1. Transformação de Cliente (antes/depois estilo super-herói)\n\n```Analise a imagem fornecida e crie uma versão transformada do mesmo personagem como se tivesse atingido seu melhor desempenho físico e mental.  \nMostre o \"depois\" em um palco iluminado, em pose de super-herói, mantendo as feições originais do rosto.  \nAplique iluminação dramática e cores vibrantes para transmitir evolução e poder.```\n\n---\n\n### 2. Cena de Coaching Online\n\nA```nalise a foto fornecida e coloque a pessoa em uma cena realista de coaching online:  \n- Mostre-a sentada em frente ao computador, com um fundo profissional e limpo.  \n- Inclua elementos visuais de uma chamada de vídeo (tela dividida, câmera ligada).  \n- Crie uma atmosfera acolhedora, com boa iluminação e cenário de escritório moderno.\n```\n---\n\n### 3. Transferência de Estilo (Podcast Profissional)\n\nPe```gue a imagem fornecida e mantenha o rosto exatamente igual, sem alterar expressões.  \nAplique o estilo de uma sessão fotográfica profissional de podcast:  \n- Fundo escuro com iluminação de estúdio.  \n- Microfone de podcast visível em primeiro plano.  \n- Estilo moderno e consistente, como capa de conteúdo de mídia digital.  \n- Cores neutras e acabamento cinematográfico.\n\n```---\n\n### 4. Mockup Automático de Site ou App\n\nAna```lise o screenshot fornecido e crie um mockup polido e profissional:  \n- Coloque a interface em uma tela de laptop ou smartphone realista.  \n- Aplique fundo minimalista e clean, simulando um ambiente moderno de trabalho.  \n- Adicione leves reflexos e sombreamento para parecer uma apresentação de design de alta qualidade.  \n- Mantenha as cores e identidade originais do site.\n\n-```--\n\n### 5. Cena Cinematográfica (O Poderoso Chefão)\n\nCrie``` uma cena cinematográfica inspirada em pôsteres clássicos de filmes de máfia, como \"O Poderoso Chefão\".  \nUse iluminação escura, fundo dramático e atmosfera de suspense.  \nColoque a pessoa da imagem fornecida como personagem principal, mantendo as feições originais.  \nVista-a com terno preto elegante e adicione detalhes como luz lateral suave e fundo esfumaçado.\n\n--```-\n\n### 6. Thumbnail Automática para YouTube\n\nAnali```se a imagem fornecida e crie uma thumbnail para YouTube com estilo chamativo:  \n- Texto grande e em destaque com o tema do vídeo: \"Nano Banana Image Editing – Build Your Brand Faster\".  \n- Use cores contrastantes (amarelo, vermelho, branco) e estilo de thumbnail popular.  \n- Inclua setas, ícones e elementos que chamem a atenção, mas mantenha o rosto do criador bem visível e central.  \n- Estilo profissional, semelhante a canais de tecnologia e marketing de grande porte.\n\n---```\n\n### 7. Variações Automáticas (para consistência de branding)\n\nAnalis```e a imagem fornecida e aplique o mesmo estilo fotográfico descrito abaixo, mas crie 3 variações automáticas:  \n- Diferentes iluminações (luz lateral, luz superior, luz suave difusa).  \n- Diferentes ângulos de câmera (frontal, ¾ perfil, close-up).  \n- Mantenha o mesmo fundo e a identidade visual para consistência.  \nEstilo: retrato corporativo profissional para LinkedIn e materiais de marca.```",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1995,
+    "author": "INEMA",
+    "date": "2025-09-12T05:01:56+00:00",
+    "text": "===============",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1994,
+    "author": "INEMA",
+    "date": "2025-09-12T05:01:54+00:00",
+    "text": "* Não usar Gemini/Nano Banana para “mesclar imagens direto”.\n* Usar **ChatGPT para analisar a imagem + escrever o prompt detalhado** → depois jogar no Nano Banana.\n* O prompt deve pedir que a IA **pense e faça a análise**, não que o usuário descreva tudo manualmente.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1993,
+    "author": "INEMA",
+    "date": "2025-09-12T05:01:52+00:00",
+    "text": "===================",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1991,
+    "author": "INEMA",
+    "date": "2025-09-12T05:00:11+00:00",
+    "text": "### Exemplos e estilos de prompts mencionados\n\n1. **Filtros personalizados e transformações**\n\n   * Criar filtros que transformam uma foto simples (pessoa, cachorro, objeto) em algo como:\n\n     * “Transformar um cachorro em super-herói.”\n     * “Criar uma versão futura de um cliente em palco, após transformação.”\n   * Usados em reuniões/vendas para mostrar antes/depois de forma impactante.\n\n2. **Cenários de Coaching e Marketing**\n\n   * Prompt para gerar uma cena de **coaching online** a partir de uma foto do coach.\n   * Reverter a cena: colocar a foto do cliente como participante da sessão.\n   * Resultado: imagens para páginas de vendas sem precisar de sessão de fotos.\n\n3. **Transferência de estilo (style transfer)**\n\n   * Prompt para **preservar a imagem original** e só aplicar estilo/ambiente.\n   * Exemplo: aplicar estilo de “podcast profissional” a uma foto simples.\n   * Usado para criar branding consistente em thumbnails, fotos de equipe, etc.\n\n4. **Mockups e branding de sites**\n\n   * Prompt para analisar um **screenshot de site** e gerar um mockup bonito em poucos segundos.\n   * Exemplo citado: “Digitize any screenshot into a beautiful mockup on brand.”\n   * Útil para criar apresentações e material de marketing sem design manual.\n\n5. **Cenas cinematográficas**\n\n   * Exemplo com o **pôster do filme O Poderoso Chefão**:\n\n     * Criar prompt para gerar uma cena nesse estilo e depois colocar a pessoa dentro dessa cena.\n   * ChatGPT foi usado para escrever o prompt descrevendo a cena sem precisar enviar a imagem para o Gemini.\n\n6. **YouTube thumbnails automáticas**\n\n   * Prompt estruturado para gerar thumbnails a partir do tema do vídeo:\n\n     * Exemplo: “O vídeo é sobre edição de imagens com Nano Banana para acelerar branding.”\n     * Resultado: thumbnail pronta com elementos como “Nano Banana Image Editing – Build Your Brand Faster”.\n   * Outro exemplo:\n\n     * Texto dado: “Sales copywriting”.\n     * Resultado: thumbnail com elementos visuais de dinheiro e copywriting.\n\n7. **Uso de variáveis em prompts**\n\n   * Incluir variações de luz, cenários ou ângulos diretamente no prompt para gerar múltiplas versões automáticas.\n   * Exemplo: variar iluminação da cena para testar consistência em fotos de marca.\n\n### Hack importante\n\nEle reforça que o segredo é:\n\n* Não usar Gemini/Nano Banana para “mesclar imagens direto”.\n* Usar **ChatGPT para analisar a imagem + escrever o prompt detalhado** → depois jogar no Nano Banana.\n* O prompt deve pedir que a IA **pense e faça a análise**, não que o usuário descreva tudo manualmente.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1990,
+    "author": "INEMA",
+    "date": "2025-09-12T04:58:52+00:00",
+    "text": "==================",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1989,
+    "author": "INEMA",
+    "date": "2025-09-12T04:58:48+00:00",
+    "text": "Aqui está o resumo do vídeo sobre o modelo de imagens **Nano Banana** no Google Gemini AI:\n\n### Principais pontos\n\n1. **Novo modelo de imagens do Google**\n\n   * Chamado Nano Banana, disponível no Gemini AI.\n   * Considerado pelo autor como a ferramenta de design e criação visual mais poderosa já feita.\n\n2. **Níveis de criação**\n\n   * A maioria das pessoas ainda trabalha em “nível 1 e 2” (edições básicas e geração simples).\n   * O autor foca em “nível 3 e 4”, que permitem consistência, sistemas de prompts inteligentes e novos fluxos criativos.\n\n3. **Casos de uso práticos**\n\n   * Filtros e transformações rápidas (ex.: transformar fotos de clientes em versões futuras, como super-heróis ou resultados de coaching).\n   * Criação de imagens para páginas de vendas e marketing sem precisar de ensaios fotográficos.\n   * Inserir clientes em cenários de coaching, podcasts, eventos etc.\n   * Aplicar estilos consistentes para branding (ex.: thumbnails de YouTube, fotos de equipe, estilo de podcast).\n\n4. **Workflow avançado**\n\n   * O segredo não é “juntar imagens direto no Gemini” (isso gera resultados ruins).\n   * Melhor fluxo: usar ChatGPT para analisar imagens e escrever prompts detalhados → depois rodar no Gemini (Nano Banana).\n   * O prompt deve “fazer o AI pensar”, ou seja, desafiar o modelo a analisar e aplicar estilo/contexto, não apenas receber instruções rasas.\n\n5. **Diferenciais do Nano Banana**\n\n   * Entende prompts de forma extremamente precisa.\n   * Pode transformar screenshots ou imagens simples em mockups profissionais.\n   * Permite reaproveitar fotos antigas e criar sessões fotográficas consistentes e brandizadas.\n   * Gera imagens de alta qualidade na primeira tentativa, sem necessidade de ajustes manuais extensivos.\n\n6. **Hack e próximos passos**\n\n   * Trabalhar com **prompts únicos e inteligentes** que possam ser reutilizados em várias imagens.\n   * Usar variáveis nos prompts para gerar resultados diferentes automaticamente.\n   * Não editar manualmente dentro do Gemini; o ideal é melhorar o prompt via ChatGPT e repetir.\n   * Aplicações lucrativas: branding, marketing, vendas, criação de conteúdos e thumbnails em massa.\n\n### Takeaway final\n\nO vídeo mostra que o Nano Banana não é apenas “mais um Photoshop com IA”, mas um sistema de criação visual inteligente, capaz de **pensar e criar no lugar do usuário**, desde que se use a estratégia correta de prompts. O autor recomenda parar de pensar como designer/editor e começar a usar o AI como parceiro criativo e estratégico.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1988,
+    "author": "INEMA",
+    "date": "2025-09-12T04:57:53+00:00",
+    "text": "https://www.youtube.com/watch?v=-AntmYWIX3U",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 1975,
+    "author": "INEMA",
+    "date": "2025-09-12T04:54:47+00:00",
+    "text": "Hacks 100 horas de Testes",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1974,
+    "author": "INEMA",
+    "date": "2025-09-12T04:54:45+00:00",
+    "text": ".",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1973,
+    "author": "INEMA",
+    "date": "2025-09-12T04:54:45+00:00",
+    "text": "..",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1972,
+    "author": "INEMA",
+    "date": "2025-09-12T04:54:44+00:00",
+    "text": "..",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1971,
+    "author": "INEMA",
+    "date": "2025-09-12T04:54:44+00:00",
+    "text": ".",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1970,
+    "author": "INEMA",
+    "date": "2025-09-12T04:54:44+00:00",
+    "text": ".",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1969,
+    "author": "INEMA",
+    "date": "2025-09-12T04:54:44+00:00",
+    "text": "https://chatgpt.com/c/68c3a616-9fb8-8329-a0d5-68893073b209",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 1968,
+    "author": "INEMA",
+    "date": "2025-09-12T04:54:43+00:00",
+    "text": "1",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 1967,
+    "author": "INEMA",
+    "date": "2025-09-12T04:54:39+00:00",
+    "text": "",
+    "has_media": false,
+    "media_type": null
+  }
+]

@@ -1,0 +1,164 @@
+[
+  {
+    "id": 2076,
+    "author": "INEMA",
+    "date": "2025-09-17T06:23:41+00:00",
+    "text": "",
+    "has_media": true,
+    "media_type": "MessageMediaPhoto",
+    "media_file": "photo_2076_001.jpg"
+  },
+  {
+    "id": 2075,
+    "author": "INEMA",
+    "date": "2025-09-17T06:20:55+00:00",
+    "text": "",
+    "has_media": true,
+    "media_type": "MessageMediaPhoto",
+    "media_file": "photo_2075_002.jpg"
+  },
+  {
+    "id": 2073,
+    "author": "INEMA",
+    "date": "2025-09-17T06:18:15+00:00",
+    "text": "**prompt padrão** que funciona como molde: você só troca o assunto, e eu gero o prompt completo já estruturado para usar em geração de imagens.\n\nAqui está o modelo:\n\n---\n\n## Prompt padrão para geração de imagens\n\n\"Crie uma imagem em estilo \\[ESTILO ARTÍSTICO] mostrando \\[ASSUNTO PRINCIPAL] em \\[CENA / AMBIENTE].\nPreserve \\[IDENTIDADE / CARACTERÍSTICAS IMPORTANTES] e destaque \\[DETALHES ESPECÍFICOS].\nUse iluminação \\[TIPO DE LUZ] para criar uma atmosfera \\[ATMOSFERA].\nMantenha consistência visual e evite alterar \\[O QUE NÃO DEVE MUDAR].\nFormato horizontal 16:9.\"\n\n---\n\n### Exemplo de uso 1 (assunto: samurai no pôr do sol)\n\n\"Crie uma imagem em estilo cinematográfico mostrando um samurai solitário em uma montanha ao pôr do sol.\nPreserve a silhueta do guerreiro com armadura tradicional e espada desembainhada.\nDestaque o céu alaranjado com nuvens iluminadas.\nUse iluminação quente e dramática para criar uma atmosfera épica e melancólica.\nMantenha consistência visual e evite alterar a postura do samurai.\nFormato horizontal 16:9.\"\n\n### Exemplo de uso 2 (assunto: cientista em laboratório futurista)\n\n\"Crie uma imagem em estilo arte digital futurista mostrando uma cientista em um laboratório de alta tecnologia cheio de hologramas.\nPreserve a identidade feminina com jaleco branco e óculos transparentes.\nDestaque os hologramas azuis flutuando e máquinas de fundo.\nUse iluminação fria e neon para criar uma atmosfera tecnológica.\nMantenha consistência visual e evite alterar a expressão da cientista.\nFormato horizontal 16:9.\"\n\n---",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2072,
+    "author": "INEMA",
+    "date": "2025-09-17T06:17:19+00:00",
+    "text": "==============",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2071,
+    "author": "INEMA",
+    "date": "2025-09-17T06:17:15+00:00",
+    "text": "## Checklist prático para criar prompts\n\n1. **Cena e narrativa**\n\n   * Descrevi o que acontece na imagem como se fosse um diretor de cinema?\n   * Incluí ambiente, posição do sujeito, detalhes do cenário?\n\n2. **Estilo visual**\n\n   * Defini o estilo artístico ou estético (cinemático, pintura a óleo, Pixar, retrô, fotografia realista)?\n   * Evitei misturar estilos conflitantes demais?\n\n3. **Identidade e consistência**\n\n   * Se estou usando uma foto base ou personagem recorrente, deixei claro o que deve ser preservado (rosto, cabelo, expressão, pose)?\n   * Escrevi instruções como “keep the same face” ou “do not change hairstyle”?\n\n4. **Luz e atmosfera**\n\n   * Especifiquei o tipo de iluminação (natural, estúdio, dramática, suave)?\n   * Coloquei a atmosfera desejada (épica, sombria, mágica, calma)?\n\n5. **Ajustes locais**\n\n   * Pedi mudanças apenas na parte que quero alterar (fundo, objeto, cor da roupa)?\n   * Evitei pedir modificações que afetam toda a imagem sem necessidade?\n\n6. **Referências visuais**\n\n   * Usei uma imagem de base para guiar o modelo?\n   * Combinei imagens ou estilos diferentes de forma clara?\n\n7. **Iteração**\n\n   * Planejei gerar múltiplas versões para escolher a melhor?\n   * Pretendo refinar o prompt após ver os resultados iniciais?\n\n8. **Clareza e foco**\n\n   * Meu prompt está claro e sem contradições?\n   * Ele prioriza um estilo e uma direção principal, em vez de misturar muitas ideias?\n\n---\n\nEsse checklist pode ser usado como passo a passo: basta reler e confirmar cada item antes de gerar a imagem.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2070,
+    "author": "INEMA",
+    "date": "2025-09-17T06:16:22+00:00",
+    "text": "=================",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2069,
+    "author": "INEMA",
+    "date": "2025-09-17T06:16:13+00:00",
+    "text": "Analisando os Prompts\n\n**Descrever a cena com narrativa**\nEm vez de apenas listar palavras soltas como “casa, noite, lua”, os prompts bem feitos descrevem a cena com contexto: ambiente, iluminação, pose e estilo de arte. Por exemplo: “sentado em um trono ou em pé com uma espada na mão / salão do palácio ao fundo”.\nIsso funciona porque ajuda o modelo a compreender as relações espaciais, o foco e a coerência, aproximando o resultado do que o usuário imaginou.\n\n**Preservação de identidade ou características do sujeito original**\nQuando o prompt parte de uma foto real ou caricatura, é comum instruir o modelo a manter rosto, identidade e pose consistentes mesmo ao trocar roupas, estilo ou cenário.\nEssa prática evita distorções indesejadas e a frustração de ver um resultado que “não parece você”.\n\n**Combinação de estilos ou fusão de elementos**\nOs prompts exploram misturar mundos: pintura artística com fotografia real, cenários fantásticos com ambientes urbanos, ou transformar fotos em versões retrô ou miniaturas.\nEsse recurso cria resultados visualmente chamativos, gera surpresa estética e favorece variações criativas que se destacam em redes sociais.\n\n**Edição local e ajustes**\nEm vez de modificar a imagem inteira, os prompts podem indicar mudanças específicas, como trocar apenas o fundo, adicionar um objeto, remover um elemento, ajustar pose ou alterar iluminação.\nIsso dá mais precisão no controle e impede que o modelo altere aspectos que deveriam permanecer iguais.\n\n**Detalhamento de luz, cor, atmosfera e estilo visual**\nPrompts detalhados especificam iluminação (“luz ambiente quente”, “iluminação de estúdio”, “sombras dramáticas”), atmosfera (“cinemática”, “retrô”, “vintage”, “noir”) e até texturas e fundos.\nEsse tipo de instrução é crucial para garantir realismo, coesão visual e apelo estético.\n\n**Uso de referência visual ou múltiplas imagens**\nAlguns prompts combinam uma imagem de base com instruções textuais, outros usam várias imagens de referência para estilo, ou ainda fundem duas imagens em uma só.\nEsse método dá ao modelo um guia mais concreto, aumentando fidelidade e consistência no resultado final.\n\n---",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2068,
+    "author": "INEMA",
+    "date": "2025-09-17T06:15:42+00:00",
+    "text": "===================",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2067,
+    "author": "INEMA",
+    "date": "2025-09-17T06:15:40+00:00",
+    "text": "Com base na análise dos prompts do *Awesome-Nano-Banana-images* e materiais relacionados, aqui estão os aprendizados práticos que você pode aplicar de imediato para criar prompts melhores e ter resultados consistentes:\n\n---\n\n## Aprendizados práticos\n\n1. **Descreva como um diretor de cena**\n\n   * Não use apenas palavras soltas. Escreva o prompt como se estivesse explicando a cena para alguém filmar: cenário, iluminação, roupas, objetos, estilo.\n   * Exemplo:\n     Fraco → “mulher medieval”\n     Forte → “mulher medieval sentada em um trono dourado, luz dramática vindo de vitrais coloridos ao fundo, expressão séria e postura real”.\n\n2. **Especifique o estilo visual**\n\n   * O modelo responde bem a termos como: “cinematic”, “digital art”, “oil painting”, “retro 80s photo”, “Pixar style”.\n   * Isso direciona a estética final e evita resultados genéricos.\n\n3. **Defina o que deve permanecer igual**\n\n   * Se trabalhar com foto base ou personagem, sempre acrescente instruções como “preserve identity”, “keep same face”, “do not change hair color”.\n   * Isso garante consistência de personagem em várias gerações.\n\n4. **Controle luz e atmosfera**\n\n   * A iluminação dita o tom da imagem. Use termos como: “soft warm lighting”, “studio portrait lighting”, “noir shadows”.\n   * Atmosfera ajuda a dar emoção: “mystical”, “epic”, “serene”, “dark gothic”.\n\n5. **Faça edições localizadas**\n\n   * Quando quiser mudar só o fundo, diga claramente: “replace background with a futuristic city at night, keep the subject unchanged”.\n   * Isso reduz distorções no resto da imagem.\n\n6. **Use referências múltiplas**\n\n   * Sempre que possível, combine imagem base + descrição textual.\n   * Se quiser misturar estilos, cite ambos: “in the style of Van Gogh blended with cyberpunk neon”.\n\n7. **Itere como um processo criativo**\n\n   * Um bom resultado raramente sai de primeira.\n   * Estratégia prática: gerar várias variações, escolher a melhor e depois refinar o prompt adicionando ou retirando detalhes.\n\n8. **Evite sobrecarregar com instruções contraditórias**\n\n   * Exemplo de erro: “realistic Pixar style oil painting 3D render” → mistura instruções que conflitam.\n   * Prefira focar em **um ou dois estilos principais**.\n\n---\n\n## Resumindo em regras rápidas\n\n* Pense como um diretor (cena + luz + ambiente + emoção).\n* Diga o estilo artístico que deseja.\n* Especifique o que deve ser preservado.\n* Controle luz/atmosfera para guiar emoção.\n* Altere partes da imagem, não tudo.\n* Use referências sempre que puder.\n* Itere e refine a cada tentativa.\n* Evite contradições no estilo.\n\n---",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2066,
+    "author": "INEMA",
+    "date": "2025-09-17T06:15:12+00:00",
+    "text": "==================",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2065,
+    "author": "INEMA",
+    "date": "2025-09-17T06:15:09+00:00",
+    "text": "Aqui vai uma análise das técnicas usadas nos prompts do *Awesome-Nano-Banana-images* e conteúdos relacionados, mais uma visão geral do que parece funcionar bem. Se quiser, posso resumir em PDF ou esquema visual também.\n\n---\n\n## Análise das técnicas utilizadas nos prompts\n\nCom base no que achei de fontes sobre o *Awesome Nano Banana Images* e diversos artigos/tutorials, as técnicas mais comuns / eficazes são:\n\n\n---\n\n## Limitações / desafios observados\n\nTambém percebi algumas dificuldades ou pontos que exigem atenção nos prompts:\n\n* Se o prompt não for claro ou tiver ambiguidade, o modelo pode ignorar partes do que foi pedido.\n* Manter todos os elementos pedidos pode ser complicado: estilo + pose + cenário + identidade podem conflitar.\n* Em alguns casos, a resolução ou qualidade de detalhes depende muito da foto de base (clareza, iluminação).\n* Estilos muito específicos ou combinações muito exóticas às vezes produzem artefatos ou resultados estranhos.\n\n---\n\n## Visão geral do que parece caracterizar os “melhores” prompts no repositório\n\nCom base no repositório *Awesome-Nano-Banana-images* + artigos correlatos, os prompts mais eficazes tendem a:\n\n1. **Ser ricos em contexto** — cenário, clima, luz, estilo, objetos de cena, pose, expressão.\n2. **Incluir restrições ou coisas a preservar** — “não alterar o rosto”, “manter identidade”, “preservar expressão”, etc.\n3. **Ser claros sobre estilo artístico ou visual pretendido** — se é retrô, pintura a óleo, estilo de uma época, arte digital, figurine 3D, etc.\n4. **Ter referências visuais** — foto de base ou exemplos de estilo, ou comparação para que o modelo “pegue o rumo”.\n5. **Iterar / ajustar** — usar versões múltiplas, tentar variações, feedback visual, refinamentos.\n\n---\n\n## Minha visão / conclusão técnica\n\nCom tudo isso, minha visão é que os prompts do *Awesome Nano Banana Images* e conteúdos similares usam uma técnica de *prompt engineering* bastante maturada, focalizada não só em “o que quero ver”, mas “como quero que seja visto”. Eles tratam os prompts quase como roteiros visuais: não basta dizer “quero um retrato”, eles descrevem luz, pose, estilo, atmosfera, e salvaguardas para identidade.\n\nIsso mostra que modelos como o Nano Banana valorizam muito a precisão semântica e detalhamento no input — quanto mais rico e bem estruturado o prompt, melhor a chance do resultado sair próximo ao desejado.\n\n---",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2064,
+    "author": "INEMA",
+    "date": "2025-09-17T06:09:13+00:00",
+    "text": "https://github.com/PicoTrex/Awesome-Nano-Banana-images/blob/main/README_en.md",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 2063,
+    "author": "INEMA",
+    "date": "2025-09-17T06:08:58+00:00",
+    "text": "100 Prompts Nano Banana",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2062,
+    "author": "INEMA",
+    "date": "2025-09-17T06:08:56+00:00",
+    "text": ".",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2061,
+    "author": "INEMA",
+    "date": "2025-09-17T06:08:56+00:00",
+    "text": ".",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2060,
+    "author": "INEMA",
+    "date": "2025-09-17T06:08:55+00:00",
+    "text": ".",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2059,
+    "author": "INEMA",
+    "date": "2025-09-17T06:08:55+00:00",
+    "text": ".",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2058,
+    "author": "INEMA",
+    "date": "2025-09-17T06:08:55+00:00",
+    "text": "https://chatgpt.com/c/68ca50f0-c1ac-832b-9def-8a34b1d4f9b0",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 2057,
+    "author": "INEMA",
+    "date": "2025-09-17T06:08:54+00:00",
+    "text": "1",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 2056,
+    "author": "INEMA",
+    "date": "2025-09-17T06:08:48+00:00",
+    "text": "",
+    "has_media": false,
+    "media_type": null
+  }
+]

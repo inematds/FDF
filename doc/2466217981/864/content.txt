@@ -1,0 +1,254 @@
+TOPICO 864
+==================================================
+
+Titulo: Sem titulo
+Criado em: 2025-03-14 03:51:29+00:00
+
+Total de mensagens: 30
+Midias baixadas: 3
+
+--------------------------------------------------
+
+MENSAGEM 1
+Autor: Karina
+Data: 2025-09-12T20:37:42+00:00
+Texto:
+é só clicar no ícone imagem - escolher gemini (nano banana) e depois colocar seu prompt
+
+------------------------------
+
+MENSAGEM 2
+Autor: Karina
+Data: 2025-09-12T20:36:22+00:00
+Texto:
+boa tarde! eu uso o "yupp.ai" ele não tem limite
+
+------------------------------
+
+MENSAGEM 3
+Autor: FabricioVazMKT
+Data: 2025-09-12T10:31:48+00:00
+Texto:
+Bom dia pessoal Nano banana pelo gemini PRO, está com limite de geração?
+
+------------------------------
+
+MENSAGEM 4
+Autor: Vinicius
+Data: 2025-09-10T14:51:49+00:00
+Texto:
+Bom dia, pessoal! Alguém sabe uma i.a de criação de imagens que mantém uma boa consistência na hora da criação?
+
+------------------------------
+
+MENSAGEM 5
+Autor: Bruno
+Data: 2025-09-09T11:50:54+00:00
+Texto:
+Bom Dia pessoal, sou novo aqui, eu tenho um e-comercce de roupas. Estou precisando de uma IA que faça as edições nas fotos, que deixe realista, alguém pode me ajudar ? Quais ferramentas posso usar ?
+
+------------------------------
+
+MENSAGEM 6
+Autor: Conecta Facil
+Data: 2025-08-26T13:48:04+00:00
+Texto:
+segue esse passo que vai chegar onde quer de forma eficiente
+
+------------------------------
+
+MENSAGEM 7
+Autor: Conecta Facil
+Data: 2025-08-26T13:47:24+00:00
+Texto:
+https://chatgpt.com/g/g-684786a3b288819194ba7b471e41a8a3-inema-prompt-melhor
+Midia: MessageMediaWebPage
+
+------------------------------
+
+MENSAGEM 8
+Autor: Conecta Facil
+Data: 2025-08-26T13:47:18+00:00
+Texto:
+depois estrutura seu pront :
+
+------------------------------
+
+MENSAGEM 9
+Autor: Conecta Facil
+Data: 2025-08-26T13:46:56+00:00
+Texto:
+bom dia, comeca com uma esplicaçao em: https://chatgpt.com/g/g-688adc172090819180657635a4d1c468-inema-ec7-arquiteto-de-automacoes-inteligentes
+Midia: MessageMediaWebPage
+
+------------------------------
+
+MENSAGEM 10
+Autor: Diego
+Data: 2025-05-10T16:04:44+00:00
+Texto:
+estou com muita duvida nisso, estou apanhando bastante, preciso muito da ajuda de vcs!!! obrigado
+
+------------------------------
+
+MENSAGEM 11
+Autor: Diego
+Data: 2025-05-10T16:04:08+00:00
+Texto:
+galera qual IA eu posso usar a API para ligar com N8N  para criar um modelo usando meu tenis, para vender na internet, assim quero tirar a foto do meu tenis e enviar via telegram, whatsapp e a IA coloca um modelo usando meu tenis
+
+------------------------------
+
+MENSAGEM 12
+Autor: Paulo
+Data: 2025-05-07T22:26:48+00:00
+Texto:
+Chatgpt faz e só pedir pra ele fazer parecido com a pessoa e não exatamente igual se não dá direitos autorais mesmo
+
+------------------------------
+
+MENSAGEM 13
+Autor: Paulo
+Data: 2025-05-07T22:26:12+00:00
+Texto:
+Estou a disposição
+
+------------------------------
+
+MENSAGEM 14
+Autor: Paulo
+Data: 2025-05-07T22:25:54+00:00
+Texto:
+Alguém aqui tá precisando de alguém para ficar responsável por criar imagens e vídeos com IA para seus projetos ?
+
+------------------------------
+
+MENSAGEM 15
+Autor: Michel
+Data: 2025-04-29T14:28:43+00:00
+Texto:
+Bom dia
+
+------------------------------
+
+MENSAGEM 16
+Autor: Michel
+Data: 2025-04-29T14:28:35+00:00
+Texto:
+Alguém tem cupom de desconto na freepik ? Ou uma ia melhor que cria imagens e vídeo
+
+------------------------------
+
+MENSAGEM 17
+Autor: Wilson
+Data: 2025-04-18T13:26:00+00:00
+Texto:
+srs . segue codigo convite para manus AI - Conheça o Manus — seu agente de IA com seu próprio computador. Ele cria sites, escreve relatórios e realiza tarefas de pesquisa, mesmo enquanto você dorme.
+https://manus.im/invitation/Z9JLLHA3BPDVGKK
+Midia: MessageMediaWebPage
+
+------------------------------
+
+MENSAGEM 18
+Autor: André
+Data: 2025-04-05T17:00:52+00:00
+Texto:
+Quero fazer uma homenagem pra minha tia colocando ela ao lado do idolo dela elvis presley porém todas ias que eu tento ou tenho que fazer manual ou trocam o rosto dela por causa de direitos autorais, tem algo a fazer?
+
+------------------------------
+
+MENSAGEM 19
+Autor: INEMA
+Data: 2025-03-28T16:09:15+00:00
+Texto:
+Agora em diante o chat GPT permite fazer isso também
+
+------------------------------
+
+MENSAGEM 20
+Autor: Leonardo
+Data: 2025-03-27T15:24:40+00:00
+Texto:
+Obrigado
+
+------------------------------
+
+MENSAGEM 21
+Autor: André
+Data: 2025-03-27T14:17:09+00:00
+Texto:
+testa o Flux
+
+------------------------------
+
+MENSAGEM 22
+Autor: Leonardo
+Data: 2025-03-25T02:05:10+00:00
+Texto:
+Pessoal qual ferramenta vocês usam pra fazer fotos de uma pessoa real em diversos ambientes através de IA?
+
+------------------------------
+
+MENSAGEM 23
+Autor: Cleber
+Data: 2025-03-18T18:16:55+00:00
+Texto:
+Qual melhor ferramenta hoje para produzir criativos de promoções para restaurantes?
+
+------------------------------
+
+MENSAGEM 24
+Autor: INEMA
+Data: 2025-03-14T03:52:14+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 25
+Autor: INEMA
+Data: 2025-03-14T03:52:13+00:00
+Texto:
+...
+
+------------------------------
+
+MENSAGEM 26
+Autor: INEMA
+Data: 2025-03-14T03:52:13+00:00
+Texto:
+..
+
+------------------------------
+
+MENSAGEM 27
+Autor: INEMA
+Data: 2025-03-14T03:52:12+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 28
+Autor: INEMA
+Data: 2025-03-14T03:52:12+00:00
+Texto:
+.
+
+------------------------------
+
+MENSAGEM 29
+Autor: INEMA
+Data: 2025-03-14T03:52:12+00:00
+Texto:
+1
+
+------------------------------
+
+MENSAGEM 30
+Autor: INEMA
+Data: 2025-03-14T03:51:29+00:00
+Texto: [Sem texto]
+
+------------------------------
+

@@ -1,0 +1,149 @@
+[
+  {
+    "id": 1485,
+    "author": "INEMA",
+    "date": "2025-06-03T23:12:35+00:00",
+    "text": "https://fluxpro.art/",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 1484,
+    "author": "INEMA",
+    "date": "2025-06-03T23:11:14+00:00",
+    "text": "https://leonardo.ai/",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 1483,
+    "author": "INEMA",
+    "date": "2025-06-03T23:10:51+00:00",
+    "text": "https://ideogram.ai/",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 1482,
+    "author": "INEMA",
+    "date": "2025-06-03T23:09:54+00:00",
+    "text": "",
+    "has_media": true,
+    "media_type": "MessageMediaPhoto",
+    "media_file": "photo_1482_004.jpg"
+  },
+  {
+    "id": 1481,
+    "author": "INEMA",
+    "date": "2025-06-03T23:08:06+00:00",
+    "text": "",
+    "has_media": true,
+    "media_type": "MessageMediaPhoto",
+    "media_file": "photo_1481_005.jpg"
+  },
+  {
+    "id": 1480,
+    "author": "INEMA",
+    "date": "2025-06-03T23:07:48+00:00",
+    "text": "",
+    "has_media": true,
+    "media_type": "MessageMediaPhoto",
+    "media_file": "photo_1480_006.jpg"
+  },
+  {
+    "id": 719,
+    "author": "INEMA",
+    "date": "2025-02-20T01:37:13+00:00",
+    "text": "https://www.youtube.com/live/Tl-Y4PEHu6o?si=WKTC1W-pY1LGFyhm",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 468,
+    "author": "INEMA",
+    "date": "2025-01-23T00:20:34+00:00",
+    "text": "https://stable-diffusion-art.com/tutorials/?_page=3",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 466,
+    "author": "INEMA",
+    "date": "2025-01-22T22:04:11+00:00",
+    "text": "https://gamma.app/docs/es4vjw7vrlp3pq0",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 464,
+    "author": "INEMA",
+    "date": "2025-01-22T21:40:47+00:00",
+    "text": "Aqui está uma lista de **10 fundamentos essenciais** que você deve ensinar para preparar as pessoas para gerar imagens com consistência: \n \n### 1. **Compreensão dos Modelos de IA** \n   - Explique o que são modelos como **Stable Diffusion**, **DreamBooth**, e **ControlNet**. \n   - Diferencie entre modelos pré-treinados e personalizados. \n \n### 2. **Conceito de Prompt Engineering** \n   - Ensine como criar prompts claros, detalhados e repetíveis. \n   - Mostre exemplos práticos de como a alteração de um prompt afeta o resultado. \n \n### 3. **Uso de Sementes (Seed)** \n   - Explique como sementes controlam a aleatoriedade no processo de geração. \n   - Ensine a reutilizar sementes para gerar variações consistentes. \n \n### 4. **Treinamento Personalizado** \n   - Introduza técnicas como **LoRA** e **DreamBooth** para personalizar modelos. \n   - Mostre como adicionar características específicas (ex.: estilo artístico ou rostos). \n \n### 5. **Controle de Entradas** \n   - Apresente ferramentas como **ControlNet** para guiar a geração com esboços, poses ou mapas de profundidade. \n \n### 6. **Formatação e Escalabilidade** \n   - Ensine a importância de manter a mesma resolução, proporção e formato de saída. \n   - Explique como evitar inconsistências geradas por alterações na escala. \n \n### 7. **Organização e Dataset** \n   - Mostre como organizar imagens de referência e datasets para treinamento eficaz. \n   - Explique a necessidade de imagens variadas e de alta qualidade. \n \n### 8. **Conhecimento sobre Estilos Visuais** \n   - Ensine como estudar estilos e referências para criar um padrão visual consistente. \n   - Demonstre como usar descrições estilísticas em prompts. \n \n### 9. **Ferramentas e Plataformas** \n   - Apresente as ferramentas disponíveis (Replicate, Hugging Face, Fal, etc.). \n   - Explique como escolher a ferramenta certa com base no objetivo. \n \n### 10. **Iteração e Ajustes** \n   - Mostre como iterar os resultados ajustando parâmetros, como prompts, seeds e configurações de modelo. \n   - Ensine a avaliar os resultados e identificar áreas de melhoria. \n \n--- \n \n### **Plano de Aula Sugerido** \n- **Parte 1**: Teoria e introdução aos fundamentos (Pontos 1-5).   \n- **Parte 2**: Demonstração prática de geração e ajuste (Pontos 6-10).   \n- **Exercício**: Criação de uma imagem consistente usando os conceitos aprendidos. \n \nEsses fundamentos garantem que os alunos compreendam o processo desde a base até a aplicação prática.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 463,
+    "author": "INEMA",
+    "date": "2025-01-22T21:40:46+00:00",
+    "text": "7",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 462,
+    "author": "INEMA",
+    "date": "2025-01-22T21:40:46+00:00",
+    "text": "56",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 461,
+    "author": "INEMA",
+    "date": "2025-01-22T21:40:46+00:00",
+    "text": "5",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 460,
+    "author": "INEMA",
+    "date": "2025-01-22T21:40:46+00:00",
+    "text": "4",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 459,
+    "author": "INEMA",
+    "date": "2025-01-22T21:40:45+00:00",
+    "text": "3",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 458,
+    "author": "INEMA",
+    "date": "2025-01-22T21:40:45+00:00",
+    "text": "2",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 457,
+    "author": "INEMA",
+    "date": "2025-01-22T21:40:45+00:00",
+    "text": "1",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 456,
+    "author": "INEMA",
+    "date": "2025-01-22T21:40:34+00:00",
+    "text": "",
+    "has_media": false,
+    "media_type": null
+  }
+]

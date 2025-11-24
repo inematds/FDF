@@ -1,0 +1,66 @@
+[
+  {
+    "id": 465,
+    "author": "INEMA",
+    "date": "2025-01-22T22:03:49+00:00",
+    "text": "https://gamma.app/docs/j0z0hv3xmj4zuws",
+    "has_media": true,
+    "media_type": "MessageMediaWebPage"
+  },
+  {
+    "id": 455,
+    "author": "INEMA",
+    "date": "2025-01-22T21:39:47+00:00",
+    "text": "Para ensinar alguém que não sabe nada sobre imagens geradas por IA, LLMs, prompts e composição de personagens e cenários, aqui está um guia com **10 passos importantes** que focam no propósito e objetivo: \n \n--- \n \n### **1. Introdução ao Propósito da Criação** \n   - **Objetivo**: Comece ajudando a pessoa a definir por que elas querem criar imagens ou personagens. \n   - **Perguntas-chave**: \n     - Qual é o objetivo da imagem (arte, marketing, educação, entretenimento)? \n     - Quem será o público-alvo? \n \n--- \n \n### **2. Introdução ao Mundo da IA** \n   - **Explicação Básica**: Apresente o que é inteligência artificial generativa. \n   - **Exemplo Prático**: Mostre imagens geradas por IA e explique como elas foram criadas. \n \n--- \n \n### **3. O que São Prompts** \n   - **Definição**: Explique que prompts são instruções textuais que descrevem o que a IA deve criar. \n   - **Exemplo**: Dê exemplos simples, como \"uma casa no campo ao entardecer\". \n \n--- \n \n### **4. Fundamentos de Composição** \n   - **Elementos Visuais**: \n     - Personagem (Quem está na cena?). \n     - Cenário (Onde acontece a cena?). \n     - Ação (O que está acontecendo?). \n   - **Prática**: Crie descrições simples e peça que a pessoa visualize antes de usar IA. \n \n--- \n \n### **5. Ferramentas e Plataformas** \n   - **Introdução**: Apresente ferramentas básicas, como Stable Diffusion, DALL·E, ou RunwayML. \n   - **Orientação**: Mostre como acessar e usar uma dessas plataformas. \n \n--- \n \n### **6. Estudo de Referências** \n   - **Objetivo**: Ensine a importância de buscar referências visuais para inspirar o trabalho. \n   - **Exemplo**: Use sites como Pinterest ou ArtStation para encontrar estilos e ideias. \n \n--- \n \n### **7. Criação de um Prompt Inicial** \n   - **Passo-a-passo**: \n     1. Defina o personagem. \n     2. Escolha o cenário. \n     3. Adicione ações e detalhes. \n   - **Prática**: Peça que a pessoa descreva um cenário simples, como \"um cachorro brincando no parque\". \n \n--- \n \n### **8. Experimentos com Simplicidade** \n   - **Exercício**: Gere imagens a partir de descrições curtas e altere apenas um elemento de cada vez. \n   - **Propósito**: Ensinar como pequenas mudanças nos prompts afetam o resultado. \n \n--- \n \n### **9. Iteração e Feedback** \n   - **Iteração**: Ensine a ajustar prompts para corrigir detalhes ou alcançar maior consistência. \n   - **Feedback**: Explique a importância de avaliar o que funcionou e o que precisa melhorar. \n \n--- \n \n### **10. Definição de Propósito Criativo** \n   - **Reflexão**: Após aprender os conceitos básicos, ajude a pessoa a definir um projeto simples, como: \n     - Criar uma série de personagens com o mesmo estilo. \n     - Gerar cenários para um conto curto. \n \n--- \n \n### **Plano Prático** \n1. Definir o propósito criativo da pessoa.   \n2. Introduzir ferramentas e conceitos básicos.   \n3. Praticar prompts simples e evoluir para composições mais elaboradas.   \n4. Refinar até atingir consistência e objetivo. \n \nEsses passos são suficientes para guiar alguém do zero ao entendimento básico com propósito e direção.",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 454,
+    "author": "INEMA",
+    "date": "2025-01-22T21:39:25+00:00",
+    "text": "6",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 453,
+    "author": "INEMA",
+    "date": "2025-01-22T21:39:25+00:00",
+    "text": "5",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 452,
+    "author": "INEMA",
+    "date": "2025-01-22T21:39:25+00:00",
+    "text": "3",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 451,
+    "author": "INEMA",
+    "date": "2025-01-22T21:39:24+00:00",
+    "text": "2",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 450,
+    "author": "INEMA",
+    "date": "2025-01-22T21:39:24+00:00",
+    "text": "1",
+    "has_media": false,
+    "media_type": null
+  },
+  {
+    "id": 449,
+    "author": "INEMA",
+    "date": "2025-01-22T21:39:16+00:00",
+    "text": "",
+    "has_media": false,
+    "media_type": null
+  }
+]
