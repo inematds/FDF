@@ -220,7 +220,7 @@ Este projeto está licenciado sob a [Licença MIT](./LICENSE) - veja o arquivo L
 
 ## 💬 Contato e Suporte
 
-- 💬 **Discord:** [INEMA.CLUB Community](https://discord.gg/inema-club)
+- 💬 **Discord:** Em breve
 - 🐙 **GitHub Discussions:** [Discussões](https://github.com/inematds/FDF/discussions)
 - 📧 **Email:** inematds@gmail.com
 - 🌐 **Website:** [inematds.github.io/FDF](https://inematds.github.io/FDF/)
@@ -242,6 +242,6 @@ Este projeto é possível graças a:
 
 Feito com ❤️ pela comunidade INEMA
 
-[Website](https://inematds.github.io/FDF/) • [INEMA.CLUB](./comunidade/inema-club.md) • [INEMA.VIP](./comunidade/inema-vip.md) • [GitHub](https://github.com/inematds/FDF)
+[🌐 Website](https://inematds.github.io/FDF/) • [📚 Documentação](./docs/) • [💬 Discussões](https://github.com/inematds/FDF/discussions) • [⭐ GitHub](https://github.com/inematds/FDF)
 
 </div>
