@@ -10,6 +10,7 @@
 ## 📋 Índice Rápido
 
 - [Visão Geral](#visão-geral)
+- [Dark Mode](#dark-mode)
 - [Identidade Visual](#identidade-visual)
 - [Sistema de Cores](#sistema-de-cores)
 - [Tipografia](#tipografia)
@@ -42,6 +43,92 @@ Framework CSS:  Tailwind CSS 3.x (CDN)
 JavaScript:     Vanilla JS
 Fontes:         Google Fonts - Inter
 Build:          HTML puro (sem build process)
+Dark Mode:      Tailwind class-based (localStorage + system preference)
+```
+
+---
+
+## 🌙 Dark Mode
+
+### Configuração
+
+O projeto usa dark mode baseado em classes do Tailwind CSS:
+
+```javascript
+// Tailwind Config
+tailwind.config = {
+  darkMode: 'class',
+  // ... rest of config
+}
+```
+
+### Implementação
+
+**Classes Dark em Todos os Componentes:**
+- `dark:bg-neutral-900` - Background escuro
+- `dark:bg-neutral-800` - Cards e containers
+- `dark:bg-neutral-700` - Elementos interativos
+- `dark:text-neutral-100` - Texto principal
+- `dark:text-neutral-300` - Texto secundário
+- `dark:border-neutral-700` - Bordas
+
+**Botão Toggle:**
+```html
+<button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+  <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+  </svg>
+  <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+  </svg>
+</button>
+```
+
+**JavaScript para Toggle:**
+```javascript
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+// Check for saved theme or system preference
+if (localStorage.getItem('color-theme') === 'dark' ||
+    (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark');
+  themeToggleLightIcon.classList.remove('hidden');
+} else {
+  themeToggleDarkIcon.classList.remove('hidden');
+}
+
+themeToggleBtn.addEventListener('click', function() {
+  themeToggleDarkIcon.classList.toggle('hidden');
+  themeToggleLightIcon.classList.toggle('hidden');
+
+  if (document.documentElement.classList.contains('dark')) {
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('color-theme', 'light');
+  } else {
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('color-theme', 'dark');
+  }
+});
+```
+
+### Paleta Dark Mode
+
+```css
+/* Light Mode */
+--bg-primary:      #F5F5F5   /* neutral-50 */
+--bg-card:         #FFFFFF   /* white */
+--bg-interactive:  #F5F5F5   /* neutral-50 */
+--text-primary:    #171717   /* neutral-900 */
+--text-secondary:  #737373   /* neutral-600 */
+
+/* Dark Mode */
+--bg-primary:      #171717   /* neutral-900 */
+--bg-card:         #262626   /* neutral-800 */
+--bg-interactive:  #404040   /* neutral-700 */
+--text-primary:    #FAFAFA   /* neutral-100 */
+--text-secondary:  #D4D4D4   /* neutral-300 */
 ```
 
 ---
@@ -409,24 +496,24 @@ xl:  1280px  - Large desktop
 ### 6. Tópicos Expansíveis (Accordion)
 
 ```html
-<div class="module-card bg-white rounded-xl shadow-md p-6">
-  <h2 class="text-2xl font-bold mb-4">Módulo 1</h2>
+<div class="module-card bg-white dark:bg-neutral-800 rounded-xl shadow-md p-6">
+  <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">Módulo 1</h2>
 
-  <ul class="topics-list space-y-2">
+  <ul class="topics-list space-y-0.5">
     <li class="topic-item">
-      <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium">
+      <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
         📌 Tópico 1: Conceito
       </button>
 
-      <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
-        <p class="text-sm mb-2">
-          <strong class="text-blue-600">O que é:</strong> Explicação clara
+      <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+        <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+          <strong class="text-emerald-600">O que é:</strong> Explicação clara
         </p>
-        <p class="text-sm mb-2">
-          <strong class="text-blue-600">Por que aprender:</strong> Benefícios
+        <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+          <strong class="text-emerald-600">Por que aprender:</strong> Benefícios
         </p>
-        <p class="text-sm">
-          <strong class="text-blue-600">Conceitos chave:</strong> Termos importantes
+        <p class="text-sm text-neutral-700 dark:text-neutral-300">
+          <strong class="text-emerald-600">Conceitos chave:</strong> Termos importantes
         </p>
       </div>
     </li>
@@ -459,10 +546,11 @@ document.addEventListener('click', function(e) {
 });
 ```
 
-**Espaçamento:**
-- Entre botões: `space-y-2` (8px)
-- Padding dos botões: `py-3` (12px)
-- Entre parágrafos: `mb-2` (8px)
+**Espaçamento Compacto (Versão Real):**
+- Entre botões: `space-y-0.5` (2px) - Layout compacto
+- Padding dos botões: `py-1` (4px) - Botões finos
+- Entre parágrafos: `mb-1.5` (6px) - Espaçamento mínimo
+- Cores: usar `neutral` (neutral-50, neutral-700) ao invés de `gray`
 
 ---
 
