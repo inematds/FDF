@@ -556,53 +556,307 @@ document.addEventListener('click', function(e) {
 
 ### 7. Modal
 
-```html
-<div id="modal-exemplo" class="modal hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center">
-  <div class="modal-content bg-white rounded-xl max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl">
+#### Estrutura Base do Modal
 
+```html
+<div id="modal-exemplo" class="modal">
+  <div class="modal-content">
     <!-- Header -->
-    <div class="modal-header flex justify-between items-center p-6 border-b border-gray-200">
-      <h2 class="text-2xl font-bold text-gray-900">Título do Modal</h2>
-      <button class="close-modal text-gray-400 hover:text-red-500 text-3xl font-bold">
-        &times;
-      </button>
+    <div class="modal-header dark:border-neutral-700">
+      <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">🌟 Título do Modal</h2>
+      <button class="close-modal">&times;</button>
     </div>
 
     <!-- Body -->
-    <div class="modal-body p-6 overflow-y-auto">
-      <p>Conteúdo aqui...</p>
+    <div class="modal-body">
+      <!-- Conteúdo rico aqui -->
     </div>
-
   </div>
 </div>
 ```
+
+**CSS do Modal (no <style>):**
+```css
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+}
+
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: white;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 25px rgba(0,0,0,0.3);
+}
+
+.dark .modal-content {
+  background-color: #1f2937;
+}
+
+.modal-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dark .modal-header {
+  border-bottom-color: #374151;
+}
+
+.modal-body {
+  padding: 2rem;
+  overflow-y: auto;
+  max-height: calc(90vh - 80px);
+}
+
+.close-modal {
+  color: #9ca3af;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: #ef4444;
+}
+```
+
+#### Estrutura de Conteúdo Rico do Modal
+
+**Padrão desenvolvido para os modais do projeto:**
+
+```html
+<div class="modal-body">
+
+  <!-- Intro (obrigatória) -->
+  <div class="mb-6">
+    <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-3 font-semibold">
+      Descrição inspiradora do módulo
+    </p>
+    <div class="flex gap-3 flex-wrap">
+      <span class="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-full text-sm font-semibold">
+        Duração
+      </span>
+      <span class="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-full text-sm font-semibold">
+        Aulas
+      </span>
+    </div>
+  </div>
+
+  <!-- Seções de Conteúdo (3-5 seções recomendadas) -->
+
+  <!-- Seção com gradiente destacado -->
+  <div class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-lg p-6 mb-6 border-2 border-indigo-200 dark:border-indigo-800">
+    <div class="flex items-center mb-4">
+      <span class="text-3xl mr-3">👁️</span>
+      <h3 class="text-xl font-bold text-indigo-900 dark:text-indigo-300">Título da Seção</h3>
+    </div>
+    <!-- Conteúdo da seção -->
+  </div>
+
+  <!-- Seção padrão (fundo branco) -->
+  <div class="bg-white dark:bg-neutral-800 rounded-lg p-6 mb-6 border border-neutral-200 dark:border-neutral-700">
+    <div class="flex items-center mb-4">
+      <span class="text-3xl mr-3">🔄</span>
+      <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Outra Seção</h3>
+    </div>
+    <!-- Conteúdo -->
+  </div>
+
+  <!-- CTA Final (obrigatório) -->
+  <div class="bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-lg p-6 text-center">
+    <h3 class="text-xl font-bold mb-3">🚀 Call to Action</h3>
+    <p class="mb-4 text-sm">
+      Texto motivacional
+    </p>
+    <a href="../conteudo/modulo.html" class="inline-block bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-neutral-100 transition-colors">
+      Ver Conteúdo Completo →
+    </a>
+  </div>
+
+</div>
+```
+
+#### Componentes Internos dos Modais
+
+**1. Cards de Conteúdo com Borda Colorida:**
+```html
+<div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded border-l-4 border-purple-400">
+  <div class="flex items-center mb-2">
+    <span class="text-2xl mr-2">👩‍🏫</span>
+    <p class="font-bold text-purple-900 dark:text-purple-300">Título</p>
+  </div>
+  <p class="text-sm text-neutral-700 dark:text-neutral-300 italic mb-2">
+    "Citação ou depoimento em itálico"
+  </p>
+  <p class="text-sm text-neutral-700 dark:text-neutral-300">
+    Conteúdo explicativo
+  </p>
+</div>
+```
+
+**2. Listas com Ícones:**
+```html
+<div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded border-l-4 border-blue-400">
+  <p class="font-bold text-blue-900 dark:text-blue-300 mb-1 text-sm">1. Propósito Claro</p>
+  <p class="text-xs text-neutral-700 dark:text-neutral-300">
+    Descrição concisa do conceito
+  </p>
+</div>
+```
+
+**3. Comparações Lado a Lado:**
+```html
+<div class="grid md:grid-cols-2 gap-4 mb-4">
+  <div class="bg-neutral-100 dark:bg-neutral-700/50 p-4 rounded">
+    <p class="font-semibold text-red-700 dark:text-red-400 mb-2 text-sm">⏰ Antes:</p>
+    <ul class="space-y-1 text-xs text-neutral-700 dark:text-neutral-300">
+      <li>✗ Problema 1</li>
+      <li>✗ Problema 2</li>
+    </ul>
+  </div>
+  <div class="bg-gradient-to-br from-emerald-100 to-blue-100 dark:from-emerald-900/30 dark:to-blue-900/30 p-4 rounded border border-emerald-300 dark:border-emerald-700">
+    <p class="font-semibold text-emerald-800 dark:text-emerald-300 mb-2 text-sm">✨ Agora:</p>
+    <ul class="space-y-1 text-xs text-neutral-800 dark:text-neutral-200">
+      <li>✓ Solução 1</li>
+      <li>✓ Solução 2</li>
+    </ul>
+  </div>
+</div>
+```
+
+**4. Tabelas Comparativas:**
+```html
+<div class="overflow-x-auto">
+  <table class="w-full text-xs">
+    <thead class="bg-neutral-100 dark:bg-neutral-700">
+      <tr>
+        <th class="p-2 text-left">Ferramenta</th>
+        <th class="p-2 text-left">Grátis/Dia</th>
+        <th class="p-2 text-left">Melhor Para</th>
+      </tr>
+    </thead>
+    <tbody class="text-neutral-700 dark:text-neutral-300">
+      <tr class="border-b border-neutral-200 dark:border-neutral-700">
+        <td class="p-2 font-semibold">Bing Create</td>
+        <td class="p-2">Ilimitado</td>
+        <td class="p-2">Geral</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+**5. Processos Passo a Passo:**
+```html
+<div class="bg-white dark:bg-neutral-800 p-4 rounded">
+  <ol class="space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
+    <li class="flex items-start">
+      <span class="font-bold text-purple-600 mr-2">1.</span>
+      <span><strong>Passo:</strong> Descrição do passo</span>
+    </li>
+    <li class="flex items-start">
+      <span class="font-bold text-purple-600 mr-2">2.</span>
+      <span><strong>Passo:</strong> Descrição do passo</span>
+    </li>
+  </ol>
+</div>
+```
+
+#### Paleta de Cores para Seções dos Modais
+
+```css
+/* Seções com gradientes destacados */
+Indigo-Purple:   from-indigo-50 to-purple-50 | dark:from-indigo-900/20 dark:to-purple-900/20
+Blue-Cyan:       from-blue-50 to-cyan-50 | dark:from-blue-900/20 dark:to-cyan-900/20
+Purple-Pink:     from-purple-50 to-pink-50 | dark:from-purple-900/20 dark:to-pink-900/20
+Yellow-Orange:   from-yellow-50 to-orange-50 | dark:from-yellow-900/20 dark:to-orange-900/20
+Red-Orange:      from-red-50 to-orange-50 | dark:from-red-900/20 dark:to-orange-900/20
+
+/* Bordas coloridas para cards internos */
+Purple:  border-purple-400 | bg-purple-50 dark:bg-purple-900/20
+Blue:    border-blue-400 | bg-blue-50 dark:bg-blue-900/20
+Green:   border-green-400 | bg-green-50 dark:bg-green-900/20
+Orange:  border-orange-400 | bg-orange-50 dark:bg-orange-900/20
+Red:     border-red-500 | bg-red-50 dark:bg-red-900/20
+```
+
+#### Princípios de Conteúdo dos Modais
+
+1. **Estrutura Clara:**
+   - Intro com descrição + badges de duração
+   - 3-5 seções de conteúdo (variando gradientes e fundos)
+   - CTA final com link para página completa
+
+2. **Hierarquia Visual:**
+   - Títulos das seções: `text-xl font-bold`
+   - Subtítulos internos: `font-bold text-sm` ou `font-semibold`
+   - Textos: `text-sm` ou `text-xs` dependendo do contexto
+
+3. **Uso de Ícones:**
+   - Emojis grandes (3xl) nos títulos de seções
+   - Emojis menores (2xl) em cards internos
+   - Símbolos (✓, ✗, •) em listas
+
+4. **Gradientes e Cores:**
+   - Alternar entre seções com gradiente e fundo branco
+   - Usar gradiente para destacar conteúdo importante
+   - CTA sempre com gradiente indigo-purple
+
+5. **Dark Mode:**
+   - Sempre incluir classes `dark:` em todos os elementos
+   - Usar `dark:bg-neutral-800` para fundos de cards
+   - Usar `dark:text-neutral-300` para textos secundários
 
 **JavaScript:**
 ```javascript
 // Abrir modal
 function openModal(modalId) {
   const modal = document.getElementById(modalId);
-  modal.classList.remove('hidden');
+  modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
 // Fechar modal
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
-  modal.classList.add('hidden');
+  modal.classList.remove('active');
   document.body.style.overflow = 'auto';
 }
 
-// Fechar ao clicar fora
+// Event listeners
 document.addEventListener('click', function(e) {
+  // Fechar ao clicar fora
   if (e.target.classList.contains('modal')) {
-    e.target.classList.add('hidden');
+    e.target.classList.remove('active');
     document.body.style.overflow = 'auto';
   }
 
+  // Fechar ao clicar no X
   if (e.target.classList.contains('close-modal')) {
     const modal = e.target.closest('.modal');
-    modal.classList.add('hidden');
+    modal.classList.remove('active');
     document.body.style.overflow = 'auto';
   }
 });
@@ -610,11 +864,11 @@ document.addEventListener('click', function(e) {
 // Fechar com ESC
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
-    const activeModal = document.querySelector('.modal:not(.hidden)');
-    if (activeModal) {
-      activeModal.classList.add('hidden');
+    const activeModals = document.querySelectorAll('.modal.active');
+    activeModals.forEach(modal => {
+      modal.classList.remove('active');
       document.body.style.overflow = 'auto';
-    }
+    });
   }
 });
 ```
