@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4: Ferramentas Acessíveis - Designer do Futuro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            iniciante: '#10B981',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navegação -->
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm shadow-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Designer do Futuro</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../trilhas/iniciante.html" class="text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400">Voltar para Trilha</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-emerald-50 to-white dark:from-neutral-800 dark:to-neutral-900 py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-4">
+        <a href="../trilhas/iniciante.html" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-semibold">
+          Voltar para Trilha Iniciante
+        </a>
+      </div>
+      <div class="text-6xl mb-4">🛠️</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Módulo 4: Ferramentas Acessíveis</h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-6">Domine ferramentas gratuitas de criação com IA</p>
+      <div class="flex gap-4 flex-wrap">
+        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-full text-sm font-semibold">
+          1 semana
+        </span>
+        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-full text-sm font-semibold">
+          8 horas
+        </span>
+        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-full text-sm font-semibold">
+          Iniciante
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Objetivos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎯 Objetivos do Módulo</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">Ao final deste módulo, você vai:</p>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <span class="text-emerald-500 mr-3 text-xl">✅</span>
+            <span>Conhecer as melhores ferramentas gratuitas de IA para imagens</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-emerald-500 mr-3 text-xl">✅</span>
+            <span>Saber qual ferramenta usar para cada situação</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-emerald-500 mr-3 text-xl">✅</span>
+            <span>Dominar DALL·E, Bing Image Creator e Leonardo.ai</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-emerald-500 mr-3 text-xl">✅</span>
+            <span>Editar imagens com Canva IA</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-emerald-500 mr-3 text-xl">✅</span>
+            <span>Ter um workflow completo da ideia à imagem final</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Aula 1 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">📖</span>
+          <div>
+            <h2 class="text-3xl font-bold">Aula 1: Panorama de Ferramentas Gratuitas 2025</h2>
+            <p class="text-emerald-600 dark:text-emerald-400 font-semibold">Duração: 1.5 horas</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Top Ferramentas Gratuitas</h3>
+
+        <div class="space-y-6 mb-8">
+          <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-6 rounded-lg">
+            <div class="flex justify-between items-start mb-3">
+              <h4 class="font-bold text-xl">Microsoft Bing Image Creator</h4>
+              <span class="text-2xl">⭐⭐⭐⭐⭐</span>
+            </div>
+            <ul class="space-y-2 text-sm">
+              <li>• Baseado em DALL·E 3</li>
+              <li>• 100% gratuito</li>
+              <li>• Qualidade excelente</li>
+              <li>• <strong>Melhor para:</strong> Tudo (iniciantes devem começar aqui)</li>
+              <li>• <strong>Link:</strong> bing.com/create</li>
+            </ul>
+          </div>
+
+          <div class="bg-purple-50 dark:bg-purple-900/20 border-l-4 border-purple-500 p-6 rounded-lg">
+            <div class="flex justify-between items-start mb-3">
+              <h4 class="font-bold text-xl">Leonardo.ai</h4>
+              <span class="text-2xl">⭐⭐⭐⭐⭐</span>
+            </div>
+            <ul class="space-y-2 text-sm">
+              <li>• 150 créditos/dia grátis</li>
+              <li>• Múltiplos modelos</li>
+              <li>• Controles avançados</li>
+              <li>• <strong>Melhor para:</strong> Arte, fantasia, controle criativo</li>
+              <li>• <strong>Link:</strong> leonardo.ai</li>
+            </ul>
+          </div>
+
+          <div class="bg-emerald-50 dark:bg-emerald-900/20 border-l-4 border-emerald-500 p-6 rounded-lg">
+            <div class="flex justify-between items-start mb-3">
+              <h4 class="font-bold text-xl">Ideogram</h4>
+              <span class="text-2xl">⭐⭐⭐⭐</span>
+            </div>
+            <ul class="space-y-2 text-sm">
+              <li>• Excelente com texto em imagens</li>
+              <li>• Gratuito com limitações</li>
+              <li>• <strong>Melhor para:</strong> Posts com texto, logos</li>
+              <li>• <strong>Link:</strong> ideogram.ai</li>
+            </ul>
+          </div>
+
+          <div class="bg-orange-50 dark:bg-orange-900/20 border-l-4 border-orange-500 p-6 rounded-lg">
+            <div class="flex justify-between items-start mb-3">
+              <h4 class="font-bold text-xl">Canva (IA integrada)</h4>
+              <span class="text-2xl">⭐⭐⭐⭐⭐</span>
+            </div>
+            <ul class="space-y-2 text-sm">
+              <li>• Plano gratuito robusto</li>
+              <li>• Fácil de usar</li>
+              <li>• Templates prontos</li>
+              <li>• <strong>Melhor para:</strong> Edição e social media</li>
+              <li>• <strong>Link:</strong> canva.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-neutral-100 dark:bg-neutral-700 rounded-lg overflow-hidden">
+          <table class="w-full text-sm">
+            <thead class="bg-neutral-200 dark:bg-neutral-600">
+              <tr>
+                <th class="p-3 text-left">Ferramenta</th>
+                <th class="p-3 text-left">Créditos Grátis</th>
+                <th class="p-3 text-left">Melhor Para</th>
+                <th class="p-3 text-left">Nível</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Bing Create</td>
+                <td class="p-3">Ilimitado</td>
+                <td class="p-3">Geral</td>
+                <td class="p-3">Iniciante</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Leonardo.ai</td>
+                <td class="p-3">150/dia</td>
+                <td class="p-3">Arte</td>
+                <td class="p-3">Iniciante-Intermediário</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Ideogram</td>
+                <td class="p-3">25/dia</td>
+                <td class="p-3">Texto em imagens</td>
+                <td class="p-3">Iniciante</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Canva</td>
+                <td class="p-3">Ilimitado*</td>
+                <td class="p-3">Social media</td>
+                <td class="p-3">Iniciante</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="p-3 text-xs text-neutral-600 dark:text-neutral-400">*Com limitações em recursos premium</p>
+        </div>
+      </div>
+
+      <!-- Aula 2 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎨</span>
+          <div>
+            <h2 class="text-3xl font-bold">Aula 2: DALL·E via Bing Image Creator</h2>
+            <p class="text-emerald-600 dark:text-emerald-400 font-semibold">Duração: 2 horas</p>
+          </div>
+        </div>
+
+        <div class="bg-emerald-50 dark:bg-emerald-900/20 border-2 border-emerald-400 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-3">Por Que Começar Aqui?</h3>
+          <ul class="space-y-2">
+            <li>✅ Totalmente gratuito</li>
+            <li>✅ Baseado em DALL·E 3 (melhor do OpenAI)</li>
+            <li>✅ Sem necessidade de conta Microsoft (mas recomendado)</li>
+            <li>✅ Interface simples</li>
+            <li>✅ Resultados excelentes</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Como Usar - Passo a Passo</h3>
+
+        <div class="space-y-4 mb-6">
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">1. Acesse</h4>
+            <p class="text-sm">Vá para: <a href="https://www.bing.com/create" class="text-blue-600 dark:text-blue-400 underline">bing.com/create</a></p>
+            <p class="text-sm">Faça login com conta Microsoft (ou crie uma grátis)</p>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">2. Escreva Seu Prompt</h4>
+            <p class="text-sm">Use tudo que aprendeu no Módulo 3</p>
+            <p class="text-sm">Escreva em português ou inglês (inglês geralmente melhor)</p>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">3. Clique em "Criar"</h4>
+            <p class="text-sm">Aguarde 10-30 segundos</p>
+            <p class="text-sm">Receba 4 variações</p>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">4. Escolha a Melhor</h4>
+            <p class="text-sm">Clique para ver em tamanho maior</p>
+            <p class="text-sm">Baixe (botão de download)</p>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">5. Itere Se Necessário</h4>
+            <p class="text-sm">Ajuste o prompt</p>
+            <p class="text-sm">Gere novamente até ficar satisfeito</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2">O Que Funciona Bem:</h4>
+            <ul class="text-sm space-y-1">
+              <li>• Fotografia realista</li>
+              <li>• Ilustrações digitais</li>
+              <li>• Arte conceitual</li>
+              <li>• Cenas detalhadas</li>
+              <li>• Composições complexas</li>
+            </ul>
+          </div>
+
+          <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2">Limitações:</h4>
+            <ul class="text-sm space-y-1">
+              <li>• Textos (pode sair errado)</li>
+              <li>• Rostos de celebridades (bloqueados)</li>
+              <li>• Conteúdo violento (filtrado)</li>
+              <li>• Logos de marcas (bloqueados)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aula 3 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎭</span>
+          <div>
+            <h2 class="text-3xl font-bold">Aula 3: Leonardo.ai e Ideogram</h2>
+            <p class="text-emerald-600 dark:text-emerald-400 font-semibold">Duração: 2 horas</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Leonardo.ai - Arte e Versatilidade</h3>
+
+        <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg mb-6">
+          <h4 class="font-bold mb-3">Setup Inicial:</h4>
+          <ol class="space-y-2 text-sm">
+            <li>1. Acesse <a href="https://leonardo.ai" class="text-blue-600 dark:text-blue-400 underline">leonardo.ai</a></li>
+            <li>2. Crie conta gratuita</li>
+            <li>3. Receba 150 tokens diários</li>
+          </ol>
+        </div>
+
+        <h4 class="font-bold mb-3">Recursos Principais:</h4>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h5 class="font-bold mb-2">1. Modelos Diferentes</h5>
+            <ul class="text-sm space-y-1">
+              <li>• Leonardo Diffusion XL (geral)</li>
+              <li>• Leonardo Vision XL (fotográfico)</li>
+              <li>• Anime Pastel Dream (anime)</li>
+              <li>• RPG 4.0 (fantasia)</li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h5 class="font-bold mb-2">2. Aspect Ratio</h5>
+            <ul class="text-sm space-y-1">
+              <li>• 1:1 (quadrado)</li>
+              <li>• 16:9 (widescreen)</li>
+              <li>• 9:16 (vertical/stories)</li>
+              <li>• 4:3, 3:2, etc.</li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h5 class="font-bold mb-2">3. Número de Imagens</h5>
+            <p class="text-sm">1, 2, 4 ou 8 variações</p>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">Quanto mais, mais tokens usa</p>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h5 class="font-bold mb-2">4. Guidance Scale</h5>
+            <ul class="text-sm space-y-1">
+              <li>• Baixo (5-7): mais criativo</li>
+              <li>• Médio (7-12): balanceado</li>
+              <li>• Alto (12-20): segue prompt à risca</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-lg mb-8">
+          <h4 class="font-bold mb-2">Quando Usar Leonardo:</h4>
+          <ul class="text-sm space-y-1">
+            <li>✅ Precisa de arte fantasia/RPG</li>
+            <li>✅ Quer controle fino</li>
+            <li>✅ Precisa de formatos específicos</li>
+            <li>✅ Quer experimentar modelos diferentes</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Ideogram - Especialista em Texto</h3>
+
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-6">
+          <h4 class="font-bold mb-3">O Diferencial:</h4>
+          <p class="mb-3">Melhor ferramenta gratuita para <strong>texto EM imagens</strong>.</p>
+
+          <div class="bg-white dark:bg-neutral-700 p-4 rounded mt-4">
+            <h5 class="font-bold mb-2 text-sm">Exemplo de prompt:</h5>
+            <p class="text-sm italic">"Um poster motivacional com o texto 'NEVER GIVE UP' em letras grandes e bold, fundo gradiente azul para roxo, estilo moderno e inspirador, tipografia sans-serif, layout centralizado"</p>
+          </div>
+        </div>
+
+        <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-lg">
+          <h4 class="font-bold mb-2">Quando Usar Ideogram:</h4>
+          <ul class="text-sm space-y-1">
+            <li>✅ Posts com frases</li>
+            <li>✅ Logos com texto</li>
+            <li>✅ Cartazes</li>
+            <li>✅ Thumbnails com títulos</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Aula 4 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">✏️</span>
+          <div>
+            <h2 class="text-3xl font-bold">Aula 4: Edição Básica com Canva IA</h2>
+            <p class="text-emerald-600 dark:text-emerald-400 font-semibold">Duração: 1.5 horas</p>
+          </div>
+        </div>
+
+        <div class="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-3">Por Que Canva?</h3>
+          <ul class="space-y-2">
+            <li>✅ Interface intuitiva</li>
+            <li>✅ Templates prontos</li>
+            <li>✅ IA integrada</li>
+            <li>✅ Gratuito (com upgrades opcionais)</li>
+            <li>✅ Exportação fácil</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Recursos IA Gratuitos:</h3>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-8">
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h4 class="font-bold mb-2">1. Magic Edit</h4>
+            <p class="text-sm">Edita partes da imagem e adiciona/remove elementos</p>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h4 class="font-bold mb-2">2. Background Remover</h4>
+            <p class="text-sm">Remove fundo (limitado no grátis)</p>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h4 class="font-bold mb-2">3. Magic Eraser</h4>
+            <p class="text-sm">Remove objetos indesejados</p>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h4 class="font-bold mb-2">4. Text to Image</h4>
+            <p class="text-sm">Gera imagens direto no Canva</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Workflow: IA → Canva</h3>
+
+        <div class="space-y-3">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2">1-2. Crie e Importe</h4>
+            <p class="text-sm">Crie imagem em IA → Baixe → Importe no Canva</p>
+          </div>
+
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2">3. Ajustes Básicos</h4>
+            <p class="text-sm">Crop/cortar, ajustar posição, redimensionar</p>
+          </div>
+
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2">4. Adicione Elementos</h4>
+            <p class="text-sm">Texto, formas, ícones, filtros</p>
+          </div>
+
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2">5-6. Finalize e Exporte</h4>
+            <p class="text-sm">Ajuste cores → Download como PNG ou JPG</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aula 5 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">⚙️</span>
+          <div>
+            <h2 class="text-3xl font-bold">Aula 5: Workflow Completo</h2>
+            <p class="text-emerald-600 dark:text-emerald-400 font-semibold">Duração: 1 hora</p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-400 p-8 rounded-lg">
+          <h3 class="text-xl font-bold mb-6">Seu Processo Profissional</h3>
+
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-bold text-lg mb-3 text-blue-600 dark:text-blue-400">FASE 1: PLANEJAMENTO (5-10 min)</h4>
+              <div class="space-y-2 text-sm">
+                <p><strong>1. Defina objetivo</strong> - Para quê é a imagem? Qual emoção deve transmitir?</p>
+                <p><strong>2. Defina especificações</strong> - Formato, cores, estilo visual</p>
+                <p><strong>3. Reúna referências</strong> - 2-3 imagens similares ao desejado</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-lg mb-3 text-purple-600 dark:text-purple-400">FASE 2: CRIAÇÃO (10-20 min)</h4>
+              <div class="space-y-2 text-sm">
+                <p><strong>4. Escreva o prompt</strong> - Use estrutura do Módulo 3</p>
+                <p><strong>5. Escolha a ferramenta</strong> - Bing (geral), Leonardo (arte), Ideogram (texto)</p>
+                <p><strong>6. Gere primeira versão</strong> - Crie 4 variações, escolha a melhor</p>
+                <p><strong>7. Itere se necessário</strong> - Ajuste prompt e gere novamente</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-lg mb-3 text-emerald-600 dark:text-emerald-400">FASE 3: REFINAMENTO (10-15 min)</h4>
+              <div class="space-y-2 text-sm">
+                <p><strong>8. Edite no Canva</strong> - Importe, ajuste composição, adicione texto</p>
+                <p><strong>9. Ajustes finais</strong> - Cores, contraste, saturação, nitidez</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-lg mb-3 text-orange-600 dark:text-orange-400">FASE 4: EXPORTAÇÃO (2-5 min)</h4>
+              <div class="space-y-2 text-sm">
+                <p><strong>10. Revise</strong> - Zoom in, confira se atende objetivo</p>
+                <p><strong>11. Exporte</strong> - Formato e resolução corretos</p>
+                <p><strong>12. Organize</strong> - Salve em pasta, guarde o prompt</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-blue-200 dark:border-blue-700">
+            <p class="text-center font-bold">TEMPO TOTAL: 30-50 minutos por imagem</p>
+            <p class="text-center text-sm text-neutral-600 dark:text-neutral-400">(com prática, cai para 10-15 min)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercícios -->
+      <div class="bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-400 rounded-xl p-8 mb-8">
+        <h3 class="text-2xl font-bold mb-6">🎯 Exercícios Práticos</h3>
+
+        <div class="space-y-4">
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Exercício 1: Tour pelas Ferramentas (2h)</h4>
+            <p class="text-sm mb-2">Crie 1 imagem em cada ferramenta: Bing, Leonardo, Ideogram, Canva</p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Exercício 2: Mesmo Prompt, Ferramentas Diferentes (1h)</h4>
+            <p class="text-sm mb-2">Use o mesmo prompt em Bing, Leonardo e Ideogram. Compare resultados</p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Exercício 3: IA + Edição (1.5h)</h4>
+            <p class="text-sm mb-2">Crie imagem em IA → Importe no Canva → Adicione texto → Exporte</p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Exercício 4: Mini Projeto (2h)</h4>
+            <p class="text-sm mb-2">Crie 3 imagens para marca fictícia: 1 post feed, 1 story, 1 banner</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dica Final -->
+      <div class="bg-gradient-to-r from-emerald-50 to-blue-50 dark:from-emerald-900/20 dark:to-blue-900/20 border-2 border-emerald-400 rounded-xl p-8 text-center mb-8">
+        <h3 class="text-2xl font-bold mb-4">💡 Dica Final: Seu Kit de Ferramentas</h3>
+        <p class="text-lg mb-4">Para 90% dos projetos, você só precisa:</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div class="bg-white dark:bg-neutral-800 px-6 py-3 rounded-lg font-bold text-blue-600 dark:text-blue-400">
+            1. Bing Image Creator (criar)
+          </div>
+          <div class="text-2xl">+</div>
+          <div class="bg-white dark:bg-neutral-800 px-6 py-3 rounded-lg font-bold text-orange-600 dark:text-orange-400">
+            2. Canva (editar/finalizar)
+          </div>
+        </div>
+        <p class="text-sm mt-4 text-neutral-600 dark:text-neutral-400">Simples assim! As outras são para casos específicos.</p>
+      </div>
+
+      <!-- Navegação -->
+      <div class="flex justify-between items-center mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
+        <a href="iniciante-modulo-03.html" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-semibold">
+          ← Módulo Anterior
+        </a>
+        <a href="../trilhas/iniciante.html" class="bg-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 transition-colors">
+          Voltar para Trilha →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-white py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-neutral-400">&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>

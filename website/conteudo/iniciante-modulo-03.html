@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3: Seus Primeiros Prompts - Designer do Futuro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            iniciante: '#10B981',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navegação -->
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm shadow-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Designer do Futuro</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../trilhas/iniciante.html" class="text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400">Voltar para Trilha</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-emerald-50 to-white dark:from-neutral-800 dark:to-neutral-900 py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-4">
+        <a href="../trilhas/iniciante.html" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-semibold">
+          Voltar para Trilha Iniciante
+        </a>
+      </div>
+      <div class="text-6xl mb-4">💬</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Módulo 3: Seus Primeiros Prompts</h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-6">Domine a arte de se comunicar com a IA</p>
+      <div class="flex gap-4 flex-wrap">
+        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-full text-sm font-semibold">
+          1 semana
+        </span>
+        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-full text-sm font-semibold">
+          8 horas
+        </span>
+        <span class="px-4 py-2 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-full text-sm font-semibold">
+          Iniciante
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Objetivos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎯 Objetivos do Módulo</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-4">Ao final deste módulo, você vai:</p>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <span class="text-emerald-500 mr-3 text-xl">✅</span>
+            <span>Escrever prompts efetivos que geram o que você imagina</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-emerald-500 mr-3 text-xl">✅</span>
+            <span>Dominar vocabulário essencial para IA</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-emerald-500 mr-3 text-xl">✅</span>
+            <span>Iterar e refinar resultados</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-emerald-500 mr-3 text-xl">✅</span>
+            <span>Evitar erros comuns</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-emerald-500 mr-3 text-xl">✅</span>
+            <span>Criar suas primeiras 20+ imagens profissionais</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Aula 1 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">📖</span>
+          <div>
+            <h2 class="text-3xl font-bold">Aula 1: Estrutura Básica de Um Prompt Efetivo</h2>
+            <p class="text-emerald-600 dark:text-emerald-400 font-semibold">Duração: 2 horas</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Anatomia de Um Prompt Perfeito</h3>
+
+        <div class="bg-emerald-50 dark:bg-emerald-900/20 border-2 border-emerald-400 p-6 rounded-lg mb-6">
+          <h4 class="font-bold text-lg mb-4">Fórmula Básica:</h4>
+          <div class="bg-white dark:bg-neutral-700 p-4 rounded font-mono text-sm">
+            [SUJEITO] + [AÇÃO] + [ESTILO] + [ILUMINAÇÃO] + [ATMOSFERA] + [QUALIDADE]
+          </div>
+        </div>
+
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-8">
+          <h4 class="font-bold mb-3">Exemplo Completo:</h4>
+          <p class="text-sm italic">
+            "Uma mulher sorrindo segurando um café, fotografia profissional, golden hour lighting,
+            atmosfera acolhedora e alegre, alta qualidade, 8k"
+          </p>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Os 6 Componentes Essenciais</h3>
+
+        <div class="space-y-4">
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-6 rounded-lg">
+            <h4 class="font-bold text-lg mb-2">1. SUJEITO (O QUÊ)</h4>
+            <p class="mb-3 text-sm">O elemento principal da imagem.</p>
+            <div class="space-y-1 text-sm">
+              <p class="text-red-700 dark:text-red-300">❌ Vago: "uma pessoa"</p>
+              <p class="text-emerald-700 dark:text-emerald-300">✅ Específico: "uma mulher de 30 anos, cabelos castanhos, vestindo blazer azul"</p>
+            </div>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-6 rounded-lg">
+            <h4 class="font-bold text-lg mb-2">2. AÇÃO (FAZENDO O QUÊ)</h4>
+            <p class="mb-3 text-sm">O que está acontecendo.</p>
+            <div class="space-y-1 text-sm">
+              <p class="text-red-700 dark:text-red-300">❌ "pessoa"</p>
+              <p class="text-emerald-700 dark:text-emerald-300">✅ "pessoa apresentando em uma conferência"</p>
+            </div>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-6 rounded-lg">
+            <h4 class="font-bold text-lg mb-2">3. ESTILO (COMO PARECE)</h4>
+            <p class="mb-3 text-sm">O estilo visual desejado.</p>
+            <ul class="text-sm space-y-1">
+              <li>• "fotografia realista"</li>
+              <li>• "ilustração digital"</li>
+              <li>• "pintura a óleo"</li>
+              <li>• "arte 3D"</li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-6 rounded-lg">
+            <h4 class="font-bold text-lg mb-2">4. ILUMINAÇÃO (TIPO DE LUZ)</h4>
+            <p class="mb-3 text-sm">Como a cena é iluminada.</p>
+            <ul class="text-sm space-y-1">
+              <li>• "golden hour lighting"</li>
+              <li>• "dramatic studio lighting"</li>
+              <li>• "soft natural light"</li>
+              <li>• "neon lights"</li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-6 rounded-lg">
+            <h4 class="font-bold text-lg mb-2">5. ATMOSFERA/MOOD (EMOÇÃO)</h4>
+            <p class="mb-3 text-sm">Que sentimento transmite.</p>
+            <ul class="text-sm space-y-1">
+              <li>• "cozy and warm"</li>
+              <li>• "professional and clean"</li>
+              <li>• "dramatic and moody"</li>
+              <li>• "energetic and vibrant"</li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-6 rounded-lg">
+            <h4 class="font-bold text-lg mb-2">6. QUALIDADE TÉCNICA</h4>
+            <p class="mb-3 text-sm">Especificações técnicas.</p>
+            <ul class="text-sm space-y-1">
+              <li>• "high quality"</li>
+              <li>• "8k resolution"</li>
+              <li>• "detailed"</li>
+              <li>• "sharp focus"</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-6 rounded">
+          <h4 class="font-bold mb-3">Evolução de Prompt: Cachorro</h4>
+          <div class="space-y-3 text-sm">
+            <div class="p-3 bg-red-50 dark:bg-red-900/20 rounded">
+              <p class="font-semibold mb-1">❌ Ruim:</p>
+              <p>"cachorro"</p>
+            </div>
+            <div class="p-3 bg-orange-50 dark:bg-orange-900/20 rounded">
+              <p class="font-semibold mb-1">⚠️ Médio:</p>
+              <p>"um cachorro golden retriever feliz"</p>
+            </div>
+            <div class="p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded">
+              <p class="font-semibold mb-1">✅ Bom:</p>
+              <p>"Um cachorro golden retriever correndo em um campo de flores, fotografia profissional, golden hour lighting, atmosfera alegre e energética, alta qualidade, foco nítido"</p>
+            </div>
+            <div class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded">
+              <p class="font-semibold mb-1">🌟 Excelente:</p>
+              <p>"Um cachorro golden retriever adulto correndo alegremente através de um campo de flores silvestres amarelas e roxas, orelhas ao vento, língua para fora, fotografia profissional estilo National Geographic, iluminação golden hour com raios de sol atravessando, atmosfera de liberdade e alegria pura, 8k, ultra detalhado, foco nítido, bokeh no fundo"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aula 2 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">📚</span>
+          <div>
+            <h2 class="text-3xl font-bold">Aula 2: Vocabulário Essencial Para IA</h2>
+            <p class="text-emerald-600 dark:text-emerald-400 font-semibold">Duração: 2 horas</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Estilos Visuais</h3>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h4 class="font-bold mb-3">FOTOGRAFIA</h4>
+            <ul class="text-sm space-y-1">
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">professional photography</code></li>
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">portrait photography</code></li>
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">product photography</code></li>
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">landscape photography</code></li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h4 class="font-bold mb-3">ARTE DIGITAL</h4>
+            <ul class="text-sm space-y-1">
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">digital art</code></li>
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">digital painting</code></li>
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">3D render</code></li>
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">pixel art</code></li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h4 class="font-bold mb-3">ESTILOS ARTÍSTICOS</h4>
+            <ul class="text-sm space-y-1">
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">oil painting</code></li>
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">watercolor</code></li>
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">pencil sketch</code></li>
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">minimalist</code></li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h4 class="font-bold mb-3">ESTILOS POPULARES</h4>
+            <ul class="text-sm space-y-1">
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">cinematic</code></li>
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">vintage</code></li>
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">futuristic</code></li>
+              <li><code class="bg-neutral-200 dark:bg-neutral-600 px-2 py-1 rounded text-xs">cyberpunk</code></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Iluminação</h3>
+
+        <div class="grid md:grid-cols-3 gap-4 mb-6">
+          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2">NATURAL</h4>
+            <ul class="text-xs space-y-1">
+              <li>golden hour</li>
+              <li>blue hour</li>
+              <li>sunrise</li>
+              <li>sunset</li>
+            </ul>
+          </div>
+
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2">ARTIFICIAL</h4>
+            <ul class="text-xs space-y-1">
+              <li>studio lighting</li>
+              <li>neon lights</li>
+              <li>candlelight</li>
+              <li>spotlight</li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-100 dark:bg-neutral-700 p-4 rounded">
+            <h4 class="font-bold mb-2">QUALIDADE</h4>
+            <ul class="text-xs space-y-1">
+              <li>soft light</li>
+              <li>hard light</li>
+              <li>dramatic lighting</li>
+              <li>backlit</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Composição e Ângulos</h3>
+
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-bold mb-2">ÂNGULOS</h4>
+              <ul class="text-sm space-y-1">
+                <li>• top view</li>
+                <li>• bird's eye view</li>
+                <li>• low angle</li>
+                <li>• eye level</li>
+                <li>• close-up</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold mb-2">COMPOSIÇÃO</h4>
+              <ul class="text-sm space-y-1">
+                <li>• centered composition</li>
+                <li>• rule of thirds</li>
+                <li>• symmetrical</li>
+                <li>• asymmetrical</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aula 3 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">✍️</span>
+          <div>
+            <h2 class="text-3xl font-bold">Aula 3: Como Descrever O Que Você Quer</h2>
+            <p class="text-emerald-600 dark:text-emerald-400 font-semibold">Duração: 1.5 horas</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Técnica: Do Geral Para o Específico</h3>
+
+        <div class="space-y-3 mb-8">
+          <div class="bg-neutral-100 dark:bg-neutral-700 p-4 rounded">
+            <p class="font-semibold mb-1">Nível 1 - Básico:</p>
+            <p class="text-sm">"Um gato"</p>
+          </div>
+          <div class="bg-neutral-100 dark:bg-neutral-700 p-4 rounded">
+            <p class="font-semibold mb-1">Nível 2 - Melhor:</p>
+            <p class="text-sm">"Um gato branco dormindo"</p>
+          </div>
+          <div class="bg-neutral-100 dark:bg-neutral-700 p-4 rounded">
+            <p class="font-semibold mb-1">Nível 3 - Bom:</p>
+            <p class="text-sm">"Um gato branco dormindo em uma janela ensolarada"</p>
+          </div>
+          <div class="bg-neutral-100 dark:bg-neutral-700 p-4 rounded">
+            <p class="font-semibold mb-1">Nível 4 - Ótimo:</p>
+            <p class="text-sm">"Um gato branco fofo dormindo em uma janela ensolarada, raios de sol atravessando, atmosfera pacífica"</p>
+          </div>
+          <div class="bg-emerald-100 dark:bg-emerald-900/30 p-4 rounded">
+            <p class="font-semibold mb-1">Nível 5 - Excelente:</p>
+            <p class="text-sm">"Um gato persa branco fofo enrolado dormindo em uma janela larga com moldura de madeira, raios de sol dourado atravessando iluminando seu pelo, plantas em vasos ao redor, atmosfera de manhã tranquila e aconchegante, fotografia profissional, soft focus, cores quentes"</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Seja Específico Onde Importa</h3>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h4 class="font-bold mb-2">COR</h4>
+            <p class="text-sm text-red-700 dark:text-red-300 mb-1">❌ "flores"</p>
+            <p class="text-sm text-emerald-700 dark:text-emerald-300">✅ "flores rosas e roxas vibrantes"</p>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h4 class="font-bold mb-2">QUANTIDADE</h4>
+            <p class="text-sm text-red-700 dark:text-red-300 mb-1">❌ "árvores"</p>
+            <p class="text-sm text-emerald-700 dark:text-emerald-300">✅ "três árvores altas"</p>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h4 class="font-bold mb-2">POSIÇÃO</h4>
+            <p class="text-sm text-red-700 dark:text-red-300 mb-1">❌ "montanhas e lago"</p>
+            <p class="text-sm text-emerald-700 dark:text-emerald-300">✅ "montanhas ao fundo com lago em primeiro plano"</p>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h4 class="font-bold mb-2">TAMANHO</h4>
+            <p class="text-sm text-red-700 dark:text-red-300 mb-1">❌ "prédio"</p>
+            <p class="text-sm text-emerald-700 dark:text-emerald-300">✅ "arranha-céu imponente de 50 andares"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aula 4 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🔄</span>
+          <div>
+            <h2 class="text-3xl font-bold">Aula 4: Iteração - Transformando Bom em Perfeito</h2>
+            <p class="text-emerald-600 dark:text-emerald-400 font-semibold">Duração: 1.5 horas</p>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-400 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-4">O Ciclo de Melhoria</h3>
+          <div class="space-y-2 text-sm">
+            <p>1. CRIAR (prompt inicial)</p>
+            <p class="ml-4">↓</p>
+            <p>2. AVALIAR (o que deu certo/errado?)</p>
+            <p class="ml-4">↓</p>
+            <p>3. AJUSTAR (melhorar o prompt)</p>
+            <p class="ml-4">↓</p>
+            <p>4. REPETIR (até ficar perfeito)</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Exemplo Real de Iteração</h3>
+
+        <div class="space-y-4">
+          <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded">
+            <p class="font-bold mb-2">Versão 1:</p>
+            <p class="text-sm mb-2">"uma casa"</p>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">Resultado: Genérico, sem personalidade</p>
+          </div>
+
+          <div class="bg-orange-50 dark:bg-orange-900/20 p-4 rounded">
+            <p class="font-bold mb-2">Versão 2:</p>
+            <p class="text-sm mb-2">"uma casa moderna com piscina"</p>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">Resultado: Melhor, mas ainda vago</p>
+          </div>
+
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded">
+            <p class="font-bold mb-2">Versão 3:</p>
+            <p class="text-sm mb-2">"Uma casa moderna minimalista branca com piscina infinity, vista frontal, dia ensolarado"</p>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">Resultado: Bom, mas falta atmosfera</p>
+          </div>
+
+          <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded">
+            <p class="font-bold mb-2">Versão 4: ✅ Perfeito!</p>
+            <p class="text-sm">"Uma casa moderna minimalista branca de dois andares com grandes janelas de vidro e piscina infinity, cercada por jardim minimalista, vista frontal em ângulo de 45 graus, fotografia arquitetônica profissional, golden hour lighting, céu azul com poucas nuvens, atmosfera de luxo e tranquilidade, 8k, ultra detalhado"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aula 5 -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">⚠️</span>
+          <div>
+            <h2 class="text-3xl font-bold">Aula 5: Erros Comuns e Como Evitá-Los</h2>
+            <p class="text-emerald-600 dark:text-emerald-400 font-semibold">Duração: 1 hora</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Top 10 Erros de Iniciantes</h3>
+
+        <div class="space-y-3">
+          <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded border-l-4 border-red-400">
+            <h4 class="font-bold mb-2">1. Prompts Muito Vagos</h4>
+            <p class="text-sm text-red-700 dark:text-red-300 mb-1">❌ "paisagem bonita"</p>
+            <p class="text-sm text-emerald-700 dark:text-emerald-300">✅ "paisagem de montanhas cobertas de neve ao pôr do sol"</p>
+          </div>
+
+          <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded border-l-4 border-red-400">
+            <h4 class="font-bold mb-2">2. Informações Conflitantes</h4>
+            <p class="text-sm text-red-700 dark:text-red-300 mb-1">❌ "noite ensolarada" (contradição)</p>
+            <p class="text-sm text-emerald-700 dark:text-emerald-300">✅ "noite iluminada pela lua cheia"</p>
+          </div>
+
+          <div class="bg-orange-50 dark:bg-orange-900/20 p-4 rounded border-l-4 border-orange-400">
+            <h4 class="font-bold mb-2">3. Excesso de Informação</h4>
+            <p class="text-sm">❌ Um parágrafo gigante com 50 detalhes</p>
+            <p class="text-sm">✅ Foque em 5-10 elementos-chave</p>
+          </div>
+
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded border-l-4 border-yellow-400">
+            <h4 class="font-bold mb-2">4. Falta de Especificação de Estilo</h4>
+            <p class="text-sm">Sempre diga: fotografia, ilustração, 3D, etc.</p>
+          </div>
+
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded border-l-4 border-yellow-400">
+            <h4 class="font-bold mb-2">5. Esquecer a Iluminação</h4>
+            <p class="text-sm">Luz transforma tudo!</p>
+          </div>
+
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded border-l-4 border-yellow-400">
+            <h4 class="font-bold mb-2">6. Não Definir Atmosfera</h4>
+            <p class="text-sm">Sem mood, a imagem fica sem alma</p>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-emerald-50 dark:bg-emerald-900/20 border-2 border-emerald-400 p-6 rounded-lg">
+          <h3 class="font-bold text-lg mb-4">Template de Prompt Para Copiar</h3>
+          <div class="bg-white dark:bg-neutral-700 p-4 rounded font-mono text-xs overflow-x-auto">
+[SUJEITO DETALHADO],<br>
+[AÇÃO/SITUAÇÃO],<br>
+[ESTILO VISUAL] (fotografia/ilustração/3D/etc),<br>
+[TIPO DE ILUMINAÇÃO],<br>
+[ATMOSFERA/MOOD],<br>
+[DETALHES ADICIONAIS],<br>
+[QUALIDADE TÉCNICA]
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercícios -->
+      <div class="bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-400 rounded-xl p-8 mb-8">
+        <h3 class="text-2xl font-bold mb-6">🎯 Exercícios Práticos</h3>
+
+        <div class="space-y-4">
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Exercício 1: Primeiros 10 Prompts (2h)</h4>
+            <p class="text-sm mb-2">Crie 10 imagens diferentes: retrato, paisagem, produto, cena urbana, animal, comida, interior, abstrato, ação, natureza</p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Exercício 2: Iteração Guiada (1.5h)</h4>
+            <p class="text-sm mb-2">Crie 5 versões iterativas de 1 tema, evoluindo o prompt gradualmente</p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Exercício 3: Vocabulário na Prática (1h)</h4>
+            <p class="text-sm mb-2">Crie 3 pares de imagens mudando apenas iluminação, atmosfera e estilo</p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Exercício 4: Biblioteca Pessoal (1h)</h4>
+            <p class="text-sm mb-2">Crie sua biblioteca com 20 prompts testados (5 retratos, 5 produtos, 5 paisagens, 5 livres)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navegação -->
+      <div class="flex justify-between items-center mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
+        <a href="iniciante-modulo-02.html" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-semibold">
+          ← Módulo Anterior
+        </a>
+        <a href="iniciante-modulo-04.html" class="bg-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 transition-colors">
+          Próximo Módulo →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-white py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-neutral-400">&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>
