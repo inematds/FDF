@@ -8,6 +8,82 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    .modal-content {
+      background-color: white;
+      border-radius: 1rem;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+      margin: 20px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      animation: slideUp 0.3s ease-out;
+    }
+
+    .modal-header {
+      position: sticky;
+      top: 0;
+      background: white;
+      border-bottom: 2px solid #10B981;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .modal-body {
+      padding: 2rem;
+    }
+
+    .close-modal {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #6B7280;
+      cursor: pointer;
+      transition: color 0.2s;
+      line-height: 1;
+    }
+
+    .close-modal:hover {
+      color: #EF4444;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-50">
@@ -68,64 +144,310 @@
 
       <div class="grid gap-6">
         <!-- Módulo 1 -->
-        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 1: Mentalidade do Criador</h3>
-          <p class="text-emerald-600 font-semibold mb-4">6 horas • 1 semana</p>
+        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-all border-l-4 border-emerald-500">
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">🧠 Módulo 1: Mentalidade do Criador</h3>
+          <p class="text-emerald-600 font-semibold mb-2">⏱️ 6 horas • 1 semana</p>
           <p class="text-gray-600 mb-4">Transforme sua forma de pensar sobre criação visual.</p>
-          <a href="../modulos/iniciante-modulo-01.html" class="text-emerald-600 font-semibold hover:text-emerald-700">
-            Ver Conteúdo →
-          </a>
+
+          <div class="flex flex-wrap gap-3 mb-4">
+            <button onclick="openModal('modal1')" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 transition-colors">
+              📖 Ver em Modal
+            </button>
+            <a href="../modulos/iniciante-modulo-01.html" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+              📄 Página Completa
+            </a>
+            <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-01/README.md" target="_blank" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+              📥 Ver no GitHub
+            </a>
+          </div>
+
+          <div class="bg-emerald-50 p-4 rounded-lg">
+            <h4 class="font-bold text-emerald-900 mb-2">Principais Tópicos:</h4>
+            <ul class="text-emerald-800 text-sm space-y-1 list-disc ml-5">
+              <li>Você não precisa ser designer para criar</li>
+              <li>Como a IA democratizou a criação visual</li>
+              <li>Descobrindo seus talentos criativos escondidos</li>
+              <li>O novo papel do criador em 2025</li>
+              <li>Onde a IA falha e você se destaca</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Módulo 2 -->
-        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 2: Fundamentos Visuais</h3>
-          <p class="text-emerald-600 font-semibold mb-4">8 horas • 1 semana</p>
+        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-all border-l-4 border-emerald-500">
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">🎨 Módulo 2: Fundamentos Visuais</h3>
+          <p class="text-emerald-600 font-semibold mb-2">⏱️ 8 horas • 1 semana</p>
           <p class="text-gray-600 mb-4">Aprenda o essencial de design sem complicação.</p>
-          <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-02/README.md" target="_blank" class="text-emerald-600 font-semibold hover:text-emerald-700">
-            Ver no GitHub →
-          </a>
+
+          <div class="flex flex-wrap gap-3 mb-4">
+            <button onclick="openModal('modal2')" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 transition-colors">
+              📖 Ver em Modal
+            </button>
+            <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-02/README.md" target="_blank" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+              📥 Ver no GitHub
+            </a>
+          </div>
+
+          <div class="bg-emerald-50 p-4 rounded-lg">
+            <h4 class="font-bold text-emerald-900 mb-2">Principais Tópicos:</h4>
+            <ul class="text-emerald-800 text-sm space-y-1 list-disc ml-5">
+              <li>Design não é arte (e por que isso é bom)</li>
+              <li>Os 4 princípios fundamentais do design</li>
+              <li>Cores: teoria simplificada para iniciantes</li>
+              <li>Tipografia básica</li>
+              <li>Composição visual</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Módulo 3 -->
-        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 3: Seus Primeiros Prompts</h3>
-          <p class="text-emerald-600 font-semibold mb-4">8 horas • 1 semana</p>
+        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-all border-l-4 border-emerald-500">
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">💬 Módulo 3: Seus Primeiros Prompts</h3>
+          <p class="text-emerald-600 font-semibold mb-2">⏱️ 8 horas • 1 semana</p>
           <p class="text-gray-600 mb-4">Domine a arte de se comunicar com a IA.</p>
-          <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-03/README.md" target="_blank" class="text-emerald-600 font-semibold hover:text-emerald-700">
-            Ver no GitHub →
-          </a>
+
+          <div class="flex flex-wrap gap-3 mb-4">
+            <button onclick="openModal('modal3')" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 transition-colors">
+              📖 Ver em Modal
+            </button>
+            <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-03/README.md" target="_blank" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+              📥 Ver no GitHub
+            </a>
+          </div>
+
+          <div class="bg-emerald-50 p-4 rounded-lg">
+            <h4 class="font-bold text-emerald-900 mb-2">Principais Tópicos:</h4>
+            <ul class="text-emerald-800 text-sm space-y-1 list-disc ml-5">
+              <li>Anatomia de um prompt efetivo</li>
+              <li>A fórmula básica que sempre funciona</li>
+              <li>Descrevendo estilos visuais</li>
+              <li>Controlando composição e enquadramento</li>
+              <li>Iteração e refinamento</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Módulo 4 -->
-        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 4: Ferramentas Acessíveis</h3>
-          <p class="text-emerald-600 font-semibold mb-4">8 horas • 1 semana</p>
+        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-all border-l-4 border-emerald-500">
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">🛠️ Módulo 4: Ferramentas Acessíveis</h3>
+          <p class="text-emerald-600 font-semibold mb-2">⏱️ 8 horas • 1 semana</p>
           <p class="text-gray-600 mb-4">Domine ferramentas gratuitas de criação com IA.</p>
-          <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-04/README.md" target="_blank" class="text-emerald-600 font-semibold hover:text-emerald-700">
-            Ver no GitHub →
-          </a>
+
+          <div class="flex flex-wrap gap-3 mb-4">
+            <button onclick="openModal('modal4')" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 transition-colors">
+              📖 Ver em Modal
+            </button>
+            <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-04/README.md" target="_blank" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+              📥 Ver no GitHub
+            </a>
+          </div>
+
+          <div class="bg-emerald-50 p-4 rounded-lg">
+            <h4 class="font-bold text-emerald-900 mb-2">Principais Tópicos:</h4>
+            <ul class="text-emerald-800 text-sm space-y-1 list-disc ml-5">
+              <li>Panorama de ferramentas gratuitas</li>
+              <li>Bing Image Creator (Microsoft)</li>
+              <li>Leonardo.ai (gratuito com limites)</li>
+              <li>Canva IA para edição</li>
+              <li>Workflow completo do zero ao resultado</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Projeto Final -->
         <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl shadow-md p-6 text-white">
           <h3 class="text-2xl font-bold mb-2">🎨 Projeto Final</h3>
-          <p class="text-emerald-100 font-semibold mb-4">15 horas</p>
+          <p class="text-emerald-100 font-semibold mb-2">⏱️ 15 horas</p>
           <p class="mb-4">Pack de 15 imagens profissionais para redes sociais</p>
-          <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/projeto-final/README.md" target="_blank" class="inline-block bg-white text-emerald-600 px-6 py-3 rounded-lg font-bold hover:bg-emerald-50">
-            Ver no GitHub →
-          </a>
+
+          <div class="flex flex-wrap gap-3">
+            <button onclick="openModal('modalProjeto')" class="bg-white text-emerald-600 px-4 py-2 rounded-lg font-semibold hover:bg-emerald-50 transition-colors">
+              📖 Ver Projeto
+            </button>
+            <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/projeto-final/README.md" target="_blank" class="bg-emerald-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-800 transition-colors">
+              📥 Ver no GitHub
+            </a>
+          </div>
         </div>
       </div>
 
       <div class="mt-12 text-center">
-        <a href="../../trilhas/iniciante/README.md" class="inline-block bg-emerald-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-emerald-600">
-          Começar Agora
+        <a href="../index.html#trilhas" class="inline-block bg-gray-200 text-gray-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-300 transition-colors">
+          ← Voltar para Trilhas
         </a>
       </div>
 
     </div>
   </section>
+
+  <!-- Modais -->
+
+  <!-- Modal Módulo 1 -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-gray-900">🧠 Módulo 1: Mentalidade do Criador</h2>
+        <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="text-gray-600 mb-4"><strong>Duração:</strong> 6 horas • 1 semana</p>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-3">🎯 Objetivos do Módulo</h3>
+        <ul class="space-y-2 mb-6 list-disc ml-5 text-gray-700">
+          <li>Entender que <strong>não precisa ser designer</strong> para criar imagens incríveis</li>
+          <li>Descobrir talentos criativos que você não sabia que tinha</li>
+          <li>Compreender o novo papel do criador na era da IA</li>
+          <li>Identificar onde a IA falha e você se destaca</li>
+          <li>Desenvolver confiança para começar a criar</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-3">📚 Conteúdo do Módulo</h3>
+        <div class="space-y-4">
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-bold text-gray-900 mb-2">Aula 1: Você Não Precisa Ser Designer Para Criar (1h)</h4>
+            <p class="text-gray-600 text-sm">A grande mudança, o que mudou no processo criativo, exemplos reais de pessoas sem experiência criando.</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-bold text-gray-900 mb-2">Aula 2: Como a IA Democratizou a Criação Visual (1h)</h4>
+            <p class="text-gray-600 text-sm">A revolução está acontecendo agora, tipos de IA para imagem, oportunidades e responsabilidades.</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-bold text-gray-900 mb-2">Aula 3: Descobrindo Seus Talentos Criativos Escondidos (1.5h)</h4>
+            <p class="text-gray-600 text-sm">Exercícios de auto-descoberta, identificar seu tipo de criatividade, análise de referências.</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-bold text-gray-900 mb-2">Aula 4: O Novo Papel do Criador em 2025 (1h)</h4>
+            <p class="text-gray-600 text-sm">De executor para diretor, as 5 habilidades do criador, seu novo workflow.</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-bold text-gray-900 mb-2">Aula 5: Onde a IA Falha e Você Se Destaca (1.5h)</h4>
+            <p class="text-gray-600 text-sm">O que a IA faz bem vs o que não consegue, seu valor como humano, a parceria perfeita.</p>
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-emerald-50 rounded-lg">
+          <p class="text-emerald-800 font-semibold">📖 Para acessar o conteúdo completo com todos os exercícios e detalhes:</p>
+          <div class="mt-3 flex gap-3">
+            <a href="../modulos/iniciante-modulo-01.html" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 transition-colors">
+              Ver Página Completa
+            </a>
+            <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-01/README.md" target="_blank" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+              Abrir no GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Módulo 2 -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-gray-900">🎨 Módulo 2: Fundamentos Visuais</h2>
+        <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="text-gray-600 mb-4"><strong>Duração:</strong> 8 horas • 1 semana</p>
+        <p class="text-gray-700 mb-6">Aprenda os princípios essenciais de design visual de forma simplificada e prática.</p>
+
+        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+          <p class="text-blue-800">💡 <strong>Dica:</strong> Este módulo ensina design sem complicação - focado no que você precisa saber para criar com IA.</p>
+        </div>
+
+        <div class="mt-6 p-4 bg-emerald-50 rounded-lg">
+          <p class="text-emerald-800 font-semibold">📖 Conteúdo completo disponível no GitHub:</p>
+          <div class="mt-3">
+            <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-02/README.md" target="_blank" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 transition-colors inline-block">
+              Ver Módulo Completo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Módulo 3 -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-gray-900">💬 Módulo 3: Seus Primeiros Prompts</h2>
+        <span class="close-modal" onclick="closeModal('modal3')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="text-gray-600 mb-4"><strong>Duração:</strong> 8 horas • 1 semana</p>
+        <p class="text-gray-700 mb-6">Aprenda a se comunicar efetivamente com IAs de geração de imagem.</p>
+
+        <div class="bg-purple-50 p-4 rounded-lg mb-4">
+          <p class="text-purple-800">💡 <strong>O que você vai dominar:</strong> A arte de transformar suas ideias em prompts que geram exatamente o que você imagina.</p>
+        </div>
+
+        <div class="mt-6 p-4 bg-emerald-50 rounded-lg">
+          <p class="text-emerald-800 font-semibold">📖 Conteúdo completo disponível no GitHub:</p>
+          <div class="mt-3">
+            <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-03/README.md" target="_blank" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 transition-colors inline-block">
+              Ver Módulo Completo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Módulo 4 -->
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-gray-900">🛠️ Módulo 4: Ferramentas Acessíveis</h2>
+        <span class="close-modal" onclick="closeModal('modal4')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="text-gray-600 mb-4"><strong>Duração:</strong> 8 horas • 1 semana</p>
+        <p class="text-gray-700 mb-6">Domine ferramentas gratuitas e acessíveis de criação com IA.</p>
+
+        <div class="bg-amber-50 p-4 rounded-lg mb-4">
+          <p class="text-amber-800">💡 <strong>Foco prático:</strong> Aprenda a usar as melhores ferramentas gratuitas disponíveis hoje.</p>
+        </div>
+
+        <div class="mt-6 p-4 bg-emerald-50 rounded-lg">
+          <p class="text-emerald-800 font-semibold">📖 Conteúdo completo disponível no GitHub:</p>
+          <div class="mt-3">
+            <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-04/README.md" target="_blank" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 transition-colors inline-block">
+              Ver Módulo Completo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Projeto Final -->
+  <div id="modalProjeto" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-gray-900">🎨 Projeto Final</h2>
+        <span class="close-modal" onclick="closeModal('modalProjeto')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="text-gray-600 mb-4"><strong>Duração:</strong> 15 horas</p>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Pack de 15 Imagens Profissionais para Redes Sociais</h3>
+        <p class="text-gray-700 mb-6">Aplique tudo que aprendeu criando um portfolio completo de imagens para redes sociais.</p>
+
+        <div class="bg-gradient-to-r from-emerald-50 to-blue-50 p-4 rounded-lg mb-4">
+          <p class="text-gray-800"><strong>🎯 Objetivo:</strong> Criar 15 imagens profissionais que você pode usar em seu portfolio ou negócio.</p>
+        </div>
+
+        <div class="mt-6 p-4 bg-emerald-50 rounded-lg">
+          <p class="text-emerald-800 font-semibold">📖 Veja os detalhes completos do projeto:</p>
+          <div class="mt-3">
+            <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/projeto-final/README.md" target="_blank" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 transition-colors inline-block">
+              Ver Projeto Completo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-white py-8">
@@ -133,6 +455,38 @@
       <p class="text-gray-400">&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
     </div>
   </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Close modal with ESC key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const modals = document.querySelectorAll('.modal.active');
+        modals.forEach(modal => {
+          modal.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
