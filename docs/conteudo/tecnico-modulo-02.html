@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2: Engenharia de Prompt Avançada - Designer do Futuro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            tecnico: '#3B82F6',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navegação -->
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm shadow-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Designer do Futuro</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../trilhas/tecnico.html" class="text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400">Voltar para Trilha</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-blue-50 to-white dark:from-neutral-800 dark:to-neutral-900 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-4">
+        <a href="../trilhas/tecnico.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold">
+          ← Voltar para Trilha Técnico
+        </a>
+      </div>
+      <div class="text-6xl mb-6">🎯</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 leading-tight">Módulo 2: Engenharia de Prompt Avançada</h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
+        Domine a linguagem das IAs e aprenda a criar prompts profissionais que geram resultados consistentes e previsíveis
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          1 semana
+        </span>
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          10 horas
+        </span>
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          Técnico
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Objetivos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎯 O Que Você Vai Dominar Neste Módulo</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6 text-lg">
+          Este módulo transforma você em um expert em comunicação com IA. Você aprenderá a estrutura científica por trás de prompts eficazes e construirá uma biblioteca reutilizável de estilos profissionais.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+            <span class="text-blue-500 mr-4 text-2xl flex-shrink-0">🔬</span>
+            <div>
+              <strong class="text-blue-900 dark:text-blue-300">Anatomia de Prompts:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Entender cada elemento de um prompt profissional e como eles influenciam o resultado final</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-lg">
+            <span class="text-indigo-500 mr-4 text-2xl flex-shrink-0">⚙️</span>
+            <div>
+              <strong class="text-indigo-900 dark:text-indigo-300">Técnicas Avançadas:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Dominar weighting, negative prompts, seeds e parâmetros técnicos para controle preciso</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+            <span class="text-purple-500 mr-4 text-2xl flex-shrink-0">🎨</span>
+            <div>
+              <strong class="text-purple-900 dark:text-purple-300">Biblioteca de Estilos:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Construir um arsenal com 20+ estilos visuais e 15 referências de artistas renomados</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-cyan-50 dark:bg-cyan-900/20 p-4 rounded-lg">
+            <span class="text-cyan-500 mr-4 text-2xl flex-shrink-0">🐛</span>
+            <div>
+              <strong class="text-cyan-900 dark:text-cyan-300">Debugging e Templates:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Aprender a diagnosticar problemas em prompts e criar templates reutilizáveis para projetos reais</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 1: Anatomia de um Prompt Profissional -->
+      <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-blue-200 dark:border-blue-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🔬</span>
+          <div>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300">Anatomia de um Prompt Profissional</h2>
+            <p class="text-blue-700 dark:text-blue-400 font-semibold mt-1">A estrutura que separa amadores de profissionais</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Um prompt profissional não é uma frase aleatória. É uma <strong>estrutura técnica</strong> com 7 elementos principais que trabalham juntos para criar resultados previsíveis e de alta qualidade.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border-l-4 border-blue-500">
+            <h3 class="text-2xl font-bold text-blue-900 dark:text-blue-300 mb-4">🧩 Os 7 Elementos de um Prompt Completo</h3>
+
+            <div class="space-y-5">
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded">
+                <p class="font-bold text-blue-900 dark:text-blue-300 mb-2">1. SUBJECT (Assunto Principal) - O QUÊ</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">O elemento central da imagem. Seja específico e descritivo.</p>
+                <code class="text-xs bg-white dark:bg-neutral-900 p-2 rounded block">Exemplo: "professional female entrepreneur, 35 years old, confident expression"</code>
+              </div>
+
+              <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded">
+                <p class="font-bold text-indigo-900 dark:text-indigo-300 mb-2">2. MEDIUM (Meio/Técnica) - COMO</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Tipo de arte ou técnica de produção. Define a textura e aparência.</p>
+                <code class="text-xs bg-white dark:bg-neutral-900 p-2 rounded block">Exemplo: "digital illustration, oil painting, 3D render, studio photography"</code>
+              </div>
+
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded">
+                <p class="font-bold text-purple-900 dark:text-purple-300 mb-2">3. STYLE (Estilo Visual) - QUAL VISUAL</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Referências estéticas, artistas ou movimentos artísticos.</p>
+                <code class="text-xs bg-white dark:bg-neutral-900 p-2 rounded block">Exemplo: "in the style of Annie Leibovitz, art deco aesthetic, minimalist design"</code>
+              </div>
+
+              <div class="bg-cyan-50 dark:bg-cyan-900/30 p-4 rounded">
+                <p class="font-bold text-cyan-900 dark:text-cyan-300 mb-2">4. LIGHTING (Iluminação) - ATMOSFERA</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Define o mood e profundidade da imagem.</p>
+                <code class="text-xs bg-white dark:bg-neutral-900 p-2 rounded block">Exemplo: "golden hour lighting, dramatic rim light, soft diffused light, studio lighting"</code>
+              </div>
+
+              <div class="bg-orange-50 dark:bg-orange-900/30 p-4 rounded">
+                <p class="font-bold text-orange-900 dark:text-orange-300 mb-2">5. COMPOSITION (Composição) - ENQUADRAMENTO</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Ângulo de câmera, framing e distância focal.</p>
+                <code class="text-xs bg-white dark:bg-neutral-900 p-2 rounded block">Exemplo: "close-up portrait, wide angle shot, 50mm lens, rule of thirds"</code>
+              </div>
+
+              <div class="bg-pink-50 dark:bg-pink-900/30 p-4 rounded">
+                <p class="font-bold text-pink-900 dark:text-pink-300 mb-2">6. COLOR (Paleta de Cores) - MOOD CROMÁTICO</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Esquema de cores e temperatura cromática.</p>
+                <code class="text-xs bg-white dark:bg-neutral-900 p-2 rounded block">Exemplo: "warm color palette, monochromatic blue tones, vibrant saturated colors"</code>
+              </div>
+
+              <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded">
+                <p class="font-bold text-green-900 dark:text-green-300 mb-2">7. QUALITY TAGS (Tags de Qualidade) - ACABAMENTO</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Indicadores de qualidade técnica e detalhamento.</p>
+                <code class="text-xs bg-white dark:bg-neutral-900 p-2 rounded block">Exemplo: "high detail, 8K resolution, professional quality, sharp focus"</code>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">✅ Exemplo de Prompt Profissional Completo</h3>
+            <div class="bg-white/10 backdrop-blur p-4 rounded font-mono text-sm mb-3">
+              Professional female entrepreneur, 35 years old, confident expression, wearing elegant navy blue blazer, studio photography, in the style of Annie Leibovitz, dramatic lighting with soft fill, close-up portrait shot with 85mm lens, warm color palette with blue accents, high detail, sharp focus, 8K quality
+            </div>
+            <p class="text-sm">✓ Todos os 7 elementos presentes<br>
+            ✓ Específico e descritivo sem ambiguidade<br>
+            ✓ Estrutura lógica de leitura<br>
+            ✓ Resultado previsível e profissional</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 2: Técnicas Avançadas -->
+      <div class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-indigo-200 dark:border-indigo-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">⚙️</span>
+          <div>
+            <h2 class="text-3xl font-bold text-indigo-900 dark:text-indigo-300">Técnicas Avançadas de Controle</h2>
+            <p class="text-indigo-700 dark:text-indigo-400 font-semibold mt-1">Ferramentas de precisão para resultados consistentes</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-indigo-900 dark:text-indigo-300 mb-4">1. WEIGHTING (Peso de Elementos)</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+              Controla a IMPORTÂNCIA relativa de cada elemento no prompt. Quanto maior o peso, mais atenção a IA dá àquele elemento.
+            </p>
+
+            <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded mb-4">
+              <p class="font-bold text-indigo-900 dark:text-indigo-300 mb-2">Sintaxe de Weighting:</p>
+              <ul class="text-sm space-y-2 text-neutral-700 dark:text-neutral-300">
+                <li><code class="bg-white dark:bg-neutral-900 px-2 py-1 rounded">(elemento:1.5)</code> - Aumenta importância em 50%</li>
+                <li><code class="bg-white dark:bg-neutral-900 px-2 py-1 rounded">(elemento:0.5)</code> - Reduz importância em 50%</li>
+                <li><code class="bg-white dark:bg-neutral-900 px-2 py-1 rounded">((elemento))</code> - Duplica parênteses = peso 1.21</li>
+                <li><code class="bg-white dark:bg-neutral-900 px-2 py-1 rounded">[elemento]</code> - Colchetes = peso 0.91</li>
+              </ul>
+            </div>
+
+            <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded border-l-4 border-yellow-500">
+              <p class="font-bold text-yellow-900 dark:text-yellow-300 mb-2">Exemplo Prático:</p>
+              <code class="text-xs bg-white dark:bg-neutral-900 p-2 rounded block mb-2">
+                (dramatic lighting:1.5), woman portrait, subtle makeup, [background details:0.7]
+              </code>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                → A iluminação terá 50% mais destaque, o fundo será 30% menos evidente
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-purple-900 dark:text-purple-300 mb-4">2. NEGATIVE PROMPTS (Prompts Negativos)</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+              Especifica o que você NÃO quer na imagem. Essencial para evitar artefatos e elementos indesejados.
+            </p>
+
+            <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded mb-4">
+              <p class="font-bold text-purple-900 dark:text-purple-300 mb-3">Lista Essencial de Negative Prompts:</p>
+              <div class="grid md:grid-cols-2 gap-3 text-sm">
+                <div>
+                  <p class="font-semibold text-purple-900 dark:text-purple-300 mb-2">Problemas Técnicos:</p>
+                  <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+                    <li>• blurry, out of focus, low quality</li>
+                    <li>• pixelated, jpeg artifacts, noise</li>
+                    <li>• watermark, text, signature</li>
+                    <li>• cropped, cut off, frame</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="font-semibold text-purple-900 dark:text-purple-300 mb-2">Problemas Anatômicos:</p>
+                  <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+                    <li>• extra fingers, extra limbs</li>
+                    <li>• deformed hands, bad anatomy</li>
+                    <li>• disfigured face, ugly features</li>
+                    <li>• duplicate body parts</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-cyan-900 dark:text-cyan-300 mb-4">3. SEED (Semente Aleatória)</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+              Número que controla a aleatoriedade da IA. Mesmo seed + mesmo prompt = resultado idêntico.
+            </p>
+
+            <div class="bg-cyan-50 dark:bg-cyan-900/30 p-4 rounded">
+              <p class="font-bold text-cyan-900 dark:text-cyan-300 mb-2">Usos Profissionais do Seed:</p>
+              <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                <li><strong>✓ Variações Controladas:</strong> Manter seed e variar apenas um elemento do prompt</li>
+                <li><strong>✓ Iteração Eficiente:</strong> Refinar um resultado sem perder a composição original</li>
+                <li><strong>✓ Consistência em Séries:</strong> Criar várias imagens com mesma "vibe" visual</li>
+                <li><strong>✓ A/B Testing:</strong> Comparar diferentes abordagens mantendo base igual</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-orange-900 dark:text-orange-300 mb-4">4. PARÂMETROS TÉCNICOS</h3>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-orange-50 dark:bg-orange-900/30 p-4 rounded">
+                <p class="font-bold text-orange-900 dark:text-orange-300 mb-2">CFG Scale (Guidance)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Quão fielmente a IA segue seu prompt</p>
+                <ul class="text-xs space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>• <strong>5-7:</strong> Mais criativo, interpretativo</li>
+                  <li>• <strong>7-12:</strong> Balanceado (recomendado)</li>
+                  <li>• <strong>12-15:</strong> Literal, seguidor estrito</li>
+                </ul>
+              </div>
+
+              <div class="bg-pink-50 dark:bg-pink-900/30 p-4 rounded">
+                <p class="font-bold text-pink-900 dark:text-pink-300 mb-2">Steps (Iterações)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Número de refinamentos da imagem</p>
+                <ul class="text-xs space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>• <strong>20-30:</strong> Testes rápidos</li>
+                  <li>• <strong>40-50:</strong> Qualidade profissional</li>
+                  <li>• <strong>50+:</strong> Detalhamento máximo</li>
+                </ul>
+              </div>
+
+              <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded">
+                <p class="font-bold text-green-900 dark:text-green-300 mb-2">Sampler (Algoritmo)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Método de geração da imagem</p>
+                <ul class="text-xs space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>• <strong>DPM++:</strong> Qualidade/velocidade</li>
+                  <li>• <strong>Euler A:</strong> Criativo, versátil</li>
+                  <li>• <strong>DDIM:</strong> Consistente, preciso</li>
+                </ul>
+              </div>
+
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded">
+                <p class="font-bold text-blue-900 dark:text-blue-300 mb-2">Aspect Ratio</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Proporção da imagem</p>
+                <ul class="text-xs space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>• <strong>1:1:</strong> Posts Instagram</li>
+                  <li>• <strong>9:16:</strong> Stories/TikTok</li>
+                  <li>• <strong>16:9:</strong> Banners/capas</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 3: Biblioteca de Estilos -->
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-purple-200 dark:border-purple-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🎨</span>
+          <div>
+            <h2 class="text-3xl font-bold text-purple-900 dark:text-purple-300">Biblioteca de Estilos Profissionais</h2>
+            <p class="text-purple-700 dark:text-purple-400 font-semibold mt-1">20+ estilos visuais para dominar qualquer projeto</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-6">
+            Copie e cole esses estilos testados e validados. Cada um tem características únicas e aplicações específicas.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-purple-500">
+              <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">1. Editorial de Moda</h3>
+              <code class="text-xs bg-purple-50 dark:bg-purple-900/30 p-2 rounded block mb-2">
+                high fashion editorial photography, vogue style, dramatic lighting, bold poses, luxury aesthetic
+              </code>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400">Uso: Moda, beleza, lifestyle premium</p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-pink-500">
+              <h3 class="font-bold text-pink-900 dark:text-pink-300 mb-2">2. Product Photography Clean</h3>
+              <code class="text-xs bg-pink-50 dark:bg-pink-900/30 p-2 rounded block mb-2">
+                studio product photography, white background, perfect lighting, commercial quality, sharp details
+              </code>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400">Uso: E-commerce, catálogos, packshots</p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-blue-500">
+              <h3 class="font-bold text-blue-900 dark:text-blue-300 mb-2">3. Cinematic Portrait</h3>
+              <code class="text-xs bg-blue-50 dark:bg-blue-900/30 p-2 rounded block mb-2">
+                cinematic portrait, movie still aesthetic, shallow depth of field, anamorphic lens, color grading
+              </code>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400">Uso: Retratos artísticos, campanhas premium</p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-cyan-500">
+              <h3 class="font-bold text-cyan-900 dark:text-cyan-300 mb-2">4. Lifestyle Natural</h3>
+              <code class="text-xs bg-cyan-50 dark:bg-cyan-900/30 p-2 rounded block mb-2">
+                lifestyle photography, natural lighting, candid moment, authentic feel, warm tones
+              </code>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400">Uso: Brands autênticas, wellness, família</p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-orange-500">
+              <h3 class="font-bold text-orange-900 dark:text-orange-300 mb-2">5. Architectural Minimalist</h3>
+              <code class="text-xs bg-orange-50 dark:bg-orange-900/30 p-2 rounded block mb-2">
+                minimalist architecture photography, clean lines, geometric composition, natural light, modern aesthetic
+              </code>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400">Uso: Arquitetura, design, imobiliário</p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-green-500">
+              <h3 class="font-bold text-green-900 dark:text-green-300 mb-2">6. Food Photography Gourmet</h3>
+              <code class="text-xs bg-green-50 dark:bg-green-900/30 p-2 rounded block mb-2">
+                gourmet food photography, overhead shot, natural lighting, rustic styling, appetizing presentation
+              </code>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400">Uso: Restaurantes, receitas, food brands</p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-indigo-500">
+              <h3 class="font-bold text-indigo-900 dark:text-indigo-300 mb-2">7. Editorial Ilustração</h3>
+              <code class="text-xs bg-indigo-50 dark:bg-indigo-900/30 p-2 rounded block mb-2">
+                editorial illustration, vector style, bold colors, flat design, modern graphic aesthetic
+              </code>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400">Uso: Conteúdo digital, revistas, artigos</p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-red-500">
+              <h3 class="font-bold text-red-900 dark:text-red-300 mb-2">8. Street Photography Urban</h3>
+              <code class="text-xs bg-red-50 dark:bg-red-900/30 p-2 rounded block mb-2">
+                street photography, urban aesthetic, gritty realism, documentary style, natural moment
+              </code>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400">Uso: Streetwear, urbano, autenticidade</p>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🎭 15 Referências de Artistas Renomados</h3>
+            <p class="mb-4">Use "in the style of [artist]" para resultados icônicos:</p>
+            <div class="grid md:grid-cols-3 gap-3 text-sm">
+              <div>
+                <p class="font-bold mb-2">Fotografia:</p>
+                <ul class="space-y-1">
+                  <li>• Annie Leibovitz</li>
+                  <li>• Steve McCurry</li>
+                  <li>• Helmut Newton</li>
+                  <li>• Richard Avedon</li>
+                  <li>• Irving Penn</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold mb-2">Ilustração:</p>
+                <ul class="space-y-1">
+                  <li>• James Jean</li>
+                  <li>• Victo Ngai</li>
+                  <li>• Malika Favre</li>
+                  <li>• Moebius</li>
+                  <li>• Hayao Miyazaki</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold mb-2">Arte Conceitual:</p>
+                <ul class="space-y-1">
+                  <li>• Simon Stålenhag</li>
+                  <li>• Syd Mead</li>
+                  <li>• Greg Rutkowski</li>
+                  <li>• Artgerm</li>
+                  <li>• Alphonse Mucha</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 4: Debugging de Prompts -->
+      <div class="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-orange-200 dark:border-orange-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🐛</span>
+          <div>
+            <h2 class="text-3xl font-bold text-orange-900 dark:text-orange-300">Debugging: Resolvendo Problemas Comuns</h2>
+            <p class="text-orange-700 dark:text-orange-400 font-semibold mt-1">Diagnóstico e solução de problemas em prompts</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <div class="space-y-4">
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-red-500">
+              <h3 class="font-bold text-red-900 dark:text-red-300 mb-3">❌ Problema: Resultado muito diferente do esperado</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2"><strong>Causa:</strong> Prompt ambíguo ou elementos conflitantes</p>
+              <p class="text-sm text-green-700 dark:text-green-400 mb-2"><strong>Solução:</strong></p>
+              <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                <li>• Seja mais específico no subject</li>
+                <li>• Use weighting para priorizar elementos</li>
+                <li>• Remova termos contraditórios</li>
+                <li>• Adicione negative prompts para excluir variações indesejadas</li>
+              </ul>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-yellow-500">
+              <h3 class="font-bold text-yellow-900 dark:text-yellow-300 mb-3">⚠️ Problema: Qualidade baixa ou imagem borrada</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2"><strong>Causa:</strong> Falta de quality tags ou steps baixos</p>
+              <p class="text-sm text-green-700 dark:text-green-400 mb-2"><strong>Solução:</strong></p>
+              <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                <li>• Adicione: "high detail, 8K, professional quality, sharp focus"</li>
+                <li>• Aumente steps para 40-50</li>
+                <li>• Use negative: "blurry, low quality, pixelated"</li>
+                <li>• Aumente CFG para 9-12</li>
+              </ul>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-orange-500">
+              <h3 class="font-bold text-orange-900 dark:text-orange-300 mb-3">🔧 Problema: Anatomia distorcida (mãos, dedos)</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2"><strong>Causa:</strong> Dificuldade comum das IAs com anatomia</p>
+              <p class="text-sm text-green-700 dark:text-green-400 mb-2"><strong>Solução:</strong></p>
+              <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                <li>• Negative: "extra fingers, deformed hands, bad anatomy, extra limbs"</li>
+                <li>• Seja específico: "elegant hands with five fingers"</li>
+                <li>• Use close-up evitando mãos se necessário</li>
+                <li>• Considere composições que escondem mãos naturalmente</li>
+              </ul>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-blue-500">
+              <h3 class="font-bold text-blue-900 dark:text-blue-300 mb-3">🎨 Problema: Estilo inconsistente em série</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2"><strong>Causa:</strong> Seeds diferentes e prompts variáveis</p>
+              <p class="text-sm text-green-700 dark:text-green-400 mb-2"><strong>Solução:</strong></p>
+              <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                <li>• Use SEMPRE o mesmo seed para a série</li>
+                <li>• Mantenha style, medium, lighting e color fixos</li>
+                <li>• Varie APENAS o subject e composition</li>
+                <li>• Crie template base e replique</li>
+              </ul>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-purple-500">
+              <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-3">⚡ Problema: IA ignora partes do prompt</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2"><strong>Causa:</strong> Prompt muito longo ou elementos não priorizados</p>
+              <p class="text-sm text-green-700 dark:text-green-400 mb-2"><strong>Solução:</strong></p>
+              <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                <li>• Use weighting nos elementos ignorados: (elemento:1.5)</li>
+                <li>• Simplifique o prompt removendo redundâncias</li>
+                <li>• Coloque elementos importantes no início</li>
+                <li>• Aumente CFG scale para 12-14</li>
+              </ul>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-green-500">
+              <h3 class="font-bold text-green-900 dark:text-green-300 mb-3">🌈 Problema: Cores erradas ou saturação excessiva</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2"><strong>Causa:</strong> Falta de controle cromático</p>
+              <p class="text-sm text-green-700 dark:text-green-400 mb-2"><strong>Solução:</strong></p>
+              <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                <li>• Especifique paleta: "muted color palette" ou "vibrant colors"</li>
+                <li>• Use color grading: "cool tones" ou "warm color temperature"</li>
+                <li>• Negative: "oversaturated, neon colors, unrealistic colors"</li>
+                <li>• Mencione cores específicas: "navy blue, cream, gold accents"</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 5: Templates Reutilizáveis -->
+      <div class="bg-gradient-to-br from-cyan-50 to-teal-50 dark:from-cyan-900/20 dark:to-teal-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-cyan-200 dark:border-cyan-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">📋</span>
+          <div>
+            <h2 class="text-3xl font-bold text-cyan-900 dark:text-cyan-300">Templates Profissionais Reutilizáveis</h2>
+            <p class="text-cyan-700 dark:text-cyan-400 font-semibold mt-1">Estruturas prontas para projetos reais</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-6">
+            Economize horas de trabalho com templates testados. Personalize os campos entre colchetes [assim].
+          </p>
+
+          <div class="space-y-5">
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-2 border-cyan-300 dark:border-cyan-700">
+              <h3 class="font-bold text-cyan-900 dark:text-cyan-300 mb-3 text-xl">Template 1: Social Media Post</h3>
+              <div class="bg-cyan-50 dark:bg-cyan-900/30 p-4 rounded font-mono text-sm">
+                [subject description], [action/pose], professional social media content, eye-catching composition, [brand color palette], natural lighting, high engagement aesthetic, sharp focus, optimized for instagram
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-3">
+                <strong>Exemplo:</strong> Young woman holding coffee cup, smiling genuinely, professional social media content, eye-catching composition, warm earthy tones, natural lighting, high engagement aesthetic, sharp focus, optimized for instagram
+              </p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-2 border-blue-300 dark:border-blue-700">
+              <h3 class="font-bold text-blue-900 dark:text-blue-300 mb-3 text-xl">Template 2: Product Photography</h3>
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded font-mono text-sm">
+                [product name] product photography, [background type], studio lighting with soft shadows, commercial quality, perfect product placement, [mood/aesthetic], professional e-commerce photo, 8K detail, sharp focus
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-3">
+                <strong>Exemplo:</strong> Luxury skincare bottle product photography, minimal white background, studio lighting with soft shadows, commercial quality, perfect product placement, clean and elegant aesthetic, professional e-commerce photo, 8K detail, sharp focus
+              </p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-2 border-purple-300 dark:border-purple-700">
+              <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-3 text-xl">Template 3: Brand Campaign</h3>
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded font-mono text-sm">
+                [target audience] in [setting], [emotional tone], [brand style] advertising photography, [color mood], professional campaign aesthetic, storytelling composition, cinematic quality, [aspect ratio]
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-3">
+                <strong>Exemplo:</strong> Confident businesswoman in modern office, empowered and focused, luxury brand advertising photography, cool sophisticated tones, professional campaign aesthetic, storytelling composition, cinematic quality, 16:9 format
+              </p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-2 border-orange-300 dark:border-orange-700">
+              <h3 class="font-bold text-orange-900 dark:text-orange-300 mb-3 text-xl">Template 4: Editorial Content</h3>
+              <div class="bg-orange-50 dark:bg-orange-900/30 p-4 rounded font-mono text-sm">
+                [concept/theme] editorial illustration, [style reference], bold graphic design, [color scheme], magazine quality, modern aesthetic, vector style, clean composition, suitable for [publication type]
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-3">
+                <strong>Exemplo:</strong> Future of technology editorial illustration, flat design with geometric shapes, bold graphic design, gradient purple and blue, magazine quality, modern aesthetic, vector style, clean composition, suitable for business magazine
+              </p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-2 border-green-300 dark:border-green-700">
+              <h3 class="font-bold text-green-900 dark:text-green-300 mb-3 text-xl">Template 5: Architectural Visualization</h3>
+              <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded font-mono text-sm">
+                [building/space type], [architectural style], professional architecture photography, [lighting condition], clean lines and geometry, [mood], realistic materials, high detail, [perspective/angle]
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-3">
+                <strong>Exemplo:</strong> Modern minimalist living room, scandinavian design, professional interior photography, natural daylight streaming through windows, clean lines and geometry, serene and airy, realistic materials, high detail, wide angle perspective
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 6: Estrutura de Aulas -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">📚 Estrutura das Aulas</h2>
+        <div class="space-y-4">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300">Aula 1: Anatomia de Prompts Profissionais</h3>
+              <span class="text-sm text-blue-700 dark:text-blue-400 font-semibold">2h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Os 7 elementos essenciais de um prompt completo. Estrutura, lógica e como cada parte influencia o resultado final.
+            </p>
+            <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+              <li>• Dissecando prompts profissionais reais</li>
+              <li>• Exercício prático: construir 5 prompts estruturados</li>
+              <li>• Comparação: prompt amador vs profissional</li>
+            </ul>
+          </div>
+
+          <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg border-l-4 border-indigo-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-indigo-900 dark:text-indigo-300">Aula 2: Weighting e Negative Prompts</h3>
+              <span class="text-sm text-indigo-700 dark:text-indigo-400 font-semibold">2h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Controle preciso de cada elemento. Como usar pesos para priorizar características e negative prompts para evitar problemas.
+            </p>
+            <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+              <li>• Sintaxe avançada de weighting</li>
+              <li>• Lista completa de negatives essenciais</li>
+              <li>• Exercício: corrigir 10 prompts problemáticos</li>
+            </ul>
+          </div>
+
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg border-l-4 border-purple-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300">Aula 3: Seeds e Parâmetros Técnicos</h3>
+              <span class="text-sm text-purple-700 dark:text-purple-400 font-semibold">2h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Controle de aleatoriedade e configurações avançadas. CFG, steps, samplers e como ajustar para cada tipo de projeto.
+            </p>
+            <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+              <li>• Workflow de iteração com seeds</li>
+              <li>• Configurações ideais por tipo de projeto</li>
+              <li>• Experimentos práticos com parâmetros</li>
+            </ul>
+          </div>
+
+          <div class="bg-cyan-50 dark:bg-cyan-900/20 p-6 rounded-lg border-l-4 border-cyan-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-cyan-900 dark:text-cyan-300">Aula 4: Biblioteca de Estilos e Artistas</h3>
+              <span class="text-sm text-cyan-700 dark:text-cyan-400 font-semibold">2h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Construção de repertório visual. 20+ estilos profissionais e 15 referências de artistas para qualquer nicho.
+            </p>
+            <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+              <li>• Testes práticos de cada estilo</li>
+              <li>• Como combinar referências de artistas</li>
+              <li>• Criação de biblioteca pessoal organizada</li>
+            </ul>
+          </div>
+
+          <div class="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-lg border-l-4 border-orange-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-orange-900 dark:text-orange-300">Aula 5: Debugging e Solução de Problemas</h3>
+              <span class="text-sm text-orange-700 dark:text-orange-400 font-semibold">1h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Diagnóstico e correção dos 10 problemas mais comuns. Metodologia sistemática para resolver qualquer issue.
+            </p>
+            <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+              <li>• Casos reais de problemas e soluções</li>
+              <li>• Checklist de troubleshooting</li>
+              <li>• Quando refazer vs quando iterar</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-l-4 border-green-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-green-900 dark:text-green-300">Aula 6: Templates e Workflow Profissional</h3>
+              <span class="text-sm text-green-700 dark:text-green-400 font-semibold">1h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Templates prontos para projetos reais. Como organizar biblioteca de prompts e workflow de produção em escala.
+            </p>
+            <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+              <li>• 10 templates personalizáveis</li>
+              <li>• Organização de biblioteca no Notion</li>
+              <li>• Produção em batch para eficiência</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercícios Práticos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6 text-blue-900 dark:text-blue-300">✏️ Exercícios Práticos Obrigatórios</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+          Pratique cada técnica aprendida com exercícios estruturados:
+        </p>
+
+        <div class="space-y-4">
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-blue-500">
+            <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300 mb-3">1. Construção de Prompts Estruturados</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie 10 prompts completos usando a estrutura dos 7 elementos. Para cada um, documente:
+              qual elemento pertence a cada categoria (subject, medium, style, etc.), resultado esperado vs obtido,
+              ajustes necessários. Escolha 5 nichos diferentes (moda, food, produto, retrato, arquitetura).
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: Documento com 10 prompts dissecados + resultados comparativos
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-indigo-500">
+            <h3 class="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-3">2. Experimentos com Weighting</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Escolha um prompt base. Gere 6 variações aplicando diferentes pesos a elementos específicos.
+              Documente como cada mudança de peso afetou o resultado. Exemplo: aumentar peso de "dramatic lighting"
+              de 1.0 para 1.5 e depois 2.0. Compare visualmente os resultados.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: Grid comparativo com 6 versões + análise de cada variação
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-purple-500">
+            <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300 mb-3">3. Biblioteca de Estilos Pessoal</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Teste todos os 20 estilos apresentados no módulo. Para cada um, gere 2-3 imagens variando apenas o subject.
+              Organize em documento ou Notion com: nome do estilo, prompt completo, quando usar, exemplos visuais.
+              Adicione 5 estilos próprios pesquisados por você.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: Biblioteca digital organizada com 25 estilos + exemplos
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-cyan-500">
+            <h3 class="text-xl font-bold text-cyan-900 dark:text-cyan-300 mb-3">4. Debugging Challenge</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie intencionalmente 5 prompts com problemas comuns (anatomia ruim, cores erradas, baixa qualidade,
+              elementos ignorados, estilo inconsistente). Depois aplique as técnicas de debugging para corrigir cada um.
+              Documente o problema, causa identificada e solução aplicada.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: Documento antes/depois com análise de cada correção
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-orange-500">
+            <h3 class="text-xl font-bold text-orange-900 dark:text-orange-300 mb-3">5. Templates para Cliente Real</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Escolha um nicho (ex: restaurante, loja de roupa, marca de beleza). Crie 5 templates
+              personalizados para esse cliente, cobrindo diferentes necessidades: post de feed, story,
+              produto, conceitual, campanha. Cada template deve ser facilmente editável.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: 5 templates prontos + guia de uso para o cliente
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recursos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎁 Recursos Adicionais</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+          Materiais complementares para maximizar seu aprendizado:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-5 rounded-lg border border-blue-200 dark:border-blue-700">
+            <h3 class="font-bold text-blue-900 dark:text-blue-300 mb-3">📚 Bibliotecas Prontas</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Notion template com 50+ prompts categorizados</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Spreadsheet de estilos e artistas com exemplos</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>PDF de referências visuais por categoria</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Biblioteca de negative prompts universais</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-5 rounded-lg border border-purple-200 dark:border-purple-700">
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-3">🔧 Ferramentas</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Prompt analyzer tool (identifica elementos)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Weight calculator para balanceamento</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Template generator automatizado</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Organizador de seeds e variações</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-orange-50 dark:bg-orange-900/20 p-5 rounded-lg border border-orange-200 dark:border-orange-700">
+            <h3 class="font-bold text-orange-900 dark:text-orange-300 mb-3">📖 Guias e Checklists</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Checklist de prompt perfeito (15 pontos)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Guia de troubleshooting ilustrado</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Flowchart de decisão de parâmetros</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Glossário completo de termos técnicos</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-cyan-50 dark:bg-cyan-900/20 p-5 rounded-lg border border-cyan-200 dark:border-cyan-700">
+            <h3 class="font-bold text-cyan-900 dark:text-cyan-300 mb-3">🎥 Bônus</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Vídeos de análise de prompts famosos</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Sessão ao vivo de debugging colaborativo</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Case studies de projetos reais</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Comunidade exclusiva para compartilhar prompts</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dica Final -->
+      <div class="bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-xl shadow-xl p-8 mb-8">
+        <div class="text-center mb-4">
+          <span class="text-6xl mb-4 block">🎯</span>
+          <h2 class="text-3xl font-bold mb-4">Dica Final: O Segredo dos Prompts Profissionais</h2>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg">
+          <p class="text-xl mb-4">
+            Prompts profissionais não são mágica. São ESTRUTURA + VOCABULÁRIO + ITERAÇÃO.
+          </p>
+          <p class="text-lg mb-4">
+            A diferença entre um prompt que gera R$ 50 e um que gera R$ 500 não é complexidade. É:
+          </p>
+          <ol class="space-y-3 text-lg mb-6">
+            <li><strong>1. CLAREZA:</strong> Cada palavra tem propósito, sem ambiguidade</li>
+            <li><strong>2. CONSISTÊNCIA:</strong> Resultados previsíveis que você pode replicar</li>
+            <li><strong>3. EFICIÊNCIA:</strong> Templates que economizam 80% do tempo</li>
+          </ol>
+          <p class="text-xl font-bold text-center mt-6 pt-6 border-t border-white/30">
+            Não decore prompts. Entenda a LÓGICA. Assim você cria qualquer coisa.
+          </p>
+          <p class="text-center mt-4">
+            Depois deste módulo, você nunca mais ficará travado sem saber o que escrever.
+          </p>
+        </div>
+      </div>
+
+      <!-- Navegação -->
+      <div class="flex justify-between items-center mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
+        <a href="tecnico-modulo-01.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold">
+          ← Voltar para Módulo 1
+        </a>
+        <a href="tecnico-modulo-03.html" class="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 transition-colors text-lg">
+          Continuar para Módulo 3 →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-white py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-neutral-400">&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
+      <p class="text-neutral-500 text-sm mt-2">Transformando profissionais para o mercado do futuro</p>
+    </div>
+  </footer>
+
+  <!-- Script de Dark Mode -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      themeToggleLightIcon.classList.remove('hidden');
+      document.documentElement.classList.add('dark');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
+      } else {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

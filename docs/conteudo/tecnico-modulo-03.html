@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3: Direção Criativa Aplicada - Designer do Futuro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            tecnico: '#3B82F6',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navegação -->
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm shadow-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Designer do Futuro</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../trilhas/tecnico.html" class="text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400">Voltar para Trilha</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-blue-50 to-white dark:from-neutral-800 dark:to-neutral-900 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-4">
+        <a href="../trilhas/tecnico.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold">
+          ← Voltar para Trilha Técnico
+        </a>
+      </div>
+      <div class="text-6xl mb-6">🎬</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 leading-tight">Módulo 3: Direção Criativa Aplicada</h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
+        Aprenda a pensar como diretor criativo: do briefing ao conceito final, construindo narrativas visuais coesas e impactantes
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          1 semana
+        </span>
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          8 horas
+        </span>
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          Técnico
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Objetivos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎯 O Que Você Vai Dominar Neste Módulo</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6 text-lg">
+          Este módulo eleva você de executor para diretor criativo. Você aprenderá a traduzir briefings em conceitos visuais poderosos e a manter consistência em séries completas de imagens.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+            <span class="text-blue-500 mr-4 text-2xl flex-shrink-0">📋</span>
+            <div>
+              <strong class="text-blue-900 dark:text-blue-300">Interpretação de Briefing:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Extrair insights, identificar objetivos reais e fazer as perguntas certas antes de criar</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-lg">
+            <span class="text-indigo-500 mr-4 text-2xl flex-shrink-0">🎨</span>
+            <div>
+              <strong class="text-indigo-900 dark:text-indigo-300">Moodboards e Conceituação:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Construir referências visuais estratégicas e desenvolver conceitos criativos originais</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+            <span class="text-purple-500 mr-4 text-2xl flex-shrink-0">🔄</span>
+            <div>
+              <strong class="text-purple-900 dark:text-purple-300">Consistência em Séries:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Dominar 8 técnicas para criar coleções de imagens com identidade visual coesa</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-cyan-50 dark:bg-cyan-900/20 p-4 rounded-lg">
+            <span class="text-cyan-500 mr-4 text-2xl flex-shrink-0">💼</span>
+            <div>
+              <strong class="text-cyan-900 dark:text-cyan-300">Cases e Apresentação:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Desenvolver 3 projetos completos e aprender a apresentar suas ideias para clientes com confiança</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 1: Anatomia do Briefing -->
+      <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-blue-200 dark:border-blue-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">📋</span>
+          <div>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300">Decodificando Briefings de Cliente</h2>
+            <p class="text-blue-700 dark:text-blue-400 font-semibold mt-1">Como extrair o que realmente importa</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            95% dos problemas criativos começam no briefing. Clientes raramente sabem EXATAMENTE o que querem. Seu trabalho é <strong>interpretar, questionar e direcionar</strong> antes de criar qualquer pixel.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border-l-4 border-blue-500">
+            <h3 class="text-2xl font-bold text-blue-900 dark:text-blue-300 mb-4">🔍 As 10 Perguntas Essenciais</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+              Faça essas perguntas ANTES de aceitar qualquer projeto:
+            </p>
+
+            <div class="space-y-4">
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded">
+                <p class="font-bold text-blue-900 dark:text-blue-300 mb-2">1. Qual é o OBJETIVO REAL deste projeto?</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  (Não aceite "fazer umas fotos bonitas". Pergunte: vender produto? Atrair seguidores? Rebranding?)
+                </p>
+              </div>
+
+              <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded">
+                <p class="font-bold text-indigo-900 dark:text-indigo-300 mb-2">2. Quem é o público-alvo ESPECÍFICO?</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  (Não aceite "público geral". Pergunte: idade, comportamento, onde consomem conteúdo?)
+                </p>
+              </div>
+
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded">
+                <p class="font-bold text-purple-900 dark:text-purple-300 mb-2">3. Onde essas imagens serão usadas?</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  (Instagram? Site? Outdoor? Cada canal pede uma abordagem diferente)
+                </p>
+              </div>
+
+              <div class="bg-cyan-50 dark:bg-cyan-900/30 p-4 rounded">
+                <p class="font-bold text-cyan-900 dark:text-cyan-300 mb-2">4. Que EMOÇÃO deve transmitir?</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  (Confiança? Desejo? Felicidade? Seja específico, uma palavra muda tudo)
+                </p>
+              </div>
+
+              <div class="bg-orange-50 dark:bg-orange-900/30 p-4 rounded">
+                <p class="font-bold text-orange-900 dark:text-orange-300 mb-2">5. Existem referências visuais que o cliente AMA?</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  (Peça 3-5 exemplos. Analise o padrão entre eles)
+                </p>
+              </div>
+
+              <div class="bg-pink-50 dark:bg-pink-900/30 p-4 rounded">
+                <p class="font-bold text-pink-900 dark:text-pink-300 mb-2">6. Existem referências que o cliente ODEIA?</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  (Tão importante quanto o que ele gosta. Evita retrabalho)
+                </p>
+              </div>
+
+              <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded">
+                <p class="font-bold text-green-900 dark:text-green-300 mb-2">7. Qual é a IDENTIDADE visual da marca?</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  (Cores, tipografia, personalidade. Se não tiver, você precisa definir)
+                </p>
+              </div>
+
+              <div class="bg-red-50 dark:bg-red-900/30 p-4 rounded">
+                <p class="font-bold text-red-900 dark:text-red-300 mb-2">8. Quantas imagens e em que formatos?</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  (Define escopo, tempo e precificação. Seja claro desde o início)
+                </p>
+              </div>
+
+              <div class="bg-yellow-50 dark:bg-yellow-900/30 p-4 rounded">
+                <p class="font-bold text-yellow-900 dark:text-yellow-300 mb-2">9. Qual é o prazo REAL e flexível?</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  (Sempre há folga. Negocie tempo para fazer bem feito)
+                </p>
+              </div>
+
+              <div class="bg-teal-50 dark:bg-teal-900/30 p-4 rounded">
+                <p class="font-bold text-teal-900 dark:text-teal-300 mb-2">10. Quem aprova e quantas rodadas de revisão?</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  (Define expectativa. Limite revisões infinitas no contrato)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">✅ Template de Briefing Estruturado</h3>
+            <p class="mb-4">Use este template em TODOS os projetos:</p>
+            <div class="bg-white/10 backdrop-blur p-4 rounded text-sm space-y-2">
+              <p><strong>PROJETO:</strong> [Nome do cliente e descrição rápida]</p>
+              <p><strong>OBJETIVO:</strong> [O que precisa alcançar]</p>
+              <p><strong>PÚBLICO:</strong> [Quem vai ver, idade, comportamento]</p>
+              <p><strong>CANAIS:</strong> [Onde será usado]</p>
+              <p><strong>MOOD:</strong> [3-5 adjetivos que definem a vibe]</p>
+              <p><strong>REFERÊNCIAS:</strong> [Links de inspiração]</p>
+              <p><strong>ANTI-REFERÊNCIAS:</strong> [O que NÃO fazer]</p>
+              <p><strong>ENTREGÁVEIS:</strong> [Quantidade, formatos, dimensões]</p>
+              <p><strong>PRAZO:</strong> [Data de entrega]</p>
+              <p><strong>REVISÕES:</strong> [Número de rounds inclusos]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 2: Moodboards Estratégicos -->
+      <div class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-indigo-200 dark:border-indigo-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🎨</span>
+          <div>
+            <h2 class="text-3xl font-bold text-indigo-900 dark:text-indigo-300">Construindo Moodboards Profissionais</h2>
+            <p class="text-indigo-700 dark:text-indigo-400 font-semibold mt-1">Referências visuais que guiam todo o projeto</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-6">
+            Moodboard não é um Pinterest aleatório. É uma <strong>ferramenta estratégica</strong> que alinha expectativas, inspira criação e justifica decisões criativas.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-indigo-900 dark:text-indigo-300 mb-4">📐 Estrutura de um Moodboard Completo</h3>
+
+            <div class="space-y-4">
+              <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded border-l-4 border-indigo-500">
+                <p class="font-bold text-indigo-900 dark:text-indigo-300 mb-2">1. PALETA DE CORES (20% do board)</p>
+                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>• 3-5 cores principais com códigos hex</li>
+                  <li>• Exemplos de uso da paleta em contexto</li>
+                  <li>• Temperatura cromática e contraste</li>
+                </ul>
+              </div>
+
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded border-l-4 border-purple-500">
+                <p class="font-bold text-purple-900 dark:text-purple-300 mb-2">2. ESTILO VISUAL (30% do board)</p>
+                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>• Referências de fotografia/ilustração similares</li>
+                  <li>• Tratamento de luz e sombra</li>
+                  <li>• Textura e acabamento desejados</li>
+                </ul>
+              </div>
+
+              <div class="bg-cyan-50 dark:bg-cyan-900/30 p-4 rounded border-l-4 border-cyan-500">
+                <p class="font-bold text-cyan-900 dark:text-cyan-300 mb-2">3. COMPOSIÇÃO E FRAMING (20% do board)</p>
+                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>• Ângulos de câmera preferidos</li>
+                  <li>• Uso de espaço negativo</li>
+                  <li>• Enquadramentos e proporções</li>
+                </ul>
+              </div>
+
+              <div class="bg-orange-50 dark:bg-orange-900/30 p-4 rounded border-l-4 border-orange-500">
+                <p class="font-bold text-orange-900 dark:text-orange-300 mb-2">4. MOOD E ATMOSFERA (20% do board)</p>
+                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>• Emoções e sensações visuais</li>
+                  <li>• Energia (calma vs dinâmica)</li>
+                  <li>• Personalidade da marca</li>
+                </ul>
+              </div>
+
+              <div class="bg-pink-50 dark:bg-pink-900/30 p-4 rounded border-l-4 border-pink-500">
+                <p class="font-bold text-pink-900 dark:text-pink-300 mb-2">5. ELEMENTOS E DETALHES (10% do board)</p>
+                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>• Props e objetos recorrentes</li>
+                  <li>• Tipografia (se relevante)</li>
+                  <li>• Padrões e texturas específicas</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🎯 3 Tipos de Moodboard para Projetos Diferentes</h3>
+
+            <div class="grid md:grid-cols-3 gap-4 mt-4">
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-2">EXPLORATÓRIO</p>
+                <p class="text-sm mb-2">Para quando o cliente não sabe o que quer</p>
+                <p class="text-xs">→ Apresente 3 direções diferentes<br>→ Cada uma com mood distinto<br>→ Cliente escolhe uma</p>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-2">DEFINIDO</p>
+                <p class="text-sm mb-2">Cliente tem identidade clara</p>
+                <p class="text-xs">→ Um único board coeso<br>→ Refina estilo existente<br>→ Mantém consistência</p>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-2">EVOLUTIVO</p>
+                <p class="text-sm mb-2">Para séries longas ou campanhas</p>
+                <p class="text-xs">→ Board inicial + variações<br>→ Adaptável por tema<br>→ Mantém DNA visual</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg border-l-4 border-yellow-500">
+            <h3 class="text-2xl font-bold text-yellow-900 dark:text-yellow-300 mb-3">⚠️ Erros Comuns em Moodboards</h3>
+            <div class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <p><strong>❌ Muitas imagens aleatórias:</strong> Qualidade > quantidade. 15-20 imagens bem escolhidas são suficientes</p>
+              <p><strong>❌ Falta de coesão:</strong> Todas imagens devem "conversar" entre si visualmente</p>
+              <p><strong>❌ Só mostrar o óbvio:</strong> Não coloque apenas fotos do segmento. Inspire-se em outras áreas</p>
+              <p><strong>❌ Não anotar nada:</strong> Adicione textos explicando POR QUE cada referência está ali</p>
+              <p><strong>❌ Não apresentar pro cliente:</strong> Moodboard precisa ser aprovado ANTES de criar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 3: Conceituação Criativa -->
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-purple-200 dark:border-purple-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">💡</span>
+          <div>
+            <h2 class="text-3xl font-bold text-purple-900 dark:text-purple-300">Do Briefing ao Conceito Criativo</h2>
+            <p class="text-purple-700 dark:text-purple-400 font-semibold mt-1">A ponte entre problema e solução visual</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-6">
+            Conceito criativo é a <strong>ideia central</strong> que amarra todas as peças visuais. Não é decoração, é estratégia traduzida em imagens.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-purple-900 dark:text-purple-300 mb-4">🧠 Metodologia de Conceituação em 5 Passos</h3>
+
+            <div class="space-y-5">
+              <div class="border-l-4 border-purple-500 pl-4">
+                <p class="font-bold text-purple-900 dark:text-purple-300 mb-2">PASSO 1: IMERSÃO</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  Absorva tudo sobre o cliente, produto e mercado. Pesquise concorrentes, tendências, cultura do nicho.
+                </p>
+                <div class="bg-purple-50 dark:bg-purple-900/30 p-3 rounded text-xs">
+                  <strong>Tempo:</strong> 1-2 horas | <strong>Entrega:</strong> Documento de insights
+                </div>
+              </div>
+
+              <div class="border-l-4 border-pink-500 pl-4">
+                <p class="font-bold text-pink-900 dark:text-pink-300 mb-2">PASSO 2: DEFINIÇÃO DO PROBLEMA</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  Traduza o briefing em UMA frase clara: "Como podemos comunicar [objetivo] para [público] de forma [diferencial]?"
+                </p>
+                <div class="bg-pink-50 dark:bg-pink-900/30 p-3 rounded text-xs">
+                  <strong>Exemplo:</strong> "Como podemos mostrar sofisticação para millennials sem parecer inacessível?"
+                </div>
+              </div>
+
+              <div class="border-l-4 border-indigo-500 pl-4">
+                <p class="font-bold text-indigo-900 dark:text-indigo-300 mb-2">PASSO 3: IDEAÇÃO</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  Brainstorm sem censura. Anote 10-15 ideias visuais diferentes, mesmo as absurdas.
+                </p>
+                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-3 rounded text-xs">
+                  <strong>Técnica:</strong> Palavra-chave → Metáfora visual → Como executar com IA
+                </div>
+              </div>
+
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <p class="font-bold text-cyan-900 dark:text-cyan-300 mb-2">PASSO 4: SELEÇÃO E REFINAMENTO</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  Escolha as 2-3 ideias mais fortes. Pergunte: É original? É executável? Comunica o objetivo?
+                </p>
+                <div class="bg-cyan-50 dark:bg-cyan-900/30 p-3 rounded text-xs">
+                  <strong>Critérios:</strong> Impacto visual + Viabilidade + Alinhamento com briefing
+                </div>
+              </div>
+
+              <div class="border-l-4 border-orange-500 pl-4">
+                <p class="font-bold text-orange-900 dark:text-orange-300 mb-2">PASSO 5: APRESENTAÇÃO DO CONCEITO</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  Articule o conceito em palavras antes de executar. Crie um statement de 2-3 frases explicando a ideia.
+                </p>
+                <div class="bg-orange-50 dark:bg-orange-900/30 p-3 rounded text-xs">
+                  <strong>Estrutura:</strong> Problema + Conceito + Como vamos executar visualmente
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">✨ Exemplo de Conceito Completo</h3>
+            <div class="bg-white/10 backdrop-blur p-5 rounded space-y-3">
+              <div>
+                <p class="font-bold mb-1">CLIENTE:</p>
+                <p class="text-sm">Marca de skincare natural para público 25-35 anos</p>
+              </div>
+              <div>
+                <p class="font-bold mb-1">PROBLEMA:</p>
+                <p class="text-sm">Como comunicar eficácia científica sem perder o apelo natural e orgânico</p>
+              </div>
+              <div>
+                <p class="font-bold mb-1">CONCEITO:</p>
+                <p class="text-sm">"Natureza Precisa" - União de elementos botânicos com geometria clean e minimalista</p>
+              </div>
+              <div>
+                <p class="font-bold mb-1">EXECUÇÃO VISUAL:</p>
+                <p class="text-sm">Produtos em composições arquitetônicas com plantas, luz natural difusa, paleta verde sage + branco + bege, estilo editorial clean</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 4: 8 Técnicas de Consistência -->
+      <div class="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-orange-200 dark:border-orange-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🔄</span>
+          <div>
+            <h2 class="text-3xl font-bold text-orange-900 dark:text-orange-300">8 Técnicas de Consistência em Séries</h2>
+            <p class="text-orange-700 dark:text-orange-400 font-semibold mt-1">Como manter identidade visual em múltiplas imagens</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-6">
+            A marca de um profissional é criar séries coesas. Essas 8 técnicas garantem que suas imagens pareçam família, não estranhos.
+          </p>
+
+          <div class="space-y-4">
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-red-500">
+              <h3 class="font-bold text-red-900 dark:text-red-300 mb-3 text-xl">1. SEED FIXO + VARIAÇÕES CONTROLADAS</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                Use o mesmo seed para toda a série. Varie APENAS subject e pequenos detalhes de composition.
+              </p>
+              <div class="bg-red-50 dark:bg-red-900/30 p-3 rounded text-sm">
+                <strong>Exemplo:</strong><br>
+                Base: seed 12345, "product photography, white background, soft lighting"<br>
+                Imagem 1: "red sneaker" + base<br>
+                Imagem 2: "blue sneaker" + base<br>
+                → Mantém estilo, muda produto
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-orange-500">
+              <h3 class="font-bold text-orange-900 dark:text-orange-300 mb-3 text-xl">2. PALETA DE CORES FIXA</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                Defina 3-5 cores e use-as em TODAS as imagens da série, variando apenas proporções.
+              </p>
+              <div class="bg-orange-50 dark:bg-orange-900/30 p-3 rounded text-sm">
+                <strong>Prompt Exemplo:</strong><br>
+                "color palette: warm terracotta, cream, sage green, gold accents"<br>
+                → Adicione isso em TODOS os prompts da série
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-yellow-500">
+              <h3 class="font-bold text-yellow-900 dark:text-yellow-300 mb-3 text-xl">3. ESTILO E MEDIUM IDÊNTICOS</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                Não mude a parte do prompt que define o tipo de arte e técnica. Cole exatamente igual em todas.
+              </p>
+              <div class="bg-yellow-50 dark:bg-yellow-900/30 p-3 rounded text-sm">
+                <strong>Template Base:</strong><br>
+                "editorial fashion photography, shot on Hasselblad, 85mm lens, shallow depth of field"<br>
+                → Fixo em toda série, muda apenas subject e pose
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-green-500">
+              <h3 class="font-bold text-green-900 dark:text-green-300 mb-3 text-xl">4. ILUMINAÇÃO CONSISTENTE</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                Mantenha mesma descrição de luz (natural, golden hour, studio, dramatic) e temperatura.
+              </p>
+              <div class="bg-green-50 dark:bg-green-900/30 p-3 rounded text-sm">
+                <strong>Opções:</strong><br>
+                • "soft natural window light" → Mood calmo e autêntico<br>
+                • "dramatic side lighting" → Mood intenso e editorial<br>
+                • "even studio lighting" → Mood clean e comercial
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-blue-500">
+              <h3 class="font-bold text-blue-900 dark:text-blue-300 mb-3 text-xl">5. COMPOSIÇÃO E FRAMING PADRONIZADOS</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                Defina regra de enquadramento (sempre close-up, sempre rule of thirds, sempre centered) e siga.
+              </p>
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-3 rounded text-sm">
+                <strong>Série de Retratos:</strong><br>
+                "centered composition, headshot portrait, eye level, minimal background"<br>
+                → Todas pessoas na mesma posição e distância
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-indigo-500">
+              <h3 class="font-bold text-indigo-900 dark:text-indigo-300 mb-3 text-xl">6. REFERÊNCIA DE ARTISTA ÚNICA</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                Escolha UM artista/fotógrafo como referência e use em toda série. Isso unifica o "olhar".
+              </p>
+              <div class="bg-indigo-50 dark:bg-indigo-900/30 p-3 rounded text-sm">
+                <strong>Exemplo:</strong><br>
+                "in the style of Annie Leibovitz" → Todas fotos com a assinatura dela<br>
+                Não misture artistas diferentes na mesma série
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-purple-500">
+              <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-3 text-xl">7. ELEMENTOS VISUAIS RECORRENTES</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                Inclua um elemento que se repete sutilmente em todas imagens (textura, objeto, padrão).
+              </p>
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-3 rounded text-sm">
+                <strong>Ideias:</strong><br>
+                • Folhas/plantas em cada composição<br>
+                • Textura de papel em background<br>
+                • Sempre um elemento dourado/metálico
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-pink-500">
+              <h3 class="font-bold text-pink-900 dark:text-pink-300 mb-3 text-xl">8. PÓS-PRODUÇÃO UNIFORME</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                Aplique os mesmos ajustes de cor, contraste e edição em TODAS as imagens ao final.
+              </p>
+              <div class="bg-pink-50 dark:bg-pink-900/30 p-3 rounded text-sm">
+                <strong>Workflow:</strong><br>
+                1. Gere todas na IA<br>
+                2. Exporte para Lightroom/Photoshop<br>
+                3. Crie preset com ajustes<br>
+                4. Aplique em batch
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 5: Storytelling Visual -->
+      <div class="bg-gradient-to-br from-cyan-50 to-teal-50 dark:from-cyan-900/20 dark:to-teal-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-cyan-200 dark:border-cyan-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">📖</span>
+          <div>
+            <h2 class="text-3xl font-bold text-cyan-900 dark:text-cyan-300">Storytelling Visual com IA</h2>
+            <p class="text-cyan-700 dark:text-cyan-400 font-semibold mt-1">Criar narrativas que conectam emocionalmente</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-6">
+            Séries de imagens contam histórias. Mesmo sem texto, suas fotos podem ter começo, meio e fim.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-cyan-900 dark:text-cyan-300 mb-4">🎬 Estrutura Narrativa em 3 Atos</h3>
+
+            <div class="space-y-4">
+              <div class="bg-cyan-50 dark:bg-cyan-900/30 p-5 rounded">
+                <p class="font-bold text-cyan-900 dark:text-cyan-300 mb-2">ATO 1: ESTABELECIMENTO (1-2 imagens)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  Apresenta o "mundo" da história. Wide shots, contextualização, mood inicial.
+                </p>
+                <div class="bg-white dark:bg-neutral-900 p-3 rounded text-xs">
+                  <strong>Exemplo - Campanha de café:</strong><br>
+                  Imagem 1: Vista aérea de plantação de café ao amanhecer, névoa entre montanhas
+                </div>
+              </div>
+
+              <div class="bg-teal-50 dark:bg-teal-900/30 p-5 rounded">
+                <p class="font-bold text-teal-900 dark:text-teal-300 mb-2">ATO 2: DESENVOLVIMENTO (3-4 imagens)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  Aprofunda nos detalhes, mostra processo, cria conexão emocional.
+                </p>
+                <div class="bg-white dark:bg-neutral-900 p-3 rounded text-xs">
+                  <strong>Exemplo continuado:</strong><br>
+                  Imagem 2: Mãos colhendo grãos vermelhos<br>
+                  Imagem 3: Close-up de grãos torrados<br>
+                  Imagem 4: Barista preparando café com atenção
+                </div>
+              </div>
+
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-5 rounded">
+                <p class="font-bold text-blue-900 dark:text-blue-300 mb-2">ATO 3: RESOLUÇÃO (1-2 imagens)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  Payoff emocional. O momento de satisfação, resultado, emoção final.
+                </p>
+                <div class="bg-white dark:bg-neutral-900 p-3 rounded text-xs">
+                  <strong>Exemplo final:</strong><br>
+                  Imagem 5: Pessoa sorrindo segurando xícara fumegante em momento íntimo
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-cyan-500 to-teal-500 text-white p-6 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">💡 4 Arquétipos de Narrativa Visual</h3>
+            <div class="grid md:grid-cols-2 gap-4 mt-4">
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-2">1. JORNADA</p>
+                <p class="text-sm">Início → Transformação → Resultado</p>
+                <p class="text-xs mt-2">Uso: Before/after, processos, evolução</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-2">2. DIA NA VIDA</p>
+                <p class="text-sm">Manhã → Tarde → Noite</p>
+                <p class="text-xs mt-2">Uso: Lifestyle, rotinas, humanização</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-2">3. ZOOM PROGRESSIVO</p>
+                <p class="text-sm">Panorâmica → Medium → Close-up</p>
+                <p class="text-xs mt-2">Uso: Produtos, detalhes, storytelling</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-2">4. EMOÇÕES</p>
+                <p class="text-sm">Problema → Solução → Felicidade</p>
+                <p class="text-xs mt-2">Uso: Publicidade, conexão emocional</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 6: 3 Cases Completos -->
+      <div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-green-200 dark:border-green-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">💼</span>
+          <div>
+            <h2 class="text-3xl font-bold text-green-900 dark:text-green-300">3 Cases Completos do Briefing ao Final</h2>
+            <p class="text-green-700 dark:text-green-400 font-semibold mt-1">Projetos reais com toda metodologia aplicada</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <div class="space-y-6">
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-2 border-green-300">
+              <h3 class="font-bold text-green-900 dark:text-green-300 mb-4 text-2xl">CASE 1: E-commerce de Moda Sustentável</h3>
+
+              <div class="space-y-3 text-sm">
+                <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">📋 BRIEFING:</p>
+                  <p>Marca de roupas sustentáveis para jovens 20-30 anos. Precisa de 8 fotos de produtos para site. Público valoriza autenticidade.</p>
+                </div>
+
+                <div class="bg-emerald-50 dark:bg-emerald-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">💡 CONCEITO:</p>
+                  <p>"Natureza Urbana" - Produtos em ambientes naturais com toque contemporâneo. Luz natural, composições orgânicas.</p>
+                </div>
+
+                <div class="bg-teal-50 dark:bg-teal-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">🎨 MOODBOARD:</p>
+                  <p>Paleta: Verde oliva, bege areia, branco natural. Ref: Fotografia lifestyle Kinfolk + minimalismo escandinavo.</p>
+                </div>
+
+                <div class="bg-cyan-50 dark:bg-cyan-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">🔄 TÉCNICAS DE CONSISTÊNCIA:</p>
+                  <p>Seed fixo, todas com luz natural difusa, composição centered com espaço negativo, sempre elemento natural (planta/pedra).</p>
+                </div>
+
+                <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">✅ RESULTADO:</p>
+                  <p>8 imagens coesas de produtos pendurados em galhos, sobre pedras naturais, com vegetação ao fundo. Cliente aprovou 100%.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-2 border-blue-300">
+              <h3 class="font-bold text-blue-900 dark:text-blue-300 mb-4 text-2xl">CASE 2: Campanha de Lançamento Tech Startup</h3>
+
+              <div class="space-y-3 text-sm">
+                <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">📋 BRIEFING:</p>
+                  <p>Startup de app de produtividade. Campanha de lançamento para LinkedIn. 6 imagens conceituais transmitindo inovação e foco.</p>
+                </div>
+
+                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">💡 CONCEITO:</p>
+                  <p>"Clareza no Caos" - Elementos organizados emergindo de ambientes caóticos. Metáfora visual de produtividade.</p>
+                </div>
+
+                <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">🎨 MOODBOARD:</p>
+                  <p>Paleta: Azul tech, cinza, branco, acentos laranja. Ref: Simon Stålenhag + design suíço + fotografia conceitual.</p>
+                </div>
+
+                <div class="bg-pink-50 dark:bg-pink-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">🔄 TÉCNICAS DE CONSISTÊNCIA:</p>
+                  <p>Estilo "digital art, 3D render", iluminação dramática lateral, composição assimétrica, sempre contraste ordem/caos.</p>
+                </div>
+
+                <div class="bg-red-50 dark:bg-red-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">✅ RESULTADO:</p>
+                  <p>Série de 6 renders conceituais: objetos organizados geometricamente vs desorganizados. Campanha viral no LinkedIn, 50k+ impressões.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-2 border-purple-300">
+              <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-4 text-2xl">CASE 3: Identidade Visual para Restaurante</h3>
+
+              <div class="space-y-3 text-sm">
+                <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">📋 BRIEFING:</p>
+                  <p>Restaurante italiano contemporâneo. Precisa de 10 fotos de pratos para menu digital e Instagram. Público 30-50 anos, classe A/B.</p>
+                </div>
+
+                <div class="bg-pink-50 dark:bg-pink-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">💡 CONCEITO:</p>
+                  <p>"Tradição Refinada" - Pratos clássicos com apresentação moderna. Elegância sem pompa.</p>
+                </div>
+
+                <div class="bg-red-50 dark:bg-red-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">🎨 MOODBOARD:</p>
+                  <p>Paleta: Vermelho tijolo, verde oliva, dourado suave, madeira. Ref: Food photography Donna Hay + rustic italian aesthetic.</p>
+                </div>
+
+                <div class="bg-orange-50 dark:bg-orange-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">🔄 TÉCNICAS DE CONSISTÊNCIA:</p>
+                  <p>Todas overhead 45°, mesma superfície de madeira, luz natural lateral, sempre ervas frescas como elemento decorativo.</p>
+                </div>
+
+                <div class="bg-yellow-50 dark:bg-yellow-900/30 p-4 rounded">
+                  <p class="font-bold mb-2">✅ RESULTADO:</p>
+                  <p>10 fotos de pratos com identidade coesa. Cliente usou em menu, Instagram e outdoor. Aumento de 30% em reservas no primeiro mês.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 7: Apresentação para Clientes -->
+      <div class="bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-pink-200 dark:border-pink-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🎤</span>
+          <div>
+            <h2 class="text-3xl font-bold text-pink-900 dark:text-pink-300">Como Apresentar Seu Trabalho para Clientes</h2>
+            <p class="text-pink-700 dark:text-pink-400 font-semibold mt-1">Venda suas ideias com confiança e profissionalismo</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-pink-900 dark:text-pink-300 mb-4">📊 Estrutura de Apresentação Profissional</h3>
+
+            <div class="space-y-4">
+              <div class="bg-pink-50 dark:bg-pink-900/30 p-4 rounded">
+                <p class="font-bold text-pink-900 dark:text-pink-300 mb-2">1. CONTEXTO (slide 1-2)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  Recapitule o briefing com suas palavras. Mostre que entendeu o problema.
+                </p>
+              </div>
+
+              <div class="bg-rose-50 dark:bg-rose-900/30 p-4 rounded">
+                <p class="font-bold text-rose-900 dark:text-rose-300 mb-2">2. CONCEITO (slide 3-4)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  Apresente sua ideia criativa. Use storytelling, não jargão técnico.
+                </p>
+              </div>
+
+              <div class="bg-red-50 dark:bg-red-900/30 p-4 rounded">
+                <p class="font-bold text-red-900 dark:text-red-300 mb-2">3. MOODBOARD (slide 5)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  Referências visuais que inspiraram a direção. Ajuste expectativas.
+                </p>
+              </div>
+
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded">
+                <p class="font-bold text-purple-900 dark:text-purple-300 mb-2">4. RESULTADOS (slides 6-10)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  As imagens criadas. UMA por slide, com respiro visual. Deixe o trabalho falar.
+                </p>
+              </div>
+
+              <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded">
+                <p class="font-bold text-indigo-900 dark:text-indigo-300 mb-2">5. APLICAÇÕES (slides 11-12)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  Mockups mostrando as imagens em uso real (Instagram, site, outdoor).
+                </p>
+              </div>
+
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded">
+                <p class="font-bold text-blue-900 dark:text-blue-300 mb-2">6. PRÓXIMOS PASSOS (slide final)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  Linha do tempo, ajustes inclusos, forma de entrega. Seja claro.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-pink-500 to-rose-500 text-white p-6 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">💬 Frases Poderosas para Apresentações</h3>
+            <div class="space-y-3 text-sm">
+              <p>✓ "Baseado no briefing, identifiquei que o principal desafio é..."</p>
+              <p>✓ "O conceito que desenvolvi conecta [objetivo] com [público] através de..."</p>
+              <p>✓ "Escolhi essa direção visual porque [razão estratégica], não apenas estética"</p>
+              <p>✓ "A consistência entre as imagens garante que..."</p>
+              <p>✓ "Essas imagens funcionam especialmente bem em [canal] porque..."</p>
+              <p>✓ "Se você quiser explorar uma direção alternativa, posso ajustar [elemento específico]"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 8: Estrutura de Aulas -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">📚 Estrutura das Aulas</h2>
+        <div class="space-y-4">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300">Aula 1: Anatomia do Briefing e 10 Perguntas Essenciais</h3>
+              <span class="text-sm text-blue-700 dark:text-blue-400 font-semibold">1.5h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Como extrair informações valiosas de clientes e estruturar briefings profissionais que guiam todo o projeto.
+            </p>
+            <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+              <li>• Template de briefing completo</li>
+              <li>• Exercício: analisar 3 briefings reais</li>
+              <li>• Role-play de call com cliente</li>
+            </ul>
+          </div>
+
+          <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg border-l-4 border-indigo-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-indigo-900 dark:text-indigo-300">Aula 2: Construção de Moodboards Estratégicos</h3>
+              <span class="text-sm text-indigo-700 dark:text-indigo-400 font-semibold">1.5h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Metodologia para criar moodboards que inspiram e alinham expectativas. Estrutura, ferramentas e apresentação.
+            </p>
+            <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+              <li>• Os 5 elementos de um moodboard completo</li>
+              <li>• Ferramentas: Milanote, Pinterest, Canva</li>
+              <li>• Criar 3 moodboards em aula</li>
+            </ul>
+          </div>
+
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg border-l-4 border-purple-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300">Aula 3: Conceituação Criativa em 5 Passos</h3>
+              <span class="text-sm text-purple-700 dark:text-purple-400 font-semibold">1.5h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Do briefing ao conceito visual. Brainstorm, seleção de ideias e articulação de conceitos criativos originais.
+            </p>
+            <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+              <li>• Metodologia de ideação estruturada</li>
+              <li>• 10 técnicas de brainstorm visual</li>
+              <li>• Desenvolver 3 conceitos para um briefing real</li>
+            </ul>
+          </div>
+
+          <div class="bg-cyan-50 dark:bg-cyan-900/20 p-6 rounded-lg border-l-4 border-cyan-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-cyan-900 dark:text-cyan-300">Aula 4: 8 Técnicas de Consistência em Séries</h3>
+              <span class="text-sm text-cyan-700 dark:text-cyan-400 font-semibold">2h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Dominar cada técnica para criar coleções coesas. Seed fixo, paletas, templates e controle de todos elementos visuais.
+            </p>
+            <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+              <li>• Prática hands-on de cada técnica</li>
+              <li>• Criar série de 6 imagens consistentes</li>
+              <li>• Análise de séries profissionais</li>
+            </ul>
+          </div>
+
+          <div class="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-lg border-l-4 border-orange-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-orange-900 dark:text-orange-300">Aula 5: Cases Completos Passo a Passo</h3>
+              <span class="text-sm text-orange-700 dark:text-orange-400 font-semibold">1h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Análise detalhada dos 3 cases: decisões criativas, execução técnica, resultado e aprendizados de cada projeto.
+            </p>
+            <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+              <li>• Walkthroughs dos 3 projetos</li>
+              <li>• Erros e acertos de cada case</li>
+              <li>• Q&A sobre decisões criativas</li>
+            </ul>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-l-4 border-green-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-green-900 dark:text-green-300">Aula 6: Apresentação para Clientes</h3>
+              <span class="text-sm text-green-700 dark:text-green-400 font-semibold">0.5h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Como estruturar e conduzir apresentações que vendem suas ideias. Storytelling, mockups e técnicas de comunicação.
+            </p>
+            <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+              <li>• Template de apresentação profissional</li>
+              <li>• Frases e scripts eficazes</li>
+              <li>• Simulação de apresentação</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercícios Práticos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6 text-blue-900 dark:text-blue-300">✏️ Exercícios Práticos Obrigatórios</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+          Projetos práticos para dominar direção criativa:
+        </p>
+
+        <div class="space-y-4">
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-blue-500">
+            <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300 mb-3">1. Briefing e Moodboard Completo</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Escolha uma marca real (pode ser fictícia). Crie briefing estruturado respondendo as 10 perguntas essenciais.
+              Depois desenvolva moodboard estratégico com os 5 elementos (cores, estilo, composição, mood, detalhes).
+              Apresente como se fosse para o cliente.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: Briefing + Moodboard + Pitch de apresentação (pode ser vídeo ou PDF)
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-indigo-500">
+            <h3 class="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-3">2. Série de 8 Imagens Consistentes</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie uma série coesa de 8 imagens para um projeto de sua escolha (produto, campanha, editorial).
+              Aplique no mínimo 5 das 8 técnicas de consistência ensinadas. Documente qual técnica usou em cada aspecto.
+              A série deve ter identidade visual óbvia.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: 8 imagens + documento explicando técnicas aplicadas
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-purple-500">
+            <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300 mb-3">3. Storytelling Visual em 5 Imagens</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Conte uma história visual em 5 imagens seguindo estrutura narrativa (estabelecimento, desenvolvimento, resolução).
+              Tema livre mas deve ter começo, meio e fim claros. Pode ser: jornada de produto, dia na vida, transformação, etc.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: 5 imagens em sequência + texto explicando a narrativa
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-cyan-500">
+            <h3 class="text-xl font-bold text-cyan-900 dark:text-cyan-300 mb-3">4. Case Completo: Do Briefing ao Final</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Desenvolva um projeto completo seguindo toda metodologia: briefing estruturado → moodboard → conceito criativo
+              → execução de 6-10 imagens → mockups de aplicação → apresentação final. Documente TODO o processo.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: Case study completo em PDF ou Behance (mínimo 10 páginas)
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-orange-500">
+            <h3 class="text-xl font-bold text-orange-900 dark:text-orange-300 mb-3">5. Apresentação em Vídeo</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Grave vídeo de 3-5 minutos apresentando um dos seus projetos deste módulo como se estivesse em call com cliente.
+              Use estrutura profissional: contexto → conceito → moodboard → resultados → próximos passos.
+              Pratique comunicação clara e confiante.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: Vídeo de apresentação + slides usados
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recursos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎁 Recursos Adicionais</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+          Ferramentas e templates para acelerar seu processo criativo:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-5 rounded-lg border border-blue-200 dark:border-blue-700">
+            <h3 class="font-bold text-blue-900 dark:text-blue-300 mb-3">📋 Templates</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Briefing estruturado (Notion + PDF)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Template de moodboard editável</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Apresentação para cliente (Keynote + PPT)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Documento de conceito criativo</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-5 rounded-lg border border-purple-200 dark:border-purple-700">
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-3">🛠️ Ferramentas</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Milanote (moodboards colaborativos)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Coolors (geradores de paletas)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Mockup World (mockups gratuitos)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Loom (gravação de apresentações)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-orange-50 dark:bg-orange-900/20 p-5 rounded-lg border border-orange-200 dark:border-orange-700">
+            <h3 class="font-bold text-orange-900 dark:text-orange-300 mb-3">📚 Referências</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Behance (cases de direção criativa)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Pinterest boards curados por categoria</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Lista de 50+ fotógrafos para referência</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Arquivo de campanhas icônicas</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-cyan-50 dark:bg-cyan-900/20 p-5 rounded-lg border border-cyan-200 dark:border-cyan-700">
+            <h3 class="font-bold text-cyan-900 dark:text-cyan-300 mb-3">🎥 Bônus</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Masterclass com diretor criativo convidado</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Análise de 10 campanhas profissionais</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Scripts de call de alinhamento com cliente</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Session de feedback ao vivo dos projetos</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dica Final -->
+      <div class="bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-xl shadow-xl p-8 mb-8">
+        <div class="text-center mb-4">
+          <span class="text-6xl mb-4 block">🎬</span>
+          <h2 class="text-3xl font-bold mb-4">Dica Final: Pense Como Diretor, Não Como Operador</h2>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg">
+          <p class="text-xl mb-4">
+            A diferença entre cobrar R$ 200 e R$ 2.000 por projeto não está na ferramenta. Está no PENSAMENTO.
+          </p>
+          <p class="text-lg mb-4">
+            Qualquer um aprende a usar IA em 1 semana. Mas poucos sabem:
+          </p>
+          <ol class="space-y-3 text-lg mb-6">
+            <li><strong>1. ENTENDER:</strong> Extrair o problema real do briefing</li>
+            <li><strong>2. CONCEITUAR:</strong> Traduzir estratégia em narrativa visual</li>
+            <li><strong>3. EXECUTAR:</strong> Criar com consistência e intencionalidade</li>
+          </ol>
+          <p class="text-xl font-bold text-center mt-6 pt-6 border-t border-white/30">
+            Você não vende pixels. Você vende VISÃO e ESTRATÉGIA traduzidas em imagens.
+          </p>
+          <p class="text-center mt-4">
+            Esse é o módulo que te transforma de executor em diretor criativo.
+          </p>
+        </div>
+      </div>
+
+      <!-- Navegação -->
+      <div class="flex justify-between items-center mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
+        <a href="tecnico-modulo-02.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold">
+          ← Voltar para Módulo 2
+        </a>
+        <a href="tecnico-modulo-04.html" class="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 transition-colors text-lg">
+          Continuar para Módulo 4 →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-white py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-neutral-400">&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
+      <p class="text-neutral-500 text-sm mt-2">Transformando profissionais para o mercado do futuro</p>
+    </div>
+  </footer>
+
+  <!-- Script de Dark Mode -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      themeToggleLightIcon.classList.remove('hidden');
+      document.documentElement.classList.add('dark');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
+      } else {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

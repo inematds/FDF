@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 5: Pós-Produção Inteligente - Designer do Futuro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            tecnico: '#3B82F6',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navegação -->
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm shadow-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Designer do Futuro</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../trilhas/tecnico.html" class="text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400">Voltar para Trilha</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-blue-50 to-white dark:from-neutral-800 dark:to-neutral-900 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-4">
+        <a href="../trilhas/tecnico.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold">
+          ← Voltar para Trilha Técnico
+        </a>
+      </div>
+      <div class="text-6xl mb-6">✨</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 leading-tight">Módulo 5: Pós-Produção Inteligente</h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
+        Transforme outputs de IA em entregas profissionais: upscaling, edição avançada e workflows que elevam qualidade ao máximo
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          1 semana
+        </span>
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          8 horas
+        </span>
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          Técnico
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Objetivos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎯 O Que Você Vai Dominar Neste Módulo</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6 text-lg">
+          Este módulo transforma bons resultados de IA em entregas excepcionais. Você aprenderá técnicas profissionais de edição e refinamento que separam amadores de profissionais pagos.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+            <span class="text-blue-500 mr-4 text-2xl flex-shrink-0">🔍</span>
+            <div>
+              <strong class="text-blue-900 dark:text-blue-300">Por Que Pós Importa:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Entender a diferença entre output de IA e entrega profissional, e quando investir tempo em refinamento</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-lg">
+            <span class="text-indigo-500 mr-4 text-2xl flex-shrink-0">⬆️</span>
+            <div>
+              <strong class="text-indigo-900 dark:text-indigo-300">Upscaling Profissional:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Técnicas e ferramentas para aumentar resolução mantendo (ou melhorando) qualidade e detalhes</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+            <span class="text-purple-500 mr-4 text-2xl flex-shrink-0">🎨</span>
+            <div>
+              <strong class="text-purple-900 dark:text-purple-300">Edição Avançada:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Inpainting, outpainting, color grading, compositing e correções comuns em outputs de IA</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-cyan-50 dark:bg-cyan-900/20 p-4 rounded-lg">
+            <span class="text-cyan-500 mr-4 text-2xl flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-cyan-900 dark:text-cyan-300">Workflow e Eficiência:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Processos otimizados, batch processing, QC checklist e entrega em formatos profissionais</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 1: Por Que Pós-Produção Importa -->
+      <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-blue-200 dark:border-blue-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">💎</span>
+          <div>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300">Por Que Pós-Produção Importa</h2>
+            <p class="text-blue-700 dark:text-blue-400 font-semibold mt-1">A diferença entre R$ 100 e R$ 1.000 por imagem</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Output direto de IA é apenas <strong>matéria-prima</strong>. Pós-produção profissional é o que transforma uma imagem boa em uma imagem que justifica preços premium e impressiona clientes.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border-l-4 border-blue-500">
+            <h3 class="text-2xl font-bold text-blue-900 dark:text-blue-300 mb-4">🎯 5 Razões Concretas Para Investir em Pós</h3>
+
+            <div class="space-y-4">
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded">
+                <p class="font-bold text-blue-900 dark:text-blue-300 mb-2">1. CORREÇÃO DE ARTEFATOS</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  IAs ainda geram imperfeições: mãos estranhas, texturas inconsistentes, detalhes borrados.
+                  Pós-produção corrige esses problemas que denunciam uso de IA.
+                </p>
+              </div>
+
+              <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded">
+                <p class="font-bold text-indigo-900 dark:text-indigo-300 mb-2">2. CONTROLE CROMÁTICO PRECISO</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  IA nem sempre acerta cores. Color grading profissional alinha com identidade de marca,
+                  corrige temperatura e cria mood exato que o cliente pediu.
+                </p>
+              </div>
+
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded">
+                <p class="font-bold text-purple-900 dark:text-purple-300 mb-2">3. RESOLUÇÃO E DETALHAMENTO</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  Maioria das IAs gera em resolução limitada (1024x1024 até 2048x2048).
+                  Upscaling + sharpening permite usar em impressão, outdoor e mídias de alta resolução.
+                </p>
+              </div>
+
+              <div class="bg-cyan-50 dark:bg-cyan-900/30 p-4 rounded">
+                <p class="font-bold text-cyan-900 dark:text-cyan-300 mb-2">4. COMPOSITING E MONTAGEM</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  Combinar múltiplos outputs, adicionar elementos reais (logos, textos, produtos reais),
+                  criar composições impossíveis de gerar em um único prompt.
+                </p>
+              </div>
+
+              <div class="bg-orange-50 dark:bg-orange-900/30 p-4 rounded">
+                <p class="font-bold text-orange-900 dark:text-orange-300 mb-2">5. DIFERENCIAÇÃO COMPETITIVA</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                  90% dos usuários de IA entregam output direto. Os 10% que editam cobram 5-10x mais
+                  e são percebidos como profissionais de verdade, não apenas "prompt makers".
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">⚖️ Matriz de Decisão: Quando Investir em Pós</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-white/30">
+                    <th class="text-left p-2">Situação</th>
+                    <th class="text-left p-2">Nível de Pós</th>
+                    <th class="text-left p-2">Tempo</th>
+                  </tr>
+                </thead>
+                <tbody class="text-sm">
+                  <tr class="border-b border-white/20">
+                    <td class="p-2">Post rápido de Instagram</td>
+                    <td class="p-2">Mínimo (crop + ajuste rápido)</td>
+                    <td class="p-2">2-5 min</td>
+                  </tr>
+                  <tr class="border-b border-white/20">
+                    <td class="p-2">Feed profissional</td>
+                    <td class="p-2">Médio (color + sharpening)</td>
+                    <td class="p-2">10-15 min</td>
+                  </tr>
+                  <tr class="border-b border-white/20">
+                    <td class="p-2">Cliente pagante</td>
+                    <td class="p-2">Alto (upscale + correções + grading)</td>
+                    <td class="p-2">30-45 min</td>
+                  </tr>
+                  <tr class="border-b border-white/20">
+                    <td class="p-2">Campanha premium</td>
+                    <td class="p-2">Máximo (tudo + compositing)</td>
+                    <td class="p-2">1-2 horas</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg border-l-4 border-yellow-500">
+            <h3 class="text-2xl font-bold text-yellow-900 dark:text-yellow-300 mb-3">💰 ROI de Pós-Produção</h3>
+            <div class="space-y-2 text-neutral-800 dark:text-neutral-200">
+              <p><strong>Cenário 1 - Sem pós:</strong> Entrega output direto em 5 min → Cobra R$ 50-100 → Cliente OK mas não impressionado</p>
+              <p><strong>Cenário 2 - Com pós:</strong> Investe 30 min em refinamento → Cobra R$ 300-500 → Cliente impressionado, indica outros</p>
+              <p class="text-lg font-bold text-yellow-900 dark:text-yellow-300 mt-4 pt-4 border-t border-yellow-300 dark:border-yellow-700">
+                25 minutos extras = 5x mais valor percebido = 3-5x mais preço
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 2: Upscaling Profissional -->
+      <div class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-indigo-200 dark:border-indigo-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">⬆️</span>
+          <div>
+            <h2 class="text-3xl font-bold text-indigo-900 dark:text-indigo-300">Upscaling: De 1K para 8K com Qualidade</h2>
+            <p class="text-indigo-700 dark:text-indigo-400 font-semibold mt-1">Ferramentas e técnicas de ampliação profissional</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-6">
+            Upscaling não é apenas aumentar tamanho. É <strong>reconstruir detalhes</strong> usando IA especializadas que "adivinham" texturas e formas de forma inteligente.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-indigo-900 dark:text-indigo-300 mb-4">🛠️ 5 Melhores Ferramentas de Upscaling</h3>
+
+            <div class="space-y-4">
+              <div class="bg-indigo-50 dark:bg-indigo-900/30 p-5 rounded border-l-4 border-indigo-500">
+                <div class="flex justify-between items-start mb-2">
+                  <p class="font-bold text-indigo-900 dark:text-indigo-300">1. Topaz Gigapixel AI</p>
+                  <span class="text-xs bg-indigo-200 dark:bg-indigo-800 px-2 py-1 rounded">Pago - $99</span>
+                </div>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  <strong>Melhor para:</strong> Upscale de fotos realistas e retratos. Qualidade top-tier.
+                </p>
+                <ul class="text-xs space-y-1 text-neutral-600 dark:text-neutral-400">
+                  <li>✓ Amplia até 6x sem perda perceptível</li>
+                  <li>✓ Modelos específicos para faces, texturas, arquitetura</li>
+                  <li>✓ Batch processing integrado</li>
+                  <li>✓ Integração com Photoshop</li>
+                </ul>
+              </div>
+
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-5 rounded border-l-4 border-purple-500">
+                <div class="flex justify-between items-start mb-2">
+                  <p class="font-bold text-purple-900 dark:text-purple-300">2. Real-ESRGAN</p>
+                  <span class="text-xs bg-green-200 dark:bg-green-800 px-2 py-1 rounded">Gratuito</span>
+                </div>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  <strong>Melhor para:</strong> Ilustrações, anime, arte digital. Open source poderoso.
+                </p>
+                <ul class="text-xs space-y-1 text-neutral-600 dark:text-neutral-400">
+                  <li>✓ Código aberto e gratuito</li>
+                  <li>✓ Excelente para ilustrações stylizadas</li>
+                  <li>✓ Roda local (privacidade)</li>
+                  <li>✓ Várias versões de modelo (anime, general)</li>
+                </ul>
+              </div>
+
+              <div class="bg-cyan-50 dark:bg-cyan-900/30 p-5 rounded border-l-4 border-cyan-500">
+                <div class="flex justify-between items-start mb-2">
+                  <p class="font-bold text-cyan-900 dark:text-cyan-300">3. Magnific AI</p>
+                  <span class="text-xs bg-yellow-200 dark:bg-yellow-800 px-2 py-1 rounded">Créditos</span>
+                </div>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  <strong>Melhor para:</strong> Upscale + reimaginação de detalhes. Adiciona texturas realistas.
+                </p>
+                <ul class="text-xs space-y-1 text-neutral-600 dark:text-neutral-400">
+                  <li>✓ Não só amplia, mas "reimagina" detalhes</li>
+                  <li>✓ Controle de criatividade (quanto inventar)</li>
+                  <li>✓ Resultados impressionantes em rostos e texturas</li>
+                  <li>✓ Interface web simples</li>
+                </ul>
+              </div>
+
+              <div class="bg-orange-50 dark:bg-orange-900/30 p-5 rounded border-l-4 border-orange-500">
+                <div class="flex justify-between items-start mb-2">
+                  <p class="font-bold text-orange-900 dark:text-orange-300">4. Krea AI Enhancer</p>
+                  <span class="text-xs bg-green-200 dark:bg-green-800 px-2 py-1 rounded">Gratuito</span>
+                </div>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  <strong>Melhor para:</strong> Upscale rápido e melhoramento geral. Fácil de usar.
+                </p>
+                <ul class="text-xs space-y-1 text-neutral-600 dark:text-neutral-400">
+                  <li>✓ Interface drag-and-drop intuitiva</li>
+                  <li>✓ Grátis com limitações razoáveis</li>
+                  <li>✓ Bom balanço qualidade/velocidade</li>
+                  <li>✓ Funciona bem com outputs de Midjourney/SD</li>
+                </ul>
+              </div>
+
+              <div class="bg-pink-50 dark:bg-pink-900/30 p-5 rounded border-l-4 border-pink-500">
+                <div class="flex justify-between items-start mb-2">
+                  <p class="font-bold text-pink-900 dark:text-pink-300">5. Photoshop Neural Filters</p>
+                  <span class="text-xs bg-indigo-200 dark:bg-indigo-800 px-2 py-1 rounded">Assinatura</span>
+                </div>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  <strong>Melhor para:</strong> Integração no workflow. Upscale + edição no mesmo lugar.
+                </p>
+                <ul class="text-xs space-y-1 text-neutral-600 dark:text-neutral-400">
+                  <li>✓ Já está no Photoshop (se você assina)</li>
+                  <li>✓ Super Resolution até 4x</li>
+                  <li>✓ Combina com outras ferramentas PS</li>
+                  <li>✓ Qualidade boa mas não a melhor</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">⚙️ Workflow de Upscaling em 4 Passos</h3>
+
+            <div class="space-y-3">
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-1">PASSO 1: Pré-tratamento</p>
+                <p class="text-sm">Antes de upscale, ajuste exposição básica e contraste. Upscaler amplifica o que está lá.</p>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-1">PASSO 2: Escolha ferramenta</p>
+                <p class="text-sm">Foto realista = Gigapixel | Ilustração = Real-ESRGAN | Criativo = Magnific</p>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-1">PASSO 3: Upscale conservador</p>
+                <p class="text-sm">Comece com 2x. Se precisar mais, faça 2x novamente. Múltiplos 2x > um 4x direto.</p>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-1">PASSO 4: Sharpening sutil</p>
+                <p class="text-sm">No Photoshop: Filter > Sharpen > Unsharp Mask (Amount: 80-120%, Radius: 1-1.5px)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg border-l-4 border-yellow-500">
+            <h3 class="text-2xl font-bold text-yellow-900 dark:text-yellow-300 mb-3">⚠️ Armadilhas Comuns de Upscaling</h3>
+            <div class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <p><strong>❌ Over-sharpening:</strong> Halos ao redor de objetos, look artificial. Seja sutil.</p>
+              <p><strong>❌ Upscale demais:</strong> 1024 → 8192 (8x) vai criar artefatos. Pare em 4x máximo.</p>
+              <p><strong>❌ Ignorar input quality:</strong> Garbage in, garbage out. Corrija antes de ampliar.</p>
+              <p><strong>❌ Não testar em 100%:</strong> Sempre veja resultado em 100% de zoom antes de entregar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 3: Inpainting e Outpainting -->
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-purple-200 dark:border-purple-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🖌️</span>
+          <div>
+            <h2 class="text-3xl font-bold text-purple-900 dark:text-purple-300">Inpainting e Outpainting</h2>
+            <p class="text-purple-700 dark:text-purple-400 font-semibold mt-1">Edição cirúrgica e expansão de imagens</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-purple-900 dark:text-purple-300 mb-4">🎨 INPAINTING: Corrigir Áreas Específicas</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+              Inpainting permite "pintar por cima" de partes problemáticas, regenerando apenas aquela área enquanto mantém o resto intacto.
+            </p>
+
+            <div class="space-y-4">
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded">
+                <p class="font-bold text-purple-900 dark:text-purple-300 mb-2">Usos Principais de Inpainting:</p>
+                <ul class="text-sm space-y-2 text-neutral-700 dark:text-neutral-300">
+                  <li><strong>✓ Corrigir mãos/dedos:</strong> Mascara mão defeituosa, regenera corretamente</li>
+                  <li><strong>✓ Remover objetos:</strong> Tira elementos indesejados do fundo</li>
+                  <li><strong>✓ Ajustar expressões:</strong> Refaz rosto mantendo resto da imagem</li>
+                  <li><strong>✓ Trocar elementos:</strong> Substitui produto, roupa, acessórios</li>
+                  <li><strong>✓ Melhorar detalhes:</strong> Regenera área borrada com mais sharpness</li>
+                </ul>
+              </div>
+
+              <div class="bg-pink-50 dark:bg-pink-900/30 p-4 rounded">
+                <p class="font-bold text-pink-900 dark:text-pink-300 mb-2">Ferramentas de Inpainting:</p>
+                <div class="grid md:grid-cols-2 gap-3 text-sm">
+                  <div>
+                    <p class="font-semibold mb-1">Stable Diffusion (A1111/ComfyUI)</p>
+                    <p class="text-xs text-neutral-600 dark:text-neutral-400">Controle total, gratuito, curva de aprendizado</p>
+                  </div>
+                  <div>
+                    <p class="font-semibold mb-1">Midjourney (Vary Region)</p>
+                    <p class="text-xs text-neutral-600 dark:text-neutral-400">Fácil, rápido, menos controle</p>
+                  </div>
+                  <div>
+                    <p class="font-semibold mb-1">Photoshop Generative Fill</p>
+                    <p class="text-xs text-neutral-600 dark:text-neutral-400">Integrado, intuitivo, resultados bons</p>
+                  </div>
+                  <div>
+                    <p class="font-semibold mb-1">ClipDrop (Cleanup/Replace)</p>
+                    <p class="text-xs text-neutral-600 dark:text-neutral-400">Web, gratuito parcial, simples</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded">
+                <p class="font-bold text-indigo-900 dark:text-indigo-300 mb-2">Dicas para Inpainting Eficaz:</p>
+                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>• Máscara com edges suaves (feather 10-20px) para blend natural</li>
+                  <li>• Gere 4-8 variações e escolha a melhor</li>
+                  <li>• Use prompt similar ao original para manter coerência</li>
+                  <li>• Para correções pequenas, aumente denoise para 0.6-0.8</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-pink-900 dark:text-pink-300 mb-4">📐 OUTPAINTING: Expandir Canvas</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+              Outpainting "continua" a imagem além das bordas originais, criando contexto adicional ou mudando aspect ratio.
+            </p>
+
+            <div class="space-y-4">
+              <div class="bg-pink-50 dark:bg-pink-900/30 p-4 rounded">
+                <p class="font-bold text-pink-900 dark:text-pink-300 mb-2">Casos de Uso de Outpainting:</p>
+                <ul class="text-sm space-y-2 text-neutral-700 dark:text-neutral-300">
+                  <li><strong>✓ Mudar aspect ratio:</strong> Retrato 1:1 → Banner 16:9</li>
+                  <li><strong>✓ Adicionar contexto:</strong> Close-up → Medium shot com ambiente</li>
+                  <li><strong>✓ Corrigir crop ruim:</strong> Recuperar partes cortadas</li>
+                  <li><strong>✓ Criar panorâmicas:</strong> Expandir lateralmente para wide shots</li>
+                </ul>
+              </div>
+
+              <div class="bg-red-50 dark:bg-red-900/30 p-4 rounded">
+                <p class="font-bold text-red-900 dark:text-red-300 mb-2">Ferramentas de Outpainting:</p>
+                <div class="grid md:grid-cols-2 gap-3 text-sm">
+                  <div>
+                    <p class="font-semibold mb-1">Midjourney (Zoom Out)</p>
+                    <p class="text-xs text-neutral-600 dark:text-neutral-400">Zoom 2x ou 1.5x, mantém coerência muito bem</p>
+                  </div>
+                  <div>
+                    <p class="font-semibold mb-1">Stable Diffusion (Outpainting)</p>
+                    <p class="text-xs text-neutral-600 dark:text-neutral-400">Controle total de direção, pode fazer múltiplas vezes</p>
+                  </div>
+                  <div>
+                    <p class="font-semibold mb-1">DALL-E Outpainting</p>
+                    <p class="text-xs text-neutral-600 dark:text-neutral-400">Pioneer da técnica, bons resultados</p>
+                  </div>
+                  <div>
+                    <p class="font-semibold mb-1">Photoshop Gen Fill</p>
+                    <p class="text-xs text-neutral-600 dark:text-neutral-400">Expand canvas + generative fill nas bordas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">🎯 Workflow Combinado: Inpaint + Outpaint</h3>
+            <div class="space-y-2 text-sm">
+              <p><strong>1.</strong> Gere imagem inicial com prompt</p>
+              <p><strong>2.</strong> Identifique problemas (mão estranha, fundo cortado)</p>
+              <p><strong>3.</strong> Inpaint para corrigir mão</p>
+              <p><strong>4.</strong> Se necessário, outpaint para expandir canvas</p>
+              <p><strong>5.</strong> Inpaint novamente se outpainting gerou novos problemas</p>
+              <p class="mt-4 pt-4 border-t border-white/30 font-bold">
+                Resultado: Imagem perfeita que seria impossível de gerar em um único prompt
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 4: Color Grading Profissional -->
+      <div class="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-orange-200 dark:border-orange-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🎨</span>
+          <div>
+            <h2 class="text-3xl font-bold text-orange-900 dark:text-orange-300">Color Grading Profissional</h2>
+            <p class="text-orange-700 dark:text-orange-400 font-semibold mt-1">Controle cromático que define identidade visual</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-6">
+            Color grading não é "ajustar cores". É criar <strong>assinatura visual</strong> reconhecível, mood específico e alinhamento com identidade de marca.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-orange-900 dark:text-orange-300 mb-4">🎬 5 Estilos de Color Grading Populares</h3>
+
+            <div class="space-y-4">
+              <div class="bg-orange-50 dark:bg-orange-900/30 p-5 rounded">
+                <p class="font-bold text-orange-900 dark:text-orange-300 mb-2">1. TEAL & ORANGE (Cinema)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                  Laranja quente nos mid-tones (pele), azul/teal frio nas sombras e highlights. Contraste dramático.
+                </p>
+                <div class="text-xs bg-white dark:bg-neutral-900 p-3 rounded">
+                  <strong>Ajustes:</strong> Sombras → azul (-180° no wheel) | Mid-tones → laranja (+30°) | Alto contraste
+                </div>
+              </div>
+
+              <div class="bg-red-50 dark:bg-red-900/30 p-5 rounded">
+                <p class="font-bold text-red-900 dark:text-red-300 mb-2">2. VINTAGE FILM (Retro)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                  Blacks levantados (cinza), highlights desaturados, leve amarelamento. Nostálgico e orgânico.
+                </p>
+                <div class="text-xs bg-white dark:bg-neutral-900 p-3 rounded">
+                  <strong>Ajustes:</strong> Curves → lift blacks 15-20 | Reduzir saturação global 10-15% | +10 amarelo nos highlights
+                </div>
+              </div>
+
+              <div class="bg-yellow-50 dark:bg-yellow-900/30 p-5 rounded">
+                <p class="font-bold text-yellow-900 dark:text-yellow-300 mb-2">3. CLEAN MODERN (Editorial)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                  Branco puro, contraste moderado, cores fiéis mas ligeiramente desaturadas. Profissional e limpo.
+                </p>
+                <div class="text-xs bg-white dark:bg-neutral-900 p-3 rounded">
+                  <strong>Ajustes:</strong> Whites = 255 | Contraste +15 | Saturação -5 a -10 | Sharpness +20
+                </div>
+              </div>
+
+              <div class="bg-green-50 dark:bg-green-900/30 p-5 rounded">
+                <p class="font-bold text-green-900 dark:text-green-300 mb-2">4. MOODY DARK (Atmosférico)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                  Sombras esmagadas (crushed blacks), highlights preservados, cores frias. Dramático e misterioso.
+                </p>
+                <div class="text-xs bg-white dark:bg-neutral-900 p-3 rounded">
+                  <strong>Ajustes:</strong> Crush blacks (ponto preto em 15-20) | Temperatura -10 | Saturação seletiva em cores quentes
+                </div>
+              </div>
+
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-5 rounded">
+                <p class="font-bold text-blue-900 dark:text-blue-300 mb-2">5. VIBRANT POP (Social Media)</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+                  Saturação alta, contraste elevado, cores "pulando" da tela. Eye-catching para feed.
+                </p>
+                <div class="text-xs bg-white dark:bg-neutral-900 p-3 rounded">
+                  <strong>Ajustes:</strong> Vibrance +40 | Clarity +30 | Contraste +25 | Sharpness agressivo
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-orange-500 to-red-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">⚙️ Ferramentas de Color Grading</h3>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-2">Adobe Lightroom</p>
+                <p class="text-sm mb-2">Melhor para: Fotografia, batch, presets</p>
+                <ul class="text-xs space-y-1">
+                  <li>✓ Workflow rápido</li>
+                  <li>✓ Presets compartilháveis</li>
+                  <li>✓ Sync entre imagens</li>
+                </ul>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-2">Photoshop Camera Raw</p>
+                <p class="text-sm mb-2">Melhor para: Controle fino, compositing</p>
+                <ul class="text-xs space-y-1">
+                  <li>✓ Color wheels precision</li>
+                  <li>✓ Masking avançado</li>
+                  <li>✓ Layers e blending</li>
+                </ul>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-2">DaVinci Resolve</p>
+                <p class="text-sm mb-2">Melhor para: Grading profissional</p>
+                <ul class="text-xs space-y-1">
+                  <li>✓ Grátis e poderoso</li>
+                  <li>✓ LUTs e nodes</li>
+                  <li>✓ Padrão da indústria</li>
+                </ul>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-2">Capture One</p>
+                <p class="text-sm mb-2">Melhor para: Cor precisa, fashion</p>
+                <ul class="text-xs space-y-1">
+                  <li>✓ Color editor poderoso</li>
+                  <li>✓ Skin tones perfeitos</li>
+                  <li>✓ Usado em editorial</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg">
+            <h3 class="text-2xl font-bold text-red-900 dark:text-red-300 mb-4">📋 Checklist de Color Grading</h3>
+            <div class="space-y-2 text-sm">
+              <label class="flex items-center space-x-2 text-neutral-700 dark:text-neutral-300">
+                <input type="checkbox" class="rounded">
+                <span>Ajustar white balance (temperatura + tint)</span>
+              </label>
+              <label class="flex items-center space-x-2 text-neutral-700 dark:text-neutral-300">
+                <input type="checkbox" class="rounded">
+                <span>Exposição e contraste global</span>
+              </label>
+              <label class="flex items-center space-x-2 text-neutral-700 dark:text-neutral-300">
+                <input type="checkbox" class="rounded">
+                <span>Curves para controlar shadows/highlights</span>
+              </label>
+              <label class="flex items-center space-x-2 text-neutral-700 dark:text-neutral-300">
+                <input type="checkbox" class="rounded">
+                <span>HSL ajustes em cores específicas</span>
+              </label>
+              <label class="flex items-center space-x-2 text-neutral-700 dark:text-neutral-300">
+                <input type="checkbox" class="rounded">
+                <span>Color wheels (shadows/midtones/highlights)</span>
+              </label>
+              <label class="flex items-center space-x-2 text-neutral-700 dark:text-neutral-300">
+                <input type="checkbox" class="rounded">
+                <span>Calibrate skin tones (se tiver pessoas)</span>
+              </label>
+              <label class="flex items-center space-x-2 text-neutral-700 dark:text-neutral-300">
+                <input type="checkbox" class="rounded">
+                <span>Sharpening e clarity final</span>
+              </label>
+              <label class="flex items-center space-x-2 text-neutral-700 dark:text-neutral-300">
+                <input type="checkbox" class="rounded">
+                <span>Comparar com referências do moodboard</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 5: Compositing e Correções -->
+      <div class="bg-gradient-to-br from-cyan-50 to-teal-50 dark:from-cyan-900/20 dark:to-teal-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-cyan-200 dark:border-cyan-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🔧</span>
+          <div>
+            <h2 class="text-3xl font-bold text-cyan-900 dark:text-cyan-300">Compositing e Correções Comuns</h2>
+            <p class="text-cyan-700 dark:text-cyan-400 font-semibold mt-1">Técnicas avançadas de montagem e fix</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-cyan-900 dark:text-cyan-300 mb-4">🎭 COMPOSITING: Combinar Múltiplos Elementos</h3>
+
+            <div class="space-y-4">
+              <div class="bg-cyan-50 dark:bg-cyan-900/30 p-4 rounded">
+                <p class="font-bold text-cyan-900 dark:text-cyan-300 mb-2">Casos de Uso:</p>
+                <ul class="text-sm space-y-2 text-neutral-700 dark:text-neutral-300">
+                  <li><strong>• Adicionar logo/texto:</strong> Sobrepor marca em imagem gerada</li>
+                  <li><strong>• Substituir produto:</strong> Pessoa gerada + produto fotografado real</li>
+                  <li><strong>• Combinar gerações:</strong> Background de uma, subject de outra</li>
+                  <li><strong>• Adicionar elementos:</strong> Efeitos de luz, texturas, overlays</li>
+                </ul>
+              </div>
+
+              <div class="bg-teal-50 dark:bg-teal-900/30 p-4 rounded">
+                <p class="font-bold text-teal-900 dark:text-teal-300 mb-2">Workflow de Compositing em Photoshop:</p>
+                <ol class="text-sm space-y-2 text-neutral-700 dark:text-neutral-300">
+                  <li><strong>1.</strong> Importar layers (base + elementos)</li>
+                  <li><strong>2.</strong> Masking preciso (use Select Subject, Refine Edge)</li>
+                  <li><strong>3.</strong> Matching de luz e cor entre layers</li>
+                  <li><strong>4.</strong> Blending modes adequados (Multiply, Screen, Overlay)</li>
+                  <li><strong>5.</strong> Sombras e highlights para integração</li>
+                  <li><strong>6.</strong> Color grading unificado no final</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-blue-900 dark:text-blue-300 mb-4">🩹 10 Correções Mais Comuns em Outputs de IA</h3>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded">
+                <p class="font-bold text-blue-900 dark:text-blue-300 mb-2">1. Mãos Deformadas</p>
+                <p class="text-xs text-neutral-700 dark:text-neutral-300 mb-2"><strong>Fix:</strong> Inpainting focado ou substituição por mão fotografada</p>
+              </div>
+
+              <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded">
+                <p class="font-bold text-indigo-900 dark:text-indigo-300 mb-2">2. Olhos Desalinhados</p>
+                <p class="text-xs text-neutral-700 dark:text-neutral-300 mb-2"><strong>Fix:</strong> Liquify tool ou inpaint seletivo dos olhos</p>
+              </div>
+
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded">
+                <p class="font-bold text-purple-900 dark:text-purple-300 mb-2">3. Texto Ilegível</p>
+                <p class="text-xs text-neutral-700 dark:text-neutral-300 mb-2"><strong>Fix:</strong> Remover via inpaint + adicionar texto real no PS</p>
+              </div>
+
+              <div class="bg-pink-50 dark:bg-pink-900/30 p-4 rounded">
+                <p class="font-bold text-pink-900 dark:text-pink-300 mb-2">4. Simetria Imperfeita</p>
+                <p class="text-xs text-neutral-700 dark:text-neutral-300 mb-2"><strong>Fix:</strong> Duplicar lado bom, flip horizontal, blend</p>
+              </div>
+
+              <div class="bg-red-50 dark:bg-red-900/30 p-4 rounded">
+                <p class="font-bold text-red-900 dark:text-red-300 mb-2">5. Artefatos de Textura</p>
+                <p class="text-xs text-neutral-700 dark:text-neutral-300 mb-2"><strong>Fix:</strong> Healing brush ou patch tool pontual</p>
+              </div>
+
+              <div class="bg-orange-50 dark:bg-orange-900/30 p-4 rounded">
+                <p class="font-bold text-orange-900 dark:text-orange-300 mb-2">6. Proporções Estranhas</p>
+                <p class="text-xs text-neutral-700 dark:text-neutral-300 mb-2"><strong>Fix:</strong> Transform + Content-Aware Scale</p>
+              </div>
+
+              <div class="bg-yellow-50 dark:bg-yellow-900/30 p-4 rounded">
+                <p class="font-bold text-yellow-900 dark:text-yellow-300 mb-2">7. Edges Inconsistentes</p>
+                <p class="text-xs text-neutral-700 dark:text-neutral-300 mb-2"><strong>Fix:</strong> Refine edges com Refine Edge Brush</p>
+              </div>
+
+              <div class="bg-green-50 dark:bg-green-900/30 p-4 rounded">
+                <p class="font-bold text-green-900 dark:text-green-300 mb-2">8. Brilho/Contraste Desigual</p>
+                <p class="text-xs text-neutral-700 dark:text-neutral-300 mb-2"><strong>Fix:</strong> Dodge & Burn seletivo + Curves locais</p>
+              </div>
+
+              <div class="bg-teal-50 dark:bg-teal-900/30 p-4 rounded">
+                <p class="font-bold text-teal-900 dark:text-teal-300 mb-2">9. Elementos Duplicados</p>
+                <p class="text-xs text-neutral-700 dark:text-neutral-300 mb-2"><strong>Fix:</strong> Clone Stamp ou Content-Aware Fill</p>
+              </div>
+
+              <div class="bg-cyan-50 dark:bg-cyan-900/30 p-4 rounded">
+                <p class="font-bold text-cyan-900 dark:text-cyan-300 mb-2">10. Blur/Softness Excessivo</p>
+                <p class="text-xs text-neutral-700 dark:text-neutral-300 mb-2"><strong>Fix:</strong> High Pass sharpening seletivo</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-cyan-500 to-teal-500 text-white p-6 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">⚡ Técnicas Ninja de Correção</h3>
+            <div class="space-y-3 text-sm">
+              <div class="bg-white/10 backdrop-blur p-3 rounded">
+                <p class="font-bold mb-1">Frequency Separation</p>
+                <p class="text-xs">Separa textura de cor, permite retocar pele sem perder textura natural</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-3 rounded">
+                <p class="font-bold mb-1">Content-Aware Scale</p>
+                <p class="text-xs">Redimensiona preservando áreas importantes (faces, objetos principais)</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-3 rounded">
+                <p class="font-bold mb-1">Perspective Warp</p>
+                <p class="text-xs">Corrige distorções de perspectiva mantendo proporções</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-3 rounded">
+                <p class="font-bold mb-1">Neural Filters (PS)</p>
+                <p class="text-xs">Smart Portrait para ajustar idade, expressão, direção do olhar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 6: Workflow Completo -->
+      <div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-green-200 dark:border-green-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">⚙️</span>
+          <div>
+            <h2 class="text-3xl font-bold text-green-900 dark:text-green-300">Workflow Completo de Pós-Produção</h2>
+            <p class="text-green-700 dark:text-green-400 font-semibold mt-1">Do output da IA até entrega final</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-green-900 dark:text-green-300 mb-4">📋 Workflow em 10 Passos</h3>
+
+            <div class="space-y-3">
+              <div class="flex items-start space-x-3">
+                <span class="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
+                <div class="flex-1">
+                  <p class="font-bold text-green-900 dark:text-green-300">SELEÇÃO</p>
+                  <p class="text-sm text-neutral-700 dark:text-neutral-300">Das 4-8 gerações, escolha a melhor base. Critérios: composição > detalhes > problemas corrigíveis</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <span class="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
+                <div class="flex-1">
+                  <p class="font-bold text-emerald-900 dark:text-emerald-300">BACKUP</p>
+                  <p class="text-sm text-neutral-700 dark:text-neutral-300">Salve cópia do original. Sempre trabalhe em cópia, nunca no arquivo único</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <span class="flex-shrink-0 w-8 h-8 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
+                <div class="flex-1">
+                  <p class="font-bold text-teal-900 dark:text-teal-300">CORREÇÕES CRÍTICAS</p>
+                  <p class="text-sm text-neutral-700 dark:text-neutral-300">Inpainting de problemas maiores: mãos, rostos, elementos estranhos. Faça primeiro.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <span class="flex-shrink-0 w-8 h-8 bg-cyan-500 text-white rounded-full flex items-center justify-center font-bold text-sm">4</span>
+                <div class="flex-1">
+                  <p class="font-bold text-cyan-900 dark:text-cyan-300">UPSCALING</p>
+                  <p class="text-sm text-neutral-700 dark:text-neutral-300">Se precisa de resolução maior, upscale agora (antes de edições finas)</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <span class="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">5</span>
+                <div class="flex-1">
+                  <p class="font-bold text-blue-900 dark:text-blue-300">LIMPEZA</p>
+                  <p class="text-sm text-neutral-700 dark:text-neutral-300">Healing brush para pequenos artefatos, manchas, elementos indesejados</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <span class="flex-shrink-0 w-8 h-8 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold text-sm">6</span>
+                <div class="flex-1">
+                  <p class="font-bold text-indigo-900 dark:text-indigo-300">COLOR GRADING</p>
+                  <p class="text-sm text-neutral-700 dark:text-neutral-300">Ajustes globais de cor, contraste, temperatura. Crie mood desejado</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <span class="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold text-sm">7</span>
+                <div class="flex-1">
+                  <p class="font-bold text-purple-900 dark:text-purple-300">COMPOSITING (se necessário)</p>
+                  <p class="text-sm text-neutral-700 dark:text-neutral-300">Adicionar logos, textos, combinar elementos. Integrate tudo visualmente</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <span class="flex-shrink-0 w-8 h-8 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold text-sm">8</span>
+                <div class="flex-1">
+                  <p class="font-bold text-pink-900 dark:text-pink-300">SHARPENING</p>
+                  <p class="text-sm text-neutral-700 dark:text-neutral-300">Afiação final sutil (Unsharp Mask ou Smart Sharpen). Última etapa de edição</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <span class="flex-shrink-0 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-sm">9</span>
+                <div class="flex-1">
+                  <p class="font-bold text-red-900 dark:text-red-300">QC (Quality Control)</p>
+                  <p class="text-sm text-neutral-700 dark:text-neutral-300">Revise em 100%, cheque checklist, compare com referências</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <span class="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">10</span>
+                <div class="flex-1">
+                  <p class="font-bold text-orange-900 dark:text-orange-300">EXPORT</p>
+                  <p class="text-sm text-neutral-700 dark:text-neutral-300">Formatos corretos, perfis de cor adequados, naming organizado</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-green-500 to-emerald-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">⚡ Batch Processing para Múltiplas Imagens</h3>
+            <div class="space-y-3 text-sm">
+              <p class="font-bold">Para séries de 10+ imagens:</p>
+              <ol class="space-y-2">
+                <li><strong>1.</strong> Edite PRIMEIRA imagem completamente</li>
+                <li><strong>2.</strong> Salve todas ações repetíveis como Action no PS</li>
+                <li><strong>3.</strong> Batch aplique em todas (File > Automate > Batch)</li>
+                <li><strong>4.</strong> Revise cada uma individualmente para ajustes únicos</li>
+                <li><strong>5.</strong> Export em batch (Lightroom ou Bridge)</li>
+              </ol>
+              <p class="mt-4 pt-4 border-t border-white/30 font-bold">
+                Economize 70% do tempo mantendo qualidade consistente
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg">
+            <h3 class="text-2xl font-bold text-emerald-900 dark:text-emerald-300 mb-4">📦 Especificações de Export por Canal</h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm border-collapse">
+                <thead>
+                  <tr class="bg-emerald-100 dark:bg-emerald-900/30">
+                    <th class="p-3 text-left font-bold">Canal</th>
+                    <th class="p-3 text-left font-bold">Formato</th>
+                    <th class="p-3 text-left font-bold">Resolução</th>
+                    <th class="p-3 text-left font-bold">Perfil de Cor</th>
+                  </tr>
+                </thead>
+                <tbody class="text-neutral-700 dark:text-neutral-300">
+                  <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                    <td class="p-3 font-semibold">Instagram Feed</td>
+                    <td class="p-3">JPG (85-90%)</td>
+                    <td class="p-3">1080x1080 ou 1080x1350</td>
+                    <td class="p-3">sRGB</td>
+                  </tr>
+                  <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                    <td class="p-3 font-semibold">Instagram Story</td>
+                    <td class="p-3">JPG (85%)</td>
+                    <td class="p-3">1080x1920</td>
+                    <td class="p-3">sRGB</td>
+                  </tr>
+                  <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                    <td class="p-3 font-semibold">Website</td>
+                    <td class="p-3">JPG (80%) ou WebP</td>
+                    <td class="p-3">1920px wide max</td>
+                    <td class="p-3">sRGB</td>
+                  </tr>
+                  <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                    <td class="p-3 font-semibold">Impressão</td>
+                    <td class="p-3">TIFF ou PSD</td>
+                    <td class="p-3">300 DPI no tamanho final</td>
+                    <td class="p-3">Adobe RGB ou CMYK</td>
+                  </tr>
+                  <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                    <td class="p-3 font-semibold">Cliente (arquivo)</td>
+                    <td class="p-3">PNG ou PSD</td>
+                    <td class="p-3">Máxima qualidade</td>
+                    <td class="p-3">Adobe RGB</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 7: QC Checklist -->
+      <div class="bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-pink-200 dark:border-pink-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">✅</span>
+          <div>
+            <h2 class="text-3xl font-bold text-pink-900 dark:text-pink-300">Checklist de Quality Control</h2>
+            <p class="text-pink-700 dark:text-pink-400 font-semibold mt-1">Garantia de entrega profissional</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-6">
+            Use este checklist ANTES de entregar qualquer imagem para cliente ou publicar em portfólio profissional.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-pink-900 dark:text-pink-300 mb-4">📋 Checklist Completo de QC</h3>
+
+            <div class="space-y-4">
+              <div>
+                <p class="font-bold text-pink-900 dark:text-pink-300 mb-3">🔍 INSPEÇÃO TÉCNICA</p>
+                <div class="space-y-2">
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Revisada em 100% de zoom por toda imagem</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Sem artefatos visuais (ruído, distorções, glitches)</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Resolução adequada para uso pretendido</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Sharpness apropriado (nem borrado, nem over-sharpened)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <p class="font-bold text-rose-900 dark:text-rose-300 mb-3">👤 ANATOMIA E PROPORÇÕES</p>
+                <div class="space-y-2">
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Mãos com anatomia correta e número certo de dedos</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Rostos simétricos e proporcionais</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Olhos alinhados e com direção coerente</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Proporções gerais do corpo realistas</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <p class="font-bold text-red-900 dark:text-red-300 mb-3">🎨 COR E TONALIDADE</p>
+                <div class="space-y-2">
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>White balance apropriado (não muito quente/frio)</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Skin tones naturais e bem calibrados</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Paleta de cores alinhada com briefing/moodboard</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Contraste e saturação profissionais (não exagerados)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <p class="font-bold text-purple-900 dark:text-purple-300 mb-3">📐 COMPOSIÇÃO</p>
+                <div class="space-y-2">
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Enquadramento intencional e bem executado</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Elementos importantes não cortados acidentalmente</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Espaço respirável adequado (não apertado demais)</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Horizon line nivelado (se aplicável)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <p class="font-bold text-indigo-900 dark:text-indigo-300 mb-3">💼 REQUISITOS DE CLIENTE</p>
+                <div class="space-y-2">
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Atende objetivo do briefing</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Mood e vibe corretos conforme solicitado</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Formato e dimensões especificados</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Consistente com outras imagens da série (se aplicável)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <p class="font-bold text-blue-900 dark:text-blue-300 mb-3">📦 ENTREGA</p>
+                <div class="space-y-2">
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Exportado no formato correto (JPG/PNG/TIFF)</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Perfil de cor adequado (sRGB/Adobe RGB/CMYK)</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Nome de arquivo organizado e descritivo</span>
+                  </label>
+                  <label class="flex items-center space-x-2 text-sm text-neutral-700 dark:text-neutral-300">
+                    <input type="checkbox" class="rounded">
+                    <span>Backup do arquivo editável (PSD) salvo</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 8: 8 Antes e Depois -->
+      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-blue-200 dark:border-blue-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🎭</span>
+          <div>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300">8 Exemplos Antes e Depois</h2>
+            <p class="text-blue-700 dark:text-blue-400 font-semibold mt-1">Transformações reais que justificam pós-produção</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-6">
+            Cada exemplo mostra o output direto da IA vs. versão pós-editada, com descrição do que foi feito.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-2 border-blue-300">
+              <p class="font-bold text-blue-900 dark:text-blue-300 mb-3">1. Retrato Corporativo</p>
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-3 rounded mb-3 text-sm">
+                <p><strong>ANTES:</strong> Olhos levemente desalinhados, skin tone amarelado, contraste baixo</p>
+              </div>
+              <div class="bg-green-50 dark:bg-green-900/30 p-3 rounded text-sm">
+                <p><strong>DEPOIS:</strong> Liquify para alinhar olhos + color correction para skin neutro + curves para contraste</p>
+              </div>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2">Tempo: 15 min | Ferramentas: PS Liquify, Camera Raw</p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-2 border-indigo-300">
+              <p class="font-bold text-indigo-900 dark:text-indigo-300 mb-3">2. Product Shot de Tênis</p>
+              <div class="bg-indigo-50 dark:bg-indigo-900/30 p-3 rounded mb-3 text-sm">
+                <p><strong>ANTES:</strong> Background cinza sujo, logo desfocado, pouca definição</p>
+              </div>
+              <div class="bg-green-50 dark:bg-green-900/30 p-3 rounded text-sm">
+                <p><strong>DEPOIS:</strong> Background limpo (branco puro) + logo vetorial sobreposto + high-pass sharpening</p>
+              </div>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2">Tempo: 20 min | Ferramentas: PS Masking, Illustrator</p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-2 border-purple-300">
+              <p class="font-bold text-purple-900 dark:text-purple-300 mb-3">3. Food Photography</p>
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-3 rounded mb-3 text-sm">
+                <p><strong>ANTES:</strong> Cores pálidas, iluminação plana, falta de apetite visual</p>
+              </div>
+              <div class="bg-green-50 dark:bg-green-900/30 p-3 rounded text-sm">
+                <p><strong>DEPOIS:</strong> Vibrance +40 + dodge & burn nas highlights + warm color grading</p>
+              </div>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2">Tempo: 25 min | Ferramentas: Lightroom, PS</p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-2 border-cyan-300">
+              <p class="font-bold text-cyan-900 dark:text-cyan-300 mb-3">4. Paisagem Urbana</p>
+              <div class="bg-cyan-50 dark:bg-cyan-900/30 p-3 rounded mb-3 text-sm">
+                <p><strong>ANTES:</strong> Céu sem detalhes, prédios opacos, 1024x1024 apenas</p>
+              </div>
+              <div class="bg-green-50 dark:bg-green-900/30 p-3 rounded text-sm">
+                <p><strong>DEPOIS:</strong> Sky replacement + upscale para 4K + teal & orange grading + clarity</p>
+              </div>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2">Tempo: 35 min | Ferramentas: Gigapixel AI, PS</p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-2 border-orange-300">
+              <p class="font-bold text-orange-900 dark:text-orange-300 mb-3">5. Fashion Editorial</p>
+              <div class="bg-orange-50 dark:bg-orange-900/30 p-3 rounded mb-3 text-sm">
+                <p><strong>ANTES:</strong> Mão com 6 dedos, fundo distraído, cores inconsistentes</p>
+              </div>
+              <div class="bg-green-50 dark:bg-green-900/30 p-3 rounded text-sm">
+                <p><strong>DEPOIS:</strong> Inpaint da mão + blur seletivo no fundo + HSL para paleta coesa</p>
+              </div>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2">Tempo: 45 min | Ferramentas: SD Inpaint, PS</p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-2 border-pink-300">
+              <p class="font-bold text-pink-900 dark:text-pink-300 mb-3">6. Logo Mockup</p>
+              <div class="bg-pink-50 dark:bg-pink-900/30 p-3 rounded mb-3 text-sm">
+                <p><strong>ANTES:</strong> Ambiente gerado + texto IA ilegível como "logo"</p>
+              </div>
+              <div class="bg-green-50 dark:bg-green-900/30 p-3 rounded text-sm">
+                <p><strong>DEPOIS:</strong> Remove texto IA + adiciona logo vetorial real + perspective warp + sombras</p>
+              </div>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2">Tempo: 30 min | Ferramentas: PS, Illustrator</p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-2 border-green-300">
+              <p class="font-bold text-green-900 dark:text-green-300 mb-3">7. Ilustração Conceitual</p>
+              <div class="bg-green-50 dark:bg-green-900/30 p-3 rounded mb-3 text-sm">
+                <p><strong>ANTES:</strong> Boa base mas edges inconsistentes, detalhes faltando</p>
+              </div>
+              <div class="bg-green-50 dark:bg-green-900/30 p-3 rounded text-sm">
+                <p><strong>DEPOIS:</strong> Refine edges + adiciona texturas manuais + color harmony ajustment</p>
+              </div>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2">Tempo: 50 min | Ferramentas: PS, Procreate</p>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-2 border-teal-300">
+              <p class="font-bold text-teal-900 dark:text-teal-300 mb-3">8. Campanha Social</p>
+              <div class="bg-teal-50 dark:bg-teal-900/30 p-3 rounded mb-3 text-sm">
+                <p><strong>ANTES:</strong> Composição boa mas aspect 1:1, precisa de texto/CTA</p>
+              </div>
+              <div class="bg-green-50 dark:bg-green-900/30 p-3 rounded text-sm">
+                <p><strong>DEPOIS:</strong> Outpaint para 9:16 + adiciona copy + CTA button + color overlay sutil</p>
+              </div>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-2">Tempo: 40 min | Ferramentas: MJ Zoom, PS, Figma</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estrutura de Aulas -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">📚 Estrutura das Aulas</h2>
+        <div class="space-y-4">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300">Aula 1: Filosofia e ROI de Pós-Produção</h3>
+              <span class="text-sm text-blue-700 dark:text-blue-400 font-semibold">1h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Por que investir em pós, quando vale a pena, matriz de decisão e como justificar preços mais altos.
+            </p>
+          </div>
+
+          <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg border-l-4 border-indigo-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-indigo-900 dark:text-indigo-300">Aula 2: Upscaling: Ferramentas e Técnicas</h3>
+              <span class="text-sm text-indigo-700 dark:text-indigo-400 font-semibold">1.5h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Comparação de 5 ferramentas, workflow de upscaling em 4 passos, sharpening profissional.
+            </p>
+          </div>
+
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg border-l-4 border-purple-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300">Aula 3: Inpainting e Outpainting Avançado</h3>
+              <span class="text-sm text-purple-700 dark:text-purple-400 font-semibold">1.5h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Correções cirúrgicas com inpainting, expansão de canvas, ferramentas e casos de uso práticos.
+            </p>
+          </div>
+
+          <div class="bg-cyan-50 dark:bg-cyan-900/20 p-6 rounded-lg border-l-4 border-cyan-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-cyan-900 dark:text-cyan-300">Aula 4: Color Grading de Cinema</h3>
+              <span class="text-sm text-cyan-700 dark:text-cyan-400 font-semibold">2h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              5 estilos populares, ferramentas profissionais, checklist completo, criação de assinatura visual.
+            </p>
+          </div>
+
+          <div class="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-lg border-l-4 border-orange-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-orange-900 dark:text-orange-300">Aula 5: Compositing e Correções Comuns</h3>
+              <span class="text-sm text-orange-700 dark:text-orange-400 font-semibold">1.5h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Combinar elementos, adicionar logos reais, corrigir 10 problemas mais comuns de outputs de IA.
+            </p>
+          </div>
+
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-l-4 border-green-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-green-900 dark:text-green-300">Aula 6: Workflow Completo e Batch Processing</h3>
+              <span class="text-sm text-green-700 dark:text-green-400 font-semibold">0.5h</span>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              10 passos do output ao export, automação, especificações de entrega, QC checklist completo.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercícios Práticos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6 text-blue-900 dark:text-blue-300">✏️ Exercícios Práticos Obrigatórios</h2>
+
+        <div class="space-y-4">
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-blue-500">
+            <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300 mb-3">1. Upscaling Comparativo</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Pegue 1 imagem gerada. Faça upscale com 3 ferramentas diferentes (Gigapixel, Real-ESRGAN, Magnific ou outro).
+              Compare resultados lado a lado em 100% de zoom. Documente diferenças em qualidade, tempo, custo.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: Grid comparativo + análise escrita de cada ferramenta
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-indigo-500">
+            <h3 class="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-3">2. Correção de Problemas Comuns</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Gere ou encontre 5 imagens com problemas (mãos ruins, cores estranhas, baixa qualidade, etc).
+              Corrija cada uma aplicando técnicas do módulo. Documente ANTES e DEPOIS de cada correção com descrição do processo.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: 5 comparações antes/depois + processo detalhado
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-purple-500">
+            <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300 mb-3">3. Color Grading em 3 Estilos</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Escolha 1 imagem neutra. Aplique 3 estilos diferentes de color grading (ex: Teal & Orange, Vintage, Moody Dark).
+              Salve cada versão. Documente ajustes específicos feitos para cada estilo (valores de curves, HSL, etc).
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: 3 versões da mesma imagem + settings documentados
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-cyan-500">
+            <h3 class="text-xl font-bold text-cyan-900 dark:text-cyan-300 mb-3">4. Compositing Completo</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie 1 composição combinando: pessoa gerada por IA + produto real fotografado + logo vetorial + texto.
+              Integrate tudo visualmente (matching de luz, sombras, color grading unificado). Resultado deve parecer foto única.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: Composição final + layers do PSD explicados
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-orange-500">
+            <h3 class="text-xl font-bold text-orange-900 dark:text-orange-300 mb-3">5. Workflow Completo em Série</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Aplique workflow completo de pós em série de 6 imagens. Desde seleção até export final.
+              Crie Action no PS para steps repetíveis. Documente tempo total investido e resultado vs. outputs diretos.
+              Use QC checklist em todas.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: 6 imagens finalizadas + relatório de workflow e tempo
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recursos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎁 Recursos Adicionais</h2>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-5 rounded-lg border border-blue-200 dark:border-blue-700">
+            <h3 class="font-bold text-blue-900 dark:text-blue-300 mb-3">🛠️ Ferramentas</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Lista completa de upscalers (grátis e pagos)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Plugins do Photoshop recomendados</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Presets de Lightroom para IA</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Actions do PS para workflow rápido</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-5 rounded-lg border border-purple-200 dark:border-purple-700">
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-3">📚 Templates</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>QC Checklist imprimível</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Workflow chart visual</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Naming convention para arquivos</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>PSD template de compositing</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-orange-50 dark:bg-orange-900/20 p-5 rounded-lg border border-orange-200 dark:border-orange-700">
+            <h3 class="font-bold text-orange-900 dark:text-orange-300 mb-3">🎨 LUTs e Presets</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Pack com 20 LUTs profissionais</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Presets de color grading para cada estilo</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Camera Raw presets otimizados para IA</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Capture One styles pack</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-cyan-50 dark:bg-cyan-900/20 p-5 rounded-lg border border-cyan-200 dark:border-cyan-700">
+            <h3 class="font-bold text-cyan-900 dark:text-cyan-300 mb-3">🎥 Bônus</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Speed edit session ao vivo</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Breakdown dos 8 antes/depois em vídeo</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Biblioteca de texturas e overlays</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Session de Q&A sobre casos complexos</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dica Final -->
+      <div class="bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-xl shadow-xl p-8 mb-8">
+        <div class="text-center mb-4">
+          <span class="text-6xl mb-4 block">✨</span>
+          <h2 class="text-3xl font-bold mb-4">Dica Final: Pós-Produção É Seu Diferencial Competitivo</h2>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg">
+          <p class="text-xl mb-4">
+            Em 2025, TODOS sabem usar IA. Mas poucos dominam pós-produção profissional.
+          </p>
+          <p class="text-lg mb-4">
+            Enquanto 90% dos concorrentes entregam outputs diretos, você entrega ARTE.
+          </p>
+          <div class="grid md:grid-cols-3 gap-4 my-6">
+            <div class="text-center">
+              <p class="text-3xl font-bold mb-2">3-5x</p>
+              <p class="text-sm">Preço que você pode cobrar</p>
+            </div>
+            <div class="text-center">
+              <p class="text-3xl font-bold mb-2">100%</p>
+              <p class="text-sm">Taxa de aprovação no primeiro envio</p>
+            </div>
+            <div class="text-center">
+              <p class="text-3xl font-bold mb-2">80%</p>
+              <p class="text-sm">Clientes que viram recorrentes</p>
+            </div>
+          </div>
+          <p class="text-xl font-bold text-center mt-6 pt-6 border-t border-white/30">
+            Não compete em preço. Compete em QUALIDADE que só pós-produção entrega.
+          </p>
+          <p class="text-center mt-4">
+            Este módulo te coloca nos 10% que realmente ganham bem com IA.
+          </p>
+        </div>
+      </div>
+
+      <!-- Navegação -->
+      <div class="flex justify-between items-center mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
+        <a href="tecnico-modulo-04.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold">
+          ← Voltar para Módulo 4
+        </a>
+        <a href="tecnico-modulo-06.html" class="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 transition-colors text-lg">
+          Continuar para Módulo 6 →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-white py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-neutral-400">&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
+      <p class="text-neutral-500 text-sm mt-2">Transformando profissionais para o mercado do futuro</p>
+    </div>
+  </footer>
+
+  <!-- Script de Dark Mode -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      themeToggleLightIcon.classList.remove('hidden');
+      document.documentElement.classList.add('dark');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
+      } else {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

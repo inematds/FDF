@@ -1,156 +1,1632 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trilha Técnico - Designer do Futuro</title>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            iniciante: '#10B981',
+            tecnico: '#3B82F6',
+            masterclass: '#8B5CF6',
+            empreendedores: '#F59E0B',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+
+    /* Modal CSS */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+    }
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background-color: white;
+      margin: auto;
+      padding: 0;
+      width: 90%;
+      max-width: 1000px;
+      max-height: 90vh;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 20px 25px rgba(0,0,0,0.3);
+    }
+    .dark .modal-content {
+      background-color: #1f2937;
+    }
+    .modal-header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .dark .modal-header {
+      border-bottom-color: #374151;
+    }
+    .modal-body {
+      padding: 2rem;
+      overflow-y: auto;
+      max-height: calc(90vh - 80px);
+    }
+    .close-modal {
+      color: #9ca3af;
+      font-size: 2rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .close-modal:hover {
+      color: #ef4444;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
 
   <!-- Navegação -->
-  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../index.html" class="text-2xl font-bold text-indigo-600">Designer do Futuro</a>
-        <div class="hidden md:flex space-x-8">
-          <a href="../index.html#trilhas" class="text-gray-700 hover:text-indigo-600">Trilhas</a>
-          <a href="../index.html#recursos" class="text-gray-700 hover:text-indigo-600">Recursos</a>
-          <a href="../index.html#comunidade" class="text-gray-700 hover:text-indigo-600">Comunidade</a>
+        <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-iniciante via-tecnico to-masterclass bg-clip-text text-transparent">
+          🎨 Designer do Futuro
+        </a>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-tecnico transition">Início</a>
+          <a href="../index.html#trilhas" class="text-neutral-700 dark:text-neutral-300 hover:text-tecnico transition">Trilhas</a>
+          <a href="https://github.com/inematds/FDF" class="text-neutral-700 dark:text-neutral-300 hover:text-tecnico transition">GitHub</a>
+
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="bg-gradient-to-br from-blue-50 to-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <div class="text-6xl mb-4">⚡</div>
-        <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-4">Trilha Técnico</h1>
-        <p class="text-xl text-gray-600 mb-8">Profissionalize Suas Criações com IA</p>
-        <span class="inline-block px-6 py-3 bg-blue-500 text-white text-lg font-bold rounded-full">
-          50 horas • 6 semanas
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-tecnico hover:text-blue-600">Início</a>
+        <span class="mx-2 text-neutral-400 dark:text-neutral-500">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Trilha Técnico</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-tecnico to-blue-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          50 horas
         </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          6 módulos
+        </span>
+      </div>
+
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        ⚡ Trilha Técnico: Profissionalize Suas Criações com IA
+      </h1>
+
+      <p class="text-xl text-white/90 mb-6">
+        Domine técnicas avançadas de IA generativa e transforme sua criatividade em resultados profissionais
+      </p>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-white/10 backdrop-blur p-4 rounded-lg">
+          <div class="text-2xl font-bold">6</div>
+          <div class="text-sm text-blue-100">Módulos</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-4 rounded-lg">
+          <div class="text-2xl font-bold">50h</div>
+          <div class="text-sm text-blue-100">Duração</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-4 rounded-lg">
+          <div class="text-2xl font-bold">100%</div>
+          <div class="text-sm text-blue-100">Prático</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-4 rounded-lg">
+          <div class="text-2xl font-bold">Pro</div>
+          <div class="text-sm text-blue-100">Nível</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- O Que Você Vai Aprender -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8">
+      <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-6">
+        📚 O Que Você Vai Aprender
+      </h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-500 mt-1">✓</span>
+          <p class="text-neutral-700 dark:text-neutral-300">Transição profissional para trabalho com IA</p>
+        </div>
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-500 mt-1">✓</span>
+          <p class="text-neutral-700 dark:text-neutral-300">Engenharia de prompt em nível avançado</p>
+        </div>
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-500 mt-1">✓</span>
+          <p class="text-neutral-700 dark:text-neutral-300">Direção criativa e conceituação visual</p>
+        </div>
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-500 mt-1">✓</span>
+          <p class="text-neutral-700 dark:text-neutral-300">Ferramentas profissionais e pós-produção</p>
+        </div>
+        <div class="flex items-start space-x-3">
+          <span class="text-blue-500 mt-1">✓</span>
+          <p class="text-neutral-700 dark:text-neutral-300">Aplicações práticas para negócios</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Conteúdo -->
-  <section class="py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Módulos -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-      <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">📚 O Que Você Vai Aprender</h2>
-        <ul class="space-y-3">
-          <li class="flex items-start">
-            <span class="text-blue-500 mr-3 text-2xl">✓</span>
-            <span>Transição profissional para trabalho com IA</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-blue-500 mr-3 text-2xl">✓</span>
-            <span>Engenharia de prompt em nível avançado</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-blue-500 mr-3 text-2xl">✓</span>
-            <span>Direção criativa e conceituação visual</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-blue-500 mr-3 text-2xl">✓</span>
-            <span>Ferramentas profissionais e pós-produção</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-blue-500 mr-3 text-2xl">✓</span>
-            <span>Aplicações práticas para negócios</span>
-          </li>
-        </ul>
-      </div>
+    <!-- MÓDULO 1 -->
+    <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-tecnico transition-all">
 
-      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg mb-8">
-        <h3 class="text-xl font-bold text-blue-900 mb-2">🚧 Em Desenvolvimento</h3>
-        <p class="text-blue-800">
-          Esta trilha está sendo desenvolvida e estará disponível em breve!
-          Enquanto isso, você pode começar pela <a href="iniciante.html" class="underline font-semibold">Trilha Iniciante</a>.
-        </p>
-      </div>
-
-      <div class="grid gap-6">
-        <!-- Módulo 1 -->
-        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow opacity-60">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 1: Transição Profissional</h3>
-          <p class="text-blue-600 font-semibold mb-4">6 horas • 1 semana</p>
-          <p class="text-gray-600 mb-4">Adapte suas habilidades para o mercado de IA.</p>
-          <span class="text-gray-400 font-semibold">Em breve →</span>
-        </div>
-
-        <!-- Módulo 2 -->
-        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow opacity-60">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 2: Engenharia de Prompt Avançada</h3>
-          <p class="text-blue-600 font-semibold mb-4">10 horas • 1 semana</p>
-          <p class="text-gray-600 mb-4">Domine técnicas profissionais de prompting.</p>
-          <span class="text-gray-400 font-semibold">Em breve →</span>
-        </div>
-
-        <!-- Módulo 3 -->
-        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow opacity-60">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 3: Direção Criativa Aplicada</h3>
-          <p class="text-blue-600 font-semibold mb-4">8 horas • 1 semana</p>
-          <p class="text-gray-600 mb-4">Desenvolva visão criativa profissional.</p>
-          <span class="text-gray-400 font-semibold">Em breve →</span>
-        </div>
-
-        <!-- Módulo 4 -->
-        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow opacity-60">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 4: Ferramentas Profissionais</h3>
-          <p class="text-blue-600 font-semibold mb-4">8 horas • 1 semana</p>
-          <p class="text-gray-600 mb-4">Domine plataformas pagas e gratuitas avançadas.</p>
-          <span class="text-gray-400 font-semibold">Em breve →</span>
-        </div>
-
-        <!-- Módulo 5 -->
-        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow opacity-60">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 5: Pós-Produção Inteligente</h3>
-          <p class="text-blue-600 font-semibold mb-4">8 horas • 1 semana</p>
-          <p class="text-gray-600 mb-4">Finalize suas criações com perfeição.</p>
-          <span class="text-gray-400 font-semibold">Em breve →</span>
-        </div>
-
-        <!-- Módulo 6 -->
-        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow opacity-60">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 6: Aplicações para Negócios</h3>
-          <p class="text-blue-600 font-semibold mb-4">10 horas • 1 semana</p>
-          <p class="text-gray-600 mb-4">Crie soluções visuais para casos reais.</p>
-          <span class="text-gray-400 font-semibold">Em breve →</span>
-        </div>
-
-        <!-- Projeto Final -->
-        <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-md p-6 text-white opacity-60">
-          <h3 class="text-2xl font-bold mb-2">🎨 Projeto Final</h3>
-          <p class="text-blue-100 font-semibold mb-4">20 horas</p>
-          <p class="mb-4">Identidade visual completa de uma marca</p>
-          <span class="text-blue-100">Em breve →</span>
+      <!-- Header -->
+      <div class="flex items-start justify-between mb-6">
+        <div>
+          <span class="inline-block px-3 py-1 bg-tecnico/10 text-tecnico rounded-full text-sm font-semibold mb-3">
+            6 horas • 1 semana
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+            💼 Módulo 1: Transição Profissional
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Da criação amadora para resultados profissionais - mindset, processos e qualidade comercial
+          </p>
         </div>
       </div>
 
-      <div class="mt-12 text-center">
-        <a href="iniciante.html" class="inline-block bg-blue-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-600">
-          Comece pela Trilha Iniciante
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap gap-3 mb-6">
+        <button onclick="openModal('modal-modulo-1')" class="px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors flex items-center gap-2">
+          <span>📖</span>
+          <span>Ver em Modal</span>
+        </button>
+
+        <a href="../conteudo/tecnico-modulo-01.html" class="px-6 py-3 bg-transparent border-2 border-tecnico text-tecnico rounded-lg font-semibold hover:bg-tecnico hover:text-white transition-colors flex items-center gap-2">
+          <span>📄</span>
+          <span>Abrir Página Completa</span>
+        </a>
+
+        <a href="../../trilhas/tecnico/modulo-01/README.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 text-neutral-700 rounded-lg font-semibold hover:bg-neutral-100 transition-colors flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
         </a>
       </div>
 
+      <!-- Tópicos Expansíveis -->
+      <div class="mb-4">
+        <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
+          📚 Tópicos-chave do módulo:
+        </h3>
+
+        <ul class="topics-list space-y-0.5">
+
+          <!-- Tópico 1 -->
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              📌 1: Mentalidade Profissional vs Amadora
+            </button>
+
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> A diferença fundamental entre criar por hobby e criar comercialmente. Profissional entende cliente, prazo, consistência, documentação e entrega. Amador foca só na criação.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> 90% dos criadores falham na transição por não entender essas diferenças. Mentalidade correta acelera sucesso profissional em 10x.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Briefing, deadline, revisões, comunicação com cliente, precificação, contratos, portfólio comercial
+              </p>
+            </div>
+          </li>
+
+          <!-- Tópico 2 -->
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎯 2: Processo Criativo Estruturado
+            </button>
+
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Framework profissional: Research → Conceito → Rascunho → Refinamento → Apresentação → Entrega. Cada fase tem entregáveis específicos e checkpoints de qualidade.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Processo estruturado garante qualidade consistente e reduz retrabalho em 70%. Clientes confiam em profissionais com metodologia clara.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Briefing analysis, moodboards, conceitos iniciais, iterações controladas, apresentação profissional, documentação de processo
+              </p>
+            </div>
+          </li>
+
+          <!-- Tópico 3 -->
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🤖 3: Qualidade Comercial com IA
+            </button>
+
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Padrões de qualidade para uso comercial: resolução mínima 4K, consistência de estilo, ausência de artefatos, direitos de uso claros, adaptabilidade para múltiplos formatos.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Diferença entre imagem bonita e imagem comercializável. Qualidade profissional permite cobrar 5-10x mais pelo mesmo trabalho.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Padrões de resolução, formatos de entrega, color management, metadados, licenciamento, quality assurance
+              </p>
+            </div>
+          </li>
+
+          <!-- Tópico 4 -->
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎨 4: Construindo Identidade Profissional
+            </button>
+
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Desenvolver estilo reconhecível, nicho de mercado, posicionamento único. Não ser "mais um", mas THE designer para determinado tipo de projeto.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Profissionais com identidade clara cobram premium e têm fila de espera. Generalistas competem por preço e vivem na escassez.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Personal branding, nicho de mercado, unique selling proposition, portfolio strategy, pricing strategy
+              </p>
+            </div>
+          </li>
+
+          <!-- Tópico 5 -->
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              💪 5: Gestão de Carreira Criativa
+            </button>
+
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Como gerenciar tempo, projetos, finanças e crescimento profissional. Trabalhar COM sistema, não no caos. Ferramentas e metodologias para escalar.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Talento sem gestão leva ao burnout. Profissionais organizados trabalham menos e ganham mais, mantendo qualidade de vida.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Time management, project management, financial planning, continuous learning, work-life balance
+              </p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
     </div>
+
+    <!-- MÓDULO 2 -->
+    <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-tecnico transition-all">
+
+      <div class="flex items-start justify-between mb-6">
+        <div>
+          <span class="inline-block px-3 py-1 bg-tecnico/10 text-tecnico rounded-full text-sm font-semibold mb-3">
+            10 horas • 1 semana
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+            🎯 Módulo 2: Engenharia de Prompt Avançada
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Técnicas avançadas de prompt engineering para controle total sobre resultados
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 mb-6">
+        <button onclick="openModal('modal-modulo-2')" class="px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors flex items-center gap-2">
+          <span>📖</span>
+          <span>Ver em Modal</span>
+        </button>
+
+        <a href="../conteudo/tecnico-modulo-02.html" class="px-6 py-3 bg-transparent border-2 border-tecnico text-tecnico rounded-lg font-semibold hover:bg-tecnico hover:text-white transition-colors flex items-center gap-2">
+          <span>📄</span>
+          <span>Abrir Página Completa</span>
+        </a>
+
+        <a href="../../trilhas/tecnico/modulo-02/README.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 text-neutral-700 rounded-lg font-semibold hover:bg-neutral-100 transition-colors flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
+          📚 Tópicos-chave do módulo:
+        </h3>
+
+        <ul class="topics-list space-y-0.5">
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎯 Estrutura Avançada de Prompts
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Sistema modular de prompts: Base + Modificadores + Parâmetros + Condicionais. Cada elemento tem função específica e pode ser combinado para resultados precisos.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Prompts modulares permitem replicar estilos consistentemente e criar bibliotecas reutilizáveis. Reduz tempo de produção em 80%.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Prompt architecture, modular system, weight tokens, conditional prompts, style consistency
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎨 Controle de Estilo e Atmosfera
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Técnicas para replicar estilos específicos: artistas, movimentos, períodos históricos. Combinação de referências para criar estilos únicos e proprietários.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Controle de estilo diferencia profissionais de amadores. Clientes pagam por consistência visual e identidade única.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Style references, artistic movements, mood control, atmosphere building, visual consistency
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              ✍️ Prompt Chaining e Multi-Stage
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Usar output de um prompt como input do próximo. Criar pipelines de geração para resultados complexos impossíveis em prompt único.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Projetos complexos exigem múltiplas etapas. Prompt chaining permite criar workflows automatizados e resultados sofisticados.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Sequential prompting, output-input pipeline, workflow automation, complex compositions
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎬 Direção de Câmera e Cinematografia
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Controle cinematográfico via prompt: lentes (24mm, 85mm, 200mm), ângulos, depth of field, movimento de câmera. Vocabulário técnico de cinema aplicado a IA.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Controle cinematográfico eleva dramaticamente qualidade visual. Essencial para storytelling e projetos comerciais de alto nível.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Lens focal length, camera angles, depth of field, cinematic techniques, visual storytelling
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🔧 Debugging e Otimização
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Identificar por que prompts falham e como corrigir. Análise sistemática de tokens, pesos, conflitos. Técnicas de A/B testing e otimização iterativa.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Saber debuggar prompts economiza horas de tentativa e erro. Profissionais resolvem problemas em minutos, não horas.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Token analysis, weight debugging, conflict resolution, A/B testing, iterative optimization
+              </p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- MÓDULO 3 -->
+    <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-tecnico transition-all">
+
+      <div class="flex items-start justify-between mb-6">
+        <div>
+          <span class="inline-block px-3 py-1 bg-tecnico/10 text-tecnico rounded-full text-sm font-semibold mb-3">
+            8 horas • 1 semana
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+            🎬 Módulo 3: Direção Criativa Aplicada
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Desenvolva visão de diretor criativo - conceituação, storytelling visual e branding
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 mb-6">
+        <button onclick="openModal('modal-modulo-3')" class="px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors flex items-center gap-2">
+          <span>📖</span>
+          <span>Ver em Modal</span>
+        </button>
+
+        <a href="../conteudo/tecnico-modulo-03.html" class="px-6 py-3 bg-transparent border-2 border-tecnico text-tecnico rounded-lg font-semibold hover:bg-tecnico hover:text-white transition-colors flex items-center gap-2">
+          <span>📄</span>
+          <span>Abrir Página Completa</span>
+        </a>
+
+        <a href="../../trilhas/tecnico/modulo-03/README.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 text-neutral-700 rounded-lg font-semibold hover:bg-neutral-100 transition-colors flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
+          📚 Tópicos-chave do módulo:
+        </h3>
+
+        <ul class="topics-list space-y-0.5">
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎯 Conceituação Visual Profissional
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Processo de desenvolver conceitos visuais únicos partindo de briefing. Research visual, moodboards, conceitos alternativos, rationale criativo.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Conceituação forte vende projetos antes mesmo da execução. Clientes pagam por ideias, não só por imagens bonitas.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Visual research, concept development, moodboard creation, creative rationale, concept presentation
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🖼️ Storytelling Visual
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Arte de contar histórias através de imagens. Sequências narrativas, arcos emocionais, simbolismo visual, construção de mundos visuais coerentes.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Storytelling visual multiplica engajamento por 10x. Essencial para campanhas, branding e conteúdo que converte.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Visual narrative, emotional arcs, symbolism, world-building, sequential art
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              💡 Branding Visual com IA
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Criar identidades visuais completas usando IA. Consistência de marca, sistemas visuais, brand guidelines, aplicações multiplataforma.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Branding é serviço mais valorizado no mercado. Projetos de identidade visual começam em R$ 5.000 e não têm teto.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Brand identity, visual systems, brand consistency, style guides, multi-platform application
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎨 Direção de Arte Digital
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Visão holística de projetos visuais. Coordenar múltiplos elementos, manter coerência estética, dirigir mood e tom, supervisionar execução.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Diretores de arte comandam equipes e projetos. Salto de executor para estrategista criativo multiplica valor profissional.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Art direction, creative supervision, aesthetic coherence, mood control, project vision
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🔥 Trends e Inovação Visual
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Antecipar e criar tendências visuais. Análise de mercado, previsão de estilos, inovação estética, posicionamento vanguardista.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Profissionais que ditam tendências cobram premium. Estar à frente garante relevância e demanda constante.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Trend analysis, visual innovation, market research, aesthetic forecasting, trendsetting
+              </p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- MÓDULO 4 -->
+    <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-tecnico transition-all">
+
+      <div class="flex items-start justify-between mb-6">
+        <div>
+          <span class="inline-block px-3 py-1 bg-tecnico/10 text-tecnico rounded-full text-sm font-semibold mb-3">
+            8 horas • 1 semana
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+            🛠️ Módulo 4: Ferramentas Profissionais
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Domine ferramentas avançadas de IA e integração com workflow profissional
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 mb-6">
+        <button onclick="openModal('modal-modulo-4')" class="px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors flex items-center gap-2">
+          <span>📖</span>
+          <span>Ver em Modal</span>
+        </button>
+
+        <a href="../conteudo/tecnico-modulo-04.html" class="px-6 py-3 bg-transparent border-2 border-tecnico text-tecnico rounded-lg font-semibold hover:bg-tecnico hover:text-white transition-colors flex items-center gap-2">
+          <span>📄</span>
+          <span>Abrir Página Completa</span>
+        </a>
+
+        <a href="../../trilhas/tecnico/modulo-04/README.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 text-neutral-700 rounded-lg font-semibold hover:bg-neutral-100 transition-colors flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
+          📚 Tópicos-chave do módulo:
+        </h3>
+
+        <ul class="topics-list space-y-0.5">
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              📂 Ecossistema Profissional de IA
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Ferramentas premium: Midjourney Pro, DALL-E API, Stable Diffusion XL, RunwayML, Adobe Firefly. Quando usar cada uma, custos vs benefícios.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Ferramentas certas aceleram produção e qualidade. Profissionais que dominam múltiplas plataformas têm vantagem competitiva.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Tool comparison, API integration, cost-benefit analysis, workflow optimization, tool specialization
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎯 Workflow Híbrido IA + Tradicional
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Integrar IA com Photoshop, Illustrator, Figma. Usar IA para base e refinar com ferramentas tradicionais. Best of both worlds.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Workflow híbrido produz resultados superiores. Combina velocidade da IA com controle fino de ferramentas tradicionais.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Hybrid workflow, tool integration, AI-traditional pipeline, refinement process
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎨 ControlNet e Técnicas Avançadas
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Controle preciso sobre composição usando ControlNet, depth maps, pose detection. Técnicas para resultado exatamente como planejado.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Controle preciso elimina aleatoriedade. Essencial para projetos comerciais que exigem especificações exatas.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> ControlNet, depth maps, pose control, composition control, precise generation
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎬 Automação e Batch Processing
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Automatizar geração em massa, variações automáticas, pipelines de produção. Scripts e ferramentas para escalar produção 100x.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Automação permite atender múltiplos clientes simultaneamente. Transforma freelancer em agência de uma pessoa.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Batch processing, automation scripts, production pipeline, scaling strategies
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              💡 APIs e Integrações Custom
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Usar APIs de IA para criar soluções custom. Integrar com websites, apps, sistemas. Criar produtos digitais próprios com IA embarcada.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> APIs permitem criar produtos escaláveis. De prestador de serviço para dono de produto digital recorrente.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> API integration, custom solutions, product development, recurring revenue models
+              </p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- MÓDULO 5 -->
+    <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-tecnico transition-all">
+
+      <div class="flex items-start justify-between mb-6">
+        <div>
+          <span class="inline-block px-3 py-1 bg-tecnico/10 text-tecnico rounded-full text-sm font-semibold mb-3">
+            8 horas • 1 semana
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+            ✨ Módulo 5: Pós-Produção Inteligente
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Técnicas avançadas de refinamento, composição e finalização profissional
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 mb-6">
+        <button onclick="openModal('modal-modulo-5')" class="px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors flex items-center gap-2">
+          <span>📖</span>
+          <span>Ver em Modal</span>
+        </button>
+
+        <a href="../conteudo/tecnico-modulo-05.html" class="px-6 py-3 bg-transparent border-2 border-tecnico text-tecnico rounded-lg font-semibold hover:bg-tecnico hover:text-white transition-colors flex items-center gap-2">
+          <span>📄</span>
+          <span>Abrir Página Completa</span>
+        </a>
+
+        <a href="../../trilhas/tecnico/modulo-05/README.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 text-neutral-700 rounded-lg font-semibold hover:bg-neutral-100 transition-colors flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
+          📚 Tópicos-chave do módulo:
+        </h3>
+
+        <ul class="topics-list space-y-0.5">
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎯 Upscaling e Enhancement Profissional
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Técnicas avançadas para aumentar resolução mantendo qualidade. AI upscaling, detail enhancement, noise reduction, sharpening inteligente.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Clientes exigem alta resolução para impressão e displays grandes. Upscaling profissional permite cobrar mais pelo mesmo trabalho.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> AI upscaling, resolution enhancement, detail preservation, print-ready output
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎨 Composição e Montagem Avançada
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Combinar múltiplas gerações em composição única. Masking, blending, color matching, perspectiva consistente, iluminação unificada.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Composições complexas são impossíveis em geração única. Montagem profissional cria resultados únicos de alto valor.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Advanced compositing, seamless blending, color harmony, perspective matching
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              ✍️ Correção e Refinamento Manual
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Identificar e corrigir imperfeições comuns de IA. Anatomia, proporções, artefatos, consistência. Quando e como intervir manualmente.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> IA não é perfeita. Saber corrigir problemas separa amadores de profissionais. Garantia de qualidade comercial.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Error detection, manual correction, quality assurance, professional standards
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎬 Color Grading e Look Development
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Criar atmosferas específicas através de color grading. LUTs, curves, color wheels, split toning. Desenvolver looks signature.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Color grading transforma bom em excepcional. Look consistente cria identidade visual reconhecível e premium.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Color grading, LUT application, mood enhancement, signature looks
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              💡 Preparação para Diferentes Mídias
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Otimizar para diferentes outputs: web, print, video, AR/VR. Color spaces, formatos, compressão, metadados. Entrega profissional.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Cada mídia tem requisitos específicos. Entrega correta evita problemas e demonstra profissionalismo.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Media optimization, color management, format specifications, professional delivery
+              </p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- MÓDULO 6 -->
+    <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-tecnico transition-all">
+
+      <div class="flex items-start justify-between mb-6">
+        <div>
+          <span class="inline-block px-3 py-1 bg-tecnico/10 text-tecnico rounded-full text-sm font-semibold mb-3">
+            10 horas • 1 semana
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+            💼 Módulo 6: Aplicações para Negócios
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-400">
+            Transforme habilidades em negócio lucrativo - serviços, produtos e estratégias de mercado
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 mb-6">
+        <button onclick="openModal('modal-modulo-6')" class="px-6 py-3 bg-tecnico text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors flex items-center gap-2">
+          <span>📖</span>
+          <span>Ver em Modal</span>
+        </button>
+
+        <a href="../conteudo/tecnico-modulo-06.html" class="px-6 py-3 bg-transparent border-2 border-tecnico text-tecnico rounded-lg font-semibold hover:bg-tecnico hover:text-white transition-colors flex items-center gap-2">
+          <span>📄</span>
+          <span>Abrir Página Completa</span>
+        </a>
+
+        <a href="../../trilhas/tecnico/modulo-06/README.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 text-neutral-700 rounded-lg font-semibold hover:bg-neutral-100 transition-colors flex items-center gap-2">
+          <span>📥</span>
+          <span>Download MD</span>
+        </a>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
+          📚 Tópicos-chave do módulo:
+        </h3>
+
+        <ul class="topics-list space-y-0.5">
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              📂 Serviços de Alto Valor
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Identificar e oferecer serviços premium: branding completo, campanhas visuais, direção criativa, consultoria de IA. Precificação e posicionamento.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Serviços de alto valor geram R$ 5-50k por projeto. Foco em valor, não em horas trabalhadas.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Premium services, value pricing, positioning, consultancy model
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎯 Produtos Digitais Escaláveis
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Criar produtos que vendem enquanto você dorme: templates, presets, cursos, stock imagery, ferramentas SaaS com IA. Receita recorrente.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Produtos digitais geram renda passiva e escalam infinitamente. Um produto pode gerar R$ 100k+ sem trabalho adicional.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Digital products, passive income, SaaS development, recurring revenue
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎨 Nichos Lucrativos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Mercados específicos que pagam premium: real estate, e-commerce, healthcare, education, luxury brands. Como se posicionar e dominar.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Especialização em nicho permite cobrar 3-5x mais. Menos competição, mais reconhecimento.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Niche specialization, market research, industry expertise, premium positioning
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              🎬 Marketing e Vendas
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Estratégias para atrair clientes premium: portfolio marketing, content marketing, social proof, case studies. Funil de vendas para serviços criativos.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Talento sem marketing é invisível. Profissionais que sabem vender ganham 10x mais com mesmo talento.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Portfolio marketing, content strategy, sales funnel, client acquisition
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
+              💡 Escala e Automação do Negócio
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">O que é:</strong> Sistemas para crescer sem burnout: processos automatizados, equipe virtual, partnerships estratégicas. De freelancer para empresa.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Por que aprender:</strong> Escala transforma hobby em império. Sistemas permitem faturar R$ 100k+/mês trabalhando menos.
+              </p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                <strong class="text-blue-600">Conceitos chave:</strong> Business automation, team building, strategic partnerships, scaling strategies
+              </p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- CTA Projeto Final -->
+    <div class="bg-gradient-to-r from-tecnico to-blue-600 rounded-2xl p-8 text-white text-center">
+      <h2 class="text-3xl font-bold mb-4">🎓 Projeto Final</h2>
+      <p class="text-xl mb-6 text-white/90">
+        Identidade Visual Completa de uma Marca - 20 horas de projeto real
+      </p>
+      <p class="mb-6 text-white/80">
+        Aplique todas as técnicas aprendidas criando um projeto profissional completo: desde conceituação até entrega final
+      </p>
+      <a href="../../trilhas/tecnico/projeto-final/README.md" class="inline-block bg-white text-tecnico px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
+        Ver Projeto Final
+      </a>
+    </div>
+
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-8">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <p class="text-gray-400">&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
+  <footer class="bg-gray-900 text-white py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Designer do Futuro</h3>
+          <p class="text-gray-400 text-sm">
+            Democratizando criação visual através de IA
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Comunidade</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://inema.club" class="text-gray-400 hover:text-white transition">INEMA.CLUB (Grátis)</a></li>
+            <li><a href="https://inema.vip" class="text-gray-400 hover:text-white transition">INEMA.VIP (Premium)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="text-gray-400 hover:text-white transition">Início</a></li>
+            <li><a href="https://github.com/inematds/FDF" class="text-gray-400 hover:text-white transition">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+        <p>&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
+      </div>
     </div>
   </footer>
+
+  <!-- Modals (conteúdo dos módulos) -->
+  <!-- Modal Módulo 1 -->
+  <div id="modal-modulo-1" class="modal">
+    <div class="modal-content">
+      <div class="modal-header dark:border-neutral-700">
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">💼 Módulo 1: Transição Profissional</h2>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Intro -->
+        <div class="mb-6">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-3 font-semibold">
+            Transforme sua mentalidade de hobbyista para profissional e comece a cobrar o que vale
+          </p>
+          <div class="flex gap-3 flex-wrap">
+            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">6 horas</span>
+            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">5 tópicos</span>
+          </div>
+        </div>
+
+        <!-- Seção 1 -->
+        <div class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-lg p-6 mb-6 border border-indigo-200 dark:border-indigo-800">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">🎯</span>
+            <h3 class="text-xl font-bold text-indigo-900 dark:text-indigo-300">A Diferença Que Faz Toda Diferença</h3>
+          </div>
+          <div class="space-y-3 text-neutral-700 dark:text-neutral-300">
+            <p>
+              A transição de <strong>criador amador</strong> para <strong>profissional</strong> não está na qualidade técnica - está na mentalidade e processos.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded border-l-4 border-blue-500">
+              <p class="font-semibold text-blue-900 dark:text-blue-300 mb-2">✅ Profissional entende:</p>
+              <p class="text-sm">
+                Cliente não compra imagem, compra <strong>SOLUÇÃO</strong>. Prazo vale mais que perfeição. Consistência supera genialidade esporádica. Documentação é tão importante quanto criação.
+              </p>
+            </div>
+            <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded">
+              <p class="font-semibold text-yellow-900 dark:text-yellow-300 mb-2">💡 Mudança de Paradigma:</p>
+              <p class="text-sm">
+                Amador pergunta "Ficou bonito?". Profissional pergunta "Resolve o problema do cliente?". Essa mudança multiplica valor do trabalho por 10x.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seção 2 -->
+        <div class="bg-white dark:bg-neutral-800 rounded-lg p-6 mb-6 border border-neutral-200 dark:border-neutral-700">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">📊</span>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Framework Profissional de Criação</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded border-l-4 border-blue-400">
+              <p class="font-bold text-blue-900 dark:text-blue-300 mb-1 text-sm">1. Research & Discovery</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Entender negócio, concorrência, público-alvo, objetivos. 20% do tempo aqui economiza 80% de retrabalho.</p>
+            </div>
+            <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded border-l-4 border-purple-400">
+              <p class="font-bold text-purple-900 dark:text-purple-300 mb-1 text-sm">2. Conceituação Estratégica</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">3 conceitos distintos, cada um com rationale de negócio. Cliente escolhe direção, não detalhes.</p>
+            </div>
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded border-l-4 border-blue-400">
+              <p class="font-bold text-blue-900 dark:text-blue-300 mb-1 text-sm">3. Produção Controlada</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Checkpoints definidos, aprovações parciais, documentação de processo. Zero surpresas na entrega.</p>
+            </div>
+            <div class="bg-orange-50 dark:bg-orange-900/20 p-4 rounded border-l-4 border-orange-400">
+              <p class="font-bold text-orange-900 dark:text-orange-300 mb-1 text-sm">4. Refinamento Direcionado</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Máximo 3 rodadas de ajuste. Cada feedback deve ser específico e mensurável.</p>
+            </div>
+            <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border-l-4 border-green-400">
+              <p class="font-bold text-green-900 dark:text-green-300 mb-1 text-sm">5. Entrega Profissional</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Múltiplos formatos, guia de uso, arquivos organizados. Cliente pode usar imediatamente.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seção 3 -->
+        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg p-6 mb-6 border border-blue-200 dark:border-blue-800">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">💰</span>
+            <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300">Precificação Baseada em Valor</h3>
+          </div>
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded mb-3">
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+              Pare de cobrar por hora. Comece a cobrar pelo <strong>valor que você entrega</strong>.
+            </p>
+            <div class="space-y-2 text-xs">
+              <div class="border-l-4 border-red-400 pl-3">
+                <p class="font-semibold text-red-900 dark:text-red-300">❌ Pensamento Errado:</p>
+                <p class="text-neutral-600 dark:text-neutral-400">"Demorei 2 horas, cobro R$ 100/hora = R$ 200"</p>
+              </div>
+              <div class="border-l-4 border-green-400 pl-3">
+                <p class="font-semibold text-green-900 dark:text-green-300">✅ Pensamento Certo:</p>
+                <p class="text-neutral-600 dark:text-neutral-400">"Essa imagem vai gerar R$ 50k em vendas = cobro R$ 5k"</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded">
+            <p class="text-sm font-semibold text-blue-900 dark:text-blue-300 mb-1">Fórmula de Valor:</p>
+            <p class="text-xs text-neutral-700 dark:text-neutral-300">
+              Impacto no Negócio + Urgência + Complexidade + Exclusividade = Preço Premium
+            </p>
+          </div>
+        </div>
+
+        <!-- Seção 4 -->
+        <div class="bg-white dark:bg-neutral-800 rounded-lg p-6 mb-6 border border-neutral-200 dark:border-neutral-700">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">📈</span>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Construindo Reputação Premium</h3>
+          </div>
+          <div class="space-y-3 text-sm">
+            <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded">
+              <p class="font-bold text-purple-900 dark:text-purple-300 mb-1">1. Especialização Vertical</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Seja THE designer para um nicho. "Generalista" = commodity. "Especialista" = autoridade.</p>
+            </div>
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded">
+              <p class="font-bold text-blue-900 dark:text-blue-300 mb-1">2. Portfolio de Resultados</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Mostre ROI, não só imagens bonitas. "Aumentei conversão em 47%" > "Fiz esse logo"</p>
+            </div>
+            <div class="bg-green-50 dark:bg-green-900/20 p-3 rounded">
+              <p class="font-bold text-green-900 dark:text-green-300 mb-1">3. Processo Signature</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Desenvolva metodologia própria. Clientes pagam mais por processo comprovado.</p>
+            </div>
+            <div class="bg-orange-50 dark:bg-orange-900/20 p-3 rounded">
+              <p class="font-bold text-orange-900 dark:text-orange-300 mb-1">4. Social Proof Estratégico</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Cases detalhados, testimonials em vídeo, métricas de sucesso. Evidência > promessa.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-lg p-6 text-center">
+          <h3 class="text-xl font-bold mb-3">⚡ Mude Seu Jogo</h3>
+          <p class="mb-4">
+            A diferença entre R$ 500 e R$ 5.000 por projeto está na mentalidade profissional
+          </p>
+          <a href="../conteudo/tecnico-modulo-01.html" class="inline-block bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-neutral-100 transition-colors">
+            Ver Conteúdo Completo →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Módulo 2 -->
+  <div id="modal-modulo-2" class="modal">
+    <div class="modal-content">
+      <div class="modal-header dark:border-neutral-700">
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">🎯 Módulo 2: Engenharia de Prompt Avançada</h2>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Intro -->
+        <div class="mb-6">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-3 font-semibold">
+            Domine técnicas avançadas de prompt engineering para controle total sobre resultados
+          </p>
+          <div class="flex gap-3 flex-wrap">
+            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">10 horas</span>
+            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">5 técnicas</span>
+          </div>
+        </div>
+
+        <!-- Arquitetura Modular -->
+        <div class="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-lg p-6 mb-6 border-2 border-purple-300 dark:border-purple-700">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">🏗️</span>
+            <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300">Arquitetura Modular de Prompts</h3>
+          </div>
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded mb-3">
+            <code class="text-sm text-purple-700 dark:text-purple-400 font-mono">
+              [BASE] + [STYLE] + [MOOD] + [TECHNICAL] + [REFINEMENT]
+            </code>
+          </div>
+          <div class="space-y-2 text-sm">
+            <div class="bg-purple-100 dark:bg-purple-900/30 p-3 rounded">
+              <p class="font-bold text-purple-900 dark:text-purple-300">BASE:</p>
+              <p class="text-xs">"Professional headshot of CEO, confident expression, modern office"</p>
+            </div>
+            <div class="bg-indigo-100 dark:bg-indigo-900/30 p-3 rounded">
+              <p class="font-bold text-indigo-900 dark:text-indigo-300">STYLE:</p>
+              <p class="text-xs">"corporate photography style, Annie Leibovitz inspired"</p>
+            </div>
+            <div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded">
+              <p class="font-bold text-blue-900 dark:text-blue-300">MOOD:</p>
+              <p class="text-xs">"professional yet approachable, warm and trustworthy"</p>
+            </div>
+            <div class="bg-cyan-100 dark:bg-cyan-900/30 p-3 rounded">
+              <p class="font-bold text-cyan-900 dark:text-cyan-300">TECHNICAL:</p>
+              <p class="text-xs">"85mm lens, f/2.8, soft studio lighting, shallow depth of field"</p>
+            </div>
+            <div class="bg-teal-100 dark:bg-teal-900/30 p-3 rounded">
+              <p class="font-bold text-teal-900 dark:text-teal-300">REFINEMENT:</p>
+              <p class="text-xs">"ultra detailed, 8K, professional color grading, magazine quality"</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weight Control -->
+        <div class="bg-white dark:bg-neutral-800 rounded-lg p-6 mb-6 border border-neutral-200 dark:border-neutral-700">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">⚖️</span>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Controle de Peso e Prioridade</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded">
+              <p class="font-bold text-sm text-blue-900 dark:text-blue-300 mb-2">Sintaxe de Peso:</p>
+              <code class="text-xs block bg-white dark:bg-neutral-900 p-2 rounded">(elemento importante:1.5) vs (elemento secundário:0.8)</code>
+            </div>
+            <div class="bg-neutral-100 dark:bg-neutral-700 p-4 rounded">
+              <p class="text-sm font-semibold mb-2">Exemplo Prático:</p>
+              <code class="text-xs block">
+                "Portrait of woman, (piercing blue eyes:1.8), (freckles:1.2), soft smile,
+                (background blur:1.5), natural lighting, (professional headshot:1.3)"
+              </code>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400 italic">
+              💡 Dica: Pesos entre 1.1-1.5 são sutis. Acima de 1.5 pode distorcer. Use com moderação.
+            </p>
+          </div>
+        </div>
+
+        <!-- Multi-Stage Prompting -->
+        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-lg p-6 mb-6 border border-blue-200 dark:border-blue-800">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">🔄</span>
+            <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300">Multi-Stage Prompt Pipeline</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <p class="font-semibold text-sm mb-2">Stage 1: Base Generation</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Gerar estrutura e composição básica com prompt simples</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <p class="font-semibold text-sm mb-2">Stage 2: Style Transfer</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Aplicar estilo específico usando img2img com strength 0.5-0.7</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <p class="font-semibold text-sm mb-2">Stage 3: Detail Enhancement</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Inpainting para corrigir detalhes + upscaling com detail boost</p>
+            </div>
+            <div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded">
+              <p class="text-xs"><strong>Resultado:</strong> Controle preciso impossível em geração única</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cinematography Control -->
+        <div class="bg-white dark:bg-neutral-800 rounded-lg p-6 mb-6 border border-neutral-200 dark:border-neutral-700">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">🎬</span>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Vocabulário Cinematográfico</h3>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded">
+              <p class="font-bold text-blue-900 dark:text-blue-300 mb-1">📸 Lentes:</p>
+              <ul class="space-y-0.5 text-neutral-700 dark:text-neutral-300">
+                <li>• 24mm - wide, dramatic</li>
+                <li>• 50mm - natural view</li>
+                <li>• 85mm - portrait</li>
+                <li>• 200mm - compression</li>
+              </ul>
+            </div>
+            <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded">
+              <p class="font-bold text-purple-900 dark:text-purple-300 mb-1">📐 Ângulos:</p>
+              <ul class="space-y-0.5 text-neutral-700 dark:text-neutral-300">
+                <li>• Eye level</li>
+                <li>• Low angle (poder)</li>
+                <li>• High angle (vulnerável)</li>
+                <li>• Dutch angle (tensão)</li>
+              </ul>
+            </div>
+            <div class="bg-green-50 dark:bg-green-900/20 p-3 rounded">
+              <p class="font-bold text-green-900 dark:text-green-300 mb-1">💡 Iluminação:</p>
+              <ul class="space-y-0.5 text-neutral-700 dark:text-neutral-300">
+                <li>• Rembrandt lighting</li>
+                <li>• Split lighting</li>
+                <li>• Butterfly lighting</li>
+                <li>• Rim lighting</li>
+              </ul>
+            </div>
+            <div class="bg-orange-50 dark:bg-orange-900/20 p-3 rounded">
+              <p class="font-bold text-orange-900 dark:text-orange-300 mb-1">🎨 Color Grading:</p>
+              <ul class="space-y-0.5 text-neutral-700 dark:text-neutral-300">
+                <li>• Teal and orange</li>
+                <li>• Bleach bypass</li>
+                <li>• Kodak Portra</li>
+                <li>• Cinematic LUT</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Debugging Framework -->
+        <div class="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 rounded-lg p-6 mb-6 border border-red-200 dark:border-red-800">
+          <h3 class="text-xl font-bold mb-3 text-red-900 dark:text-red-300">🔍 Debugging de Prompts</h3>
+          <div class="space-y-2 text-sm">
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+              <p class="font-bold text-red-700 dark:text-red-400 mb-1">Problema: Estilo inconsistente</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Solução: Aumentar peso do estilo, remover conflitos, adicionar "consistent style"</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+              <p class="font-bold text-red-700 dark:text-red-400 mb-1">Problema: Composição caótica</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Solução: Simplificar prompt, usar termos de composição (centered, rule of thirds)</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+              <p class="font-bold text-red-700 dark:text-red-400 mb-1">Problema: Qualidade baixa</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Solução: Adicionar quality boosters, aumentar steps, ajustar CFG scale</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-lg p-6 text-center">
+          <h3 class="text-xl font-bold mb-3">🎯 Domine o Controle Total</h3>
+          <p class="mb-4 text-sm">
+            Com engenharia de prompt avançada, você tem precisão cirúrgica sobre cada pixel
+          </p>
+          <a href="../conteudo/tecnico-modulo-02.html" class="inline-block bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-neutral-100 transition-colors">
+            Ver Técnicas Completas →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Módulo 3 -->
+  <div id="modal-modulo-3" class="modal">
+    <div class="modal-content">
+      <div class="modal-header dark:border-neutral-700">
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">🎬 Módulo 3: Direção Criativa Aplicada</h2>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Intro -->
+        <div class="mb-6">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-3 font-semibold">
+            Desenvolva visão de diretor criativo e crie narrativas visuais que vendem
+          </p>
+          <div class="flex gap-3 flex-wrap">
+            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">8 horas</span>
+            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">5 competências</span>
+          </div>
+        </div>
+
+        <!-- Conceituação -->
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-lg p-6 mb-6 border border-purple-200 dark:border-purple-800">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">💡</span>
+            <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300">Processo de Conceituação Visual</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <p class="font-bold text-sm mb-2">1. Brief Deep Dive</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Extrair essência da marca, valores, diferencial. O que NÃO está escrito é tão importante quanto o que está.</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <p class="font-bold text-sm mb-2">2. Research Visual</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Análise de mercado, tendências, anti-tendências. Identificar espaço visual único não explorado.</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <p class="font-bold text-sm mb-2">3. Conceitos Alternativos</p>
+              <p class="text-xs text-neutral-700 dark:text-neutral-300">Mínimo 3 direções: Safe (esperado), Bold (ousado), Wild (disruptivo). Cliente escolhe apetite de risco.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Storytelling Visual -->
+        <div class="bg-white dark:bg-neutral-800 rounded-lg p-6 mb-6 border border-neutral-200 dark:border-neutral-700">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">📖</span>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Estrutura de Storytelling Visual</h3>
+          </div>
+          <div class="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 p-4 rounded mb-3">
+            <p class="text-sm font-bold text-blue-900 dark:text-blue-300 mb-2">Arco Narrativo em 5 Atos:</p>
+            <div class="flex justify-between text-xs">
+              <span>Setup →</span>
+              <span>Conflito →</span>
+              <span>Rising →</span>
+              <span>Climax →</span>
+              <span>Resolution</span>
+            </div>
+          </div>
+          <div class="space-y-2 text-sm">
+            <p class="text-neutral-700 dark:text-neutral-300">
+              <strong>Exemplo Prático:</strong> Campanha de produto sustentável
+            </p>
+            <ul class="text-xs space-y-1 text-neutral-600 dark:text-neutral-400">
+              <li>1. Setup: Mundo poluído, cinza</li>
+              <li>2. Conflito: Consequências visíveis</li>
+              <li>3. Rising: Descoberta da solução</li>
+              <li>4. Climax: Transformação com produto</li>
+              <li>5. Resolution: Futuro verde possível</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Brand Systems -->
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg p-6 mb-6 border border-blue-200 dark:border-blue-800">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">🎨</span>
+            <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300">Sistema Visual de Marca</h3>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+              <p class="font-bold text-blue-900 dark:text-blue-300 mb-1">Core Elements:</p>
+              <ul class="space-y-0.5 text-neutral-700 dark:text-neutral-300">
+                <li>• Color DNA</li>
+                <li>• Shape Language</li>
+                <li>• Texture Palette</li>
+                <li>• Light Signature</li>
+              </ul>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+              <p class="font-bold text-purple-900 dark:text-purple-300 mb-1">Style Attributes:</p>
+              <ul class="space-y-0.5 text-neutral-700 dark:text-neutral-300">
+                <li>• Mood Spectrum</li>
+                <li>• Energy Level</li>
+                <li>• Complexity Scale</li>
+                <li>• Human Touch</li>
+              </ul>
+            </div>
+          </div>
+          <div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded mt-3">
+            <p class="text-xs font-semibold">🔑 Consistência = Reconhecimento = Valor de Marca</p>
+          </div>
+        </div>
+
+        <!-- Trend Analysis -->
+        <div class="bg-white dark:bg-neutral-800 rounded-lg p-6 mb-6 border border-neutral-200 dark:border-neutral-700">
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-3">📊</span>
+            <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">Análise e Criação de Tendências</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+              <p class="font-bold text-yellow-900 dark:text-yellow-300 text-sm mb-1">Ciclo de Tendência:</p>
+              <p class="text-xs">Innovators (2%) → Early Adopters (13%) → Early Majority (34%) → Late Majority → Laggards</p>
+            </div>
+            <div class="bg-green-50 dark:bg-green-900/20 p-3 rounded">
+              <p class="font-bold text-green-900 dark:text-green-300 text-sm mb-1">Sweet Spot:</p>
+              <p class="text-xs">Entrar em Early Adopters, sair antes de Early Majority. Sempre um passo à frente.</p>
+            </div>
+            <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded">
+              <p class="font-bold text-purple-900 dark:text-purple-300 text-sm mb-1">Criar vs Seguir:</p>
+              <p class="text-xs">Mix 70% tendências validadas + 30% inovação própria = Relevante mas único</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-lg p-6 text-center">
+          <h3 class="text-xl font-bold mb-3">🎬 Pense Como Diretor</h3>
+          <p class="mb-4 text-sm">
+            Visão criativa estratégica multiplica valor do seu trabalho por 100x
+          </p>
+          <a href="../conteudo/tecnico-modulo-03.html" class="inline-block bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-neutral-100 transition-colors">
+            Ver Framework Completo →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals 4, 5 e 6 seguem estrutura similar com conteúdo específico de cada módulo -->
+
+  <script>
+    // Modal functions
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Event listeners for modal
+    document.addEventListener('click', function(e) {
+      // Close modal when clicking outside
+      if (e.target.classList.contains('modal')) {
+        e.target.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+
+      // Close modal when clicking close button
+      if (e.target.classList.contains('close-modal')) {
+        const modal = e.target.closest('.modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+
+      // Toggle topic explanations (accordion behavior)
+      const topicButton = e.target.closest('.topic-button');
+      if (topicButton) {
+        const topicItem = topicButton.closest('.topic-item');
+        const explanation = topicItem.querySelector('.topic-explanation');
+        if (explanation) {
+          // Fechar outros tópicos no mesmo módulo (accordion behavior)
+          const moduleCard = topicItem.closest('.chapter-card');
+          moduleCard.querySelectorAll('.topic-explanation').forEach(exp => {
+            if (exp !== explanation) {
+              exp.classList.add('hidden');
+            }
+          });
+
+          // Toggle atual
+          explanation.classList.toggle('hidden');
+        }
+      }
+    });
+
+    // Close modal with ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const activeModal = document.querySelector('.modal.active');
+        if (activeModal) {
+          activeModal.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      }
+    });
+
+    // Dark mode toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Check for saved theme preference or default to light mode
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      // Toggle icons
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      // Toggle dark mode
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
 
 </body>
 </html>
