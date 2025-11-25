@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 3: Direção de Arte Avançada - Designer do Futuro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            masterclass: '#8B5CF6',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    .gradient-masterclass {
+      background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+    }
+    .gradient-masterclass-light {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navegação -->
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm shadow-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="text-2xl font-bold text-purple-600 dark:text-purple-400">Designer do Futuro</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../trilhas/masterclass.html" class="text-neutral-700 dark:text-neutral-300 hover:text-purple-600 dark:hover:text-purple-400">Voltar para Trilha</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="gradient-masterclass-light dark:from-purple-900/20 dark:to-pink-900/20 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-4">
+        <a href="../trilhas/masterclass.html" class="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-semibold">
+          ← Voltar para Trilha Masterclass
+        </a>
+      </div>
+      <div class="text-6xl mb-6">🎨</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 leading-tight bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+        Módulo 3: Direção de Arte Avançada
+      </h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
+        Teoria avançada, composição cinematográfica e desenvolvimento de linguagem visual única que transcende ferramentas
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-semibold">
+          10 horas
+        </span>
+        <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-semibold">
+          Masterclass
+        </span>
+        <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-semibold">
+          Artístico Avançado
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Objetivos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎯 Maestria Artística Absoluta</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6 text-lg">
+          Este módulo eleva você de operador de ferramentas para verdadeiro diretor de arte. Você dominará princípios atemporais que transformam imagens em experiências emocionais profundas.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+            <span class="text-purple-500 mr-4 text-2xl flex-shrink-0">🎨</span>
+            <div>
+              <strong class="text-purple-900 dark:text-purple-300">Teoria da Cor Avançada:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Psicologia das cores, harmonias complexas e manipulação emocional através de paletas</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-pink-50 dark:bg-pink-900/20 p-4 rounded-lg">
+            <span class="text-pink-500 mr-4 text-2xl flex-shrink-0">📐</span>
+            <div>
+              <strong class="text-pink-900 dark:text-pink-300">Composição Cinematográfica:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Regras de ouro, tensão visual, movimento e narrativa através do enquadramento</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-lg">
+            <span class="text-indigo-500 mr-4 text-2xl flex-shrink-0">💡</span>
+            <div>
+              <strong class="text-indigo-900 dark:text-indigo-300">Iluminação de Estúdio Virtual:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Sistemas complexos de luz, mood através de iluminação e técnicas cinematográficas</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-violet-50 dark:bg-violet-900/20 p-4 rounded-lg">
+            <span class="text-violet-500 mr-4 text-2xl flex-shrink-0">🔮</span>
+            <div>
+              <strong class="text-violet-900 dark:text-violet-300">Linguagem Visual Única:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Desenvolvimento de estilo próprio inconfundível que define sua assinatura artística</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 1: Teoria da Cor Avançada -->
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-purple-200 dark:border-purple-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🎨</span>
+          <div>
+            <h2 class="text-3xl font-bold text-purple-900 dark:text-purple-300">Teoria da Cor: Além do Básico</h2>
+            <p class="text-purple-700 dark:text-purple-400 font-semibold mt-1">A ciência e arte de manipular emoções através das cores</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Cor não é apenas estética - é neurociência, psicologia e cultura combinadas.
+            Mestres usam cor para controlar atenção, evocar memórias e guiar decisões inconscientes.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border-l-4 border-purple-500">
+            <h3 class="text-2xl font-bold text-purple-900 dark:text-purple-300 mb-3">🧠 Neurociência das Cores</h3>
+
+            <div class="space-y-6">
+              <!-- Resposta Fisiológica -->
+              <div class="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 p-6 rounded-lg">
+                <h4 class="text-xl font-bold text-purple-900 dark:text-purple-300 mb-3">Respostas Fisiológicas Mensuráveis</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-bold text-red-600 dark:text-red-400 mb-2">Vermelho (630-700nm)</h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• Aumenta frequência cardíaca em 12%</li>
+                      <li>• Eleva pressão arterial</li>
+                      <li>• Acelera respiração</li>
+                      <li>• Tempo percebido 7% mais rápido</li>
+                      <li>• Aumenta apetite e impulsividade</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-bold text-blue-600 dark:text-blue-400 mb-2">Azul (450-495nm)</h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• Reduz frequência cardíaca em 8%</li>
+                      <li>• Diminui pressão arterial</li>
+                      <li>• Suprime melatonina (alerta)</li>
+                      <li>• Tempo percebido 12% mais lento</li>
+                      <li>• Aumenta produtividade mental</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-bold text-green-600 dark:text-green-400 mb-2">Verde (495-570nm)</h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• Reduz fadiga ocular em 20%</li>
+                      <li>• Melhora foco e concentração</li>
+                      <li>• Acelera healing psicológico</li>
+                      <li>• Associado a decisões financeiras</li>
+                      <li>• Aumenta criatividade em 15%</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-bold text-yellow-600 dark:text-yellow-400 mb-2">Amarelo (570-590nm)</h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• Estimula sistema nervoso</li>
+                      <li>• Aumenta metabolismo</li>
+                      <li>• Melhora memória em 10%</li>
+                      <li>• Causa fadiga visual rápida</li>
+                      <li>• Trigger de ansiedade em excesso</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Harmonias Complexas -->
+              <div class="bg-gradient-to-r from-pink-100 to-purple-100 dark:from-pink-900/30 dark:to-purple-900/30 p-6 rounded-lg">
+                <h4 class="text-xl font-bold text-pink-900 dark:text-pink-300 mb-3">Harmonias Além da Roda de Cores</h4>
+                <div class="space-y-4">
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-bold mb-2">Double Split-Complementary</h5>
+                    <p class="text-sm mb-2">Base + 2 pares de cores adjacentes aos complementares</p>
+                    <div class="flex gap-2">
+                      <div class="w-8 h-8 bg-purple-500 rounded"></div>
+                      <div class="w-8 h-8 bg-yellow-400 rounded"></div>
+                      <div class="w-8 h-8 bg-green-400 rounded"></div>
+                      <div class="w-8 h-8 bg-red-400 rounded"></div>
+                      <div class="w-8 h-8 bg-orange-400 rounded"></div>
+                    </div>
+                    <p class="text-xs mt-2 text-neutral-600 dark:text-neutral-400">
+                      Uso: Composições vibrantes mas equilibradas, perfeito para branding jovem
+                    </p>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-bold mb-2">Harmonia de Temperatura Dividida</h5>
+                    <p class="text-sm mb-2">70% cores frias, 30% quente de alto contraste</p>
+                    <div class="flex gap-2">
+                      <div class="w-12 h-8 bg-blue-500 rounded"></div>
+                      <div class="w-12 h-8 bg-cyan-500 rounded"></div>
+                      <div class="w-12 h-8 bg-teal-500 rounded"></div>
+                      <div class="w-8 h-8 bg-orange-500 rounded"></div>
+                    </div>
+                    <p class="text-xs mt-2 text-neutral-600 dark:text-neutral-400">
+                      Uso: Criar ponto focal dramático, guiar olhar instantaneamente
+                    </p>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-bold mb-2">Progressão Tonal Cinematográfica</h5>
+                    <p class="text-sm mb-2">Gradiente não-linear com peaks de saturação</p>
+                    <div class="flex gap-1">
+                      <div class="w-6 h-8 bg-slate-800 rounded"></div>
+                      <div class="w-6 h-8 bg-slate-700 rounded"></div>
+                      <div class="w-6 h-8 bg-purple-700 rounded"></div>
+                      <div class="w-6 h-8 bg-purple-500 rounded"></div>
+                      <div class="w-6 h-8 bg-pink-500 rounded"></div>
+                      <div class="w-6 h-8 bg-pink-400 rounded"></div>
+                      <div class="w-6 h-8 bg-orange-300 rounded"></div>
+                    </div>
+                    <p class="text-xs mt-2 text-neutral-600 dark:text-neutral-400">
+                      Uso: Criar profundidade e atmosfera, essencial para mood cinematográfico
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Psicologia Cultural -->
+              <div class="bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 p-6 rounded-lg">
+                <h4 class="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-3">Significados Culturais Profundos</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-bold mb-2">Ocidente vs Oriente</h5>
+                    <ul class="text-xs space-y-1">
+                      <li><strong>Branco:</strong> Pureza (West) vs Morte (East)</li>
+                      <li><strong>Vermelho:</strong> Paixão (West) vs Sorte (East)</li>
+                      <li><strong>Verde:</strong> Natureza (West) vs Infidelidade (East)</li>
+                      <li><strong>Amarelo:</strong> Alegria (West) vs Imperial (East)</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-bold mb-2">Gerações e Cores</h5>
+                    <ul class="text-xs space-y-1">
+                      <li><strong>Gen Z:</strong> Neon, gradientes, iridescente</li>
+                      <li><strong>Millennials:</strong> Millennial pink, pastéis</li>
+                      <li><strong>Gen X:</strong> Earthtones, grunge</li>
+                      <li><strong>Boomers:</strong> Clássicas, alto contraste</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Grading Cinematográfico -->
+          <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🎬 Color Grading Cinematográfico</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Teal & Orange (Blockbuster)</h4>
+                <p class="text-sm">
+                  Shadows: Teal/Cyan | Highlights: Orange/Amber
+                  Cria separação dramática entre figura e fundo.
+                  Usado em 90% dos filmes de ação.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Bleach Bypass (Thriller)</h4>
+                <p class="text-sm">
+                  Desaturação parcial + contrast boost.
+                  Mantém luminância mas reduz cor em 40%.
+                  Cria tensão e desconforto subliminal.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Day for Night (Romântico)</h4>
+                <p class="text-sm">
+                  Underexpose 2 stops + heavy blue grade.
+                  Simula noite mantendo detalhes.
+                  Romântico e misterioso.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Cross Processing (Artístico)</h4>
+                <p class="text-sm">
+                  Inverte curvas de cor seletivamente.
+                  Cria looks impossíveis naturalmente.
+                  Define estilos únicos de autor.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 2: Composição Cinematográfica -->
+      <div class="bg-gradient-to-br from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-pink-200 dark:border-pink-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">📐</span>
+          <div>
+            <h2 class="text-3xl font-bold text-pink-900 dark:text-pink-300">Composição: A Matemática da Beleza</h2>
+            <p class="text-pink-700 dark:text-pink-400 font-semibold mt-1">Geometria sagrada e psicologia visual em ação</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Composição não é sobre regras - é sobre tensão, movimento e hierarquia visual.
+            Grandes diretores de arte usam geometria para guiar o subconsciente do espectador.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-pink-900 dark:text-pink-300 mb-4">📏 Sistemas de Composição Avançados</h3>
+
+            <div class="space-y-6">
+              <!-- Golden Ratio Complexo -->
+              <div class="bg-pink-50 dark:bg-pink-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-pink-900 dark:text-pink-300 mb-3">Espiral de Fibonacci Multi-camada</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <p class="text-sm mb-3">Não apenas uma espiral - múltiplas espirais interconectadas:</p>
+                  <ul class="text-sm space-y-2">
+                    <li><strong>Espiral Principal (φ):</strong> Define o movimento geral do olhar</li>
+                    <li><strong>Espiral Secundária (φ²):</strong> Cria sub-pontos de interesse</li>
+                    <li><strong>Micro-espirais (φ³):</strong> Detalhes que mantêm atenção</li>
+                  </ul>
+                  <div class="mt-3 p-3 bg-pink-50 dark:bg-pink-900/20 rounded">
+                    <p class="text-xs">
+                      <strong>Aplicação:</strong> Coloque elemento principal no olho da espiral maior,
+                      secundários nas intersecções das espirais menores
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dynamic Symmetry -->
+              <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-purple-900 dark:text-purple-300 mb-3">Dynamic Symmetry (Jay Hambidge)</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Retângulos Dinâmicos</h5>
+                    <ul class="text-xs space-y-1">
+                      <li>• √2 Rectangle (1:1.414) - Tensão equilibrada</li>
+                      <li>• √3 Rectangle (1:1.732) - Energia crescente</li>
+                      <li>• √4 Rectangle (1:2) - Máximo dinamismo</li>
+                      <li>• √5 Rectangle (1:2.236) - Harmonia complexa</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Linhas de Força</h5>
+                    <p class="text-xs mb-2">
+                      Diagonais e reciprocais criam "armaduras" invisíveis
+                      que guiam composição sem ser óbvias.
+                    </p>
+                    <p class="text-xs text-purple-600 dark:text-purple-400">
+                      Use para: Ação, movimento, tensão dramática
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tensão e Peso Visual -->
+              <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-indigo-900 dark:text-indigo-300 mb-3">Peso Visual e Balanceamento</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h5 class="font-semibold mb-3">Fatores de Peso Visual (em ordem de impacto):</h5>
+                  <div class="space-y-2">
+                    <div class="flex items-center">
+                      <div class="w-24 text-xs font-semibold">Faces Humanas</div>
+                      <div class="flex-1 bg-neutral-200 dark:bg-neutral-700 rounded h-2">
+                        <div class="bg-indigo-500 h-2 rounded" style="width: 100%"></div>
+                      </div>
+                      <span class="ml-2 text-xs">100%</span>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="w-24 text-xs font-semibold">Texto</div>
+                      <div class="flex-1 bg-neutral-200 dark:bg-neutral-700 rounded h-2">
+                        <div class="bg-indigo-500 h-2 rounded" style="width: 85%"></div>
+                      </div>
+                      <span class="ml-2 text-xs">85%</span>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="w-24 text-xs font-semibold">Alto Contraste</div>
+                      <div class="flex-1 bg-neutral-200 dark:bg-neutral-700 rounded h-2">
+                        <div class="bg-indigo-500 h-2 rounded" style="width: 75%"></div>
+                      </div>
+                      <span class="ml-2 text-xs">75%</span>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="w-24 text-xs font-semibold">Cor Saturada</div>
+                      <div class="flex-1 bg-neutral-200 dark:bg-neutral-700 rounded h-2">
+                        <div class="bg-indigo-500 h-2 rounded" style="width: 65%"></div>
+                      </div>
+                      <span class="ml-2 text-xs">65%</span>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="w-24 text-xs font-semibold">Formas Complex</div>
+                      <div class="flex-1 bg-neutral-200 dark:bg-neutral-700 rounded h-2">
+                        <div class="bg-indigo-500 h-2 rounded" style="width: 50%"></div>
+                      </div>
+                      <span class="ml-2 text-xs">50%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Técnicas Cinematográficas -->
+          <div class="bg-gradient-to-r from-pink-500 to-purple-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🎬 Enquadramentos Cinematográficos</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Dutch Angle (Ângulo Holandês)</h4>
+                <p class="text-sm">
+                  Rotação 15-45° cria desconforto psicológico.
+                  Use para: tensão, desorientação, loucura.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Leading Lines Convergentes</h4>
+                <p class="text-sm">
+                  Múltiplas linhas convergindo para ponto único.
+                  Cria profundidade extrema e foco absoluto.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Frame Within Frame</h4>
+                <p class="text-sm">
+                  Molduras naturais (portas, janelas, arcos).
+                  Adiciona camadas de profundidade e contexto.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Negative Space Extremo</h4>
+                <p class="text-sm">
+                  70%+ de espaço vazio cria isolamento.
+                  Amplifica emoções e solidão do sujeito.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 3: Iluminação Virtual -->
+      <div class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-indigo-200 dark:border-indigo-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">💡</span>
+          <div>
+            <h2 class="text-3xl font-bold text-indigo-900 dark:text-indigo-300">Iluminação: Esculpindo com Luz</h2>
+            <p class="text-indigo-700 dark:text-indigo-400 font-semibold mt-1">Técnicas de estúdio aplicadas ao mundo virtual</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Luz é o pincel invisível que define forma, mood e narrativa. No mundo digital,
+            você tem controle absoluto sobre cada fóton - use esse poder sabiamente.
+          </p>
+
+          <!-- Sistemas de Iluminação -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-indigo-900 dark:text-indigo-300 mb-4">💡 Sistemas Profissionais de Iluminação</h3>
+
+            <div class="space-y-6">
+              <!-- 3-Point Lighting Avançado -->
+              <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-indigo-900 dark:text-indigo-300 mb-3">Sistema 5-Point Advanced</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Luzes Principais</h5>
+                    <ul class="text-xs space-y-1">
+                      <li><strong>Key Light:</strong> 45° lateral, 30° acima (4000K)</li>
+                      <li><strong>Fill Light:</strong> Oposta, -2 stops, difusa (5500K)</li>
+                      <li><strong>Rim Light:</strong> Traseira, +1 stop (6500K)</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Luzes Complementares</h5>
+                    <ul class="text-xs space-y-1">
+                      <li><strong>Background:</strong> Separação figura/fundo</li>
+                      <li><strong>Practical:</strong> Motivada por elementos cena</li>
+                      <li><strong>Accent:</strong> Destaque elementos específicos</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Lighting Moods -->
+              <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-purple-900 dark:text-purple-300 mb-3">Mood Lighting Patterns</h4>
+                <div class="space-y-3">
+                  <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                    <h5 class="font-semibold text-sm mb-1">Rembrandt Lighting</h5>
+                    <p class="text-xs">
+                      Triângulo de luz sob o olho. Drama e mistério clássicos.
+                      45° lateral, 45° acima, sombras profundas.
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                    <h5 class="font-semibold text-sm mb-1">Split Lighting</h5>
+                    <p class="text-xs">
+                      Metade iluminada, metade sombra. Dualidade e conflito.
+                      90° lateral, nível dos olhos, sem fill.
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                    <h5 class="font-semibold text-sm mb-1">Butterfly/Paramount</h5>
+                    <p class="text-xs">
+                      Sombra borboleta sob nariz. Glamour e beleza.
+                      Frontal acima, fill suave abaixo.
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                    <h5 class="font-semibold text-sm mb-1">Loop Lighting</h5>
+                    <p class="text-xs">
+                      Sombra nasal em loop. Natural e agradável.
+                      30° lateral, 25° acima, fill moderado.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Color Temperature -->
+              <div class="bg-violet-50 dark:bg-violet-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-violet-900 dark:text-violet-300 mb-3">Temperatura de Cor e Emoção</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <div class="space-y-2">
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs font-semibold">2000K - Candlelight</span>
+                      <span class="text-xs text-orange-600">Íntimo, romântico</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs font-semibold">3200K - Tungsten</span>
+                      <span class="text-xs text-amber-600">Aconchegante, nostálgico</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs font-semibold">4000K - Fluorescent</span>
+                      <span class="text-xs text-yellow-600">Neutro, comercial</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs font-semibold">5600K - Daylight</span>
+                      <span class="text-xs text-blue-400">Natural, verdadeiro</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs font-semibold">6500K - Overcast</span>
+                      <span class="text-xs text-blue-500">Frio, melancólico</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs font-semibold">8000K - Blue Hour</span>
+                      <span class="text-xs text-blue-600">Misterioso, surreal</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Técnicas Avançadas -->
+          <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">✨ Técnicas Avançadas de Iluminação Virtual</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Volumetric Lighting</h4>
+                <p class="text-sm">
+                  Raios de luz visíveis através de névoa/partículas.
+                  Cria profundidade e atmosfera divina.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Subsurface Scattering</h4>
+                <p class="text-sm">
+                  Luz penetrando superfícies translúcidas.
+                  Essencial para pele, cera, folhas realistas.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Global Illumination</h4>
+                <p class="text-sm">
+                  Bounced light calculado fisicamente.
+                  Cria realismo através de luz indireta.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">HDRI Lighting</h4>
+                <p class="text-sm">
+                  Imagens 360° como fonte de luz.
+                  Integração perfeita com ambientes reais.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 4: Semiótica Visual -->
+      <div class="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-violet-200 dark:border-violet-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🔤</span>
+          <div>
+            <h2 class="text-3xl font-bold text-violet-900 dark:text-violet-300">Semiótica Visual: A Linguagem Secreta</h2>
+            <p class="text-violet-700 dark:text-violet-400 font-semibold mt-1">Símbolos, signos e significados ocultos</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Cada elemento visual carrega significado. Mestres da direção de arte manipulam
+            símbolos conscientes e inconscientes para criar narrativas profundas sem palavras.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-violet-900 dark:text-violet-300 mb-4">🎭 Níveis de Significado</h3>
+
+            <div class="space-y-4">
+              <!-- Formas Primitivas -->
+              <div class="bg-violet-50 dark:bg-violet-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-violet-900 dark:text-violet-300 mb-3">Psicologia das Formas Básicas</h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded text-center">
+                    <div class="w-16 h-16 bg-violet-500 rounded-full mx-auto mb-2"></div>
+                    <h5 class="font-semibold text-sm">Círculo</h5>
+                    <p class="text-xs mt-1">
+                      Infinito, perfeição, feminino, proteção, unidade, movimento eterno
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded text-center">
+                    <div class="w-16 h-16 bg-violet-500 mx-auto mb-2"></div>
+                    <h5 class="font-semibold text-sm">Quadrado</h5>
+                    <p class="text-xs mt-1">
+                      Estabilidade, confiança, masculino, ordem, racionalidade, terra
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded text-center">
+                    <div class="w-0 h-0 border-l-[32px] border-l-transparent border-r-[32px] border-r-transparent border-b-[56px] border-b-violet-500 mx-auto mb-2"></div>
+                    <h5 class="font-semibold text-sm">Triângulo</h5>
+                    <p class="text-xs mt-1">
+                      Dinamismo, tensão, direção, hierarquia, aspiração, fogo
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Arquétipos Visuais -->
+              <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-purple-900 dark:text-purple-300 mb-3">Arquétipos Junguianos Aplicados</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">O Herói</h5>
+                    <p class="text-xs mb-2">Visual: Pose confiante, luz frontal, cores vibrantes</p>
+                    <p class="text-xs text-purple-600 dark:text-purple-400">Marcas: Nike, GoPro, FedEx</p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">O Sábio</h5>
+                    <p class="text-xs mb-2">Visual: Minimalista, tons neutros, espaço negativo</p>
+                    <p class="text-xs text-purple-600 dark:text-purple-400">Marcas: Google, MIT, TED</p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">O Rebelde</h5>
+                    <p class="text-xs mb-2">Visual: Ângulos agressivos, alto contraste, vermelho/preto</p>
+                    <p class="text-xs text-purple-600 dark:text-purple-400">Marcas: Harley-Davidson, Diesel</p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">O Criador</h5>
+                    <p class="text-xs mb-2">Visual: Colorido, orgânico, texturas ricas</p>
+                    <p class="text-xs text-purple-600 dark:text-purple-400">Marcas: Lego, Adobe, Apple</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Simbolismo Cultural -->
+              <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-indigo-900 dark:text-indigo-300 mb-3">Símbolos Universais e Significados</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+                    <div>
+                      <strong>Água:</strong> Purificação, vida, fluxo, emoção
+                    </div>
+                    <div>
+                      <strong>Fogo:</strong> Transformação, paixão, destruição
+                    </div>
+                    <div>
+                      <strong>Montanha:</strong> Desafio, permanência, objetivo
+                    </div>
+                    <div>
+                      <strong>Ponte:</strong> Transição, conexão, jornada
+                    </div>
+                    <div>
+                      <strong>Espelho:</strong> Reflexão, verdade, ilusão
+                    </div>
+                    <div>
+                      <strong>Porta:</strong> Oportunidade, mistério, escolha
+                    </div>
+                    <div>
+                      <strong>Relógio:</strong> Mortalidade, pressão, precisão
+                    </div>
+                    <div>
+                      <strong>Chave:</strong> Solução, acesso, poder
+                    </div>
+                    <div>
+                      <strong>Labirinto:</strong> Confusão, busca, complexidade
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 5: Linguagem Visual Única -->
+      <div class="bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-purple-200 dark:border-purple-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🔮</span>
+          <div>
+            <h2 class="text-3xl font-bold text-purple-900 dark:text-purple-300">Desenvolvendo Sua Assinatura Visual</h2>
+            <p class="text-purple-700 dark:text-purple-400 font-semibold mt-1">O caminho para se tornar inconfundível</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Técnica é replicável. Estilo é único. Sua linguagem visual é a combinação irrepetível
+            de suas experiências, obsessões e visão de mundo traduzidas em imagem.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-purple-900 dark:text-purple-300 mb-4">🎨 Framework de Desenvolvimento de Estilo</h3>
+
+            <div class="space-y-6">
+              <!-- Fase 1: Descoberta -->
+              <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-purple-900 dark:text-purple-300 mb-3">Fase 1: Auto-Descoberta Visual (30 dias)</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Análise Obsessiva</h5>
+                    <ul class="text-xs space-y-1">
+                      <li>• Colete 500 imagens que você ama</li>
+                      <li>• Identifique 10 padrões recorrentes</li>
+                      <li>• Mapeie suas preferências inconscientes</li>
+                      <li>• Documente o que te repulsa visualmente</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">DNA Visual</h5>
+                    <ul class="text-xs space-y-1">
+                      <li>• 3 cores dominantes pessoais</li>
+                      <li>• 2 tipos de composição preferidos</li>
+                      <li>• 1 mood/emoção recorrente</li>
+                      <li>• Texturas e patterns obsessivos</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fase 2: Experimentação -->
+              <div class="bg-pink-50 dark:bg-pink-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-pink-900 dark:text-pink-300 mb-3">Fase 2: Experimentação Radical (60 dias)</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h5 class="font-semibold mb-3">Exercícios de Expansão:</h5>
+                  <div class="space-y-2">
+                    <div class="flex items-start">
+                      <span class="text-pink-500 mr-2">→</span>
+                      <div>
+                        <strong class="text-sm">Restrição Extrema:</strong>
+                        <p class="text-xs">Crie 30 peças usando apenas 2 cores</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="text-pink-500 mr-2">→</span>
+                      <div>
+                        <strong class="text-sm">Inversão Total:</strong>
+                        <p class="text-xs">Faça o oposto do seu instinto por 1 semana</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="text-pink-500 mr-2">→</span>
+                      <div>
+                        <strong class="text-sm">Hibridização:</strong>
+                        <p class="text-xs">Misture 2 estilos opostos até criar algo novo</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="text-pink-500 mr-2">→</span>
+                      <div>
+                        <strong class="text-sm">Abstração Progressiva:</strong>
+                        <p class="text-xs">Simplifique até encontrar a essência</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fase 3: Refinamento -->
+              <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-indigo-900 dark:text-indigo-300 mb-3">Fase 3: Refinamento e Consistência (90 dias)</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h5 class="font-semibold mb-2">Criando Seu Manual de Estilo:</h5>
+                  <div class="grid md:grid-cols-2 gap-3 text-xs">
+                    <div>
+                      <strong>Paleta Signature:</strong> 12 cores máximo
+                    </div>
+                    <div>
+                      <strong>Tipografia:</strong> 3 fontes características
+                    </div>
+                    <div>
+                      <strong>Proporções:</strong> Ratios preferidos
+                    </div>
+                    <div>
+                      <strong>Texturas:</strong> Library personalizada
+                    </div>
+                    <div>
+                      <strong>Lighting:</strong> Setups signature
+                    </div>
+                    <div>
+                      <strong>Processos:</strong> Workflows únicos
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exemplos de Assinaturas -->
+          <div class="bg-gradient-to-r from-purple-500 to-violet-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">✨ Assinaturas Visuais Icônicas</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Wes Anderson</h4>
+                <p class="text-sm">
+                  Simetria obsessiva + Paletas pastel + Frontalidade
+                  = Mundo artificial perfeito e melancólico
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Christopher Nolan</h4>
+                <p class="text-sm">
+                  Azul/Laranja + Arquitetura brutal + Time distortion
+                  = Realidade questionável e grandiosidade
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Refik Anadol</h4>
+                <p class="text-sm">
+                  Data visualization + Fluidos digitais + Scale épica
+                  = Poesia computacional sublime
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">James Turrell</h4>
+                <p class="text-sm">
+                  Luz pura + Espaço vazio + Percepção alterada
+                  = Experiência transcendental minimalista
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projetos Conceituais -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎭 3 Projetos Conceituais Completos</h2>
+
+        <div class="space-y-6">
+          <!-- Projeto 1 -->
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300 mb-3">
+              Projeto 1: "Memórias Líquidas" - Campanha de Perfume
+            </h3>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <h4 class="font-semibold mb-2">Conceito</h4>
+                  <p class="text-xs">
+                    Fragrância que captura momentos efêmeros. Visual fluido,
+                    onírico, com elementos dissolvendo-se e reformando-se.
+                  </p>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2">Direção Visual</h4>
+                  <ul class="text-xs space-y-1">
+                    <li>• Paleta: Gradientes iridescentes</li>
+                    <li>• Textura: Líquidos e névoas</li>
+                    <li>• Composição: Espiral áurea fluida</li>
+                    <li>• Luz: Subsurface scattering extremo</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded">
+                <h4 class="font-semibold mb-1 text-sm">Execução</h4>
+                <p class="text-xs">
+                  5 key visuals + 30 social assets + motion campaign + AR experience
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projeto 2 -->
+          <div class="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-3">
+              Projeto 2: "Neo-Brutalism 2050" - Identidade de Marca Tech
+            </h3>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <h4 class="font-semibold mb-2">Conceito</h4>
+                  <p class="text-xs">
+                    Startup de AI com estética brutal-futurista. Concreto digital,
+                    geometria impossível, monumentalidade virtual.
+                  </p>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2">Direção Visual</h4>
+                  <ul class="text-xs space-y-1">
+                    <li>• Paleta: Monocromático + neon accent</li>
+                    <li>• Textura: Concreto, metal oxidado</li>
+                    <li>• Composição: Assymetric balance extremo</li>
+                    <li>• Luz: Harsh shadows, rim lighting</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded">
+                <h4 class="font-semibold mb-1 text-sm">Execução</h4>
+                <p class="text-xs">
+                  Brand guidelines + website design + 3D environments + presentation deck
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projeto 3 -->
+          <div class="bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 p-6 rounded-lg">
+            <h3 class="text-xl font-bold text-violet-900 dark:text-violet-300 mb-3">
+              Projeto 3: "Synesthesia" - Instalação de Arte Digital
+            </h3>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <h4 class="font-semibold mb-2">Conceito</h4>
+                  <p class="text-xs">
+                    Visualização de música como arquitetura. Som se torna forma,
+                    ritmo vira estrutura, harmonia cria espaço.
+                  </p>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2">Direção Visual</h4>
+                  <ul class="text-xs space-y-1">
+                    <li>• Paleta: Frequency-based colors</li>
+                    <li>• Textura: Crystalline, refractive</li>
+                    <li>• Composição: Parametric generation</li>
+                    <li>• Luz: Volumetric, reactive</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="bg-violet-50 dark:bg-violet-900/20 p-3 rounded">
+                <h4 class="font-semibold mb-1 text-sm">Execução</h4>
+                <p class="text-xs">
+                  Real-time visuals + projection mapping + interactive elements + documentation
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aulas Estruturadas -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">📚 Aulas Estruturadas do Módulo</h2>
+
+        <div class="space-y-6">
+          <!-- Aula 1 -->
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                1
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300 mb-2">
+                  Masterclass em Teoria da Cor
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Neurociência, psicologia e aplicação prática de sistemas de cor avançados.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Respostas fisiológicas e psicológicas às cores</li>
+                    <li>• Harmonias complexas além da roda tradicional</li>
+                    <li>• Color grading cinematográfico profissional</li>
+                    <li>• Significados culturais e geracionais</li>
+                    <li>• Manipulação emocional através de paletas</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">100 min</span>
+                    <span class="text-xs bg-pink-100 dark:bg-pink-900/30 px-2 py-1 rounded">Teoria</span>
+                    <span class="text-xs bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 rounded">Prática</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 2 -->
+          <div class="bg-gradient-to-r from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                2
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-pink-900 dark:text-pink-300 mb-2">
+                  Composição Cinematográfica Avançada
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Geometria sagrada, tensão visual e técnicas de grandes diretores.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Espirais de Fibonacci multi-camada</li>
+                    <li>• Dynamic symmetry e retângulos dinâmicos</li>
+                    <li>• Peso visual e hierarquia de atenção</li>
+                    <li>• Enquadramentos cinematográficos complexos</li>
+                    <li>• Criação de movimento através de composição</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-pink-100 dark:bg-pink-900/30 px-2 py-1 rounded">100 min</span>
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">Visual</span>
+                    <span class="text-xs bg-violet-100 dark:bg-violet-900/30 px-2 py-1 rounded">Análise</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 3 -->
+          <div class="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-indigo-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                3
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-2">
+                  Iluminação de Estúdio Virtual
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Sistemas profissionais de luz aplicados ao mundo digital.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Sistema 5-point lighting avançado</li>
+                    <li>• Mood lighting patterns clássicos</li>
+                    <li>• Temperatura de cor e emoção</li>
+                    <li>• Volumetric e atmospheric lighting</li>
+                    <li>• HDRI e global illumination</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 rounded">100 min</span>
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">Técnico</span>
+                    <span class="text-xs bg-blue-100 dark:bg-blue-900/30 px-2 py-1 rounded">3D</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 4 -->
+          <div class="bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-violet-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                4
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-violet-900 dark:text-violet-300 mb-2">
+                  Semiótica Visual e Simbolismo
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  A linguagem secreta dos símbolos e arquétipos visuais.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Psicologia das formas primitivas</li>
+                    <li>• Arquétipos Junguianos aplicados</li>
+                    <li>• Símbolos universais e culturais</li>
+                    <li>• Narrativa visual sem palavras</li>
+                    <li>• Criação de significado profundo</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-violet-100 dark:bg-violet-900/30 px-2 py-1 rounded">100 min</span>
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">Conceitual</span>
+                    <span class="text-xs bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 rounded">Psicologia</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 5 -->
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                5
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold bg-gradient-to-r from-purple-900 to-pink-900 dark:from-purple-300 dark:to-pink-300 bg-clip-text text-transparent mb-2">
+                  Desenvolvendo Linguagem Visual Única
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  O caminho para criar sua assinatura artística inconfundível.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Framework de auto-descoberta visual</li>
+                    <li>• Experimentação radical e expansão</li>
+                    <li>• Criação de manual de estilo pessoal</li>
+                    <li>• Análise de assinaturas icônicas</li>
+                    <li>• Construção de portfolio conceitual</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">100 min</span>
+                    <span class="text-xs bg-pink-100 dark:bg-pink-900/30 px-2 py-1 rounded">Criativo</span>
+                    <span class="text-xs bg-violet-100 dark:bg-violet-900/30 px-2 py-1 rounded">Portfolio</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 6 -->
+          <div class="bg-gradient-to-r from-indigo-50 to-violet-50 dark:from-indigo-900/20 dark:to-violet-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-gradient-to-r from-indigo-500 to-violet-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                6
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold bg-gradient-to-r from-indigo-900 to-violet-900 dark:from-indigo-300 dark:to-violet-300 bg-clip-text text-transparent mb-2">
+                  Workshop: 3 Projetos Conceituais
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Aplicação prática de todos os conceitos em projetos completos.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai criar:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Campanha de perfume conceitual</li>
+                    <li>• Identidade de marca tech futurista</li>
+                    <li>• Instalação de arte digital interativa</li>
+                    <li>• Documentação completa de processo</li>
+                    <li>• Apresentação profissional dos projetos</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 rounded">100 min</span>
+                    <span class="text-xs bg-violet-100 dark:bg-violet-900/30 px-2 py-1 rounded">Projetos</span>
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">Portfolio</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercícios Práticos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">💪 Exercícios de Direção de Arte</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-purple-900 dark:text-purple-300 mb-3">
+              🎨 Exercício 1: Color Story
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Conte uma história completa usando apenas cor, sem formas definidas.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Série de 10 composições abstratas narrativas
+            </div>
+          </div>
+
+          <div class="bg-pink-50 dark:bg-pink-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-pink-900 dark:text-pink-300 mb-3">
+              📐 Exercício 2: Composition Study
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Recrie 5 pinturas clássicas usando apenas formas geométricas.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Análise geométrica + recriações minimalistas
+            </div>
+          </div>
+
+          <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-indigo-900 dark:text-indigo-300 mb-3">
+              💡 Exercício 3: Light Drama
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie 5 moods diferentes usando apenas iluminação em objeto neutro.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Setup documentation + renders finais
+            </div>
+          </div>
+
+          <div class="bg-violet-50 dark:bg-violet-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-violet-900 dark:text-violet-300 mb-3">
+              🔤 Exercício 4: Symbol System
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Desenvolva linguagem simbólica para cultura fictícia.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> 30 símbolos + manual de significados
+            </div>
+          </div>
+
+          <div class="bg-emerald-50 dark:bg-emerald-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-emerald-900 dark:text-emerald-300 mb-3">
+              🔮 Exercício 5: Style Evolution
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Documente sua jornada de desenvolvimento de estilo em 30 dias.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Visual diary + style guide pessoal
+            </div>
+          </div>
+
+          <div class="bg-rose-50 dark:bg-rose-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-rose-900 dark:text-rose-300 mb-3">
+              🎭 Projeto Final: Direção Completa
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie campanha visual completa com narrativa, mood e execução.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> 20 peças + brand book + making of
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recursos Adicionais -->
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl shadow-md p-8 mb-8 border border-purple-200 dark:border-purple-700">
+        <h2 class="text-3xl font-bold mb-6">🎁 Recursos Exclusivos do Módulo</h2>
+
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">🎨</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Color Bible Pro</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              500+ paletas cinematográficas analisadas e categorizadas
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">📐</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Composition Templates</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              100 grids de composição para diferentes narrativas
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">💡</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Lighting Setups Library</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              50 configurações de luz profissionais documentadas
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">🔤</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Symbol Dictionary</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              Database de símbolos culturais e seus significados
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">🎬</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Cinema Analysis Pack</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              Breakdown de 100 cenas icônicas do cinema
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">📚</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Art Direction Library</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              30 livros essenciais de direção de arte digitalizados
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dica Final -->
+      <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl shadow-xl p-8 mb-8">
+        <div class="flex items-start">
+          <span class="text-5xl mr-4">💡</span>
+          <div>
+            <h2 class="text-3xl font-bold mb-4">Insight Master: A Arte Transcende a Ferramenta</h2>
+            <p class="text-lg leading-relaxed mb-4">
+              Ferramentas mudam, técnicas evoluem, mas princípios artísticos são eternos.
+              Você agora possui conhecimento que transcende qualquer software ou tecnologia.
+            </p>
+            <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4">
+              <p class="font-semibold mb-2">Sua nova realidade:</p>
+              <p class="italic">
+                "Você não cria imagens - você orquestra experiências emocionais.
+                Cada escolha de cor, cada ângulo, cada feixe de luz é uma nota em sua sinfonia visual.
+                Você é um diretor de arte, não um operador de ferramentas."
+              </p>
+              <p class="text-sm mt-3 font-bold">
+                - Sua visão agora define realidades. Use esse poder para criar beleza que transforma. 🎨
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navegação -->
+      <div class="flex justify-between items-center py-8">
+        <a href="masterclass-modulo-02.html" class="bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-3 rounded-lg font-semibold hover:bg-neutral-300 dark:hover:bg-neutral-600 transition-colors">
+          ← Módulo Anterior
+        </a>
+        <a href="masterclass-modulo-04.html" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow">
+          Próximo Módulo: Especializações →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 05: Produção em Escala - Trilha Masterclass | IMG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --masterclass: #8B5CF6;
+            --masterclass-dark: #7C3AED;
+            --masterclass-darker: #6D28D9;
+            --masterclass-light: #A78BFA;
+            --masterclass-lighter: #C4B5FD;
+            --masterclass-bg: rgba(139, 92, 246, 0.05);
+            --masterclass-border: rgba(139, 92, 246, 0.2);
+            --dark-bg: #0F0F0F;
+            --darker-bg: #0A0A0A;
+            --card-bg: rgba(20, 20, 20, 0.95);
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+            --text-muted: #707070;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --info: #3B82F6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--masterclass-border);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--masterclass-light);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .module-badge {
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 5rem 2rem;
+            background: radial-gradient(ellipse at top, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(139, 92, 246, 0.03) 10px,
+                rgba(139, 92, 246, 0.03) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--masterclass-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--masterclass);
+            padding: 0.4rem 1rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--masterclass-lighter) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.2);
+            border-color: var(--masterclass);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .card-features li {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .card-features li::before {
+            content: '✓';
+            display: inline-block;
+            color: var(--masterclass);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: -2px;
+        }
+
+        /* Lessons Section */
+        .lessons-timeline {
+            position: relative;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .lessons-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            opacity: 0.3;
+        }
+
+        .lesson-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .lesson-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .lesson-content {
+            flex: 1;
+            padding: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--masterclass-border);
+            border-radius: 20px;
+            margin: 0 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .lesson-content:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 50px rgba(139, 92, 246, 0.2);
+            border-color: var(--masterclass);
+        }
+
+        .lesson-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: white;
+            flex-shrink: 0;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .lesson-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .lesson-duration {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--masterclass);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .lesson-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .lesson-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .topic-tag {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--masterclass-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        /* Exercises Section */
+        .exercises-container {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .exercise-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);
+            border: 2px solid var(--masterclass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exercise-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--masterclass) 0%, transparent 70%);
+            opacity: 0.1;
+            transform: translate(30%, -30%);
+        }
+
+        .exercise-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .exercise-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .difficulty-badge {
+            padding: 0.4rem 1rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .difficulty-advanced {
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            color: white;
+        }
+
+        .difficulty-expert {
+            background: linear-gradient(135deg, var(--danger) 0%, #DC2626 100%);
+            color: white;
+        }
+
+        .exercise-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .exercise-objectives {
+            background: rgba(139, 92, 246, 0.05);
+            border-left: 3px solid var(--masterclass);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .exercise-objectives h4 {
+            color: var(--masterclass);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .exercise-objectives ul {
+            list-style: none;
+        }
+
+        .exercise-objectives li {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .exercise-objectives li::before {
+            content: '→';
+            color: var(--masterclass);
+            font-weight: bold;
+            margin-top: -2px;
+        }
+
+        .exercise-tools {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .tool-badge {
+            background: var(--card-bg);
+            color: var(--masterclass-light);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        /* Resources Section */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .resource-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+            border-color: var(--masterclass);
+        }
+
+        .resource-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .resource-info {
+            flex: 1;
+        }
+
+        .resource-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .resource-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Final Tip Section */
+        .final-tip {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border: 2px solid var(--masterclass);
+            border-radius: 30px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-tip::before {
+            content: '💡';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 100px;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+
+        .final-tip h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .final-tip p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Navigation Buttons */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            margin: 4rem 0;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        .nav-button.prev {
+            flex-direction: row-reverse;
+        }
+
+        .nav-button span {
+            font-size: 1.5rem;
+        }
+
+        .current-module {
+            text-align: center;
+            flex: 1;
+        }
+
+        .current-module-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .current-module-number {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);
+            border-top: 1px solid var(--masterclass-border);
+            padding: 3rem 2rem;
+            margin-top: 6rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--masterclass-light);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lessons-timeline::before {
+                left: 30px;
+            }
+
+            .lesson-item,
+            .lesson-item:nth-child(even) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .lesson-number {
+                margin-bottom: 1rem;
+                margin-left: 0;
+            }
+
+            .lesson-content {
+                margin: 0;
+                width: 100%;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+
+            .nav-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s ease infinite;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--masterclass-border);
+            border-top-color: var(--masterclass);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Gradient Text Animation */
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(270deg, var(--masterclass), var(--masterclass-light), var(--masterclass-dark), var(--masterclass));
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 6s ease infinite;
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--masterclass-border);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            color: var(--masterclass-light);
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            padding-left: 4rem;
+        }
+
+        .alert::before {
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+        }
+
+        .alert-info {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #60A5FA;
+        }
+
+        .alert-info::before {
+            content: 'ℹ️';
+        }
+
+        .alert-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: #FCD34D;
+        }
+
+        .alert-warning::before {
+            content: '⚠️';
+        }
+
+        .alert-success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34D399;
+        }
+
+        .alert-success::before {
+            content: '✅';
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 20px;
+            padding: 0.3rem;
+            margin: 2rem 0;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            height: 10px;
+            border-radius: 20px;
+            width: 75%;
+            transition: width 0.3s ease;
+            box-shadow: 0 2px 10px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Tooltips */
+        .tooltip {
+            position: relative;
+            cursor: help;
+            border-bottom: 2px dotted var(--masterclass);
+        }
+
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--masterclass);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .tooltip:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                🚀 IMG Masterclass
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../trilhas/masterclass.html">Trilha</a>
+                <a href="#lessons">Aulas</a>
+                <a href="#exercises">Exercícios</a>
+                <span class="module-badge">Módulo 05</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">
+                🚀 Produção em Escala • 8 horas de conteúdo
+            </div>
+            <h1 class="gradient-text">Produção em Escala</h1>
+            <p class="hero-description">
+                Domine as técnicas avançadas de produção em massa com IA. Aprenda a criar sistemas eficientes para gerar centenas de imagens por dia mantendo qualidade e consistência excepcionais.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">100+</div>
+                    <div class="stat-label">Imagens/Dia</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">5x</div>
+                    <div class="stat-label">Produtividade</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">APIs</div>
+                    <div class="stat-label">Automação Total</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">Zero</div>
+                    <div class="stat-label">Retrabalho</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Objectives -->
+    <section class="container">
+        <div class="section-header">
+            <span class="section-tag">🎯 Objetivos de Aprendizagem</span>
+            <h2>O Que Você Vai Dominar</h2>
+            <p class="section-description">
+                Técnicas profissionais de produção em escala com automação completa e controle de qualidade
+            </p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Batch Generation</h3>
+                <p>Sistemas avançados de geração em lote com variações controladas e parâmetros otimizados para máxima eficiência.</p>
+                <ul class="card-features">
+                    <li>Processamento paralelo multi-GPU</li>
+                    <li>Queue management inteligente</li>
+                    <li>Auto-retry com fallback</li>
+                    <li>Resource optimization</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🤖</div>
+                <h3>Automação Completa</h3>
+                <p>Scripts e APIs para automatizar todo o workflow de produção, desde a geração até a entrega final.</p>
+                <ul class="card-features">
+                    <li>Python scripts avançados</li>
+                    <li>API integration (Midjourney, SD)</li>
+                    <li>Webhook automation</li>
+                    <li>Cloud processing setup</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Sistemas de Organização</h3>
+                <p>Estruturas profissionais de naming, tagging e catalogação para gerenciar milhares de assets.</p>
+                <ul class="card-features">
+                    <li>Semantic naming conventions</li>
+                    <li>Auto-tagging com AI</li>
+                    <li>Database management</li>
+                    <li>Version control systems</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">✅</div>
+                <h3>Quality Control</h3>
+                <p>Processos automatizados de controle de qualidade para garantir consistência em grandes volumes.</p>
+                <ul class="card-features">
+                    <li>Automated QA checks</li>
+                    <li>Consistency validation</li>
+                    <li>Error detection AI</li>
+                    <li>Batch correction tools</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎨</div>
+                <h3>Templates & Presets</h3>
+                <p>Biblioteca completa de templates reutilizáveis e presets otimizados para diferentes cenários.</p>
+                <ul class="card-features">
+                    <li>Style preset library</li>
+                    <li>Prompt templates avançados</li>
+                    <li>Workflow templates</li>
+                    <li>Custom preset creation</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <h3>Performance Metrics</h3>
+                <p>KPIs e métricas para monitorar e otimizar a produção em escala continuamente.</p>
+                <ul class="card-features">
+                    <li>Production analytics</li>
+                    <li>Cost per image tracking</li>
+                    <li>Time optimization metrics</li>
+                    <li>ROI calculation tools</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lessons Timeline -->
+    <section class="container" id="lessons">
+        <div class="section-header">
+            <span class="section-tag">📚 Conteúdo do Módulo</span>
+            <h2>Aulas Estruturadas</h2>
+            <p class="section-description">
+                5 aulas práticas com foco em implementação de sistemas de produção profissionais
+            </p>
+        </div>
+
+        <div class="lessons-timeline">
+            <div class="lesson-item">
+                <div class="lesson-number">01</div>
+                <div class="lesson-content">
+                    <h3 class="lesson-title">Fundamentos de Batch Generation</h3>
+                    <span class="lesson-duration">⏱️ 90 minutos</span>
+                    <p class="lesson-description">
+                        Introdução completa aos sistemas de geração em lote. Aprenda a configurar pipelines eficientes, otimizar parâmetros para processamento em massa e implementar sistemas de queue management. Explore técnicas de paralelização, load balancing e resource allocation para maximizar throughput.
+                    </p>
+                    <div class="lesson-topics">
+                        <span class="topic-tag">Batch Processing</span>
+                        <span class="topic-tag">Queue Systems</span>
+                        <span class="topic-tag">Parallel Generation</span>
+                        <span class="topic-tag">Resource Management</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-item">
+                <div class="lesson-number">02</div>
+                <div class="lesson-content">
+                    <h3 class="lesson-title">Automação com Scripts e APIs</h3>
+                    <span class="lesson-duration">⏱️ 120 minutos</span>
+                    <p class="lesson-description">
+                        Deep dive em automação completa do workflow. Desenvolvimento de scripts Python avançados, integração com APIs de IA (Midjourney, Stable Diffusion, DALL-E), implementação de webhooks e triggers automáticos. Setup de infraestrutura cloud para processamento distribuído.
+                    </p>
+                    <div class="lesson-topics">
+                        <span class="topic-tag">Python Automation</span>
+                        <span class="topic-tag">API Integration</span>
+                        <span class="topic-tag">Webhook Setup</span>
+                        <span class="topic-tag">Cloud Processing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-item">
+                <div class="lesson-number">03</div>
+                <div class="lesson-content">
+                    <h3 class="lesson-title">Sistemas Avançados de Organização</h3>
+                    <span class="lesson-duration">⏱️ 90 minutos</span>
+                    <p class="lesson-description">
+                        Criação de estruturas profissionais de catalogação e gerenciamento. Implementação de naming conventions semânticas, sistemas de auto-tagging com IA, setup de databases relacionais, integração com DAM (Digital Asset Management) systems e version control para assets visuais.
+                    </p>
+                    <div class="lesson-topics">
+                        <span class="topic-tag">Asset Management</span>
+                        <span class="topic-tag">Database Design</span>
+                        <span class="topic-tag">Auto-tagging</span>
+                        <span class="topic-tag">Version Control</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-item">
+                <div class="lesson-number">04</div>
+                <div class="lesson-content">
+                    <h3 class="lesson-title">Quality Control Automatizado</h3>
+                    <span class="lesson-duration">⏱️ 100 minutos</span>
+                    <p class="lesson-description">
+                        Implementação de sistemas robustos de QA automatizado. Desenvolvimento de algoritmos de detecção de erros, validação de consistência visual, correção em batch com AI, setup de approval workflows e feedback loops. Criação de dashboards de monitoramento em tempo real.
+                    </p>
+                    <div class="lesson-topics">
+                        <span class="topic-tag">Automated QA</span>
+                        <span class="topic-tag">Error Detection</span>
+                        <span class="topic-tag">Batch Correction</span>
+                        <span class="topic-tag">Monitoring Tools</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-item">
+                <div class="lesson-number">05</div>
+                <div class="lesson-content">
+                    <h3 class="lesson-title">Workflow para 100+ Imagens/Dia</h3>
+                    <span class="lesson-duration">⏱️ 110 minutos</span>
+                    <p class="lesson-description">
+                        Case study completo de implementação de sistema de alta produção. Análise de bottlenecks, otimização de pipeline end-to-end, estratégias de scaling horizontal e vertical, cost optimization e ROI maximization. Setup completo de produção profissional com métricas e KPIs.
+                    </p>
+                    <div class="lesson-topics">
+                        <span class="topic-tag">High-volume Production</span>
+                        <span class="topic-tag">Pipeline Optimization</span>
+                        <span class="topic-tag">Scaling Strategies</span>
+                        <span class="topic-tag">Performance Metrics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Exercises -->
+    <section class="container" id="exercises">
+        <div class="section-header">
+            <span class="section-tag">💪 Exercícios Práticos</span>
+            <h2>Desafios de Produção</h2>
+            <p class="section-description">
+                Projetos práticos para dominar produção em escala com cenários reais do mercado
+            </p>
+        </div>
+
+        <div class="exercises-container">
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3 class="exercise-title">Sistema de Produção E-commerce</h3>
+                    <span class="difficulty-badge difficulty-advanced">Avançado</span>
+                </div>
+                <p class="exercise-description">
+                    Desenvolva um sistema completo de produção automatizada para um e-commerce com 1000+ produtos. Implemente batch generation de imagens de produto com variações (cores, ângulos, contextos), sistema de naming semântico, auto-upload para plataforma e quality control automatizado.
+                </p>
+                <div class="exercise-objectives">
+                    <h4>Objetivos do Exercício:</h4>
+                    <ul>
+                        <li>Criar pipeline de geração para 1000 produtos em 24h</li>
+                        <li>Implementar sistema de variações automatizadas (5 por produto)</li>
+                        <li>Desenvolver script de upload automático para Shopify/WooCommerce</li>
+                        <li>Setup de QA com rejection rate < 5%</li>
+                        <li>Calcular e otimizar custo por imagem gerada</li>
+                    </ul>
+                </div>
+                <div class="exercise-tools">
+                    <span class="tool-badge">Python</span>
+                    <span class="tool-badge">Midjourney API</span>
+                    <span class="tool-badge">ComfyUI</span>
+                    <span class="tool-badge">AWS S3</span>
+                    <span class="tool-badge">PostgreSQL</span>
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3 class="exercise-title">Content Factory para Social Media</h3>
+                    <span class="difficulty-badge difficulty-expert">Expert</span>
+                </div>
+                <p class="exercise-description">
+                    Crie uma content factory automatizada capaz de gerar 100+ posts únicos por dia para diferentes plataformas sociais. Implemente adaptação automática de formato, scheduling inteligente, A/B testing automatizado e analytics em tempo real.
+                </p>
+                <div class="exercise-objectives">
+                    <h4>Objetivos do Exercício:</h4>
+                    <ul>
+                        <li>Desenvolver gerador de conteúdo multi-plataforma (Instagram, TikTok, LinkedIn)</li>
+                        <li>Implementar adaptação automática de aspect ratio e formato</li>
+                        <li>Criar sistema de scheduling com otimização de horários</li>
+                        <li>Setup de A/B testing automatizado com análise de performance</li>
+                        <li>Dashboard de métricas com ROI por tipo de conteúdo</li>
+                    </ul>
+                </div>
+                <div class="exercise-tools">
+                    <span class="tool-badge">Node.js</span>
+                    <span class="tool-badge">Stable Diffusion</span>
+                    <span class="tool-badge">Buffer API</span>
+                    <span class="tool-badge">MongoDB</span>
+                    <span class="tool-badge">Grafana</span>
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3 class="exercise-title">Asset Pipeline para Game Studio</h3>
+                    <span class="difficulty-badge difficulty-expert">Expert</span>
+                </div>
+                <p class="exercise-description">
+                    Desenvolva um pipeline completo de geração de assets para um game studio indie. Crie sistema de geração de sprites, backgrounds, UI elements com consistência visual, version control integrado e export automatizado para Unity/Unreal.
+                </p>
+                <div class="exercise-objectives">
+                    <h4>Objetivos do Exercício:</h4>
+                    <ul>
+                        <li>Pipeline de geração de 500+ sprites com consistência de estilo</li>
+                        <li>Sistema de variações para diferentes estados (idle, action, damage)</li>
+                        <li>Auto-export com optimization para game engines</li>
+                        <li>Integration com Perforce/Git LFS para version control</li>
+                        <li>Documentation generator automático para art bible</li>
+                    </ul>
+                </div>
+                <div class="exercise-tools">
+                    <span class="tool-badge">Python</span>
+                    <span class="tool-badge">DALL-E 3</span>
+                    <span class="tool-badge">Photoshop API</span>
+                    <span class="tool-badge">Unity Cloud</span>
+                    <span class="tool-badge">Perforce</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Techniques -->
+    <section class="container">
+        <div class="section-header">
+            <span class="section-tag">🔥 Técnicas Avançadas</span>
+            <h2>Estratégias de Elite</h2>
+            <p class="section-description">
+                Métodos exclusivos utilizados por profissionais de alta performance
+            </p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🔄</div>
+                <h3>Progressive Scaling</h3>
+                <p>Sistema de scaling progressivo que aumenta capacidade gradualmente baseado em demanda e recursos disponíveis.</p>
+                <div class="code-block">
+                    <pre>// Auto-scaling algorithm
+if (queue_size > threshold) {
+    spawn_workers(calculate_optimal_count())
+    distribute_load(weighted_round_robin)
+}</pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>Smart Caching</h3>
+                <p>Implementação de cache inteligente multi-layer para reutilização de elementos comuns e aceleração de produção.</p>
+                <div class="code-block">
+                    <pre>// Cache strategy
+cache_layers = {
+    L1: "prompts_frecuentes",
+    L2: "style_embeddings",
+    L3: "generated_assets"
+}</pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Predictive Generation</h3>
+                <p>IA preditiva que antecipa demandas e pré-gera conteúdo baseado em padrões históricos e tendências.</p>
+                <div class="code-block">
+                    <pre>// Predictive model
+predict_demand(historical_data)
+pre_generate_trending_styles()
+optimize_resource_allocation()</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Resources -->
+    <section class="container" id="resources">
+        <div class="section-header">
+            <span class="section-tag">🛠️ Ferramentas & Recursos</span>
+            <h2>Arsenal Profissional</h2>
+            <p class="section-description">
+                Ferramentas essenciais para produção em escala de alto nível
+            </p>
+        </div>
+
+        <div class="resources-grid">
+            <a href="#" class="resource-card">
+                <div class="resource-icon">🐍</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Python Automation Scripts</h4>
+                    <p class="resource-description">Biblioteca completa de scripts para automação</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">🔌</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">API Collection</h4>
+                    <p class="resource-description">Postman collection com todas as APIs de IA</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">☁️</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Cloud Setup Guide</h4>
+                    <p class="resource-description">Configuração de infraestrutura AWS/GCP</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">📊</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Dashboard Templates</h4>
+                    <p class="resource-description">Templates Grafana para monitoring</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">🎨</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Style Library</h4>
+                    <p class="resource-description">1000+ presets otimizados para produção</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">📚</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Workflow Templates</h4>
+                    <p class="resource-description">Blueprints de pipelines testados</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Performance Metrics -->
+    <section class="container">
+        <div class="section-header">
+            <span class="section-tag">📈 Métricas de Performance</span>
+            <h2>KPIs de Produção</h2>
+            <p class="section-description">
+                Indicadores essenciais para monitorar e otimizar sua produção em escala
+            </p>
+        </div>
+
+        <div class="alert alert-info">
+            <strong>Benchmark de Mercado:</strong> Profissionais de elite mantêm throughput médio de 15-20 imagens/hora com 95%+ de aprovação no QA. Cost per image otimizado fica entre $0.10-$0.30 dependendo da complexidade.
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <h3>Throughput Metrics</h3>
+                <ul class="card-features">
+                    <li>Images per hour (IPH)</li>
+                    <li>Queue processing time</li>
+                    <li>Parallel generation capacity</li>
+                    <li>Resource utilization rate</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Quality Metrics</h3>
+                <ul class="card-features">
+                    <li>First-pass approval rate</li>
+                    <li>Consistency score</li>
+                    <li>Error detection accuracy</li>
+                    <li>Client satisfaction index</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Financial Metrics</h3>
+                <ul class="card-features">
+                    <li>Cost per image (CPI)</li>
+                    <li>ROI por projeto</li>
+                    <li>Margin optimization</li>
+                    <li>Resource cost allocation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Tip -->
+    <div class="container">
+        <div class="final-tip">
+            <h3>💡 Dica Master de Produção em Escala</h3>
+            <p>
+                O segredo da produção em escala não está apenas na velocidade, mas na criação de sistemas inteligentes e autônomos. Invista 80% do tempo otimizando o pipeline e apenas 20% na execução. Um sistema bem arquitetado pode rodar 24/7 gerando valor enquanto você dorme. Lembre-se: automação ruim gera retrabalho em escala - teste exaustivamente antes de colocar em produção!
+            </p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="container">
+        <div class="navigation">
+            <a href="masterclass-modulo-04.html" class="nav-button prev">
+                <span>←</span>
+                Módulo 04
+            </a>
+            <div class="current-module">
+                <div class="current-module-label">Você está no</div>
+                <div class="current-module-number">Módulo 05</div>
+            </div>
+            <a href="masterclass-modulo-06.html" class="nav-button">
+                Módulo 06
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">IMG Masterclass</div>
+            <p class="footer-text">
+                Transformando especialistas em autoridades da IA generativa
+            </p>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="../trilhas/masterclass.html">Trilha Completa</a>
+                <a href="#lessons">Aulas</a>
+                <a href="#exercises">Exercícios</a>
+                <a href="#resources">Recursos</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

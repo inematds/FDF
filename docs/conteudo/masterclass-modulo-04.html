@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4: Especializações Técnicas - Designer do Futuro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            masterclass: '#8B5CF6',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    .gradient-masterclass {
+      background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+    }
+    .gradient-masterclass-light {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navegação -->
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm shadow-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="text-2xl font-bold text-purple-600 dark:text-purple-400">Designer do Futuro</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../trilhas/masterclass.html" class="text-neutral-700 dark:text-neutral-300 hover:text-purple-600 dark:hover:text-purple-400">Voltar para Trilha</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="gradient-masterclass-light dark:from-purple-900/20 dark:to-pink-900/20 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-4">
+        <a href="../trilhas/masterclass.html" class="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-semibold">
+          ← Voltar para Trilha Masterclass
+        </a>
+      </div>
+      <div class="text-6xl mb-6">⚡</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 leading-tight bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+        Módulo 4: Especializações Técnicas
+      </h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
+        Domine áreas de ponta: 3D com IA, Motion Design, Fine Art Photography e Architectural Visualization
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-semibold">
+          12 horas
+        </span>
+        <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-semibold">
+          Masterclass
+        </span>
+        <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-semibold">
+          Ultra-Especializado
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Objetivos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎯 Especialize-se no Futuro</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6 text-lg">
+          Este módulo transforma você em especialista de elite em uma das áreas mais lucrativas e inovadoras da IA criativa. Escolha seu caminho e domine técnicas que poucos no mundo conhecem.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+            <span class="text-purple-500 mr-4 text-2xl flex-shrink-0">🎮</span>
+            <div>
+              <strong class="text-purple-900 dark:text-purple-300">3D com IA:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> NeRFs, 3D generation, texture synthesis - crie mundos tridimensionais impossíveis</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-pink-50 dark:bg-pink-900/20 p-4 rounded-lg">
+            <span class="text-pink-500 mr-4 text-2xl flex-shrink-0">🎬</span>
+            <div>
+              <strong class="text-pink-900 dark:text-pink-300">Motion Design com IA:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> AnimateDiff, Gen-2, Pika - animações e vídeos que desafiam a realidade</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-lg">
+            <span class="text-indigo-500 mr-4 text-2xl flex-shrink-0">📸</span>
+            <div>
+              <strong class="text-indigo-900 dark:text-indigo-300">Fine Art Photography:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Estéticas avançadas, fotorrealismo impossível e arte conceitual sublime</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-violet-50 dark:bg-violet-900/20 p-4 rounded-lg">
+            <span class="text-violet-500 mr-4 text-2xl flex-shrink-0">🏛️</span>
+            <div>
+              <strong class="text-violet-900 dark:text-violet-300">Architectural Visualization:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Renders hiper-realistas de espaços que transcendem arquitetura convencional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 1: 3D com IA -->
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-purple-200 dark:border-purple-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🎮</span>
+          <div>
+            <h2 class="text-3xl font-bold text-purple-900 dark:text-purple-300">3D com IA: A Nova Fronteira</h2>
+            <p class="text-purple-700 dark:text-purple-400 font-semibold mt-1">NeRFs, 3D generation e mundos impossíveis</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            O 3D não é mais sobre modelagem manual. Com IA, você cria mundos complexos em minutos,
+            texturas perfeitas instantaneamente e animações que desafiam as leis da física.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border-l-4 border-purple-500">
+            <h3 class="text-2xl font-bold text-purple-900 dark:text-purple-300 mb-3">🌐 Neural Radiance Fields (NeRFs)</h3>
+
+            <div class="space-y-6">
+              <!-- NeRF Basics -->
+              <div class="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 p-6 rounded-lg">
+                <h4 class="text-xl font-bold text-purple-900 dark:text-purple-300 mb-3">Fundamentos de NeRF</h4>
+                <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded mb-4">
+                  <p class="text-sm mb-3">NeRFs transformam fotos 2D em cenas 3D completas usando redes neurais:</p>
+                  <ul class="text-sm space-y-2">
+                    <li><strong>Input:</strong> 20-100 fotos de diferentes ângulos</li>
+                    <li><strong>Process:</strong> Neural network aprende representação volumétrica</li>
+                    <li><strong>Output:</strong> Cena 3D navegável com iluminação realista</li>
+                  </ul>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Instant-NGP</h5>
+                    <p class="text-xs mb-2">Training em 5 segundos, real-time rendering</p>
+                    <p class="text-xs text-purple-600 dark:text-purple-400">
+                      Use para: Captura rápida de objetos e cenas
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Nerfstudio</h5>
+                    <p class="text-xs mb-2">Framework completo, múltiplos métodos</p>
+                    <p class="text-xs text-purple-600 dark:text-purple-400">
+                      Use para: Produção profissional e pesquisa
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3D Generation -->
+              <div class="bg-gradient-to-r from-pink-100 to-purple-100 dark:from-pink-900/30 dark:to-purple-900/30 p-6 rounded-lg">
+                <h4 class="text-xl font-bold text-pink-900 dark:text-pink-300 mb-3">Text-to-3D Generation</h4>
+                <div class="space-y-4">
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-bold mb-2">DreamFusion & Magic3D</h5>
+                    <p class="text-sm mb-2">Gere modelos 3D complexos a partir de texto</p>
+                    <div class="bg-pink-50 dark:bg-pink-900/20 p-3 rounded">
+                      <code class="text-xs text-pink-600 dark:text-pink-400">
+                        "A DSLR photo of a delicious hamburger" → Modelo 3D fotorrealista
+                      </code>
+                    </div>
+                    <p class="text-xs mt-2">Tempo: 40 min | Qualidade: Ultra-high | Textura: PBR ready</p>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-bold mb-2">Point-E & Shap-E (OpenAI)</h5>
+                    <p class="text-sm mb-2">Geração rápida de point clouds e meshes</p>
+                    <ul class="text-xs space-y-1">
+                      <li>• 1-2 minutos por modelo</li>
+                      <li>• Outputs: point cloud, mesh, textures</li>
+                      <li>• API disponível para automação</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-bold mb-2">GET3D (NVIDIA)</h5>
+                    <p class="text-sm mb-2">Geração de assets 3D com texturas de alta qualidade</p>
+                    <ul class="text-xs space-y-1">
+                      <li>• Geometria + textura simultânea</li>
+                      <li>• Ready for game engines</li>
+                      <li>• Batch generation capability</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Texture Synthesis -->
+              <div class="bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 p-6 rounded-lg">
+                <h4 class="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-3">AI Texture Synthesis</h4>
+                <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                  <h5 class="font-bold mb-3">Pipeline Profissional de Texturização:</h5>
+                  <ol class="text-sm space-y-3">
+                    <li>
+                      <strong>1. Base Generation:</strong>
+                      <p class="text-xs mt-1">Stable Diffusion para diffuse maps</p>
+                    </li>
+                    <li>
+                      <strong>2. Normal/Height Maps:</strong>
+                      <p class="text-xs mt-1">ControlNet depth para relief</p>
+                    </li>
+                    <li>
+                      <strong>3. PBR Materials:</strong>
+                      <p class="text-xs mt-1">AI converte para roughness, metallic, AO</p>
+                    </li>
+                    <li>
+                      <strong>4. Seamless Tiling:</strong>
+                      <p class="text-xs mt-1">Algoritmos de wrap para tiles perfeitos</p>
+                    </li>
+                    <li>
+                      <strong>5. Style Transfer:</strong>
+                      <p class="text-xs mt-1">Aplique estilos artísticos em texturas 3D</p>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+
+              <!-- Advanced Techniques -->
+              <div class="bg-gradient-to-r from-violet-100 to-indigo-100 dark:from-violet-900/30 dark:to-indigo-900/30 p-6 rounded-lg">
+                <h4 class="text-xl font-bold text-violet-900 dark:text-violet-300 mb-3">Técnicas Avançadas</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-semibold mb-2">4D NeRFs (Dynamic)</h5>
+                    <p class="text-xs">
+                      Captura movimento e tempo. Crie cenas 3D animadas
+                      de performances, líquidos, fogo. Revolutionary para VFX.
+                    </p>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Gaussian Splatting</h5>
+                    <p class="text-xs">
+                      Alternativa a NeRFs, 100x mais rápido. Real-time
+                      rendering de cenas fotorrealistas em qualquer device.
+                    </p>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Neural Rendering</h5>
+                    <p class="text-xs">
+                      Combine geometria tradicional com redes neurais.
+                      Qualidade impossível com métodos convencionais.
+                    </p>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <h5 class="font-semibold mb-2">AI Rigging & Animation</h5>
+                    <p class="text-xs">
+                      Auto-rigging de personagens, motion retargeting,
+                      physics simulation via ML. Setup em minutos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ferramentas e Workflow -->
+          <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🛠️ Stack Profissional 3D + IA</h3>
+            <div class="grid md:grid-cols-3 gap-4">
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Capture</h4>
+                <ul class="text-xs space-y-1">
+                  <li>• Polycam (mobile NeRF)</li>
+                  <li>• COLMAP (photogrammetry)</li>
+                  <li>• Reality Capture</li>
+                  <li>• iPhone LiDAR scanning</li>
+                </ul>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Process</h4>
+                <ul class="text-xs space-y-1">
+                  <li>• Blender + AI addons</li>
+                  <li>• Houdini procedural</li>
+                  <li>• Substance + AI textures</li>
+                  <li>• ZBrush neural brushes</li>
+                </ul>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Render</h4>
+                <ul class="text-xs space-y-1">
+                  <li>• Unreal Engine 5 + Lumen</li>
+                  <li>• Unity + neural rendering</li>
+                  <li>• Octane + AI denoiser</li>
+                  <li>• Three.js web deploy</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 2: Motion Design -->
+      <div class="bg-gradient-to-br from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-pink-200 dark:border-pink-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🎬</span>
+          <div>
+            <h2 class="text-3xl font-bold text-pink-900 dark:text-pink-300">Motion Design: Animação com IA</h2>
+            <p class="text-pink-700 dark:text-pink-400 font-semibold mt-1">Vídeos e animações que desafiam a física</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Motion design com IA não é apenas automatizar keyframes. É criar movimento impossível,
+            transições surreais e narrativas visuais que transcendem limitações tradicionais.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-pink-900 dark:text-pink-300 mb-4">🎥 Ferramentas de Video Generation</h3>
+
+            <div class="space-y-6">
+              <!-- AnimateDiff -->
+              <div class="bg-pink-50 dark:bg-pink-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-pink-900 dark:text-pink-300 mb-3">AnimateDiff: Control Total</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h5 class="font-semibold mb-2">Workflow Profissional:</h5>
+                  <div class="space-y-3">
+                    <div class="bg-pink-50 dark:bg-pink-900/20 p-3 rounded">
+                      <p class="text-sm font-semibold mb-1">1. Motion Module Selection</p>
+                      <ul class="text-xs space-y-1">
+                        <li>• mm_sd_v15_v2.ckpt - movimento suave</li>
+                        <li>• mm_sd_v15_v3.ckpt - ação dinâmica</li>
+                        <li>• Custom trained modules - estilo específico</li>
+                      </ul>
+                    </div>
+                    <div class="bg-pink-50 dark:bg-pink-900/20 p-3 rounded">
+                      <p class="text-sm font-semibold mb-1">2. ControlNet Integration</p>
+                      <ul class="text-xs space-y-1">
+                        <li>• OpenPose para movimento de personagem</li>
+                        <li>• Depth maps para paralaxe 3D</li>
+                        <li>• Canny edges para morphing preciso</li>
+                      </ul>
+                    </div>
+                    <div class="bg-pink-50 dark:bg-pink-900/20 p-3 rounded">
+                      <p class="text-sm font-semibold mb-1">3. Temporal Consistency</p>
+                      <ul class="text-xs space-y-1">
+                        <li>• Frame interpolation para 60fps</li>
+                        <li>• Temporal smoothing algorithms</li>
+                        <li>• Consistent seed progression</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Runway Gen-2 -->
+              <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-purple-900 dark:text-purple-300 mb-3">Runway Gen-2: Cinema AI</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Text to Video</h5>
+                    <p class="text-xs mb-2">
+                      Prompts cinematográficos geram 4s de vídeo HD.
+                      Extenda até 16s com consistent motion.
+                    </p>
+                    <p class="text-xs text-purple-600 dark:text-purple-400">
+                      Output: 1280x768 @ 24fps
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Image + Text to Video</h5>
+                    <p class="text-xs mb-2">
+                      Anima qualquer imagem com direção precisa.
+                      Controle camera movement, ação e mood.
+                    </p>
+                    <p class="text-xs text-purple-600 dark:text-purple-400">
+                      Best for: Product shots, portraits
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Video to Video</h5>
+                    <p class="text-xs mb-2">
+                      Transforme estilo mantendo movimento.
+                      De live-action para anime em segundos.
+                    </p>
+                    <p class="text-xs text-purple-600 dark:text-purple-400">
+                      Use: Style transfer, enhancement
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Motion Brush</h5>
+                    <p class="text-xs mb-2">
+                      Pinte áreas específicas para animar.
+                      Controle preciso de elementos individuais.
+                    </p>
+                    <p class="text-xs text-purple-600 dark:text-purple-400">
+                      Revolutionary for compositing
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pika Labs -->
+              <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-indigo-900 dark:text-indigo-300 mb-3">Pika Labs: Next-Gen Motion</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h5 class="font-semibold mb-2">Características Únicas:</h5>
+                  <div class="space-y-2">
+                    <div class="flex items-start">
+                      <span class="text-indigo-500 mr-2">→</span>
+                      <div>
+                        <strong class="text-sm">3D Camera Control:</strong>
+                        <p class="text-xs">Zoom, pan, tilt, rotate com precisão cinematográfica</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="text-indigo-500 mr-2">→</span>
+                      <div>
+                        <strong class="text-sm">Lip Sync:</strong>
+                        <p class="text-xs">Sincronização labial automática com áudio</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="text-indigo-500 mr-2">→</span>
+                      <div>
+                        <strong class="text-sm">Modify Region:</strong>
+                        <p class="text-xs">Edite partes específicas do vídeo com prompts</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="text-indigo-500 mr-2">→</span>
+                      <div>
+                        <strong class="text-sm">Expand Canvas:</strong>
+                        <p class="text-xs">Outpainting para vídeo, crie wide shots de close-ups</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Advanced Techniques -->
+              <div class="bg-violet-50 dark:bg-violet-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-violet-900 dark:text-violet-300 mb-3">Técnicas Avançadas de Motion</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h5 class="font-semibold mb-3">Workflow Híbrido Profissional:</h5>
+                  <ol class="text-sm space-y-3">
+                    <li>
+                      <strong>1. Pre-Production:</strong>
+                      <p class="text-xs">Storyboard com Midjourney, timing em After Effects</p>
+                    </li>
+                    <li>
+                      <strong>2. Base Generation:</strong>
+                      <p class="text-xs">Key frames com Gen-2 ou Pika, 4-8s clips</p>
+                    </li>
+                    <li>
+                      <strong>3. Enhancement:</strong>
+                      <p class="text-xs">Topaz Video AI para upscale 4K, 60fps interpolation</p>
+                    </li>
+                    <li>
+                      <strong>4. Compositing:</strong>
+                      <p class="text-xs">After Effects para layers, particles, typography</p>
+                    </li>
+                    <li>
+                      <strong>5. Color Grade:</strong>
+                      <p class="text-xs">DaVinci Resolve para look cinematográfico final</p>
+                    </li>
+                    <li>
+                      <strong>6. Sound Design:</strong>
+                      <p class="text-xs">AI-generated SFX sincronizado com movimento</p>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Motion Design Styles -->
+          <div class="bg-gradient-to-r from-pink-500 to-purple-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🎨 Estilos de Motion Únicos com IA</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Liquid Morphing</h4>
+                <p class="text-sm">
+                  Transições fluidas impossíveis. Objetos derretem
+                  e reformam. Use flow maps + AnimateDiff.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Temporal Echoes</h4>
+                <p class="text-sm">
+                  Motion trails que persistem e evoluem.
+                  Frame blending criativo com AI interpolation.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Dimensional Shifts</h4>
+                <p class="text-sm">
+                  2D para 3D transitions. Depth maps animados
+                  criam ilusão de dimensões variáveis.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Particle Dreams</h4>
+                <p class="text-sm">
+                  Objetos se dissolvem em partículas conscientes.
+                  Combine simulation com AI direction.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 3: Fine Art Photography -->
+      <div class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-indigo-200 dark:border-indigo-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">📸</span>
+          <div>
+            <h2 class="text-3xl font-bold text-indigo-900 dark:text-indigo-300">Fine Art Photography com IA</h2>
+            <p class="text-indigo-700 dark:text-indigo-400 font-semibold mt-1">Fotografia impossível e estéticas transcendentes</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Fine Art Photography com IA não simula câmeras - cria imagens que nenhuma câmera
+            poderia capturar. É onde física, luz e realidade se dobram à visão artística.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-indigo-900 dark:text-indigo-300 mb-4">📷 Estéticas Fotográficas Avançadas</h3>
+
+            <div class="space-y-6">
+              <!-- Hyperrealism -->
+              <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-indigo-900 dark:text-indigo-300 mb-3">Hyperrealism Beyond Reality</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h5 class="font-semibold mb-3">Técnicas de Fotorrealismo Extremo:</h5>
+                  <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-sm mb-2">Micro-Detail Enhancement</h6>
+                      <ul class="text-xs space-y-1">
+                        <li>• Poros de pele individuais visíveis</li>
+                        <li>• Reflexos em cada gota de água</li>
+                        <li>• Fibras têxteis em macro</li>
+                        <li>• Subsurface scattering realista</li>
+                      </ul>
+                    </div>
+                    <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-sm mb-2">Light Physics Simulation</h6>
+                      <ul class="text-xs space-y-1">
+                        <li>• Caustics e refração precisa</li>
+                        <li>• Global illumination natural</li>
+                        <li>• Atmospheric scattering</li>
+                        <li>• Lens artifacts controlados</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mt-3 p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded">
+                    <p class="text-xs">
+                      <strong>Prompt technique:</strong> "Shot on Hasselblad H6D-400c, 100mm lens,
+                      f/5.6, natural light, 16-bit color depth, medium format sensor"
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Surreal Photography -->
+              <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-purple-900 dark:text-purple-300 mb-3">Surreal & Conceptual</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h5 class="font-semibold mb-3">Impossível mas Crível:</h5>
+                  <div class="space-y-3">
+                    <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-sm mb-2">Gravity Defiance</h6>
+                      <p class="text-xs">
+                        Líquidos flutuando, objetos em levitação natural,
+                        hair e tecidos em zero-g. Physics-based mas impossível.
+                      </p>
+                    </div>
+                    <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-sm mb-2">Temporal Blending</h6>
+                      <p class="text-xs">
+                        Múltiplas exposições temporais em frame único.
+                        Passado, presente e futuro coexistindo visualmente.
+                      </p>
+                    </div>
+                    <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-sm mb-2">Scale Disruption</h6>
+                      <p class="text-xs">
+                        Miniatura e gigante no mesmo plano focal.
+                        Tilt-shift reverso, perspectivas impossíveis.
+                      </p>
+                    </div>
+                    <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-sm mb-2">Material Fusion</h6>
+                      <p class="text-xs">
+                        Pele de vidro, água sólida, fumaça tangível.
+                        Materiais híbridos que desafiam categorização.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cinematic Photography -->
+              <div class="bg-violet-50 dark:bg-violet-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-violet-900 dark:text-violet-300 mb-3">Cinematic Storytelling</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h5 class="font-semibold mb-3">Film Stills que Nunca Existiram:</h5>
+                  <div class="grid md:grid-cols-3 gap-3">
+                    <div class="bg-violet-50 dark:bg-violet-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-xs mb-1">Noir Revival</h6>
+                      <p class="text-xs">
+                        High contrast B&W, venetian blind shadows,
+                        smoke atmosphere, 1940s aesthetic
+                      </p>
+                    </div>
+                    <div class="bg-violet-50 dark:bg-violet-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-xs mb-1">Neon Blade Runner</h6>
+                      <p class="text-xs">
+                        Cyberpunk atmosphere, neon reflections,
+                        rain-slicked streets, volumetric fog
+                      </p>
+                    </div>
+                    <div class="bg-violet-50 dark:bg-violet-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-xs mb-1">Wes Anderson Symmetry</h6>
+                      <p class="text-xs">
+                        Perfect symmetry, pastel palette,
+                        theatrical staging, dollhouse perspective
+                      </p>
+                    </div>
+                    <div class="bg-violet-50 dark:bg-violet-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-xs mb-1">Terrence Malick Nature</h6>
+                      <p class="text-xs">
+                        Golden hour obsession, lens flares,
+                        handheld movement feel, natural philosophy
+                      </p>
+                    </div>
+                    <div class="bg-violet-50 dark:bg-violet-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-xs mb-1">Kubrick One-Point</h6>
+                      <p class="text-xs">
+                        Single vanishing point, clinical precision,
+                        unsettling symmetry, cold perfection
+                      </p>
+                    </div>
+                    <div class="bg-violet-50 dark:bg-violet-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-xs mb-1">Wong Kar-wai Mood</h6>
+                      <p class="text-xs">
+                        Saturated colors, motion blur,
+                        neon loneliness, urban melancholy
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Technical Mastery -->
+              <div class="bg-emerald-50 dark:bg-emerald-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-emerald-900 dark:text-emerald-300 mb-3">Technical Photography Mastery</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h5 class="font-semibold mb-3">Simulação de Equipamento Premium:</h5>
+                  <div class="space-y-2">
+                    <div class="flex items-center justify-between p-2 bg-emerald-50 dark:bg-emerald-900/20 rounded">
+                      <span class="text-xs font-semibold">Phase One XF IQ4 150MP</span>
+                      <span class="text-xs">Ultimate resolution & color</span>
+                    </div>
+                    <div class="flex items-center justify-between p-2 bg-emerald-50 dark:bg-emerald-900/20 rounded">
+                      <span class="text-xs font-semibold">Zeiss Otus 85mm f/1.4</span>
+                      <span class="text-xs">Legendary bokeh quality</span>
+                    </div>
+                    <div class="flex items-center justify-between p-2 bg-emerald-50 dark:bg-emerald-900/20 rounded">
+                      <span class="text-xs font-semibold">Leica Noctilux 50mm f/0.95</span>
+                      <span class="text-xs">Extreme shallow DOF</span>
+                    </div>
+                    <div class="flex items-center justify-between p-2 bg-emerald-50 dark:bg-emerald-900/20 rounded">
+                      <span class="text-xs font-semibold">Canon RF 28-70mm f/2</span>
+                      <span class="text-xs">Zoom with prime quality</span>
+                    </div>
+                    <div class="flex items-center justify-between p-2 bg-emerald-50 dark:bg-emerald-900/20 rounded">
+                      <span class="text-xs font-semibold">Profoto B1X 500</span>
+                      <span class="text-xs">Studio strobe quality</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Advanced Techniques -->
+          <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🎯 Técnicas Fine Art Exclusivas</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Double Exposure Dreams</h4>
+                <p class="text-sm">
+                  Múltiplas camadas com opacity variável. Blend modes
+                  complexos criam narrativas visuais em layers.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Infrared Vision</h4>
+                <p class="text-sm">
+                  Simula fotografia infravermelha. Folhagem branca,
+                  céus negros, pele etérea. Outro espectro visual.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Chronophotography</h4>
+                <p class="text-sm">
+                  Movimento decomposto em frames sobrepostos.
+                  Estilo Muybridge meets modern AI interpretation.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Light Painting Evolution</h4>
+                <p class="text-sm">
+                  Trails de luz impossíveis, formas 3D no ar.
+                  Long exposure simulation com precision control.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 4: Architectural Visualization -->
+      <div class="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-violet-200 dark:border-violet-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🏛️</span>
+          <div>
+            <h2 class="text-3xl font-bold text-violet-900 dark:text-violet-300">Architectural Visualization</h2>
+            <p class="text-violet-700 dark:text-violet-400 font-semibold mt-1">Espaços impossíveis renderizados perfeitamente</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Archviz com IA transcende renders tradicionais. Crie espaços que desafiam física,
+            materiais impossíveis e atmosferas que evocam emoções profundas instantaneamente.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-violet-900 dark:text-violet-300 mb-4">🏗️ Architectural Styles & Techniques</h3>
+
+            <div class="space-y-6">
+              <!-- Styles -->
+              <div class="bg-violet-50 dark:bg-violet-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-violet-900 dark:text-violet-300 mb-3">Estilos Arquitetônicos Impossíveis</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Neo-Organic Architecture</h5>
+                    <p class="text-xs mb-2">
+                      Estruturas que crescem como organismos. Colunas como árvores,
+                      paredes respirando, tetos como membranas vivas.
+                    </p>
+                    <p class="text-xs text-violet-600 dark:text-violet-400">
+                      Prompt: "Zaha Hadid meets Gaudí in living coral structure"
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Quantum Architecture</h5>
+                    <p class="text-xs mb-2">
+                      Espaços que existem em múltiplas dimensões. Escadas de Penrose
+                      funcionais, geometria não-euclidiana habitável.
+                    </p>
+                    <p class="text-xs text-violet-600 dark:text-violet-400">
+                      Prompt: "M.C. Escher architectural reality, livable paradox"
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Liquid Architecture</h5>
+                    <p class="text-xs mb-2">
+                      Estruturas fluidas congeladas no tempo. Paredes de água sólida,
+                      tetos de nuvens cristalizadas, pisos de mercúrio.
+                    </p>
+                    <p class="text-xs text-violet-600 dark:text-violet-400">
+                      Prompt: "Architecture of frozen liquids, transparent solidity"
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Ethereal Minimalism</h5>
+                    <p class="text-xs mb-2">
+                      Espaços que quase não existem. Paredes de luz, estruturas
+                      de névoa, gravidade opcional, silêncio tangível.
+                    </p>
+                    <p class="text-xs text-violet-600 dark:text-violet-400">
+                      Prompt: "Tadao Ando meets cloud architecture, light as material"
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Rendering Techniques -->
+              <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-purple-900 dark:text-purple-300 mb-3">Técnicas de Render Fotorrealista</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h5 class="font-semibold mb-3">Pipeline Profissional Archviz:</h5>
+                  <ol class="text-sm space-y-3">
+                    <li>
+                      <strong>1. Concept Generation:</strong>
+                      <p class="text-xs">Midjourney/DALL-E para exploração rápida de conceitos</p>
+                    </li>
+                    <li>
+                      <strong>2. Layout Planning:</strong>
+                      <p class="text-xs">ControlNet com floor plans para precisão espacial</p>
+                    </li>
+                    <li>
+                      <strong>3. 3D Base:</strong>
+                      <p class="text-xs">Text-to-3D para geometria básica, refinamento em SketchUp/Rhino</p>
+                    </li>
+                    <li>
+                      <strong>4. Material Creation:</strong>
+                      <p class="text-xs">AI texture generation, PBR materials customizados</p>
+                    </li>
+                    <li>
+                      <strong>5. Lighting Setup:</strong>
+                      <p class="text-xs">HDRI + AI light analysis para iluminação natural perfeita</p>
+                    </li>
+                    <li>
+                      <strong>6. Final Render:</strong>
+                      <p class="text-xs">V-Ray/Corona + AI denoising, 8K resolution</p>
+                    </li>
+                    <li>
+                      <strong>7. Post-Production:</strong>
+                      <p class="text-xs">AI enhancement para atmosphere, pessoas, vegetação</p>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+
+              <!-- Interior Design -->
+              <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-indigo-900 dark:text-indigo-300 mb-3">Interior Design Revolution</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h5 class="font-semibold mb-3">Espaços Internos Transcendentes:</h5>
+                  <div class="grid md:grid-cols-2 gap-3">
+                    <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-sm mb-1">Biophilic Extremo</h6>
+                      <p class="text-xs">
+                        Natureza invadindo arquitetura. Árvores estruturais,
+                        paredes vivas, rios internos funcionais.
+                      </p>
+                    </div>
+                    <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-sm mb-1">Maximalist Minimalism</h6>
+                      <p class="text-xs">
+                        Paradoxo visual: espaços vazios mas ricos,
+                        simplicidade complexa, silêncio eloquente.
+                      </p>
+                    </div>
+                    <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-sm mb-1">Chromatic Spaces</h6>
+                      <p class="text-xs">
+                        Cor como arquitetura. Gradientes estruturais,
+                        luz colorida sólida, mood através de spectrum.
+                      </p>
+                    </div>
+                    <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded">
+                      <h6 class="font-semibold text-sm mb-1">Kinetic Interiors</h6>
+                      <p class="text-xs">
+                        Espaços em movimento perpétuo. Paredes fluidas,
+                        móveis transformáveis, arquitetura responsiva.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Materials -->
+              <div class="bg-emerald-50 dark:bg-emerald-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-emerald-900 dark:text-emerald-300 mb-3">Materiais Impossíveis</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+                    <div class="bg-emerald-50 dark:bg-emerald-900/20 p-2 rounded">
+                      <strong>Aerogel Structures:</strong> 99.8% ar, sólido
+                    </div>
+                    <div class="bg-emerald-50 dark:bg-emerald-900/20 p-2 rounded">
+                      <strong>Programmable Matter:</strong> Forma mutável
+                    </div>
+                    <div class="bg-emerald-50 dark:bg-emerald-900/20 p-2 rounded">
+                      <strong>Bioluminescent Concrete:</strong> Brilha à noite
+                    </div>
+                    <div class="bg-emerald-50 dark:bg-emerald-900/20 p-2 rounded">
+                      <strong>Transparent Aluminum:</strong> Forte como metal
+                    </div>
+                    <div class="bg-emerald-50 dark:bg-emerald-900/20 p-2 rounded">
+                      <strong>Self-Healing Materials:</strong> Regeneração
+                    </div>
+                    <div class="bg-emerald-50 dark:bg-emerald-900/20 p-2 rounded">
+                      <strong>Phase-Change Glass:</strong> Opacidade variável
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Tips -->
+          <div class="bg-gradient-to-r from-violet-500 to-purple-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">💎 Dicas Pro de Archviz</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Golden Hour Everything</h4>
+                <p class="text-sm">
+                  Sempre renderize com luz dourada. 6am ou 6pm
+                  lighting torna qualquer espaço mágico.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Atmospheric Depth</h4>
+                <p class="text-sm">
+                  Adicione névoa sutil, dust particles, volumetric light.
+                  Profundidade visual = realismo emocional.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Human Scale Reference</h4>
+                <p class="text-sm">
+                  Sempre inclua pessoas ou objetos conhecidos.
+                  Escala humana torna espaços relacionáveis.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Imperfection = Perfection</h4>
+                <p class="text-sm">
+                  Adicione weathering sutil, dust, pequenos defeitos.
+                  Perfeição absoluta parece falsa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Escolhendo Especialização -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎯 Escolhendo Sua Especialização</h2>
+
+        <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-lg mb-6">
+          <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300 mb-4">Framework de Decisão</h3>
+          <div class="space-y-4">
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <h4 class="font-semibold mb-2">Escolha 3D com IA se você...</h4>
+              <ul class="text-sm space-y-1">
+                <li>• Ama games, VR/AR, metaverso</li>
+                <li>• Tem background técnico ou interesse em programação</li>
+                <li>• Quer trabalhar com produtos, e-commerce, NFTs</li>
+                <li>• Salário potencial: R$ 15-30k/mês</li>
+              </ul>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <h4 class="font-semibold mb-2">Escolha Motion Design se você...</h4>
+              <ul class="text-sm space-y-1">
+                <li>• Adora narrativa visual e ritmo</li>
+                <li>• Tem experiência com video/animação</li>
+                <li>• Quer trabalhar com publicidade, social media, music videos</li>
+                <li>• Salário potencial: R$ 12-25k/mês</li>
+              </ul>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <h4 class="font-semibold mb-2">Escolha Fine Art Photography se você...</h4>
+              <ul class="text-sm space-y-1">
+                <li>• É apaixonado por estética e emoção</li>
+                <li>• Tem olho para composição e luz</li>
+                <li>• Quer trabalhar com moda, editorial, fine art</li>
+                <li>• Salário potencial: R$ 10-40k/mês (topo do mercado)</li>
+              </ul>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <h4 class="font-semibold mb-2">Escolha Archviz se você...</h4>
+              <ul class="text-sm space-y-1">
+                <li>• Ama arquitetura e design de interiores</li>
+                <li>• Tem precisão técnica e atenção a detalhes</li>
+                <li>• Quer trabalhar com construtoras, arquitetos, real estate</li>
+                <li>• Salário potencial: R$ 12-28k/mês</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-3">💡 Estratégia Multi-Especialização</h3>
+          <p class="mb-3">
+            Não se limite a uma área. Os profissionais mais valorizados dominam 2-3 especializações:
+          </p>
+          <div class="grid md:grid-cols-2 gap-3 text-sm">
+            <div class="bg-white/20 p-3 rounded">
+              <strong>3D + Motion:</strong> Animação 3D premium
+            </div>
+            <div class="bg-white/20 p-3 rounded">
+              <strong>Photo + Motion:</strong> Cinemagraphs únicos
+            </div>
+            <div class="bg-white/20 p-3 rounded">
+              <strong>Archviz + 3D:</strong> Walkthroughs interativos
+            </div>
+            <div class="bg-white/20 p-3 rounded">
+              <strong>Photo + Archviz:</strong> Lifestyle architecture
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aulas Estruturadas -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">📚 Aulas Estruturadas do Módulo</h2>
+
+        <div class="space-y-6">
+          <!-- Aula 1 -->
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                1
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300 mb-2">
+                  3D com IA: NeRFs e Generation
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Domine a criação de mundos 3D usando apenas IA, sem modelagem manual.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Neural Radiance Fields fundamentals</li>
+                    <li>• Text-to-3D com DreamFusion e Point-E</li>
+                    <li>• Texture synthesis e PBR materials</li>
+                    <li>• 4D NeRFs e Gaussian Splatting</li>
+                    <li>• Integration com game engines</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">2 horas</span>
+                    <span class="text-xs bg-pink-100 dark:bg-pink-900/30 px-2 py-1 rounded">3D Tech</span>
+                    <span class="text-xs bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 rounded">Advanced</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 2 -->
+          <div class="bg-gradient-to-r from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                2
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-pink-900 dark:text-pink-300 mb-2">
+                  3D Workflows Profissionais
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Integre IA em pipelines 3D existentes para resultados industriais.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Blender + AI addons ecosystem</li>
+                    <li>• Photogrammetry enhancement com IA</li>
+                    <li>• Procedural generation com Houdini + ML</li>
+                    <li>• Real-time rendering optimization</li>
+                    <li>• Asset library automation</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-pink-100 dark:bg-pink-900/30 px-2 py-1 rounded">2 horas</span>
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">Pipeline</span>
+                    <span class="text-xs bg-violet-100 dark:bg-violet-900/30 px-2 py-1 rounded">Industry</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 3 -->
+          <div class="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-indigo-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                3
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-2">
+                  Motion Design com AnimateDiff e Gen-2
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Crie animações e vídeos impossíveis com ferramentas de IA de ponta.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• AnimateDiff complete workflow</li>
+                    <li>• Runway Gen-2 advanced techniques</li>
+                    <li>• Pika Labs creative features</li>
+                    <li>• Temporal consistency methods</li>
+                    <li>• Hybrid workflow com After Effects</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 rounded">2 horas</span>
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">Motion</span>
+                    <span class="text-xs bg-blue-100 dark:bg-blue-900/30 px-2 py-1 rounded">Video</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 4 -->
+          <div class="bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-violet-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                4
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-violet-900 dark:text-violet-300 mb-2">
+                  Fine Art Photography Mastery
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Fotografia impossível e estéticas que transcendem câmeras reais.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Hyperrealism techniques extremas</li>
+                    <li>• Surreal photography concepts</li>
+                    <li>• Cinematic storytelling em stills</li>
+                    <li>• Equipment simulation perfeita</li>
+                    <li>• Fine art post-processing</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-violet-100 dark:bg-violet-900/30 px-2 py-1 rounded">2 horas</span>
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">Photo</span>
+                    <span class="text-xs bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 rounded">Art</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 5 -->
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                5
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold bg-gradient-to-r from-purple-900 to-pink-900 dark:from-purple-300 dark:to-pink-300 bg-clip-text text-transparent mb-2">
+                  Architectural Visualization Premium
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Renders impossíveis de espaços que desafiam arquitetura convencional.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Estilos arquitetônicos impossíveis</li>
+                    <li>• Pipeline profissional archviz</li>
+                    <li>• Interior design transcendente</li>
+                    <li>• Materiais que não existem</li>
+                    <li>• Atmospheric rendering mastery</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">2 horas</span>
+                    <span class="text-xs bg-pink-100 dark:bg-pink-900/30 px-2 py-1 rounded">Archviz</span>
+                    <span class="text-xs bg-violet-100 dark:bg-violet-900/30 px-2 py-1 rounded">Render</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 6 -->
+          <div class="bg-gradient-to-r from-indigo-50 to-violet-50 dark:from-indigo-900/20 dark:to-violet-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-gradient-to-r from-indigo-500 to-violet-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                6
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold bg-gradient-to-r from-indigo-900 to-violet-900 dark:from-indigo-300 dark:to-violet-300 bg-clip-text text-transparent mb-2">
+                  Portfolio Especializado e Monetização
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Construa portfolio de elite e estratégias de monetização para sua especialização.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Portfolio curation para especialistas</li>
+                    <li>• Pricing strategies premium</li>
+                    <li>• Client acquisition para nichos</li>
+                    <li>• Building authority em especialização</li>
+                    <li>• Scaling para 6-figure income</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 rounded">2 horas</span>
+                    <span class="text-xs bg-violet-100 dark:bg-violet-900/30 px-2 py-1 rounded">Business</span>
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">Strategy</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercícios Práticos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">💪 Exercícios de Especialização</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-purple-900 dark:text-purple-300 mb-3">
+              🎮 Exercício 3D: World Building
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie ambiente 3D completo usando apenas IA, do conceito ao render final.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Cena 3D navegável + breakdown do processo
+            </div>
+          </div>
+
+          <div class="bg-pink-50 dark:bg-pink-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-pink-900 dark:text-pink-300 mb-3">
+              🎬 Exercício Motion: Short Film
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Produza vídeo de 30 segundos com narrativa completa usando Gen-2/Pika.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Vídeo finalizado + storyboard + assets
+            </div>
+          </div>
+
+          <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-indigo-900 dark:text-indigo-300 mb-3">
+              📸 Exercício Photo: Series
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie série fotográfica conceitual de 10 imagens com narrativa visual.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Portfolio series + artist statement
+            </div>
+          </div>
+
+          <div class="bg-violet-50 dark:bg-violet-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-violet-900 dark:text-violet-300 mb-3">
+              🏛️ Exercício Archviz: Dream House
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Projete e renderize residência impossível com 10 vistas diferentes.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Renders + plants + material board
+            </div>
+          </div>
+
+          <div class="bg-emerald-50 dark:bg-emerald-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-emerald-900 dark:text-emerald-300 mb-3">
+              🔀 Exercício Híbrido: Cross-Spec
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Combine 2 especializações em projeto único integrado.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Projeto multidisciplinar completo
+            </div>
+          </div>
+
+          <div class="bg-rose-50 dark:bg-rose-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-rose-900 dark:text-rose-300 mb-3">
+              🎯 Projeto Final: Masterpiece
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie obra-prima em sua especialização escolhida. Qualidade de portfólio.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Projeto completo + case study + BTS
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recursos Adicionais -->
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl shadow-md p-8 mb-8 border border-purple-200 dark:border-purple-700">
+        <h2 class="text-3xl font-bold mb-6">🎁 Recursos Exclusivos do Módulo</h2>
+
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">🎮</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">3D Assets Library</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              1000+ modelos 3D, texturas PBR e NeRF datasets para treino
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">🎬</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Motion Templates</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              200+ AnimateDiff configs e Gen-2 prompt templates testados
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">📸</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Photography Presets</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              500+ camera/lens simulations e artistic style presets
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">🏛️</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Archviz Materials</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              300+ materiais impossíveis e HDRI environments premium
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">📚</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Specialization Guides</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              4 ebooks completos, um para cada especialização (200+ páginas cada)
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">🎓</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Masterclasses Recorded</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              40 horas de workshops avançados com especialistas de cada área
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dica Final -->
+      <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl shadow-xl p-8 mb-8">
+        <div class="flex items-start">
+          <span class="text-5xl mr-4">💡</span>
+          <div>
+            <h2 class="text-3xl font-bold mb-4">Insight Master: Especialização é Poder</h2>
+            <p class="text-lg leading-relaxed mb-4">
+              Generalistas competem por migalhas. Especialistas definem mercados.
+              Você agora tem conhecimento para dominar áreas que 99.9% dos designers nem sabem que existem.
+            </p>
+            <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4">
+              <p class="font-semibold mb-2">Sua vantagem competitiva:</p>
+              <p class="italic">
+                "Você não é apenas um designer usando IA. Você é um especialista em fronteiras
+                que ainda estão sendo descobertas. Enquanto outros aprendem o básico,
+                você está criando o impossível em sua área de domínio."
+              </p>
+              <p class="text-sm mt-3 font-bold">
+                - Escolha sua especialização. Domine profundamente. Cobre premium. Lidere o futuro. ⚡
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navegação -->
+      <div class="flex justify-between items-center py-8">
+        <a href="masterclass-modulo-03.html" class="bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-3 rounded-lg font-semibold hover:bg-neutral-300 dark:hover:bg-neutral-600 transition-colors">
+          ← Módulo Anterior
+        </a>
+        <a href="masterclass-modulo-05.html" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow">
+          Próximo Módulo →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>

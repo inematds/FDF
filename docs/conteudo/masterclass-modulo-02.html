@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2: Domínio Avançado de Ferramentas - Designer do Futuro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            masterclass: '#8B5CF6',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    .gradient-masterclass {
+      background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+    }
+    .gradient-masterclass-light {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navegação -->
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm shadow-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="text-2xl font-bold text-purple-600 dark:text-purple-400">Designer do Futuro</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../trilhas/masterclass.html" class="text-neutral-700 dark:text-neutral-300 hover:text-purple-600 dark:hover:text-purple-400">Voltar para Trilha</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="gradient-masterclass-light dark:from-purple-900/20 dark:to-pink-900/20 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-4">
+        <a href="../trilhas/masterclass.html" class="text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-semibold">
+          ← Voltar para Trilha Masterclass
+        </a>
+      </div>
+      <div class="text-6xl mb-6">🎛️</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 leading-tight bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+        Módulo 2: Domínio Avançado de Ferramentas
+      </h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
+        Maestria completa das ferramentas de IA mais poderosas, técnicas secretas e workflows que multiplicam resultados
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-semibold">
+          12 horas
+        </span>
+        <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-semibold">
+          Masterclass
+        </span>
+        <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-semibold">
+          Técnico Avançado
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Objetivos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎯 Maestria Técnica Absoluta</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6 text-lg">
+          Este módulo transforma você em um virtuose das ferramentas de IA. Você dominará recursos que 99% dos usuários desconhecem, criando resultados impossíveis para a maioria.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+            <span class="text-purple-500 mr-4 text-2xl flex-shrink-0">🚀</span>
+            <div>
+              <strong class="text-purple-900 dark:text-purple-300">Midjourney God Mode:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Domine todos os 150+ parâmetros, técnicas de multi-prompting e manipulação avançada de seeds</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-pink-50 dark:bg-pink-900/20 p-4 rounded-lg">
+            <span class="text-pink-500 mr-4 text-2xl flex-shrink-0">🎨</span>
+            <div>
+              <strong class="text-pink-900 dark:text-pink-300">DALL-E 3 Optimization:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Técnicas de engenharia reversa, controle absoluto de composição e hacks de consistência</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-lg">
+            <span class="text-indigo-500 mr-4 text-2xl flex-shrink-0">⚡</span>
+            <div>
+              <strong class="text-indigo-900 dark:text-indigo-300">Stable Diffusion Mastery:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Custom models, LoRAs, embeddings e workflows ComfyUI que parecem mágica</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-violet-50 dark:bg-violet-900/20 p-4 rounded-lg">
+            <span class="text-violet-500 mr-4 text-2xl flex-shrink-0">🔧</span>
+            <div>
+              <strong class="text-violet-900 dark:text-violet-300">Automação e APIs:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Scripts em Python/Node.js para gerar milhares de imagens automaticamente com controle total</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 1: Midjourney Avançado -->
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-purple-200 dark:border-purple-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🚀</span>
+          <div>
+            <h2 class="text-3xl font-bold text-purple-900 dark:text-purple-300">Midjourney: O Nível Que Poucos Alcançam</h2>
+            <p class="text-purple-700 dark:text-purple-400 font-semibold mt-1">Técnicas que transformam você em um mago do Midjourney</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Midjourney não é apenas --v 6 e --ar 16:9. Existem mais de 150 parâmetros e técnicas secretas que separam amadores de profissionais.
+            <strong>Prepare-se para ter controle absoluto sobre cada pixel gerado.</strong>
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border-l-4 border-purple-500">
+            <h3 class="text-2xl font-bold text-purple-900 dark:text-purple-300 mb-3">🎛️ Parâmetros Avançados Master List</h3>
+
+            <div class="space-y-6">
+              <!-- Parâmetros de Estilização -->
+              <div class="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 p-6 rounded-lg">
+                <h4 class="text-xl font-bold text-purple-900 dark:text-purple-300 mb-3">Controle de Estilização Extremo</h4>
+                <div class="space-y-3">
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <code class="text-purple-600 dark:text-purple-400 font-mono">--stylize 0-1000</code>
+                    <p class="text-sm mt-2">0 = Literal absoluto | 100 = Balanceado | 1000 = Artístico extremo</p>
+                    <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
+                      <strong>Pro tip:</strong> Use --s 20 para fotorrealismo, --s 750 para arte conceitual
+                    </p>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <code class="text-purple-600 dark:text-purple-400 font-mono">--chaos 0-100</code>
+                    <p class="text-sm mt-2">Controla variação entre gerações do mesmo prompt</p>
+                    <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
+                      <strong>Hack secreto:</strong> --chaos 80 + --seed random = exploração criativa infinita
+                    </p>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <code class="text-purple-600 dark:text-purple-400 font-mono">--weird 0-3000</code>
+                    <p class="text-sm mt-2">Parâmetro oculto para resultados surreais únicos</p>
+                    <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
+                      <strong>Uso avançado:</strong> Combine com --chaos 100 --weird 1500 para arte experimental
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Multi-Prompting Avançado -->
+              <div class="bg-gradient-to-r from-pink-100 to-purple-100 dark:from-pink-900/30 dark:to-purple-900/30 p-6 rounded-lg">
+                <h4 class="text-xl font-bold text-pink-900 dark:text-pink-300 mb-3">Multi-Prompting e Pesos Complexos</h4>
+                <div class="space-y-3">
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <code class="text-pink-600 dark:text-pink-400 font-mono text-xs">
+                      cyberpunk::2 organic::1 neon::-0.5
+                    </code>
+                    <p class="text-sm mt-2">Pesos positivos e negativos para controle fino</p>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <code class="text-pink-600 dark:text-pink-400 font-mono text-xs">
+                      [cat:dog:0.5] [red:blue:25]
+                    </code>
+                    <p class="text-sm mt-2">Transições progressivas durante a geração</p>
+                    <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
+                      Primeiro elemento até 50%, depois transição para o segundo
+                    </p>
+                  </div>
+                  <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                    <code class="text-pink-600 dark:text-pink-400 font-mono text-xs">
+                      {red|blue|green|yellow} flowers
+                    </code>
+                    <p class="text-sm mt-2">Permutações automáticas - gera 4 jobs diferentes</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Técnicas de Remix e Blend -->
+              <div class="bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 p-6 rounded-lg">
+                <h4 class="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-3">Remix e Blend Mastery</h4>
+                <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded mb-3">
+                  <h5 class="font-bold mb-2">Blend Dimensions Secretas:</h5>
+                  <ul class="text-sm space-y-1">
+                    <li>• <code>/blend</code> + 5 imagens = morphing complexo</li>
+                    <li>• Adicione <code>--ar</code> durante blend para controle de aspect</li>
+                    <li>• Use weights customizados: img1 img2::2 img3::0.5</li>
+                  </ul>
+                </div>
+                <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                  <h5 class="font-bold mb-2">Remix Workflow Profissional:</h5>
+                  <ol class="text-sm space-y-1">
+                    <li>1. Gere base com --seed específico</li>
+                    <li>2. Ative remix mode (/settings)</li>
+                    <li>3. Use vary region para edições cirúrgicas</li>
+                    <li>4. Combine com inpainting customizado</li>
+                  </ol>
+                </div>
+              </div>
+
+              <!-- Describe e Análise Reversa -->
+              <div class="bg-gradient-to-r from-violet-100 to-indigo-100 dark:from-violet-900/30 dark:to-indigo-900/30 p-6 rounded-lg">
+                <h4 class="text-xl font-bold text-violet-900 dark:text-violet-300 mb-3">Engenharia Reversa com /Describe</h4>
+                <div class="bg-white/50 dark:bg-neutral-900/50 p-4 rounded">
+                  <h5 class="font-bold mb-2">Técnica de Clonagem Perfeita:</h5>
+                  <ol class="text-sm space-y-2">
+                    <li><strong>1.</strong> /describe na imagem alvo</li>
+                    <li><strong>2.</strong> Combine os 4 prompts gerados</li>
+                    <li><strong>3.</strong> Adicione <code>--iw 2</code> com a imagem original</li>
+                    <li><strong>4.</strong> Use <code>--seed</code> do describe para consistência</li>
+                    <li><strong>5.</strong> Ajuste <code>--stylize</code> para match perfeito</li>
+                  </ol>
+                  <p class="text-xs mt-3 text-violet-600 dark:text-violet-400">
+                    <strong>Resultado:</strong> 95% de similaridade com controle criativo total
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Técnicas Secretas -->
+          <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🔮 Técnicas Secretas dos Top 1%</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Seed Surfing</h4>
+                <p class="text-sm">
+                  Use --seed X então varie X±1 para micro-ajustes.
+                  Perfeito para encontrar a composição ideal.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Tile Hacking</h4>
+                <p class="text-sm">
+                  --tile cria patterns infinitos. Combine com --chaos 0
+                  para texturas perfeitas para 3D e games.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Stop Parameter</h4>
+                <p class="text-sm">
+                  --stop 10-100 interrompe geração. --stop 80 =
+                  estilo sketch/conceitual incrível.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Video Extraction</h4>
+                <p class="text-sm">
+                  --video salva processo de geração. Extraia frames
+                  para criar animações e timelapses únicos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prompts Complexos -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-purple-900 dark:text-purple-300 mb-4">📝 Anatomia de um Prompt Perfeito</h3>
+            <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded font-mono text-xs">
+              <p class="text-purple-600 dark:text-purple-400">
+                [SUBJECT] [ACTION/POSE] [ENVIRONMENT] [LIGHTING] [CAMERA] [STYLE] [MOOD] [TECHNICAL] [ARTIST] [PARAMETERS]
+              </p>
+              <div class="mt-4 space-y-2 text-neutral-700 dark:text-neutral-300">
+                <p><strong>Exemplo Master:</strong></p>
+                <p class="text-purple-500">
+                  ethereal goddess::2 emerging from liquid mercury::1.5,
+                  cathedral of mirrors, volumetric god rays through stained glass::1.2,
+                  65mm lens, f/1.4, shallow DOF,
+                  style of James Jean mixed with Alphonse Mucha::1.3,
+                  melancholic yet hopeful, hyperdetailed, 8k,
+                  oil painting technique with digital precision
+                  --ar 2:3 --stylize 750 --chaos 20 --quality 2 --seed 777
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 2: DALL-E 3 Optimization -->
+      <div class="bg-gradient-to-br from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-pink-200 dark:border-pink-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🎨</span>
+          <div>
+            <h2 class="text-3xl font-bold text-pink-900 dark:text-pink-300">DALL-E 3: Otimização Extrema</h2>
+            <p class="text-pink-700 dark:text-pink-400 font-semibold mt-1">Hackeando o sistema para resultados impossíveis</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            DALL-E 3 parece simples, mas esconde camadas de complexidade. Com engenharia reversa e técnicas avançadas,
+            você pode alcançar precisão e consistência que a OpenAI não documenta oficialmente.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-pink-900 dark:text-pink-300 mb-4">🔧 Sistema de Controle Absoluto</h3>
+
+            <div class="space-y-4">
+              <!-- Técnica de Composição -->
+              <div class="bg-pink-50 dark:bg-pink-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-pink-900 dark:text-pink-300 mb-3">Grid Composition Control</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <p class="text-sm mb-3">Divida mentalmente a imagem em grid 3x3 e especifique elementos por zona:</p>
+                  <code class="text-xs text-pink-600 dark:text-pink-400 block p-2 bg-pink-50 dark:bg-pink-900/20 rounded">
+                    "Top-left: storm clouds | Center: majestic eagle | Bottom-right: mountain peak
+                    Rule of thirds composition, golden ratio spiral from center"
+                  </code>
+                  <p class="text-xs mt-2 text-neutral-600 dark:text-neutral-400">
+                    <strong>Resultado:</strong> Controle preciso de posicionamento sem ferramentas externas
+                  </p>
+                </div>
+              </div>
+
+              <!-- Consistência de Personagem -->
+              <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-purple-900 dark:text-purple-300 mb-3">Character Consistency Hacking</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h5 class="font-semibold mb-2">Método SEED (Style, Expression, Environment, Details):</h5>
+                  <ol class="text-sm space-y-2">
+                    <li><strong>1. Base Profile:</strong> Crie descrição de 200+ palavras do personagem</li>
+                    <li><strong>2. Anchor Points:</strong> 5 características únicas imutáveis</li>
+                    <li><strong>3. Context Lock:</strong> Sempre mencione "same character as before"</li>
+                    <li><strong>4. Style Reference:</strong> "Consistent with previous generation ID: [X]"</li>
+                  </ol>
+                  <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded mt-3">
+                    <p class="text-xs">
+                      <strong>Taxa de sucesso:</strong> 85% de consistência vs 30% método normal
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Técnicas de Refinamento -->
+              <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-indigo-900 dark:text-indigo-300 mb-3">Iterative Refinement Protocol</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Pass 1: Structure</h5>
+                    <p class="text-xs">
+                      Foque apenas em composição e formas básicas.
+                      Ignore detalhes e cores.
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Pass 2: Lighting</h5>
+                    <p class="text-xs">
+                      Adicione direção de luz, sombras e atmosfera.
+                      Mantenha estrutura da Pass 1.
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Pass 3: Details</h5>
+                    <p class="text-xs">
+                      Insira texturas, patterns e micro-detalhes.
+                      Use "hyperdetailed" + especificações.
+                    </p>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Pass 4: Polish</h5>
+                    <p class="text-xs">
+                      Correção de cores, ajuste de mood e
+                      refinamento final com "masterpiece quality".
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prompt Engineering Avançado -->
+          <div class="bg-gradient-to-r from-pink-500 to-purple-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🧠 Neurohacking do DALL-E 3</h3>
+            <div class="space-y-3">
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Token Priority Manipulation</h4>
+                <p class="text-sm">
+                  DALL-E 3 prioriza primeiros 75 tokens. Coloque elementos críticos no início.
+                  Use "IMPORTANT:" para forçar atenção em elementos específicos.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Negative Space Control</h4>
+                <p class="text-sm">
+                  "Leave 30% of canvas as negative space on the left" -
+                  Controle vazio é tão importante quanto conteúdo.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Style DNA Injection</h4>
+                <p class="text-sm">
+                  Misture 3-5 artistas com porcentagens: "60% Moebius + 30% Studio Ghibli + 10% James Jean"
+                  Cria estilos únicos impossíveis de replicar.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Semantic Anchoring</h4>
+                <p class="text-sm">
+                  Repita conceitos-chave 3x em contextos diferentes para garantir implementação.
+                  "Neon cyberpunk city, neon reflections on wet streets, neon signs in Japanese"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 3: Stable Diffusion e ComfyUI -->
+      <div class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-indigo-200 dark:border-indigo-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">⚡</span>
+          <div>
+            <h2 class="text-3xl font-bold text-indigo-900 dark:text-indigo-300">Stable Diffusion: Poder Ilimitado</h2>
+            <p class="text-indigo-700 dark:text-indigo-400 font-semibold mt-1">Custom models, LoRAs e workflows que desafiam a realidade</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Stable Diffusion é onde os verdadeiros magos da IA operam. Com controle total sobre o modelo,
+            você pode criar literalmente qualquer coisa imaginável - e muitas inimagináveis.
+          </p>
+
+          <!-- Custom Models -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-indigo-900 dark:text-indigo-300 mb-4">🎭 Custom Models & Fine-Tuning</h3>
+
+            <div class="space-y-4">
+              <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-indigo-900 dark:text-indigo-300 mb-3">Model Stacking Architecture</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <p class="text-sm mb-3">Combine múltiplos modelos para resultados únicos:</p>
+                  <div class="space-y-2 font-mono text-xs">
+                    <div class="bg-indigo-50 dark:bg-indigo-900/20 p-2 rounded">
+                      <span class="text-indigo-600 dark:text-indigo-400">Base:</span> Realistic Vision 5.1 (40%)
+                    </div>
+                    <div class="bg-indigo-50 dark:bg-indigo-900/20 p-2 rounded">
+                      <span class="text-indigo-600 dark:text-indigo-400">Style:</span> DreamShaper 8 (30%)
+                    </div>
+                    <div class="bg-indigo-50 dark:bg-indigo-900/20 p-2 rounded">
+                      <span class="text-indigo-600 dark:text-indigo-400">Details:</span> epiCRealism (20%)
+                    </div>
+                    <div class="bg-indigo-50 dark:bg-indigo-900/20 p-2 rounded">
+                      <span class="text-indigo-600 dark:text-indigo-400">Enhancement:</span> Detail Tweaker LoRA (10%)
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LoRA Mastery -->
+              <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-purple-900 dark:text-purple-300 mb-3">LoRA Engineering Avançado</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">LoRA Training Settings</h5>
+                    <ul class="text-xs space-y-1">
+                      <li>• Learning Rate: 1e-4 to 5e-5</li>
+                      <li>• Batch Size: 1-4 (depending on VRAM)</li>
+                      <li>• Steps: 2000-5000</li>
+                      <li>• Rank: 32-128</li>
+                      <li>• Alpha: Equal to rank</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                    <h5 class="font-semibold mb-2">Multi-LoRA Combination</h5>
+                    <ul class="text-xs space-y-1">
+                      <li>• Style LoRA: 0.3-0.5 weight</li>
+                      <li>• Character LoRA: 0.7-0.9 weight</li>
+                      <li>• Detail LoRA: 0.2-0.4 weight</li>
+                      <li>• Pose LoRA: 0.6-0.8 weight</li>
+                      <li>• Max 5 LoRAs simultaneously</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Embeddings -->
+              <div class="bg-violet-50 dark:bg-violet-900/20 p-6 rounded-lg">
+                <h4 class="font-bold text-violet-900 dark:text-violet-300 mb-3">Textual Inversion & Embeddings</h4>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h5 class="font-semibold mb-2">Custom Embedding Creation:</h5>
+                  <ol class="text-sm space-y-2">
+                    <li><strong>1.</strong> Prepare 20-50 high-quality images</li>
+                    <li><strong>2.</strong> Crop to 512x512, consistent style</li>
+                    <li><strong>3.</strong> Train for 3000-5000 steps</li>
+                    <li><strong>4.</strong> Use unique token: "sks" or "tkn"</li>
+                    <li><strong>5.</strong> Test with different CFG scales</li>
+                  </ol>
+                  <div class="mt-3 p-3 bg-violet-50 dark:bg-violet-900/20 rounded">
+                    <p class="text-xs"><strong>Pro tip:</strong> Combine embeddings com LoRAs para controle absoluto de estilo e sujeito</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ComfyUI Workflows -->
+          <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🔧 ComfyUI: Workflows Impossíveis</h3>
+
+            <div class="space-y-4">
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Ultimate Upscale Workflow</h4>
+                <div class="text-sm space-y-1">
+                  <p>1. Initial generation at 512x512</p>
+                  <p>2. Latent upscale to 1024x1024</p>
+                  <p>3. Split into 4 tiles</p>
+                  <p>4. Process each tile with ControlNet</p>
+                  <p>5. ESRGAN 4x upscale per tile</p>
+                  <p>6. Reassemble and blend seams</p>
+                  <p>7. Final output: 8192x8192 with perfect details</p>
+                </div>
+              </div>
+
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Multi-ControlNet Stack</h4>
+                <div class="text-sm space-y-1">
+                  <p>• Canny Edge: Structure (0.4 weight)</p>
+                  <p>• Depth Map: 3D form (0.3 weight)</p>
+                  <p>• OpenPose: Character pose (0.5 weight)</p>
+                  <p>• Color Palette: Mood (0.2 weight)</p>
+                  <p>• Segmentation: Regions (0.3 weight)</p>
+                  <p class="text-xs mt-2">Resultado: Controle cinematográfico total</p>
+                </div>
+              </div>
+
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Infinite Canvas System</h4>
+                <div class="text-sm">
+                  <p>Workflow para criar imagens infinitamente expansíveis:</p>
+                  <p class="text-xs mt-2">
+                    Outpainting recursivo + Latent coupling + Seamless tiling
+                    = Mundos sem limites em resolução ilimitada
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Advanced Sampling -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-indigo-900 dark:text-indigo-300 mb-4">🎲 Sampling Methods Mastery</h3>
+
+            <div class="grid md:grid-cols-3 gap-4">
+              <div class="bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded">
+                <h4 class="font-semibold text-sm mb-2">Speed Demons</h4>
+                <ul class="text-xs space-y-1">
+                  <li><strong>DDIM:</strong> 10-20 steps, fast</li>
+                  <li><strong>DPM++ 2M:</strong> 20-30 steps, quality</li>
+                  <li><strong>UniPC:</strong> 8-15 steps, efficient</li>
+                </ul>
+              </div>
+              <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded">
+                <h4 class="font-semibold text-sm mb-2">Quality Kings</h4>
+                <ul class="text-xs space-y-1">
+                  <li><strong>DPM++ 2M Karras:</strong> Best overall</li>
+                  <li><strong>DPM++ SDE Karras:</strong> Artistic</li>
+                  <li><strong>Euler A:</strong> Creative chaos</li>
+                </ul>
+              </div>
+              <div class="bg-violet-50 dark:bg-violet-900/20 p-4 rounded">
+                <h4 class="font-semibold text-sm mb-2">Special Purpose</h4>
+                <ul class="text-xs space-y-1">
+                  <li><strong>DDIM:</strong> Animations</li>
+                  <li><strong>Euler:</strong> Photorealism</li>
+                  <li><strong>Heun:</strong> Maximum detail</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 4: APIs e Automação -->
+      <div class="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-violet-200 dark:border-violet-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🔧</span>
+          <div>
+            <h2 class="text-3xl font-bold text-violet-900 dark:text-violet-300">Automação e APIs: Escala Industrial</h2>
+            <p class="text-violet-700 dark:text-violet-400 font-semibold mt-1">Scripts que geram milhares de assets automaticamente</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Por que gerar uma imagem quando você pode gerar mil? Automatize workflows complexos e crie
+            pipelines de produção que trabalham enquanto você dorme.
+          </p>
+
+          <!-- Python Automation -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-violet-900 dark:text-violet-300 mb-4">🐍 Python Power Scripts</h3>
+
+            <div class="bg-violet-50 dark:bg-violet-900/20 p-4 rounded mb-4">
+              <h4 class="font-bold mb-2">Batch Generation System</h4>
+              <pre class="bg-black text-green-400 p-4 rounded text-xs overflow-x-auto">
+import replicate
+import openai
+from PIL import Image
+import asyncio
+
+class AIImageFactory:
+    def __init__(self):
+        self.models = {
+            'midjourney': MidjourneyAPI(),
+            'dalle': openai.Image(),
+            'sd': replicate.Client()
+        }
+
+    async def generate_batch(self, prompts, models=['all']):
+        tasks = []
+        for prompt in prompts:
+            for model in self.models:
+                task = self.generate_single(prompt, model)
+                tasks.append(task)
+
+        results = await asyncio.gather(*tasks)
+        return self.post_process(results)
+
+    def post_process(self, images):
+        # Upscale, color correct, optimize
+        for img in images:
+            img = self.upscale_4x(img)
+            img = self.color_grade(img)
+            img = self.add_metadata(img)
+        return images
+
+# Generate 1000 variations in 10 minutes
+factory = AIImageFactory()
+prompts = generate_prompt_variations(base_prompt, n=1000)
+results = factory.generate_batch(prompts)</pre>
+            </div>
+
+            <!-- Node.js Integration -->
+            <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded mb-4">
+              <h4 class="font-bold mb-2">Node.js Real-time Pipeline</h4>
+              <pre class="bg-black text-blue-400 p-4 rounded text-xs overflow-x-auto">
+const { MidjourneyAPI, ComfyUI, StableDiffusion } = require('ai-tools');
+
+class RealtimePipeline {
+  constructor() {
+    this.queue = new PriorityQueue();
+    this.workers = this.initWorkers(10); // 10 parallel workers
+  }
+
+  async processRequest(req) {
+    // Stage 1: Concept generation
+    const concept = await this.generateConcept(req.brief);
+
+    // Stage 2: Multiple variations
+    const variations = await Promise.all([
+      this.midjourney.generate(concept),
+      this.dalle.generate(concept),
+      this.sd.generate(concept)
+    ]);
+
+    // Stage 3: AI selection
+    const best = await this.selectBest(variations);
+
+    // Stage 4: Enhancement
+    const enhanced = await this.enhance(best);
+
+    // Stage 5: Delivery
+    return this.deliver(enhanced, req.webhook);
+  }
+}
+
+// Process 100 requests per minute
+const pipeline = new RealtimePipeline();
+server.post('/generate', async (req, res) => {
+  const result = await pipeline.processRequest(req.body);
+  res.json({ success: true, result });
+});</pre>
+            </div>
+
+            <!-- Workflow Automation -->
+            <div class="bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded">
+              <h4 class="font-bold mb-2">Complete Automation Stack</h4>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                  <h5 class="font-semibold text-sm mb-2">Input Processing</h5>
+                  <ul class="text-xs space-y-1">
+                    <li>• CSV/Excel prompt lists</li>
+                    <li>• Database integration</li>
+                    <li>• API webhooks</li>
+                    <li>• Form submissions</li>
+                    <li>• Scheduled jobs</li>
+                  </ul>
+                </div>
+                <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                  <h5 class="font-semibold text-sm mb-2">Output Handling</h5>
+                  <ul class="text-xs space-y-1">
+                    <li>• Auto-upload to cloud</li>
+                    <li>• Metadata tagging</li>
+                    <li>• Quality filtering</li>
+                    <li>• Format conversion</li>
+                    <li>• Distribution to platforms</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Advanced Integrations -->
+          <div class="bg-gradient-to-r from-violet-500 to-purple-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🚀 Integrações Avançadas</h3>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Discord Bot Factory</h4>
+                <p class="text-sm">
+                  Bot que gera imagens on-demand, gerencia queues,
+                  processa pagamentos e entrega automaticamente.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Shopify Integration</h4>
+                <p class="text-sm">
+                  Geração automática de produtos, mockups e variações
+                  direto na loja. 1000 produtos/dia.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Social Media Pipeline</h4>
+                <p class="text-sm">
+                  Cria, agenda e posta conteúdo em 10 plataformas
+                  simultaneamente com otimização por IA.
+                </p>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <h4 class="font-bold mb-2">Game Asset Generator</h4>
+                <p class="text-sm">
+                  Sprites, textures, UI elements em massa.
+                  Compatible com Unity/Unreal Engine.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 5: Workflows Complexos -->
+      <div class="bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-purple-200 dark:border-purple-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">⚙️</span>
+          <div>
+            <h2 class="text-3xl font-bold text-purple-900 dark:text-purple-300">Workflows Complexos de Produção</h2>
+            <p class="text-purple-700 dark:text-purple-400 font-semibold mt-1">Pipelines profissionais que impressionam clientes</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <!-- Workflow 1: Campanha Completa -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-purple-900 dark:text-purple-300 mb-4">📱 Workflow: Campanha Multi-Platform</h3>
+
+            <div class="space-y-4">
+              <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded">
+                <h4 class="font-bold mb-3">Pipeline Completo (2 horas para 50+ assets)</h4>
+                <div class="space-y-3">
+                  <div class="flex items-start">
+                    <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3">1</span>
+                    <div>
+                      <strong>Concept Generation (15 min)</strong>
+                      <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                        ChatGPT-4 gera 20 conceitos baseados no brief.
+                        DALL-E 3 cria mood boards rápidos.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3">2</span>
+                    <div>
+                      <strong>Hero Image Creation (30 min)</strong>
+                      <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                        Midjourney v6 para 4 opções principais.
+                        Upscale 4x e refinamento em Photoshop AI.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3">3</span>
+                    <div>
+                      <strong>Variation Generation (45 min)</strong>
+                      <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                        Script Python gera 50 variações:
+                        Instagram (1:1), Stories (9:16), Facebook (16:9), Twitter (2:1), LinkedIn (1.91:1)
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3">4</span>
+                    <div>
+                      <strong>Text Integration (20 min)</strong>
+                      <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                        Canva API adiciona copy, logos e CTAs.
+                        A/B testing variants automáticos.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-3">5</span>
+                    <div>
+                      <strong>Quality Control & Delivery (10 min)</strong>
+                      <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                        AI verifica brand guidelines, comprime e
+                        envia para Dropbox/Drive organizado.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Workflow 2: Product Photography -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-pink-900 dark:text-pink-300 mb-4">📸 Workflow: Product Photography Virtual</h3>
+
+            <div class="bg-pink-50 dark:bg-pink-900/20 p-4 rounded">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-bold mb-2">Input Requirements</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>• 1 produto em fundo branco</li>
+                    <li>• Brief de estilo/mood</li>
+                    <li>• Referências de ambiente</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-2">Output (30 min)</h4>
+                  <ul class="text-sm space-y-1">
+                    <li>• 20 ambientes diferentes</li>
+                    <li>• 5 ângulos por ambiente</li>
+                    <li>• Lifestyle e studio shots</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4 bg-white dark:bg-neutral-800 p-3 rounded">
+                <p class="text-xs"><strong>Stack:</strong> Remove.bg → ControlNet Canny → SD XL → Real-ESRGAN → Photoshop AI</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aulas Estruturadas -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">📚 Aulas Estruturadas do Módulo</h2>
+
+        <div class="space-y-6">
+          <!-- Aula 1 -->
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                1
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300 mb-2">
+                  Midjourney: Dominando Todos os Parâmetros
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Deep dive em cada parâmetro, combinações secretas e técnicas não documentadas.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Os 150+ parâmetros completos e suas interações</li>
+                    <li>• Multi-prompting e weight manipulation avançado</li>
+                    <li>• Remix workflows para projetos comerciais</li>
+                    <li>• Seed surfing e chaos control para exploração</li>
+                    <li>• Batch operations e automação via Discord</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">2 horas</span>
+                    <span class="text-xs bg-pink-100 dark:bg-pink-900/30 px-2 py-1 rounded">Hands-on</span>
+                    <span class="text-xs bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 rounded">Advanced</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 2 -->
+          <div class="bg-gradient-to-r from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                2
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-pink-900 dark:text-pink-300 mb-2">
+                  DALL-E 3: Hacking para Resultados Impossíveis
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Engenharia reversa do sistema e técnicas de controle absoluto.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Token manipulation e priority hacking</li>
+                    <li>• Consistency methods para personagens</li>
+                    <li>• Grid composition e spatial control</li>
+                    <li>• Style DNA injection techniques</li>
+                    <li>• Iterative refinement protocols</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-pink-100 dark:bg-pink-900/30 px-2 py-1 rounded">2 horas</span>
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">Técnico</span>
+                    <span class="text-xs bg-violet-100 dark:bg-violet-900/30 px-2 py-1 rounded">Hacks</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 3 -->
+          <div class="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-indigo-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                3
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-2">
+                  Stable Diffusion: Custom Models e LoRAs
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Criando seus próprios modelos e controlando cada aspecto da geração.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Training custom models do zero</li>
+                    <li>• LoRA engineering e combination strategies</li>
+                    <li>• Textual inversion e embeddings customizados</li>
+                    <li>• Model merging e weight interpolation</li>
+                    <li>• Sampling methods optimization</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 rounded">2 horas</span>
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">Deep Tech</span>
+                    <span class="text-xs bg-blue-100 dark:bg-blue-900/30 px-2 py-1 rounded">Models</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 4 -->
+          <div class="bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-violet-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                4
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-violet-900 dark:text-violet-300 mb-2">
+                  ComfyUI: Workflows Que Parecem Mágica
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Construindo pipelines complexos que automatizam tarefas impossíveis.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Node-based workflow architecture</li>
+                    <li>• Multi-ControlNet stacking strategies</li>
+                    <li>• Ultimate upscale pipelines (8K+)</li>
+                    <li>• Infinite canvas e outpainting recursivo</li>
+                    <li>• Custom nodes e Python integration</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-violet-100 dark:bg-violet-900/30 px-2 py-1 rounded">2 horas</span>
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">Visual</span>
+                    <span class="text-xs bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 rounded">Nodes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 5 -->
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                5
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold bg-gradient-to-r from-purple-900 to-pink-900 dark:from-purple-300 dark:to-pink-300 bg-clip-text text-transparent mb-2">
+                  APIs e Automação: Python & Node.js
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Programando sistemas que geram milhares de imagens automaticamente.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Python scripts para batch generation</li>
+                    <li>• Node.js real-time pipelines</li>
+                    <li>• API integration (OpenAI, Replicate, Stability)</li>
+                    <li>• Discord bots e social media automation</li>
+                    <li>• Database systems para asset management</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">2 horas</span>
+                    <span class="text-xs bg-pink-100 dark:bg-pink-900/30 px-2 py-1 rounded">Code</span>
+                    <span class="text-xs bg-violet-100 dark:bg-violet-900/30 px-2 py-1 rounded">APIs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 6 -->
+          <div class="bg-gradient-to-r from-indigo-50 to-violet-50 dark:from-indigo-900/20 dark:to-violet-900/20 p-6 rounded-lg">
+            <div class="flex items-start">
+              <div class="bg-gradient-to-r from-indigo-500 to-violet-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                6
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold bg-gradient-to-r from-indigo-900 to-violet-900 dark:from-indigo-300 dark:to-violet-300 bg-clip-text text-transparent mb-2">
+                  Integrações Avançadas e Workflows Profissionais
+                </h3>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Conectando todas as ferramentas em pipelines de produção industrial.
+                </p>
+                <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                  <h4 class="font-semibold mb-2">Você vai aprender:</h4>
+                  <ul class="text-sm space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <li>• Multi-platform campaign workflows</li>
+                    <li>• E-commerce integration systems</li>
+                    <li>• Game asset generation pipelines</li>
+                    <li>• Print-on-demand automation</li>
+                    <li>• Enterprise-level production systems</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-indigo-100 dark:bg-indigo-900/30 px-2 py-1 rounded">2 horas</span>
+                    <span class="text-xs bg-violet-100 dark:bg-violet-900/30 px-2 py-1 rounded">Integration</span>
+                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 px-2 py-1 rounded">Pro</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercícios Práticos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">💪 Exercícios Técnicos Avançados</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-purple-900 dark:text-purple-300 mb-3">
+              🚀 Exercício 1: Midjourney Master
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie 100 variações de um conceito usando todos os parâmetros avançados.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Grid comparativo + documentação de parâmetros
+            </div>
+          </div>
+
+          <div class="bg-pink-50 dark:bg-pink-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-pink-900 dark:text-pink-300 mb-3">
+              🎨 Exercício 2: DALL-E Consistency
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Mantenha um personagem consistente em 20 cenas diferentes.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Character sheet + storyboard completo
+            </div>
+          </div>
+
+          <div class="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-indigo-900 dark:text-indigo-300 mb-3">
+              ⚡ Exercício 3: Custom LoRA
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Treine seu próprio LoRA para um estilo ou objeto específico.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> LoRA file + 50 exemplos de uso
+            </div>
+          </div>
+
+          <div class="bg-violet-50 dark:bg-violet-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-violet-900 dark:text-violet-300 mb-3">
+              🔧 Exercício 4: ComfyUI Pipeline
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Construa workflow que processa 100 imagens automaticamente.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Workflow JSON + tutorial em vídeo
+            </div>
+          </div>
+
+          <div class="bg-emerald-50 dark:bg-emerald-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-emerald-900 dark:text-emerald-300 mb-3">
+              🐍 Exercício 5: Python Automation
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Script que gera campanha completa em 3 plataformas de IA.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Código documentado + 500 assets gerados
+            </div>
+          </div>
+
+          <div class="bg-rose-50 dark:bg-rose-900/20 p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-rose-900 dark:text-rose-300 mb-3">
+              🎯 Projeto Final: Sistema Completo
+            </h3>
+            <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+              Pipeline end-to-end que gera, processa e entrega 1000 assets.
+            </p>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-xs">
+              <strong>Entregável:</strong> Sistema funcionando + documentação completa
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recursos Adicionais -->
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl shadow-md p-8 mb-8 border border-purple-200 dark:border-purple-700">
+        <h2 class="text-3xl font-bold mb-6">🎁 Recursos Exclusivos do Módulo</h2>
+
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">📦</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Prompt Library Pro</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              10.000+ prompts testados e categorizados para todas as ferramentas
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">🔧</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">ComfyUI Workflows Pack</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              50 workflows profissionais prontos para produção
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">🐍</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Python Scripts Collection</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              30 scripts de automação comentados e customizáveis
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">🎨</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Custom Models & LoRAs</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              Acesso a 100+ modelos e LoRAs exclusivos treinados
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">📹</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Video Tutorials HD</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              20 horas de conteúdo avançado passo a passo
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <div class="text-3xl mb-2">🚀</div>
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-2">API Credits Pack</h3>
+            <p class="text-xs text-neutral-600 dark:text-neutral-400">
+              $500 em créditos para testar todas as APIs
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dica Final -->
+      <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl shadow-xl p-8 mb-8">
+        <div class="flex items-start">
+          <span class="text-5xl mr-4">💡</span>
+          <div>
+            <h2 class="text-3xl font-bold mb-4">Insight Master: O Poder Está nos Detalhes</h2>
+            <p class="text-lg leading-relaxed mb-4">
+              A diferença entre um amador e um profissional não está em conhecer as ferramentas -
+              está em dominar cada nuance, cada parâmetro oculto, cada hack não documentado.
+            </p>
+            <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4">
+              <p class="font-semibold mb-2">Seu superpoder agora:</p>
+              <p class="italic">
+                "Você não usa ferramentas de IA. Você as comanda, dobra à sua vontade e cria
+                resultados que outros consideram impossíveis. Cada parâmetro é uma nota em sua
+                sinfonia criativa. Cada workflow é uma obra de engenharia."
+              </p>
+              <p class="text-sm mt-3 font-bold">
+                - Você agora é um Mestre das Ferramentas. Use esse poder com sabedoria. 🎛️
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navegação -->
+      <div class="flex justify-between items-center py-8">
+        <a href="masterclass-modulo-01.html" class="bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 px-6 py-3 rounded-lg font-semibold hover:bg-neutral-300 dark:hover:bg-neutral-600 transition-colors">
+          ← Módulo Anterior
+        </a>
+        <a href="masterclass-modulo-03.html" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow">
+          Próximo Módulo: Direção de Arte →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>

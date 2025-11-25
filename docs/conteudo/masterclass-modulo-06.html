@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 06: Monetização Avançada - Trilha Masterclass | IMG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --masterclass: #8B5CF6;
+            --masterclass-dark: #7C3AED;
+            --masterclass-darker: #6D28D9;
+            --masterclass-light: #A78BFA;
+            --masterclass-lighter: #C4B5FD;
+            --masterclass-bg: rgba(139, 92, 246, 0.05);
+            --masterclass-border: rgba(139, 92, 246, 0.2);
+            --dark-bg: #0F0F0F;
+            --darker-bg: #0A0A0A;
+            --card-bg: rgba(20, 20, 20, 0.95);
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+            --text-muted: #707070;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --info: #3B82F6;
+            --gold: #FFD700;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--masterclass-border);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--masterclass-light);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .module-badge {
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 5rem 2rem;
+            background: radial-gradient(ellipse at top, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(139, 92, 246, 0.03) 10px,
+                rgba(139, 92, 246, 0.03) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--masterclass-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Revenue Showcase */
+        .revenue-showcase {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 2px solid var(--gold);
+            border-radius: 30px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .revenue-showcase::before {
+            content: '💰';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 150px;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+
+        .revenue-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--masterclass) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .revenue-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .revenue-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .revenue-metric {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .revenue-metric-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .revenue-metric-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--masterclass);
+            padding: 0.4rem 1rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--masterclass-lighter) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Business Models Grid */
+        .business-models {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .model-card {
+            background: var(--card-bg);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .model-card.premium {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, var(--card-bg) 100%);
+        }
+
+        .model-card.premium::before {
+            content: 'MAIS LUCRATIVO';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--gold);
+            color: var(--dark-bg);
+            padding: 0.3rem 3rem;
+            font-size: 0.7rem;
+            font-weight: 900;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(139, 92, 246, 0.3);
+            border-color: var(--masterclass);
+        }
+
+        .model-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .model-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .model-revenue {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--success);
+            margin: 1rem 0;
+        }
+
+        .model-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .model-pros {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .model-pros li {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .model-pros li::before {
+            content: '💎';
+            margin-top: -2px;
+        }
+
+        /* Pricing Strategy Table */
+        .pricing-table {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 3rem 0;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        .pricing-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .pricing-table th {
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            color: white;
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .pricing-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            color: var(--text-secondary);
+        }
+
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pricing-table tr:hover {
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .price-tag {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--masterclass-light);
+        }
+
+        /* Lessons Timeline */
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .lesson-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, var(--card-bg) 100%);
+            border: 2px solid var(--masterclass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lesson-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+        }
+
+        .lesson-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+        }
+
+        .lesson-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .lesson-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+        }
+
+        .lesson-duration {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--masterclass);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .lesson-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .lesson-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .lesson-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .topic-tag {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--masterclass-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        /* Case Studies */
+        .case-studies {
+            display: grid;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .case-study {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(124, 58, 237, 0.02) 100%);
+            border: 2px solid var(--masterclass-border);
+            border-radius: 25px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 2rem;
+        }
+
+        .case-study-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study-revenue {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--success) 0%, var(--masterclass) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .case-study-description {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .case-study-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .metric-item {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--masterclass-light);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .case-study-insights {
+            background: rgba(139, 92, 246, 0.1);
+            border-left: 4px solid var(--masterclass);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .case-study-insights h4 {
+            color: var(--masterclass);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .case-study-insights ul {
+            list-style: none;
+        }
+
+        .case-study-insights li {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .case-study-insights li::before {
+            content: '→';
+            color: var(--masterclass);
+            font-weight: bold;
+            margin-top: -2px;
+        }
+
+        /* Exercises Section */
+        .exercises-container {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .exercise-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);
+            border: 2px solid var(--masterclass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exercise-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--masterclass) 0%, transparent 70%);
+            opacity: 0.1;
+            transform: translate(30%, -30%);
+        }
+
+        .exercise-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .exercise-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .difficulty-badge {
+            padding: 0.4rem 1rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .difficulty-expert {
+            background: linear-gradient(135deg, var(--danger) 0%, #DC2626 100%);
+            color: white;
+        }
+
+        .exercise-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .exercise-objectives {
+            background: rgba(139, 92, 246, 0.05);
+            border-left: 3px solid var(--masterclass);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .exercise-objectives h4 {
+            color: var(--masterclass);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .exercise-objectives ul {
+            list-style: none;
+        }
+
+        .exercise-objectives li {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .exercise-objectives li::before {
+            content: '→';
+            color: var(--masterclass);
+            font-weight: bold;
+            margin-top: -2px;
+        }
+
+        /* Resources Section */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .resource-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+            border-color: var(--masterclass);
+        }
+
+        .resource-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .resource-info {
+            flex: 1;
+        }
+
+        .resource-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .resource-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Final Tip Section */
+        .final-tip {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border: 2px solid var(--masterclass);
+            border-radius: 30px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-tip::before {
+            content: '💡';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 100px;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+
+        .final-tip h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .final-tip p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Navigation Buttons */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            margin: 4rem 0;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        .nav-button.prev {
+            flex-direction: row-reverse;
+        }
+
+        .nav-button span {
+            font-size: 1.5rem;
+        }
+
+        .current-module {
+            text-align: center;
+            flex: 1;
+        }
+
+        .current-module-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .current-module-number {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);
+            border-top: 1px solid var(--masterclass-border);
+            padding: 3rem 2rem;
+            margin-top: 6rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--masterclass-light);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .business-models {
+                grid-template-columns: 1fr;
+            }
+
+            .lessons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-table {
+                overflow-x: auto;
+            }
+
+            .case-study-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+
+            .nav-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s ease infinite;
+        }
+
+        /* Special Effects */
+        .glow {
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+        }
+
+        .shimmer {
+            background: linear-gradient(90deg, transparent 0%, rgba(139, 92, 246, 0.3) 50%, transparent 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            padding-left: 4rem;
+        }
+
+        .alert::before {
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+        }
+
+        .alert-success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34D399;
+        }
+
+        .alert-success::before {
+            content: '✅';
+        }
+
+        .alert-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: #FCD34D;
+        }
+
+        .alert-warning::before {
+            content: '⚠️';
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                💎 IMG Masterclass
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../trilhas/masterclass.html">Trilha</a>
+                <a href="#lessons">Aulas</a>
+                <a href="#cases">Cases</a>
+                <span class="module-badge">Módulo 06</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">
+                💎 Monetização Avançada • 10 horas de conteúdo
+            </div>
+            <h1 class="gradient-text">Monetização Avançada</h1>
+            <p class="hero-description">
+                Desbloqueie o potencial máximo de receita com IA generativa. Aprenda estratégias comprovadas para escalar seu faturamento para R$ 50k+ mensais com modelos de negócio inteligentes e diversificação de fontes de renda.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">R$ 50k+</div>
+                    <div class="stat-label">Por Mês</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">7</div>
+                    <div class="stat-label">Fontes de Renda</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">10x</div>
+                    <div class="stat-label">ROI Médio</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">MRR</div>
+                    <div class="stat-label">Receita Recorrente</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Showcase -->
+    <section class="container">
+        <div class="revenue-showcase">
+            <h2 class="revenue-title">Cases Reais de Sucesso</h2>
+            <p class="revenue-subtitle">Profissionais formados alcançando resultados extraordinários</p>
+            <div class="revenue-metrics">
+                <div class="revenue-metric">
+                    <div class="revenue-metric-value">R$ 85k</div>
+                    <div class="revenue-metric-label">Maior faturamento mensal</div>
+                </div>
+                <div class="revenue-metric">
+                    <div class="revenue-metric-value">R$ 3.5k</div>
+                    <div class="revenue-metric-label">Ticket médio por projeto</div>
+                </div>
+                <div class="revenue-metric">
+                    <div class="revenue-metric-value">23</div>
+                    <div class="revenue-metric-label">Clientes recorrentes</div>
+                </div>
+                <div class="revenue-metric">
+                    <div class="revenue-metric-value">92%</div>
+                    <div class="revenue-metric-label">Taxa de retenção</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Models -->
+    <section class="container">
+        <div class="section-header">
+            <span class="section-tag">💼 Modelos de Negócio</span>
+            <h2>Estratégias de Monetização</h2>
+            <p class="section-description">
+                Modelos comprovados para diferentes perfis e objetivos de faturamento
+            </p>
+        </div>
+
+        <div class="business-models">
+            <div class="model-card">
+                <div class="model-icon">👤</div>
+                <h3>Freelancer Premium</h3>
+                <div class="model-revenue">R$ 15-30k/mês</div>
+                <p>Modelo individual focado em projetos de alto valor com clientes selecionados. Ideal para quem busca flexibilidade e alta margem.</p>
+                <ul class="model-pros">
+                    <li>Liberdade total de horários</li>
+                    <li>Margem de lucro 80-90%</li>
+                    <li>Controle total do processo</li>
+                    <li>Baixo custo operacional</li>
+                </ul>
+            </div>
+
+            <div class="model-card premium">
+                <div class="model-icon">🏢</div>
+                <h3>Agência Especializada</h3>
+                <div class="model-revenue">R$ 50-100k/mês</div>
+                <p>Estrutura escalável com equipe, processos definidos e múltiplos clientes simultâneos. Máximo potencial de crescimento.</p>
+                <ul class="model-pros">
+                    <li>Escalabilidade ilimitada</li>
+                    <li>Múltiplas fontes de receita</li>
+                    <li>Valorização para venda</li>
+                    <li>Construção de marca forte</li>
+                </ul>
+            </div>
+
+            <div class="model-card">
+                <div class="model-icon">📦</div>
+                <h3>Produtos Digitais</h3>
+                <div class="model-revenue">R$ 20-50k/mês</div>
+                <p>Criação e venda de assets, templates, cursos e ferramentas. Receita passiva e escalável sem limite de clientes.</p>
+                <ul class="model-pros">
+                    <li>Renda 100% passiva</li>
+                    <li>Escalabilidade infinita</li>
+                    <li>Margem próxima a 100%</li>
+                    <li>Trabalho uma vez, venda sempre</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Strategies -->
+    <section class="container">
+        <div class="section-header">
+            <span class="section-tag">💰 Estratégias de Precificação</span>
+            <h2>Tabela de Preços Premium</h2>
+            <p class="section-description">
+                Estrutura profissional de precificação baseada em valor, não em horas
+            </p>
+        </div>
+
+        <div class="pricing-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de Serviço</th>
+                        <th>Valor Base</th>
+                        <th>Valor Premium</th>
+                        <th>Modelo de Cobrança</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Identidade Visual Completa</strong></td>
+                        <td class="price-tag">R$ 5.000</td>
+                        <td class="price-tag">R$ 15.000</td>
+                        <td>50% entrada + 50% entrega</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Campanha Publicitária</strong></td>
+                        <td class="price-tag">R$ 8.000</td>
+                        <td class="price-tag">R$ 25.000</td>
+                        <td>Por projeto + performance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Retainer Mensal</strong></td>
+                        <td class="price-tag">R$ 4.000</td>
+                        <td class="price-tag">R$ 12.000</td>
+                        <td>Recorrente com contrato</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Consultoria Estratégica</strong></td>
+                        <td class="price-tag">R$ 1.500/h</td>
+                        <td class="price-tag">R$ 3.500/h</td>
+                        <td>Pacotes de horas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Produto Digital (Template)</strong></td>
+                        <td class="price-tag">R$ 97</td>
+                        <td class="price-tag">R$ 497</td>
+                        <td>Venda única ou assinatura</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Curso/Workshop</strong></td>
+                        <td class="price-tag">R$ 997</td>
+                        <td class="price-tag">R$ 4.997</td>
+                        <td>Lançamento ou evergreen</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="alert alert-success">
+            <strong>Dica de Ouro:</strong> Sempre precifique baseado no valor entregue ao cliente, não nas horas trabalhadas. Com IA, você pode entregar em 2 horas o que antes levava 20, mas o valor para o cliente permanece o mesmo!
+        </div>
+    </section>
+
+    <!-- Lessons Section -->
+    <section class="container" id="lessons">
+        <div class="section-header">
+            <span class="section-tag">📚 Conteúdo do Módulo</span>
+            <h2>Aulas Estruturadas</h2>
+            <p class="section-description">
+                6 aulas estratégicas para transformar seu conhecimento em receita consistente
+            </p>
+        </div>
+
+        <div class="lessons-grid">
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-number">01</div>
+                    <span class="lesson-duration">⏱️ 90 min</span>
+                </div>
+                <h3 class="lesson-title">Psicologia da Precificação Premium</h3>
+                <p class="lesson-description">
+                    Domine a arte de cobrar preços premium sem objeções. Aprenda técnicas de ancoragem, framing de valor, storytelling de resultados e posicionamento de autoridade que justificam preços 5-10x acima da média do mercado.
+                </p>
+                <div class="lesson-topics">
+                    <span class="topic-tag">Value-based Pricing</span>
+                    <span class="topic-tag">Price Anchoring</span>
+                    <span class="topic-tag">Luxury Positioning</span>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-number">02</div>
+                    <span class="lesson-duration">⏱️ 100 min</span>
+                </div>
+                <h3 class="lesson-title">Retainers e Contratos Recorrentes</h3>
+                <p class="lesson-description">
+                    Construa previsibilidade financeira com MRR (Monthly Recurring Revenue). Estruturação de propostas irresistíveis, modelos de contrato, gestão de expectativas e estratégias para reter clientes por anos.
+                </p>
+                <div class="lesson-topics">
+                    <span class="topic-tag">MRR Strategy</span>
+                    <span class="topic-tag">Client Retention</span>
+                    <span class="topic-tag">Contract Design</span>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-number">03</div>
+                    <span class="lesson-duration">⏱️ 110 min</span>
+                </div>
+                <h3 class="lesson-title">Império de Produtos Digitais</h3>
+                <p class="lesson-description">
+                    Crie um ecossistema de produtos digitais que geram renda passiva 24/7. Templates premium, presets exclusivos, cursos gravados, ebooks técnicos. Plataformas de venda, estratégias de lançamento e automação completa.
+                </p>
+                <div class="lesson-topics">
+                    <span class="topic-tag">Digital Products</span>
+                    <span class="topic-tag">Passive Income</span>
+                    <span class="topic-tag">Launch Strategy</span>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-number">04</div>
+                    <span class="lesson-duration">⏱️ 95 min</span>
+                </div>
+                <h3 class="lesson-title">Licenciamento e Direitos de Uso</h3>
+                <p class="lesson-description">
+                    Monetize sua arte através de licenciamento estratégico. Contratos de uso comercial, royalties, exclusividade, stock platforms, NFTs e marketplaces. Proteção legal e maximização de receita por asset criado.
+                </p>
+                <div class="lesson-topics">
+                    <span class="topic-tag">Licensing Models</span>
+                    <span class="topic-tag">Royalties</span>
+                    <span class="topic-tag">Legal Protection</span>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-number">05</div>
+                    <span class="lesson-duration">⏱️ 105 min</span>
+                </div>
+                <h3 class="lesson-title">Scaling: De Freelancer a CEO</h3>
+                <p class="lesson-description">
+                    Transição estratégica de operador para empresário. Construção de equipe, delegação eficiente, sistemas e processos, gestão financeira avançada. Do primeiro funcionário ao time de 10+ pessoas.
+                </p>
+                <div class="lesson-topics">
+                    <span class="topic-tag">Team Building</span>
+                    <span class="topic-tag">Systems Design</span>
+                    <span class="topic-tag">Business Operations</span>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-number">06</div>
+                    <span class="lesson-duration">⏱️ 120 min</span>
+                </div>
+                <h3 class="lesson-title">Planejamento Financeiro Profissional</h3>
+                <p class="lesson-description">
+                    Gestão financeira para crescimento sustentável. Separação PF/PJ, reserva de emergência, investimentos, aposentadoria, planejamento tributário inteligente. Dashboard de métricas e KPIs financeiros.
+                </p>
+                <div class="lesson-topics">
+                    <span class="topic-tag">Financial Planning</span>
+                    <span class="topic-tag">Tax Optimization</span>
+                    <span class="topic-tag">Investment Strategy</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="container" id="cases">
+        <div class="section-header">
+            <span class="section-tag">🏆 Cases de Sucesso</span>
+            <h2>Histórias Reais de R$ 50k+/mês</h2>
+            <p class="section-description">
+                Análise detalhada de profissionais que alcançaram o topo do mercado
+            </p>
+        </div>
+
+        <div class="case-studies">
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div>
+                        <h3 class="case-study-title">Marina Silva - Creative AI Studio</h3>
+                        <p style="color: var(--text-muted);">De designer freelancer a CEO de estúdio premium</p>
+                    </div>
+                    <div class="case-study-revenue">R$ 78k/mês</div>
+                </div>
+                <p class="case-study-description">
+                    Marina começou como freelancer cobrando R$ 500 por logo. Em 18 meses, construiu um estúdio com 5 colaboradores, atendendo grandes marcas com projetos de identidade visual completa usando IA. Hoje tem 12 clientes em retainer mensal e lança produtos digitais que geram R$ 15k/mês em renda passiva.
+                </p>
+                <div class="case-study-metrics">
+                    <div class="metric-item">
+                        <span class="metric-value">R$ 6.5k</span>
+                        <span class="metric-label">Ticket Médio</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">12</span>
+                        <span class="metric-label">Retainers</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">85%</span>
+                        <span class="metric-label">Margem</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">5</span>
+                        <span class="metric-label">Colaboradores</span>
+                    </div>
+                </div>
+                <div class="case-study-insights">
+                    <h4>Principais Aprendizados:</h4>
+                    <ul>
+                        <li>Nicho em branding para startups tech valorizou em 10x o trabalho</li>
+                        <li>Retainer mínimo de R$ 4k garantiu previsibilidade financeira</li>
+                        <li>Templates customizáveis geraram R$ 180k em 12 meses</li>
+                        <li>Contratação de juniors para execução liberou tempo para vendas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div>
+                        <h3 class="case-study-title">Carlos Mendes - Performance Creative Agency</h3>
+                        <p style="color: var(--text-muted);">Especialista em campanhas de alta conversão com IA</p>
+                    </div>
+                    <div class="case-study-revenue">R$ 92k/mês</div>
+                </div>
+                <p class="case-study-description">
+                    Carlos pivotou de agência tradicional para performance creative usando IA. Desenvolveu metodologia própria de testes A/B automatizados e creative automation que aumenta conversão em média 40%. Cobra success fee além do fee fixo, multiplicando receita.
+                </p>
+                <div class="case-study-metrics">
+                    <div class="metric-item">
+                        <span class="metric-value">R$ 15k</span>
+                        <span class="metric-label">Fee Base</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">3-5%</span>
+                        <span class="metric-label">Success Fee</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">8</span>
+                        <span class="metric-label">Grandes Contas</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">R$ 2.3M</span>
+                        <span class="metric-label">Media Gerenciada</span>
+                    </div>
+                </div>
+                <div class="case-study-insights">
+                    <h4>Principais Aprendizados:</h4>
+                    <ul>
+                        <li>Success fee alinha interesses e pode triplicar receita</li>
+                        <li>Automação de creative testing economizou 30h/semana</li>
+                        <li>Case studies com ROI comprovado facilitam vendas premium</li>
+                        <li>Parceria com agências de media multiplicou pipeline</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div>
+                        <h3 class="case-study-title">Ana Costa - AI Education Empire</h3>
+                        <p style="color: var(--text-muted);">De designer a educadora com império digital</p>
+                    </div>
+                    <div class="case-study-revenue">R$ 65k/mês</div>
+                </div>
+                <p class="case-study-description">
+                    Ana transformou sua expertise em IA generativa em negócio educacional escalável. Criou curso signature de R$ 3.997, membership recorrente de R$ 297/mês com 400+ alunos, e consultoria premium para empresas. Fatura adicional com afiliados e parcerias.
+                </p>
+                <div class="case-study-metrics">
+                    <div class="metric-item">
+                        <span class="metric-value">R$ 3.997</span>
+                        <span class="metric-label">Curso Premium</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">400+</span>
+                        <span class="metric-label">Membros</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">R$ 120k</span>
+                        <span class="metric-label">MRR</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-value">95%</span>
+                        <span class="metric-label">Margem</span>
+                    </div>
+                </div>
+                <div class="case-study-insights">
+                    <h4>Principais Aprendizados:</h4>
+                    <ul>
+                        <li>Comunidade engajada vale mais que número de alunos</li>
+                        <li>Membership recorrente cria base sólida de receita</li>
+                        <li>Lançamentos semestrais geram picos de R$ 200k+</li>
+                        <li>Programa de afiliados responsável por 30% das vendas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Exercises -->
+    <section class="container">
+        <div class="section-header">
+            <span class="section-tag">💪 Exercícios Práticos</span>
+            <h2>Desafios de Monetização</h2>
+            <p class="section-description">
+                Projetos práticos para implementar estratégias de alta receita
+            </p>
+        </div>
+
+        <div class="exercises-container">
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3 class="exercise-title">Plano de Negócio R$ 50k/mês</h3>
+                    <span class="difficulty-badge difficulty-expert">Expert</span>
+                </div>
+                <p class="exercise-description">
+                    Desenvolva um business plan completo para alcançar R$ 50k mensais em 12 meses. Inclua mix de produtos/serviços, estratégia de precificação, projeções financeiras, plano de marketing e métricas de acompanhamento.
+                </p>
+                <div class="exercise-objectives">
+                    <h4>Objetivos do Exercício:</h4>
+                    <ul>
+                        <li>Definir 3-5 fontes de receita complementares</li>
+                        <li>Criar tabela de preços com 3 tiers (básico, pro, enterprise)</li>
+                        <li>Projetar fluxo de caixa mensal para 12 meses</li>
+                        <li>Desenvolver estratégia de aquisição de clientes premium</li>
+                        <li>Estabelecer KPIs e dashboard de acompanhamento</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3 class="exercise-title">Lançamento de Produto Digital</h3>
+                    <span class="difficulty-badge difficulty-expert">Expert</span>
+                </div>
+                <p class="exercise-description">
+                    Execute um lançamento completo de produto digital (template pack, curso ou ferramenta) seguindo estratégia de Jeff Walker (PLF). Objetivo: R$ 30k em 7 dias de lançamento.
+                </p>
+                <div class="exercise-objectives">
+                    <h4>Objetivos do Exercício:</h4>
+                    <ul>
+                        <li>Criar produto digital de alto valor (R$ 497+)</li>
+                        <li>Desenvolver sequência de 3 vídeos de pré-lançamento</li>
+                        <li>Construir lista de 500+ leads qualificados</li>
+                        <li>Implementar funil completo com upsells e downsells</li>
+                        <li>Configurar automação de vendas e entrega</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3 class="exercise-title">Estruturação de Agência Premium</h3>
+                    <span class="difficulty-badge difficulty-expert">Expert</span>
+                </div>
+                <p class="exercise-description">
+                    Monte estrutura completa de agência boutique de IA generativa. Inclua proposta comercial, portfolio premium, processo de vendas consultivas e sistema de produção escalável.
+                </p>
+                <div class="exercise-objectives">
+                    <h4>Objetivos do Exercício:</h4>
+                    <ul>
+                        <li>Criar brand book e posicionamento de agência premium</li>
+                        <li>Desenvolver 3 case studies com ROI comprovado</li>
+                        <li>Estruturar processo de vendas B2B enterprise</li>
+                        <li>Montar equipe inicial (2-3 colaboradores)</li>
+                        <li>Implementar sistemas de gestão e CRM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Streams -->
+    <section class="container">
+        <div class="section-header">
+            <span class="section-tag">💸 Múltiplas Fontes de Renda</span>
+            <h2>Ecossistema de Receitas</h2>
+            <p class="section-description">
+                Diversificação inteligente para estabilidade e crescimento exponencial
+            </p>
+        </div>
+
+        <div class="alert alert-warning">
+            <strong>Regra de Ouro:</strong> Nunca dependa de uma única fonte de renda. O ideal é ter 30% serviços, 30% produtos, 30% recorrência e 10% investimentos/parcerias.
+        </div>
+
+        <div class="business-models">
+            <div class="model-card">
+                <div class="model-icon">🎯</div>
+                <h3>Serviços Premium</h3>
+                <p>Projetos customizados de alto valor para clientes selecionados.</p>
+                <ul class="model-pros">
+                    <li>Identidades visuais: R$ 5-20k</li>
+                    <li>Campanhas publicitárias: R$ 10-30k</li>
+                    <li>Consultoria estratégica: R$ 2-5k/dia</li>
+                    <li>Workshops in-company: R$ 5-15k</li>
+                </ul>
+            </div>
+
+            <div class="model-card">
+                <div class="model-icon">📱</div>
+                <h3>Produtos Digitais</h3>
+                <p>Assets e recursos que vendem 24/7 no automático.</p>
+                <ul class="model-pros">
+                    <li>Template packs: R$ 97-497</li>
+                    <li>Prompt libraries: R$ 47-297</li>
+                    <li>Cursos online: R$ 997-4.997</li>
+                    <li>Ebooks técnicos: R$ 37-197</li>
+                </ul>
+            </div>
+
+            <div class="model-card">
+                <div class="model-icon">🔄</div>
+                <h3>Receita Recorrente</h3>
+                <p>MRR previsível que cresce mês a mês.</p>
+                <ul class="model-pros">
+                    <li>Retainers mensais: R$ 3-15k</li>
+                    <li>Membership site: R$ 97-497/mês</li>
+                    <li>SaaS tools: R$ 47-297/mês</li>
+                    <li>Mentoria em grupo: R$ 997-2.997/mês</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Resources -->
+    <section class="container" id="resources">
+        <div class="section-header">
+            <span class="section-tag">🛠️ Ferramentas & Recursos</span>
+            <h2>Arsenal de Monetização</h2>
+            <p class="section-description">
+                Ferramentas essenciais para escalar sua receita
+            </p>
+        </div>
+
+        <div class="resources-grid">
+            <a href="#" class="resource-card">
+                <div class="resource-icon">📊</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Calculadora de Pricing</h4>
+                    <p class="resource-description">Ferramenta para calcular preços baseados em valor</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">📝</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Templates de Contrato</h4>
+                    <p class="resource-description">Modelos jurídicos para diferentes serviços</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">🚀</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Launch Blueprint</h4>
+                    <p class="resource-description">Passo a passo para lançamentos de 6 dígitos</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">💎</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Proposta Premium</h4>
+                    <p class="resource-description">Template de proposta que converte 70%+</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">📈</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Dashboard Financeiro</h4>
+                    <p class="resource-description">Planilha completa de gestão financeira</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">🎓</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Sales Script</h4>
+                    <p class="resource-description">Roteiro de vendas consultivas que fecha 50%+</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Final Tip -->
+    <div class="container">
+        <div class="final-tip">
+            <h3>💡 Dica Master de Monetização</h3>
+            <p>
+                O segredo para R$ 50k+/mês não está em trabalhar mais, mas em criar sistemas de alto valor que funcionam para você. Foque em construir ativos (produtos, processos, marca) que multiplicam seu tempo. Lembre-se: com IA você pode atender 10x mais clientes com a mesma qualidade. Use isso para cobrar premium, não para cobrar barato. Seu conhecimento especializado vale ouro - precifique de acordo!
+            </p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="container">
+        <div class="navigation">
+            <a href="masterclass-modulo-05.html" class="nav-button prev">
+                <span>←</span>
+                Módulo 05
+            </a>
+            <div class="current-module">
+                <div class="current-module-label">Você está no</div>
+                <div class="current-module-number">Módulo 06</div>
+            </div>
+            <a href="masterclass-modulo-07.html" class="nav-button">
+                Módulo 07
+                <span>→</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">IMG Masterclass</div>
+            <p class="footer-text">
+                Transformando especialistas em autoridades milionárias da IA generativa
+            </p>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="../trilhas/masterclass.html">Trilha Completa</a>
+                <a href="#lessons">Aulas</a>
+                <a href="#cases">Cases</a>
+                <a href="#resources">Recursos</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

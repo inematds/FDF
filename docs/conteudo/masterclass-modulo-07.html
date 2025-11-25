@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 07: Comunidade e Liderança - Trilha Masterclass | IMG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --masterclass: #8B5CF6;
+            --masterclass-dark: #7C3AED;
+            --masterclass-darker: #6D28D9;
+            --masterclass-light: #A78BFA;
+            --masterclass-lighter: #C4B5FD;
+            --masterclass-bg: rgba(139, 92, 246, 0.05);
+            --masterclass-border: rgba(139, 92, 246, 0.2);
+            --dark-bg: #0F0F0F;
+            --darker-bg: #0A0A0A;
+            --card-bg: rgba(20, 20, 20, 0.95);
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+            --text-muted: #707070;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --info: #3B82F6;
+            --gold: #FFD700;
+            --star: #FFC107;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--masterclass-border);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--masterclass-light);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .module-badge {
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 5rem 2rem;
+            background: radial-gradient(ellipse at top, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(139, 92, 246, 0.03) 10px,
+                rgba(139, 92, 246, 0.03) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--masterclass-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Leadership Showcase */
+        .leadership-banner {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 2px solid var(--star);
+            border-radius: 30px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .leadership-banner::before {
+            content: '🌟';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 150px;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+
+        .leadership-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--star) 0%, var(--masterclass) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .leadership-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .leadership-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .leadership-metric {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        .leadership-metric-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--star);
+            margin-bottom: 0.5rem;
+        }
+
+        .leadership-metric-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--masterclass);
+            padding: 0.4rem 1rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--masterclass-lighter) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Platform Cards */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .platform-card {
+            background: var(--card-bg);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .platform-card.featured {
+            border-color: var(--star);
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.05) 0%, var(--card-bg) 100%);
+        }
+
+        .platform-card.featured::before {
+            content: 'MAIOR ALCANCE';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--star);
+            color: var(--dark-bg);
+            padding: 0.3rem 3rem;
+            font-size: 0.7rem;
+            font-weight: 900;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(139, 92, 246, 0.3);
+            border-color: var(--masterclass);
+        }
+
+        .platform-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .platform-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .platform-stats {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--success);
+            margin: 1rem 0;
+        }
+
+        .platform-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .platform-strategies {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .platform-strategies li {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .platform-strategies li::before {
+            content: '🎯';
+            margin-top: -2px;
+        }
+
+        /* Community Building Section */
+        .community-stages {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stage-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, var(--card-bg) 100%);
+            border-left: 5px solid var(--masterclass);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .stage-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .stage-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stage-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .stage-info {
+            flex: 1;
+        }
+
+        .stage-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .stage-size {
+            color: var(--masterclass);
+            font-weight: 600;
+        }
+
+        .stage-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .stage-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .action-tag {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--masterclass-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        /* Lessons Grid */
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .lesson-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, var(--card-bg) 100%);
+            border: 2px solid var(--masterclass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lesson-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+        }
+
+        .lesson-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+        }
+
+        .lesson-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .lesson-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+        }
+
+        .lesson-duration {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--masterclass);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .lesson-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .lesson-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .lesson-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .topic-tag {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--masterclass-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        /* Influence Metrics */
+        .influence-dashboard {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(124, 58, 237, 0.02) 100%);
+            border: 2px solid var(--masterclass-border);
+            border-radius: 25px;
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .influence-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .influence-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .influence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .influence-metric {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .influence-metric:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+        }
+
+        .influence-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .influence-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--masterclass-light);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .influence-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Partnership Section */
+        .partnerships-container {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .partnership-card {
+            background: var(--card-bg);
+            border: 2px solid var(--masterclass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partnership-type {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .partnership-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .partnership-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .partnership-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .benefit-item::before {
+            content: '✅';
+            color: var(--success);
+        }
+
+        /* Exercises Section */
+        .exercises-container {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .exercise-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);
+            border: 2px solid var(--masterclass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exercise-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--masterclass) 0%, transparent 70%);
+            opacity: 0.1;
+            transform: translate(30%, -30%);
+        }
+
+        .exercise-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .exercise-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .difficulty-badge {
+            padding: 0.4rem 1rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .difficulty-expert {
+            background: linear-gradient(135deg, var(--danger) 0%, #DC2626 100%);
+            color: white;
+        }
+
+        .exercise-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .exercise-objectives {
+            background: rgba(139, 92, 246, 0.05);
+            border-left: 3px solid var(--masterclass);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .exercise-objectives h4 {
+            color: var(--masterclass);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .exercise-objectives ul {
+            list-style: none;
+        }
+
+        .exercise-objectives li {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .exercise-objectives li::before {
+            content: '→';
+            color: var(--masterclass);
+            font-weight: bold;
+            margin-top: -2px;
+        }
+
+        /* Legacy Section */
+        .legacy-section {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-radius: 30px;
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .legacy-section::before {
+            content: '👑';
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            font-size: 200px;
+            opacity: 0.05;
+            transform: rotate(-20deg);
+        }
+
+        .legacy-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--star) 0%, var(--masterclass) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .legacy-description {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .legacy-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pillar-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(255, 193, 7, 0.2);
+        }
+
+        .pillar-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .pillar-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--star);
+            margin-bottom: 1rem;
+        }
+
+        .pillar-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Resources Section */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .resource-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+            border-color: var(--masterclass);
+        }
+
+        .resource-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .resource-info {
+            flex: 1;
+        }
+
+        .resource-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .resource-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Final Tip Section */
+        .final-tip {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border: 2px solid var(--masterclass);
+            border-radius: 30px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-tip::before {
+            content: '💡';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 100px;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+
+        .final-tip h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .final-tip p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Navigation Buttons */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            margin: 4rem 0;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--masterclass-border);
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-dark) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        .nav-button.prev {
+            flex-direction: row-reverse;
+        }
+
+        .nav-button.finish {
+            background: linear-gradient(135deg, var(--star) 0%, var(--masterclass) 100%);
+            font-size: 1.1rem;
+            padding: 1.2rem 2.5rem;
+        }
+
+        .nav-button span {
+            font-size: 1.5rem;
+        }
+
+        .current-module {
+            text-align: center;
+            flex: 1;
+        }
+
+        .current-module-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .current-module-number {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);
+            border-top: 1px solid var(--masterclass-border);
+            padding: 3rem 2rem;
+            margin-top: 6rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--masterclass) 0%, var(--masterclass-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--masterclass-light);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .platforms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lessons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .legacy-pillars {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+
+            .nav-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s ease infinite;
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            padding-left: 4rem;
+        }
+
+        .alert::before {
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+        }
+
+        .alert-info {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #60A5FA;
+        }
+
+        .alert-info::before {
+            content: 'ℹ️';
+        }
+
+        .alert-success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34D399;
+        }
+
+        .alert-success::before {
+            content: '✅';
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                🌟 IMG Masterclass
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../trilhas/masterclass.html">Trilha</a>
+                <a href="#lessons">Aulas</a>
+                <a href="#community">Comunidade</a>
+                <span class="module-badge">Módulo 07</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">
+                🌟 Comunidade e Liderança • 10 horas de conteúdo
+            </div>
+            <h1 class="gradient-text">Comunidade e Liderança</h1>
+            <p class="hero-description">
+                Construa sua marca pessoal, lidere uma comunidade engajada e crie um legado duradouro no mercado de IA generativa. Transforme-se em uma autoridade reconhecida e inspiradora.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">100k+</div>
+                    <div class="stat-label">Seguidores</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">5k+</div>
+                    <div class="stat-label">Comunidade</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">50+</div>
+                    <div class="stat-label">Parcerias</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">Top 1%</div>
+                    <div class="stat-label">Autoridade</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Banner -->
+    <section class="container">
+        <div class="leadership-banner">
+            <h2 class="leadership-title">Torne-se uma Autoridade Global</h2>
+            <p class="leadership-subtitle">Construa influência, impacto e um negócio perpétuo</p>
+            <div class="leadership-metrics">
+                <div class="leadership-metric">
+                    <div class="leadership-metric-value">1M+</div>
+                    <div class="leadership-metric-label">Alcance mensal</div>
+                </div>
+                <div class="leadership-metric">
+                    <div class="leadership-metric-value">500+</div>
+                    <div class="leadership-metric-label">Alunos formados</div>
+                </div>
+                <div class="leadership-metric">
+                    <div class="leadership-metric-value">10x</div>
+                    <div class="leadership-metric-label">Multiplicação de valor</div>
+                </div>
+                <div class="leadership-metric">
+                    <div class="leadership-metric-value">∞</div>
+                    <div class="leadership-metric-label">Impacto duradouro</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Strategies -->
+    <section class="container">
+        <div class="section-header">
+            <span class="section-tag">📱 Estratégias por Plataforma</span>
+            <h2>Domine Cada Canal</h2>
+            <p class="section-description">
+                Táticas específicas para construir audiência em cada plataforma principal
+            </p>
+        </div>
+
+        <div class="platforms-grid">
+            <div class="platform-card featured">
+                <div class="platform-icon">🐦</div>
+                <h3>Twitter/X Strategy</h3>
+                <div class="platform-stats">10-50k seguidores em 6 meses</div>
+                <p>A plataforma mais rápida para construir autoridade em tech e IA. Ideal para networking com decision makers e thought leaders.</p>
+                <ul class="platform-strategies">
+                    <li>Thread strategy com 10+ tweets semanais</li>
+                    <li>Build in public documentando projetos</li>
+                    <li>Engagement pods com outros creators</li>
+                    <li>Live tweeting de eventos e lançamentos</li>
+                </ul>
+            </div>
+
+            <div class="platform-card">
+                <div class="platform-icon">📸</div>
+                <h3>Instagram Visual</h3>
+                <div class="platform-stats">20-100k seguidores em 12 meses</div>
+                <p>Showcase visual do seu trabalho com IA. Perfect para portfolio vivo e atração de clientes visuais.</p>
+                <ul class="platform-strategies">
+                    <li>Carrossel educativo 3x/semana</li>
+                    <li>Reels de processo criativo</li>
+                    <li>Stories com behind the scenes</li>
+                    <li>IGTV com tutoriais longos</li>
+                </ul>
+            </div>
+
+            <div class="platform-card">
+                <div class="platform-icon">💼</div>
+                <h3>LinkedIn Professional</h3>
+                <div class="platform-stats">5-20k conexões relevantes</div>
+                <p>Network B2B e autoridade corporativa. Essencial para fechar contratos enterprise e parcerias estratégicas.</p>
+                <ul class="platform-strategies">
+                    <li>Artigos longos semanais</li>
+                    <li>Case studies com métricas</li>
+                    <li>LinkedIn Live mensal</li>
+                    <li>Newsletter própria na plataforma</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Building Stages -->
+    <section class="container" id="community">
+        <div class="section-header">
+            <span class="section-tag">🏗️ Construção de Comunidade</span>
+            <h2>Estágios de Crescimento</h2>
+            <p class="section-description">
+                Roadmap completo para construir uma comunidade engajada e lucrativa
+            </p>
+        </div>
+
+        <div class="community-stages">
+            <div class="stage-card">
+                <div class="stage-header">
+                    <div class="stage-number">01</div>
+                    <div class="stage-info">
+                        <h3 class="stage-title">Semente</h3>
+                        <span class="stage-size">0-100 membros</span>
+                    </div>
+                </div>
+                <p class="stage-description">
+                    Fase inicial de alta qualidade e engajamento pessoal. Foque em criar cultura forte, estabelecer valores e formar early adopters evangélicos. Responda pessoalmente cada mensagem e crie conexões profundas.
+                </p>
+                <div class="stage-actions">
+                    <span class="action-tag">Discord/Telegram gratuito</span>
+                    <span class="action-tag">Onboarding pessoal</span>
+                    <span class="action-tag">Weekly calls</span>
+                    <span class="action-tag">Conteúdo exclusivo</span>
+                </div>
+            </div>
+
+            <div class="stage-card">
+                <div class="stage-header">
+                    <div class="stage-number">02</div>
+                    <div class="stage-info">
+                        <h3 class="stage-title">Crescimento</h3>
+                        <span class="stage-size">100-1000 membros</span>
+                    </div>
+                </div>
+                <p class="stage-description">
+                    Sistematização e primeiras monetizações. Implemente moderadores, crie processos de onboarding automatizados, lance membership pago com benefícios premium. Mantenha cultura através de rituais e eventos.
+                </p>
+                <div class="stage-actions">
+                    <span class="action-tag">Membership R$ 47-97/mês</span>
+                    <span class="action-tag">Moderadores voluntários</span>
+                    <span class="action-tag">Eventos mensais</span>
+                    <span class="action-tag">Gamification</span>
+                </div>
+            </div>
+
+            <div class="stage-card">
+                <div class="stage-header">
+                    <div class="stage-number">03</div>
+                    <div class="stage-info">
+                        <h3 class="stage-title">Escala</h3>
+                        <span class="stage-size">1000-5000 membros</span>
+                    </div>
+                </div>
+                <p class="stage-description">
+                    Profissionalização completa com equipe dedicada. Multiple tiers de membership, programa de embaixadores, parcerias com marcas, eventos presenciais. Comunidade auto-sustentável com líderes emergentes.
+                </p>
+                <div class="stage-actions">
+                    <span class="action-tag">Tiers R$ 97/297/997</span>
+                    <span class="action-tag">Community manager</span>
+                    <span class="action-tag">Eventos híbridos</span>
+                    <span class="action-tag">Marketplace interno</span>
+                </div>
+            </div>
+
+            <div class="stage-card">
+                <div class="stage-header">
+                    <div class="stage-number">04</div>
+                    <div class="stage-info">
+                        <h3 class="stage-title">Autoridade</h3>
+                        <span class="stage-size">5000+ membros</span>
+                    </div>
+                </div>
+                <p class="stage-description">
+                    Comunidade como ativo de negócio valuado. Conferências próprias, certificações, spin-offs regionais, M&A opportunities. Você se torna o hub central do ecossistema de IA generativa no Brasil.
+                </p>
+                <div class="stage-actions">
+                    <span class="action-tag">Conferência anual</span>
+                    <span class="action-tag">Certificação oficial</span>
+                    <span class="action-tag">Investimentos/exits</span>
+                    <span class="action-tag">Franquia/licenciamento</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lessons Section -->
+    <section class="container" id="lessons">
+        <div class="section-header">
+            <span class="section-tag">📚 Conteúdo do Módulo</span>
+            <h2>Aulas Estruturadas</h2>
+            <p class="section-description">
+                6 aulas transformadoras para construir sua liderança e legado
+            </p>
+        </div>
+
+        <div class="lessons-grid">
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-number">01</div>
+                    <span class="lesson-duration">⏱️ 90 min</span>
+                </div>
+                <h3 class="lesson-title">Personal Branding Estratégico</h3>
+                <p class="lesson-description">
+                    Construa uma marca pessoal autêntica e memorável. Definição de arquétipo, tom de voz, visual identity, storytelling pessoal. Posicionamento único no mercado e diferenciação competitiva duradoura.
+                </p>
+                <div class="lesson-topics">
+                    <span class="topic-tag">Brand Architecture</span>
+                    <span class="topic-tag">Storytelling</span>
+                    <span class="topic-tag">Visual Identity</span>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-number">02</div>
+                    <span class="lesson-duration">⏱️ 100 min</span>
+                </div>
+                <h3 class="lesson-title">Growth Hacking para Creators</h3>
+                <p class="lesson-description">
+                    Técnicas avançadas de crescimento orgânico e viral. Algoritmos de cada plataforma, content hacking, viral engineering, cross-promotion. Do zero aos primeiros 10k seguidores em 90 dias.
+                </p>
+                <div class="lesson-topics">
+                    <span class="topic-tag">Algorithm Hacking</span>
+                    <span class="topic-tag">Viral Content</span>
+                    <span class="topic-tag">Growth Loops</span>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-number">03</div>
+                    <span class="lesson-duration">⏱️ 110 min</span>
+                </div>
+                <h3 class="lesson-title">Content Marketing Avançado</h3>
+                <p class="lesson-description">
+                    Sistema de produção de conteúdo em escala mantendo qualidade. Content pillars, calendário editorial, repurposing strategy, SEO para creators. Transforme 1 peça em 20 posts diferentes.
+                </p>
+                <div class="lesson-topics">
+                    <span class="topic-tag">Content Systems</span>
+                    <span class="topic-tag">Repurposing</span>
+                    <span class="topic-tag">SEO Strategy</span>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-number">04</div>
+                    <span class="lesson-duration">⏱️ 95 min</span>
+                </div>
+                <h3 class="lesson-title">Community Management Pro</h3>
+                <p class="lesson-description">
+                    Gestão profissional de comunidades grandes. Moderação escalável, cultura e valores, eventos e rituais, monetização ética. Transforme membros em evangelistas e co-criadores.
+                </p>
+                <div class="lesson-topics">
+                    <span class="topic-tag">Community Ops</span>
+                    <span class="topic-tag">Culture Building</span>
+                    <span class="topic-tag">Engagement</span>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-number">05</div>
+                    <span class="lesson-duration">⏱️ 105 min</span>
+                </div>
+                <h3 class="lesson-title">Ensino como Negócio</h3>
+                <p class="lesson-description">
+                    Transforme conhecimento em império educacional. Criação de cursos premium, cohort-based courses, mentoria em grupo, certificações. Do primeiro curso ao instituto de ensino reconhecido.
+                </p>
+                <div class="lesson-topics">
+                    <span class="topic-tag">Course Creation</span>
+                    <span class="topic-tag">LMS Platforms</span>
+                    <span class="topic-tag">Certification</span>
+                </div>
+            </div>
+
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-number">06</div>
+                    <span class="lesson-duration">⏱️ 120 min</span>
+                </div>
+                <h3 class="lesson-title">Liderança e Legado</h3>
+                <p class="lesson-description">
+                    Construa um legado que transcende você. Formação de líderes, sucessão planejada, impacto social, filantropia estratégica. Como criar algo que dura gerações e transforma vidas.
+                </p>
+                <div class="lesson-topics">
+                    <span class="topic-tag">Leadership Dev</span>
+                    <span class="topic-tag">Legacy Planning</span>
+                    <span class="topic-tag">Social Impact</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Influence Metrics -->
+    <section class="container">
+        <div class="influence-dashboard">
+            <div class="influence-header">
+                <h2 class="influence-title">Métricas de Influência</h2>
+                <p style="color: var(--text-secondary);">KPIs essenciais para medir seu impacto e crescimento</p>
+            </div>
+            <div class="influence-grid">
+                <div class="influence-metric">
+                    <div class="influence-icon">📊</div>
+                    <span class="influence-value">1M+</span>
+                    <span class="influence-label">Impressões/Mês</span>
+                </div>
+                <div class="influence-metric">
+                    <div class="influence-icon">💬</div>
+                    <span class="influence-value">15%</span>
+                    <span class="influence-label">Engagement Rate</span>
+                </div>
+                <div class="influence-metric">
+                    <div class="influence-icon">📈</div>
+                    <span class="influence-value">10k</span>
+                    <span class="influence-label">Novos Followers/Mês</span>
+                </div>
+                <div class="influence-metric">
+                    <div class="influence-icon">🎯</div>
+                    <span class="influence-value">50</span>
+                    <span class="influence-label">Leads Qualificados</span>
+                </div>
+                <div class="influence-metric">
+                    <div class="influence-icon">💰</div>
+                    <span class="influence-value">R$ 500</span>
+                    <span class="influence-label">LTV por Membro</span>
+                </div>
+                <div class="influence-metric">
+                    <div class="influence-icon">🌟</div>
+                    <span class="influence-value">95%</span>
+                    <span class="influence-label">Satisfação (NPS)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section class="container">
+        <div class="section-header">
+            <span class="section-tag">🤝 Parcerias Estratégicas</span>
+            <h2>Colaborações de Alto Impacto</h2>
+            <p class="section-description">
+                Tipos de parcerias que aceleram crescimento e multiplicam alcance
+            </p>
+        </div>
+
+        <div class="partnerships-container">
+            <div class="partnership-card">
+                <span class="partnership-type">Parcerias de Conteúdo</span>
+                <h3 class="partnership-title">Co-criação com Influencers</h3>
+                <p class="partnership-description">
+                    Colabore com outros creators para alcançar novas audiências. Lives conjuntas, podcasts, webinars, challenges virais. Cross-pollination de comunidades com benefício mútuo.
+                </p>
+                <div class="partnership-benefits">
+                    <div class="benefit-item">Audiência 10x maior</div>
+                    <div class="benefit-item">Credibilidade instant</div>
+                    <div class="benefit-item">Content diversificado</div>
+                    <div class="benefit-item">Network expansion</div>
+                </div>
+            </div>
+
+            <div class="partnership-card">
+                <span class="partnership-type">Parcerias Comerciais</span>
+                <h3 class="partnership-title">Brand Deals e Sponsorships</h3>
+                <p class="partnership-description">
+                    Monetize sua influência com marcas alinhadas aos seus valores. Sponsored content, embaixador de marca, produtos white-label, revenue sharing em vendas.
+                </p>
+                <div class="partnership-benefits">
+                    <div class="benefit-item">Receita adicional 30%+</div>
+                    <div class="benefit-item">Produtos exclusivos</div>
+                    <div class="benefit-item">Marketing budget</div>
+                    <div class="benefit-item">Legitimidade market</div>
+                </div>
+            </div>
+
+            <div class="partnership-card">
+                <span class="partnership-type">Parcerias Educacionais</span>
+                <h3 class="partnership-title">Instituições e Certificações</h3>
+                <p class="partnership-description">
+                    Valide sua expertise com parcerias acadêmicas. Cursos em universidades, certificações reconhecidas, programas corporativos, bootcamps oficiais.
+                </p>
+                <div class="partnership-benefits">
+                    <div class="benefit-item">Credibilidade formal</div>
+                    <div class="benefit-item">Acesso B2B/B2G</div>
+                    <div class="benefit-item">Ticket 10x maior</div>
+                    <div class="benefit-item">Impacto em escala</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Exercises -->
+    <section class="container">
+        <div class="section-header">
+            <span class="section-tag">💪 Exercícios Práticos</span>
+            <h2>Desafios de Liderança</h2>
+            <p class="section-description">
+                Projetos transformadores para construir sua autoridade e comunidade
+            </p>
+        </div>
+
+        <div class="exercises-container">
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3 class="exercise-title">30-Day Authority Challenge</h3>
+                    <span class="difficulty-badge difficulty-expert">Expert</span>
+                </div>
+                <p class="exercise-description">
+                    Execute um plano intensivo de 30 dias para estabelecer autoridade em IA generativa. Publique conteúdo diário, faça networking estratégico, lance um produto mínimo e construa lista de 1000 subscribers.
+                </p>
+                <div class="exercise-objectives">
+                    <h4>Objetivos do Exercício:</h4>
+                    <ul>
+                        <li>Publicar 30 peças de conteúdo original (1/dia)</li>
+                        <li>Crescer 3000+ seguidores orgânicos</li>
+                        <li>Fazer 10 collabs com outros creators</li>
+                        <li>Lançar lead magnet com 500+ downloads</li>
+                        <li>Conseguir primeiro cliente via content marketing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3 class="exercise-title">Community MVP Launch</h3>
+                    <span class="difficulty-badge difficulty-expert">Expert</span>
+                </div>
+                <p class="exercise-description">
+                    Lance uma comunidade paga do zero e alcance 100 membros fundadores em 30 dias. Crie proposta de valor única, onboarding experience, primeiros eventos e cultura inicial.
+                </p>
+                <div class="exercise-objectives">
+                    <h4>Objetivos do Exercício:</h4>
+                    <ul>
+                        <li>Definir nicho e proposta de valor clara</li>
+                        <li>Setup completo Discord/Circle com automações</li>
+                        <li>Criar 10 recursos exclusivos para membros</li>
+                        <li>Realizar 4 eventos ao vivo (1/semana)</li>
+                        <li>Atingir MRR de R$ 5k com 100 membros</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3 class="exercise-title">Influence Summit Organization</h3>
+                    <span class="difficulty-badge difficulty-expert">Expert</span>
+                </div>
+                <p class="exercise-description">
+                    Organize um evento online sobre IA generativa. Convide speakers, monte programação, faça marketing, gerencie inscrições e crie networking opportunities para 500+ participantes.
+                </p>
+                <div class="exercise-objectives">
+                    <h4>Objetivos do Exercício:</h4>
+                    <ul>
+                        <li>Curar 10 palestrantes de alto nível</li>
+                        <li>Criar landing page com 30% conversão</li>
+                        <li>Alcançar 1000 inscritos (500 participantes)</li>
+                        <li>Gerar R$ 20k em sponsorships</li>
+                        <li>Estabelecer evento como referência anual</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <div class="container">
+        <div class="legacy-section">
+            <h2 class="legacy-title">Construa Seu Legado</h2>
+            <p class="legacy-description">
+                Sua jornada não termina com sucesso pessoal. É sobre criar impacto duradouro, formar próximas gerações de líderes e deixar o mundo melhor através da democratização da IA generativa.
+            </p>
+            <div class="legacy-pillars">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🎓</div>
+                    <h3 class="pillar-title">Educação Transformadora</h3>
+                    <p class="pillar-description">
+                        Forme milhares de profissionais, crie metodologias próprias, estabeleça padrões de mercado.
+                    </p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🌍</div>
+                    <h3 class="pillar-title">Impacto Social</h3>
+                    <p class="pillar-description">
+                        Use IA para resolver problemas sociais, democratize acesso ao conhecimento, gere oportunidades.
+                    </p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🚀</div>
+                    <h3 class="pillar-title">Inovação Contínua</h3>
+                    <p class="pillar-description">
+                        Lidere a fronteira da tecnologia, inspire novos creators, defina o futuro da indústria criativa.
+                    </p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">💫</div>
+                    <h3 class="pillar-title">Comunidade Perpétua</h3>
+                    <p class="pillar-description">
+                        Crie algo maior que você, forme líderes sucessores, construa instituição que dura gerações.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resources Section -->
+    <section class="container" id="resources">
+        <div class="section-header">
+            <span class="section-tag">🛠️ Ferramentas & Recursos</span>
+            <h2>Arsenal de Liderança</h2>
+            <p class="section-description">
+                Ferramentas essenciais para construir autoridade e comunidade
+            </p>
+        </div>
+
+        <div class="resources-grid">
+            <a href="#" class="resource-card">
+                <div class="resource-icon">📱</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Social Media Kit</h4>
+                    <p class="resource-description">Templates e calendário para todas plataformas</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">🎥</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Content Creation Tools</h4>
+                    <p class="resource-description">Stack completo para produção em escala</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">👥</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Community Playbook</h4>
+                    <p class="resource-description">SOPs para gestão de comunidades grandes</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">📊</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Analytics Dashboard</h4>
+                    <p class="resource-description">Métricas de crescimento e engagement</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">🤝</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Partnership Templates</h4>
+                    <p class="resource-description">Contratos e propostas para collabs</p>
+                </div>
+            </a>
+
+            <a href="#" class="resource-card">
+                <div class="resource-icon">🎤</div>
+                <div class="resource-info">
+                    <h4 class="resource-title">Speaking Toolkit</h4>
+                    <p class="resource-description">Media kit e recursos para palestras</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Final Tip -->
+    <div class="container">
+        <div class="final-tip">
+            <h3>💡 Dica Master de Liderança</h3>
+            <p>
+                Liderança autêntica não é sobre ter todas as respostas, mas sobre fazer as perguntas certas e criar espaço para outros brilharem. Seu maior legado não será o que você construiu sozinho, mas quantas pessoas você empoderou para construírem suas próprias histórias de sucesso. Lidere com vulnerabilidade, ensine com generosidade, e lembre-se: uma comunidade engajada vale mais que um milhão de seguidores passivos. Seu impacto se multiplica através das pessoas que você transforma!
+            </p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="container">
+        <div class="navigation">
+            <a href="masterclass-modulo-06.html" class="nav-button prev">
+                <span>←</span>
+                Módulo 06
+            </a>
+            <div class="current-module">
+                <div class="current-module-label">Você está no</div>
+                <div class="current-module-number">Módulo Final</div>
+            </div>
+            <a href="../trilhas/masterclass.html" class="nav-button finish">
+                🎓 Concluir Trilha Masterclass
+                <span>🎉</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">IMG Masterclass</div>
+            <p class="footer-text">
+                Parabéns por chegar até aqui! Você agora faz parte da elite da IA generativa.
+            </p>
+            <div class="footer-links">
+                <a href="../index.html">Home</a>
+                <a href="../trilhas/masterclass.html">Trilha Completa</a>
+                <a href="#lessons">Aulas</a>
+                <a href="#community">Comunidade</a>
+                <a href="#resources">Recursos</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
