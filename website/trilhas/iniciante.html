@@ -11,6 +11,7 @@
   <!-- Tailwind Config -->
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -67,12 +68,18 @@
       overflow: hidden;
       box-shadow: 0 20px 25px rgba(0,0,0,0.3);
     }
+    .dark .modal-content {
+      background-color: #1f2937;
+    }
     .modal-header {
       padding: 1.5rem 2rem;
       border-bottom: 1px solid #e5e7eb;
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+    .dark .modal-header {
+      border-bottom-color: #374151;
     }
     .modal-body {
       padding: 2rem;
@@ -97,10 +104,10 @@
     }
   </style>
 </head>
-<body class="bg-neutral-50 text-neutral-900">
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
 
   <!-- Navegação -->
-  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-neutral-200">
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-iniciante via-tecnico to-masterclass bg-clip-text text-transparent">
@@ -108,21 +115,30 @@
         </a>
 
         <div class="hidden md:flex items-center space-x-8">
-          <a href="../index.html" class="text-neutral-700 hover:text-iniciante transition">Início</a>
-          <a href="../index.html#trilhas" class="text-neutral-700 hover:text-iniciante transition">Trilhas</a>
-          <a href="https://github.com/inematds/FDF" class="text-neutral-700 hover:text-iniciante transition">GitHub</a>
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-iniciante transition">Início</a>
+          <a href="../index.html#trilhas" class="text-neutral-700 dark:text-neutral-300 hover:text-iniciante transition">Trilhas</a>
+          <a href="https://github.com/inematds/FDF" class="text-neutral-700 dark:text-neutral-300 hover:text-iniciante transition">GitHub</a>
+
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
   </nav>
 
   <!-- Breadcrumb -->
-  <div class="bg-white border-b border-neutral-200">
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <nav class="flex text-sm" aria-label="Breadcrumb">
         <a href="../index.html" class="text-iniciante hover:text-emerald-600">Início</a>
-        <span class="mx-2 text-neutral-400">/</span>
-        <span class="text-neutral-600">Trilha Iniciante</span>
+        <span class="mx-2 text-neutral-400 dark:text-neutral-500">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Trilha Iniciante</span>
       </nav>
     </div>
   </div>
@@ -175,7 +191,7 @@
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
     <!-- MÓDULO 1 -->
-    <div class="chapter-card bg-white rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-iniciante transition-all">
+    <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-iniciante transition-all">
 
       <!-- Header -->
       <div class="flex items-start justify-between mb-6">
@@ -183,10 +199,10 @@
           <span class="inline-block px-3 py-1 bg-iniciante/10 text-iniciante rounded-full text-sm font-semibold mb-3">
             6 horas
           </span>
-          <h2 class="text-3xl font-bold text-neutral-900 mb-2">
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
             🌟 Módulo 1: Mentalidade do Criador
           </h2>
-          <p class="text-neutral-600">
+          <p class="text-neutral-600 dark:text-neutral-400">
             Transforme sua forma de pensar sobre criação visual e descubra talentos que você não sabia que tinha
           </p>
         </div>
@@ -212,26 +228,26 @@
 
       <!-- Tópicos Expansíveis -->
       <div class="mb-4">
-        <h3 class="font-semibold text-neutral-900 mb-3 text-lg">
+        <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
           📚 Tópicos-chave do módulo:
         </h3>
 
-        <ul class="topics-list space-y-2">
+        <ul class="topics-list space-y-0.5">
 
           <!-- Tópico 1 -->
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               📌 Aula 1: Você Não Precisa Ser Designer Para Criar
             </button>
 
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> A grande mudança no processo criativo. Antes precisava anos de estudo, softwares caros e talento para desenho. Hoje com IA basta criatividade, capacidade de descrever o que quer e vontade de aprender.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Entender que criatividade está democratizada elimina o bloqueio mental. Profissionais de qualquer área podem criar conteúdo visual profissional sem depender de terceiros.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Democratização da criação, IA como ferramenta de execução, papel do criador como diretor, exemplos reais de não-designers criando
               </p>
             </div>
@@ -239,18 +255,18 @@
 
           <!-- Tópico 2 -->
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               🎯 Aula 2: Descobrindo Seu Talento Oculto
             </button>
 
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Exercícios práticos para identificar suas habilidades criativas latentes. Todos têm senso estético, imaginação e capacidade de avaliar o que funciona visualmente - apenas não tiveram ferramentas para expressar isso antes.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Autoconhecimento criativo aumenta confiança e direciona o aprendizado. Descobrir seus pontos fortes acelera progresso e garante satisfação com o trabalho.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Senso estético inato, imaginação visual, curadoria criativa, feedback loop, teste de percepção visual
               </p>
             </div>
@@ -258,18 +274,18 @@
 
           <!-- Tópico 3 -->
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               🤖 Aula 3: Humano + IA - A Dupla Perfeita
             </button>
 
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Entender a divisão de tarefas entre você e a IA. Você traz visão criativa, contexto, propósito e julgamento estético. IA traz execução técnica, velocidade, experimentação infinita e habilidades que levariam anos para desenvolver.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Saber o que delegar e o que controlar evita frustração e maximiza resultados. Transforma IA de "ameaça" para "superpoder" pessoal.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Colaboração humano-IA, direção criativa vs execução, iteração rápida, amplificação de capacidades, vantagem competitiva
               </p>
             </div>
@@ -277,18 +293,18 @@
 
           <!-- Tópico 4 -->
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               🎨 Aula 4: O Novo Papel do Criador
             </button>
 
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Antes o criador executava com ferramentas técnicas. Hoje você é diretor de arte, curador, editor e visionário. Seu trabalho é ter a ideia certa, comunicá-la bem e escolher os melhores resultados.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Mudar mentalidade de "executor" para "diretor" desbloqueia potencial criativo. Profissionais que entendem esse papel crescem 10x mais rápido.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Direção criativa, curadoria visual, tomada de decisão estética, ciclo de iteração, visão vs execução
               </p>
             </div>
@@ -296,18 +312,18 @@
 
           <!-- Tópico 5 -->
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               💪 Aula 5: Construindo Confiança Para Criar
             </button>
 
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Estratégias para superar síndrome do impostor e medo de começar. Primeiras criações sempre são imperfeitas - e está tudo bem. Confiança vem com prática consistente, não talento inato.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Bloqueios mentais são o maior impedimento para iniciantes. Técnicas comprovadas de construção de confiança aceleram curva de aprendizado em 300%.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Síndrome do impostor, prática deliberada, feedback construtivo, comunidade de apoio, celebração de pequenas vitórias
               </p>
             </div>
@@ -319,17 +335,17 @@
     </div>
 
     <!-- MÓDULO 2 -->
-    <div class="chapter-card bg-white rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-iniciante transition-all">
+    <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-iniciante transition-all">
 
       <div class="flex items-start justify-between mb-6">
         <div>
           <span class="inline-block px-3 py-1 bg-iniciante/10 text-iniciante rounded-full text-sm font-semibold mb-3">
             8 horas
           </span>
-          <h2 class="text-3xl font-bold text-neutral-900 mb-2">
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
             🛠️ Módulo 2: Ferramentas e Fundamentos
           </h2>
-          <p class="text-neutral-600">
+          <p class="text-neutral-600 dark:text-neutral-400">
             Domine as melhores ferramentas de IA generativa e aprenda fundamentos de design visual
           </p>
         </div>
@@ -353,92 +369,92 @@
       </div>
 
       <div class="mb-4">
-        <h3 class="font-semibold text-neutral-900 mb-3 text-lg">
+        <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
           📚 Tópicos-chave do módulo:
         </h3>
 
-        <ul class="topics-list space-y-2">
+        <ul class="topics-list space-y-0.5">
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               🎯 Aula 1: Panorama de Ferramentas IA em 2025
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Visão completa das ferramentas disponíveis: Midjourney, DALL-E 3, Leonardo.AI, Stable Diffusion, Adobe Firefly. Cada uma tem pontos fortes - Midjourney para arte conceitual, Leonardo para controle, Firefly para uso comercial sem restrições.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Escolher a ferramenta certa economiza tempo e dinheiro. Profissionais que conhecem o ecossistema completam projetos 50% mais rápido.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Comparação Midjourney vs DALL-E vs Leonardo, preços e planos, casos de uso específicos, limitações de cada ferramenta
               </p>
             </div>
           </li>
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               🎨 Aula 2: Fundamentos de Design Visual
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Princípios básicos que todo criador deve saber: composição, hierarquia visual, teoria das cores, tipografia, balanço e contraste. Conhecimento mínimo que transforma imagens amadoras em profissionais.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> IA executa bem, mas você precisa dirigir. Entender fundamentos permite avaliar resultados e pedir ajustes que realmente melhoram a imagem.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Regra dos terços, teoria das cores, contraste, hierarquia visual, balanço simétrico vs assimétrico, espaço negativo
               </p>
             </div>
           </li>
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               ✍️ Aula 3: Anatomia de um Prompt Eficiente
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Estrutura de prompt que gera resultados consistentes: [Assunto] + [Estilo] + [Ambiente/Contexto] + [Iluminação] + [Mood/Atmosfera] + [Parâmetros técnicos]. Exemplo: "Gato persa branco, estilo aquarela, jardim florido, luz suave da tarde, atmosfera tranquila, --ar 16:9"
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Prompts estruturados eliminam tentativa e erro. Reduz de 20 tentativas para 2-3 para obter resultado desejado.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Estrutura de prompt, parâmetros (aspect ratio, quality, stylize), palavras-chave efetivas, ordem de elementos, peso de tokens
               </p>
             </div>
           </li>
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               🎬 Aula 4: Estilos e Referências Visuais
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Biblioteca mental de estilos artísticos: fotorrealista, ilustração, pintura a óleo, aquarela, pixel art, low poly, art nouveau, cyberpunk. Cada estilo tem vocabulário específico que a IA reconhece.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Comunicar estilo com precisão é 70% do sucesso na criação. Vocabulário visual rico permite explorar infinitas possibilidades criativas.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Estilos artísticos históricos, movimentos contemporâneos, artistas de referência, vocabulário técnico de fotografia, mixing de estilos
               </p>
             </div>
           </li>
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               🔧 Aula 5: Primeiros Passos Práticos
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Tutorial passo-a-passo para criar sua primeira imagem: configurar conta, entender interface, escrever primeiro prompt, interpretar resultados, fazer iterações, salvar e organizar criações.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Primeira criação é sempre intimidante. Guia prático elimina ansiedade e garante experiência positiva que motiva continuidade.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Setup de conta, interface de ferramentas, workflow básico, iteração de prompts, organização de projetos, primeiras boas práticas
               </p>
             </div>
@@ -450,17 +466,17 @@
     </div>
 
     <!-- MÓDULO 3 -->
-    <div class="chapter-card bg-white rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-iniciante transition-all">
+    <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-iniciante transition-all">
 
       <div class="flex items-start justify-between mb-6">
         <div>
           <span class="inline-block px-3 py-1 bg-iniciante/10 text-iniciante rounded-full text-sm font-semibold mb-3">
             8 horas
           </span>
-          <h2 class="text-3xl font-bold text-neutral-900 mb-2">
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
             🚀 Módulo 3: Técnicas Avançadas de Criação
           </h2>
-          <p class="text-neutral-600">
+          <p class="text-neutral-600 dark:text-neutral-400">
             Aprenda técnicas profissionais de refinamento, composição e controle criativo avançado
           </p>
         </div>
@@ -484,92 +500,92 @@
       </div>
 
       <div class="mb-4">
-        <h3 class="font-semibold text-neutral-900 mb-3 text-lg">
+        <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
           📚 Tópicos-chave do módulo:
         </h3>
 
-        <ul class="topics-list space-y-2">
+        <ul class="topics-list space-y-0.5">
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               🎯 Aula 1: Iteração e Refinamento
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Processo sistemático de melhorar imagens: gerar variações, identificar o que funciona, ajustar prompts cirurgicamente, usar remix e reroll estrategicamente. Profissionais raramente aceitam primeiro resultado.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Diferença entre amador e profissional está na iteração. Imagens excelentes vêm de 5-10 refinamentos, não sorte.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Variações, remix, reroll, ajustes incrementais, análise crítica de resultados, quando parar de iterar
               </p>
             </div>
           </li>
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               🖼️ Aula 2: Composição e Enquadramento
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Controle avançado de composição via prompt: close-up, medium shot, wide shot, bird's eye view, worm's eye view, regra dos terços, simetria, leading lines. Cada termo posiciona elementos de forma específica.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Composição correta comunica melhor a mensagem. Uma mudança de ângulo transforma imagem medíocre em impactante.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Tipos de enquadramento, ângulos de câmera, profundidade de campo, ponto focal, linhas guia, equilíbrio visual
               </p>
             </div>
           </li>
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               💡 Aula 3: Iluminação e Atmosfera
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Controle de luz define 80% do mood: golden hour, blue hour, dramatic lighting, soft diffused light, rim light, volumetric rays. Vocabulário técnico de fotografia aplicado a IA.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Iluminação separa imagens amadoras de profissionais. Dominar luz multiplica impacto emocional por 10x.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Tipos de iluminação, temperatura de cor, contraste de luz, sombras dramáticas, atmosfera e mood, horários de luz natural
               </p>
             </div>
           </li>
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               🎨 Aula 4: Paletas de Cores e Harmonia
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Teoria das cores aplicada: esquemas complementares, análogos, monocromáticos, tríades. Como especificar cores em prompts: "vibrant colors", "muted palette", "pastel tones", "cinematic color grading".
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Cores certas evocam emoções específicas e criam identidade visual consistente. Essencial para branding e projetos profissionais.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Roda cromática, esquemas de cor, psicologia das cores, saturação e brilho, paletas harmônicas, referências de color grading
               </p>
             </div>
           </li>
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               🔥 Aula 5: Prompts Negativos e Controle Fino
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Técnica de dizer à IA o que NÃO incluir. Remove elementos indesejados: "no text, no watermarks, no blurry, no distortions". Tão importante quanto prompt positivo para resultados limpos.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Elimina 90% dos problemas comuns de iniciantes. Garante imagens profissionais sem artefatos ou elementos estranhos.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Prompts negativos, lista de exclusões comuns, pesos de tokens negativos, quando usar, combinação positivo + negativo
               </p>
             </div>
@@ -581,17 +597,17 @@
     </div>
 
     <!-- MÓDULO 4 -->
-    <div class="chapter-card bg-white rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-iniciante transition-all">
+    <div class="chapter-card bg-white dark:bg-neutral-800 rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-iniciante transition-all">
 
       <div class="flex items-start justify-between mb-6">
         <div>
           <span class="inline-block px-3 py-1 bg-iniciante/10 text-iniciante rounded-full text-sm font-semibold mb-3">
             8 horas
           </span>
-          <h2 class="text-3xl font-bold text-neutral-900 mb-2">
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
             💼 Módulo 4: Do Hobby ao Profissional
           </h2>
-          <p class="text-neutral-600">
+          <p class="text-neutral-600 dark:text-neutral-400">
             Transforme habilidades em resultados práticos, construa portfólio e aprenda ética e direitos de uso
           </p>
         </div>
@@ -615,92 +631,92 @@
       </div>
 
       <div class="mb-4">
-        <h3 class="font-semibold text-neutral-900 mb-3 text-lg">
+        <h3 class="font-semibold text-neutral-900 dark:text-neutral-100 mb-3 text-lg">
           📚 Tópicos-chave do módulo:
         </h3>
 
-        <ul class="topics-list space-y-2">
+        <ul class="topics-list space-y-0.5">
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               📂 Aula 1: Organizando e Documentando Seu Trabalho
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Sistema de organização de projetos: nomear arquivos, versionar iterações, documentar prompts efetivos, criar biblioteca de referências. Profissionais economizam 40% do tempo com organização.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Caos criativo desperdiça tempo e oportunidades. Sistema organizado permite reusar sucessos e escalar produção.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Estrutura de pastas, versionamento, documentação de prompts, biblioteca de referências, backup de criações
               </p>
             </div>
           </li>
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               🎯 Aula 2: Aplicações Práticas e Casos de Uso
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Onde aplicar suas habilidades hoje: posts para redes sociais, thumbnails para YouTube, ilustrações para blogs, mockups de produtos, apresentações, materiais de marketing, storytelling visual.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Teoria sem prática não serve. Casos de uso reais transformam conhecimento em valor mensurável e oportunidades profissionais.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Social media content, thumbnails, branding visual, mockups, storytelling, materiais educacionais, apresentações
               </p>
             </div>
           </li>
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               📸 Aula 3: Construindo Seu Portfólio
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Como montar portfólio que impressiona: selecionar melhores trabalhos, criar narrativa visual, usar Behance/ArtStation/Instagram estrategicamente, escrever descrições que vendem, mostrar processo.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Portfólio bem construído abre portas profissionais. Diferença entre conseguir ou perder oportunidade está na apresentação.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Curadoria de trabalhos, plataformas de portfólio, storytelling visual, case studies, before/after, apresentação profissional
               </p>
             </div>
           </li>
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               ⚖️ Aula 4: Ética e Direitos de Uso
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Questões legais e éticas: direitos de imagens geradas por IA, uso comercial vs pessoal, atribuição, privacidade, deep fakes, desinformação, responsabilidade criativa. Cada ferramenta tem termos diferentes.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Usar IA sem entender implicações legais gera riscos. Profissionais éticos constroem reputação sólida e evitam problemas futuros.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Direitos autorais de IA, uso comercial, termos de serviço, ética criativa, transparência, deep fakes, responsabilidade
               </p>
             </div>
           </li>
 
           <li class="topic-item">
-            <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-800">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 dark:bg-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-600 rounded-lg transition-colors font-medium text-neutral-800 dark:text-neutral-200">
               🚀 Aula 5: Próximos Passos na Jornada
             </button>
-            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-              <p class="text-sm mb-2 text-gray-700">
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border-l-4 border-emerald-500">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">O que é:</strong> Roadmap de evolução: comunidades para participar, recursos para estudar, desafios criativos, quando avançar para nível técnico, como continuar praticando, metas realistas de crescimento.
               </p>
-              <p class="text-sm mb-2 text-gray-700">
+              <p class="text-sm mb-1.5 text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Por que aprender:</strong> Aprendizado sem direção desperdiça potencial. Plano claro de evolução mantém motivação e acelera progresso.
               </p>
-              <p class="text-sm text-gray-700">
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
                 <strong class="text-emerald-600">Conceitos chave:</strong> Comunidades criativas, recursos de estudo, desafios e challenges, prática deliberada, metas de crescimento, transição para nível técnico
               </p>
             </div>
@@ -759,8 +775,8 @@
   <!-- Modal Módulo 1 -->
   <div id="modal-modulo-1" class="modal">
     <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="text-2xl font-bold text-neutral-900">🌟 Módulo 1: Mentalidade do Criador</h2>
+      <div class="modal-header dark:border-neutral-700">
+        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">🌟 Módulo 1: Mentalidade do Criador</h2>
         <button class="close-modal">&times;</button>
       </div>
       <div class="modal-body">
@@ -905,6 +921,34 @@
           activeModal.classList.remove('active');
           document.body.style.overflow = 'auto';
         }
+      }
+    });
+
+    // Dark mode toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Check for saved theme preference or default to light mode
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      // Toggle icons
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      // Toggle dark mode
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
       }
     });
   </script>
