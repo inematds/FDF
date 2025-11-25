@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4: Ferramentas Profissionais - Designer do Futuro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            tecnico: '#3B82F6',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navegação -->
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm shadow-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Designer do Futuro</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../trilhas/tecnico.html" class="text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400">Voltar para Trilha</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-blue-50 to-white dark:from-neutral-800 dark:to-neutral-900 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-4">
+        <a href="../trilhas/tecnico.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold">
+          ← Voltar para Trilha Técnico
+        </a>
+      </div>
+      <div class="text-6xl mb-6">🛠️</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 leading-tight">Módulo 4: Ferramentas Profissionais</h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
+        Domine o arsenal profissional de IA: Midjourney, DALL·E 3, Stable Diffusion, ferramentas de vídeo, upscalers e workflows integrados para resultados de nível comercial
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          1 semana
+        </span>
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          8 horas
+        </span>
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          Técnico
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Objetivos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎯 O Que Você Vai Dominar Neste Módulo</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6 text-lg">
+          Este módulo vai além das ferramentas gratuitas: você vai conhecer, avaliar e dominar as plataformas profissionais usadas pela indústria global de design com IA.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+            <span class="text-blue-500 mr-4 text-2xl flex-shrink-0">🏆</span>
+            <div>
+              <strong class="text-blue-900 dark:text-blue-300">Midjourney Completo:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Dominar o padrão da indústria, desde comandos básicos até técnicas avançadas de estilização</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+            <span class="text-purple-500 mr-4 text-2xl flex-shrink-0">⚖️</span>
+            <div>
+              <strong class="text-purple-900 dark:text-purple-300">Comparativo Profissional:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Entender diferenças entre Midjourney, DALL·E 3 e Stable Diffusion para escolher a ferramenta certa</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-lg">
+            <span class="text-indigo-500 mr-4 text-2xl flex-shrink-0">🎬</span>
+            <div>
+              <strong class="text-indigo-900 dark:text-indigo-300">Ferramentas de Vídeo:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Conhecer Runway, Pika e Luma AI para adicionar movimento às suas criações</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-lg">
+            <span class="text-emerald-500 mr-4 text-2xl flex-shrink-0">🔬</span>
+            <div>
+              <strong class="text-emerald-900 dark:text-emerald-300">Workflows Integrados:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Criar pipelines profissionais com Photoshop, Lightroom e ferramentas de upscaling</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-cyan-50 dark:bg-cyan-900/20 p-4 rounded-lg">
+            <span class="text-cyan-500 mr-4 text-2xl flex-shrink-0">💰</span>
+            <div>
+              <strong class="text-cyan-900 dark:text-cyan-300">Análise de ROI:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Calcular custo vs benefício e montar seu stack ideal para cada nível profissional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panorama das Ferramentas Pro 2025 -->
+      <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-blue-200 dark:border-blue-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🌐</span>
+          <div>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300">Panorama das Ferramentas Profissionais 2025</h2>
+            <p class="text-blue-700 dark:text-blue-400 font-semibold mt-1">O estado da arte em criação com IA</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            O mercado profissional de ferramentas de IA evoluiu drasticamente. Em 2025, temos plataformas maduras, estáveis e com qualidade comparável (ou superior) a workflows tradicionais. Aqui está o que você precisa conhecer:
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border-l-4 border-blue-500">
+            <h3 class="text-2xl font-bold text-blue-900 dark:text-blue-300 mb-4">📊 Categorias de Ferramentas</h3>
+
+            <div class="space-y-4">
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg">
+                <h4 class="font-bold text-lg mb-2 text-blue-800 dark:text-blue-300">1. Geradores de Imagem Premium</h4>
+                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>• <strong>Midjourney</strong> - Padrão da indústria, estética superior</li>
+                  <li>• <strong>DALL·E 3</strong> - Melhor compreensão de texto, integração GPT</li>
+                  <li>• <strong>Stable Diffusion</strong> - Código aberto, controle total, curva de aprendizado</li>
+                </ul>
+              </div>
+
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded-lg">
+                <h4 class="font-bold text-lg mb-2 text-purple-800 dark:text-purple-300">2. Ferramentas de Vídeo</h4>
+                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>• <strong>Runway Gen-2/Gen-3</strong> - Vídeo a partir de texto e imagem</li>
+                  <li>• <strong>Pika Labs</strong> - Animação e vídeo com controle de câmera</li>
+                  <li>• <strong>Luma AI</strong> - 3D e vídeo com qualidade cinematográfica</li>
+                </ul>
+              </div>
+
+              <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg">
+                <h4 class="font-bold text-lg mb-2 text-indigo-800 dark:text-indigo-300">3. Upscalers e Refinamento</h4>
+                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>• <strong>Topaz Photo AI</strong> - Upscaling profissional até 600%</li>
+                  <li>• <strong>Magnific AI</strong> - Upscaling com "alucinações" criativas</li>
+                  <li>• <strong>Gigapixel AI</strong> - Especialista em ampliação de resolução</li>
+                </ul>
+              </div>
+
+              <div class="bg-emerald-50 dark:bg-emerald-900/30 p-4 rounded-lg">
+                <h4 class="font-bold text-lg mb-2 text-emerald-800 dark:text-emerald-300">4. Workflows Integrados</h4>
+                <ul class="text-sm space-y-1 text-neutral-700 dark:text-neutral-300">
+                  <li>• <strong>Photoshop Generative Fill</strong> - IA dentro do Photoshop</li>
+                  <li>• <strong>Lightroom AI</strong> - Edição inteligente de fotos</li>
+                  <li>• <strong>After Effects + IA</strong> - Motion design assistido por IA</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 border-2 border-yellow-400 dark:border-yellow-600 p-6 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4 text-yellow-900 dark:text-yellow-300">💡 Qual Ferramenta Escolher?</h3>
+            <p class="text-neutral-800 dark:text-neutral-200 mb-4">
+              Não existe "melhor ferramenta". Existe a ferramenta certa para cada caso. Vamos explorar em detalhes quando usar cada uma.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aula 1: Midjourney - O Padrão da Indústria -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">👑</span>
+          <div>
+            <h2 class="text-3xl font-bold">Midjourney: O Padrão da Indústria</h2>
+            <p class="text-blue-600 dark:text-blue-400 font-semibold">Duração: 2.5 horas</p>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-400 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-3">Por Que Midjourney é Referência?</h3>
+          <ul class="space-y-2">
+            <li>🎨 <strong>Estética superior:</strong> Resultados consistentemente bonitos, mesmo com prompts simples</li>
+            <li>⚡ <strong>Velocidade:</strong> Geração em 30-60 segundos</li>
+            <li>🎭 <strong>Variedade de estilos:</strong> De fotorrealismo a arte conceitual</li>
+            <li>🏢 <strong>Adoção profissional:</strong> Usado por Netflix, Marvel, agências globais</li>
+            <li>🔄 <strong>Atualizações constantes:</strong> Novos modelos a cada 2-3 meses</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Setup e Primeiros Passos</h3>
+
+        <div class="space-y-4 mb-6">
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">1. Criar Conta no Discord</h4>
+            <p class="text-sm mb-2">Midjourney funciona via Discord (por enquanto)</p>
+            <ul class="text-sm space-y-1 ml-4">
+              <li>• Acesse <a href="https://discord.com" class="text-blue-600 dark:text-blue-400 underline">discord.com</a> e crie conta gratuita</li>
+              <li>• Baixe o app desktop (recomendado) ou use web</li>
+            </ul>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">2. Entrar no Servidor Midjourney</h4>
+            <p class="text-sm mb-2">Acesse <a href="https://midjourney.com" class="text-blue-600 dark:text-blue-400 underline">midjourney.com</a> e clique em "Join the Beta"</p>
+            <p class="text-sm">Você será redirecionado para o servidor Discord oficial</p>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">3. Escolher Plano</h4>
+            <p class="text-sm mb-2">Midjourney é pago, mas vale cada centavo:</p>
+            <div class="grid md:grid-cols-3 gap-3 mt-3">
+              <div class="bg-white dark:bg-neutral-600 p-3 rounded border-2 border-neutral-200 dark:border-neutral-500">
+                <p class="font-bold text-sm">Basic</p>
+                <p class="text-2xl font-bold text-blue-600 dark:text-blue-400">$10/mês</p>
+                <p class="text-xs mt-1">~200 imagens</p>
+                <p class="text-xs text-neutral-600 dark:text-neutral-400">Ideal para testar</p>
+              </div>
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-3 rounded border-2 border-blue-400">
+                <p class="font-bold text-sm">Standard</p>
+                <p class="text-2xl font-bold text-blue-600 dark:text-blue-400">$30/mês</p>
+                <p class="text-xs mt-1">~900 imagens</p>
+                <p class="text-xs text-blue-600 dark:text-blue-300">RECOMENDADO</p>
+              </div>
+              <div class="bg-white dark:bg-neutral-600 p-3 rounded border-2 border-neutral-200 dark:border-neutral-500">
+                <p class="font-bold text-sm">Pro</p>
+                <p class="text-2xl font-bold text-blue-600 dark:text-blue-400">$60/mês</p>
+                <p class="text-xs mt-1">~1800 imagens</p>
+                <p class="text-xs text-neutral-600 dark:text-neutral-400">Para uso intenso</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Comandos Essenciais</h3>
+
+        <div class="bg-neutral-100 dark:bg-neutral-700 rounded-lg p-6 mb-6">
+          <h4 class="font-bold mb-4">Comandos Básicos</h4>
+          <div class="space-y-3">
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+              <code class="text-blue-600 dark:text-blue-400 font-mono text-sm">/imagine prompt:</code>
+              <p class="text-sm mt-1">Gera 4 variações da imagem</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+              <code class="text-blue-600 dark:text-blue-400 font-mono text-sm">U1, U2, U3, U4</code>
+              <p class="text-sm mt-1">Upscale (ampliar) uma das 4 imagens</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+              <code class="text-blue-600 dark:text-blue-400 font-mono text-sm">V1, V2, V3, V4</code>
+              <p class="text-sm mt-1">Criar variações de uma imagem específica</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+              <code class="text-blue-600 dark:text-blue-400 font-mono text-sm">/settings</code>
+              <p class="text-sm mt-1">Ajustar configurações (modelo, qualidade, estilo)</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Parâmetros Avançados</h3>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2">--ar (aspect ratio)</h4>
+            <p class="text-sm mb-2">Define proporção da imagem</p>
+            <code class="text-xs bg-white dark:bg-neutral-700 px-2 py-1 rounded block mb-1">--ar 16:9</code>
+            <code class="text-xs bg-white dark:bg-neutral-700 px-2 py-1 rounded block mb-1">--ar 1:1</code>
+            <code class="text-xs bg-white dark:bg-neutral-700 px-2 py-1 rounded block">--ar 9:16</code>
+          </div>
+
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2">--s (stylize)</h4>
+            <p class="text-sm mb-2">Controla quanto de "estilo MJ" aplicar</p>
+            <code class="text-xs bg-white dark:bg-neutral-700 px-2 py-1 rounded block mb-1">--s 0</code> <span class="text-xs">Literal</span>
+            <code class="text-xs bg-white dark:bg-neutral-700 px-2 py-1 rounded block mb-1">--s 100</code> <span class="text-xs">Balanceado</span>
+            <code class="text-xs bg-white dark:bg-neutral-700 px-2 py-1 rounded block">--s 1000</code> <span class="text-xs">Muito artístico</span>
+          </div>
+
+          <div class="bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2">--c (chaos)</h4>
+            <p class="text-sm mb-2">Aumenta variação entre resultados</p>
+            <code class="text-xs bg-white dark:bg-neutral-700 px-2 py-1 rounded block mb-1">--c 0</code> <span class="text-xs">Previsível</span>
+            <code class="text-xs bg-white dark:bg-neutral-700 px-2 py-1 rounded block mb-1">--c 50</code> <span class="text-xs">Médio</span>
+            <code class="text-xs bg-white dark:bg-neutral-700 px-2 py-1 rounded block">--c 100</code> <span class="text-xs">Muito variado</span>
+          </div>
+
+          <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2">--q (quality)</h4>
+            <p class="text-sm mb-2">Tempo de renderização</p>
+            <code class="text-xs bg-white dark:bg-neutral-700 px-2 py-1 rounded block mb-1">--q 0.25</code> <span class="text-xs">Rápido</span>
+            <code class="text-xs bg-white dark:bg-neutral-700 px-2 py-1 rounded block mb-1">--q 1</code> <span class="text-xs">Padrão</span>
+            <code class="text-xs bg-white dark:bg-neutral-700 px-2 py-1 rounded block">--q 2</code> <span class="text-xs">Máxima qualidade</span>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Quando Usar Midjourney</h3>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2 text-emerald-800 dark:text-emerald-300">✅ Use Midjourney Para:</h4>
+            <ul class="text-sm space-y-1">
+              <li>• Arte conceitual e ilustrações</li>
+              <li>• Fotografia de produto (estilizada)</li>
+              <li>• Branding e identidade visual</li>
+              <li>• Marketing visual criativo</li>
+              <li>• Mockups e apresentações</li>
+              <li>• Qualquer projeto onde estética é prioridade</li>
+            </ul>
+          </div>
+
+          <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2 text-red-800 dark:text-red-300">⚠️ Limitações:</h4>
+            <ul class="text-sm space-y-1">
+              <li>• Texto em imagens (pode sair errado)</li>
+              <li>• Rostos de pessoas reais (bloqueados)</li>
+              <li>• Precisão técnica extrema</li>
+              <li>• Controle pixel-by-pixel</li>
+              <li>• Anatomia humana perfeita (pode errar)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aula 2: DALL·E 3 vs Midjourney -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">⚖️</span>
+          <div>
+            <h2 class="text-3xl font-bold">DALL·E 3 vs Midjourney: Comparativo Detalhado</h2>
+            <p class="text-blue-600 dark:text-blue-400 font-semibold">Duração: 1.5 horas</p>
+          </div>
+        </div>
+
+        <p class="text-lg mb-6 text-neutral-700 dark:text-neutral-300">
+          Duas filosofias diferentes, duas ferramentas poderosas. Entenda as diferenças para escolher a certa para cada projeto.
+        </p>
+
+        <div class="bg-neutral-100 dark:bg-neutral-700 rounded-lg overflow-hidden mb-6">
+          <table class="w-full text-sm">
+            <thead class="bg-neutral-200 dark:bg-neutral-600">
+              <tr>
+                <th class="p-3 text-left">Aspecto</th>
+                <th class="p-3 text-left">Midjourney</th>
+                <th class="p-3 text-left">DALL·E 3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Preço</td>
+                <td class="p-3">$10-60/mês</td>
+                <td class="p-3">$20/mês (via ChatGPT Plus)</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Plataforma</td>
+                <td class="p-3">Discord (web em breve)</td>
+                <td class="p-3">ChatGPT ou Bing (grátis)</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Estética</td>
+                <td class="p-3">🏆 Superior, artística</td>
+                <td class="p-3">Boa, mais técnica</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Compreensão de Texto</td>
+                <td class="p-3">Boa</td>
+                <td class="p-3">🏆 Excelente (GPT-4 integrado)</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Texto EM Imagens</td>
+                <td class="p-3">Fraco</td>
+                <td class="p-3">🏆 Muito melhor</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Controle Avançado</td>
+                <td class="p-3">🏆 Muitos parâmetros</td>
+                <td class="p-3">Limitado</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Velocidade</td>
+                <td class="p-3">🏆 30-60s</td>
+                <td class="p-3">60-90s</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Iteração</td>
+                <td class="p-3">🏆 V1-V4, remix, blend</td>
+                <td class="p-3">Limitado (via seed)</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Fotorrealismo</td>
+                <td class="p-3">Excelente</td>
+                <td class="p-3">🏆 Ligeiramente melhor</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Arte/Ilustração</td>
+                <td class="p-3">🏆 Superior</td>
+                <td class="p-3">Boa</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Consistência de Personagens</td>
+                <td class="p-3">Difícil (requer técnicas)</td>
+                <td class="p-3">Difícil</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Melhor Para</td>
+                <td class="p-3">Arte, branding, estética</td>
+                <td class="p-3">Precisão, texto, conceitos complexos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Teste Lado a Lado</h3>
+
+        <div class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-300 dark:border-blue-700 p-6 rounded-lg mb-6">
+          <h4 class="font-bold mb-3">Mesmo Prompt, Resultados Diferentes</h4>
+          <p class="text-sm mb-4">Vamos usar o prompt:</p>
+          <code class="text-sm bg-white dark:bg-neutral-700 p-3 rounded block mb-4">
+            "A cozy coffee shop interior with warm lighting, wooden furniture, plants on shelves, a barista behind the counter, morning sunlight through large windows, cinematic photography, 35mm lens"
+          </code>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-blue-100 dark:bg-blue-900/30 p-4 rounded">
+              <h5 class="font-bold mb-2">Midjourney vai gerar:</h5>
+              <ul class="text-sm space-y-1">
+                <li>• Composição artística e equilibrada</li>
+                <li>• Iluminação dramática e bonita</li>
+                <li>• Estética cinematográfica forte</li>
+                <li>• Pode ter algumas inconsistências lógicas</li>
+              </ul>
+            </div>
+
+            <div class="bg-purple-100 dark:bg-purple-900/30 p-4 rounded">
+              <h5 class="font-bold mb-2">DALL·E 3 vai gerar:</h5>
+              <ul class="text-sm space-y-1">
+                <li>• Cena mais realista e coerente</li>
+                <li>• Detalhes precisos (xícaras, placas)</li>
+                <li>• Pode ter menos "wow factor" estético</li>
+                <li>• Melhor para briefings específicos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Guia de Decisão Rápida</h3>
+
+        <div class="space-y-3">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded flex items-start">
+            <span class="text-2xl mr-3">🎨</span>
+            <div>
+              <p class="font-bold">Se você precisa de IMPACTO VISUAL → Midjourney</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">Portfolio, branding, arte para impressionar</p>
+            </div>
+          </div>
+
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded flex items-start">
+            <span class="text-2xl mr-3">🎯</span>
+            <div>
+              <p class="font-bold">Se você precisa de PRECISÃO → DALL·E 3</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">Descrições complexas, texto em imagens, conceitos específicos</p>
+            </div>
+          </div>
+
+          <div class="bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded flex items-start">
+            <span class="text-2xl mr-3">💼</span>
+            <div>
+              <p class="font-bold">Se você precisa de EXPERIMENTAÇÃO → Midjourney</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">Variações rápidas, remix, blend de imagens</p>
+            </div>
+          </div>
+
+          <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded flex items-start">
+            <span class="text-2xl mr-3">💬</span>
+            <div>
+              <p class="font-bold">Se você quer CONVERSAR com a IA → DALL·E 3</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">ChatGPT ajuda a refinar o prompt antes de gerar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aula 3: Stable Diffusion -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🔓</span>
+          <div>
+            <h2 class="text-3xl font-bold">Stable Diffusion: Controle Total</h2>
+            <p class="text-blue-600 dark:text-blue-400 font-semibold">Duração: 1.5 horas</p>
+          </div>
+        </div>
+
+        <div class="bg-indigo-50 dark:bg-indigo-900/20 border-2 border-indigo-400 p-6 rounded-lg mb-6">
+          <h3 class="font-bold text-lg mb-3">O Diferencial: Código Aberto</h3>
+          <p class="mb-3">
+            Stable Diffusion é a única grande ferramenta de IA generativa de imagens que é <strong>open-source</strong>. Isso significa controle total, mas também curva de aprendizado maior.
+          </p>
+          <ul class="space-y-2">
+            <li>🔓 <strong>Código aberto:</strong> Rode localmente, sem censura, sem limites</li>
+            <li>🎛️ <strong>Controle granular:</strong> Centenas de parâmetros ajustáveis</li>
+            <li>🧩 <strong>Extensões:</strong> ControlNet, Inpainting, LoRAs customizados</li>
+            <li>💰 <strong>Gratuito:</strong> Depois de configurado, não há custo mensal</li>
+            <li>⚙️ <strong>Complexo:</strong> Requer setup técnico e aprendizado</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Interfaces Principais</h3>
+
+        <div class="space-y-4 mb-6">
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-6 rounded-lg">
+            <h4 class="font-bold text-xl mb-3">1. Automatic1111 (WEBUI)</h4>
+            <p class="text-sm mb-3">Interface web mais popular, fácil de usar</p>
+
+            <div class="grid md:grid-cols-2 gap-3">
+              <div class="bg-emerald-50 dark:bg-emerald-900/30 p-3 rounded">
+                <p class="font-bold text-sm mb-1">✅ Prós:</p>
+                <ul class="text-xs space-y-1">
+                  <li>• Interface intuitiva</li>
+                  <li>• Muitas extensões</li>
+                  <li>• Comunidade grande</li>
+                  <li>• Fácil de instalar</li>
+                </ul>
+              </div>
+              <div class="bg-red-50 dark:bg-red-900/30 p-3 rounded">
+                <p class="font-bold text-sm mb-1">⚠️ Contras:</p>
+                <ul class="text-xs space-y-1">
+                  <li>• Pode ser lento</li>
+                  <li>• Requer GPU decente</li>
+                  <li>• Curva de aprendizado</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-6 rounded-lg">
+            <h4 class="font-bold text-xl mb-3">2. ComfyUI</h4>
+            <p class="text-sm mb-3">Interface baseada em nós (nodes), para workflows avançados</p>
+
+            <div class="grid md:grid-cols-2 gap-3">
+              <div class="bg-emerald-50 dark:bg-emerald-900/30 p-3 rounded">
+                <p class="font-bold text-sm mb-1">✅ Prós:</p>
+                <ul class="text-xs space-y-1">
+                  <li>• Máximo controle</li>
+                  <li>• Workflows complexos</li>
+                  <li>• Muito eficiente</li>
+                  <li>• Para profissionais avançados</li>
+                </ul>
+              </div>
+              <div class="bg-red-50 dark:bg-red-900/30 p-3 rounded">
+                <p class="font-bold text-sm mb-1">⚠️ Contras:</p>
+                <ul class="text-xs space-y-1">
+                  <li>• Complexo para iniciantes</li>
+                  <li>• Curva de aprendizado íngreme</li>
+                  <li>• Requer conhecimento técnico</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Requisitos Técnicos</h3>
+
+        <div class="bg-yellow-50 dark:bg-yellow-900/20 border-2 border-yellow-400 p-6 rounded-lg mb-6">
+          <h4 class="font-bold mb-3">Hardware Necessário</h4>
+
+          <div class="space-y-3">
+            <div>
+              <p class="font-bold text-sm">GPU (Placa de Vídeo) - ESSENCIAL</p>
+              <ul class="text-sm space-y-1 mt-2">
+                <li>• <strong>Mínimo:</strong> NVIDIA GTX 1660 (6GB VRAM) - Imagens pequenas, lento</li>
+                <li>• <strong>Recomendado:</strong> NVIDIA RTX 3060 (12GB VRAM) - Bom desempenho</li>
+                <li>• <strong>Ideal:</strong> NVIDIA RTX 4090 (24GB VRAM) - Performance profissional</li>
+              </ul>
+            </div>
+
+            <div>
+              <p class="font-bold text-sm">Outros Requisitos</p>
+              <ul class="text-sm space-y-1 mt-2">
+                <li>• RAM: 16GB mínimo, 32GB recomendado</li>
+                <li>• Armazenamento: 50-100GB para modelos</li>
+                <li>• SO: Windows 10/11, Linux (Mac possível mas limitado)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Quando Vale a Pena Stable Diffusion?</h3>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2 text-emerald-800 dark:text-emerald-300">✅ Vale a Pena Se:</h4>
+            <ul class="text-sm space-y-1">
+              <li>• Você tem GPU potente</li>
+              <li>• Precisa de controle extremo</li>
+              <li>• Quer treinar modelos customizados</li>
+              <li>• Precisa de privacidade total</li>
+              <li>• Uso intenso (economia a longo prazo)</li>
+              <li>• Gosta de experimentação técnica</li>
+            </ul>
+          </div>
+
+          <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded">
+            <h4 class="font-bold mb-2 text-red-800 dark:text-red-300">❌ NÃO Vale a Pena Se:</h4>
+            <ul class="text-sm space-y-1">
+              <li>• Você não tem GPU decente</li>
+              <li>• Quer resultados rápidos</li>
+              <li>• Prefere pagar e ter simplicidade</li>
+              <li>• Não é confortável com tecnologia</li>
+              <li>• Precisa de resultados "prontos"</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded mt-6">
+          <p class="font-bold mb-2">💡 Recomendação:</p>
+          <p class="text-sm">
+            Para a maioria dos profissionais, <strong>Midjourney ou DALL·E 3 são suficientes</strong>.
+            Stable Diffusion é para quem quer se especializar em controle técnico ou tem necessidades muito específicas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Aula 4: Ferramentas de Vídeo e Upscalers -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🎬</span>
+          <div>
+            <h2 class="text-3xl font-bold">Ferramentas de Vídeo e Upscalers Profissionais</h2>
+            <p class="text-blue-600 dark:text-blue-400 font-semibold">Duração: 1.5 horas</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Geradores de Vídeo com IA</h3>
+
+        <div class="space-y-4 mb-8">
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border-2 border-purple-300 dark:border-purple-700 p-6 rounded-lg">
+            <div class="flex items-start mb-3">
+              <span class="text-3xl mr-3">🎥</span>
+              <div>
+                <h4 class="font-bold text-xl">Runway Gen-3</h4>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">Líder em vídeo generativo</p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <p class="font-bold text-sm mb-2">Recursos:</p>
+                <ul class="text-sm space-y-1">
+                  <li>• Text-to-Video (até 18s)</li>
+                  <li>• Image-to-Video</li>
+                  <li>• Video-to-Video (restyling)</li>
+                  <li>• Motion Brush</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold text-sm mb-2">Preço:</p>
+                <ul class="text-sm space-y-1">
+                  <li>• Standard: $12/mês (125 créditos)</li>
+                  <li>• Pro: $28/mês (625 créditos)</li>
+                  <li>• Unlimited: $76/mês</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border-2 border-blue-300 dark:border-blue-700 p-6 rounded-lg">
+            <div class="flex items-start mb-3">
+              <span class="text-3xl mr-3">🎬</span>
+              <div>
+                <h4 class="font-bold text-xl">Pika Labs</h4>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">Controle de câmera avançado</p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <p class="font-bold text-sm mb-2">Diferenciais:</p>
+                <ul class="text-sm space-y-1">
+                  <li>• Controles de câmera (pan, zoom, rotate)</li>
+                  <li>• Extend video (aumentar duração)</li>
+                  <li>• Lip sync (sincronização labial)</li>
+                  <li>• Sound effects gerados por IA</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold text-sm mb-2">Preço:</p>
+                <ul class="text-sm space-y-1">
+                  <li>• Gratuito: 30 créditos/mês</li>
+                  <li>• Standard: $10/mês (700 créditos)</li>
+                  <li>• Pro: $35/mês (2000 créditos)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 border-2 border-indigo-300 dark:border-indigo-700 p-6 rounded-lg">
+            <div class="flex items-start mb-3">
+              <span class="text-3xl mr-3">🌟</span>
+              <div>
+                <h4 class="font-bold text-xl">Luma AI (Dream Machine)</h4>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">Qualidade cinematográfica</p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <p class="font-bold text-sm mb-2">Pontos Fortes:</p>
+                <ul class="text-sm space-y-1">
+                  <li>• Qualidade visual superior</li>
+                  <li>• Movimentos de câmera realistas</li>
+                  <li>• Física e iluminação avançadas</li>
+                  <li>• Exportação em alta resolução</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold text-sm mb-2">Preço:</p>
+                <ul class="text-sm space-y-1">
+                  <li>• Gratuito: 30 gerações/mês</li>
+                  <li>• Standard: $30/mês (120 gerações)</li>
+                  <li>• Pro: $100/mês (400 gerações)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Upscalers Profissionais</h3>
+
+        <div class="space-y-4 mb-6">
+          <div class="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 border-2 border-orange-300 dark:border-orange-700 p-6 rounded-lg">
+            <div class="flex items-start mb-3">
+              <span class="text-3xl mr-3">💎</span>
+              <div>
+                <h4 class="font-bold text-xl">Topaz Photo AI</h4>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">Padrão da indústria fotográfica</p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <p class="font-bold text-sm mb-2">Funcionalidades:</p>
+                <ul class="text-sm space-y-1">
+                  <li>• Upscaling até 600%</li>
+                  <li>• Denoise (remoção de ruído)</li>
+                  <li>• Sharpen (nitidez)</li>
+                  <li>• Face recovery</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold text-sm mb-2">Preço:</p>
+                <ul class="text-sm space-y-1">
+                  <li>• Compra única: $199</li>
+                  <li>• Assinatura: $9.99/mês</li>
+                  <li>• Roda localmente (GPU necessária)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 border-2 border-pink-300 dark:border-pink-700 p-6 rounded-lg">
+            <div class="flex items-start mb-3">
+              <span class="text-3xl mr-3">✨</span>
+              <div>
+                <h4 class="font-bold text-xl">Magnific AI</h4>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-3">Upscaling "criativo"</p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <p class="font-bold text-sm mb-2">O Diferencial:</p>
+                <ul class="text-sm space-y-1">
+                  <li>• "Alucina" detalhes realistas</li>
+                  <li>• Upscaling até 16x</li>
+                  <li>• Controle de criatividade</li>
+                  <li>• Resultados impressionantes</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold text-sm mb-2">Preço:</p>
+                <ul class="text-sm space-y-1">
+                  <li>• Basic: $39/mês (200 imagens)</li>
+                  <li>• Pro: $99/mês (500 imagens)</li>
+                  <li>• Business: $299/mês (2000 imagens)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-6 rounded-lg">
+          <h4 class="font-bold mb-3">🎯 Quando Usar Cada Um?</h4>
+          <div class="space-y-2 text-sm">
+            <p><strong>Vídeo:</strong> Runway para motion graphics, Pika para animações controladas, Luma para qualidade cinematográfica</p>
+            <p><strong>Upscaling:</strong> Topaz para fotografia/arquitetura (precisão), Magnific para arte/conceitual (criatividade)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aula 5: Workflows Integrados e ROI -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <div class="flex items-center mb-6">
+          <span class="text-4xl mr-4">🔄</span>
+          <div>
+            <h2 class="text-3xl font-bold">Workflows Integrados e Análise de ROI</h2>
+            <p class="text-blue-600 dark:text-blue-400 font-semibold">Duração: 1 hora</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Photoshop + Generative Fill</h3>
+
+        <div class="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 p-6 rounded-lg mb-6">
+          <p class="mb-4">
+            A Adobe integrou IA generativa diretamente no Photoshop. Isso permite workflows híbridos poderosos:
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <h4 class="font-bold mb-2">Generative Fill</h4>
+              <p class="text-sm">Preenche áreas selecionadas com conteúdo gerado por IA</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <h4 class="font-bold mb-2">Generative Expand</h4>
+              <p class="text-sm">Expande imagem para além das bordas originais</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <h4 class="font-bold mb-2">Remove Tool</h4>
+              <p class="text-sm">Remove objetos com IA (melhor que content-aware)</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-700 p-4 rounded">
+              <h4 class="font-bold mb-2">Neural Filters</h4>
+              <p class="text-sm">Filtros avançados (skin smoothing, style transfer)</p>
+            </div>
+          </div>
+
+          <div class="bg-emerald-50 dark:bg-emerald-900/20 border-2 border-emerald-400 p-4 rounded">
+            <p class="font-bold mb-2">🎨 Workflow Recomendado:</p>
+            <p class="text-sm">
+              <strong>1.</strong> Gere base em Midjourney/DALL·E →
+              <strong>2.</strong> Importe no Photoshop →
+              <strong>3.</strong> Use Generative Fill para ajustes →
+              <strong>4.</strong> Retoques finais manuais →
+              <strong>5.</strong> Export
+            </p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Lightroom AI e After Effects</h3>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-8">
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h4 class="font-bold mb-2">Lightroom AI</h4>
+            <ul class="text-sm space-y-1">
+              <li>• Denoise automático</li>
+              <li>• Enhance (super resolution)</li>
+              <li>• Select Subject/Sky com IA</li>
+              <li>• Presets inteligentes</li>
+            </ul>
+            <p class="text-xs mt-2 text-neutral-600 dark:text-neutral-400">Incluso no Photography Plan ($11.99/mês)</p>
+          </div>
+
+          <div class="bg-neutral-50 dark:bg-neutral-700/50 p-4 rounded">
+            <h4 class="font-bold mb-2">After Effects + IA</h4>
+            <ul class="text-sm space-y-1">
+              <li>• Rotobrush 3 (rotoscopia automática)</li>
+              <li>• Content-Aware Fill (vídeo)</li>
+              <li>• Integração com Runway/Pika</li>
+              <li>• AI-powered tracking</li>
+            </ul>
+            <p class="text-xs mt-2 text-neutral-600 dark:text-neutral-400">Creative Cloud All Apps ($59.99/mês)</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Análise de Custo vs Benefício</h3>
+
+        <div class="bg-neutral-100 dark:bg-neutral-700 rounded-lg overflow-hidden mb-6">
+          <table class="w-full text-sm">
+            <thead class="bg-neutral-200 dark:bg-neutral-600">
+              <tr>
+                <th class="p-3 text-left">Ferramenta</th>
+                <th class="p-3 text-left">Custo/Mês</th>
+                <th class="p-3 text-left">Uso</th>
+                <th class="p-3 text-left">ROI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Midjourney Standard</td>
+                <td class="p-3">$30</td>
+                <td class="p-3">~900 imagens</td>
+                <td class="p-3 text-emerald-600 dark:text-emerald-400">⭐⭐⭐⭐⭐</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">ChatGPT Plus (DALL·E 3)</td>
+                <td class="p-3">$20</td>
+                <td class="p-3">~50 imagens/dia</td>
+                <td class="p-3 text-emerald-600 dark:text-emerald-400">⭐⭐⭐⭐⭐</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Runway Pro</td>
+                <td class="p-3">$28</td>
+                <td class="p-3">625 seg/mês</td>
+                <td class="p-3 text-blue-600 dark:text-blue-400">⭐⭐⭐⭐</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Magnific AI Basic</td>
+                <td class="p-3">$39</td>
+                <td class="p-3">200 upscales</td>
+                <td class="p-3 text-blue-600 dark:text-blue-400">⭐⭐⭐</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-neutral-600">
+                <td class="p-3 font-semibold">Adobe Photography</td>
+                <td class="p-3">$11.99</td>
+                <td class="p-3">Ilimitado</td>
+                <td class="p-3 text-emerald-600 dark:text-emerald-400">⭐⭐⭐⭐⭐</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Topaz Photo AI</td>
+                <td class="p-3">$9.99</td>
+                <td class="p-3">Ilimitado</td>
+                <td class="p-3 text-emerald-600 dark:text-emerald-400">⭐⭐⭐⭐</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-2xl font-bold mb-4">Stacks Recomendados por Nível</h3>
+
+        <div class="space-y-4">
+          <div class="bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 border-2 border-emerald-400 p-6 rounded-lg">
+            <h4 class="font-bold text-lg mb-3">🌱 Iniciante ($20-30/mês)</h4>
+            <ul class="space-y-2 text-sm">
+              <li>✅ <strong>ChatGPT Plus</strong> ($20) - DALL·E 3 + GPT-4</li>
+              <li>✅ <strong>Canva Pro</strong> ($10) - Edição e templates</li>
+              <li>📊 <strong>Total:</strong> $30/mês</li>
+            </ul>
+            <p class="text-xs mt-3 text-neutral-600 dark:text-neutral-400">
+              Suficiente para freelancing inicial, posts, conteúdo digital
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border-2 border-blue-400 p-6 rounded-lg">
+            <h4 class="font-bold text-lg mb-3">💼 Intermediário ($60-80/mês)</h4>
+            <ul class="space-y-2 text-sm">
+              <li>✅ <strong>Midjourney Standard</strong> ($30) - Qualidade profissional</li>
+              <li>✅ <strong>ChatGPT Plus</strong> ($20) - DALL·E 3 + assistente</li>
+              <li>✅ <strong>Adobe Photography</strong> ($12) - Photoshop + Lightroom</li>
+              <li>✅ <strong>Topaz Photo AI</strong> ($10) - Upscaling</li>
+              <li>📊 <strong>Total:</strong> $72/mês</li>
+            </ul>
+            <p class="text-xs mt-3 text-neutral-600 dark:text-neutral-400">
+              Stack completo para design profissional e clientes comerciais
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border-2 border-purple-400 p-6 rounded-lg">
+            <h4 class="font-bold text-lg mb-3">🚀 Profissional ($150-200/mês)</h4>
+            <ul class="space-y-2 text-sm">
+              <li>✅ <strong>Midjourney Pro</strong> ($60) - Volume alto, modo Stealth</li>
+              <li>✅ <strong>ChatGPT Plus</strong> ($20) - DALL·E 3 + workflow</li>
+              <li>✅ <strong>Runway Pro</strong> ($28) - Vídeo generativo</li>
+              <li>✅ <strong>Adobe Creative Cloud</strong> ($60) - Suite completa</li>
+              <li>✅ <strong>Magnific AI Basic</strong> ($39) - Upscaling criativo</li>
+              <li>📊 <strong>Total:</strong> $207/mês</li>
+            </ul>
+            <p class="text-xs mt-3 text-neutral-600 dark:text-neutral-400">
+              Arsenal completo para agências e profissionais de alto volume
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 border-2 border-yellow-400 p-6 rounded-lg mt-6">
+          <h4 class="font-bold text-lg mb-3">💰 Calculando Seu ROI</h4>
+          <p class="text-sm mb-4">
+            Se você cobra <strong>$500 por projeto</strong> e usa <strong>$70/mês</strong> em ferramentas, precisa de apenas <strong>1 cliente por mês</strong> para ter lucro de $430.
+          </p>
+          <p class="text-sm mb-4">
+            Com <strong>3-5 clientes/mês</strong>, você tem receita de <strong>$1.500-2.500</strong>, com custo operacional de apenas <strong>$70</strong> (margem de 95%+).
+          </p>
+          <p class="text-sm font-bold">
+            Comparado a equipamento fotográfico tradicional ($10k+) ou licenças de software antigo, IA é um investimento minúsculo com retorno gigante.
+          </p>
+        </div>
+      </div>
+
+      <!-- Exercícios Práticos -->
+      <div class="bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-400 rounded-xl p-8 mb-8">
+        <h3 class="text-2xl font-bold mb-6">🎯 Exercícios Práticos</h3>
+
+        <div class="space-y-4">
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Exercício 1: Teste Comparativo (2h)</h4>
+            <p class="text-sm mb-2">Crie a MESMA imagem em Midjourney e DALL·E 3. Compare:</p>
+            <ul class="text-sm ml-4 space-y-1">
+              <li>• Qual tem melhor estética?</li>
+              <li>• Qual entendeu melhor o prompt?</li>
+              <li>• Qual você usaria para cliente?</li>
+            </ul>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Exercício 2: Workflow Completo (3h)</h4>
+            <p class="text-sm mb-2">Crie uma imagem de produto:</p>
+            <ul class="text-sm ml-4 space-y-1">
+              <li>1. Gere base em Midjourney</li>
+              <li>2. Importe e ajuste no Photoshop (Generative Fill)</li>
+              <li>3. Upscale com Topaz ou Magnific</li>
+              <li>4. Finalize no Lightroom</li>
+            </ul>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Exercício 3: Vídeo com IA (2h)</h4>
+            <p class="text-sm mb-2">Crie uma animação simples:</p>
+            <ul class="text-sm ml-4 space-y-1">
+              <li>1. Gere 3-4 imagens relacionadas em Midjourney</li>
+              <li>2. Use Runway ou Pika para animar cada uma</li>
+              <li>3. Monte no After Effects ou CapCut</li>
+            </ul>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+            <h4 class="font-bold mb-2">Exercício 4: Calculadora de ROI (1h)</h4>
+            <p class="text-sm mb-2">Planeje seu stack ideal:</p>
+            <ul class="text-sm ml-4 space-y-1">
+              <li>• Liste ferramentas que você precisa</li>
+              <li>• Calcule custo mensal total</li>
+              <li>• Estime quantos clientes precisa para lucrar</li>
+              <li>• Defina seu preço por projeto</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mensagem de Reflexão -->
+      <div class="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 border-2 border-purple-400 rounded-xl p-8 text-center mb-8">
+        <h3 class="text-2xl font-bold mb-4">🌟 A Verdade Sobre Ferramentas Profissionais</h3>
+        <p class="text-lg mb-4">
+          As ferramentas que você acabou de conhecer não existiam há 3 anos. Algumas não existiam há 6 meses.
+        </p>
+        <p class="text-lg mb-4">
+          <strong>Midjourney v6</strong>, <strong>DALL·E 3</strong>, <strong>Runway Gen-3</strong>, <strong>Magnific AI</strong> — tudo isso é de 2023-2024. E em 2025 já temos modelos ainda melhores chegando.
+        </p>
+
+        <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mt-6 text-left">
+          <h4 class="font-bold text-lg mb-3 text-purple-600 dark:text-purple-400">💡 O Que Realmente Importa</h4>
+          <div class="space-y-3 text-neutral-700 dark:text-neutral-300">
+            <p>
+              <strong>Não se apegue a ferramentas específicas.</strong> Midjourney pode não ser líder daqui a um ano. Outra ferramenta pode surgir e revolucionar tudo.
+            </p>
+            <p>
+              O que você está aprendendo aqui não é "como usar Midjourney". É como <strong>PENSAR como um profissional de IA</strong>:
+            </p>
+            <ul class="space-y-2 ml-6">
+              <li>🎯 <strong>Avaliar ferramentas</strong> — quando uma nova surge, você sabe testar e julgar</li>
+              <li>⚖️ <strong>Comparar opções</strong> — entender trade-offs de custo, qualidade, controle</li>
+              <li>🔄 <strong>Montar workflows</strong> — combinar ferramentas para resultados superiores</li>
+              <li>💰 <strong>Calcular ROI</strong> — investir inteligentemente no que traz retorno</li>
+            </ul>
+            <p class="mt-4 font-bold text-lg text-purple-600 dark:text-purple-400">
+              Ferramentas vêm e vão. Sua capacidade de adaptação e pensamento estratégico é para sempre.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-6 border-t-2 border-purple-300 dark:border-purple-700">
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm italic">
+            Daqui a 5 anos, você vai usar ferramentas que ainda nem existem. E você vai estar pronto para isso.
+          </p>
+        </div>
+      </div>
+
+      <!-- Navegação -->
+      <div class="flex justify-between items-center mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
+        <a href="tecnico-modulo-03.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold">
+          ← Módulo Anterior
+        </a>
+        <a href="tecnico-modulo-05.html" class="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+          Próximo Módulo →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-white py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-neutral-400">&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>

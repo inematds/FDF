@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1: Transição Profissional - Designer do Futuro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            tecnico: '#3B82F6',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navegação -->
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm shadow-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Designer do Futuro</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../trilhas/tecnico.html" class="text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400">Voltar para Trilha</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-blue-50 to-white dark:from-neutral-800 dark:to-neutral-900 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-4">
+        <a href="../trilhas/tecnico.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold">
+          ← Voltar para Trilha Técnico
+        </a>
+      </div>
+      <div class="text-6xl mb-6">💼</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 leading-tight">Módulo 1: Transição Profissional</h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
+        Como migrar para o mercado de IA e transformar suas habilidades em uma carreira lucrativa no futuro do design
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          1 semana
+        </span>
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          6 horas
+        </span>
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          Técnico
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Objetivos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎯 O Que Você Vai Transformar Neste Módulo</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6 text-lg">
+          Este módulo vai além da técnica: é sobre reposicionar sua carreira, entender o novo mercado e construir um caminho sustentável no design com IA.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+            <span class="text-blue-500 mr-4 text-2xl flex-shrink-0">💼</span>
+            <div>
+              <strong class="text-blue-900 dark:text-blue-300">Entendimento do Mercado:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Compreender as oportunidades reais, profissões emergentes e onde você se encaixa neste novo cenário</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-lg">
+            <span class="text-indigo-500 mr-4 text-2xl flex-shrink-0">🧠</span>
+            <div>
+              <strong class="text-indigo-900 dark:text-indigo-300">Mindset Profissional:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Desenvolver a mentalidade e postura de quem faz da IA uma profissão, não apenas um hobby</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+            <span class="text-purple-500 mr-4 text-2xl flex-shrink-0">🎨</span>
+            <div>
+              <strong class="text-purple-900 dark:text-purple-300">Portfólio Estratégico:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Criar um portfólio que vende seus serviços e posiciona você como profissional qualificado</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-cyan-50 dark:bg-cyan-900/20 p-4 rounded-lg">
+            <span class="text-cyan-500 mr-4 text-2xl flex-shrink-0">💰</span>
+            <div>
+              <strong class="text-cyan-900 dark:text-cyan-300">Precificação e Posicionamento:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Aprender a cobrar pelo seu trabalho, encontrar clientes e construir uma renda sustentável</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 1: O Novo Mercado -->
+      <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-blue-200 dark:border-blue-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🚀</span>
+          <div>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300">O Novo Mercado de Trabalho em IA</h2>
+            <p class="text-blue-700 dark:text-blue-400 font-semibold mt-1">A revolução está acontecendo AGORA</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Não estamos falando de um futuro distante. Estamos vivendo o maior momento de transformação profissional desde a internet comercial dos anos 90.
+            <strong>E você está bem a tempo de surfar essa onda.</strong>
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border-l-4 border-blue-500">
+            <h3 class="text-2xl font-bold text-blue-900 dark:text-blue-300 mb-3">📊 Números Que Provam</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded">
+                <p class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">300%</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">Crescimento de vagas de "AI Designer" no LinkedIn em 2023-2024</p>
+              </div>
+              <div class="bg-cyan-50 dark:bg-cyan-900/30 p-4 rounded">
+                <p class="text-3xl font-bold text-cyan-600 dark:text-cyan-400 mb-1">R$ 8-15k</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">Salário médio inicial para profissionais de IA generativa no Brasil</p>
+              </div>
+              <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded">
+                <p class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-1">89%</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">Das empresas planejam usar IA em criação de conteúdo até 2025</p>
+              </div>
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded">
+                <p class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">$500-2k</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">Valor médio cobrado por freelancers IA por projeto nos EUA</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">💼 Profissões Emergentes em IA</h3>
+            <p class="mb-4">O mercado está criando cargos que NÃO EXISTIAM há 2 anos:</p>
+            <div class="grid md:grid-cols-2 gap-3 text-sm">
+              <div class="flex items-start">
+                <span class="mr-2">✓</span>
+                <div>
+                  <strong>Prompt Engineer</strong> - R$ 8-15k/mês
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="mr-2">✓</span>
+                <div>
+                  <strong>AI Art Director</strong> - R$ 10-20k/mês
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="mr-2">✓</span>
+                <div>
+                  <strong>AI Content Designer</strong> - R$ 7-12k/mês
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="mr-2">✓</span>
+                <div>
+                  <strong>Generative Designer</strong> - R$ 9-16k/mês
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="mr-2">✓</span>
+                <div>
+                  <strong>AI Brand Specialist</strong> - R$ 8-14k/mês
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="mr-2">✓</span>
+                <div>
+                  <strong>Synthetic Media Producer</strong> - R$ 10-18k/mês
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg mb-6 border-l-4 border-yellow-500">
+            <h3 class="text-2xl font-bold text-yellow-900 dark:text-yellow-300 mb-3">🎯 Por Que Designers Tradicionais Têm VANTAGEM</h3>
+            <p class="text-neutral-800 dark:text-neutral-200 mb-4">
+              Se você tem background em design, fotografia, ilustração ou áreas criativas, você já tem 70% do que precisa:
+            </p>
+            <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-yellow-500 mr-2">•</span>
+                <span><strong>Senso estético desenvolvido</strong> - você sabe o que é bonito</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-yellow-500 mr-2">•</span>
+                <span><strong>Entendimento de composição</strong> - você conhece regras visuais</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-yellow-500 mr-2">•</span>
+                <span><strong>Vocabulário visual</strong> - você sabe nomear estilos e técnicas</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-yellow-500 mr-2">•</span>
+                <span><strong>Referências culturais</strong> - você conhece movimentos artísticos</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-yellow-500 mr-2">•</span>
+                <span><strong>Pensamento em briefing</strong> - você entende necessidades de projeto</span>
+              </li>
+            </ul>
+            <p class="text-lg font-bold text-yellow-900 dark:text-yellow-300 mt-4 pt-4 border-t border-yellow-300 dark:border-yellow-700">
+              Programadores estão APRENDENDO design para usar IA. Você só precisa aprender a ferramenta!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 2: Mindset Profissional -->
+      <div class="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-indigo-200 dark:border-indigo-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🧠</span>
+          <div>
+            <h2 class="text-3xl font-bold text-indigo-900 dark:text-indigo-300">Mindset: Profissional vs Amador</h2>
+            <p class="text-indigo-700 dark:text-indigo-400 font-semibold mt-1">A diferença não está na habilidade, está na mentalidade</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-6">
+            Muitas pessoas aprendem IA mas não conseguem monetizar porque tratam como hobby, não como profissão.
+            A diferença entre ganhar R$ 200 ou R$ 5.000 por mês está 90% no mindset.
+          </p>
+
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full text-sm border-collapse">
+              <thead>
+                <tr class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white">
+                  <th class="p-3 text-left font-bold">Aspecto</th>
+                  <th class="p-3 text-left font-bold">Mentalidade Amadora</th>
+                  <th class="p-3 text-left font-bold">Mentalidade Profissional</th>
+                </tr>
+              </thead>
+              <tbody class="text-neutral-700 dark:text-neutral-300">
+                <tr class="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
+                  <td class="p-3 font-semibold">Objetivo</td>
+                  <td class="p-3">"Quero fazer imagens legais"</td>
+                  <td class="p-3 text-green-700 dark:text-green-400">"Quero resolver problemas de clientes com IA"</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                  <td class="p-3 font-semibold">Aprendizado</td>
+                  <td class="p-3">"Vou aprender quando tiver tempo"</td>
+                  <td class="p-3 text-green-700 dark:text-green-400">"Dedico X horas/semana para evoluir"</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
+                  <td class="p-3 font-semibold">Portfólio</td>
+                  <td class="p-3">"Posto no Instagram quando criar algo legal"</td>
+                  <td class="p-3 text-green-700 dark:text-green-400">"Construo cases estruturados com objetivo comercial"</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                  <td class="p-3 font-semibold">Precificação</td>
+                  <td class="p-3">"Cobro barato no começo"</td>
+                  <td class="p-3 text-green-700 dark:text-green-400">"Cobro pelo valor entregue, não pelo tempo"</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
+                  <td class="p-3 font-semibold">Comunicação</td>
+                  <td class="p-3">"Faço umas artes com IA"</td>
+                  <td class="p-3 text-green-700 dark:text-green-400">"Sou designer especializado em soluções com IA generativa"</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                  <td class="p-3 font-semibold">Clientes</td>
+                  <td class="p-3">"Espero que me encontrem"</td>
+                  <td class="p-3 text-green-700 dark:text-green-400">"Vou atrás ativamente e construo rede"</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
+                  <td class="p-3 font-semibold">Rejeição</td>
+                  <td class="p-3">"Desisto fácil se não der certo logo"</td>
+                  <td class="p-3 text-green-700 dark:text-green-400">"Aprendo com cada 'não' e persisto"</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                  <td class="p-3 font-semibold">Entrega</td>
+                  <td class="p-3">"Entrego quando terminar"</td>
+                  <td class="p-3 text-green-700 dark:text-green-400">"Cumpro prazos religiosamente"</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
+                  <td class="p-3 font-semibold">Revisões</td>
+                  <td class="p-3">"Já fiz, não quero mexer mais"</td>
+                  <td class="p-3 text-green-700 dark:text-green-400">"Cliente satisfeito é prioridade absoluta"</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                  <td class="p-3 font-semibold">Ferramentas</td>
+                  <td class="p-3">"Uso só o que é grátis"</td>
+                  <td class="p-3 text-green-700 dark:text-green-400">"Invisto em ferramentas que aumentam qualidade"</td>
+                </tr>
+                <tr class="bg-white dark:bg-neutral-800">
+                  <td class="p-3 font-semibold">Visão</td>
+                  <td class="p-3">"Isso é um passatempo"</td>
+                  <td class="p-3 text-green-700 dark:text-green-400">"Isso é minha carreira profissional"</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg">
+            <h3 class="text-2xl font-bold mb-3">💎 O Segredo do Sucesso</h3>
+            <p class="text-lg mb-4">
+              Não é sobre ser o melhor tecnicamente. É sobre ter:
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="mr-2">✓</span>
+                <span><strong>Consistência</strong> - aparecer todos os dias</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2">✓</span>
+                <span><strong>Confiabilidade</strong> - fazer o que promete</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2">✓</span>
+                <span><strong>Comunicação</strong> - explicar seu valor claramente</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2">✓</span>
+                <span><strong>Profissionalismo</strong> - tratar como negócio sério</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 3: Histórias Reais -->
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-purple-200 dark:border-purple-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">⭐</span>
+          <div>
+            <h2 class="text-3xl font-bold text-purple-900 dark:text-purple-300">Histórias Reais de Transição</h2>
+            <p class="text-purple-700 dark:text-purple-400 font-semibold mt-1">Pessoas que fizeram a mudança e estão ganhando dinheiro</p>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <!-- História 1: Designer Tradicional -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl border border-purple-200 dark:border-purple-700">
+            <div class="flex items-center mb-4">
+              <div class="w-16 h-16 bg-purple-200 dark:bg-purple-700 rounded-full flex items-center justify-center text-3xl mr-4">
+                👨‍🎨
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300">Rafael, 29 anos</h3>
+                <p class="text-purple-700 dark:text-purple-400 text-sm">Designer Gráfico → AI Art Director</p>
+                <p class="text-neutral-600 dark:text-neutral-400 text-xs">Curitiba, PR</p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded border-l-4 border-red-400">
+                <p class="font-bold text-red-900 dark:text-red-300 mb-2">❌ ANTES</p>
+                <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• 5 anos de experiência em agência</li>
+                  <li>• Salário: R$ 3.500/mês</li>
+                  <li>• Horas extras não pagas</li>
+                  <li>• Sem autonomia criativa</li>
+                  <li>• Tarefas repetitivas no Photoshop</li>
+                  <li>• Estresse e burnout</li>
+                </ul>
+              </div>
+              <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border-l-4 border-green-400">
+                <p class="font-bold text-green-900 dark:text-green-300 mb-2">✅ DEPOIS (8 meses)</p>
+                <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• Freelancer AI especializado</li>
+                  <li>• Renda: R$ 12.000/mês</li>
+                  <li>• Trabalha de casa, horário flexível</li>
+                  <li>• Escolhe os projetos que quer</li>
+                  <li>• Cria em minutos, não dias</li>
+                  <li>• Ama o que faz novamente</li>
+                </ul>
+              </div>
+            </div>
+
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3 italic">
+              "Eu pensava que IA ia me substituir. Descobri que ela me LIBERTOU. Antes eu passava 80% do tempo executando ideias técnicas
+              e 20% criando. Agora é o inverso: 80% pensando criativamente, 20% executando com IA."
+            </p>
+
+            <div class="bg-purple-100 dark:bg-purple-900/30 p-4 rounded">
+              <p class="font-bold text-purple-900 dark:text-purple-300 mb-2">🎯 O que fez a diferença:</p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                Rafael investiu 3 meses estudando IA a fundo. Criou 15 projetos para portfólio. Começou oferecendo serviços no LinkedIn.
+                Hoje 80% dos clientes vêm por indicação. Ele não compete com outros designers - compete com AGÊNCIAS.
+              </p>
+            </div>
+          </div>
+
+          <!-- História 2: Fotógrafa -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl border border-blue-200 dark:border-blue-700">
+            <div class="flex items-center mb-4">
+              <div class="w-16 h-16 bg-blue-200 dark:bg-blue-700 rounded-full flex items-center justify-center text-3xl mr-4">
+                👩‍💻
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300">Carla, 34 anos</h3>
+                <p class="text-blue-700 dark:text-blue-400 text-sm">Fotógrafa → Criadora de Conteúdo Visual com IA</p>
+                <p class="text-neutral-600 dark:text-neutral-400 text-xs">Rio de Janeiro, RJ</p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded border-l-4 border-red-400">
+                <p class="font-bold text-red-900 dark:text-red-300 mb-2">❌ ANTES</p>
+                <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• 8 anos como fotógrafa freelance</li>
+                  <li>• Renda instável (R$ 2k-6k/mês)</li>
+                  <li>• Limitada a eventos e ensaios</li>
+                  <li>• Dependente de agenda de terceiros</li>
+                  <li>• Mercado saturado e preços baixos</li>
+                  <li>• Sem escalabilidade</li>
+                </ul>
+              </div>
+              <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border-l-4 border-green-400">
+                <p class="font-bold text-green-900 dark:text-green-300 mb-2">✅ DEPOIS (6 meses)</p>
+                <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• Criadora de conteúdo para marcas</li>
+                  <li>• Renda estável: R$ 15.000/mês</li>
+                  <li>• Cria campanhas completas</li>
+                  <li>• Controla 100% da agenda</li>
+                  <li>• Nicho único (moda sustentável + IA)</li>
+                  <li>• 1 projeto = lucro de 5 ensaios</li>
+                </ul>
+              </div>
+            </div>
+
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3 italic">
+              "Como fotógrafa, eu tinha olho treinado para luz, composição, momentos. Com IA, peguei esse conhecimento e multipliquei por 1000.
+              Agora crio campanhas inteiras - modelos, cenários, produtos - sem precisar de equipe, estúdio ou modelos."
+            </p>
+
+            <div class="bg-blue-100 dark:bg-blue-900/30 p-4 rounded">
+              <p class="font-bold text-blue-900 dark:text-blue-300 mb-2">🎯 O que fez a diferença:</p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                Carla percebeu que seu VERDADEIRO talento era direção de arte, não apertar o botão da câmera. Especializou-se em criar
+                imagens para e-commerce de moda. Hoje entrega em 2 dias o que levaria semanas em produção tradicional.
+              </p>
+            </div>
+          </div>
+
+          <!-- História 3: Profissional de Marketing -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl border border-orange-200 dark:border-orange-700">
+            <div class="flex items-center mb-4">
+              <div class="w-16 h-16 bg-orange-200 dark:bg-orange-700 rounded-full flex items-center justify-center text-3xl mr-4">
+                👨‍💼
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-orange-900 dark:text-orange-300">Lucas, 41 anos</h3>
+                <p class="text-orange-700 dark:text-orange-400 text-sm">Analista de Marketing → Especialista em Conteúdo Visual IA</p>
+                <p class="text-neutral-600 dark:text-neutral-400 text-xs">São Paulo, SP</p>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded border-l-4 border-red-400">
+                <p class="font-bold text-red-900 dark:text-red-300 mb-2">❌ ANTES</p>
+                <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• 15 anos em marketing</li>
+                  <li>• Sempre dependia de designers</li>
+                  <li>• Ideias perdidas em briefings</li>
+                  <li>• Gastos altos com terceiros</li>
+                  <li>• Sem autonomia para testar rápido</li>
+                  <li>• Frustração criativa constante</li>
+                </ul>
+              </div>
+              <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border-l-4 border-green-400">
+                <p class="font-bold text-green-900 dark:text-green-300 mb-2">✅ DEPOIS (4 meses)</p>
+                <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• Marketing + Design em uma pessoa</li>
+                  <li>• Cria próprios materiais em minutos</li>
+                  <li>• Testa 10 ideias/dia visualmente</li>
+                  <li>• Economia de R$ 5k/mês em designers</li>
+                  <li>• Promovido para Head de Conteúdo</li>
+                  <li>• Aumento salarial de 60%</li>
+                </ul>
+              </div>
+            </div>
+
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3 italic">
+              "Eu sempre tive visão criativa, mas nunca consegui executar. Dependia de freelancers que nem sempre entendiam minha ideia.
+              Com IA, finalmente consigo transformar estratégia em visual instantaneamente. Virei 10x mais valioso para a empresa."
+            </p>
+
+            <div class="bg-orange-100 dark:bg-orange-900/30 p-4 rounded">
+              <p class="font-bold text-orange-900 dark:text-orange-300 mb-2">🎯 O que fez a diferença:</p>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300">
+                Lucas percebeu que a combinação Marketing + IA era raríssima no mercado. Hoje ele não só trabalha na empresa, mas presta
+                consultoria externa ganhando R$ 8k/mês extra ensinando outras empresas a usar IA em marketing visual.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-8 rounded-xl mt-8">
+          <h3 class="text-2xl font-bold mb-4">🎯 Padrão Comum em Todas as Histórias</h3>
+          <p class="text-lg mb-4">
+            1. Todas tinham <strong>algum background criativo ou estratégico</strong>
+          </p>
+          <p class="text-lg mb-4">
+            2. Todas perceberam que <strong>IA potencializava o que já sabiam</strong>, não substituía
+          </p>
+          <p class="text-lg mb-4">
+            3. Todas investiram <strong>2-6 meses de estudo focado</strong> antes de monetizar seriamente
+          </p>
+          <p class="text-xl font-bold">
+            Nenhuma dessas pessoas era "gênio". Eram pessoas normais que viram a oportunidade e AGIRAM.
+          </p>
+        </div>
+      </div>
+
+      <!-- Seção 4: Habilidades Transferíveis -->
+      <div class="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-yellow-200 dark:border-yellow-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🔄</span>
+          <div>
+            <h2 class="text-3xl font-bold text-yellow-900 dark:text-yellow-300">Mapeando Suas Habilidades Transferíveis</h2>
+            <p class="text-yellow-700 dark:text-yellow-400 font-semibold mt-1">Você já sabe mais do que imagina</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 mb-6">
+            A transição para IA não significa começar do zero. Suas experiências anteriores são ATIVOS valiosos.
+            Veja como transformá-las:
+          </p>
+
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full text-sm border-collapse">
+              <thead>
+                <tr class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white">
+                  <th class="p-3 text-left font-bold">Se você tem experiência em...</th>
+                  <th class="p-3 text-left font-bold">Isso vira habilidade IA de...</th>
+                  <th class="p-3 text-left font-bold">Aplicação Prática</th>
+                </tr>
+              </thead>
+              <tbody class="text-neutral-700 dark:text-neutral-300">
+                <tr class="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
+                  <td class="p-3"><strong>📸 Fotografia</strong></td>
+                  <td class="p-3">Direção de luz, composição, edição de imagem</td>
+                  <td class="p-3">Criação de bancos de imagem, product photography, lifestyle</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                  <td class="p-3"><strong>🎨 Design Gráfico</strong></td>
+                  <td class="p-3">Hierarquia visual, tipografia, layouts</td>
+                  <td class="p-3">Posts para redes sociais, materiais de marketing, branding</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
+                  <td class="p-3"><strong>🏛️ Arquitetura</strong></td>
+                  <td class="p-3">Perspectiva, iluminação 3D, espaços</td>
+                  <td class="p-3">Visualização de projetos, renders arquitetônicos, design de interiores</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                  <td class="p-3"><strong>✏️ Ilustração</strong></td>
+                  <td class="p-3">Estilos artísticos, narrativa visual, personagens</td>
+                  <td class="p-3">Concept art, livros infantis, mascotes e characters</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
+                  <td class="p-3"><strong>📢 Publicidade</strong></td>
+                  <td class="p-3">Conceito criativo, storytelling, impacto visual</td>
+                  <td class="p-3">Campanhas publicitárias, peças de impacto, conceitos visuais</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                  <td class="p-3"><strong>🎬 Audiovisual</strong></td>
+                  <td class="p-3">Storyboard, direção de arte, enquadramento</td>
+                  <td class="p-3">Concept frames, moodboards, direção visual de projetos</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
+                  <td class="p-3"><strong>👗 Moda</strong></td>
+                  <td class="p-3">Tendências, paletas, composição de looks</td>
+                  <td class="p-3">Lookbooks, coleções virtuais, fashion editorial</td>
+                </tr>
+                <tr class="bg-white dark:bg-neutral-800">
+                  <td class="p-3"><strong>📱 UX/UI Design</strong></td>
+                  <td class="p-3">User experience, interfaces, protótipos</td>
+                  <td class="p-3">Mockups de apps, landing pages, conceitos de interface</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="bg-gradient-to-r from-orange-100 to-red-100 dark:from-orange-900/30 dark:to-red-900/30 p-6 rounded-lg border-l-4 border-orange-500">
+            <h3 class="text-2xl font-bold text-orange-900 dark:text-orange-300 mb-4">💡 Exercício: Seu Inventário de Talentos</h3>
+            <p class="text-neutral-800 dark:text-neutral-200 mb-4">Responda para si mesmo:</p>
+            <ol class="space-y-3 text-neutral-700 dark:text-neutral-300">
+              <li><strong>1.</strong> Que tipo de trabalho visual você já fez (profissional ou hobby)?</li>
+              <li><strong>2.</strong> Que estilos visuais você reconhece facilmente?</li>
+              <li><strong>3.</strong> Que tipos de projeto você sempre quis fazer mas não tinha habilidade técnica?</li>
+              <li><strong>4.</strong> Que feedback positivo você já recebeu sobre seu senso estético?</li>
+              <li><strong>5.</strong> Que área criativa você consome (filmes, arte, design, moda, etc.)?</li>
+            </ol>
+            <p class="text-lg font-bold text-orange-900 dark:text-orange-300 mt-4">
+              Cada resposta é uma habilidade transferível para IA!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 5: Portfólio -->
+      <div class="bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-cyan-200 dark:border-cyan-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🎨</span>
+          <div>
+            <h2 class="text-3xl font-bold text-cyan-900 dark:text-cyan-300">Construindo Seu Portfólio IA Profissional</h2>
+            <p class="text-cyan-700 dark:text-cyan-400 font-semibold mt-1">Como criar um portfólio que vende</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border border-red-300 dark:border-red-700">
+              <h3 class="text-xl font-bold text-red-900 dark:text-red-300 mb-4">❌ Portfólio Amador</h3>
+              <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                <li>• Só imagens soltas sem contexto</li>
+                <li>• "Fiz isso testando a IA"</li>
+                <li>• Estilos inconsistentes e aleatórios</li>
+                <li>• Sem explicação do processo</li>
+                <li>• Apenas "arte por arte"</li>
+                <li>• Sem objetivo comercial claro</li>
+                <li>• Projetos pessoais sem aplicação</li>
+              </ul>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border border-green-300 dark:border-green-700">
+              <h3 class="text-xl font-bold text-green-900 dark:text-green-300 mb-4">✅ Portfólio Profissional</h3>
+              <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                <li>• Cases estruturados com briefing</li>
+                <li>• "Projeto: Campanha X para Cliente Y"</li>
+                <li>• Coerência visual por projeto</li>
+                <li>• Processo documentado</li>
+                <li>• Foco em resolver problemas reais</li>
+                <li>• Mostra resultados/impacto</li>
+                <li>• Mix de projetos comerciais</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-cyan-100 dark:bg-cyan-900/30 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-cyan-900 dark:text-cyan-300 mb-4">📋 Estrutura de Case Profissional</h3>
+            <div class="space-y-4 text-neutral-700 dark:text-neutral-300">
+              <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                <p class="font-bold text-cyan-900 dark:text-cyan-300 mb-2">1. CONTEXTO/BRIEFING</p>
+                <p class="text-sm">Cliente (real ou fictício), desafio, objetivo do projeto</p>
+                <p class="text-xs italic mt-1">Ex: "E-commerce de moda sustentável precisava de 20 imagens de produto para lançamento"</p>
+              </div>
+              <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                <p class="font-bold text-cyan-900 dark:text-cyan-300 mb-2">2. PROCESSO</p>
+                <p class="text-sm">Pesquisa de referências, direção de arte, ferramentas usadas</p>
+                <p class="text-xs italic mt-1">Ex: "Pesquisei estética minimalista escandinava, testei 5 composições diferentes"</p>
+              </div>
+              <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                <p class="font-bold text-cyan-900 dark:text-cyan-300 mb-2">3. RESULTADO</p>
+                <p class="text-sm">Imagens finais organizadas, aplicações, métricas se possível</p>
+                <p class="text-xs italic mt-1">Ex: "20 imagens entregues, usadas no site e Instagram, aumento de 40% em engajamento"</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🎯 5 Projetos Essenciais Para Seu Primeiro Portfólio</h3>
+            <ol class="space-y-3">
+              <li><strong>1. Identidade Visual Completa</strong> - Logo, paleta de cores, aplicações</li>
+              <li><strong>2. Campanha de Redes Sociais</strong> - 9 posts temáticos para Instagram de marca fictícia</li>
+              <li><strong>3. Product Photography</strong> - 6-10 imagens de produto para e-commerce</li>
+              <li><strong>4. Editorial/Lookbook</strong> - Série de 5-8 imagens com narrativa visual</li>
+              <li><strong>5. Conceito Publicitário</strong> - Campanha visual completa (outdoor, anúncio, social)</li>
+            </ol>
+            <p class="text-sm mt-4 bg-white/20 p-3 rounded">
+              💡 Dica: Mesmo que sejam projetos fictícios, trate com seriedade de projeto real. Clientes avaliam sua CAPACIDADE, não se o cliente era real.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-blue-500">
+            <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300 mb-4">🌐 Onde Hospedar Seu Portfólio</h3>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <p class="font-bold text-neutral-800 dark:text-neutral-200 mb-2">Plataformas Recomendadas:</p>
+                <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                  <li>• <strong>Behance</strong> - Padrão da indústria criativa</li>
+                  <li>• <strong>Dribbble</strong> - Para design e UI/UX</li>
+                  <li>• <strong>Instagram</strong> - Para alcance e descoberta</li>
+                  <li>• <strong>Site próprio</strong> - Mais profissional (Notion, Carrd, Webflow)</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold text-neutral-800 dark:text-neutral-200 mb-2">O Que NUNCA Fazer:</p>
+                <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                  <li>• ❌ Google Drive com imagens soltas</li>
+                  <li>• ❌ WhatsApp como "portfólio"</li>
+                  <li>• ❌ Apenas stories do Instagram</li>
+                  <li>• ❌ PDF com 100 imagens sem contexto</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 6: Precificação -->
+      <div class="bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-red-200 dark:border-red-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">💰</span>
+          <div>
+            <h2 class="text-3xl font-bold text-red-900 dark:text-red-300">Posicionamento e Precificação</h2>
+            <p class="text-red-700 dark:text-red-400 font-semibold mt-1">Como cobrar pelo seu trabalho sem medo</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <div class="bg-yellow-100 dark:bg-yellow-900/30 p-6 rounded-lg mb-6 border-l-4 border-yellow-500">
+            <h3 class="text-2xl font-bold text-yellow-900 dark:text-yellow-300 mb-3">⚠️ O Erro Fatal do Iniciante</h3>
+            <p class="text-neutral-800 dark:text-neutral-200 mb-3">
+              <strong>"Vou cobrar barato porque ainda estou aprendendo"</strong>
+            </p>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Isso posiciona você como amador e atrai os PIORES clientes. O cliente não paga pela sua ferramenta ou tempo de aprendizado.
+              <strong>Cliente paga pelo RESULTADO que você entrega.</strong>
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border border-neutral-200 dark:border-neutral-700">
+            <h3 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">💡 Como Se Apresentar Profissionalmente</h3>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+              <div class="bg-red-50 dark:bg-red-900/20 p-4 rounded">
+                <p class="font-bold text-red-900 dark:text-red-300 mb-3">❌ EVITE DIZER:</p>
+                <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                  <li>• "Faço umas artes com IA"</li>
+                  <li>• "Ainda estou aprendendo"</li>
+                  <li>• "Cobro barato"</li>
+                  <li>• "Uso Midjourney/Leonardo"</li>
+                  <li>• "É fácil, posso fazer rápido"</li>
+                </ul>
+              </div>
+              <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded">
+                <p class="font-bold text-green-900 dark:text-green-300 mb-3">✅ DIGA ISSO:</p>
+                <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+                  <li>• "Crio conteúdo visual estratégico"</li>
+                  <li>• "Especializado em [nicho] com IA"</li>
+                  <li>• "Investimento a partir de X"</li>
+                  <li>• "Uso tecnologia de ponta para..."</li>
+                  <li>• "Processo eficiente, resultado profissional"</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto mb-6">
+            <h3 class="text-2xl font-bold text-red-900 dark:text-red-300 mb-4">💵 Tabela de Preços Sugeridos (Mercado Brasileiro 2024)</h3>
+            <table class="w-full text-sm border-collapse">
+              <thead>
+                <tr class="bg-gradient-to-r from-red-500 to-orange-500 text-white">
+                  <th class="p-3 text-left font-bold">Serviço</th>
+                  <th class="p-3 text-left font-bold">Iniciante (0-6 meses)</th>
+                  <th class="p-3 text-left font-bold">Intermediário (6-12 meses)</th>
+                  <th class="p-3 text-left font-bold">Avançado (1+ ano)</th>
+                </tr>
+              </thead>
+              <tbody class="text-neutral-700 dark:text-neutral-300">
+                <tr class="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
+                  <td class="p-3">Post para Instagram (1 imagem)</td>
+                  <td class="p-3">R$ 80-150</td>
+                  <td class="p-3">R$ 150-300</td>
+                  <td class="p-3">R$ 300-500</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                  <td class="p-3">Pacote 9 posts feed (grid)</td>
+                  <td class="p-3">R$ 500-800</td>
+                  <td class="p-3">R$ 800-1.500</td>
+                  <td class="p-3">R$ 1.500-3.000</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
+                  <td class="p-3">Identidade Visual completa</td>
+                  <td class="p-3">R$ 1.000-2.000</td>
+                  <td class="p-3">R$ 2.000-4.000</td>
+                  <td class="p-3">R$ 4.000-8.000</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                  <td class="p-3">Banner/anúncio publicitário</td>
+                  <td class="p-3">R$ 150-300</td>
+                  <td class="p-3">R$ 300-600</td>
+                  <td class="p-3">R$ 600-1.200</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
+                  <td class="p-3">Product photography (10 imagens)</td>
+                  <td class="p-3">R$ 600-1.000</td>
+                  <td class="p-3">R$ 1.000-2.000</td>
+                  <td class="p-3">R$ 2.000-4.000</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700">
+                  <td class="p-3">Campanha completa (conceito + peças)</td>
+                  <td class="p-3">R$ 2.000-3.500</td>
+                  <td class="p-3">R$ 3.500-7.000</td>
+                  <td class="p-3">R$ 7.000-15.000</td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800">
+                  <td class="p-3">Consultoria/hora</td>
+                  <td class="p-3">R$ 100-200</td>
+                  <td class="p-3">R$ 200-400</td>
+                  <td class="p-3">R$ 400-800</td>
+                </tr>
+                <tr class="bg-white dark:bg-neutral-800">
+                  <td class="p-3">Mensalista (gestão completa)</td>
+                  <td class="p-3">R$ 2.000-4.000</td>
+                  <td class="p-3">R$ 4.000-8.000</td>
+                  <td class="p-3">R$ 8.000-15.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="bg-gradient-to-r from-orange-500 to-red-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">📦 Exemplos de Pacotes de Serviço</h3>
+            <div class="grid md:grid-cols-3 gap-4 text-sm">
+              <div class="bg-white/20 p-4 rounded">
+                <p class="font-bold mb-2">🥉 PACOTE BÁSICO</p>
+                <p class="text-xl font-bold mb-2">R$ 800</p>
+                <ul class="space-y-1">
+                  <li>• 6 posts para Instagram</li>
+                  <li>• 1 revisão incluída</li>
+                  <li>• Prazo: 7 dias</li>
+                </ul>
+              </div>
+              <div class="bg-white/30 p-4 rounded border-2 border-white">
+                <p class="font-bold mb-2">🥈 PACOTE PROFISSIONAL</p>
+                <p class="text-xl font-bold mb-2">R$ 1.800</p>
+                <ul class="space-y-1">
+                  <li>• 12 posts + 6 stories</li>
+                  <li>• 2 revisões incluídas</li>
+                  <li>• Legenda sugerida</li>
+                  <li>• Prazo: 10 dias</li>
+                </ul>
+              </div>
+              <div class="bg-white/20 p-4 rounded">
+                <p class="font-bold mb-2">🥇 PACOTE PREMIUM</p>
+                <p class="text-xl font-bold mb-2">R$ 3.500</p>
+                <ul class="space-y-1">
+                  <li>• 20 posts + 10 stories + reels cover</li>
+                  <li>• Revisões ilimitadas</li>
+                  <li>• Estratégia de conteúdo</li>
+                  <li>• Prazo: 15 dias</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-100 dark:bg-blue-900/30 p-6 rounded-lg border-l-4 border-blue-500">
+            <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300 mb-3">💎 Nichos Lucrativos em IA</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-4">
+              Especializar-se aumenta seu valor e facilita encontrar clientes:
+            </p>
+            <div class="grid md:grid-cols-2 gap-3 text-sm text-neutral-700 dark:text-neutral-300">
+              <div>• Moda e e-commerce</div>
+              <div>• Restaurantes e food</div>
+              <div>• Imobiliário e arquitetura</div>
+              <div>• Saúde e bem-estar</div>
+              <div>• Fitness e esportes</div>
+              <div>• Beleza e cosméticos</div>
+              <div>• Viagens e turismo</div>
+              <div>• Educação e infoprodutos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 7: Oportunidades -->
+      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-blue-200 dark:border-blue-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🎯</span>
+          <div>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300">Oportunidades e Onde Encontrá-las</h2>
+            <p class="text-blue-700 dark:text-blue-400 font-semibold mt-1">Estratégias práticas para conseguir clientes</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border border-neutral-200 dark:border-neutral-700">
+            <h3 class="text-2xl font-bold text-blue-900 dark:text-blue-300 mb-4">💼 Plataformas de Freelancing</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-blue-400 pl-4">
+                <p class="font-bold text-neutral-800 dark:text-neutral-200">🌐 Upwork</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Maior plataforma global. Clientes pagam bem, mas competição é alta.</p>
+                <p class="text-xs text-neutral-600 dark:text-neutral-400">
+                  <strong>Estratégia:</strong> Perfil profissional, portfolio forte, começar com propostas personalizadas em nichos específicos.
+                </p>
+              </div>
+              <div class="border-l-4 border-green-400 pl-4">
+                <p class="font-bold text-neutral-800 dark:text-neutral-200">💚 Fiverr</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Você cria "gigs" e clientes vêm até você. Mais passivo.</p>
+                <p class="text-xs text-neutral-600 dark:text-neutral-400">
+                  <strong>Estratégia:</strong> Criar 3-5 gigs focados (ex: "AI Instagram Posts for Fashion Brands"), título SEO-friendly, imagens de exemplo impecáveis.
+                </p>
+              </div>
+              <div class="border-l-4 border-purple-400 pl-4">
+                <p class="font-bold text-neutral-800 dark:text-neutral-200">🇧🇷 99Freelas / Workana</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Plataformas brasileiras/latinas. Preços menores mas comunicação em português.</p>
+                <p class="text-xs text-neutral-600 dark:text-neutral-400">
+                  <strong>Estratégia:</strong> Boa para começar construindo reputação. Responda rápido, seja educado, entregue antes do prazo.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-blue-900 dark:text-blue-300 mb-4">📱 Redes Sociais Como Ferramenta de Vendas</h3>
+            <div class="space-y-4">
+              <div>
+                <p class="font-bold text-indigo-900 dark:text-indigo-300 mb-2">📸 Instagram</p>
+                <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+                  <li>• Poste 3-5x/semana mostrando seus trabalhos</li>
+                  <li>• Use hashtags do nicho (#aiart #aidesign #midjourney #designeria)</li>
+                  <li>• Stories mostrando processo (before/after, making of)</li>
+                  <li>• Bio clara: "Designer IA | [seu nicho] | Link portfólio"</li>
+                  <li>• Interaja com perfis do seu nicho-alvo</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold text-blue-900 dark:text-blue-300 mb-2">💼 LinkedIn</p>
+                <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+                  <li>• Perfil profissional mencionando especialização em IA</li>
+                  <li>• Poste cases de sucesso (mesmo que fictícios inicialmente)</li>
+                  <li>• Comente em posts de empresas do seu nicho</li>
+                  <li>• Conecte com gestores de marketing, donos de agência</li>
+                  <li>• Use LinkedIn como canal de autoridade, não só vendas</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold text-purple-900 dark:text-purple-300 mb-2">🐦 Twitter/X</p>
+                <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-1">
+                  <li>• Compartilhe processo, prompts (sem revelar tudo), dicas</li>
+                  <li>• Participe de conversas sobre IA e design</li>
+                  <li>• Siga e interaja com outros criadores IA</li>
+                  <li>• Tweet threads mostrando before/after de projetos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border-l-4 border-indigo-500">
+            <h3 class="text-2xl font-bold text-indigo-900 dark:text-indigo-300 mb-4">👥 Comunidades e Networking</h3>
+            <div class="grid md:grid-cols-2 gap-4 text-sm text-neutral-700 dark:text-neutral-300">
+              <div>
+                <p class="font-bold text-neutral-800 dark:text-neutral-200 mb-2">Onde Participar:</p>
+                <ul class="space-y-1">
+                  <li>• Grupos Facebook de empreendedores</li>
+                  <li>• Comunidades Discord de IA/Design</li>
+                  <li>• Subreddits: r/ArtificialIntelligence, r/midjourney</li>
+                  <li>• Eventos locais de tecnologia e design</li>
+                  <li>• Meetups virtuais sobre IA generativa</li>
+                </ul>
+              </div>
+              <div>
+                <p class="font-bold text-neutral-800 dark:text-neutral-200 mb-2">Como Aproveitar:</p>
+                <ul class="space-y-1">
+                  <li>• Ajude gratuitamente com dúvidas (autoridade)</li>
+                  <li>• Compartilhe seus projetos pedindo feedback</li>
+                  <li>• Ofereça primeiro projeto com desconto</li>
+                  <li>• Faça networking genuíno, não só spam</li>
+                  <li>• Parcerias com outros profissionais complementares</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white p-6 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">📧 Cold Outreach Que Funciona</h3>
+            <p class="mb-4">Abordagem direta pode ser muito efetiva. A chave é PERSONALIZAÇÃO:</p>
+            <div class="bg-white/20 p-4 rounded mb-4">
+              <p class="font-bold mb-2">Template de Mensagem (LinkedIn/Email):</p>
+              <div class="text-sm bg-black/20 p-3 rounded font-mono">
+                <p>Olá [Nome],</p>
+                <p class="mt-2">Vi que a [Empresa] trabalha com [nicho]. Sou designer especializado em criar conteúdo visual usando IA generativa.</p>
+                <p class="mt-2">Percebi que [observação específica sobre o visual deles - algo a melhorar ou elogio genuíno].</p>
+                <p class="mt-2">Criei alguns exemplos de como poderia ser uma campanha/grid/material para vocês [link portfólio]. Sem compromisso, apenas para mostrar o que é possível.</p>
+                <p class="mt-2">Podemos conversar 15min sobre como isso poderia ajudar a [Empresa]?</p>
+                <p class="mt-2">Abraço,<br/>[Seu Nome]</p>
+              </div>
+            </div>
+            <p class="text-sm">
+              <strong>Chaves do sucesso:</strong> 1) Pesquisa prévia sobre a empresa, 2) Mostre valor ANTES de pedir algo,
+              3) Call-to-action simples (conversa, não venda imediata)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 8: Exercício Auto-Descoberta -->
+      <div class="bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 dark:from-yellow-900/20 dark:via-orange-900/20 dark:to-red-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-yellow-300 dark:border-yellow-700">
+        <div class="text-center mb-6">
+          <span class="text-6xl mb-4 block">🎯</span>
+          <h2 class="text-3xl font-bold text-yellow-900 dark:text-yellow-300">Exercício de Auto-Descoberta Profissional</h2>
+          <p class="text-yellow-800 dark:text-yellow-400 mt-2">Planeje sua transição estrategicamente</p>
+        </div>
+
+        <div class="bg-white dark:bg-neutral-800 p-8 rounded-lg mb-6">
+          <h3 class="text-2xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">Responda com sinceridade para si mesmo:</h3>
+
+          <div class="space-y-6">
+            <div class="border-l-4 border-blue-400 pl-6">
+              <p class="font-bold text-lg text-blue-900 dark:text-blue-300 mb-2">1. Qual é meu objetivo realista de renda mensal com IA em 6 meses?</p>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm italic">
+                Seja específico: R$ 2.000? R$ 5.000? R$ 10.000? Complementar renda ou viver disso?
+              </p>
+            </div>
+
+            <div class="border-l-4 border-purple-400 pl-6">
+              <p class="font-bold text-lg text-purple-900 dark:text-purple-300 mb-2">2. Quantas horas REAIS posso dedicar por semana ao aprendizado e prática?</p>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm italic">
+                Não o ideal, mas o REAL considerando sua vida atual. 5h? 10h? 20h?
+              </p>
+            </div>
+
+            <div class="border-l-4 border-green-400 pl-6">
+              <p class="font-bold text-lg text-green-900 dark:text-green-300 mb-2">3. Que nicho me interessa mais e tenho algum conhecimento prévio?</p>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm italic">
+                Moda? Comida? Arquitetura? Educação? Onde você tem vantagem ou interesse genuíno?
+              </p>
+            </div>
+
+            <div class="border-l-4 border-orange-400 pl-6">
+              <p class="font-bold text-lg text-orange-900 dark:text-orange-300 mb-2">4. Qual meu maior medo em relação a essa transição?</p>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm italic">
+                Nomear o medo é o primeiro passo para superá-lo. Medo de não ser bom? De não conseguir clientes?
+              </p>
+            </div>
+
+            <div class="border-l-4 border-red-400 pl-6">
+              <p class="font-bold text-lg text-red-900 dark:text-red-300 mb-2">5. Quem eu conheço que poderia ser meu primeiro cliente?</p>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm italic">
+                Amigo com negócio? Familiar? Ex-colega? Seu primeiro projeto pode estar mais perto do que imagina.
+              </p>
+            </div>
+
+            <div class="border-l-4 border-indigo-400 pl-6">
+              <p class="font-bold text-lg text-indigo-900 dark:text-indigo-300 mb-2">6. Qual seria meu "projeto dos sonhos" com IA?</p>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm italic">
+                Que tipo de trabalho te faria acordar empolgado? Isso indica sua direção de especialização.
+              </p>
+            </div>
+
+            <div class="border-l-4 border-pink-400 pl-6">
+              <p class="font-bold text-lg text-pink-900 dark:text-pink-300 mb-2">7. O que preciso mudar na minha rotina para priorizar isso?</p>
+              <p class="text-neutral-600 dark:text-neutral-400 text-sm italic">
+                Netflix? Redes sociais passivas? Sono? Algo precisa dar espaço. O que será?
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-yellow-100 to-orange-100 dark:from-yellow-900/30 dark:to-orange-900/30 p-6 rounded-lg mb-6">
+          <h3 class="text-2xl font-bold text-yellow-900 dark:text-yellow-300 mb-4">📅 Plano de 90 Dias</h3>
+          <p class="text-neutral-800 dark:text-neutral-200 mb-4">
+            Baseado em suas respostas, crie um plano realista:
+          </p>
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <p class="font-bold text-blue-900 dark:text-blue-300 mb-2">📘 MÊS 1: APRENDER</p>
+              <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+                <li>• Dominar ferramentas principais</li>
+                <li>• Estudar referências do nicho</li>
+                <li>• Criar primeiros 3 projetos</li>
+                <li>• Montar portfólio básico</li>
+              </ul>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <p class="font-bold text-orange-900 dark:text-orange-300 mb-2">🎨 MÊS 2: PRATICAR</p>
+              <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+                <li>• Completar 5 projetos de portfólio</li>
+                <li>• Começar presença em redes sociais</li>
+                <li>• Definir precificação</li>
+                <li>• Buscar primeiro cliente real</li>
+              </ul>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+              <p class="font-bold text-green-900 dark:text-green-300 mb-2">🚀 MÊS 3: MONETIZAR</p>
+              <ul class="space-y-1 text-neutral-700 dark:text-neutral-300">
+                <li>• Fazer primeiro freela pago</li>
+                <li>• Cold outreach para 20 prospects</li>
+                <li>• Refinar processos</li>
+                <li>• Meta: 3 clientes pagantes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-red-500 to-orange-500 text-white p-6 rounded-lg">
+          <h3 class="text-2xl font-bold mb-3">🎯 Metas SMART para os Próximos 90 Dias</h3>
+          <p class="mb-4">Transforme seus objetivos em metas SMART (Específica, Mensurável, Atingível, Relevante, Temporal):</p>
+          <div class="space-y-3 text-sm">
+            <div class="bg-white/20 p-3 rounded">
+              <strong>Exemplo RUIM:</strong> "Quero ganhar dinheiro com IA"
+            </div>
+            <div class="bg-white/30 p-3 rounded border-2 border-white">
+              <strong>Exemplo BOM:</strong> "Até [data 90 dias], vou fazer 3 projetos pagos totalizando R$ 1.500, criando conteúdo para Instagram de pequenos negócios locais, dedicando 10h/semana"
+            </div>
+          </div>
+          <p class="mt-4 font-bold">
+            Agora escreva SUA meta SMART. Seja específico. Coloque data. Defina número.
+          </p>
+        </div>
+      </div>
+
+      <!-- Seção 9: Aulas -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">📚 Estrutura das Aulas</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-8">
+          Este módulo está dividido em 5 aulas práticas e objetivas que vão guiar sua transição profissional:
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg hover:shadow-md transition-shadow border border-blue-200 dark:border-blue-800">
+            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4 flex-shrink-0">
+              1
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300 mb-2">O Mercado de IA: Oportunidades Reais</h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-2">
+                Panorama completo do mercado, profissões emergentes, dados de salários, nichos lucrativos e por que você tem vantagem competitiva.
+              </p>
+              <span class="text-sm text-blue-600 dark:text-blue-400 font-semibold">⏱️ Duração: 1.5 horas</span>
+            </div>
+          </div>
+
+          <div class="flex items-start bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-lg hover:shadow-md transition-shadow border border-indigo-200 dark:border-indigo-800">
+            <div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4 flex-shrink-0">
+              2
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-2">Mindset Profissional vs Amador</h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-2">
+                Diferenças cruciais de mentalidade, como pensar como profissional, posicionamento, comunicação e as crenças que separam sucesso de fracasso.
+              </p>
+              <span class="text-sm text-indigo-600 dark:text-indigo-400 font-semibold">⏱️ Duração: 1 hora</span>
+            </div>
+          </div>
+
+          <div class="flex items-start bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg hover:shadow-md transition-shadow border border-purple-200 dark:border-purple-800">
+            <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4 flex-shrink-0">
+              3
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300 mb-2">Portfólio e Posicionamento Estratégico</h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-2">
+                Como construir portfólio que vende, estrutura de cases profissionais, plataformas para hospedar e como se diferenciar da concorrência.
+              </p>
+              <span class="text-sm text-purple-600 dark:text-purple-400 font-semibold">⏱️ Duração: 1.5 horas</span>
+            </div>
+          </div>
+
+          <div class="flex items-start bg-cyan-50 dark:bg-cyan-900/20 p-6 rounded-lg hover:shadow-md transition-shadow border border-cyan-200 dark:border-cyan-800">
+            <div class="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4 flex-shrink-0">
+              4
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-cyan-900 dark:text-cyan-300 mb-2">Precificação, Vendas e Primeiros Clientes</h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-2">
+                Tabelas de preços realistas, como cobrar sem medo, pacotes de serviço, plataformas de freelancing e estratégias de cold outreach que funcionam.
+              </p>
+              <span class="text-sm text-cyan-600 dark:text-cyan-400 font-semibold">⏱️ Duração: 1 hora</span>
+            </div>
+          </div>
+
+          <div class="flex items-start bg-orange-50 dark:bg-orange-900/20 p-6 rounded-lg hover:shadow-md transition-shadow border border-orange-200 dark:border-orange-800">
+            <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4 flex-shrink-0">
+              5
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-orange-900 dark:text-orange-300 mb-2">Plano de Ação 90 Dias</h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-2">
+                Planejamento estratégico detalhado, metas SMART, cronograma realista mês a mês e exercícios de auto-descoberta profissional para mapear sua jornada.
+              </p>
+              <span class="text-sm text-orange-600 dark:text-orange-400 font-semibold">⏱️ Duração: 1 hora</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 10: Exercícios Práticos -->
+      <div class="bg-blue-50 dark:bg-blue-900/20 rounded-xl shadow-md p-8 mb-8 border-2 border-blue-300 dark:border-blue-700">
+        <h2 class="text-3xl font-bold mb-6 text-blue-900 dark:text-blue-300">✏️ Exercícios Práticos Obrigatórios</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+          Conhecimento sem ação é ilusão. Complete estes exercícios durante o módulo:
+        </p>
+
+        <div class="space-y-4">
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-blue-500">
+            <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300 mb-3">1. Mapeamento de Habilidades Transferíveis</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie uma tabela com 3 colunas: "Experiência Anterior", "Habilidade que Isso Representa", "Como Aplicar em IA".
+              Liste pelo menos 5 experiências suas (profissionais ou pessoais) e identifique como elas se traduzem em vantagens competitivas no mercado de IA.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: Documento ou planilha com seu inventário de habilidades transferíveis
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-indigo-500">
+            <h3 class="text-xl font-bold text-indigo-900 dark:text-indigo-300 mb-3">2. Pesquisa de Mercado e Nicho</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Escolha 3 nichos que te interessam (ex: moda, food, arquitetura). Para cada um, pesquise no Instagram, Behance e Google:
+              10 perfis/empresas do nicho, analise o estilo visual, identifique padrões e oportunidades.
+              Depois escolha UM nicho para se especializar inicialmente e justifique por quê.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: Documento com pesquisa dos 3 nichos + escolha final justificada
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-purple-500">
+            <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300 mb-3">3. Projeto de Portfólio #1</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie seu primeiro case profissional seguindo a estrutura: Briefing fictício → Processo → Resultado.
+              Escolha um dos 5 projetos essenciais sugeridos (identidade visual, campanha social, product photography, editorial ou conceito publicitário).
+              Documente TODO o processo: pesquisa de referências, primeiros testes, iterações, resultado final.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: Case completo publicado em Behance ou PDF estruturado
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-cyan-500">
+            <h3 class="text-xl font-bold text-cyan-900 dark:text-cyan-300 mb-3">4. Plano de 90 Dias Personalizado</h3>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Responda as 7 perguntas do exercício de auto-descoberta. Com base nas respostas, crie um plano REALISTA e ESPECÍFICO
+              para os próximos 90 dias, dividido em 3 meses. Cada mês deve ter: 3-5 objetivos claros, horas semanais dedicadas,
+              marcos mensuráveis e uma meta SMART principal.
+            </p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              📝 Entregável: Documento ou planilha com plano de 90 dias detalhado
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 11: Recursos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎁 Recursos Adicionais</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6">
+          Ferramentas e templates para acelerar sua transição:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-5 rounded-lg border border-blue-200 dark:border-blue-700">
+            <h3 class="font-bold text-blue-900 dark:text-blue-300 mb-3">📊 Templates e Planilhas</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Planilha de precificação com cálculos automáticos</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Template de proposta comercial profissional</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Checklist de entrega de projeto</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Rastreador de clientes e projetos</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-purple-50 dark:bg-purple-900/20 p-5 rounded-lg border border-purple-200 dark:border-purple-700">
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-3">📝 Scripts e Modelos</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Scripts de cold outreach (email e LinkedIn)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Template de bio profissional para redes sociais</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Estrutura de case de sucesso</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Respostas para objeções comuns de clientes</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-orange-50 dark:bg-orange-900/20 p-5 rounded-lg border border-orange-200 dark:border-orange-700">
+            <h3 class="font-bold text-orange-900 dark:text-orange-300 mb-3">🎯 Checklists</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Checklist completo de portfólio profissional</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Setup inicial de perfis profissionais</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Validação de projeto antes de entregar</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-orange-500 mr-2">•</span>
+                <span>Onboarding de novo cliente</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-cyan-50 dark:bg-cyan-900/20 p-5 rounded-lg border border-cyan-200 dark:border-cyan-700">
+            <h3 class="font-bold text-cyan-900 dark:text-cyan-300 mb-3">🔗 Links Úteis</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Lista curada de plataformas freelancing</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Comunidades Discord e grupos Facebook recomendados</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Ferramentas gratuitas de gestão de projetos</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-cyan-500 mr-2">•</span>
+                <span>Canais e creators para seguir</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dica Final -->
+      <div class="bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-xl shadow-xl p-8 mb-8">
+        <div class="text-center mb-4">
+          <span class="text-6xl mb-4 block">💎</span>
+          <h2 class="text-3xl font-bold mb-4">Dica Final: O Segredo Que Ninguém Conta</h2>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg">
+          <p class="text-xl mb-4">
+            A diferença entre quem ganha R$ 500 e quem ganha R$ 5.000 por mês com IA NÃO é habilidade técnica.
+          </p>
+          <p class="text-lg mb-4">
+            É sobre três coisas simples (mas que poucos fazem):
+          </p>
+          <ol class="space-y-3 text-lg mb-6">
+            <li><strong>1. CONSISTÊNCIA:</strong> Aparecer todo dia, mesmo quando não dá resultado imediato</li>
+            <li><strong>2. POSICIONAMENTO:</strong> Comunicar seu valor com clareza e confiança</li>
+            <li><strong>3. AÇÃO:</strong> Fazer outreach, buscar clientes, não apenas "postar e esperar"</li>
+          </ol>
+          <p class="text-xl font-bold text-center mt-6 pt-6 border-t border-white/30">
+            Você não precisa ser o melhor. Você precisa ser CONSISTENTE, CLARO e PROATIVO.
+          </p>
+          <p class="text-center mt-4">
+            Faça isso por 90 dias e você terá resultados que 99% das pessoas nunca terão.
+          </p>
+        </div>
+      </div>
+
+      <!-- Navegação -->
+      <div class="flex justify-between items-center mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
+        <a href="../trilhas/tecnico.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold">
+          ← Voltar para Trilha
+        </a>
+        <a href="tecnico-modulo-02.html" class="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 transition-colors text-lg">
+          Continuar para Módulo 2 →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-white py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-neutral-400">&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
+      <p class="text-neutral-500 text-sm mt-2">Transformando profissionais para o mercado do futuro</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>

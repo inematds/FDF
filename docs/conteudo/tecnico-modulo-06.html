@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 6: Aplicações para Negócios - Designer do Futuro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            tecnico: '#3B82F6',
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navegação -->
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm shadow-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Designer do Futuro</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../trilhas/tecnico.html" class="text-neutral-700 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400">Voltar para Trilha</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-blue-50 to-white dark:from-neutral-800 dark:to-neutral-900 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-4">
+        <a href="../trilhas/tecnico.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold">
+          ← Voltar para Trilha Técnico
+        </a>
+      </div>
+      <div class="text-6xl mb-6">💼</div>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4 leading-tight">Módulo 6: Aplicações para Negócios</h1>
+      <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
+        Domine as aplicações comerciais de IA generativa: desde social media ads até branding completo, aprenda a entregar valor real para empresas
+      </p>
+      <div class="flex gap-4 flex-wrap">
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          1 semana
+        </span>
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          10 horas
+        </span>
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-semibold">
+          Técnico
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Objetivos -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎯 O Que Você Vai Dominar Neste Módulo</h2>
+        <p class="text-neutral-700 dark:text-neutral-300 mb-6 text-lg">
+          Este é o módulo mais prático e lucrativo do curso. Aqui você vai aprender exatamente como aplicar IA em contextos comerciais reais, entregando resultados que empresas pagam bem para ter.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+            <span class="text-blue-500 mr-4 text-2xl flex-shrink-0">📱</span>
+            <div>
+              <strong class="text-blue-900 dark:text-blue-300">Social Media Mastery:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Criar campanhas completas para todas as plataformas, com A/B testing e otimização por IA</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-lg">
+            <span class="text-indigo-500 mr-4 text-2xl flex-shrink-0">🛍️</span>
+            <div>
+              <strong class="text-indigo-900 dark:text-indigo-300">E-commerce Completo:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Dominar fotos de produto, lifestyle, banners e catálogos que convertem vendas</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+            <span class="text-purple-500 mr-4 text-2xl flex-shrink-0">🎨</span>
+            <div>
+              <strong class="text-purple-900 dark:text-purple-300">Branding e Identidade:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Criar sistemas visuais completos, logos, paletas e aplicações de marca</span>
+            </div>
+          </div>
+          <div class="flex items-start bg-cyan-50 dark:bg-cyan-900/20 p-4 rounded-lg">
+            <span class="text-cyan-500 mr-4 text-2xl flex-shrink-0">📊</span>
+            <div>
+              <strong class="text-cyan-900 dark:text-cyan-300">ROI e Métricas:</strong>
+              <span class="text-neutral-700 dark:text-neutral-300"> Provar o valor do seu trabalho com números e conquistar clientes recorrentes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 1: Visão Geral -->
+      <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-blue-200 dark:border-blue-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🌐</span>
+          <div>
+            <h2 class="text-3xl font-bold text-blue-900 dark:text-blue-300">Visão Geral: Aplicações Comerciais de IA</h2>
+            <p class="text-blue-700 dark:text-blue-400 font-semibold mt-1">O mercado que está PAGANDO por estes serviços</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Empresas de todos os tamanhos estão desesperadas por conteúdo visual de qualidade. A IA não substituiu designers - ela criou uma EXPLOSÃO de demanda que o mercado tradicional não consegue atender.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border-l-4 border-blue-500">
+            <h3 class="text-2xl font-bold text-blue-900 dark:text-blue-300 mb-4">💰 Quanto Vale Este Conhecimento?</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-blue-50 dark:bg-blue-900/30 p-4 rounded">
+                <p class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">R$ 1.500-5.000</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">Campanha completa de social media (20-30 posts)</p>
+              </div>
+              <div class="bg-cyan-50 dark:bg-cyan-900/30 p-4 rounded">
+                <p class="text-3xl font-bold text-cyan-600 dark:text-cyan-400 mb-1">R$ 3.000-8.000</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">Catálogo completo de produtos para e-commerce</p>
+              </div>
+              <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded">
+                <p class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-1">R$ 4.000-15.000</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">Identidade visual completa (logo, paleta, aplicações)</p>
+              </div>
+              <div class="bg-purple-50 dark:bg-purple-900/30 p-4 rounded">
+                <p class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">R$ 2.000-6.000</p>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300">Deck de apresentação corporativa (20-40 slides)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🎯 Os 5 Pilares de Aplicações Comerciais</h3>
+            <div class="space-y-3">
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <strong>1. Social Media & Ads:</strong> O pão de cada dia - demanda constante e renovável
+              </div>
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <strong>2. E-commerce:</strong> Mercado gigante que precisa de volume em alta qualidade
+              </div>
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <strong>3. Branding:</strong> Projetos de alto valor agregado e prestígio
+              </div>
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <strong>4. Marketing de Conteúdo:</strong> Blog, ebooks, thumbnails - escala massiva
+              </div>
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <strong>5. Corporativo:</strong> Apresentações, relatórios, materiais internos
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 2: Social Media Ads -->
+      <div class="bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-pink-200 dark:border-pink-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">📱</span>
+          <div>
+            <h2 class="text-3xl font-bold text-pink-900 dark:text-pink-300">Social Media Ads: A Mina de Ouro</h2>
+            <p class="text-pink-700 dark:text-pink-400 font-semibold mt-1">O serviço mais demandado do mercado</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Toda empresa precisa de conteúdo para redes sociais. TODA. E a maioria não tem tempo, equipe ou habilidade para criar em volume. Esta é sua oportunidade.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-pink-900 dark:text-pink-300 mb-4">📐 Formatos Master por Plataforma</h3>
+
+            <div class="space-y-4 mb-6">
+              <div class="bg-gradient-to-r from-pink-500 to-orange-500 text-white p-5 rounded-lg">
+                <h4 class="text-xl font-bold mb-3">Instagram</h4>
+                <ul class="space-y-2 text-sm">
+                  <li><strong>Feed (1:1):</strong> 1080x1080px - O clássico que sempre funciona</li>
+                  <li><strong>Stories (9:16):</strong> 1080x1920px - Interativo, urgente, conversacional</li>
+                  <li><strong>Reels (9:16):</strong> 1080x1920px - Thumb cativante + primeira frame impactante</li>
+                  <li><strong>Carrossel:</strong> 1080x1080px - Storytelling em múltiplas telas</li>
+                </ul>
+                <div class="mt-4 bg-white/20 p-3 rounded">
+                  <strong>Técnicas IA para Instagram:</strong> Consistência estética, paleta coesa, elementos de brand recorrentes
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-5 rounded-lg">
+                <h4 class="text-xl font-bold mb-3">Facebook</h4>
+                <ul class="space-y-2 text-sm">
+                  <li><strong>Feed (1.91:1):</strong> 1200x628px - Horizontal, espaçoso</li>
+                  <li><strong>Stories (9:16):</strong> 1080x1920px - Igual IG mas audiência diferente</li>
+                  <li><strong>Ads (1:1):</strong> 1080x1080px - Padrão para campanhas pagas</li>
+                </ul>
+                <div class="mt-4 bg-white/20 p-3 rounded">
+                  <strong>Técnicas IA para Facebook:</strong> Texto legível em thumbnail, contraste alto, call-to-action visual
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-slate-700 to-slate-900 text-white p-5 rounded-lg">
+                <h4 class="text-xl font-bold mb-3">LinkedIn</h4>
+                <ul class="space-y-2 text-sm">
+                  <li><strong>Post (1.91:1):</strong> 1200x627px - Profissional, clean</li>
+                  <li><strong>Document Carousel:</strong> 1080x1080px - Educativo, informativo</li>
+                  <li><strong>Company Cover:</strong> 1128x191px - Identidade corporativa</li>
+                </ul>
+                <div class="mt-4 bg-white/20 p-3 rounded">
+                  <strong>Técnicas IA para LinkedIn:</strong> Estética corporativa, fontes sérias, cores sóbrias, dados visuais
+                </div>
+              </div>
+
+              <div class="bg-gradient-to-r from-red-500 to-pink-500 text-white p-5 rounded-lg">
+                <h4 class="text-xl font-bold mb-3">Pinterest & TikTok</h4>
+                <ul class="space-y-2 text-sm">
+                  <li><strong>Pinterest (2:3):</strong> 1000x1500px - Vertical longo, aspiracional</li>
+                  <li><strong>TikTok (9:16):</strong> 1080x1920px - Frame inicial CRÍTICO</li>
+                </ul>
+                <div class="mt-4 bg-white/20 p-3 rounded">
+                  <strong>Técnicas IA:</strong> Cores saturadas, elementos que "param o scroll", hooks visuais
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-pink-100 to-rose-100 dark:from-pink-900/30 dark:to-rose-900/30 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-pink-900 dark:text-pink-300 mb-4">🧪 A/B Testing com IA</h3>
+            <p class="mb-4 text-neutral-800 dark:text-neutral-200">
+              A maior vantagem competitiva da IA: gerar variações em massa para descobrir o que funciona.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                <h4 class="font-bold text-pink-900 dark:text-pink-300 mb-2">O Que Testar</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• Paleta de cores (quente vs fria)</li>
+                  <li>• Composição (centrado vs lateral)</li>
+                  <li>• Elementos (com pessoa vs sem)</li>
+                  <li>• Estilo (realista vs ilustrativo)</li>
+                  <li>• Background (complexo vs minimalista)</li>
+                </ul>
+              </div>
+              <div class="bg-white dark:bg-neutral-800 p-4 rounded">
+                <h4 class="font-bold text-pink-900 dark:text-pink-300 mb-2">Como Executar</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>1. Gerar 4-6 variações por conceito</li>
+                  <li>2. Testar em pequena escala (R$ 50-100)</li>
+                  <li>3. Analisar CTR, engagement, conversão</li>
+                  <li>4. Escalar a vencedora</li>
+                  <li>5. Iterar nas aprendizagens</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white p-4 rounded">
+              <strong>Pro Tip:</strong> Ofereça A/B testing como serviço adicional. Cobre R$ 500-1.000 a mais e entregue dados que provam seu valor.
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border-l-4 border-pink-500">
+            <h3 class="text-2xl font-bold text-pink-900 dark:text-pink-300 mb-4">✅ Melhores Práticas para Social Media</h3>
+            <div class="space-y-3 text-neutral-700 dark:text-neutral-300">
+              <div class="flex items-start">
+                <span class="text-pink-500 mr-3 text-xl flex-shrink-0">✓</span>
+                <div>
+                  <strong>Área Segura:</strong> Mantenha textos e elementos críticos longe das bordas e zonas de UI das plataformas
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-pink-500 mr-3 text-xl flex-shrink-0">✓</span>
+                <div>
+                  <strong>Legibilidade Mobile:</strong> Teste em tela pequena - 80% do tráfego é mobile
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-pink-500 mr-3 text-xl flex-shrink-0">✓</span>
+                <div>
+                  <strong>Hook de 3 Segundos:</strong> A imagem precisa comunicar valor em menos de 3 segundos
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-pink-500 mr-3 text-xl flex-shrink-0">✓</span>
+                <div>
+                  <strong>Consistência de Marca:</strong> Use elementos visuais recorrentes para criar reconhecimento
+                </div>
+              </div>
+              <div class="flex items-start">
+                <span class="text-pink-500 mr-3 text-xl flex-shrink-0">✓</span>
+                <div>
+                  <strong>CTA Visual:</strong> Setas, círculos, elementos que guiam o olhar para a ação desejada
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 3: E-commerce -->
+      <div class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-emerald-200 dark:border-emerald-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🛍️</span>
+          <div>
+            <h2 class="text-3xl font-bold text-emerald-900 dark:text-emerald-300">E-commerce: Volume + Qualidade</h2>
+            <p class="text-emerald-700 dark:text-emerald-400 font-semibold mt-1">O mercado que nunca para de crescer</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            E-commerce é onde a IA brilha: um lojista precisa de 50-200 fotos de produto. Contratar fotógrafo tradicional = R$ 100-200 por foto. Com IA = R$ 20-50 por foto de qualidade profissional.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-emerald-500">
+              <h3 class="text-xl font-bold text-emerald-900 dark:text-emerald-300 mb-3">📸 Fotos de Produto</h3>
+              <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                <li><strong>Fundo Branco/Neutro:</strong> Padrão para marketplace (Amazon, Mercado Livre)</li>
+                <li><strong>Múltiplos Ângulos:</strong> Frente, costas, laterais, detalhes</li>
+                <li><strong>Close-ups:</strong> Texturas, acabamentos, qualidade</li>
+                <li><strong>Contexto:</strong> Escala, tamanho real, comparações</li>
+              </ul>
+              <div class="mt-3 bg-emerald-50 dark:bg-emerald-900/30 p-3 rounded text-sm">
+                <strong>Técnica IA:</strong> Use inpainting para remover fundos + ControlNet para manter geometria precisa do produto
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg border-l-4 border-teal-500">
+              <h3 class="text-xl font-bold text-teal-900 dark:text-teal-300 mb-3">🌟 Lifestyle Shots</h3>
+              <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                <li><strong>Produto em Uso:</strong> Contexto real, aspiracional</li>
+                <li><strong>Ambientação:</strong> Cenários que contam história</li>
+                <li><strong>Modelos/Pessoas:</strong> Conexão emocional, identificação</li>
+                <li><strong>Mood:</strong> Estilo de vida que o produto representa</li>
+              </ul>
+              <div class="mt-3 bg-teal-50 dark:bg-teal-900/30 p-3 rounded text-sm">
+                <strong>Técnica IA:</strong> Gere cenas complexas com produto + ambiente + pessoas usando composição em layers
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🎨 Casos de Uso por Categoria</h3>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <h4 class="font-bold mb-2">👗 Moda & Vestuário</h4>
+                <p class="text-sm">Modelos virtuais, flat lays, combinações de look, variações de cor em massa</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <h4 class="font-bold mb-2">🍽️ Food & Beverage</h4>
+                <p class="text-sm">Food styling, ambientações de restaurante, embalagens em contexto, apelo visual</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <h4 class="font-bold mb-2">🏠 Casa & Decoração</h4>
+                <p class="text-sm">Mockups em ambientes reais, variações de decoração, antes/depois, visualização 3D</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <h4 class="font-bold mb-2">💄 Beleza & Cosméticos</h4>
+                <p class="text-sm">Texturas macro, aplicação em pele, embalagens premium, shots editoriais</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-emerald-900 dark:text-emerald-300 mb-4">📦 Banners e Catálogos</h3>
+            <p class="mb-4 text-neutral-700 dark:text-neutral-300">
+              Todo e-commerce precisa de assets promocionais: banners de categoria, promoções sazonais, catálogos digitais.
+            </p>
+
+            <div class="space-y-3">
+              <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded">
+                <strong class="text-emerald-900 dark:text-emerald-300">Banner Homepage:</strong>
+                <span class="text-neutral-700 dark:text-neutral-300"> 1920x600px - Hero visual + oferta clara + CTA</span>
+              </div>
+              <div class="bg-teal-50 dark:bg-teal-900/20 p-4 rounded">
+                <strong class="text-teal-900 dark:text-teal-300">Banner Categoria:</strong>
+                <span class="text-neutral-700 dark:text-neutral-300"> 1200x400px - Identidade da seção + navegação visual</span>
+              </div>
+              <div class="bg-cyan-50 dark:bg-cyan-900/20 p-4 rounded">
+                <strong class="text-cyan-900 dark:text-cyan-300">Catálogo Digital:</strong>
+                <span class="text-neutral-700 dark:text-neutral-300"> Template consistente + fotos + descrições + preços</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/30 dark:to-teal-900/30 p-6 rounded-lg">
+            <h3 class="text-2xl font-bold text-emerald-900 dark:text-emerald-300 mb-3">💡 Workflow Produtivo para E-commerce</h3>
+            <ol class="space-y-2 text-neutral-800 dark:text-neutral-200">
+              <li><strong>1. Briefing:</strong> Entenda o produto, público, estilo da marca, uso final</li>
+              <li><strong>2. Referências:</strong> Colete 5-10 referências visuais do que o cliente quer</li>
+              <li><strong>3. Base:</strong> Foto do produto real OU render 3D OU descrição detalhada</li>
+              <li><strong>4. Batch Generation:</strong> Gere 20-30 variações explorando ângulos/contextos</li>
+              <li><strong>5. Curadoria:</strong> Selecione as 10-15 melhores</li>
+              <li><strong>6. Refinamento:</strong> Inpainting, upscale, ajustes finais</li>
+              <li><strong>7. Entrega:</strong> Organizada por categoria, nomeada corretamente, specs técnicas</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 4: Branding e Identidade -->
+      <div class="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-purple-200 dark:border-purple-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">🎨</span>
+          <div>
+            <h2 class="text-3xl font-bold text-purple-900 dark:text-purple-300">Branding e Identidade Visual</h2>
+            <p class="text-purple-700 dark:text-purple-400 font-semibold mt-1">Projetos de alto valor e prestígio</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Branding é onde você cobra mais, trabalha com clientes de maior nível e constrói portfólio de prestígio. A IA acelerou o processo, mas a estratégia e curadoria continuam sendo 100% humanas.
+          </p>
+
+          <div class="bg-gradient-to-r from-purple-500 to-indigo-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🏢 Componentes de Identidade Completa</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <h4 class="font-bold mb-2">Logo & Símbolo</h4>
+                <ul class="text-sm space-y-1">
+                  <li>• Versão principal</li>
+                  <li>• Versão horizontal/vertical</li>
+                  <li>• Monocromático</li>
+                  <li>• Versão negativa</li>
+                  <li>• Favicon/ícone</li>
+                </ul>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <h4 class="font-bold mb-2">Sistema de Cores</h4>
+                <ul class="text-sm space-y-1">
+                  <li>• Paleta primária (2-3 cores)</li>
+                  <li>• Paleta secundária</li>
+                  <li>• Tons neutros</li>
+                  <li>• Acessibilidade (contraste)</li>
+                  <li>• Códigos RGB/HEX/CMYK</li>
+                </ul>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <h4 class="font-bold mb-2">Tipografia</h4>
+                <ul class="text-sm space-y-1">
+                  <li>• Font primária</li>
+                  <li>• Font secundária</li>
+                  <li>• Hierarquia (H1-H6)</li>
+                  <li>• Aplicações (print/digital)</li>
+                  <li>• Licenciamento</li>
+                </ul>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <h4 class="font-bold mb-2">Elementos Visuais</h4>
+                <ul class="text-sm space-y-1">
+                  <li>• Padrões/texturas</li>
+                  <li>• Iconografia</li>
+                  <li>• Estilo fotográfico</li>
+                  <li>• Ilustrações</li>
+                  <li>• Elementos gráficos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-purple-900 dark:text-purple-300 mb-4">🔮 IA no Processo de Branding</h3>
+
+            <div class="space-y-4">
+              <div class="border-l-4 border-purple-500 pl-4">
+                <h4 class="font-bold text-purple-900 dark:text-purple-300 mb-2">1. Pesquisa e Moodboard</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  Use IA para explorar territórios visuais rapidamente. Gere centenas de referências, identifique direções promissoras.
+                </p>
+                <div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded text-sm">
+                  <strong>Prompt Example:</strong> "minimalist tech brand, blue and white, clean, professional, SaaS company, modern"
+                </div>
+              </div>
+
+              <div class="border-l-4 border-indigo-500 pl-4">
+                <h4 class="font-bold text-indigo-900 dark:text-indigo-300 mb-2">2. Exploração de Conceitos</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  Gere dezenas de variações de logo/símbolo. Teste formas, estilos, composições rapidamente.
+                </p>
+                <div class="bg-indigo-50 dark:bg-indigo-900/20 p-3 rounded text-sm">
+                  <strong>Importante:</strong> IA gera conceitos, VOCÊ faz a curadoria e refinamento. Não entregue raw output.
+                </div>
+              </div>
+
+              <div class="border-l-4 border-violet-500 pl-4">
+                <h4 class="font-bold text-violet-900 dark:text-violet-300 mb-2">3. Aplicações de Marca</h4>
+                <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">
+                  Mockups realistas: cartões de visita, papelaria, site, produtos, ambientes.
+                </p>
+                <div class="bg-violet-50 dark:bg-violet-900/20 p-3 rounded text-sm">
+                  <strong>Pro Tip:</strong> Apresente a marca "viva" em contextos reais. Cliente visualiza o resultado final.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/30 dark:to-indigo-900/30 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-purple-900 dark:text-purple-300 mb-4">📐 Paleta e Mood Strategy</h3>
+            <p class="mb-4 text-neutral-800 dark:text-neutral-200">
+              A escolha de paleta conta uma história. Não é arbitrário - cada cor comunica algo.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-3 text-sm">
+              <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                <div class="w-full h-12 bg-blue-500 rounded mb-2"></div>
+                <strong>Azul:</strong> Confiança, tech, corporativo, estabilidade
+              </div>
+              <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                <div class="w-full h-12 bg-green-500 rounded mb-2"></div>
+                <strong>Verde:</strong> Natureza, saúde, crescimento, sustentabilidade
+              </div>
+              <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                <div class="w-full h-12 bg-purple-500 rounded mb-2"></div>
+                <strong>Roxo:</strong> Luxo, criatividade, espiritualidade, premium
+              </div>
+              <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                <div class="w-full h-12 bg-orange-500 rounded mb-2"></div>
+                <strong>Laranja:</strong> Energia, jovialidade, acessibilidade, ação
+              </div>
+              <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                <div class="w-full h-12 bg-pink-500 rounded mb-2"></div>
+                <strong>Rosa:</strong> Feminino, delicado, romântico, moderno
+              </div>
+              <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                <div class="w-full h-12 bg-gray-800 rounded mb-2"></div>
+                <strong>Preto/Cinza:</strong> Sofisticação, minimalismo, elegância
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-purple-500">
+            <h3 class="text-2xl font-bold text-purple-900 dark:text-purple-300 mb-4">🎯 Aplicações Práticas</h3>
+            <p class="mb-4 text-neutral-700 dark:text-neutral-300">
+              Uma identidade só é completa quando mostra como se aplica. Entregue sempre:
+            </p>
+            <ul class="space-y-2 text-neutral-700 dark:text-neutral-300">
+              <li>✓ <strong>Papelaria:</strong> Cartão, papel timbrado, envelope, pasta</li>
+              <li>✓ <strong>Digital:</strong> Site, redes sociais, assinaturas de email</li>
+              <li>✓ <strong>Merchandising:</strong> Camisetas, canecas, ecobags, brindes</li>
+              <li>✓ <strong>Sinalização:</strong> Fachada, placas, adesivos, frota</li>
+              <li>✓ <strong>Embalagem:</strong> Caixas, sacolas, etiquetas, tags</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 5: Apresentações Corporativas -->
+      <div class="bg-gradient-to-br from-slate-50 to-zinc-50 dark:from-slate-900/20 dark:to-zinc-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-slate-200 dark:border-slate-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">📊</span>
+          <div>
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-300">Apresentações Corporativas</h2>
+            <p class="text-slate-700 dark:text-slate-400 font-semibold mt-1">Storytelling visual que convence</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Toda empresa faz apresentações: pitch decks, relatórios, treinamentos, conferências. Pouquíssimas sabem fazer isso bem. Aqui está sua oportunidade de cobrar R$ 2.000-6.000 por deck.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg">
+              <h3 class="text-xl font-bold text-slate-900 dark:text-slate-300 mb-3">📑 Tipos de Apresentação</h3>
+              <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                <li><strong>Pitch Deck:</strong> 10-15 slides, investidores, história + dados</li>
+                <li><strong>Sales Deck:</strong> 20-30 slides, clientes, problema + solução</li>
+                <li><strong>Relatório:</strong> 30-50 slides, interno, dados + insights</li>
+                <li><strong>Keynote:</strong> 40-60 slides, conferência, storytelling visual</li>
+              </ul>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-5 rounded-lg">
+              <h3 class="text-xl font-bold text-slate-900 dark:text-slate-300 mb-3">🎨 IA em Slides</h3>
+              <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+                <li><strong>Backgrounds:</strong> Texturas, padrões, fotografias conceituais</li>
+                <li><strong>Ilustrações:</strong> Ícones, diagramas, visualizações customizadas</li>
+                <li><strong>Imagens Conceituais:</strong> Metáforas visuais, abstrações</li>
+                <li><strong>Infográficos:</strong> Visualização de dados, gráficos estilizados</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-slate-600 to-zinc-700 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">📐 Estrutura de Deck Matador</h3>
+            <div class="space-y-3 text-sm">
+              <div class="bg-white/10 backdrop-blur p-3 rounded flex items-start">
+                <span class="font-bold mr-3 text-lg">1.</span>
+                <div>
+                  <strong>Abertura Impactante:</strong> Hook visual + título que para a audiência
+                </div>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-3 rounded flex items-start">
+                <span class="font-bold mr-3 text-lg">2.</span>
+                <div>
+                  <strong>Problema:</strong> Dor que a audiência sente. Visual que evoca emoção
+                </div>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-3 rounded flex items-start">
+                <span class="font-bold mr-3 text-lg">3.</span>
+                <div>
+                  <strong>Solução:</strong> Como você resolve. Minimalista, claro, confiante
+                </div>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-3 rounded flex items-start">
+                <span class="font-bold mr-3 text-lg">4.</span>
+                <div>
+                  <strong>Como Funciona:</strong> Diagrama, passo-a-passo, processo visual
+                </div>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-3 rounded flex items-start">
+                <span class="font-bold mr-3 text-lg">5.</span>
+                <div>
+                  <strong>Prova Social:</strong> Cases, números, depoimentos. Design que transmite credibilidade
+                </div>
+              </div>
+              <div class="bg-white/10 backdrop-blur p-3 rounded flex items-start">
+                <span class="font-bold mr-3 text-lg">6.</span>
+                <div>
+                  <strong>Call to Action:</strong> Próximo passo claro. Design que convida à ação
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border-l-4 border-slate-500">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-300 mb-4">✨ Princípios de Design para Slides</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-slate-300 mb-2">Visual</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• Máximo 1 ideia por slide</li>
+                  <li>• 80% imagem, 20% texto</li>
+                  <li>• Hierarquia clara (grande → pequeno)</li>
+                  <li>• Whitespace é seu amigo</li>
+                  <li>• Consistência rigorosa</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-slate-300 mb-2">Técnico</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• Imagens em alta resolução (300dpi+)</li>
+                  <li>• Fontes embedadas ou PDF</li>
+                  <li>• Aspect ratio 16:9 (padrão)</li>
+                  <li>• Cores em RGB (tela) ou CMYK (impresso)</li>
+                  <li>• Templates reutilizáveis</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 6: Marketing de Conteúdo -->
+      <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-amber-200 dark:border-amber-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">📝</span>
+          <div>
+            <h2 class="text-3xl font-bold text-amber-900 dark:text-amber-300">Marketing de Conteúdo em Escala</h2>
+            <p class="text-amber-700 dark:text-amber-400 font-semibold mt-1">Volume sem perder qualidade</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Blogs, canais, empresas de conteúdo: todos precisam de VOLUME. Headers, thumbnails, featured images, social cards. Ofereça pacotes mensais recorrentes.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-4 mb-6">
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+              <h3 class="text-lg font-bold text-amber-900 dark:text-amber-300 mb-2">🖼️ Blog Headers</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">1200x628px - Featured image que resume o artigo visualmente</p>
+              <div class="bg-amber-50 dark:bg-amber-900/20 p-2 rounded text-xs">
+                <strong>Preço:</strong> R$ 30-80 cada ou R$ 500-1.500/mês (10-20 posts)
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+              <h3 class="text-lg font-bold text-orange-900 dark:text-orange-300 mb-2">🎬 Thumbnails YouTube</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">1280x720px - Chama atenção, resume vídeo, emocional</p>
+              <div class="bg-orange-50 dark:bg-orange-900/20 p-2 rounded text-xs">
+                <strong>Preço:</strong> R$ 50-150 cada ou R$ 800-2.000/mês (10-15 vídeos)
+              </div>
+            </div>
+
+            <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+              <h3 class="text-lg font-bold text-red-900 dark:text-red-300 mb-2">📚 E-books & Guias</h3>
+              <p class="text-sm text-neutral-700 dark:text-neutral-300 mb-2">Capa + diagramação + ilustrações internas</p>
+              <div class="bg-red-50 dark:bg-red-900/20 p-2 rounded text-xs">
+                <strong>Preço:</strong> R$ 800-3.000 por projeto completo
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-amber-500 to-orange-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">🎯 Anatomia de Thumbnail Vencedor</h3>
+            <div class="space-y-3">
+              <div class="bg-white/10 backdrop-blur p-3 rounded">
+                <strong>1. Rosto Expressivo:</strong> Emoção clara (surpresa, choque, felicidade) - thumbnails com rostos têm 300% mais cliques
+              </div>
+              <div class="bg-white/10 backdrop-blur p-3 rounded">
+                <strong>2. Contraste Alto:</strong> Cores saturadas, sombras profundas, destaque visual
+              </div>
+              <div class="bg-white/10 backdrop-blur p-3 rounded">
+                <strong>3. Texto Grande:</strong> 2-4 palavras MÁXIMO, legível em mobile, fonte bold
+              </div>
+              <div class="bg-white/10 backdrop-blur p-3 rounded">
+                <strong>4. Curiosidade:</strong> Promessa de valor, pergunta não respondida, antes/depois
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 7: Métricas e ROI -->
+      <div class="bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-cyan-200 dark:border-cyan-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">📈</span>
+          <div>
+            <h2 class="text-3xl font-bold text-cyan-900 dark:text-cyan-300">Métricas e ROI: Provando Seu Valor</h2>
+            <p class="text-cyan-700 dark:text-cyan-400 font-semibold mt-1">Transforme clientes únicos em recorrentes</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            Designers que mostram NÚMEROS ganham 3x mais e retêm clientes por anos. Não basta entregar design bonito - prove que ele funciona.
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-cyan-900 dark:text-cyan-300 mb-4">📊 Métricas que Importam por Canal</h3>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="border-l-4 border-cyan-500 pl-4">
+                <h4 class="font-bold text-cyan-900 dark:text-cyan-300 mb-2">Social Media</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• <strong>Engagement Rate:</strong> (likes+comments+shares)/alcance</li>
+                  <li>• <strong>CTR:</strong> Cliques no link/impressões</li>
+                  <li>• <strong>Alcance:</strong> Quantas pessoas viram</li>
+                  <li>• <strong>Saves:</strong> Indicador de valor do conteúdo</li>
+                </ul>
+              </div>
+
+              <div class="border-l-4 border-blue-500 pl-4">
+                <h4 class="font-bold text-blue-900 dark:text-blue-300 mb-2">E-commerce</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• <strong>Conversion Rate:</strong> Vendas/visitantes</li>
+                  <li>• <strong>Add to Cart:</strong> Taxa de adição ao carrinho</li>
+                  <li>• <strong>Bounce Rate:</strong> Saídas imediatas da página</li>
+                  <li>• <strong>Time on Page:</strong> Quanto tempo na página de produto</li>
+                </ul>
+              </div>
+
+              <div class="border-l-4 border-indigo-500 pl-4">
+                <h4 class="font-bold text-indigo-900 dark:text-indigo-300 mb-2">Ads Pagos</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• <strong>CPC:</strong> Custo por clique</li>
+                  <li>• <strong>CPM:</strong> Custo por mil impressões</li>
+                  <li>• <strong>ROAS:</strong> Return on Ad Spend (receita/custo)</li>
+                  <li>• <strong>CPA:</strong> Custo por aquisição</li>
+                </ul>
+              </div>
+
+              <div class="border-l-4 border-purple-500 pl-4">
+                <h4 class="font-bold text-purple-900 dark:text-purple-300 mb-2">Conteúdo</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• <strong>CTR:</strong> Taxa de clique no thumbnail/header</li>
+                  <li>• <strong>Time on Page:</strong> Tempo de leitura/visualização</li>
+                  <li>• <strong>Scroll Depth:</strong> Quanto do conteúdo foi consumido</li>
+                  <li>• <strong>Shares:</strong> Compartilhamentos sociais</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">💎 Como Apresentar ROI ao Cliente</h3>
+
+            <div class="space-y-4">
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <h4 class="font-bold mb-2">1. Baseline (Antes)</h4>
+                <p class="text-sm">Documente performance ANTES do seu trabalho. "Post antigo: 200 likes, 1% engagement"</p>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <h4 class="font-bold mb-2">2. Comparação (Depois)</h4>
+                <p class="text-sm">Mostre melhoria. "Post novo: 800 likes, 4.2% engagement - 300% de aumento"</p>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <h4 class="font-bold mb-2">3. Valor em Reais</h4>
+                <p class="text-sm">Traduza para dinheiro. "Aumento de 50 vendas/mês = R$ 15.000 em receita adicional"</p>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <h4 class="font-bold mb-2">4. ROI Multiplicador</h4>
+                <p class="text-sm">"Investimento: R$ 2.000 / Retorno: R$ 15.000 = 7.5x ROI em 30 dias"</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg border-l-4 border-cyan-500">
+            <h3 class="text-2xl font-bold text-cyan-900 dark:text-cyan-300 mb-4">📋 Template de Relatório de Performance</h3>
+            <p class="mb-4 text-neutral-700 dark:text-neutral-300">Envie isso mensalmente para clientes recorrentes:</p>
+
+            <div class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300 bg-cyan-50 dark:bg-cyan-900/20 p-4 rounded">
+              <p><strong>Período:</strong> [Mês/Ano]</p>
+              <p><strong>Entregas:</strong> [X] posts, [Y] stories, [Z] banners</p>
+              <p><strong>Performance:</strong></p>
+              <ul class="ml-6 space-y-1">
+                <li>• Alcance total: [número] (+X% vs mês anterior)</li>
+                <li>• Engagement médio: [%] (+X% vs mês anterior)</li>
+                <li>• Best performer: [descrição do post] - [métricas]</li>
+              </ul>
+              <p><strong>Insights:</strong> [O que funcionou e por quê]</p>
+              <p><strong>Recomendações:</strong> [Próximos passos baseados em dados]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 8: Ética e Disclosure -->
+      <div class="bg-gradient-to-br from-rose-50 to-red-50 dark:from-rose-900/20 dark:to-red-900/20 rounded-xl shadow-lg p-8 mb-8 border-2 border-rose-200 dark:border-rose-800">
+        <div class="flex items-center mb-6">
+          <span class="text-5xl mr-4">⚖️</span>
+          <div>
+            <h2 class="text-3xl font-bold text-rose-900 dark:text-rose-300">Ética e Disclosure de IA</h2>
+            <p class="text-rose-700 dark:text-rose-400 font-semibold mt-1">Quando e como declarar uso de IA</p>
+          </div>
+        </div>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-6">
+            A transparência constrói confiança. Esconder que usa IA pode destruir reputação. Mas como comunicar isso de forma profissional?
+          </p>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold text-rose-900 dark:text-rose-300 mb-4">🎯 Quando Declarar</h3>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded border-l-4 border-green-500">
+                <h4 class="font-bold text-green-900 dark:text-green-300 mb-2">✅ SEMPRE Declare</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• Imagens fotorealistas de pessoas</li>
+                  <li>• Conteúdo jornalístico ou editorial</li>
+                  <li>• Materiais educacionais/acadêmicos</li>
+                  <li>• Quando cliente perguntar diretamente</li>
+                  <li>• Plataformas que exigem (Meta, Google Ads)</li>
+                </ul>
+              </div>
+
+              <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded border-l-4 border-amber-500">
+                <h4 class="font-bold text-amber-900 dark:text-amber-300 mb-2">⚡ Contexto Importa</h4>
+                <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                  <li>• Designs abstratos/conceituais (menos crítico)</li>
+                  <li>• Backgrounds e texturas (parte do processo)</li>
+                  <li>• Ilustrações estilizadas (ferramenta criativa)</li>
+                  <li>• Mockups e protótipos (visualização)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-rose-500 to-red-500 text-white p-6 rounded-lg mb-6">
+            <h3 class="text-2xl font-bold mb-4">💬 Como Comunicar Profissionalmente</h3>
+
+            <div class="space-y-3">
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-2">❌ Evite:</p>
+                <p class="text-sm italic">"Foi tudo feito por IA, eu só apertei um botão"</p>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-2">✅ Prefira:</p>
+                <p class="text-sm italic">"Utilizo ferramentas de IA generativa como parte do meu processo criativo, sempre com curadoria e refinamento manual para garantir qualidade e alinhamento com sua marca"</p>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur p-4 rounded">
+                <p class="font-bold mb-2">✅ Ou ainda:</p>
+                <p class="text-sm italic">"Trabalho com tecnologias de ponta em design, incluindo IA, que me permitem entregar resultados de alta qualidade com eficiência e escala impossíveis pelos métodos tradicionais"</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-6 border-l-4 border-rose-500">
+            <h3 class="text-2xl font-bold text-rose-900 dark:text-rose-300 mb-4">📜 Template de Disclosure</h3>
+            <p class="mb-4 text-neutral-700 dark:text-neutral-300">
+              Adicione nos seus contratos/propostas:
+            </p>
+
+            <div class="bg-rose-50 dark:bg-rose-900/20 p-4 rounded text-sm text-neutral-700 dark:text-neutral-300">
+              <p class="mb-3">
+                <strong>Sobre Ferramentas e Processos:</strong>
+              </p>
+              <p class="mb-3">
+                "Este projeto será desenvolvido utilizando uma combinação de ferramentas profissionais de design, incluindo softwares de IA generativa (como Midjourney, Stable Diffusion, DALL-E) quando apropriado. Todo conteúdo gerado passa por rigoroso processo de curadoria, edição e refinamento manual para garantir qualidade, originalidade e alinhamento com seus objetivos."
+              </p>
+              <p>
+                "A entrega final é 100% original, livre de direitos autorais conflitantes, e adequada para uso comercial nos termos acordados."
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-rose-100 to-red-100 dark:from-rose-900/30 dark:to-red-900/30 p-6 rounded-lg">
+            <h3 class="text-2xl font-bold text-rose-900 dark:text-rose-300 mb-4">🛡️ Protegendo-se Legalmente</h3>
+            <ul class="space-y-2 text-neutral-800 dark:text-neutral-200">
+              <li><strong>1. Sempre use planos comerciais</strong> das ferramentas de IA (não free tier)</li>
+              <li><strong>2. Leia os termos de uso</strong> - cada ferramenta tem regras sobre uso comercial</li>
+              <li><strong>3. Mantenha registros</strong> de prompts e processo criativo</li>
+              <li><strong>4. Adicione cláusula no contrato</strong> sobre metodologia e ferramentas</li>
+              <li><strong>5. Considere seguro profissional</strong> (E&O insurance) se fizer projetos grandes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aulas -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">📚 6 Aulas Práticas</h2>
+
+        <div class="space-y-4">
+          <div class="flex items-start bg-blue-50 dark:bg-blue-900/20 p-5 rounded-lg border-l-4 border-blue-500">
+            <span class="text-3xl mr-4 flex-shrink-0">1️⃣</span>
+            <div>
+              <h3 class="text-xl font-bold text-blue-900 dark:text-blue-300 mb-2">
+                Aula 1: Campanha Completa de Social Media (2h)
+              </h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                Criar uma campanha de lançamento de produto: 20 posts (feed + stories), 3 formatos, A/B testing, análise de performance. Caso prático: marca de moda sustentável.
+              </p>
+              <ul class="text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
+                <li>• Briefing e estratégia</li>
+                <li>• Geração em batch por plataforma</li>
+                <li>• Variações para teste</li>
+                <li>• Entrega e apresentação ao cliente</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex items-start bg-emerald-50 dark:bg-emerald-900/20 p-5 rounded-lg border-l-4 border-emerald-500">
+            <span class="text-3xl mr-4 flex-shrink-0">2️⃣</span>
+            <div>
+              <h3 class="text-xl font-bold text-emerald-900 dark:text-emerald-300 mb-2">
+                Aula 2: Catálogo E-commerce do Zero (2h)
+              </h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                30 produtos, 3 ângulos cada, lifestyle shots, banners de categoria. Caso prático: loja de acessórios tech.
+              </p>
+              <ul class="text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
+                <li>• Fotografia de produto com IA</li>
+                <li>• Remoção/troca de backgrounds</li>
+                <li>• Lifestyle shots aspiracionais</li>
+                <li>• Automação e batch processing</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex items-start bg-purple-50 dark:bg-purple-900/20 p-5 rounded-lg border-l-4 border-purple-500">
+            <span class="text-3xl mr-4 flex-shrink-0">3️⃣</span>
+            <div>
+              <h3 class="text-xl font-bold text-purple-900 dark:text-purple-300 mb-2">
+                Aula 3: Identidade Visual Completa (2h)
+              </h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                Logo, paleta, tipografia, padrões, aplicações. Caso prático: startup de fintech.
+              </p>
+              <ul class="text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
+                <li>• Research e moodboard</li>
+                <li>• Exploração de conceitos de logo</li>
+                <li>• Sistema de cores e tipografia</li>
+                <li>• Mockups de aplicações</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex items-start bg-slate-50 dark:bg-slate-900/20 p-5 rounded-lg border-l-4 border-slate-500">
+            <span class="text-3xl mr-4 flex-shrink-0">4️⃣</span>
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-slate-300 mb-2">
+                Aula 4: Pitch Deck Profissional (1.5h)
+              </h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                15 slides para apresentação de investidores. Caso prático: startup de agro-tech.
+              </p>
+              <ul class="text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
+                <li>• Estrutura narrativa de pitch</li>
+                <li>• Design de dados e gráficos</li>
+                <li>• Imagens conceituais e metáforas visuais</li>
+                <li>• Apresentação e entrega</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex items-start bg-amber-50 dark:bg-amber-900/20 p-5 rounded-lg border-l-4 border-amber-500">
+            <span class="text-3xl mr-4 flex-shrink-0">5️⃣</span>
+            <div>
+              <h3 class="text-xl font-bold text-amber-900 dark:text-amber-300 mb-2">
+                Aula 5: Thumbnails e Conteúdo em Massa (1.5h)
+              </h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                20 thumbnails para canal de YouTube + 15 headers de blog. Automação de workflow.
+              </p>
+              <ul class="text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
+                <li>• Anatomia de thumbnail que converte</li>
+                <li>• Templates e sistemas escaláveis</li>
+                <li>• Batch generation otimizada</li>
+                <li>• Testes e iteração</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flex items-start bg-cyan-50 dark:bg-cyan-900/20 p-5 rounded-lg border-l-4 border-cyan-500">
+            <span class="text-3xl mr-4 flex-shrink-0">6️⃣</span>
+            <div>
+              <h3 class="text-xl font-bold text-cyan-900 dark:text-cyan-300 mb-2">
+                Aula 6: Cases por Indústria + ROI (2h)
+              </h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                Estudos de caso: moda, food, tech, imobiliário, saúde. Como medir e apresentar ROI.
+              </p>
+              <ul class="text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
+                <li>• Adaptação por vertical de mercado</li>
+                <li>• Métricas que importam</li>
+                <li>• Templates de relatórios</li>
+                <li>• Apresentação de resultados</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercício Prático -->
+      <div class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-xl shadow-xl p-8 mb-8">
+        <div class="text-center mb-6">
+          <span class="text-6xl mb-4 block">🏆</span>
+          <h2 class="text-3xl font-bold mb-2">Projeto Final: Campanha Comercial Completa</h2>
+          <p class="text-blue-100">O trabalho que entraria no seu portfólio profissional</p>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur rounded-lg p-6 mb-6">
+          <h3 class="text-2xl font-bold mb-4">📋 Brief do Projeto</h3>
+          <p class="mb-4">
+            Criar campanha de lançamento completa para uma marca fictícia (escolha uma categoria: moda, food, tech, casa, beleza).
+          </p>
+
+          <div class="space-y-3 text-sm">
+            <div class="bg-white/10 p-3 rounded">
+              <strong>Entregável 1: Identidade Visual</strong>
+              <ul class="ml-4 mt-2 space-y-1">
+                <li>• Logo/símbolo da marca</li>
+                <li>• Paleta de cores (5-7 cores)</li>
+                <li>• 3 aplicações mockup (cartão, papelaria, produto)</li>
+              </ul>
+            </div>
+
+            <div class="bg-white/10 p-3 rounded">
+              <strong>Entregável 2: Social Media (15 posts)</strong>
+              <ul class="ml-4 mt-2 space-y-1">
+                <li>• 10 posts feed Instagram (1:1)</li>
+                <li>• 5 stories Instagram (9:16)</li>
+                <li>• Calendário de conteúdo (quando postar cada um)</li>
+              </ul>
+            </div>
+
+            <div class="bg-white/10 p-3 rounded">
+              <strong>Entregável 3: E-commerce (12 imagens)</strong>
+              <ul class="ml-4 mt-2 space-y-1">
+                <li>• 6 fotos de produto (fundo branco)</li>
+                <li>• 4 lifestyle shots</li>
+                <li>• 2 banners de categoria (hero)</li>
+              </ul>
+            </div>
+
+            <div class="bg-white/10 p-3 rounded">
+              <strong>Entregável 4: Apresentação (10 slides)</strong>
+              <ul class="ml-4 mt-2 space-y-1">
+                <li>• Pitch deck apresentando a marca</li>
+                <li>• Proposta de valor, diferenciais, público</li>
+                <li>• Mockups dos materiais criados</li>
+              </ul>
+            </div>
+
+            <div class="bg-white/10 p-3 rounded">
+              <strong>Entregável 5: Relatório</strong>
+              <ul class="ml-4 mt-2 space-y-1">
+                <li>• Documento explicando estratégia</li>
+                <li>• Decisões criativas e por quê</li>
+                <li>• Métricas que você rastrearia</li>
+                <li>• Próximos passos sugeridos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur rounded-lg p-6">
+          <h3 class="text-xl font-bold mb-3">⏱️ Timeline Sugerido</h3>
+          <div class="grid md:grid-cols-3 gap-3 text-sm">
+            <div class="bg-white/10 p-3 rounded">
+              <strong>Dias 1-2:</strong> Research, briefing, referências, conceito
+            </div>
+            <div class="bg-white/10 p-3 rounded">
+              <strong>Dias 3-4:</strong> Identidade visual + social media
+            </div>
+            <div class="bg-white/10 p-3 rounded">
+              <strong>Dias 5-6:</strong> E-commerce + apresentação
+            </div>
+          </div>
+          <p class="mt-4 text-sm text-blue-100">
+            <strong>Total:</strong> 6-7 dias de trabalho focado. Este é o tipo de projeto que você cobraria R$ 5.000-15.000 no mercado.
+          </p>
+        </div>
+      </div>
+
+      <!-- Recursos Complementares -->
+      <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md p-8 mb-8 border border-neutral-200 dark:border-neutral-700">
+        <h2 class="text-3xl font-bold mb-6">🎁 Recursos e Templates</h2>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 p-5 rounded-lg border border-blue-200 dark:border-blue-800">
+            <h3 class="font-bold text-blue-900 dark:text-blue-300 mb-3">📄 Templates de Proposta</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Proposta de campanha social media (editável)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Orçamento de identidade visual completa</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Contrato de serviços de design</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">•</span>
+                <span>Briefing de marca (questionário para cliente)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-5 rounded-lg border border-purple-200 dark:border-purple-800">
+            <h3 class="font-bold text-purple-900 dark:text-purple-300 mb-3">🎨 Assets e Recursos</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>100+ prompts testados por tipo de projeto</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Biblioteca de mockups (device, product, ambiente)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Paletas de cores por indústria</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2">•</span>
+                <span>Guia de specs técnicos por plataforma</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 p-5 rounded-lg border border-emerald-200 dark:border-emerald-800">
+            <h3 class="font-bold text-emerald-900 dark:text-emerald-300 mb-3">📊 Planilhas e Ferramentas</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-emerald-500 mr-2">•</span>
+                <span>Calculadora de precificação por projeto</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-500 mr-2">•</span>
+                <span>Template de relatório de performance</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-500 mr-2">•</span>
+                <span>Checklist de entrega por tipo de projeto</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-500 mr-2">•</span>
+                <span>Calendário editorial de conteúdo</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-5 rounded-lg border border-amber-200 dark:border-amber-800">
+            <h3 class="font-bold text-amber-900 dark:text-amber-300 mb-3">📚 Estudos de Caso</h3>
+            <ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+              <li class="flex items-start">
+                <span class="text-amber-500 mr-2">•</span>
+                <span>10 cases reais com antes/depois e métricas</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-amber-500 mr-2">•</span>
+                <span>Análise de campanhas vencedoras por indústria</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-amber-500 mr-2">•</span>
+                <span>Breakdown técnico: como foram feitos</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-amber-500 mr-2">•</span>
+                <span>Entrevistas com profissionais do mercado</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dica Final -->
+      <div class="bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-xl shadow-xl p-8 mb-8">
+        <div class="text-center mb-4">
+          <span class="text-6xl mb-4 block">💎</span>
+          <h2 class="text-3xl font-bold mb-4">O Diferencial que Multiplica Seu Valor</h2>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-6 rounded-lg">
+          <p class="text-xl mb-4">
+            95% dos designers IA entregam "imagens bonitas". Os 5% que ganham 10x mais entregam ESTRATÉGIA + EXECUÇÃO + RESULTADOS MENSURÁVEIS.
+          </p>
+          <p class="text-lg mb-6">
+            Não seja só um "operador de Midjourney". Seja um estrategista de marca que usa IA como ferramenta.
+          </p>
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="bg-white/10 p-4 rounded">
+              <strong class="block mb-2 text-lg">🧠 Pense Estratégia</strong>
+              <p>Por que esta imagem? Como ela serve o objetivo? O que comunica?</p>
+            </div>
+            <div class="bg-white/10 p-4 rounded">
+              <strong class="block mb-2 text-lg">📊 Mostre Números</strong>
+              <p>Engagement, conversão, ROI. Transforme design em resultados de negócio.</p>
+            </div>
+            <div class="bg-white/10 p-4 rounded">
+              <strong class="block mb-2 text-lg">🔄 Seja Consultivo</strong>
+              <p>Eduque clientes, sugira melhorias, construa relacionamentos duradouros.</p>
+            </div>
+          </div>
+          <p class="text-xl font-bold text-center mt-6 pt-6 border-t border-white/30">
+            Faça isso consistentemente e você NUNCA vai precisar procurar clientes. Eles vão te procurar.
+          </p>
+        </div>
+      </div>
+
+      <!-- Navegação -->
+      <div class="flex justify-between items-center mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
+        <a href="tecnico-modulo-05.html" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold">
+          ← Voltar para Módulo 5
+        </a>
+        <a href="../trilhas/tecnico.html" class="bg-blue-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 transition-colors text-lg">
+          Voltar para Trilha Técnico →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-900 dark:bg-black text-white py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-neutral-400">&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
+      <p class="text-neutral-500 text-sm mt-2">Transformando profissionais para o mercado do futuro</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
+
+</body>
+</html>
