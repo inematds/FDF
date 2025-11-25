@@ -1,610 +1,894 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nível Iniciante - Designer do Futuro</title>
+  <title>Trilha Iniciante - Designer do Futuro</title>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            iniciante: '#10B981',
+            tecnico: '#3B82F6',
+            masterclass: '#8B5CF6',
+            empreendedores: '#F59E0B',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
   <style>
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
     }
 
-    /* Modal Styles */
+    /* Modal CSS */
     .modal {
       display: none;
       position: fixed;
-      z-index: 1000;
+      z-index: 100;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
       backdrop-filter: blur(4px);
     }
-
     .modal.active {
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
     .modal-content {
       background-color: white;
-      border-radius: 1rem;
-      max-width: 900px;
+      margin: auto;
+      padding: 0;
+      width: 90%;
+      max-width: 1000px;
       max-height: 90vh;
+      border-radius: 1rem;
       overflow: hidden;
-      margin: 20px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 20px 25px rgba(0,0,0,0.3);
     }
-
     .modal-header {
-      position: sticky;
-      top: 0;
-      background: white;
-      border-bottom: 2px solid #10B981;
       padding: 1.5rem 2rem;
+      border-bottom: 1px solid #e5e7eb;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 10;
     }
-
     .modal-body {
       padding: 2rem;
       overflow-y: auto;
-      max-height: calc(90vh - 100px);
+      max-height: calc(90vh - 80px);
     }
-
     .close-modal {
+      color: #9ca3af;
       font-size: 2rem;
-      font-weight: bold;
-      color: #6B7280;
+      font-weight: 700;
       cursor: pointer;
-      transition: color 0.2s;
-      line-height: 1;
     }
-
     .close-modal:hover {
-      color: #EF4444;
+      color: #ef4444;
     }
 
-    /* Reduced Motion */
     @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
+      * {
         animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-neutral-50 text-neutral-900">
 
   <!-- Navegação -->
-  <nav class="sticky top-0 z-50 bg-white shadow-sm">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-neutral-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../index.html" class="text-2xl font-bold text-blue-600">Designer do Futuro</a>
-        <div class="hidden md:flex space-x-8">
-          <a href="../index.html#trilhas" class="text-gray-700 hover:text-blue-600 transition-colors">Trilhas</a>
-          <a href="../index.html#recursos" class="text-gray-700 hover:text-blue-600 transition-colors">Recursos</a>
-          <a href="../index.html#comunidade" class="text-gray-700 hover:text-blue-600 transition-colors">Comunidade</a>
+        <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-iniciante via-tecnico to-masterclass bg-clip-text text-transparent">
+          🎨 Designer do Futuro
+        </a>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 hover:text-iniciante transition">Início</a>
+          <a href="../index.html#trilhas" class="text-neutral-700 hover:text-iniciante transition">Trilhas</a>
+          <a href="https://github.com/inematds/FDF" class="text-neutral-700 hover:text-iniciante transition">GitHub</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="bg-gradient-to-br from-emerald-50 to-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="text-6xl mb-4">🌟</div>
-      <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-4">
-        Nível Iniciante
-      </h1>
-      <p class="text-xl sm:text-2xl mb-4 text-gray-600">
-        Primeiros Passos no Design com IA
-      </p>
-      <span class="inline-block px-6 py-3 bg-emerald-500 text-white text-lg font-bold rounded-full">
-        30 horas • 4 semanas
-      </span>
+  <!-- Breadcrumb -->
+  <div class="bg-white border-b border-neutral-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-iniciante hover:text-emerald-600">Início</a>
+        <span class="mx-2 text-neutral-400">/</span>
+        <span class="text-neutral-600">Trilha Iniciante</span>
+      </nav>
     </div>
-  </section>
+  </div>
 
-  <!-- Objetivos -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="bg-white rounded-xl shadow-md p-8 mb-8">
-      <h2 class="text-3xl font-bold text-gray-900 mb-6">📚 O Que Você Vai Aprender</h2>
-      <ul class="space-y-3">
-        <li class="flex items-start">
-          <span class="text-emerald-500 mr-3 text-xl flex-shrink-0">✓</span>
-          <span class="text-gray-700">Criar imagens profissionais usando ferramentas de IA</span>
-        </li>
-        <li class="flex items-start">
-          <span class="text-emerald-500 mr-3 text-xl flex-shrink-0">✓</span>
-          <span class="text-gray-700">Escrever prompts efetivos que geram o que você imagina</span>
-        </li>
-        <li class="flex items-start">
-          <span class="text-emerald-500 mr-3 text-xl flex-shrink-0">✓</span>
-          <span class="text-gray-700">Entender fundamentos visuais essenciais</span>
-        </li>
-        <li class="flex items-start">
-          <span class="text-emerald-500 mr-3 text-xl flex-shrink-0">✓</span>
-          <span class="text-gray-700">Usar ferramentas gratuitas de criação e edição</span>
-        </li>
-      </ul>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-iniciante to-emerald-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+
+      <div class="flex items-center gap-4 mb-4">
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          30 horas
+        </span>
+        <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-semibold">
+          4 módulos
+        </span>
+      </div>
+
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+        🌟 Trilha Iniciante: Mentalidade do Criador
+      </h1>
+
+      <p class="text-xl text-white/90 mb-6">
+        Transforme sua visão sobre criação visual e descubra seu potencial criativo com IA
+      </p>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-white/10 backdrop-blur p-4 rounded-lg">
+          <div class="text-2xl font-bold">4</div>
+          <div class="text-sm text-emerald-100">Módulos</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-4 rounded-lg">
+          <div class="text-2xl font-bold">30h</div>
+          <div class="text-sm text-emerald-100">Duração</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-4 rounded-lg">
+          <div class="text-2xl font-bold">100%</div>
+          <div class="text-sm text-emerald-100">Prático</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur p-4 rounded-lg">
+          <div class="text-2xl font-bold">Grátis</div>
+          <div class="text-sm text-emerald-100">Acesso Total</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- Módulos -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-    <!-- Módulo 1 -->
-    <div class="module-card bg-white rounded-xl shadow-md p-6 mb-8 border-l-4 border-emerald-500">
-      <div class="flex justify-between items-start mb-4">
+    <!-- MÓDULO 1 -->
+    <div class="chapter-card bg-white rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-iniciante transition-all">
+
+      <!-- Header -->
+      <div class="flex items-start justify-between mb-6">
         <div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-2">🧠 Módulo 1.1: Mentalidade do Criador</h2>
-          <p class="text-emerald-600 font-semibold">⏱️ 6 horas • 1 semana</p>
+          <span class="inline-block px-3 py-1 bg-iniciante/10 text-iniciante rounded-full text-sm font-semibold mb-3">
+            6 horas
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 mb-2">
+            🌟 Módulo 1: Mentalidade do Criador
+          </h2>
+          <p class="text-neutral-600">
+            Transforme sua forma de pensar sobre criação visual e descubra talentos que você não sabia que tinha
+          </p>
         </div>
       </div>
 
-      <p class="text-gray-600 mb-4">
-        Transforme sua forma de pensar sobre criação visual e descubra que você não precisa ser designer para criar.
-      </p>
-
-      <!-- Ações -->
+      <!-- Action Buttons -->
       <div class="flex flex-wrap gap-3 mb-6">
-        <button onclick="openModal('modal1')" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 transition-colors flex items-center gap-2">
+        <button onclick="openModal('modal-modulo-1')" class="px-6 py-3 bg-iniciante text-white rounded-lg font-semibold hover:bg-emerald-600 transition-colors flex items-center gap-2">
           <span>📖</span>
           <span>Ver em Modal</span>
         </button>
-        <a href="../modulos/iniciante-modulo-01.html" class="bg-transparent border-2 border-emerald-500 text-emerald-500 px-4 py-2 rounded-lg font-semibold hover:bg-emerald-50 transition-colors flex items-center gap-2">
+
+        <a href="../conteudo/iniciante-modulo-01.html" class="px-6 py-3 bg-transparent border-2 border-iniciante text-iniciante rounded-lg font-semibold hover:bg-iniciante hover:text-white transition-colors flex items-center gap-2">
           <span>📄</span>
           <span>Abrir Página Completa</span>
         </a>
-        <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-01/README.md" target="_blank" class="bg-transparent border-2 border-gray-300 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-50 transition-colors flex items-center gap-2">
+
+        <a href="../../trilhas/iniciante/modulo-01/README.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 text-neutral-700 rounded-lg font-semibold hover:bg-neutral-100 transition-colors flex items-center gap-2">
           <span>📥</span>
-          <span>GitHub</span>
+          <span>Download MD</span>
         </a>
       </div>
 
-      <!-- Tópicos Expansíveis (Accordion) -->
-      <ul class="topics-list space-y-2">
-        <li class="topic-item">
-          <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-900">
-            📌 Aula 1: Você Não Precisa Ser Designer Para Criar
-          </button>
-          <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">O que é:</strong> A grande mudança no processo criativo - de executor técnico para diretor criativo.
-            </p>
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">Por que aprender:</strong> Entender que criatividade não exige habilidade técnica de desenho, apenas visão e direção.
-            </p>
-            <p class="text-sm">
-              <strong class="text-emerald-600">Conceitos chave:</strong> Democratização da criação, IA como ferramenta, exemplos reais de pessoas sem experiência.
-            </p>
-          </div>
-        </li>
+      <!-- Tópicos Expansíveis -->
+      <div class="mb-4">
+        <h3 class="font-semibold text-neutral-900 mb-3 text-lg">
+          📚 Tópicos-chave do módulo:
+        </h3>
 
-        <li class="topic-item">
-          <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-900">
-            📌 Aula 2: Como a IA Democratizou a Criação Visual
-          </button>
-          <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">O que é:</strong> A evolução das ferramentas de criação visual de 2020 até hoje.
-            </p>
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">Por que aprender:</strong> Compreender as oportunidades e responsabilidades que a IA traz.
-            </p>
-            <p class="text-sm">
-              <strong class="text-emerald-600">Conceitos chave:</strong> DALL·E, Midjourney, Stable Diffusion, acesso gratuito vs pago, ética no uso.
-            </p>
-          </div>
-        </li>
+        <ul class="topics-list space-y-0.5">
 
-        <li class="topic-item">
-          <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-900">
-            📌 Aula 3: Descobrindo Seus Talentos Criativos Escondidos
-          </button>
-          <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">O que é:</strong> Exercícios de auto-descoberta para identificar seu estilo criativo único.
-            </p>
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">Por que aprender:</strong> Todos têm criatividade, apenas precisam identificar seu tipo.
-            </p>
-            <p class="text-sm">
-              <strong class="text-emerald-600">Conceitos chave:</strong> 5 tipos de criatividade (Storyteller, Esteta, Comunicador, Experimentador, Curador).
-            </p>
-          </div>
-        </li>
+          <!-- Tópico 1 -->
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              📌 Aula 1: Você Não Precisa Ser Designer Para Criar
+            </button>
 
-        <li class="topic-item">
-          <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-900">
-            📌 Aula 4: O Novo Papel do Criador em 2025
-          </button>
-          <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">O que é:</strong> As 5 habilidades essenciais do criador moderno.
-            </p>
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">Por que aprender:</strong> O mercado mudou - executor virou diretor criativo.
-            </p>
-            <p class="text-sm">
-              <strong class="text-emerald-600">Conceitos chave:</strong> Visão criativa, comunicação com IA, curadoria, contexto, senso estético.
-            </p>
-          </div>
-        </li>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> A grande mudança no processo criativo. Antes precisava anos de estudo, softwares caros e talento para desenho. Hoje com IA basta criatividade, capacidade de descrever o que quer e vontade de aprender.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Entender que criatividade está democratizada elimina o bloqueio mental. Profissionais de qualquer área podem criar conteúdo visual profissional sem depender de terceiros.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Democratização da criação, IA como ferramenta de execução, papel do criador como diretor, exemplos reais de não-designers criando
+              </p>
+            </div>
+          </li>
 
-        <li class="topic-item">
-          <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-900">
-            📌 Aula 5: Onde a IA Falha e Você Se Destaca
-          </button>
-          <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">O que é:</strong> Entendendo as limitações da IA e o valor único do humano.
-            </p>
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">Por que aprender:</strong> Seu valor está onde a IA não consegue chegar.
-            </p>
-            <p class="text-sm">
-              <strong class="text-emerald-600">Conceitos chave:</strong> Intenção, contexto cultural, emoção, estratégia, originalidade.
-            </p>
-          </div>
-        </li>
-      </ul>
+          <!-- Tópico 2 -->
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              🎯 Aula 2: Descobrindo Seu Talento Oculto
+            </button>
+
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Exercícios práticos para identificar suas habilidades criativas latentes. Todos têm senso estético, imaginação e capacidade de avaliar o que funciona visualmente - apenas não tiveram ferramentas para expressar isso antes.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Autoconhecimento criativo aumenta confiança e direciona o aprendizado. Descobrir seus pontos fortes acelera progresso e garante satisfação com o trabalho.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Senso estético inato, imaginação visual, curadoria criativa, feedback loop, teste de percepção visual
+              </p>
+            </div>
+          </li>
+
+          <!-- Tópico 3 -->
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              🤖 Aula 3: Humano + IA - A Dupla Perfeita
+            </button>
+
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Entender a divisão de tarefas entre você e a IA. Você traz visão criativa, contexto, propósito e julgamento estético. IA traz execução técnica, velocidade, experimentação infinita e habilidades que levariam anos para desenvolver.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Saber o que delegar e o que controlar evita frustração e maximiza resultados. Transforma IA de "ameaça" para "superpoder" pessoal.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Colaboração humano-IA, direção criativa vs execução, iteração rápida, amplificação de capacidades, vantagem competitiva
+              </p>
+            </div>
+          </li>
+
+          <!-- Tópico 4 -->
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              🎨 Aula 4: O Novo Papel do Criador
+            </button>
+
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Antes o criador executava com ferramentas técnicas. Hoje você é diretor de arte, curador, editor e visionário. Seu trabalho é ter a ideia certa, comunicá-la bem e escolher os melhores resultados.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Mudar mentalidade de "executor" para "diretor" desbloqueia potencial criativo. Profissionais que entendem esse papel crescem 10x mais rápido.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Direção criativa, curadoria visual, tomada de decisão estética, ciclo de iteração, visão vs execução
+              </p>
+            </div>
+          </li>
+
+          <!-- Tópico 5 -->
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              💪 Aula 5: Construindo Confiança Para Criar
+            </button>
+
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Estratégias para superar síndrome do impostor e medo de começar. Primeiras criações sempre são imperfeitas - e está tudo bem. Confiança vem com prática consistente, não talento inato.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Bloqueios mentais são o maior impedimento para iniciantes. Técnicas comprovadas de construção de confiança aceleram curva de aprendizado em 300%.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Síndrome do impostor, prática deliberada, feedback construtivo, comunidade de apoio, celebração de pequenas vitórias
+              </p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
     </div>
 
-    <!-- Módulo 2 -->
-    <div class="module-card bg-white rounded-xl shadow-md p-6 mb-8 border-l-4 border-emerald-500">
-      <div class="flex justify-between items-start mb-4">
+    <!-- MÓDULO 2 -->
+    <div class="chapter-card bg-white rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-iniciante transition-all">
+
+      <div class="flex items-start justify-between mb-6">
         <div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-2">🎨 Módulo 1.2: Fundamentos Visuais</h2>
-          <p class="text-emerald-600 font-semibold">⏱️ 8 horas • 1 semana</p>
+          <span class="inline-block px-3 py-1 bg-iniciante/10 text-iniciante rounded-full text-sm font-semibold mb-3">
+            8 horas
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 mb-2">
+            🛠️ Módulo 2: Ferramentas e Fundamentos
+          </h2>
+          <p class="text-neutral-600">
+            Domine as melhores ferramentas de IA generativa e aprenda fundamentos de design visual
+          </p>
         </div>
       </div>
 
-      <p class="text-gray-600 mb-4">
-        Aprenda os princípios essenciais de design visual de forma simplificada e prática.
-      </p>
-
-      <!-- Ações -->
       <div class="flex flex-wrap gap-3 mb-6">
-        <button onclick="openModal('modal2')" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 transition-colors flex items-center gap-2">
+        <button onclick="openModal('modal-modulo-2')" class="px-6 py-3 bg-iniciante text-white rounded-lg font-semibold hover:bg-emerald-600 transition-colors flex items-center gap-2">
           <span>📖</span>
           <span>Ver em Modal</span>
         </button>
-        <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-02/README.md" target="_blank" class="bg-transparent border-2 border-gray-300 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-50 transition-colors flex items-center gap-2">
+
+        <a href="../conteudo/iniciante-modulo-02.html" class="px-6 py-3 bg-transparent border-2 border-iniciante text-iniciante rounded-lg font-semibold hover:bg-iniciante hover:text-white transition-colors flex items-center gap-2">
+          <span>📄</span>
+          <span>Abrir Página Completa</span>
+        </a>
+
+        <a href="../../trilhas/iniciante/modulo-02/README.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 text-neutral-700 rounded-lg font-semibold hover:bg-neutral-100 transition-colors flex items-center gap-2">
           <span>📥</span>
-          <span>GitHub</span>
+          <span>Download MD</span>
         </a>
       </div>
 
-      <!-- Tópicos -->
-      <ul class="topics-list space-y-2">
-        <li class="topic-item">
-          <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-900">
-            📌 Design não é arte (e por que isso é bom)
-          </button>
-          <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">O que é:</strong> A diferença fundamental entre arte e design.
-            </p>
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">Por que aprender:</strong> Design resolve problemas, não expressa sentimentos.
-            </p>
-            <p class="text-sm">
-              <strong class="text-emerald-600">Conceitos chave:</strong> Função vs expressão, objetivo claro, público-alvo.
-            </p>
-          </div>
-        </li>
+      <div class="mb-4">
+        <h3 class="font-semibold text-neutral-900 mb-3 text-lg">
+          📚 Tópicos-chave do módulo:
+        </h3>
 
-        <li class="topic-item">
-          <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-900">
-            📌 Os 4 princípios fundamentais do design
-          </button>
-          <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">O que é:</strong> Contraste, Repetição, Alinhamento, Proximidade (CRAP).
-            </p>
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">Por que aprender:</strong> Base de todo design visual efetivo.
-            </p>
-            <p class="text-sm">
-              <strong class="text-emerald-600">Conceitos chave:</strong> Hierarquia visual, organização, consistência, agrupamento.
-            </p>
-          </div>
-        </li>
+        <ul class="topics-list space-y-0.5">
 
-        <li class="topic-item">
-          <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-900">
-            📌 Cores: teoria simplificada para iniciantes
-          </button>
-          <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">O que é:</strong> Como cores funcionam e como escolher paletas harmônicas.
-            </p>
-            <p class="text-sm">
-              <strong class="text-emerald-600">Conceitos chave:</strong> Roda de cores, esquemas (complementares, análogas), psicologia das cores.
-            </p>
-          </div>
-        </li>
-      </ul>
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              🎯 Aula 1: Panorama de Ferramentas IA em 2025
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Visão completa das ferramentas disponíveis: Midjourney, DALL-E 3, Leonardo.AI, Stable Diffusion, Adobe Firefly. Cada uma tem pontos fortes - Midjourney para arte conceitual, Leonardo para controle, Firefly para uso comercial sem restrições.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Escolher a ferramenta certa economiza tempo e dinheiro. Profissionais que conhecem o ecossistema completam projetos 50% mais rápido.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Comparação Midjourney vs DALL-E vs Leonardo, preços e planos, casos de uso específicos, limitações de cada ferramenta
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              🎨 Aula 2: Fundamentos de Design Visual
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Princípios básicos que todo criador deve saber: composição, hierarquia visual, teoria das cores, tipografia, balanço e contraste. Conhecimento mínimo que transforma imagens amadoras em profissionais.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> IA executa bem, mas você precisa dirigir. Entender fundamentos permite avaliar resultados e pedir ajustes que realmente melhoram a imagem.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Regra dos terços, teoria das cores, contraste, hierarquia visual, balanço simétrico vs assimétrico, espaço negativo
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              ✍️ Aula 3: Anatomia de um Prompt Eficiente
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Estrutura de prompt que gera resultados consistentes: [Assunto] + [Estilo] + [Ambiente/Contexto] + [Iluminação] + [Mood/Atmosfera] + [Parâmetros técnicos]. Exemplo: "Gato persa branco, estilo aquarela, jardim florido, luz suave da tarde, atmosfera tranquila, --ar 16:9"
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Prompts estruturados eliminam tentativa e erro. Reduz de 20 tentativas para 2-3 para obter resultado desejado.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Estrutura de prompt, parâmetros (aspect ratio, quality, stylize), palavras-chave efetivas, ordem de elementos, peso de tokens
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              🎬 Aula 4: Estilos e Referências Visuais
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Biblioteca mental de estilos artísticos: fotorrealista, ilustração, pintura a óleo, aquarela, pixel art, low poly, art nouveau, cyberpunk. Cada estilo tem vocabulário específico que a IA reconhece.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Comunicar estilo com precisão é 70% do sucesso na criação. Vocabulário visual rico permite explorar infinitas possibilidades criativas.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Estilos artísticos históricos, movimentos contemporâneos, artistas de referência, vocabulário técnico de fotografia, mixing de estilos
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              🔧 Aula 5: Primeiros Passos Práticos
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Tutorial passo-a-passo para criar sua primeira imagem: configurar conta, entender interface, escrever primeiro prompt, interpretar resultados, fazer iterações, salvar e organizar criações.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Primeira criação é sempre intimidante. Guia prático elimina ansiedade e garante experiência positiva que motiva continuidade.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Setup de conta, interface de ferramentas, workflow básico, iteração de prompts, organização de projetos, primeiras boas práticas
+              </p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
     </div>
 
-    <!-- Módulo 3 -->
-    <div class="module-card bg-white rounded-xl shadow-md p-6 mb-8 border-l-4 border-emerald-500">
-      <div class="flex justify-between items-start mb-4">
+    <!-- MÓDULO 3 -->
+    <div class="chapter-card bg-white rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-iniciante transition-all">
+
+      <div class="flex items-start justify-between mb-6">
         <div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-2">💬 Módulo 1.3: Seus Primeiros Prompts</h2>
-          <p class="text-emerald-600 font-semibold">⏱️ 8 horas • 1 semana</p>
+          <span class="inline-block px-3 py-1 bg-iniciante/10 text-iniciante rounded-full text-sm font-semibold mb-3">
+            8 horas
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 mb-2">
+            🚀 Módulo 3: Técnicas Avançadas de Criação
+          </h2>
+          <p class="text-neutral-600">
+            Aprenda técnicas profissionais de refinamento, composição e controle criativo avançado
+          </p>
         </div>
       </div>
 
-      <p class="text-gray-600 mb-4">
-        Domine a arte de se comunicar com IAs de geração de imagem através de prompts efetivos.
-      </p>
-
       <div class="flex flex-wrap gap-3 mb-6">
-        <button onclick="openModal('modal3')" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 transition-colors flex items-center gap-2">
+        <button onclick="openModal('modal-modulo-3')" class="px-6 py-3 bg-iniciante text-white rounded-lg font-semibold hover:bg-emerald-600 transition-colors flex items-center gap-2">
           <span>📖</span>
           <span>Ver em Modal</span>
         </button>
-        <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-03/README.md" target="_blank" class="bg-transparent border-2 border-gray-300 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-50 transition-colors flex items-center gap-2">
+
+        <a href="../conteudo/iniciante-modulo-03.html" class="px-6 py-3 bg-transparent border-2 border-iniciante text-iniciante rounded-lg font-semibold hover:bg-iniciante hover:text-white transition-colors flex items-center gap-2">
+          <span>📄</span>
+          <span>Abrir Página Completa</span>
+        </a>
+
+        <a href="../../trilhas/iniciante/modulo-03/README.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 text-neutral-700 rounded-lg font-semibold hover:bg-neutral-100 transition-colors flex items-center gap-2">
           <span>📥</span>
-          <span>GitHub</span>
+          <span>Download MD</span>
         </a>
       </div>
 
-      <ul class="topics-list space-y-2">
-        <li class="topic-item">
-          <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-900">
-            📌 Anatomia de um prompt efetivo
-          </button>
-          <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-            <p class="text-sm mb-2">
-              <strong class="text-emerald-600">O que é:</strong> As 6 partes essenciais de um prompt que funciona.
-            </p>
-            <p class="text-sm">
-              <strong class="text-emerald-600">Conceitos chave:</strong> Assunto, ação, estilo, composição, iluminação, qualidade.
-            </p>
-          </div>
-        </li>
+      <div class="mb-4">
+        <h3 class="font-semibold text-neutral-900 mb-3 text-lg">
+          📚 Tópicos-chave do módulo:
+        </h3>
 
-        <li class="topic-item">
-          <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-900">
-            📌 A fórmula básica que sempre funciona
-          </button>
-          <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-            <p class="text-sm">
-              <strong class="text-emerald-600">Conceitos chave:</strong> [Assunto] + [fazendo o quê] + [onde] + [estilo] + [qualidade]
-            </p>
-          </div>
-        </li>
-      </ul>
+        <ul class="topics-list space-y-0.5">
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              🎯 Aula 1: Iteração e Refinamento
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Processo sistemático de melhorar imagens: gerar variações, identificar o que funciona, ajustar prompts cirurgicamente, usar remix e reroll estrategicamente. Profissionais raramente aceitam primeiro resultado.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Diferença entre amador e profissional está na iteração. Imagens excelentes vêm de 5-10 refinamentos, não sorte.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Variações, remix, reroll, ajustes incrementais, análise crítica de resultados, quando parar de iterar
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              🖼️ Aula 2: Composição e Enquadramento
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Controle avançado de composição via prompt: close-up, medium shot, wide shot, bird's eye view, worm's eye view, regra dos terços, simetria, leading lines. Cada termo posiciona elementos de forma específica.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Composição correta comunica melhor a mensagem. Uma mudança de ângulo transforma imagem medíocre em impactante.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Tipos de enquadramento, ângulos de câmera, profundidade de campo, ponto focal, linhas guia, equilíbrio visual
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              💡 Aula 3: Iluminação e Atmosfera
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Controle de luz define 80% do mood: golden hour, blue hour, dramatic lighting, soft diffused light, rim light, volumetric rays. Vocabulário técnico de fotografia aplicado a IA.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Iluminação separa imagens amadoras de profissionais. Dominar luz multiplica impacto emocional por 10x.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Tipos de iluminação, temperatura de cor, contraste de luz, sombras dramáticas, atmosfera e mood, horários de luz natural
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              🎨 Aula 4: Paletas de Cores e Harmonia
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Teoria das cores aplicada: esquemas complementares, análogos, monocromáticos, tríades. Como especificar cores em prompts: "vibrant colors", "muted palette", "pastel tones", "cinematic color grading".
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Cores certas evocam emoções específicas e criam identidade visual consistente. Essencial para branding e projetos profissionais.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Roda cromática, esquemas de cor, psicologia das cores, saturação e brilho, paletas harmônicas, referências de color grading
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              🔥 Aula 5: Prompts Negativos e Controle Fino
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Técnica de dizer à IA o que NÃO incluir. Remove elementos indesejados: "no text, no watermarks, no blurry, no distortions". Tão importante quanto prompt positivo para resultados limpos.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Elimina 90% dos problemas comuns de iniciantes. Garante imagens profissionais sem artefatos ou elementos estranhos.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Prompts negativos, lista de exclusões comuns, pesos de tokens negativos, quando usar, combinação positivo + negativo
+              </p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
     </div>
 
-    <!-- Módulo 4 -->
-    <div class="module-card bg-white rounded-xl shadow-md p-6 mb-8 border-l-4 border-emerald-500">
-      <div class="flex justify-between items-start mb-4">
+    <!-- MÓDULO 4 -->
+    <div class="chapter-card bg-white rounded-2xl shadow-lg p-8 mb-8 border-2 border-transparent hover:border-iniciante transition-all">
+
+      <div class="flex items-start justify-between mb-6">
         <div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-2">🛠️ Módulo 1.4: Ferramentas Acessíveis</h2>
-          <p class="text-emerald-600 font-semibold">⏱️ 8 horas • 1 semana</p>
+          <span class="inline-block px-3 py-1 bg-iniciante/10 text-iniciante rounded-full text-sm font-semibold mb-3">
+            8 horas
+          </span>
+          <h2 class="text-3xl font-bold text-neutral-900 mb-2">
+            💼 Módulo 4: Do Hobby ao Profissional
+          </h2>
+          <p class="text-neutral-600">
+            Transforme habilidades em resultados práticos, construa portfólio e aprenda ética e direitos de uso
+          </p>
         </div>
       </div>
 
-      <p class="text-gray-600 mb-4">
-        Domine ferramentas gratuitas e acessíveis de criação com IA.
-      </p>
-
       <div class="flex flex-wrap gap-3 mb-6">
-        <button onclick="openModal('modal4')" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 transition-colors flex items-center gap-2">
+        <button onclick="openModal('modal-modulo-4')" class="px-6 py-3 bg-iniciante text-white rounded-lg font-semibold hover:bg-emerald-600 transition-colors flex items-center gap-2">
           <span>📖</span>
           <span>Ver em Modal</span>
         </button>
-        <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-04/README.md" target="_blank" class="bg-transparent border-2 border-gray-300 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-50 transition-colors flex items-center gap-2">
+
+        <a href="../conteudo/iniciante-modulo-04.html" class="px-6 py-3 bg-transparent border-2 border-iniciante text-iniciante rounded-lg font-semibold hover:bg-iniciante hover:text-white transition-colors flex items-center gap-2">
+          <span>📄</span>
+          <span>Abrir Página Completa</span>
+        </a>
+
+        <a href="../../trilhas/iniciante/modulo-04/README.md" download class="px-6 py-3 bg-transparent border-2 border-neutral-300 text-neutral-700 rounded-lg font-semibold hover:bg-neutral-100 transition-colors flex items-center gap-2">
           <span>📥</span>
-          <span>GitHub</span>
+          <span>Download MD</span>
         </a>
       </div>
 
-      <ul class="topics-list space-y-2">
-        <li class="topic-item">
-          <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-900">
-            📌 Panorama de ferramentas gratuitas 2025
-          </button>
-          <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-            <p class="text-sm">
-              <strong class="text-emerald-600">Conceitos chave:</strong> Bing Image Creator, Leonardo.ai, Ideogram, Canva IA.
-            </p>
-          </div>
-        </li>
+      <div class="mb-4">
+        <h3 class="font-semibold text-neutral-900 mb-3 text-lg">
+          📚 Tópicos-chave do módulo:
+        </h3>
 
-        <li class="topic-item">
-          <button class="topic-button w-full text-left px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors font-medium text-gray-900">
-            📌 Workflow completo: do zero ao resultado
-          </button>
-          <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-emerald-500">
-            <p class="text-sm">
-              <strong class="text-emerald-600">Conceitos chave:</strong> Ideia → Prompt → Geração → Seleção → Edição → Exportação.
-            </p>
-          </div>
-        </li>
-      </ul>
+        <ul class="topics-list space-y-0.5">
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              📂 Aula 1: Organizando e Documentando Seu Trabalho
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Sistema de organização de projetos: nomear arquivos, versionar iterações, documentar prompts efetivos, criar biblioteca de referências. Profissionais economizam 40% do tempo com organização.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Caos criativo desperdiça tempo e oportunidades. Sistema organizado permite reusar sucessos e escalar produção.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Estrutura de pastas, versionamento, documentação de prompts, biblioteca de referências, backup de criações
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              🎯 Aula 2: Aplicações Práticas e Casos de Uso
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Onde aplicar suas habilidades hoje: posts para redes sociais, thumbnails para YouTube, ilustrações para blogs, mockups de produtos, apresentações, materiais de marketing, storytelling visual.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Teoria sem prática não serve. Casos de uso reais transformam conhecimento em valor mensurável e oportunidades profissionais.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Social media content, thumbnails, branding visual, mockups, storytelling, materiais educacionais, apresentações
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              📸 Aula 3: Construindo Seu Portfólio
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Como montar portfólio que impressiona: selecionar melhores trabalhos, criar narrativa visual, usar Behance/ArtStation/Instagram estrategicamente, escrever descrições que vendem, mostrar processo.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Portfólio bem construído abre portas profissionais. Diferença entre conseguir ou perder oportunidade está na apresentação.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Curadoria de trabalhos, plataformas de portfólio, storytelling visual, case studies, before/after, apresentação profissional
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              ⚖️ Aula 4: Ética e Direitos de Uso
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Questões legais e éticas: direitos de imagens geradas por IA, uso comercial vs pessoal, atribuição, privacidade, deep fakes, desinformação, responsabilidade criativa. Cada ferramenta tem termos diferentes.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Usar IA sem entender implicações legais gera riscos. Profissionais éticos constroem reputação sólida e evitam problemas futuros.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Direitos autorais de IA, uso comercial, termos de serviço, ética criativa, transparência, deep fakes, responsabilidade
+              </p>
+            </div>
+          </li>
+
+          <li class="topic-item">
+            <button class="topic-button w-full text-left px-4 py-1 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors font-medium text-neutral-800">
+              🚀 Aula 5: Próximos Passos na Jornada
+            </button>
+            <div class="topic-explanation hidden ml-6 mt-2 p-4 bg-emerald-50 rounded-lg border-l-4 border-iniciante">
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">O que é:</strong> Roadmap de evolução: comunidades para participar, recursos para estudar, desafios criativos, quando avançar para nível técnico, como continuar praticando, metas realistas de crescimento.
+              </p>
+              <p class="text-sm mb-1.5 text-neutral-700">
+                <strong class="text-iniciante">Por que aprender:</strong> Aprendizado sem direção desperdiça potencial. Plano claro de evolução mantém motivação e acelera progresso.
+              </p>
+              <p class="text-sm text-neutral-700">
+                <strong class="text-iniciante">Conceitos chave:</strong> Comunidades criativas, recursos de estudo, desafios e challenges, prática deliberada, metas de crescimento, transição para nível técnico
+              </p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
     </div>
 
-    <!-- Projeto Final -->
-    <div class="module-card bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl shadow-md p-6 text-white">
-      <h2 class="text-2xl font-bold mb-2">🎨 Projeto Final</h2>
-      <p class="font-semibold mb-2">⏱️ 15 horas</p>
-      <p class="mb-4">Pack de 15 imagens profissionais para redes sociais</p>
-
-      <div class="flex flex-wrap gap-3">
-        <button onclick="openModal('modalProjeto')" class="bg-white text-emerald-600 px-4 py-2 rounded-lg font-semibold hover:bg-emerald-50 transition-colors flex items-center gap-2">
-          <span>📖</span>
-          <span>Ver Projeto</span>
-        </button>
-        <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/projeto-final/README.md" target="_blank" class="bg-emerald-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-800 transition-colors flex items-center gap-2">
-          <span>📥</span>
-          <span>GitHub</span>
-        </a>
-      </div>
+    <!-- CTA Projeto Final -->
+    <div class="bg-gradient-to-r from-iniciante to-emerald-600 rounded-2xl p-8 text-white text-center">
+      <h2 class="text-3xl font-bold mb-4">🎓 Projeto Final</h2>
+      <p class="text-xl mb-6 text-white/90">
+        Aplique tudo que aprendeu criando um projeto completo de portfólio
+      </p>
+      <a href="../../trilhas/iniciante/projeto-final/README.md" class="inline-block bg-white text-iniciante px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
+        Ver Projeto Final
+      </a>
     </div>
 
   </section>
 
-  <!-- Modais -->
-
-  <!-- Modal 1 -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="text-2xl font-bold">🧠 Módulo 1: Mentalidade do Criador</h2>
-        <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p class="text-gray-600 mb-4"><strong>Duração:</strong> 6 horas • 1 semana</p>
-        <p class="text-gray-700 mb-6">Transforme sua forma de pensar sobre criação visual.</p>
-        <div class="bg-emerald-50 p-4 rounded-lg">
-          <p class="text-emerald-800 font-semibold mb-2">📖 Conteúdo completo disponível:</p>
-          <div class="flex gap-3">
-            <a href="../modulos/iniciante-modulo-01.html" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600">Ver Página</a>
-            <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-01/README.md" target="_blank" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-300">GitHub</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 2 -->
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="text-2xl font-bold">🎨 Módulo 2: Fundamentos Visuais</h2>
-        <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p class="text-gray-600 mb-4"><strong>Duração:</strong> 8 horas • 1 semana</p>
-        <p class="text-gray-700 mb-6">Aprenda os princípios essenciais de design visual.</p>
-        <div class="bg-emerald-50 p-4 rounded-lg">
-          <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-02/README.md" target="_blank" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 inline-block">Ver no GitHub</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 3 -->
-  <div id="modal3" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="text-2xl font-bold">💬 Módulo 3: Seus Primeiros Prompts</h2>
-        <span class="close-modal" onclick="closeModal('modal3')">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p class="text-gray-600 mb-4"><strong>Duração:</strong> 8 horas • 1 semana</p>
-        <p class="text-gray-700 mb-6">Domine a arte de se comunicar com a IA.</p>
-        <div class="bg-emerald-50 p-4 rounded-lg">
-          <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-03/README.md" target="_blank" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 inline-block">Ver no GitHub</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 4 -->
-  <div id="modal4" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="text-2xl font-bold">🛠️ Módulo 4: Ferramentas Acessíveis</h2>
-        <span class="close-modal" onclick="closeModal('modal4')">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p class="text-gray-600 mb-4"><strong>Duração:</strong> 8 horas • 1 semana</p>
-        <p class="text-gray-700 mb-6">Domine ferramentas gratuitas de criação com IA.</p>
-        <div class="bg-emerald-50 p-4 rounded-lg">
-          <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/modulo-04/README.md" target="_blank" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 inline-block">Ver no GitHub</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Projeto -->
-  <div id="modalProjeto" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="text-2xl font-bold">🎨 Projeto Final</h2>
-        <span class="close-modal" onclick="closeModal('modalProjeto')">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p class="text-gray-600 mb-4"><strong>Duração:</strong> 15 horas</p>
-        <h3 class="text-xl font-bold mb-3">Pack de 15 Imagens Profissionais</h3>
-        <p class="text-gray-700 mb-6">Aplique tudo que aprendeu criando um portfolio completo.</p>
-        <div class="bg-emerald-50 p-4 rounded-lg">
-          <a href="https://github.com/inematds/FDF/blob/main/trilhas/iniciante/projeto-final/README.md" target="_blank" class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-600 inline-block">Ver no GitHub</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-gray-400">&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
+  <footer class="bg-gray-900 text-white py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Designer do Futuro</h3>
+          <p class="text-gray-400 text-sm">
+            Democratizando criação visual através de IA
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Comunidade</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://inema.club" class="text-gray-400 hover:text-white transition">INEMA.CLUB (Grátis)</a></li>
+            <li><a href="https://inema.vip" class="text-gray-400 hover:text-white transition">INEMA.VIP (Premium)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../index.html" class="text-gray-400 hover:text-white transition">Início</a></li>
+            <li><a href="https://github.com/inematds/FDF" class="text-gray-400 hover:text-white transition">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+        <p>&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
+      </div>
     </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-    // Accordion (Tópicos Expansíveis)
-    document.addEventListener('click', function(e) {
-      const topicButton = e.target.closest('.topic-button');
+  <!-- Modals (conteúdo dos módulos) -->
+  <!-- Modal Módulo 1 -->
+  <div id="modal-modulo-1" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-neutral-900">🌟 Módulo 1: Mentalidade do Criador</h2>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="text-gray-700 mb-4">
+          Este módulo transforma completamente sua visão sobre criação visual. Você descobrirá que não precisa ser designer para criar imagens incríveis.
+        </p>
+        <p class="text-gray-600 mb-4">
+          <strong>Conteúdo completo disponível em:</strong>
+        </p>
+        <ul class="list-disc ml-6 text-gray-700 space-y-2">
+          <li>Página completa do módulo</li>
+          <li>Download do arquivo Markdown com todas as aulas</li>
+          <li>Repositório GitHub com materiais complementares</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
+  <!-- Modal Módulo 2 -->
+  <div id="modal-modulo-2" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-neutral-900">🛠️ Módulo 2: Ferramentas e Fundamentos</h2>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="text-gray-700 mb-4">
+          Domine as melhores ferramentas de IA generativa e aprenda fundamentos essenciais de design visual que transformarão suas criações.
+        </p>
+        <p class="text-gray-600 mb-4">
+          <strong>Conteúdo completo disponível em:</strong>
+        </p>
+        <ul class="list-disc ml-6 text-gray-700 space-y-2">
+          <li>Página completa do módulo</li>
+          <li>Download do arquivo Markdown com todas as aulas</li>
+          <li>Repositório GitHub com materiais complementares</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Módulo 3 -->
+  <div id="modal-modulo-3" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-neutral-900">🚀 Módulo 3: Técnicas Avançadas de Criação</h2>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="text-gray-700 mb-4">
+          Aprenda técnicas profissionais de refinamento, composição avançada e controle criativo que separam amadores de profissionais.
+        </p>
+        <p class="text-gray-600 mb-4">
+          <strong>Conteúdo completo disponível em:</strong>
+        </p>
+        <ul class="list-disc ml-6 text-gray-700 space-y-2">
+          <li>Página completa do módulo</li>
+          <li>Download do arquivo Markdown com todas as aulas</li>
+          <li>Repositório GitHub com materiais complementares</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Módulo 4 -->
+  <div id="modal-modulo-4" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="text-2xl font-bold text-neutral-900">💼 Módulo 4: Do Hobby ao Profissional</h2>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="text-gray-700 mb-4">
+          Transforme suas habilidades em resultados práticos, construa um portfólio profissional e aprenda sobre ética e direitos de uso.
+        </p>
+        <p class="text-gray-600 mb-4">
+          <strong>Conteúdo completo disponível em:</strong>
+        </p>
+        <ul class="list-disc ml-6 text-gray-700 space-y-2">
+          <li>Página completa do módulo</li>
+          <li>Download do arquivo Markdown com todas as aulas</li>
+          <li>Repositório GitHub com materiais complementares</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Modal functions
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Event listeners for modal
+    document.addEventListener('click', function(e) {
+      // Close modal when clicking outside
+      if (e.target.classList.contains('modal')) {
+        e.target.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+
+      // Close modal when clicking close button
+      if (e.target.classList.contains('close-modal')) {
+        const modal = e.target.closest('.modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+
+      // Toggle topic explanations (NOT accordion - multiple can be open)
+      const topicButton = e.target.closest('.topic-button');
       if (topicButton) {
         const topicItem = topicButton.closest('.topic-item');
         const explanation = topicItem.querySelector('.topic-explanation');
-
         if (explanation) {
-          // Fechar outros tópicos no mesmo módulo (accordion behavior)
-          const moduleCard = topicItem.closest('.module-card');
-          moduleCard.querySelectorAll('.topic-explanation').forEach(exp => {
-            if (exp !== explanation) {
-              exp.classList.add('hidden');
-            }
-          });
-
-          // Toggle atual
           explanation.classList.toggle('hidden');
         }
       }
     });
 
-    // Modais
-    function openModal(modalId) {
-      document.getElementById(modalId).classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal(modalId) {
-      document.getElementById(modalId).classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
-
-    // Fechar modal clicando fora
-    window.onclick = function(event) {
-      if (event.target.classList.contains('modal')) {
-        event.target.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      }
-    }
-
-    // Fechar modal com ESC
+    // Close modal with ESC key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         const activeModal = document.querySelector('.modal.active');
