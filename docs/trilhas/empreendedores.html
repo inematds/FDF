@@ -1,140 +1,405 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trilha Empreendedores - Designer do Futuro</title>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            iniciante: '#10B981',
+            tecnico: '#3B82F6',
+            masterclass: '#8B5CF6',
+            empreendedores: '#F59E0B',
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    * {
+      transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
 
   <!-- Navegação -->
-  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
-        <a href="../index.html" class="text-2xl font-bold text-indigo-600">Designer do Futuro</a>
-        <div class="hidden md:flex space-x-8">
-          <a href="../index.html#trilhas" class="text-gray-700 hover:text-indigo-600">Trilhas</a>
-          <a href="../index.html#recursos" class="text-gray-700 hover:text-indigo-600">Recursos</a>
-          <a href="../index.html#comunidade" class="text-gray-700 hover:text-indigo-600">Comunidade</a>
+        <a href="../index.html" class="text-2xl font-bold bg-gradient-to-r from-empreendedores to-orange-600 bg-clip-text text-transparent">
+          💼 Designer do Futuro
+        </a>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../index.html" class="text-neutral-700 dark:text-neutral-300 hover:text-empreendedores transition">Início</a>
+          <a href="../index.html#trilhas" class="text-neutral-700 dark:text-neutral-300 hover:text-empreendedores transition">Trilhas</a>
+          <a href="https://github.com/inematds/FDF" class="text-neutral-700 dark:text-neutral-300 hover:text-empreendedores transition">GitHub</a>
+
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="bg-gradient-to-br from-amber-50 to-white py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <div class="text-6xl mb-4">💼</div>
-        <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 mb-4">Trilha Empreendedores</h1>
-        <p class="text-xl text-gray-600 mb-8">IA Visual Para Impulsionar Seu Negócio</p>
-        <span class="inline-block px-6 py-3 bg-amber-500 text-white text-lg font-bold rounded-full">
-          40 horas • 5 semanas
+  <!-- Breadcrumb -->
+  <div class="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav class="flex text-sm" aria-label="Breadcrumb">
+        <a href="../index.html" class="text-empreendedores hover:text-orange-600">Início</a>
+        <span class="mx-2 text-neutral-400 dark:text-neutral-500">/</span>
+        <span class="text-neutral-600 dark:text-neutral-400">Trilha Empreendedores</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-empreendedores to-orange-600 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+
+      <div class="flex items-center gap-4 mb-4">
+        <div class="text-6xl">💼</div>
+        <div>
+          <h1 class="text-4xl sm:text-5xl font-bold">Trilha Empreendedores</h1>
+          <p class="text-xl text-amber-100 mt-2">IA Visual Para Impulsionar Seu Negócio</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-4 mt-6">
+        <span class="px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm font-semibold">
+          ⏱️ 40 horas
         </span>
+        <span class="px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm font-semibold">
+          📅 5 semanas
+        </span>
+        <span class="px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm font-semibold">
+          💰 ROI Garantido
+        </span>
+        <span class="px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm font-semibold">
+          🚀 Resultados Imediatos
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- O Que Você Vai Aprender -->
+  <section class="py-12 bg-white dark:bg-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold mb-8 text-center">📚 O Que Você Vai Aprender</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-6 rounded-xl">
+          <div class="text-3xl mb-3">🎯</div>
+          <h3 class="font-bold text-lg mb-2">Transformação de Negócio</h3>
+          <p class="text-neutral-700 dark:text-neutral-300 text-sm">
+            Como a IA pode transformar seu negócio e multiplicar resultados
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 p-6 rounded-xl">
+          <div class="text-3xl mb-3">⚡</div>
+          <h3 class="font-bold text-lg mb-2">Criação Profissional</h3>
+          <p class="text-neutral-700 dark:text-neutral-300 text-sm">
+            Criar conteúdo visual profissional rapidamente
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-6 rounded-xl">
+          <div class="text-3xl mb-3">📊</div>
+          <h3 class="font-bold text-lg mb-2">Marketing Eficiente</h3>
+          <p class="text-neutral-700 dark:text-neutral-300 text-sm">
+            Marketing visual eficiente e de baixo custo
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-900/20 dark:to-yellow-900/20 p-6 rounded-xl">
+          <div class="text-3xl mb-3">🛠️</div>
+          <h3 class="font-bold text-lg mb-2">Ferramentas Práticas</h3>
+          <p class="text-neutral-700 dark:text-neutral-300 text-sm">
+            Ferramentas práticas para o dia a dia do negócio
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 p-6 rounded-xl">
+          <div class="text-3xl mb-3">🚀</div>
+          <h3 class="font-bold text-lg mb-2">Implementação Completa</h3>
+          <p class="text-neutral-700 dark:text-neutral-300 text-sm">
+            Implementar soluções visuais do zero ao resultado
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 p-6 rounded-xl">
+          <div class="text-3xl mb-3">💡</div>
+          <h3 class="font-bold text-lg mb-2">ROI Mensurável</h3>
+          <p class="text-neutral-700 dark:text-neutral-300 text-sm">
+            Calcular e maximizar o retorno sobre investimento
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Conteúdo -->
-  <section class="py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Módulos -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold mb-8 text-center">🎓 Módulos da Trilha</h2>
 
-      <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">📚 O Que Você Vai Aprender</h2>
-        <ul class="space-y-3">
-          <li class="flex items-start">
-            <span class="text-amber-500 mr-3 text-2xl">✓</span>
-            <span>Como a IA pode transformar seu negócio</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-amber-500 mr-3 text-2xl">✓</span>
-            <span>Criar conteúdo visual profissional rapidamente</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-amber-500 mr-3 text-2xl">✓</span>
-            <span>Marketing visual eficiente e de baixo custo</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-amber-500 mr-3 text-2xl">✓</span>
-            <span>Ferramentas práticas para o dia a dia do negócio</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-amber-500 mr-3 text-2xl">✓</span>
-            <span>Implementar soluções visuais do zero ao resultado</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="grid gap-6">
+      <div class="grid gap-6 max-w-4xl mx-auto">
         <!-- Módulo 1 -->
-        <a href="../conteudo/empreendedores-modulo-01.html" class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 1: IA Para Seu Negócio</h3>
-          <p class="text-amber-600 font-semibold mb-4">6 horas • 1 semana</p>
-          <p class="text-gray-600 mb-4">Entenda o potencial da IA visual para empresas.</p>
-          <span class="text-amber-500 font-semibold hover:text-amber-600">Começar agora →</span>
+        <a href="../conteudo/empreendedores-modulo-01.html" class="block group">
+          <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md hover:shadow-xl transition-all p-6 border-2 border-transparent hover:border-empreendedores">
+            <div class="flex items-start gap-4">
+              <div class="text-4xl">💼</div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold mb-2 group-hover:text-empreendedores transition">
+                  Módulo 1: IA Para Seu Negócio
+                </h3>
+                <p class="text-empreendedores font-semibold mb-3">6 horas • 1 semana</p>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Entenda o potencial da IA visual para empresas.
+                </p>
+                <span class="text-empreendedores font-semibold group-hover:text-orange-600 transition inline-flex items-center">
+                  Começar agora →
+                </span>
+              </div>
+            </div>
+          </div>
         </a>
 
         <!-- Módulo 2 -->
-        <a href="../conteudo/empreendedores-modulo-02.html" class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 2: Criação Rápida e Eficiente</h3>
-          <p class="text-amber-600 font-semibold mb-4">8 horas • 1 semana</p>
-          <p class="text-gray-600 mb-4">Produza conteúdo visual em minutos, não horas.</p>
-          <span class="text-amber-500 font-semibold hover:text-amber-600">Começar agora →</span>
+        <a href="../conteudo/empreendedores-modulo-02.html" class="block group">
+          <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md hover:shadow-xl transition-all p-6 border-2 border-transparent hover:border-empreendedores">
+            <div class="flex items-start gap-4">
+              <div class="text-4xl">⚡</div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold mb-2 group-hover:text-empreendedores transition">
+                  Módulo 2: Criação Rápida e Eficiente
+                </h3>
+                <p class="text-empreendedores font-semibold mb-3">8 horas • 1 semana</p>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Produza conteúdo visual em minutos, não horas.
+                </p>
+                <span class="text-empreendedores font-semibold group-hover:text-orange-600 transition inline-flex items-center">
+                  Começar agora →
+                </span>
+              </div>
+            </div>
+          </div>
         </a>
 
         <!-- Módulo 3 -->
-        <a href="../conteudo/empreendedores-modulo-03.html" class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 3: Marketing Visual</h3>
-          <p class="text-amber-600 font-semibold mb-4">8 horas • 1 semana</p>
-          <p class="text-gray-600 mb-4">Crie campanhas visuais impactantes.</p>
-          <span class="text-amber-500 font-semibold hover:text-amber-600">Começar agora →</span>
+        <a href="../conteudo/empreendedores-modulo-03.html" class="block group">
+          <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md hover:shadow-xl transition-all p-6 border-2 border-transparent hover:border-empreendedores">
+            <div class="flex items-start gap-4">
+              <div class="text-4xl">🎨</div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold mb-2 group-hover:text-empreendedores transition">
+                  Módulo 3: Marketing Visual
+                </h3>
+                <p class="text-empreendedores font-semibold mb-3">8 horas • 1 semana</p>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Crie campanhas visuais impactantes.
+                </p>
+                <span class="text-empreendedores font-semibold group-hover:text-orange-600 transition inline-flex items-center">
+                  Começar agora →
+                </span>
+              </div>
+            </div>
+          </div>
         </a>
 
         <!-- Módulo 4 -->
-        <a href="../conteudo/empreendedores-modulo-04.html" class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 4: Ferramentas Para Negócios</h3>
-          <p class="text-amber-600 font-semibold mb-4">8 horas • 1 semana</p>
-          <p class="text-gray-600 mb-4">Soluções práticas e acessíveis para seu dia a dia.</p>
-          <span class="text-amber-500 font-semibold hover:text-amber-600">Começar agora →</span>
+        <a href="../conteudo/empreendedores-modulo-04.html" class="block group">
+          <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md hover:shadow-xl transition-all p-6 border-2 border-transparent hover:border-empreendedores">
+            <div class="flex items-start gap-4">
+              <div class="text-4xl">🛠️</div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold mb-2 group-hover:text-empreendedores transition">
+                  Módulo 4: Ferramentas Para Negócios
+                </h3>
+                <p class="text-empreendedores font-semibold mb-3">8 horas • 1 semana</p>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Soluções práticas e acessíveis para seu dia a dia.
+                </p>
+                <span class="text-empreendedores font-semibold group-hover:text-orange-600 transition inline-flex items-center">
+                  Começar agora →
+                </span>
+              </div>
+            </div>
+          </div>
         </a>
 
         <!-- Módulo 5 -->
-        <a href="../conteudo/empreendedores-modulo-05.html" class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Módulo 5: Do Zero ao Resultado</h3>
-          <p class="text-amber-600 font-semibold mb-4">10 horas • 1 semana</p>
-          <p class="text-gray-600 mb-4">Implemente soluções visuais completas.</p>
-          <span class="text-amber-500 font-semibold hover:text-amber-600">Começar agora →</span>
+        <a href="../conteudo/empreendedores-modulo-05.html" class="block group">
+          <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-md hover:shadow-xl transition-all p-6 border-2 border-transparent hover:border-empreendedores">
+            <div class="flex items-start gap-4">
+              <div class="text-4xl">🚀</div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold mb-2 group-hover:text-empreendedores transition">
+                  Módulo 5: Do Zero ao Resultado
+                </h3>
+                <p class="text-empreendedores font-semibold mb-3">10 horas • 1 semana</p>
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                  Implemente soluções visuais completas.
+                </p>
+                <span class="text-empreendedores font-semibold group-hover:text-orange-600 transition inline-flex items-center">
+                  Começar agora →
+                </span>
+              </div>
+            </div>
+          </div>
         </a>
 
         <!-- Projeto Final -->
-        <div class="bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl shadow-md p-6 text-white opacity-60">
-          <h3 class="text-2xl font-bold mb-2">🎨 Projeto Final</h3>
-          <p class="text-amber-100 font-semibold mb-4">15 horas</p>
-          <p class="mb-4">Campanha visual completa para seu negócio</p>
-          <span class="text-amber-100">Em breve →</span>
+        <div class="bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl shadow-md p-6 text-white opacity-60">
+          <div class="flex items-start gap-4">
+            <div class="text-4xl">🎨</div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold mb-2">Projeto Final</h3>
+              <p class="text-amber-100 font-semibold mb-3">15 horas</p>
+              <p class="mb-3">Campanha visual completa para seu negócio</p>
+              <span class="text-amber-100">Em breve →</span>
+            </div>
+          </div>
         </div>
       </div>
 
+      <!-- CTA -->
       <div class="mt-12 text-center">
-        <a href="../conteudo/empreendedores-modulo-01.html" class="inline-block bg-amber-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-amber-600">
+        <a href="../conteudo/empreendedores-modulo-01.html" class="inline-block bg-gradient-to-r from-empreendedores to-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-amber-600 hover:to-orange-700 transition-all shadow-lg">
           Começar Módulo 1
         </a>
       </div>
-
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-8">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <p class="text-gray-400">&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
+  <footer class="bg-neutral-900 dark:bg-neutral-950 text-neutral-400 py-12 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+
+        <!-- Coluna 1 - Sobre -->
+        <div>
+          <h4 class="font-semibold mb-4 text-white">Designer do Futuro</h4>
+          <p class="text-sm mb-4">
+            Aprenda a criar imagens profissionais usando IA. 100% gratuito e open-source.
+          </p>
+        </div>
+
+        <!-- Coluna 2 - Trilhas -->
+        <div>
+          <h4 class="font-semibold mb-4 text-white">Trilhas</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="./iniciante.html" class="hover:text-white transition">Iniciante</a></li>
+            <li><a href="./tecnico.html" class="hover:text-white transition">Técnico</a></li>
+            <li><a href="./masterclass.html" class="hover:text-white transition">Masterclass</a></li>
+            <li><a href="./empreendedores.html" class="hover:text-white transition">Empreendedores</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3 - Comunidade -->
+        <div>
+          <h4 class="font-semibold mb-4 text-white">Comunidade</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="https://inema.club" target="_blank" class="hover:text-white transition">INEMA.CLUB</a></li>
+            <li><a href="https://inema.vip" target="_blank" class="hover:text-white transition">INEMA.VIP</a></li>
+            <li><a href="https://github.com/inematds/FDF/discussions" target="_blank" class="hover:text-white transition">Discussões</a></li>
+            <li><a href="https://github.com/inematds/FDF" target="_blank" class="hover:text-white transition">GitHub</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4 - Recursos -->
+        <div>
+          <h4 class="font-semibold mb-4 text-white">Recursos</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../em-desenvolvimento.html" class="hover:text-white transition">Biblioteca de Prompts</a></li>
+            <li><a href="../em-desenvolvimento.html" class="hover:text-white transition">Galeria</a></li>
+            <li><a href="../em-desenvolvimento.html" class="hover:text-white transition">Checklists</a></li>
+            <li><a href="../em-desenvolvimento.html" class="hover:text-white transition">FAQ</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-neutral-800 pt-8 text-center text-sm">
+        <p>&copy; 2025 Designer do Futuro - INEMA.CLUB</p>
+      </div>
+
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn?.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
+      } else {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
+      }
+    });
+  </script>
 
 </body>
 </html>
