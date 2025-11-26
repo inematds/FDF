@@ -1,0 +1,2419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 5: Do Zero ao Resultado - Trilha Empreendedores IMG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #F59E0B;
+            --primary-dark: #D97706;
+            --primary-light: #FED7AA;
+            --text-dark: #111827;
+            --text-gray: #6B7280;
+            --bg-light: #FFFBEB;
+            --bg-white: #FFFFFF;
+            --border-color: #E5E7EB;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --info: #3B82F6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-white);
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(245, 158, 11, 0.2);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .badge-empreendedores {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, var(--bg-light), white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-gray);
+        }
+
+        .meta-item strong {
+            color: var(--primary-color);
+        }
+
+        /* Learning Objectives */
+        .objectives {
+            padding: 3rem 2rem;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .objective-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .objective-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Project Sections */
+        .project-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .project-section:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .project-header {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .project-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-header p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+        }
+
+        /* Project Timeline */
+        .project-timeline {
+            max-width: 900px;
+            margin: 3rem auto;
+            position: relative;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 40px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .timeline-content {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .timeline-day {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-tasks {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .timeline-tasks li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-gray);
+        }
+
+        .timeline-tasks li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Project Gallery */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
+        }
+
+        .gallery-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .gallery-info {
+            padding: 1rem;
+        }
+
+        .gallery-title {
+            font-weight: bold;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .gallery-desc {
+            font-size: 0.875rem;
+            color: var(--text-gray);
+        }
+
+        /* Metrics Dashboard */
+        .metrics-dashboard {
+            background: linear-gradient(135deg, var(--bg-light), white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .metrics-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .metrics-header h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .metric-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .metric-card:hover {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .metric-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-label {
+            color: var(--text-gray);
+            font-size: 0.875rem;
+        }
+
+        .metric-change {
+            margin-top: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .metric-change.positive {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+
+        .metric-change.negative {
+            background: #FEE2E2;
+            color: #991B1B;
+        }
+
+        /* Implementation Checklist */
+        .implementation-checklist {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .checklist-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .checklist-title {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .checklist-progress {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .progress-bar {
+            width: 200px;
+            height: 10px;
+            background: var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary-color);
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .checklist-sections {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .checklist-section {
+            border-left: 3px solid var(--primary-light);
+            padding-left: 1.5rem;
+        }
+
+        .checklist-section-title {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checklist-items {
+            list-style: none;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--bg-light);
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .checklist-checkbox:hover {
+            background: var(--primary-light);
+        }
+
+        .checklist-item-text {
+            flex: 1;
+        }
+
+        .checklist-item-title {
+            color: var(--text-dark);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .checklist-item-desc {
+            color: var(--text-gray);
+            font-size: 0.875rem;
+        }
+
+        /* ROI Calculator */
+        .roi-calculator {
+            background: linear-gradient(135deg, var(--primary-light), var(--bg-light));
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .calculator-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .calculator-header h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .calculator-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .calculator-input {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .calculator-input label {
+            display: block;
+            color: var(--text-gray);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .calculator-input-field {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .calculator-results {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .calculator-result-main {
+            font-size: 3rem;
+            color: var(--success);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .calculator-result-label {
+            color: var(--text-gray);
+            font-size: 1.25rem;
+        }
+
+        /* Automation Flow */
+        .automation-flow {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .flow-diagram {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .flow-step {
+            flex: 1;
+            min-width: 200px;
+            background: var(--bg-light);
+            border: 2px solid var(--primary-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .flow-step-icon {
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .flow-step-title {
+            font-weight: bold;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-step-desc {
+            color: var(--text-gray);
+            font-size: 0.875rem;
+        }
+
+        .flow-arrow {
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+
+        /* Case Studies */
+        .case-study {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .case-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .case-info h4 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .case-info p {
+            color: var(--text-gray);
+        }
+
+        .case-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 10px;
+        }
+
+        .case-metric {
+            text-align: center;
+        }
+
+        .case-metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .case-metric-label {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            margin-top: 0.25rem;
+        }
+
+        .case-story {
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-top: 1.5rem;
+        }
+
+        .case-highlight {
+            background: var(--primary-light);
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        /* Classes Structure */
+        .classes {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .classes-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .class-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .class-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.1);
+        }
+
+        .class-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .class-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .class-duration {
+            background: var(--bg-light);
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .class-title {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .class-description {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .class-topics {
+            list-style: none;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .class-topics li {
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .class-topics li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Exercises Section */
+        .exercises {
+            padding: 4rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .exercise-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .exercise-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exercise-icon {
+            background: var(--primary-light);
+            color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .exercise-title {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+        }
+
+        .exercise-tasks {
+            list-style: none;
+            margin-left: 60px;
+        }
+
+        .exercise-tasks li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .exercise-tasks li:last-child {
+            border-bottom: none;
+        }
+
+        .task-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            flex-shrink: 0;
+        }
+
+        /* Resources Section */
+        .resources {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .resource-card {
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-icon {
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-title {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-description {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .resource-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Final Tips */
+        .final-tip {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--primary-light), var(--bg-light));
+        }
+
+        .tip-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(245, 158, 11, 0.1);
+        }
+
+        .tip-box h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .tip-content {
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .tip-highlight {
+            background: var(--primary-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* Navigation */
+        .navigation {
+            padding: 3rem 2rem;
+            background: white;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-button:hover {
+            background: var(--primary-dark);
+            transform: translateX(5px);
+        }
+
+        .nav-button.prev:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .objectives-grid,
+            .metrics-grid,
+            .project-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .flow-diagram {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                display: none;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .calculator-result-main {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="nav-brand">
+                🚀 IMG - Do Zero ao Resultado
+            </div>
+            <div class="nav-links">
+                <span class="badge-empreendedores">Trilha Empreendedores</span>
+                <a href="../index.html">Home</a>
+                <a href="../trilhas/empreendedores.html">Trilha</a>
+                <a href="#projects">Projetos</a>
+                <a href="#checklist">Checklist</a>
+                <a href="#exercises">Exercícios</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                <span>🚀</span>
+                <span>Módulo 5: Do Zero ao Resultado</span>
+            </h1>
+            <p class="hero-subtitle">
+                Projetos completos do mundo real: da ideia à implementação e medição de resultados
+            </p>
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <span>⏱️</span>
+                    <strong>10 horas</strong> de conteúdo
+                </div>
+                <div class="meta-item">
+                    <span>📚</span>
+                    <strong>6 aulas</strong> estruturadas
+                </div>
+                <div class="meta-item">
+                    <span>🎯</span>
+                    <strong>3 projetos</strong> completos
+                </div>
+                <div class="meta-item">
+                    <span>📊</span>
+                    <strong>55+ peças</strong> criadas
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Objectives -->
+    <section class="objectives">
+        <div class="container">
+            <h2 class="section-title">O Que Você Vai Conquistar</h2>
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <h3>🎯 Lançamento Completo</h3>
+                    <p>Execute um lançamento de produto do zero com 15 peças visuais profissionais, cronograma de 30 dias e medição de resultados reais.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>🎄 Campanha Sazonal</h3>
+                    <p>Monte campanha de Natal com 20 peças coordenadas, estratégia omnichannel e automação de publicação para máximo alcance.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>🎨 Rebranding Total</h3>
+                    <p>Refaça identidade visual completa da marca com novo logo, paleta de cores, templates e aplicação em todos os materiais.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>✅ Implementação 30 Dias</h3>
+                    <p>Checklist dia a dia para implementar tudo que aprendeu, com tarefas específicas e metas mensuráveis para cada etapa.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>📊 Métricas Que Importam</h3>
+                    <p>Aprenda a medir engajamento, conversão e ROI. Descubra quais números realmente impactam suas vendas e como melhorá-los.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>⚡ Escalar ou Delegar</h3>
+                    <p>Entenda quando fazer você mesmo e quando contratar. Monte processos replicáveis e treine pessoas para executar sua visão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 1: Product Launch -->
+    <section class="project-section" id="projects">
+        <div class="container">
+            <div class="project-header">
+                <h2>Projeto 1: Lançamento de Produto</h2>
+                <p>15 peças estratégicas para converter curiosidade em vendas</p>
+            </div>
+
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-avatar">👟</div>
+                    <div class="case-info">
+                        <h4>Case Real: Tênis EcoRun</h4>
+                        <p>Lançamento que vendeu R$ 47.000 em 7 dias</p>
+                    </div>
+                </div>
+                <div class="case-metrics">
+                    <div class="case-metric">
+                        <div class="case-metric-value">R$ 47k</div>
+                        <div class="case-metric-label">Vendas em 7 dias</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="case-metric-value">312</div>
+                        <div class="case-metric-label">Unidades vendidas</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="case-metric-value">89k</div>
+                        <div class="case-metric-label">Pessoas alcançadas</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="case-metric-value">4.2%</div>
+                        <div class="case-metric-label">Taxa de conversão</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="case-metric-value">R$ 8</div>
+                        <div class="case-metric-label">CAC (custo/cliente)</div>
+                    </div>
+                </div>
+                <div class="case-story">
+                    <p><strong>A Estratégia:</strong> Pedro criou expectativa 15 dias antes do lançamento com teasers diários. No dia D, liberou desconto de 30% válido por 48h para os primeiros 100 compradores.</p>
+                    <div class="case-highlight">
+                        <strong>Segredo do Sucesso:</strong> "Contagem regressiva + Escassez + Prova social = Urgência irresistível"
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-timeline">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-day">Dias 1-5: Aquecimento</span>
+                        <h4 class="timeline-title">Criar Expectativa</h4>
+                        <ul class="timeline-tasks">
+                            <li>Post teaser "Vem aí..." com data</li>
+                            <li>Stories com bastidores da produção</li>
+                            <li>Email "Save the date" para lista</li>
+                            <li>Vídeo preview do produto (15 segundos)</li>
+                            <li>Post benefícios sem revelar produto</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-day">Dias 6-10: Engajamento</span>
+                        <h4 class="timeline-title">Construir Desejo</h4>
+                        <ul class="timeline-tasks">
+                            <li>Revelar produto com fotos profissionais</li>
+                            <li>Vídeo demonstração de uso (1 minuto)</li>
+                            <li>Depoimentos de beta testers</li>
+                            <li>Comparativo "antes e depois"</li>
+                            <li>FAQ respondendo objeções comuns</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-day">Dias 11-15: Conversão</span>
+                        <h4 class="timeline-title">Fechar Vendas</h4>
+                        <ul class="timeline-tasks">
+                            <li>Anúncio oficial com preço especial</li>
+                            <li>Contador regressivo para oferta</li>
+                            <li>Stories "últimas unidades"</li>
+                            <li>Email sequência (3 emails em 48h)</li>
+                            <li>Post celebração primeiras vendas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <div class="gallery-image">📸</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">1. Post Teaser</div>
+                        <div class="gallery-desc">Feed Instagram - "Algo grande vem aí"</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🎬</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">2. Stories Countdown</div>
+                        <div class="gallery-desc">15 stories com contagem regressiva</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">📧</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">3. Email Teaser</div>
+                        <div class="gallery-desc">Template HTML responsivo</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🖼️</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">4. Carrossel Benefícios</div>
+                        <div class="gallery-desc">10 slides com diferenciais</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🎥</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">5. Vídeo Demo</div>
+                        <div class="gallery-desc">Reels 30 segundos mostrando uso</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">💬</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">6. Depoimentos</div>
+                        <div class="gallery-desc">5 cards com reviews reais</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🆚</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">7. Comparativo</div>
+                        <div class="gallery-desc">Antes x Depois impactante</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">❓</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">8. FAQ Visual</div>
+                        <div class="gallery-desc">Carrossel tirando dúvidas</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">💰</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">9. Post Preço</div>
+                        <div class="gallery-desc">Revelação com oferta especial</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">⏰</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">10. Urgência</div>
+                        <div class="gallery-desc">Timer "Últimas 24 horas"</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🛒</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">11. CTA Direto</div>
+                        <div class="gallery-desc">Link para compra destacado</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">📊</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">12. Prova Social</div>
+                        <div class="gallery-desc">"Já são 50 vendidos!"</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🎁</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">13. Bônus Surpresa</div>
+                        <div class="gallery-desc">Brinde para primeiros 30</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🏁</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">14. Last Call</div>
+                        <div class="gallery-desc">"Últimas 2 horas!"</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🎉</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">15. Celebração</div>
+                        <div class="gallery-desc">Agradecimento pós-lançamento</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metrics-dashboard">
+                <div class="metrics-header">
+                    <h3>Métricas do Lançamento</h3>
+                    <p>Números reais para você se basear</p>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">👀</div>
+                        <div class="metric-value">89.324</div>
+                        <div class="metric-label">Impressões totais</div>
+                        <div class="metric-change positive">+340% vs média</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">💬</div>
+                        <div class="metric-value">3.847</div>
+                        <div class="metric-label">Engajamentos</div>
+                        <div class="metric-change positive">+520% vs média</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">🔗</div>
+                        <div class="metric-value">1.923</div>
+                        <div class="metric-label">Cliques no link</div>
+                        <div class="metric-change positive">+890% vs média</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">🛒</div>
+                        <div class="metric-value">312</div>
+                        <div class="metric-label">Vendas realizadas</div>
+                        <div class="metric-change positive">16.2% conversão</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">💵</div>
+                        <div class="metric-value">R$ 150</div>
+                        <div class="metric-label">Ticket médio</div>
+                        <div class="metric-change positive">+25% vs usual</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">📈</div>
+                        <div class="metric-value">18.6x</div>
+                        <div class="metric-label">ROI do lançamento</div>
+                        <div class="metric-change positive">R$ 2.5k → R$ 47k</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 2: Christmas Campaign -->
+    <section class="project-section">
+        <div class="container">
+            <div class="project-header">
+                <h2>Projeto 2: Campanha de Natal</h2>
+                <p>20 peças coordenadas para dominar o período mais lucrativo do ano</p>
+            </div>
+
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-avatar">🎄</div>
+                    <div class="case-info">
+                        <h4>Case Real: Loja de Presentes Artesanais</h4>
+                        <p>R$ 128.000 faturados em dezembro (400% de aumento)</p>
+                    </div>
+                </div>
+                <div class="case-metrics">
+                    <div class="case-metric">
+                        <div class="case-metric-value">R$ 128k</div>
+                        <div class="case-metric-label">Faturamento dezembro</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="case-metric-value">847</div>
+                        <div class="case-metric-label">Pedidos realizados</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="case-metric-value">R$ 151</div>
+                        <div class="case-metric-label">Ticket médio</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="case-metric-value">73%</div>
+                        <div class="case-metric-label">Taxa de recompra</div>
+                    </div>
+                </div>
+                <div class="case-story">
+                    <p><strong>A Estratégia:</strong> Marina começou campanha em 15 de novembro com "Lista de Natal Antecipado". Criou senso de urgência com prazos de entrega e ofertas progressivas.</p>
+                    <div class="case-highlight">
+                        <strong>Sacada Genial:</strong> "Garantia de Entrega até 24/12" virou o principal argumento de venda. Clientes pagavam 20% a mais para ter certeza.
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <div class="gallery-image">🎅</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">1. Abertura Campanha</div>
+                        <div class="gallery-desc">Post anunciando início do Natal</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">📝</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">2. Guia de Presentes</div>
+                        <div class="gallery-desc">PDF com 50 sugestões por perfil</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🎁</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">3. Kit Presente Pronto</div>
+                        <div class="gallery-desc">Combos com desconto especial</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">📅</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">4. Calendário Ofertas</div>
+                        <div class="gallery-desc">1 desconto por dia em dezembro</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🚚</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">5. Prazo de Entrega</div>
+                        <div class="gallery-desc">Contador "Peça até dia X"</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">❤️</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">6. Para Quem Ama</div>
+                        <div class="gallery-desc">Sugestões românticas</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">👨‍👩‍👧</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">7. Presente Família</div>
+                        <div class="gallery-desc">Kits para toda família</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🏢</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">8. Corporativo</div>
+                        <div class="gallery-desc">Brindes para empresas</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">💳</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">9. Parcelamento</div>
+                        <div class="gallery-desc">"3x sem juros"</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🎯</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">10. Black Friday</div>
+                        <div class="gallery-desc">Antecipação Natal</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">📦</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">11. Embalagem Especial</div>
+                        <div class="gallery-desc">Grátis em dezembro</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🏷️</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">12. Cartão Personalizado</div>
+                        <div class="gallery-desc">Mensagem do cliente</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">⭐</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">13. Mais Vendidos</div>
+                        <div class="gallery-desc">Top 10 presentes</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">⏰</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">14. Última Semana</div>
+                        <div class="gallery-desc">Urgência entrega</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🛍️</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">15. Vale-Presente</div>
+                        <div class="gallery-desc">Solução última hora</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">📱</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">16. WhatsApp Direto</div>
+                        <div class="gallery-desc">Atendimento express</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🎊</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">17. Véspera</div>
+                        <div class="gallery-desc">Retirada na loja</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">🥂</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">18. Ano Novo</div>
+                        <div class="gallery-desc">Continuação vendas</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">💌</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">19. Agradecimento</div>
+                        <div class="gallery-desc">Mensagem clientes</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">📈</div>
+                    <div class="gallery-info">
+                        <div class="gallery-title">20. Resultados</div>
+                        <div class="gallery-desc">Celebração conquistas</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="automation-flow">
+                <h3 style="text-align: center; margin-bottom: 2rem;">Fluxo de Automação da Campanha</h3>
+                <div class="flow-diagram">
+                    <div class="flow-step">
+                        <div class="flow-step-icon">📧</div>
+                        <div class="flow-step-title">Email Marketing</div>
+                        <div class="flow-step-desc">3 emails/semana com ofertas exclusivas</div>
+                        <div class="flow-arrow">→</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step-icon">📱</div>
+                        <div class="flow-step-title">Redes Sociais</div>
+                        <div class="flow-step-desc">2 posts/dia em 4 plataformas</div>
+                        <div class="flow-arrow">→</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step-icon">💬</div>
+                        <div class="flow-step-title">WhatsApp</div>
+                        <div class="flow-step-desc">Lista transmissão diária</div>
+                        <div class="flow-arrow">→</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step-icon">🛒</div>
+                        <div class="flow-step-title">Conversão</div>
+                        <div class="flow-step-desc">Checkout otimizado Natal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 3: Rebranding -->
+    <section class="project-section">
+        <div class="container">
+            <div class="project-header">
+                <h2>Projeto 3: Rebranding Visual Completo</h2>
+                <p>Nova identidade que multiplica o valor percebido da marca</p>
+            </div>
+
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-avatar">🎨</div>
+                    <div class="case-info">
+                        <h4>Case Real: Academia FitLife → PowerGym</h4>
+                        <p>70% mais matrículas após rebranding</p>
+                    </div>
+                </div>
+                <div class="case-metrics">
+                    <div class="case-metric">
+                        <div class="case-metric-value">+70%</div>
+                        <div class="case-metric-label">Novas matrículas</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="case-metric-value">+R$ 50</div>
+                        <div class="case-metric-label">Aumento mensalidade</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="case-metric-value">92%</div>
+                        <div class="case-metric-label">Aprovação clientes</div>
+                    </div>
+                    <div class="case-metric">
+                        <div class="case-metric-value">3x</div>
+                        <div class="case-metric-label">Mais engajamento</div>
+                    </div>
+                </div>
+                <div class="case-story">
+                    <p><strong>A Transformação:</strong> Roberto mudou de academia bairro para "centro de performance". Nova identidade permitiu cobrar 40% mais e atrair público premium.</p>
+                    <div class="case-highlight">
+                        <strong>Insight Crucial:</strong> "Pessoas não pagam pelo que você faz, pagam pelo que você parece fazer. Visual profissional = preço premium."
+                    </div>
+                </div>
+            </div>
+
+            <div class="implementation-checklist">
+                <div class="checklist-header">
+                    <h3 class="checklist-title">Checklist de Rebranding</h3>
+                    <div class="checklist-progress">
+                        <span>0 de 25 completos</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checklist-sections">
+                    <div class="checklist-section">
+                        <h4 class="checklist-section-title">
+                            <span>📋</span>
+                            <span>Fase 1: Análise e Estratégia</span>
+                        </h4>
+                        <ul class="checklist-items">
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Auditoria visual atual</div>
+                                    <div class="checklist-item-desc">Documente tudo que existe hoje: logo, cores, fontes, materiais</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Pesquisa de concorrentes</div>
+                                    <div class="checklist-item-desc">Analise visual de 10 competidores diretos e indiretos</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Feedback de clientes</div>
+                                    <div class="checklist-item-desc">Pergunte a 20 clientes o que pensam da marca atual</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Definir posicionamento</div>
+                                    <div class="checklist-item-desc">Escreva em 1 frase quem você quer ser no mercado</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Moodboard de inspiração</div>
+                                    <div class="checklist-item-desc">Monte painel com 30 referências visuais do novo direcionamento</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="checklist-section">
+                        <h4 class="checklist-section-title">
+                            <span>🎨</span>
+                            <span>Fase 2: Criação da Nova Identidade</span>
+                        </h4>
+                        <ul class="checklist-items">
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Novo nome (se aplicável)</div>
+                                    <div class="checklist-item-desc">Brainstorm de 50 opções, teste os 5 melhores</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Design do logo principal</div>
+                                    <div class="checklist-item-desc">Crie 3 conceitos diferentes, refine o escolhido</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Variações do logo</div>
+                                    <div class="checklist-item-desc">Versão horizontal, vertical, ícone, negativo</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Paleta de cores</div>
+                                    <div class="checklist-item-desc">2 cores principais + 3 secundárias + neutras</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Tipografia</div>
+                                    <div class="checklist-item-desc">Fonte principal + secundária + hierarquia de uso</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Elementos gráficos</div>
+                                    <div class="checklist-item-desc">Padrões, ícones, formas de apoio consistentes</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Tom de voz</div>
+                                    <div class="checklist-item-desc">Como a marca fala: formal, casual, técnica, amigável?</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="checklist-section">
+                        <h4 class="checklist-section-title">
+                            <span>📱</span>
+                            <span>Fase 3: Aplicação Digital</span>
+                        </h4>
+                        <ul class="checklist-items">
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Templates redes sociais</div>
+                                    <div class="checklist-item-desc">10 templates para posts + 5 para stories</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Capas e avatares</div>
+                                    <div class="checklist-item-desc">Facebook, Instagram, LinkedIn, YouTube, Google</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Assinatura de email</div>
+                                    <div class="checklist-item-desc">HTML responsivo com nova identidade</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">WhatsApp Business</div>
+                                    <div class="checklist-item-desc">Foto perfil + catálogo visual atualizado</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Site/Landing page</div>
+                                    <div class="checklist-item-desc">Atualizar todas as imagens e elementos visuais</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="checklist-section">
+                        <h4 class="checklist-section-title">
+                            <span>🖨️</span>
+                            <span>Fase 4: Material Físico</span>
+                        </h4>
+                        <ul class="checklist-items">
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Cartão de visita</div>
+                                    <div class="checklist-item-desc">Design frente e verso, impressão teste</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Papel timbrado</div>
+                                    <div class="checklist-item-desc">A4 para propostas e documentos oficiais</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Embalagens/Sacolas</div>
+                                    <div class="checklist-item-desc">Se aplicável ao seu negócio</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Uniformes/Camisetas</div>
+                                    <div class="checklist-item-desc">Aplicação do logo em vestuário</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="checklist-section">
+                        <h4 class="checklist-section-title">
+                            <span>🚀</span>
+                            <span>Fase 5: Lançamento</span>
+                        </h4>
+                        <ul class="checklist-items">
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Manual de marca</div>
+                                    <div class="checklist-item-desc">PDF com todas as regras de uso da identidade</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Campanha de revelação</div>
+                                    <div class="checklist-item-desc">5 posts criando expectativa + grande revelação</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Email para base</div>
+                                    <div class="checklist-item-desc">Explicando mudanças e benefícios aos clientes</div>
+                                </div>
+                            </li>
+                            <li class="checklist-item">
+                                <span class="checklist-checkbox"></span>
+                                <div class="checklist-item-text">
+                                    <div class="checklist-item-title">Atualização em massa</div>
+                                    <div class="checklist-item-desc">Trocar tudo de uma vez: redes, site, materiais</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 30-Day Implementation -->
+    <section class="project-section">
+        <div class="container">
+            <div class="project-header">
+                <h2>Implementação em 30 Dias</h2>
+                <p>Roteiro dia a dia para sair do zero e alcançar resultados reais</p>
+            </div>
+
+            <div class="roi-calculator">
+                <div class="calculator-header">
+                    <h3>Calculadora de ROI</h3>
+                    <p>Projete seus resultados baseado em números reais</p>
+                </div>
+                <div class="calculator-inputs">
+                    <div class="calculator-input">
+                        <label>Investimento em ferramentas/mês</label>
+                        <input type="text" class="calculator-input-field" value="R$ 50" readonly>
+                    </div>
+                    <div class="calculator-input">
+                        <label>Horas dedicadas/semana</label>
+                        <input type="text" class="calculator-input-field" value="10h" readonly>
+                    </div>
+                    <div class="calculator-input">
+                        <label>Preço médio produto/serviço</label>
+                        <input type="text" class="calculator-input-field" value="R$ 150" readonly>
+                    </div>
+                    <div class="calculator-input">
+                        <label>Meta vendas/mês</label>
+                        <input type="text" class="calculator-input-field" value="30 vendas" readonly>
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <div class="calculator-result-main">R$ 4.450</div>
+                    <div class="calculator-result-label">Lucro líquido projetado/mês</div>
+                    <p style="margin-top: 1rem; color: var(--text-gray);">
+                        ROI de 8.900% • Payback em 3 dias • Crescimento sustentável
+                    </p>
+                </div>
+            </div>
+
+            <div class="metrics-dashboard">
+                <div class="metrics-header">
+                    <h3>Métricas Para Acompanhar</h3>
+                    <p>O que medir toda semana para garantir sucesso</p>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">📈</div>
+                        <div class="metric-value">Taxa de Engajamento</div>
+                        <div class="metric-label">Meta: >5% em todas redes</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">🔄</div>
+                        <div class="metric-value">Taxa de Conversão</div>
+                        <div class="metric-label">Meta: >2% visitante→venda</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">💰</div>
+                        <div class="metric-value">CAC (Custo Aquisição)</div>
+                        <div class="metric-label">Meta: <30% ticket médio</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">🔁</div>
+                        <div class="metric-value">Taxa de Recompra</div>
+                        <div class="metric-label">Meta: >40% em 60 dias</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">⭐</div>
+                        <div class="metric-value">NPS (Satisfação)</div>
+                        <div class="metric-label">Meta: >70 pontos</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">📊</div>
+                        <div class="metric-value">ROI Marketing</div>
+                        <div class="metric-label">Meta: >5x investimento</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="automation-flow">
+                <h3 style="text-align: center; margin-bottom: 2rem;">Quando Escalar vs Quando Fazer Você Mesmo</h3>
+                <div class="flow-diagram">
+                    <div class="flow-step" style="background: #D1FAE5; border-color: var(--success);">
+                        <div class="flow-step-icon" style="background: var(--success);">✓</div>
+                        <div class="flow-step-title">Faça Você Mesmo</div>
+                        <div class="flow-step-desc">
+                            • Faturamento < R$ 10k/mês<br>
+                            • Tempo disponível<br>
+                            • Quer aprender<br>
+                            • Controle total
+                        </div>
+                        <div class="flow-arrow">→</div>
+                    </div>
+                    <div class="flow-step" style="background: #FEF3C7; border-color: var(--warning);">
+                        <div class="flow-step-icon" style="background: var(--warning);">⚡</div>
+                        <div class="flow-step-title">Híbrido</div>
+                        <div class="flow-step-desc">
+                            • R$ 10k-50k/mês<br>
+                            • Freelancer pontual<br>
+                            • Você supervisiona<br>
+                            • Foco no estratégico
+                        </div>
+                        <div class="flow-arrow">→</div>
+                    </div>
+                    <div class="flow-step" style="background: #DBEAFE; border-color: var(--info);">
+                        <div class="flow-step-icon" style="background: var(--info);">🚀</div>
+                        <div class="flow-step-title">Delegar Tudo</div>
+                        <div class="flow-step-desc">
+                            • Faturamento > R$ 50k/mês<br>
+                            • Equipe/agência<br>
+                            • Você só aprova<br>
+                            • Escala máxima
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Structure -->
+    <section class="classes">
+        <div class="container">
+            <h2 class="section-title">Estrutura das Aulas</h2>
+
+            <div class="classes-grid">
+                <div class="class-card">
+                    <div class="class-header">
+                        <div class="class-number">1</div>
+                        <span class="class-duration">⏱️ 2h00min</span>
+                    </div>
+                    <h3 class="class-title">Projeto Lançamento: Do Conceito à Venda</h3>
+                    <p class="class-description">
+                        Execute um lançamento completo passo a passo. Aprenda a criar expectativa, gerar desejo e converter em vendas usando técnicas comprovadas de marketing digital.
+                    </p>
+                    <ul class="class-topics">
+                        <li>Planejamento estratégico de 15 dias</li>
+                        <li>Criação das 15 peças essenciais</li>
+                        <li>Copywriting que vende: gatilhos mentais</li>
+                        <li>Cronograma de publicação otimizado</li>
+                        <li>Análise de métricas e ajustes em tempo real</li>
+                    </ul>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-header">
+                        <div class="class-number">2</div>
+                        <span class="class-duration">⏱️ 2h00min</span>
+                    </div>
+                    <h3 class="class-title">Campanha Sazonal: Dominando Datas Especiais</h3>
+                    <p class="class-description">
+                        Monte campanhas irresistíveis para Natal, Dia das Mães, Black Friday e outras datas. Multiplique suas vendas nos períodos mais lucrativos do ano.
+                    </p>
+                    <ul class="class-topics">
+                        <li>Calendário anual de oportunidades</li>
+                        <li>20 peças coordenadas para campanha completa</li>
+                        <li>Estratégias de urgência e escassez</li>
+                        <li>Automação multicanal de publicação</li>
+                        <li>Case: R$ 128k em vendas de Natal</li>
+                    </ul>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-header">
+                        <div class="class-number">3</div>
+                        <span class="class-duration">⏱️ 1h30min</span>
+                    </div>
+                    <h3 class="class-title">Rebranding Profissional: Nova Identidade</h3>
+                    <p class="class-description">
+                        Transforme completamente a imagem da sua marca. Aprenda quando e como fazer um rebranding que multiplica o valor percebido do seu negócio.
+                    </p>
+                    <ul class="class-topics">
+                        <li>Auditoria visual: o que manter vs mudar</li>
+                        <li>Criação de nova identidade do zero</li>
+                        <li>25 pontos de aplicação da marca</li>
+                        <li>Lançamento estratégico do rebranding</li>
+                        <li>Como cobrar 40% mais após mudança visual</li>
+                    </ul>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-header">
+                        <div class="class-number">4</div>
+                        <span class="class-duration">⏱️ 1h30min</span>
+                    </div>
+                    <h3 class="class-title">Implementação 30 Dias: Do Zero ao Resultado</h3>
+                    <p class="class-description">
+                        Roteiro diário completo para implementar tudo que aprendeu. Tarefas específicas, metas claras e acompanhamento de progresso para garantir sucesso.
+                    </p>
+                    <ul class="class-topics">
+                        <li>Checklist dia a dia por 30 dias</li>
+                        <li>Priorização: o que fazer primeiro</li>
+                        <li>Setup completo de ferramentas e processos</li>
+                        <li>Primeiras vendas: como acelerar resultados</li>
+                        <li>Troubleshooting: soluções para problemas comuns</li>
+                    </ul>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-header">
+                        <div class="class-number">5</div>
+                        <span class="class-duration">⏱️ 1h30min</span>
+                    </div>
+                    <h3 class="class-title">Métricas e ROI: Medindo Resultados Reais</h3>
+                    <p class="class-description">
+                        Entenda quais números realmente importam para o seu negócio. Aprenda a medir, analisar e otimizar suas campanhas para máximo retorno.
+                    </p>
+                    <ul class="class-topics">
+                        <li>KPIs essenciais para cada tipo de negócio</li>
+                        <li>Configuração de tracking e analytics</li>
+                        <li>Dashboard de acompanhamento semanal</li>
+                        <li>Como calcular ROI de cada ação</li>
+                        <li>Decisões baseadas em dados, não achismo</li>
+                    </ul>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-header">
+                        <div class="class-number">6</div>
+                        <span class="class-duration">⏱️ 1h30min</span>
+                    </div>
+                    <h3 class="class-title">Escalar: Automação e Delegação Inteligente</h3>
+                    <p class="class-description">
+                        Aprenda quando parar de fazer tudo sozinho. Monte sistemas escaláveis, contrate as pessoas certas e multiplique resultados sem multiplicar trabalho.
+                    </p>
+                    <ul class="class-topics">
+                        <li>Quando vale a pena contratar vs fazer</li>
+                        <li>Automações que economizam 20h/semana</li>
+                        <li>Como treinar freelancers e funcionários</li>
+                        <li>SOPs: processos documentados e replicáveis</li>
+                        <li>Próximos passos: de R$ 10k para R$ 100k/mês</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exercises Section -->
+    <section class="exercises" id="exercises">
+        <div class="container">
+            <h2 class="section-title">Exercícios Práticos</h2>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <div class="exercise-icon">🚀</div>
+                    <h3 class="exercise-title">Projeto 1: Lançamento Completo</h3>
+                </div>
+                <ul class="exercise-tasks">
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Escolha um produto/serviço para lançar (real ou fictício)</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Crie calendário de 15 dias com data de cada peça</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Produza as 15 peças seguindo o modelo do módulo</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Escreva copy com gatilhos mentais para cada post</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Agende tudo e execute (mesmo que seja teste)</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Documente métricas: alcance, engajamento, conversão</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <div class="exercise-icon">🎄</div>
+                    <h3 class="exercise-title">Projeto 2: Campanha Sazonal</h3>
+                </div>
+                <ul class="exercise-tasks">
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Escolha próxima data comemorativa (mínimo 30 dias)</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Monte estratégia com 3 ofertas progressivas</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Crie 20 peças visuais temáticas coordenadas</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Configure automação em 3 canais diferentes</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Implemente sistema de urgência (timer, estoque)</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Compare resultados com período normal</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <div class="exercise-icon">🎨</div>
+                    <h3 class="exercise-title">Projeto 3: Rebranding</h3>
+                </div>
+                <ul class="exercise-tasks">
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Faça auditoria visual completa da marca atual</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Pesquise 10 concorrentes e documente insights</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Crie novo logo com 4 variações de uso</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Defina paleta de cores e tipografia oficial</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Aplique em 10 materiais diferentes (digital e físico)</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Monte manual de marca em PDF (10 páginas)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <div class="exercise-icon">📅</div>
+                    <h3 class="exercise-title">Implementação 30 Dias</h3>
+                </div>
+                <ul class="exercise-tasks">
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Semana 1: Configure todas as ferramentas da stack</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Semana 2: Crie templates e identidade visual</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Semana 3: Produza conteúdo para 1 mês</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Semana 4: Lance primeira campanha real</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Diário: Documente aprendizados e ajustes</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Final: Calcule ROI e projete próximos 90 dias</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <div class="exercise-icon">📊</div>
+                    <h3 class="exercise-title">Análise de Métricas</h3>
+                </div>
+                <ul class="exercise-tasks">
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Configure Google Analytics e Facebook Pixel</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Crie dashboard com 6 KPIs principais</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Acompanhe métricas por 2 semanas</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Identifique 3 pontos de melhoria baseado em dados</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Implemente mudanças e meça impacto</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Calcule ROI de cada canal de marketing</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <div class="exercise-icon">⚡</div>
+                    <h3 class="exercise-title">Automação e Scale</h3>
+                </div>
+                <ul class="exercise-tasks">
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Liste 10 tarefas repetitivas que faz toda semana</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Automatize 5 delas com ferramentas gratuitas</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Documente 1 processo completo em SOP</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Treine alguém para executar usando seu SOP</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Calcule horas economizadas por semana</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Projete estrutura para R$ 100k/mês</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources" id="resources">
+        <div class="container">
+            <h2 class="section-title">Recursos Extras</h2>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📋</div>
+                    <h3 class="resource-title">Templates de Lançamento</h3>
+                    <p class="resource-description">
+                        Pack com 15 templates editáveis para seu próximo lançamento. Posts, stories, emails prontos para personalizar.
+                    </p>
+                    <a href="#" class="resource-link">Baixar Templates →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🎨</div>
+                    <h3 class="resource-title">Kit Rebranding</h3>
+                    <p class="resource-description">
+                        Checklist completo + briefing + modelos para renovar completamente sua identidade visual profissionalmente.
+                    </p>
+                    <a href="#" class="resource-link">Acessar Kit →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📊</div>
+                    <h3 class="resource-title">Dashboard Métricas</h3>
+                    <p class="resource-description">
+                        Planilha automatizada para acompanhar KPIs, calcular ROI e tomar decisões baseadas em dados reais.
+                    </p>
+                    <a href="#" class="resource-link">Baixar Dashboard →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🎄</div>
+                    <h3 class="resource-title">Calendário Sazonal 2024</h3>
+                    <p class="resource-description">
+                        Todas as datas importantes do ano com ideias de campanhas e estratégias específicas para cada uma.
+                    </p>
+                    <a href="#" class="resource-link">Ver Calendário →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📝</div>
+                    <h3 class="resource-title">SOPs Prontos</h3>
+                    <p class="resource-description">
+                        10 processos documentados para você adaptar: criação de conteúdo, atendimento, vendas e mais.
+                    </p>
+                    <a href="#" class="resource-link">Baixar SOPs →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🚀</div>
+                    <h3 class="resource-title">Plano 100k/mês</h3>
+                    <p class="resource-description">
+                        Roadmap detalhado para escalar de R$ 10k para R$ 100k mensais. Estratégias, ferramentas, equipe.
+                    </p>
+                    <a href="#" class="resource-link">Acessar Plano →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Tip -->
+    <section class="final-tip">
+        <div class="tip-box">
+            <h2>🏆 Parabéns! Você Completou a Trilha</h2>
+            <div class="tip-content">
+                <p>
+                    <strong>Você agora tem tudo que precisa para transformar imagens em lucro.</strong>
+                </p>
+                <div class="tip-highlight">
+                    <p>
+                        <strong>O que você conquistou:</strong>
+                    </p>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li>• Domínio completo de ferramentas profissionais por R$ 50/mês</li>
+                        <li>• Capacidade de criar 100+ peças visuais por mês</li>
+                        <li>• Estratégias de lançamento que vendem R$ 40k+ em 7 dias</li>
+                        <li>• Sistema de automação que economiza 20h/semana</li>
+                        <li>• Conhecimento para escalar de 0 para R$ 100k/mês</li>
+                    </ul>
+                    <p style="margin-top: 1rem;">
+                        <strong>Seus próximos passos:</strong>
+                    </p>
+                    <ol style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li>1. Execute o checklist de 30 dias religiosamente</li>
+                        <li>2. Lance seu primeiro produto/campanha esta semana</li>
+                        <li>3. Meça resultados e ajuste baseado em dados</li>
+                        <li>4. Quando chegar em R$ 10k/mês, comece a delegar</li>
+                        <li>5. Use o tempo livre para criar novos produtos</li>
+                    </ol>
+                </div>
+                <p style="margin-top: 1.5rem; text-align: center; font-size: 1.25rem; color: var(--primary-color); font-weight: bold;">
+                    "Você não precisa ser designer. Você precisa entender de negócios e saber usar as ferramentas certas."
+                </p>
+                <p style="margin-top: 1rem; text-align: center;">
+                    <strong>Lembre-se:</strong> Todo negócio milionário começou com a primeira venda. A sua pode ser hoje. Não espere estar perfeito para começar. Comece e melhore no caminho.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="navigation">
+        <div class="nav-container">
+            <a href="empreendedores-modulo-04.html" class="nav-button prev">
+                ← Módulo 4: Ferramentas
+            </a>
+            <a href="../trilhas/empreendedores.html" class="nav-button">
+                Voltar para Trilha →
+            </a>
+        </div>
+    </section>
+</body>
+</html>

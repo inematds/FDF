@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2: Criação Rápida e Eficiente - Empreendedores com IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            empreendedores: '#F59E0B',
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-in',
+            'slide-up': 'slideUp 0.3s ease-out',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'bounce-slow': 'bounce 3s infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(10px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    .gradient-empreendedores {
+      background: linear-gradient(135deg, #F59E0B 0%, #DC2626 100%);
+    }
+    .gradient-text-empreendedores {
+      background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .number-circle {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #F59E0B 0%, #DC2626 100%);
+      color: white;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .time-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.75rem;
+      background: linear-gradient(135deg, #FEF3C7 0%, #FED7AA 100%);
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #92400E;
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+
+  <!-- Navegação -->
+  <nav class="sticky top-0 z-50 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm shadow-sm border-b border-neutral-200 dark:border-neutral-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="../index.html" class="text-2xl font-bold text-amber-600 dark:text-amber-400">Empreendedores com IA</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="../trilhas/empreendedores.html" class="text-neutral-700 dark:text-neutral-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Voltar para Trilha</a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600 transition-colors">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+        <!-- Menu Mobile -->
+        <button id="mobile-menu-toggle" class="md:hidden p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 dark:from-neutral-800 dark:to-neutral-900 py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-4 animate-fade-in">
+        <a href="../trilhas/empreendedores.html" class="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 font-semibold inline-flex items-center group">
+          <svg class="w-4 h-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Voltar para Trilha Empreendedores
+        </a>
+      </div>
+      <div class="text-7xl mb-6 animate-bounce-slow">⚡</div>
+      <h1 class="text-5xl sm:text-6xl font-black mb-6 leading-tight animate-slide-up gradient-text-empreendedores">
+        Módulo 2: Criação Rápida e Eficiente
+      </h1>
+      <p class="text-xl sm:text-2xl text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed animate-fade-in">
+        Domine a arte de criar <strong>conteúdo profissional em minutos</strong>, não horas. Workflow otimizado que transforma ideias em vendas <strong>10x mais rápido</strong>
+      </p>
+      <div class="flex gap-4 flex-wrap animate-fade-in">
+        <span class="px-5 py-2.5 bg-gradient-to-r from-yellow-100 to-amber-100 dark:from-yellow-900/30 dark:to-amber-900/30 text-amber-800 dark:text-amber-300 rounded-full text-sm font-bold">
+          ⏱️ 8 horas
+        </span>
+        <span class="px-5 py-2.5 bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 text-amber-800 dark:text-amber-300 rounded-full text-sm font-bold">
+          🚀 Produtividade 10x
+        </span>
+        <span class="px-5 py-2.5 bg-gradient-to-r from-orange-100 to-red-100 dark:from-orange-900/30 dark:to-red-900/30 text-amber-800 dark:text-amber-300 rounded-full text-sm font-bold">
+          💎 Zero Complexidade
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner de Urgência -->
+  <section class="py-8 bg-gradient-to-r from-yellow-500 via-amber-500 to-orange-600 dark:from-yellow-600 dark:via-amber-600 dark:to-orange-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <div class="text-4xl animate-pulse">⏰</div>
+          <div class="text-white">
+            <h3 class="text-lg font-bold">Tempo é Dinheiro</h3>
+            <p class="text-yellow-100">Cada minuto economizado = Mais oportunidades de venda capturadas</p>
+          </div>
+        </div>
+        <div class="hidden sm:block text-white">
+          <div class="text-3xl font-black">5min</div>
+          <div class="text-xs text-yellow-100">por post</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo Principal -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- A Revolução da Velocidade -->
+      <div class="bg-white dark:bg-neutral-800 rounded-2xl shadow-xl p-10 mb-12 border border-amber-200 dark:border-amber-900/30 hover-lift">
+        <h2 class="text-3xl font-black mb-6 flex items-center">
+          <span class="text-4xl mr-4">🏎️</span>
+          A Velocidade Que Separa Vencedores de Perdedores
+        </h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 mb-8 leading-relaxed">
+          No mundo digital, <strong>quem publica primeiro vende mais</strong>. Enquanto seus concorrentes esperam 3 dias pelo designer, você já publicou 30 posts, testou 5 campanhas e fechou 10 vendas. Este módulo é sobre dominar essa velocidade.
+        </p>
+
+        <!-- Comparação Visual Impactante -->
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl p-8 mb-8">
+          <h4 class="font-bold text-xl mb-6 text-center text-amber-800 dark:text-amber-300">⏱️ Linha do Tempo Real: Você vs Concorrência</h4>
+
+          <div class="space-y-6">
+            <!-- Timeline Item 1 -->
+            <div class="relative">
+              <div class="flex items-center">
+                <div class="time-badge">0min</div>
+                <div class="flex-1 ml-4">
+                  <p class="font-semibold">Surge uma oportunidade (tendência, data comemorativa, notícia)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="relative pl-8">
+              <div class="flex items-center">
+                <div class="time-badge bg-green-200 text-green-800">5min</div>
+                <div class="flex-1 ml-4">
+                  <p class="text-green-700 dark:text-green-400 font-semibold">✅ VOCÊ: Primeiro post publicado com IA</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="relative pl-8">
+              <div class="flex items-center">
+                <div class="time-badge bg-green-200 text-green-800">10min</div>
+                <div class="flex-1 ml-4">
+                  <p class="text-green-700 dark:text-green-400 font-semibold">✅ VOCÊ: 5 variações criadas, teste A/B rodando</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline Item 4 -->
+            <div class="relative pl-8">
+              <div class="flex items-center">
+                <div class="time-badge bg-red-200 text-red-800">2h</div>
+                <div class="flex-1 ml-4">
+                  <p class="text-red-700 dark:text-red-400">❌ Concorrente: Ainda criando briefing pro designer</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline Item 5 -->
+            <div class="relative pl-8">
+              <div class="flex items-center">
+                <div class="time-badge bg-green-200 text-green-800">4h</div>
+                <div class="flex-1 ml-4">
+                  <p class="text-green-700 dark:text-green-400 font-semibold">✅ VOCÊ: Primeiras vendas chegando, ajustando estratégia</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline Item 6 -->
+            <div class="relative pl-8">
+              <div class="flex items-center">
+                <div class="time-badge bg-red-200 text-red-800">3 dias</div>
+                <div class="flex-1 ml-4">
+                  <p class="text-red-700 dark:text-red-400">❌ Concorrente: Recebe primeira versão do designer</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Resultado Final -->
+            <div className="mt-6 p-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-lg">
+              <p class="font-bold text-lg">🏆 Resultado: Você capturou 90% das vendas da oportunidade</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg text-center">
+            <p class="text-3xl font-bold text-green-600 dark:text-green-400">60x</p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">Mais rápido</p>
+          </div>
+          <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-lg text-center">
+            <p class="text-3xl font-bold text-amber-600 dark:text-amber-400">R$0</p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">Custo extra</p>
+          </div>
+          <div class="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg text-center">
+            <p class="text-3xl font-bold text-orange-600 dark:text-orange-400">24/7</p>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">Disponível</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- O Que Você Vai Criar -->
+      <div class="bg-white dark:bg-neutral-800 rounded-2xl shadow-xl p-10 mb-12 border border-amber-200 dark:border-amber-900/30 hover-lift">
+        <h2 class="text-3xl font-black mb-8 flex items-center">
+          <span class="text-4xl mr-4">🎨</span>
+          O Arsenal Completo do Empreendedor Digital
+        </h2>
+
+        <div class="space-y-6">
+          <!-- Produtos e Mockups -->
+          <div class="flex items-start bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-6 rounded-xl">
+            <div class="number-circle mr-4">1</div>
+            <div class="flex-1">
+              <h3 class="font-bold text-lg text-purple-900 dark:text-purple-300 mb-2">Mockups e Fotos de Produto</h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                Transforme produtos simples em <strong>vitrines irresistíveis</strong>. Crie cenários premium, ambientes aspiracionais, diferentes ângulos - tudo sem fotógrafo.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs bg-white dark:bg-neutral-800 px-3 py-1 rounded-full">📦 Embalagens 3D</span>
+                <span class="text-xs bg-white dark:bg-neutral-800 px-3 py-1 rounded-full">👕 Roupas em modelos</span>
+                <span class="text-xs bg-white dark:bg-neutral-800 px-3 py-1 rounded-full">🍽️ Pratos gourmet</span>
+                <span class="text-xs bg-white dark:bg-neutral-800 px-3 py-1 rounded-full">🏠 Ambientes decorados</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Posts para Redes Sociais -->
+          <div class="flex items-start bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 p-6 rounded-xl">
+            <div class="number-circle mr-4">2</div>
+            <div class="flex-1">
+              <h3 class="font-bold text-lg text-blue-900 dark:text-blue-300 mb-2">Posts Que Param o Feed</h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                Formula infalível: <strong>3 segundos para parar o scroll, 10 segundos para gerar desejo</strong>. Templates testados para cada objetivo de venda.
+              </p>
+              <div class="grid grid-cols-2 gap-3 mt-4">
+                <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                  <p class="text-sm font-semibold mb-1">📱 Instagram</p>
+                  <p class="text-xs text-neutral-600 dark:text-neutral-400">Carrossel, feed, reels</p>
+                </div>
+                <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                  <p class="text-sm font-semibold mb-1">💼 LinkedIn</p>
+                  <p class="text-xs text-neutral-600 dark:text-neutral-400">B2B que converte</p>
+                </div>
+                <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                  <p class="text-sm font-semibold mb-1">📘 Facebook</p>
+                  <p class="text-xs text-neutral-600 dark:text-neutral-400">Grupos e páginas</p>
+                </div>
+                <div class="bg-white dark:bg-neutral-800 p-3 rounded">
+                  <p class="text-sm font-semibold mb-1">🎵 TikTok</p>
+                  <p class="text-xs text-neutral-600 dark:text-neutral-400">Viral em 5min</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Banners e Anúncios -->
+          <div class="flex items-start bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-xl">
+            <div class="number-circle mr-4">3</div>
+            <div class="flex-1">
+              <h3 class="font-bold text-lg text-green-900 dark:text-green-300 mb-2">Banners e Anúncios Que Vendem</h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                CTR 3x maior com banners criados por IA. <strong>Psicologia de cores, hierarquia visual, call-to-action irresistível</strong> - tudo automatizado.
+              </p>
+              <div class="bg-white dark:bg-neutral-800 p-4 rounded-lg">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-sm font-semibold">Google Ads</span>
+                  <span class="text-xs text-green-600 dark:text-green-400">↑ 250% CTR</span>
+                </div>
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-sm font-semibold">Facebook Ads</span>
+                  <span class="text-xs text-green-600 dark:text-green-400">↑ 180% conversão</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-sm font-semibold">Site banners</span>
+                  <span class="text-xs text-green-600 dark:text-green-400">↑ 320% cliques</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Material Impresso -->
+          <div class="flex items-start bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 p-6 rounded-xl">
+            <div class="number-circle mr-4">4</div>
+            <div class="flex-1">
+              <h3 class="font-bold text-lg text-orange-900 dark:text-orange-300 mb-2">Material Impresso Profissional</h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                Do digital ao físico em minutos. <strong>Flyers, cartões, cardápios, folders</strong> - prontos para impressão com sangria, CMYK, alta resolução.
+              </p>
+              <div class="flex items-center space-x-4 mt-4">
+                <div class="text-center">
+                  <div class="text-3xl mb-1">🎯</div>
+                  <p class="text-xs">Flyers</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl mb-1">💳</div>
+                  <p class="text-xs">Cartões</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl mb-1">📋</div>
+                  <p class="text-xs">Cardápios</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl mb-1">📄</div>
+                  <p class="text-xs">Folders</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl mb-1">🏷️</div>
+                  <p class="text-xs">Etiquetas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stories e Vídeos -->
+          <div class="flex items-start bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-6 rounded-xl">
+            <div class="number-circle mr-4">5</div>
+            <div class="flex-1">
+              <h3 class="font-bold text-lg text-yellow-900 dark:text-yellow-300 mb-2">Stories e Vídeos Dinâmicos</h3>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+                O conteúdo que mais engaja, agora em <strong>5 minutos</strong>. Animações, transições, música sincronizada - sem editor de vídeo.
+              </p>
+              <div class="bg-yellow-100 dark:bg-yellow-900/30 p-3 rounded-lg">
+                <p class="text-sm font-semibold text-yellow-800 dark:text-yellow-300">🔥 Hot Tip:</p>
+                <p class="text-xs text-neutral-700 dark:text-neutral-300 mt-1">
+                  Stories vendem 4x mais que posts normais. Com IA, você cria 20 stories no tempo de 1 post tradicional.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aulas Estruturadas -->
+      <div class="bg-white dark:bg-neutral-800 rounded-2xl shadow-xl p-10 mb-12 border border-amber-200 dark:border-amber-900/30">
+        <h2 class="text-3xl font-black mb-8 flex items-center">
+          <span class="text-4xl mr-4">📚</span>
+          Aulas Práticas (Mão na Massa Desde o Minuto 1)
+        </h2>
+
+        <div class="space-y-8">
+          <!-- Aula 1 -->
+          <div class="border-l-4 border-gradient-to-b from-amber-500 to-orange-500 pl-6">
+            <div class="flex items-start justify-between">
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-amber-700 dark:text-amber-400 mb-2">
+                  Aula 1: Prompts Para Donos de Negócio (Sem Enrolação)
+                </h3>
+                <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+                  Esqueça termos técnicos. Prompts em português claro que geram exatamente o que você precisa vender
+                </p>
+                <div class="bg-neutral-50 dark:bg-neutral-900 p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2 text-amber-600 dark:text-amber-400">O que você sai fazendo:</h4>
+                  <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                    <li>• <strong>Fórmula VENDA:</strong> Prompts que focam em conversão, não em arte</li>
+                    <li>• <strong>Biblioteca Pronta:</strong> 100+ prompts testados por nicho de negócio</li>
+                    <li>• <strong>Prompts Dinâmicos:</strong> Adapte para qualquer produto em segundos</li>
+                    <li>• <strong>Linguagem de Vendas:</strong> Gatilhos mentais incorporados nos prompts</li>
+                    <li>• <strong>Troubleshooting:</strong> O que fazer quando a IA não entende</li>
+                  </ul>
+                </div>
+                <div class="mt-4 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-3 rounded-lg">
+                  <p class="text-sm">
+                    <strong class="text-green-700 dark:text-green-400">Exemplo Real:</strong>
+                    <span class="text-neutral-600 dark:text-neutral-400"> "Crie foto de hambúrguer artesanal com queijo derretendo, fundo escuro premium, foco no produto, que dê vontade de pedir agora"</span>
+                  </p>
+                </div>
+                <div class="mt-4 flex items-center space-x-4 text-sm">
+                  <span class="flex items-center text-amber-600 dark:text-amber-400">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                      <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                    </svg>
+                    90 min
+                  </span>
+                  <span class="flex items-center text-green-600 dark:text-green-400">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                      <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 1 1 0 000 2H6a2 2 0 100 4h2a2 2 0 100-4h-.5a1 1 0 000-2H8a2 2 0 012-2h2a2 2 0 012 2v9a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+                    </svg>
+                    10 prompts para testar hoje
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 2 -->
+          <div class="border-l-4 border-gradient-to-b from-orange-500 to-red-500 pl-6">
+            <div class="flex items-start justify-between">
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-orange-700 dark:text-orange-400 mb-2">
+                  Aula 2: Produtos Irresistíveis - Mockups e Fotos
+                </h3>
+                <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+                  Como fazer seu produto parecer 10x mais valioso sem gastar com fotógrafo
+                </p>
+                <div class="bg-neutral-50 dark:bg-neutral-900 p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2 text-orange-600 dark:text-orange-400">Técnicas que multiplicam vendas:</h4>
+                  <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                    <li>• <strong>Cenários Aspiracionais:</strong> Produto em ambientes que seu cliente sonha</li>
+                    <li>• <strong>Ângulos de Herói:</strong> As 5 perspectivas que mais vendem</li>
+                    <li>• <strong>Contexto de Uso:</strong> Mostrar o produto em ação, não parado</li>
+                    <li>• <strong>Comparação Visual:</strong> Antes/depois, com/sem seu produto</li>
+                    <li>• <strong>Pack Premium:</strong> Transforme produto simples em luxo</li>
+                  </ul>
+                </div>
+                <div class="mt-4 grid grid-cols-3 gap-2">
+                  <div class="bg-orange-50 dark:bg-orange-900/20 p-2 rounded text-center">
+                    <p class="text-2xl mb-1">👕</p>
+                    <p class="text-xs">Moda</p>
+                  </div>
+                  <div class="bg-orange-50 dark:bg-orange-900/20 p-2 rounded text-center">
+                    <p class="text-2xl mb-1">🍔</p>
+                    <p class="text-xs">Food</p>
+                  </div>
+                  <div class="bg-orange-50 dark:bg-orange-900/20 p-2 rounded text-center">
+                    <p class="text-2xl mb-1">💄</p>
+                    <p class="text-xs">Beauty</p>
+                  </div>
+                  <div class="bg-orange-50 dark:bg-orange-900/20 p-2 rounded text-center">
+                    <p class="text-2xl mb-1">📱</p>
+                    <p class="text-xs">Tech</p>
+                  </div>
+                  <div class="bg-orange-50 dark:bg-orange-900/20 p-2 rounded text-center">
+                    <p class="text-2xl mb-1">🏠</p>
+                    <p class="text-xs">Casa</p>
+                  </div>
+                  <div class="bg-orange-50 dark:bg-orange-900/20 p-2 rounded text-center">
+                    <p class="text-2xl mb-1">🎁</p>
+                    <p class="text-xs">Gifts</p>
+                  </div>
+                </div>
+                <div class="mt-4 bg-amber-50 dark:bg-amber-900/20 p-3 rounded-lg">
+                  <p class="text-sm font-semibold text-amber-700 dark:text-amber-300">
+                    💡 Case Real: Loja de roupas aumentou conversão em 40% só trocando fotos chapadas por mockups com IA
+                  </p>
+                </div>
+                <div class="mt-4 flex items-center space-x-4 text-sm">
+                  <span class="flex items-center text-amber-600 dark:text-amber-400">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                      <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                    </svg>
+                    100 min
+                  </span>
+                  <span class="flex items-center text-purple-600 dark:text-purple-400">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
+                    </svg>
+                    Demo ao vivo
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 3 -->
+          <div class="border-l-4 border-gradient-to-b from-yellow-500 to-amber-500 pl-6">
+            <div class="flex items-start justify-between">
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-yellow-700 dark:text-yellow-400 mb-2">
+                  Aula 3: Posts em 5 Minutos - Fórmula Testada
+                </h3>
+                <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+                  Sistema passo-a-passo para criar posts que param o feed e geram vendas
+                </p>
+                <div class="bg-neutral-50 dark:bg-neutral-900 p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2 text-yellow-600 dark:text-yellow-400">Framework RAPIDO:</h4>
+                  <div class="space-y-2">
+                    <div class="flex items-start">
+                      <span class="font-bold text-yellow-600 dark:text-yellow-400 mr-2">R -</span>
+                      <div>
+                        <span class="font-semibold">Relevância:</span>
+                        <span class="text-sm text-neutral-600 dark:text-neutral-400"> O que está bombando agora?</span>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="font-bold text-yellow-600 dark:text-yellow-400 mr-2">A -</span>
+                      <div>
+                        <span class="font-semibold">Atenção:</span>
+                        <span class="text-sm text-neutral-600 dark:text-neutral-400"> Visual que para o scroll em 1s</span>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="font-bold text-yellow-600 dark:text-yellow-400 mr-2">P -</span>
+                      <div>
+                        <span class="font-semibold">Proposta:</span>
+                        <span class="text-sm text-neutral-600 dark:text-neutral-400"> Que problema você resolve?</span>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="font-bold text-yellow-600 dark:text-yellow-400 mr-2">I -</span>
+                      <div>
+                        <span class="font-semibold">Interesse:</span>
+                        <span class="text-sm text-neutral-600 dark:text-neutral-400"> Por que devem se importar?</span>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="font-bold text-yellow-600 dark:text-yellow-400 mr-2">D -</span>
+                      <div>
+                        <span class="font-semibold">Desejo:</span>
+                        <span class="text-sm text-neutral-600 dark:text-neutral-400"> Criar urgência de compra</span>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <span class="font-bold text-yellow-600 dark:text-yellow-400 mr-2">O -</span>
+                      <div>
+                        <span class="font-semibold">Oferta:</span>
+                        <span class="text-sm text-neutral-600 dark:text-neutral-400"> CTA claro e irresistível</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4 bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg">
+                  <p class="text-sm">
+                    <strong class="text-yellow-700 dark:text-yellow-400">⏱️ Tempo Real:</strong>
+                    <span class="text-neutral-600 dark:text-neutral-400"> 2min prompt, 1min ajuste, 2min publicar = 5min total</span>
+                  </p>
+                </div>
+                <div class="mt-4 flex items-center space-x-4 text-sm">
+                  <span class="flex items-center text-amber-600 dark:text-amber-400">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                      <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                    </svg>
+                    75 min
+                  </span>
+                  <span class="flex items-center text-blue-600 dark:text-blue-400">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                    </svg>
+                    Templates prontos
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 4 -->
+          <div class="border-l-4 border-gradient-to-b from-red-500 to-pink-500 pl-6">
+            <div class="flex items-start justify-between">
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-red-700 dark:text-red-400 mb-2">
+                  Aula 4: Banners e Materiais Impressos
+                </h3>
+                <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+                  Do digital ao físico: materiais profissionais para todos os pontos de contato
+                </p>
+                <div class="bg-neutral-50 dark:bg-neutral-900 p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2 text-red-600 dark:text-red-400">Criações de alto impacto:</h4>
+                  <ul class="space-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+                    <li>• <strong>Banners para Site:</strong> Hero sections que convertem 3x mais</li>
+                    <li>• <strong>Google/Facebook Ads:</strong> Formatos otimizados, copy integrado</li>
+                    <li>• <strong>Flyers e Panfletos:</strong> Design que não vai pro lixo</li>
+                    <li>• <strong>Cartões de Visita:</strong> Que viram ferramenta de vendas</li>
+                    <li>• <strong>Cardápios e Catálogos:</strong> Layouts que aumentam ticket médio</li>
+                    <li>• <strong>Especificações Gráfica:</strong> CMYK, sangria, resolução - tudo certo</li>
+                  </ul>
+                </div>
+                <div class="mt-4 grid grid-cols-2 gap-3">
+                  <div class="bg-red-50 dark:bg-red-900/20 p-3 rounded">
+                    <p class="text-sm font-semibold text-red-700 dark:text-red-400">Digital</p>
+                    <p class="text-xs text-neutral-600 dark:text-neutral-400">RGB, 72dpi, formatos web</p>
+                  </div>
+                  <div class="bg-pink-50 dark:bg-pink-900/20 p-3 rounded">
+                    <p class="text-sm font-semibold text-pink-700 dark:text-pink-400">Impressão</p>
+                    <p class="text-xs text-neutral-600 dark:text-neutral-400">CMYK, 300dpi, PDF/X</p>
+                  </div>
+                </div>
+                <div class="mt-4 bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
+                  <p class="text-sm">
+                    <strong class="text-green-700 dark:text-green-400">💰 Economia:</strong>
+                    <span class="text-neutral-600 dark:text-neutral-400"> R$500-1500 por peça que você mesmo cria</span>
+                  </p>
+                </div>
+                <div class="mt-4 flex items-center space-x-4 text-sm">
+                  <span class="flex items-center text-amber-600 dark:text-amber-400">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                      <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                    </svg>
+                    90 min
+                  </span>
+                  <span class="flex items-center text-green-600 dark:text-green-400">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                    Arquivos prontos para gráfica
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aula 5 -->
+          <div class="border-l-4 border-gradient-empreendedores pl-6">
+            <div class="flex items-start justify-between">
+              <div class="flex-1">
+                <h3 class="text-xl font-bold gradient-text-empreendedores mb-2">
+                  Aula 5: Workflow 10min - Da Ideia ao Publicado
+                </h3>
+                <p class="text-neutral-600 dark:text-neutral-400 mb-4">
+                  O sistema exato para produzir conteúdo na velocidade do mercado
+                </p>
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-4 rounded-lg">
+                  <h4 class="font-semibold mb-3 text-amber-700 dark:text-amber-300">⚡ Workflow Lightning Fast:</h4>
+
+                  <div class="space-y-3">
+                    <div class="flex items-center">
+                      <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm mr-3">1</div>
+                      <div class="flex-1">
+                        <p class="font-semibold text-sm">Minuto 0-2: Briefing Relâmpago</p>
+                        <p class="text-xs text-neutral-600 dark:text-neutral-400">Objetivo claro + referência visual</p>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center">
+                      <div class="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-sm mr-3">2</div>
+                      <div class="flex-1">
+                        <p class="font-semibold text-sm">Minuto 2-5: Geração com IA</p>
+                        <p class="text-xs text-neutral-600 dark:text-neutral-400">Prompt otimizado + 3 variações</p>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center">
+                      <div class="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center font-bold text-sm mr-3">3</div>
+                      <div class="flex-1">
+                        <p class="font-semibold text-sm">Minuto 5-7: Ajuste Fino</p>
+                        <p class="text-xs text-neutral-600 dark:text-neutral-400">Logo, texto, cores da marca</p>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center">
+                      <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm mr-3">4</div>
+                      <div class="flex-1">
+                        <p class="font-semibold text-sm">Minuto 7-9: Copy e CTA</p>
+                        <p class="text-xs text-neutral-600 dark:text-neutral-400">Texto que vende + hashtags</p>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center">
+                      <div class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center font-bold text-sm mr-3">5</div>
+                      <div class="flex-1">
+                        <p class="font-semibold text-sm">Minuto 10: Publicado!</p>
+                        <p class="text-xs text-neutral-600 dark:text-neutral-400">Agendado em todas as redes</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 p-3 bg-white dark:bg-neutral-800 rounded">
+                    <p class="text-sm font-semibold text-green-600 dark:text-green-400">✅ Resultado: 6 posts/hora = 48 posts/dia</p>
+                  </div>
+                </div>
+
+                <div class="mt-4 bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg">
+                  <p class="text-sm">
+                    <strong class="text-purple-700 dark:text-purple-400">🎯 Meta Realista:</strong>
+                    <span class="text-neutral-600 dark:text-neutral-400"> 30 posts de qualidade por dia trabalhando apenas 1 hora</span>
+                  </p>
+                </div>
+                <div class="mt-4 flex items-center space-x-4 text-sm">
+                  <span class="flex items-center text-amber-600 dark:text-amber-400">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                      <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                    </svg>
+                    60 min
+                  </span>
+                  <span class="flex items-center text-red-600 dark:text-red-400">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                    </svg>
+                    Cronômetro na prática
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercícios Práticos -->
+      <div class="bg-gradient-to-br from-yellow-100 via-amber-100 to-orange-100 dark:from-yellow-900/30 dark:via-amber-900/30 dark:to-orange-900/30 rounded-2xl p-10 mb-12">
+        <h2 class="text-3xl font-black mb-8 flex items-center">
+          <span class="text-4xl mr-4">🏋️</span>
+          Desafios Práticos (Resultados na Hora)
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Desafio 1 -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl hover-lift">
+            <div class="flex items-start mb-4">
+              <div class="text-3xl mr-3">⚡</div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Desafio 5 Minutos</h3>
+                <p class="text-sm text-amber-600 dark:text-amber-400">Iniciante</p>
+              </div>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie 1 post completo do zero em 5 minutos cronometrados. Imagem + copy + hashtags.
+            </p>
+            <div class="text-sm font-semibold text-green-600 dark:text-green-400">
+              → Objetivo: Quebrar a barreira mental da "perfeição"
+            </div>
+          </div>
+
+          <!-- Desafio 2 -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl hover-lift">
+            <div class="flex items-start mb-4">
+              <div class="text-3xl mr-3">📦</div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Vitrine Virtual</h3>
+                <p class="text-sm text-orange-600 dark:text-orange-400">Intermediário</p>
+              </div>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Pegue 5 produtos seus e crie mockups premium com cenários diferentes. Compare com fotos antigas.
+            </p>
+            <div class="text-sm font-semibold text-purple-600 dark:text-purple-400">
+              → Resultado: Portfolio de produtos renovado
+            </div>
+          </div>
+
+          <!-- Desafio 3 -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl hover-lift">
+            <div class="flex items-start mb-4">
+              <div class="text-3xl mr-3">📱</div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Semana de Stories</h3>
+                <p class="text-sm text-red-600 dark:text-red-400">Avançado</p>
+              </div>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie conteúdo para 7 dias de stories (35 stories) em 1 hora. Use templates e varie formatos.
+            </p>
+            <div class="text-sm font-semibold text-amber-600 dark:text-amber-400">
+              → Entrega: Calendário completo pronto
+            </div>
+          </div>
+
+          <!-- Desafio 4 -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl hover-lift">
+            <div class="flex items-start mb-4">
+              <div class="text-3xl mr-3">🎯</div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Campanha Completa</h3>
+                <p class="text-sm text-green-600 dark:text-green-400">Expert</p>
+              </div>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Monte campanha de lançamento: 10 posts, 5 stories, 3 anúncios, 1 banner. Tudo em 90 minutos.
+            </p>
+            <div class="text-sm font-semibold text-blue-600 dark:text-blue-400">
+              → Prêmio: Campanha que pode gerar R$10k+
+            </div>
+          </div>
+
+          <!-- Desafio 5 -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl hover-lift">
+            <div class="flex items-start mb-4">
+              <div class="text-3xl mr-3">🔥</div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Teste A/B Relâmpago</h3>
+                <p class="text-sm text-yellow-600 dark:text-yellow-400">Estratégico</p>
+              </div>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie 5 versões do mesmo anúncio variando: cor, texto, ângulo, contexto. Teste qual converte mais.
+            </p>
+            <div class="text-sm font-semibold text-orange-600 dark:text-orange-400">
+              → Aprendizado: Descobrir o que vende no SEU negócio
+            </div>
+          </div>
+
+          <!-- Desafio 6 -->
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl hover-lift">
+            <div class="flex items-start mb-4">
+              <div class="text-3xl mr-3">💰</div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">ROI Imediato</h3>
+                <p class="text-sm text-purple-600 dark:text-purple-400">Lucrativo</p>
+              </div>
+            </div>
+            <p class="text-neutral-700 dark:text-neutral-300 mb-3">
+              Crie e publique 1 post agora. Meça visualizações, cliques e vendas em 24h. Calcule ROI real.
+            </p>
+            <div class="text-sm font-semibold text-green-600 dark:text-green-400">
+              → Prova: Ver o dinheiro entrando com IA
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recursos e Templates -->
+      <div class="bg-white dark:bg-neutral-800 rounded-2xl shadow-xl p-10 mb-12 border border-amber-200 dark:border-amber-900/30">
+        <h2 class="text-3xl font-black mb-8 flex items-center">
+          <span class="text-4xl mr-4">🎁</span>
+          Kit Velocidade Total (Economize 100+ Horas)
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div class="text-center">
+            <div class="text-5xl mb-3">📝</div>
+            <h3 class="font-bold mb-2">500+ Prompts</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Biblioteca completa testada e aprovada
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="text-5xl mb-3">🎨</div>
+            <h3 class="font-bold mb-2">Templates Prontos</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Posts, stories, anúncios - só personalizar
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="text-5xl mb-3">⚙️</div>
+            <h3 class="font-bold mb-2">Automações</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Workflows que rodam sozinhos
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="text-5xl mb-3">📊</div>
+            <h3 class="font-bold mb-2">Métricas</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Planilhas para medir resultados
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="text-5xl mb-3">🎯</div>
+            <h3 class="font-bold mb-2">Checklists</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Nunca esqueça nenhum detalhe
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="text-5xl mb-3">📹</div>
+            <h3 class="font-bold mb-2">Tutoriais Rápidos</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Vídeos de 2min direto ao ponto
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-6 rounded-xl">
+          <h3 class="font-bold text-lg mb-4 text-amber-800 dark:text-amber-300">🚀 Bônus Exclusivo: Banco de Ideias Infinito</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-center">
+              <strong class="text-amber-600 dark:text-amber-400">365 ideias</strong>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">1 por dia do ano</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-center">
+              <strong class="text-orange-600 dark:text-orange-400">52 campanhas</strong>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">1 por semana</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-center">
+              <strong class="text-red-600 dark:text-red-400">12 lançamentos</strong>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">1 por mês</p>
+            </div>
+            <div class="bg-white dark:bg-neutral-800 p-3 rounded text-center">
+              <strong class="text-yellow-600 dark:text-yellow-400">∞ variações</strong>
+              <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">Nunca repetir</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Garantia de Velocidade -->
+      <div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl p-10 mb-12 border-2 border-green-300 dark:border-green-700">
+        <div class="text-center">
+          <div class="text-6xl mb-4">🏆</div>
+          <h2 class="text-3xl font-black mb-4 text-green-800 dark:text-green-300">Garantia de Velocidade</h2>
+          <p class="text-xl mb-6 text-green-700 dark:text-green-400">
+            Se você não conseguir criar pelo menos <strong>10 posts profissionais em 1 hora</strong> após este módulo,
+            fazemos uma sessão 1-a-1 até você conseguir
+          </p>
+          <div class="bg-white dark:bg-neutral-800 p-6 rounded-xl max-w-2xl mx-auto">
+            <p class="text-lg font-semibold mb-2">Nossa promessa é simples:</p>
+            <p class="text-neutral-700 dark:text-neutral-300">
+              Você vai ser <strong>10x mais rápido</strong> ou trabalhamos com você até ser.
+              Sem desculpas, sem enrolação. Resultado garantido.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action Final -->
+      <div class="bg-gradient-to-br from-amber-600 via-orange-600 to-red-600 rounded-2xl p-10 text-white text-center">
+        <h2 class="text-3xl font-black mb-4">A Velocidade Define Quem Domina o Mercado</h2>
+        <p class="text-xl mb-6 opacity-95">
+          Cada segundo que você demora, um concorrente mais rápido pega seu cliente
+        </p>
+        <div class="bg-white/20 backdrop-blur rounded-xl p-6 mb-6 max-w-2xl mx-auto">
+          <p class="text-lg font-semibold mb-2">⚡ Realidade do Mercado:</p>
+          <p class="opacity-90">
+            Empresas que produzem conteúdo 10x mais rápido têm 5x mais vendas.
+            Não é coincidência, é matemática simples: mais testes = mais acertos = mais lucro.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="empreendedores-modulo-03.html" class="inline-block bg-white text-amber-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-50 transition-all hover:scale-105 shadow-lg">
+            Continuar para Módulo 3 →
+          </a>
+          <a href="../trilhas/empreendedores.html" class="inline-block bg-amber-700/30 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-700/50 transition-all border-2 border-white/50">
+            Ver Trilha Completa
+          </a>
+        </div>
+      </div>
+
+      <!-- Navegação entre Módulos -->
+      <div class="flex justify-between items-center mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
+        <a href="empreendedores-modulo-01.html" class="flex items-center text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 font-semibold group">
+          <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <span>Anterior: IA Para Seu Negócio</span>
+        </a>
+        <a href="empreendedores-modulo-03.html" class="flex items-center text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 font-semibold group">
+          <span class="mr-2">Próximo: Marketing Visual</span>
+          <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-100 dark:bg-neutral-800 py-12 mt-20">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-neutral-600 dark:text-neutral-400">
+        © 2024 Empreendedores com IA - Velocidade que transforma negócios
+      </p>
+      <div class="mt-6 flex justify-center space-x-6">
+        <a href="../index.html" class="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300">
+          Home
+        </a>
+        <a href="../trilhas/empreendedores.html" class="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300">
+          Trilha Completa
+        </a>
+        <a href="#" class="text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300">
+          Suporte
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn?.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
+      } else {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
+      }
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    mobileMenuToggle?.addEventListener('click', function() {
+      // Implement mobile menu logic
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-slide-up');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section > div').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

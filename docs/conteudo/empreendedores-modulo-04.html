@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 4: Ferramentas Para Negócios - Trilha Empreendedores IMG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #F59E0B;
+            --primary-dark: #D97706;
+            --primary-light: #FED7AA;
+            --text-dark: #111827;
+            --text-gray: #6B7280;
+            --bg-light: #FFFBEB;
+            --bg-white: #FFFFFF;
+            --border-color: #E5E7EB;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-white);
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(245, 158, 11, 0.2);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .badge-empreendedores {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, var(--bg-light), white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-gray);
+        }
+
+        .meta-item strong {
+            color: var(--primary-color);
+        }
+
+        /* Learning Objectives */
+        .objectives {
+            padding: 3rem 2rem;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .objective-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .objective-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 3rem 2rem;
+            background: white;
+        }
+
+        .content-section:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+        }
+
+        /* Tool Cards */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tool-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
+            border-color: var(--primary-color);
+        }
+
+        .tool-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .tool-title {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .tool-badge {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: bold;
+        }
+
+        .tool-price {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .tool-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .tool-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: start;
+            gap: 0.5rem;
+        }
+
+        .tool-features li:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-top: 2px;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table tr:hover {
+            background: var(--bg-light);
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 0.25rem 0.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Step by Step Guides */
+        .guide-steps {
+            counter-reset: step;
+            margin: 2rem 0;
+        }
+
+        .guide-step {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 4rem;
+            counter-increment: step;
+        }
+
+        .guide-step:before {
+            content: counter(step);
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color);
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .guide-step h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .guide-step p {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .guide-tip {
+            background: var(--bg-light);
+            border-left: 3px solid var(--primary-color);
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 5px;
+        }
+
+        .guide-tip strong {
+            color: var(--primary-color);
+        }
+
+        /* Stack Builder */
+        .stack-builder {
+            background: linear-gradient(135deg, var(--bg-light), white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stack-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .stack-header h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stack-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stack-item {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .stack-item.essential {
+            border-color: var(--primary-color);
+            background: var(--bg-light);
+        }
+
+        .stack-item h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .stack-item .price {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .stack-item .description {
+            color: var(--text-gray);
+            font-size: 0.875rem;
+        }
+
+        .stack-total {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stack-total h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stack-total .total-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        /* Case Studies */
+        .case-study {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .case-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .case-info h4 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .case-info p {
+            color: var(--text-gray);
+        }
+
+        .case-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .result-item {
+            text-align: center;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 10px;
+        }
+
+        .result-value {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .result-label {
+            color: var(--text-gray);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Classes Structure */
+        .classes {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .classes-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .class-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .class-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.1);
+        }
+
+        .class-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .class-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .class-duration {
+            background: var(--bg-light);
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .class-title {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .class-description {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .class-topics {
+            list-style: none;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .class-topics li {
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .class-topics li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Exercises Section */
+        .exercises {
+            padding: 4rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .exercise-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .exercise-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exercise-icon {
+            background: var(--primary-light);
+            color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .exercise-title {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+        }
+
+        .exercise-tasks {
+            list-style: none;
+            margin-left: 60px;
+        }
+
+        .exercise-tasks li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .exercise-tasks li:last-child {
+            border-bottom: none;
+        }
+
+        .task-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            flex-shrink: 0;
+        }
+
+        /* Resources Section */
+        .resources {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .resource-card {
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-icon {
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-title {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-description {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .resource-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Final Tips */
+        .final-tip {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--primary-light), var(--bg-light));
+        }
+
+        .tip-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(245, 158, 11, 0.1);
+        }
+
+        .tip-box h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .tip-content {
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .tip-highlight {
+            background: var(--primary-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* Navigation */
+        .navigation {
+            padding: 3rem 2rem;
+            background: white;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-button:hover {
+            background: var(--primary-dark);
+            transform: translateX(5px);
+        }
+
+        .nav-button.prev:hover {
+            transform: translateX(-5px);
+        }
+
+        .nav-button.disabled {
+            background: var(--text-gray);
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .tools-grid,
+            .objectives-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stack-items {
+                grid-template-columns: 1fr;
+            }
+
+            .case-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="nav-brand">
+                🛠️ IMG - Ferramentas Para Negócios
+            </div>
+            <div class="nav-links">
+                <span class="badge-empreendedores">Trilha Empreendedores</span>
+                <a href="../index.html">Home</a>
+                <a href="../trilhas/empreendedores.html">Trilha</a>
+                <a href="#exercises">Exercícios</a>
+                <a href="#resources">Recursos</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>
+                <span>🛠️</span>
+                <span>Módulo 4: Ferramentas Para Negócios</span>
+            </h1>
+            <p class="hero-subtitle">
+                Monte seu arsenal de ferramentas profissionais gastando pouco e produzindo muito
+            </p>
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <span>⏱️</span>
+                    <strong>8 horas</strong> de conteúdo
+                </div>
+                <div class="meta-item">
+                    <span>📚</span>
+                    <strong>5 aulas</strong> estruturadas
+                </div>
+                <div class="meta-item">
+                    <span>💰</span>
+                    <strong>R$ 50/mês</strong> investimento mínimo
+                </div>
+                <div class="meta-item">
+                    <span>🎯</span>
+                    <strong>100% prático</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Objectives -->
+    <section class="objectives">
+        <div class="container">
+            <h2 class="section-title">O Que Você Vai Dominar</h2>
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <h3>💰 Economia Inteligente</h3>
+                    <p>Aprenda quando vale a pena pagar por uma ferramenta e quando a versão gratuita é suficiente. Economize até R$ 500/mês escolhendo as ferramentas certas.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>🎨 Canva Pro Avançado</h3>
+                    <p>Domine todos os recursos profissionais do Canva para criar materiais de marketing que convertem. Do básico ao avançado em design para negócios.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>🤖 IA Para Empresas</h3>
+                    <p>Use Bing Image Creator e outras IAs para gerar imagens profissionais sem custos. Crie conteúdo visual ilimitado para seu negócio.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>⚡ Automação Básica</h3>
+                    <p>Configure ferramentas de agendamento e automação para economizar 10+ horas por semana. Publique em múltiplas redes sociais automaticamente.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>📊 Organização Total</h3>
+                    <p>Monte seu sistema de organização com Google Drive, Notion e Trello. Mantenha projetos, clientes e prazos sob controle.</p>
+                </div>
+                <div class="objective-card">
+                    <h3>🚀 Stack Profissional</h3>
+                    <p>Monte sua pilha de ferramentas essenciais por menos de R$ 50/mês. Tenha tudo que precisa para competir com grandes empresas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Gratuito vs Pago -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ferramentas Gratuitas vs Pagas</h2>
+                <p>O guia definitivo para não jogar dinheiro fora (e saber quando investir)</p>
+            </div>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ferramenta</th>
+                            <th>Versão Gratuita</th>
+                            <th>Versão Paga</th>
+                            <th>Vale a Pena Pagar?</th>
+                            <th>Quando Migrar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Canva</strong></td>
+                            <td>5GB, templates limitados</td>
+                            <td><span class="price-tag">R$ 34/mês</span> - 100GB, tudo liberado</td>
+                            <td>✅ SIM</td>
+                            <td>Desde o início se possível</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Remove.bg</strong></td>
+                            <td>1 imagem grátis/mês</td>
+                            <td><span class="price-tag">R$ 45/mês</span> - 40 imagens</td>
+                            <td>❌ NÃO</td>
+                            <td>Use alternativas gratuitas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Buffer</strong></td>
+                            <td>3 contas sociais</td>
+                            <td><span class="price-tag">R$ 30/mês</span> - ilimitado</td>
+                            <td>⚠️ DEPENDE</td>
+                            <td>Quando tiver 5+ redes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google Drive</strong></td>
+                            <td>15GB grátis</td>
+                            <td><span class="price-tag">R$ 7/mês</span> - 100GB</td>
+                            <td>✅ SIM</td>
+                            <td>Quando chegar em 10GB</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Notion</strong></td>
+                            <td>1000 blocos</td>
+                            <td><span class="price-tag">R$ 40/mês</span> - ilimitado</td>
+                            <td>❌ NÃO</td>
+                            <td>Use a versão gratuita</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trello</strong></td>
+                            <td>10 boards</td>
+                            <td><span class="price-tag">R$ 25/mês</span> - ilimitado</td>
+                            <td>❌ NÃO</td>
+                            <td>10 boards são suficientes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-avatar">👩‍💼</div>
+                    <div class="case-info">
+                        <h4>Caso Real: Maria - Loja de Roupas</h4>
+                        <p>De R$ 800/mês para R$ 41/mês em ferramentas</p>
+                    </div>
+                </div>
+                <div class="case-results">
+                    <div class="result-item">
+                        <div class="result-value">-95%</div>
+                        <div class="result-label">Redução de custos</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">R$ 759</div>
+                        <div class="result-label">Economia mensal</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">3x</div>
+                        <div class="result-label">Mais produtividade</div>
+                    </div>
+                </div>
+                <p><strong>O que ela fez:</strong> Cancelou Photoshop (R$ 90), Illustrator (R$ 90), Stock photos (R$ 200), Hootsuite (R$ 250), Dropbox (R$ 60), Monday (R$ 110). Migrou para: Canva Pro (R$ 34) + Google Drive (R$ 7). Resultado: mesma qualidade, muito menos custo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Canva Pro Master -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Canva Pro: Guia Completo Para Negócios</h2>
+                <p>Transforme R$ 34/mês em milhares de reais em vendas</p>
+            </div>
+
+            <div class="guide-steps">
+                <div class="guide-step">
+                    <h4>Configure Sua Marca no Canva</h4>
+                    <p>Primeiro passo essencial: cadastre toda identidade visual da sua empresa para manter consistência em todos os materiais.</p>
+                    <ul>
+                        <li>• Cadastre até 100 paletas de cores da marca</li>
+                        <li>• Upload de até 100 logos em diferentes versões</li>
+                        <li>• Configure até 20 fontes personalizadas</li>
+                        <li>• Crie templates base para cada tipo de material</li>
+                    </ul>
+                    <div class="guide-tip">
+                        <strong>Dica PRO:</strong> Use a função "Magic Resize" para adaptar um post do Instagram para Stories, Facebook, LinkedIn e Pinterest em 30 segundos.
+                    </div>
+                </div>
+
+                <div class="guide-step">
+                    <h4>Domine o Background Remover</h4>
+                    <p>Economize R$ 45/mês do Remove.bg usando esta função nativa do Canva Pro.</p>
+                    <ul>
+                        <li>• Remova fundos em 1 clique com precisão de 95%</li>
+                        <li>• Ajuste bordas manualmente quando necessário</li>
+                        <li>• Salve como PNG transparente para reutilizar</li>
+                        <li>• Processe lotes de até 100 imagens por vez</li>
+                    </ul>
+                    <div class="guide-tip">
+                        <strong>Economia:</strong> 100 remoções de fundo/dia = R$ 1.350/mês economizados comparado a serviços pagos.
+                    </div>
+                </div>
+
+                <div class="guide-step">
+                    <h4>Use o Banco de Imagens Premium</h4>
+                    <p>Acesse mais de 100 milhões de fotos, vídeos e elementos premium sem pagar extra.</p>
+                    <ul>
+                        <li>• Filtros avançados: cor, orientação, pessoas, conceito</li>
+                        <li>• Downloads ilimitados sem marca d'água</li>
+                        <li>• Vídeos em 4K para anúncios profissionais</li>
+                        <li>• Elementos animados para Stories e Reels</li>
+                    </ul>
+                    <div class="guide-tip">
+                        <strong>Valor:</strong> Cada imagem premium economiza R$ 10-50 comparado a bancos de imagem tradicionais.
+                    </div>
+                </div>
+
+                <div class="guide-step">
+                    <h4>Crie Mockups Profissionais</h4>
+                    <p>Apresente seus produtos de forma profissional sem fotógrafo.</p>
+                    <ul>
+                        <li>• Mockups de camisetas, canecas, embalagens</li>
+                        <li>• Smartmockups integrados (mais de 5000 opções)</li>
+                        <li>• Ajuste perspectiva e iluminação automaticamente</li>
+                        <li>• Exporte em alta resolução para impressão</li>
+                    </ul>
+                    <div class="guide-tip">
+                        <strong>Case Real:</strong> João aumentou vendas em 40% só trocando fotos amadoras por mockups profissionais do Canva.
+                    </div>
+                </div>
+
+                <div class="guide-step">
+                    <h4>Automatize com Content Planner</h4>
+                    <p>Agende posts para 8 redes sociais direto do Canva.</p>
+                    <ul>
+                        <li>• Instagram, Facebook, LinkedIn, Pinterest, Twitter</li>
+                        <li>• Visualize calendário editorial completo</li>
+                        <li>• Ajuste horários para melhor engajamento</li>
+                        <li>• Análise básica de performance incluída</li>
+                    </ul>
+                    <div class="guide-tip">
+                        <strong>Produtividade:</strong> Crie e agende conteúdo de 1 mês em apenas 2 horas.
+                    </div>
+                </div>
+            </div>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-title">Templates Secretos</h3>
+                        <span class="tool-badge">EXCLUSIVO PRO</span>
+                    </div>
+                    <p>Busque templates que convertem usando estes termos:</p>
+                    <ul class="tool-features">
+                        <li>"sale instagram post" - Posts de venda que funcionam</li>
+                        <li>"before after" - Comparações impactantes</li>
+                        <li>"customer testimonial" - Depoimentos profissionais</li>
+                        <li>"price list" - Tabelas de preço elegantes</li>
+                        <li>"carousel tutorial" - Carrosséis educativos</li>
+                    </ul>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-title">Atalhos Matadores</h3>
+                        <span class="tool-badge">PRODUTIVIDADE</span>
+                    </div>
+                    <p>Comandos que vão triplicar sua velocidade:</p>
+                    <ul class="tool-features">
+                        <li>Ctrl+D: Duplicar elemento selecionado</li>
+                        <li>Ctrl+Shift+K: Deixar tudo em maiúscula</li>
+                        <li>Alt+Shift+Arrastar: Duplicar e mover</li>
+                        <li>Ctrl+G: Agrupar elementos</li>
+                        <li>/ : Busca rápida de elementos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: IA Tools -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ferramentas de IA Para Empresas</h2>
+                <p>Gere imagens profissionais ilimitadas sem gastar nada</p>
+            </div>
+
+            <div class="guide-steps">
+                <div class="guide-step">
+                    <h4>Bing Image Creator (Microsoft)</h4>
+                    <p>100 créditos grátis por dia = 400 imagens/mês de graça!</p>
+                    <ul>
+                        <li>• Qualidade igual ou superior ao Midjourney</li>
+                        <li>• Aceita prompts em português</li>
+                        <li>• 4 variações por prompt</li>
+                        <li>• Resolução de até 1024x1024</li>
+                    </ul>
+                    <div class="guide-tip">
+                        <strong>Prompt Matador:</strong> "foto profissional de [produto] em fundo branco minimalista, iluminação de estúdio, alta qualidade, 4k"
+                    </div>
+                </div>
+
+                <div class="guide-step">
+                    <h4>Prompts Que Vendem</h4>
+                    <p>Fórmulas testadas para diferentes tipos de negócio:</p>
+                    <ul>
+                        <li><strong>Produto:</strong> "[produto] em ambiente [contexto], luz natural, fotografia comercial"</li>
+                        <li><strong>Pessoas:</strong> "[profissão] brasileiro(a) sorrindo, roupa [cor], fundo [cor], corporate photography"</li>
+                        <li><strong>Comida:</strong> "[prato] em prato branco, vista superior, food photography, appetizing"</li>
+                        <li><strong>Lifestyle:</strong> "[cena] moderno, cores [paleta], lifestyle photography, instagram aesthetic"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-avatar">🍰</div>
+                    <div class="case-info">
+                        <h4>Caso Real: Confeitaria da Ana</h4>
+                        <p>De R$ 500/sessão fotográfica para R$ 0 com IA</p>
+                    </div>
+                </div>
+                <div class="case-results">
+                    <div class="result-item">
+                        <div class="result-value">300</div>
+                        <div class="result-label">Imagens/mês</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">R$ 0</div>
+                        <div class="result-label">Custo total</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">+60%</div>
+                        <div class="result-label">Engajamento</div>
+                    </div>
+                </div>
+                <p><strong>Estratégia:</strong> Ana usa Bing Image Creator para gerar fotos de bolos que ainda não fez, testa interesse do público e só produz os mais pedidos. Economiza ingredientes e tempo!</p>
+            </div>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-title">Remove.bg Grátis</h3>
+                        <span class="tool-badge">ALTERNATIVA</span>
+                    </div>
+                    <div class="tool-price">R$ 0/mês (vs R$ 45)</div>
+                    <ul class="tool-features">
+                        <li>Canva Pro (já incluído)</li>
+                        <li>PhotoRoom (5 grátis/dia)</li>
+                        <li>Removal.ai (1 grátis, sem cadastro)</li>
+                        <li>GIMP (ilimitado, precisa aprender)</li>
+                    </ul>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-title">Upscale Grátis</h3>
+                        <span class="tool-badge">QUALIDADE</span>
+                    </div>
+                    <div class="tool-price">R$ 0/mês</div>
+                    <ul class="tool-features">
+                        <li>Upscayl (desktop, ilimitado)</li>
+                        <li>Waifu2x (online, até 2x)</li>
+                        <li>Real-ESRGAN (melhor qualidade)</li>
+                        <li>Bigjpg (5 grátis/mês)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Automation Tools -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ferramentas de Agendamento e Automação</h2>
+                <p>Publique em 10 redes sociais gastando 30 minutos por semana</p>
+            </div>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ferramenta</th>
+                            <th>Grátis</th>
+                            <th>Preço</th>
+                            <th>Melhor Para</th>
+                            <th>Limitações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Buffer</strong></td>
+                            <td>3 contas, 10 posts/conta</td>
+                            <td>R$ 30/mês</td>
+                            <td>Iniciantes</td>
+                            <td>Sem Instagram direto</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Later</strong></td>
+                            <td>2 contas, 30 posts/mês</td>
+                            <td>R$ 60/mês</td>
+                            <td>Instagram/Pinterest</td>
+                            <td>Interface em inglês</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Facebook Creator</strong></td>
+                            <td>Ilimitado FB/IG</td>
+                            <td>GRÁTIS</td>
+                            <td>Facebook/Instagram</td>
+                            <td>Só Meta platforms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Canva Pro</strong></td>
+                            <td>-</td>
+                            <td>R$ 34/mês</td>
+                            <td>Design + Schedule</td>
+                            <td>Análises básicas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TweetDeck</strong></td>
+                            <td>Ilimitado Twitter</td>
+                            <td>GRÁTIS</td>
+                            <td>Twitter/X</td>
+                            <td>Só Twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="guide-steps">
+                <div class="guide-step">
+                    <h4>Sistema de Produção em Lote</h4>
+                    <p>Crie conteúdo de 1 mês em 2 horas:</p>
+                    <ul>
+                        <li><strong>Segunda 9h:</strong> Brainstorm - 30 ideias de conteúdo (30min)</li>
+                        <li><strong>Segunda 10h:</strong> Criação - 30 posts no Canva (60min)</li>
+                        <li><strong>Segunda 11h:</strong> Agendamento - Distribuir nas redes (30min)</li>
+                        <li><strong>Resto da semana:</strong> Apenas engajamento e respostas</li>
+                    </ul>
+                    <div class="guide-tip">
+                        <strong>Resultado:</strong> 90% do tempo livre para vender e atender clientes!
+                    </div>
+                </div>
+
+                <div class="guide-step">
+                    <h4>Hack: Multi-Plataforma Grátis</h4>
+                    <p>Publique em todas as redes sem pagar nada:</p>
+                    <ul>
+                        <li>• Facebook + Instagram: Creator Studio (grátis)</li>
+                        <li>• LinkedIn: Agendamento nativo (grátis)</li>
+                        <li>• Pinterest: Agendamento nativo (grátis)</li>
+                        <li>• Twitter: TweetDeck (grátis)</li>
+                        <li>• YouTube: Upload e agendar (grátis)</li>
+                    </ul>
+                    <div class="guide-tip">
+                        <strong>Economia:</strong> R$ 200/mês vs ferramentas pagas que fazem a mesma coisa.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Organization Tools -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ferramentas de Organização</h2>
+                <p>Mantenha tudo sob controle sem complicação</p>
+            </div>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-title">Google Drive</h3>
+                        <span class="tool-badge">ESSENCIAL</span>
+                    </div>
+                    <div class="tool-price">R$ 7/mês (100GB)</div>
+                    <p><strong>Estrutura Perfeita de Pastas:</strong></p>
+                    <ul class="tool-features">
+                        <li>📁 01_Clientes (subpastas por cliente)</li>
+                        <li>📁 02_Produtos (fotos, descrições)</li>
+                        <li>📁 03_Marketing (campanhas, artes)</li>
+                        <li>📁 04_Financeiro (notas, controles)</li>
+                        <li>📁 05_Templates (modelos prontos)</li>
+                    </ul>
+                    <div class="guide-tip">
+                        <strong>Dica:</strong> Use números no início para manter ordem alfabética útil.
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-title">Notion Grátis</h3>
+                        <span class="tool-badge">ORGANIZAÇÃO</span>
+                    </div>
+                    <div class="tool-price">R$ 0/mês</div>
+                    <p><strong>Templates Prontos Para Negócios:</strong></p>
+                    <ul class="tool-features">
+                        <li>📊 CRM simples de clientes</li>
+                        <li>📅 Calendário editorial</li>
+                        <li>✅ Lista de tarefas com prioridades</li>
+                        <li>💰 Controle financeiro básico</li>
+                        <li>📝 Base de conhecimento/FAQ</li>
+                    </ul>
+                    <div class="guide-tip">
+                        <strong>Template:</strong> Baixe template pronto "Business OS" e personalize.
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-title">Trello Grátis</h3>
+                        <span class="tool-badge">PROJETOS</span>
+                    </div>
+                    <div class="tool-price">R$ 0/mês</div>
+                    <p><strong>Quadro Kanban Para Vendas:</strong></p>
+                    <ul class="tool-features">
+                        <li>🎯 Leads (possíveis clientes)</li>
+                        <li>💬 Em Negociação</li>
+                        <li>📝 Proposta Enviada</li>
+                        <li>✅ Fechado (ganho)</li>
+                        <li>❌ Perdido (analisar motivo)</li>
+                    </ul>
+                    <div class="guide-tip">
+                        <strong>Power-up:</strong> Ative Butler para automações básicas grátis.
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-avatar">👨‍💻</div>
+                    <div class="case-info">
+                        <h4>Caso Real: Carlos - Consultoria</h4>
+                        <p>De caos total para 100% organizado em 1 semana</p>
+                    </div>
+                </div>
+                <div class="case-results">
+                    <div class="result-item">
+                        <div class="result-value">0</div>
+                        <div class="result-label">Prazos perdidos</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">3h</div>
+                        <div class="result-label">Economizadas/dia</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-value">+40%</div>
+                        <div class="result-label">Clientes atendidos</div>
+                    </div>
+                </div>
+                <p><strong>Sistema:</strong> Google Drive para arquivos + Notion para anotações + Trello para projetos. Custo total: R$ 7/mês. Tempo de setup: 2 horas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Stack Builder -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Monte Sua Stack Por R$ 50/mês</h2>
+                <p>O kit completo para competir com qualquer empresa</p>
+            </div>
+
+            <div class="stack-builder">
+                <div class="stack-header">
+                    <h3>Stack Essencial do Empreendedor</h3>
+                    <p>Testado e aprovado por +500 empresários</p>
+                </div>
+
+                <div class="stack-items">
+                    <div class="stack-item essential">
+                        <h4>🎨 Canva Pro</h4>
+                        <div class="price">R$ 34/mês</div>
+                        <div class="description">Design + Agendamento + Banco de imagens</div>
+                    </div>
+                    <div class="stack-item essential">
+                        <h4>☁️ Google Drive</h4>
+                        <div class="price">R$ 7/mês</div>
+                        <div class="description">100GB para todos os arquivos</div>
+                    </div>
+                    <div class="stack-item">
+                        <h4>🤖 Bing Creator</h4>
+                        <div class="price">R$ 0/mês</div>
+                        <div class="description">400 imagens IA/mês grátis</div>
+                    </div>
+                    <div class="stack-item">
+                        <h4>📅 Creator Studio</h4>
+                        <div class="price">R$ 0/mês</div>
+                        <div class="description">Agendamento FB/IG ilimitado</div>
+                    </div>
+                    <div class="stack-item">
+                        <h4>📝 Notion</h4>
+                        <div class="price">R$ 0/mês</div>
+                        <div class="description">Organização completa grátis</div>
+                    </div>
+                    <div class="stack-item">
+                        <h4>📊 Trello</h4>
+                        <div class="price">R$ 0/mês</div>
+                        <div class="description">10 quadros para projetos</div>
+                    </div>
+                </div>
+
+                <div class="stack-total">
+                    <h4>Investimento Total Mensal</h4>
+                    <div class="total-price">R$ 41</div>
+                    <p>Economia vs ferramentas tradicionais: R$ 759/mês</p>
+                </div>
+            </div>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-title">Upgrade Nível 2</h3>
+                        <span class="tool-badge">R$ 100/mês</span>
+                    </div>
+                    <p>Quando faturar R$ 5.000+/mês, adicione:</p>
+                    <ul class="tool-features">
+                        <li>+ ChatGPT Plus (R$ 100) - Copywriting ilimitado</li>
+                        <li>+ Hostinger (R$ 15) - Site profissional</li>
+                        <li>+ Google Workspace (R$ 30) - Email profissional</li>
+                    </ul>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3 class="tool-title">Upgrade Nível 3</h3>
+                        <span class="tool-badge">R$ 300/mês</span>
+                    </div>
+                    <p>Quando faturar R$ 20.000+/mês, adicione:</p>
+                    <ul class="tool-features">
+                        <li>+ ActiveCampaign (R$ 150) - Email marketing</li>
+                        <li>+ Hotmart (%) - Vendas online</li>
+                        <li>+ RD Station (R$ 200) - Automação completa</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Structure -->
+    <section class="classes">
+        <div class="container">
+            <h2 class="section-title">Estrutura das Aulas</h2>
+
+            <div class="classes-grid">
+                <div class="class-card">
+                    <div class="class-header">
+                        <div class="class-number">1</div>
+                        <span class="class-duration">⏱️ 1h30min</span>
+                    </div>
+                    <h3 class="class-title">Análise Inteligente: Quando Vale a Pena Pagar</h3>
+                    <p class="class-description">
+                        Aprenda a avaliar ferramentas como um investidor. Entenda ROI, custo-benefício e quando a versão paga realmente faz diferença para seu negócio.
+                    </p>
+                    <ul class="class-topics">
+                        <li>Calculadora de ROI para ferramentas digitais</li>
+                        <li>Análise das 30 ferramentas mais usadas</li>
+                        <li>Matriz de decisão: grátis vs pago</li>
+                        <li>Casos reais de economia de R$ 500+/mês</li>
+                        <li>Exercício: Audite suas ferramentas atuais</li>
+                    </ul>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-header">
+                        <div class="class-number">2</div>
+                        <span class="class-duration">⏱️ 2h00min</span>
+                    </div>
+                    <h3 class="class-title">Canva Pro: Do Zero ao Profissional</h3>
+                    <p class="class-description">
+                        Domine completamente a ferramenta mais importante para marketing visual. Crie materiais que vendem e economize milhares em design.
+                    </p>
+                    <ul class="class-topics">
+                        <li>Setup completo da marca e identidade visual</li>
+                        <li>50 templates que mais convertem vendas</li>
+                        <li>Técnicas avançadas de manipulação de imagem</li>
+                        <li>Automação com Content Planner</li>
+                        <li>Projeto: Crie 30 posts em 30 minutos</li>
+                    </ul>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-header">
+                        <div class="class-number">3</div>
+                        <span class="class-duration">⏱️ 1h30min</span>
+                    </div>
+                    <h3 class="class-title">IA Para Gerar Imagens Infinitas (Grátis)</h3>
+                    <p class="class-description">
+                        Transforme texto em imagens profissionais usando IA gratuita. Crie conteúdo visual ilimitado sem gastar nada.
+                    </p>
+                    <ul class="class-topics">
+                        <li>Bing Image Creator: guia completo</li>
+                        <li>100 prompts prontos para cada nicho</li>
+                        <li>Como melhorar qualidade das imagens</li>
+                        <li>Direitos de uso comercial explicados</li>
+                        <li>Projeto: Crie 50 imagens para seu negócio</li>
+                    </ul>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-header">
+                        <div class="class-number">4</div>
+                        <span class="class-duration">⏱️ 1h30min</span>
+                    </div>
+                    <h3 class="class-title">Automação e Agendamento Multi-Plataforma</h3>
+                    <p class="class-description">
+                        Configure seu sistema de publicação automática. Trabalhe 2 horas por semana e mantenha presença online 24/7.
+                    </p>
+                    <ul class="class-topics">
+                        <li>Comparativo: Buffer vs Later vs Creator Studio</li>
+                        <li>Setup do sistema de produção em lote</li>
+                        <li>Calendário editorial que funciona</li>
+                        <li>Melhores horários para cada rede social</li>
+                        <li>Projeto: Agende conteúdo de 1 mês</li>
+                    </ul>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-header">
+                        <div class="class-number">5</div>
+                        <span class="class-duration">⏱️ 1h30min</span>
+                    </div>
+                    <h3 class="class-title">Stack Completa Por R$ 50/mês</h3>
+                    <p class="class-description">
+                        Monte seu arsenal definitivo de ferramentas. Tenha tudo que precisa para competir gastando menos que uma pizza.
+                    </p>
+                    <ul class="class-topics">
+                        <li>As 6 ferramentas essenciais para começar</li>
+                        <li>Como escalar conforme cresce o faturamento</li>
+                        <li>Integrações que multiplicam produtividade</li>
+                        <li>Backup e segurança dos seus dados</li>
+                        <li>Projeto: Configure sua stack completa hoje</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exercises Section -->
+    <section class="exercises" id="exercises">
+        <div class="container">
+            <h2 class="section-title">Exercícios Práticos</h2>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <div class="exercise-icon">💰</div>
+                    <h3 class="exercise-title">Auditoria de Ferramentas</h3>
+                </div>
+                <ul class="exercise-tasks">
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Liste todas as ferramentas que você paga atualmente</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Calcule o custo total mensal e anual</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Identifique 3 ferramentas para cancelar ou substituir</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Teste as alternativas gratuitas por 1 semana</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Documente economia alcançada (meta: R$ 200/mês)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <div class="exercise-icon">🎨</div>
+                    <h3 class="exercise-title">Desafio Canva Pro</h3>
+                </div>
+                <ul class="exercise-tasks">
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Configure identidade visual completa da sua marca</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Crie 10 templates base para posts recorrentes</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Remova fundo de 20 fotos de produtos</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Produza 30 posts em menos de 1 hora</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Agende posts para 2 semanas usando Content Planner</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <div class="exercise-icon">🤖</div>
+                    <h3 class="exercise-title">Maratona de IA</h3>
+                </div>
+                <ul class="exercise-tasks">
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Gere 50 imagens no Bing Creator em 5 estilos diferentes</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Crie mockups de 5 produtos que não existem ainda</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Produza série de 10 imagens com consistência visual</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Teste 3 ferramentas de upscale gratuitas</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Monte banco com 100 imagens para usar no mês</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <div class="exercise-icon">⚡</div>
+                    <h3 class="exercise-title">Sistema de Produtividade</h3>
+                </div>
+                <ul class="exercise-tasks">
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Configure estrutura de pastas no Google Drive</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Crie workspace no Notion com 5 páginas essenciais</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Monte quadro Kanban no Trello para vendas</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Implemente rotina de backup semanal</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Configure automação básica com Zapier/IFTTT grátis</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <div class="exercise-icon">🚀</div>
+                    <h3 class="exercise-title">Projeto Final: Stack Completa</h3>
+                </div>
+                <ul class="exercise-tasks">
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Monte sua stack de R$ 50/mês baseada no seu negócio</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Configure todas as ferramentas escolhidas</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Integre ferramentas entre si quando possível</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Documente processos e crie SOPs básicos</span>
+                    </li>
+                    <li>
+                        <span class="task-checkbox"></span>
+                        <span>Rode o sistema por 1 semana e ajuste o necessário</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources" id="resources">
+        <div class="container">
+            <h2 class="section-title">Recursos Extras</h2>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📊</div>
+                    <h3 class="resource-title">Planilha de ROI</h3>
+                    <p class="resource-description">
+                        Calcule se vale a pena pagar por uma ferramenta. Planilha automática que mostra retorno do investimento.
+                    </p>
+                    <a href="#" class="resource-link">Baixar Planilha →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🎯</div>
+                    <h3 class="resource-title">100 Prompts de IA</h3>
+                    <p class="resource-description">
+                        Prompts testados para Bing Creator organizados por nicho de negócio. Copie e cole para resultados imediatos.
+                    </p>
+                    <a href="#" class="resource-link">Acessar Prompts →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <h3 class="resource-title">Templates Canva</h3>
+                    <p class="resource-description">
+                        30 templates exclusivos para empreendedores. Posts, stories, capas, miniaturas prontas para personalizar.
+                    </p>
+                    <a href="#" class="resource-link">Baixar Templates →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🔧</div>
+                    <h3 class="resource-title">Checklist de Setup</h3>
+                    <p class="resource-description">
+                        Passo a passo para configurar cada ferramenta. Não perca tempo, siga o checklist e configure tudo em 2 horas.
+                    </p>
+                    <a href="#" class="resource-link">Ver Checklist →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📹</div>
+                    <h3 class="resource-title">Tutoriais em Vídeo</h3>
+                    <p class="resource-description">
+                        Playlist com 20 vídeos mostrando na prática como usar cada ferramenta. Do básico ao avançado.
+                    </p>
+                    <a href="#" class="resource-link">Assistir Vídeos →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">💬</div>
+                    <h3 class="resource-title">Grupo de Suporte</h3>
+                    <p class="resource-description">
+                        Entre no grupo exclusivo no Telegram. Tire dúvidas, compartilhe resultados e aprenda com outros empreendedores.
+                    </p>
+                    <a href="#" class="resource-link">Entrar no Grupo →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Tip -->
+    <section class="final-tip">
+        <div class="tip-box">
+            <h2>💡 Dica de Ouro do Módulo</h2>
+            <div class="tip-content">
+                <p>
+                    <strong>A ferramenta mais cara não é a que você paga, é a que você não usa.</strong>
+                </p>
+                <div class="tip-highlight">
+                    <p>
+                        Antes de assinar qualquer ferramenta, faça o "Teste dos 7 Dias": Use intensamente a versão trial por 1 semana. Se você não usar pelo menos 3x nesse período, não vale a pena pagar.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        <strong>Lembre-se:</strong> Com R$ 50/mês em ferramentas certas, você pode fazer o mesmo trabalho que empresas que gastam R$ 5.000/mês. A diferença está em escolher bem e dominar o que você tem.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        <strong>Ação imediata:</strong> Cancele AGORA uma ferramenta que você não usou nos últimos 30 dias. Use esse dinheiro para assinar o Canva Pro. Essa única mudança vai triplicar sua produtividade visual.
+                    </p>
+                </div>
+                <p style="margin-top: 1.5rem; text-align: center; font-style: italic;">
+                    "Empreendedor esperto não é o que tem mais ferramentas, é o que domina as essenciais."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="navigation">
+        <div class="nav-container">
+            <a href="empreendedores-modulo-03.html" class="nav-button prev">
+                ← Módulo 3: Produtividade 10x
+            </a>
+            <a href="empreendedores-modulo-05.html" class="nav-button">
+                Módulo 5: Do Zero ao Resultado →
+            </a>
+        </div>
+    </section>
+</body>
+</html>
